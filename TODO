@@ -1,0 +1,17 @@
+/1. Find current directory so RLGO can be run from any location
+2. Remove GoBoard from AutoObject constructor
+3. Sort out SumFeatures and Tex
+4. Documentation update
+/5. Configuration checks for Fuego, gogui, gnugo
+/6. Sort out sparsehash properly
+7. Reset changelist in local shape tracker
+8. Move RlTrace into Utils
+9. Fix history to use vectors instead of static arrays
+/10. Sort out scripts
+
+autoconf:
+
+Test for Fuego, sparsehash, gogui, gnugo
+Allow user to specify location (--with-fuego ../fuego-0.4)
+Avoid config.h duplication
+Add unit tests

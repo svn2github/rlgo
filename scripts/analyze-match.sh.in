@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#----------------------------------------------------------------------------#
+# Analyze single match between run two programs using gogui-twogtp
+
+NEWPATH=$1
+echo "@twogtp@ -analyze $NEWPATH/games.dat -force"

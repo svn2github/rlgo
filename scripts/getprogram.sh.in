@@ -1,0 +1,72 @@
+#!/bin/bash
+
+#----------------------------------------------------------------------------#
+# Get command line for program
+
+SCRIPTDIR=`dirname $0`
+RLGODIR="$SCRIPTDIR/.."
+NAME=$1
+shift
+OPTIONS=$@
+
+GNUGO="@gnugo@ --mode gtp --chinese-rules"
+GNUGO0="$GNUGO --level 0"
+GNUGOD="$GNUGO"
+FUEGO="@fuego@"
+RLGO="$RLGODIR/rlgomain/rlgo"
+SETTINGS="$RLGODIR/settings/$NAME-settings.set"
+
+case "$NAME" in
+    gnugod ) 
+        if [ @gnugo@ == "not_found" ]
+        then 
+            echo "Not found"
+            exit 1
+        else 
+            echo "$GNUGOD"
+            exit 0
+        fi ;;
+    gnugo0 )
+        if [ @gnugo@ == "not_found" ]
+        then 
+            echo "Not found"
+            exit 1
+        else 
+            echo "$GNUGO0"
+            exit 0
+        fi 
+        ;;
+    fuego ) 
+        if [ @fuego@ == "not_found" ]
+        then 
+            echo "Not found"
+            exit 1
+        else 
+            echo "$FUEGO $OPTIONS"
+            exit 0
+        fi 
+        ;;
+    vanilla-uct )
+        if [ @fuego@ == "not_found" ]
+        then 
+            echo "Not found"
+            exit 1
+        else 
+            echo "$FUEGO -config ../settings/vanilla-uct.cfg $OPTIONS"
+            exit 0
+        fi 
+        ;;
+    farm ) 
+        echo "python $SCRIPTDIR/farm.py $NUMPROCESSES $SCRIPTDIR general general $OPTIONS"
+        exit 0 
+        ;;
+esac
+
+if [ -e $SETTINGS ]
+then
+    echo $RLGO -settings $NAME $OPTIONS
+    exit 0
+fi
+
+echo "Unknown program"
+exit 1

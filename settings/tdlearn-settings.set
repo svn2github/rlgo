@@ -1,0 +1,108 @@
+#-----------------------------------------------------------------------------
+# Temporal-difference learning using long-term memory 
+# (traditional RL training paradigm)
+#-----------------------------------------------------------------------------
+
+Object = RlOverride
+{
+    ID = Override
+    NumOverrides = 8
+    Token = MainAgent.WeightFile
+    Value = NULL
+    Token = MainAgent.Trainer
+    Value = CurrentTrainer
+    Token = MainAgent.Policy
+    Value = EpsilonGreedy 
+    Token = SaveWeights
+    Value = 1
+    Token = LogMode
+    Value = 2 # Exponential
+    Token = Interval
+    Value = 10
+    Token = IntervalMul
+    Value = 1.2
+    Token = OutputPath
+    Value = output/tdlearn
+}
+
+Object = RlInclude
+{
+    ID = IncludeLocalShape
+    Include = localshape-settings.set
+}
+
+Object = RlForwardTrainer
+{
+    ID = CurrentTrainer
+    Version = 0
+    LearningRule = TD0
+    History = History
+    Evaluator = Evaluator
+    Episodes = 0 #Current
+    NumReplays = 1
+    UpdateRoot = 1
+    TemporalDifference = 2
+    RefreshValues = 1
+    Interleave = 1
+}
+
+Object = RlBackwardTrainer
+{
+    ID = BackwardTrainer
+    Version = 0
+    LearningRule = LambdaReturn
+    History = History
+    Evaluator = Evaluator
+    Episodes = 0 #Current
+    NumReplays = 1
+    UpdateRoot = 1
+    TemporalDifference = 2
+    RefreshValues = 1
+    Interleave = 1
+}
+
+Object = RlTD0
+{
+    ID = TD0
+    Version = 1
+    WeightSet = WeightSet
+    Alpha = 0.1
+    StepSizeMode = 1
+    UseOffPolicy = 1
+    Logistic = 1
+    MSE = 0
+    MinGrad = 0
+    Log = MainLog
+}
+
+Object = RlLambdaReturn
+{
+    ID = LambdaReturn
+    Version = 1
+    WeightSet = WeightSet
+    Alpha = 0.1
+    StepSizeMode = 1
+    UseOffPolicy = 1
+    Logistic = 1
+    MSE = 0
+    MinGrad = 0
+    Log = MainLog
+    Lambda = 0.4
+}
+
+Object = RlEpsilonPolicy
+{
+    ID = EpsilonGreedy
+    Version = 3
+    PPolicy = Random
+    NPolicy = Greedy
+    Epsilon = 0.1
+}
+
+Object = RlRandomPolicy
+{
+    ID = Random
+    Version = 1
+    Evaluator = Evaluator
+    OnPolicy = 0
+}

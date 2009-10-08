@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#----------------------------------------------------------------------------#
+# Run single match between two programs using gogui-twogtp
+
+SCRIPTDIR=`dirname $0`
+NEWPATH=$1
+PROGRAM1=$2
+PROGRAM2=$3
+SIZE=$4
+MINUTES=$5
+GAMES=$6
+
+if [ $MINUTES == 0 ]
+then
+    GAMETIME=""
+else
+    GAMETIME="-time $MINUTES"
+fi
+
+REFEREE=`$SCRIPTDIR/getprogram.sh gnugod`
+
+echo "@twogtp@ -black \"$PROGRAM1\" -white \"$PROGRAM2\" -referee \"$REFEREE\" -auto -alternate -komi 7.5 -size $SIZE $GAMETIME -games $GAMES -force -sgffile $NEWPATH/games"

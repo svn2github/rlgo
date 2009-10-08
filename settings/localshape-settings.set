@@ -1,0 +1,188 @@
+#-----------------------------------------------------------------------------
+# Local shape features in long-term memory (no learning)
+#-----------------------------------------------------------------------------
+
+### MAIN ###
+
+Object = RlSetup
+{
+    ID = Setup
+    Version = 7
+    DataPath = data
+    OutputPath = output/localshape
+    BoardSize = 9
+    Rules = cgos
+    RandomSeed = 0
+    Process = -1
+    SelfPlay = NULL # Override with SelfPlay to run in self-test mode
+    DebugOutput = 1
+    DebugLevel = 2
+    Verification = 0
+    MainAgent = MainAgent
+    SimAgent = NULL
+    BookFile = NULL
+    ConvertSource = NULL
+    ConvertTarget = NULL
+    NumGtp = 0
+}
+
+Object = RlSimulator
+{
+    ID = SelfPlay # For running games of self-play in test mode
+    Version = 12
+    Agent = MainAgent
+    ControlMode = 0 # MaxGames
+    MinGames = 1000
+    MaxGames = 1000000 # Main parameter specifying number of simulations to run
+    SafetyTime = 0
+    Truncate = -1 # Never truncate
+    Resign = 0 # Never resign
+    DefaultPolicy = NULL
+    FuegoPlayout = NULL
+    MaxSimMoves = 200 # Abandon simulations that exceed this length
+    MinSimAfterPass = 0 # Only use MinGames simulations if opponent passes
+    FastReset = 0 # Never use fast reset for real agent
+    Log = 0 # Log data about simulations
+    Record = 0 # Log game records from simulations
+    Pondering = 0 # Think on opponent time
+}
+
+### AGENTS ###
+
+Object = RlRealAgent
+{
+    ID = MainAgent
+    Version = 22
+    Policy = Greedy
+    Evaluator = Evaluator
+    FeatureSet = MainFeatures
+    WeightSet = WeightSet
+    History = History
+    Trainer = NULL
+    Log = MainLog
+    ResignThreshold = 0
+    Prune = 0
+    Simulator = NULL
+    WeightFile = LocalShapes-3x3.w
+    ResetWeights = 1 # Reset on init
+    MinWeight = 1 [ 0 ]
+    MaxWeight = 1 [ 0 ]
+}
+
+Object = RlAgentLog
+{
+    ID = MainLog
+    Version = 4
+    Agent = MainAgent
+    DebugLevel = 2
+    LogMode = 2 # Exponential
+    Interval = 100
+    IntervalMul = 2
+    LogStartOnly = 1
+    SaveRecord = 1
+    SaveWeights = 1
+    TopTex = 1
+    LiveGraphics = 0
+    TraceFeatures = NULL
+    Pause = 0
+    Policy = Greedy
+    NumPV = 8
+    NumBest = 4
+    SupFile = NULL
+}
+
+Object = RlHistory
+{
+    ID = History
+    Capacity = 100
+}
+
+### FEATURES ###
+
+Object = RlWeightSet
+{
+    ID = WeightSet
+    FeatureSet = MainFeatures
+    ShareName = NULL
+    Strict = 1
+    StreamMode = 0 # StreamAll
+}
+
+Object = RlEvaluator
+{
+    ID = Evaluator
+    Version = 6
+    FeatureSet = MainFeatures
+    WeightSet = WeightSet
+    MoveFilter = SimpleEyes
+    Differences = 0 # Dirty set is completely reset with real evaluator anyway
+}
+
+Object = RlLocalShapeSet
+{
+    ID = MainFeatures
+    Version = 14
+    ShapeSpec = SQUARE
+    MinSize = 1
+    MaxSize = 3
+    Symmetry = 1
+    ShareTypes = 2 [ LI LD ]
+    IgnoreEmpty = 1
+    IgnoreSelfInverse = 1
+}
+
+### POLICIES ###
+
+Object = RlGreedy
+{
+    ID = Greedy
+    Version = 1
+    Evaluator = Evaluator
+    History = History
+}
+
+Object = RlGibbs
+{
+    ID = Gibbs
+    Version = 1
+    Evaluator = Evaluator
+    OnPolicy = 1
+    Temperature = 1
+    Centre = 1
+    Redraw = 0
+}
+
+Object = RlMainSearch
+{
+    ID = SimpleSearch
+    Version = 1
+    Evaluator = Evaluator
+    OnPolicy = 1
+    Version = 5
+    SearchAgent = MainAgent
+    HashSize = 4194304 # 16Mb hash-table
+    Iterative = 1
+    Killers = 1
+    OpponentBest = 1
+    NullMoveDepth = 0
+    MinDepth = 1
+    MaxDepth = 5
+    Trace = 0
+    Log = 0
+    ProbCut = 0
+    AbortFrequency = 1000
+    MaxBreadth = 0
+    ControlMode = 0 # None
+    SafetyTime = 0
+    Shared = NULL
+}
+
+### MOVE FILTERS ###
+
+Object = RlSimpleEyeFilter
+{
+    ID = SimpleEyes
+    ConsiderPass = 0
+}
+
+### END ###

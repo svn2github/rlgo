@@ -1,0 +1,395 @@
+#-----------------------------------------------------------------------------
+# General settings for RLGO, using permanent and transient memories
+#-----------------------------------------------------------------------------
+
+### MAIN ###
+
+Object = RlSetup
+{
+    ID = Setup
+    Version = 7
+    DataPath = ../../../data
+    OutputPath = ../../../output/tdsearch
+    BoardSize = 9
+    Rules = cgos
+    RandomSeed = 1 # 0 means randomise, -1 means use default
+    Process = -1 # Single-process
+    SelfPlay = NULL # Override with SelfPlay to run in self-test mode
+    DebugOutput = 1
+    DebugLevel = 2
+    Verification = 0
+    MainAgent = MainAgent
+    SimAgent = SimAgent
+    BookFile = NULL
+    ConvertSource = NULL
+    ConvertTarget = NULL
+    NumGtp = 0
+}
+
+Object = RlSimulator
+{
+    ID = SelfPlay # For running games of self-play in test mode
+    Version = 12
+    Agent = MainAgent
+    ControlMode = 0 # MaxGames
+    MinGames = 1000
+    MaxGames = 1000 # Main parameter specifying simulations per move
+    SafetyTime = 0
+    Truncate = -1 # Never truncate
+    Resign = 0 # Never resign
+    DefaultPolicy = NULL
+    FuegoPlayout = NULL
+    MaxSimMoves = 1000 # Abandon simulations that exceed this length
+    MinSimAfterPass = 0 # Only use MinGames simulations if opponent passes
+    FastReset = 0 # Never use fast reset for real agent
+    Log = 0 # Log data about simulations
+    Record = 0 # Log game records from simulations
+    Pondering = 0 # Think on opponent time
+}
+
+### AGENTS ###
+
+Object = RlRealAgent
+{
+    ID = MainAgent
+    Version = 22
+    Policy = Greedy
+    Evaluator = Evaluator
+    FeatureSet = MainFeatures
+    WeightSet = WeightSet
+    History = History
+    Trainer = NULL
+    Log = MainLog
+    ResignThreshold = 0
+    Prune = 0
+    Simulator = Simulator
+    WeightFile = NULL
+    ResetWeights = 2 # Reset on new game
+    MinWeight = 0 [ ]
+    MaxWeight = 0 [ ]
+    AnswersAll = 1 # Only change answers for predictive RLGO
+}
+
+Object = RlSimAgent
+{
+    ID = SimAgent
+    Version = 22
+    Policy = TwoStage
+    Evaluator = SimEvaluator
+    FeatureSet = MainFeatures
+    WeightSet = WeightSet
+    History = SimHistory
+    Trainer = CurrentTrainer
+    Log = SimLog
+    ResignThreshold = 0
+    Prune = 0
+}
+
+Object = RlAgentLog
+{
+    ID = MainLog
+    Version = 3
+    Agent = MainAgent
+    DebugLevel = 2
+    LogMode = 1
+    Interval = 1
+    IntervalMul = 0
+    LogStartOnly = 0
+    SaveRecord = 0
+    SaveWeights = 0
+    TopTex = 0
+    LiveGraphics = 0
+    TraceFeatures = NULL
+    Pause = 0
+    Policy = Greedy
+    NumPV = 8
+    NumBest = 4
+}
+
+Object = RlAgentLog
+{
+    ID = SimLog
+    Version = 3
+    Agent = SimAgent
+    DebugLevel = 2
+    LogMode = 0
+    Interval = 1000
+    IntervalMul = 0
+    LogStartOnly = 1
+    SaveRecord = 0
+    SaveWeights = 0
+    TopTex = 0
+    LiveGraphics = 0
+    TraceFeatures = NULL
+    Pause = 0
+    Policy = SimGreedy
+    NumPV = 8
+    NumBest = 4
+}
+
+Object = RlSimulator
+{
+    ID = Simulator
+    Version = 12
+    Agent = SimAgent
+    ControlMode = 0 # MaxGames
+    MinGames = 100
+    MaxGames = 2000 # Main parameter specifying simulations per move
+    SafetyTime = 0
+    Truncate = -1
+    Resign = 1
+    DefaultPolicy = FuegoOnPolicy
+    FuegoPlayout = FuegoPlayout
+    MaxSimMoves = 200 # Abandon simulations that exceed this length
+    MinSimAfterPass = 1 # Only use MinGames simulations if opponent passes
+    FastReset = 1
+    Log = 0 # Log data about simulations
+    Record = 0 # Log game records from simulations
+    Pondering = 0 # Think on opponent time
+}
+
+Object = RlHistory
+{
+    ID = History
+    Capacity = 100
+}
+
+Object = RlHistory
+{
+    ID = SimHistory
+    Capacity = 100
+}
+
+### FEATURES ###
+
+Object = RlWeightSet
+{
+    ID = WeightSet
+    FeatureSet = MainFeatures
+    ShareName = NULL
+    Strict = 1
+    StreamMode = 1 # StreamValue
+}
+
+Object = RlEvaluator
+{
+    ID = Evaluator
+    Version = 6
+    FeatureSet = MainFeatures
+    WeightSet = WeightSet
+    MoveFilter = SimpleEyes
+    Differences = 0
+}
+
+Object = RlEvaluator
+{
+    ID = SimEvaluator
+    Version = 6
+    FeatureSet = MainFeatures
+    WeightSet = WeightSet
+    MoveFilter = SimSimpleEyes
+    Differences = 1
+}
+
+Object = RlLocalShapeSet
+{
+    ID = MainFeatures #LocalShapeSet
+    Version = 14
+    ShapeSpec = SQUARE
+    MinSize = 1
+    MaxSize = 3
+    Symmetry = 1
+    ShareTypes = 1 [ None ]
+    IgnoreEmpty = 1
+    IgnoreSelfInverse = 0
+}
+
+### POLICIES ###
+
+Object = RlRandomPolicy
+{
+    ID = Random
+    Version = 1
+    Evaluator = SimEvaluator
+    OnPolicy = 1
+}
+
+Object = RlEpsilonPolicy
+{
+    ID = Epsilon
+    Version = 3
+    PPolicy = Random
+    NPolicy = SimGreedy
+    Epsilon = 0.1
+}
+
+Object = RlGreedy
+{
+    ID = Greedy
+    Version = 1
+    Evaluator = Evaluator
+    History = History
+}
+
+Object = RlGreedy
+{
+    ID = SimGreedy
+    Version = 1
+    Evaluator = SimEvaluator
+    History = SimHistory
+}
+
+Object = RlFuegoPlayout
+{
+    ID = FuegoPlayout
+}
+
+Object = RlFuegoPolicy
+{
+    ID = FuegoOnPolicy
+    OnPolicy = 1
+    FuegoPlayout = FuegoPlayout
+    Incremental = 1
+}
+
+Object = RlTwoStagePolicy
+{
+    ID = TwoStage
+    Version = 2
+    Policy1 = Epsilon
+    Policy2 = FuegoOnPolicy
+    SwitchTime = 6
+}
+
+Object = RlGibbs
+{
+    ID = Gibbs
+    Version = 2
+    Evaluator = SimEvaluator
+    Log = SimLog
+    OnPolicy = 1
+    Temperature = 1
+    Centre = 1
+    Redraw = 0
+}
+
+Object = RlMainSearch
+{
+    ID = SimpleSearch
+    Version = 1
+    Evaluator = Evaluator
+    OnPolicy = 1
+    Version = 5
+    SearchAgent = MainAgent
+    HashSize = 4194304 # 16Mb hash-table
+    Iterative = 1
+    Killers = 1
+    OpponentBest = 1
+    NullMoveDepth = 0
+    MinDepth = 1
+    MaxDepth = 5
+    Trace = 0
+    Log = 1
+    ProbCut = 0
+    AbortFrequency = 1000
+    MaxBreadth = 0
+    ControlMode = 0 # None
+    SafetyTime = 0
+    Shared = NULL
+}
+
+### MOVE FILTERS ###
+
+Object = RlSimpleEyeFilter
+{
+    ID = SimpleEyes
+    ConsiderPass = 0
+}
+
+Object = RlSimpleEyeFilter
+{
+    ID = SimSimpleEyes
+    ConsiderPass = 0
+}
+
+### TRAINERS ###
+
+Object = RlForwardTrainer
+{
+    ID = CurrentTrainer
+    Version = 0
+    LearningRule = TD0
+    History = SimHistory
+    Evaluator = SimEvaluator
+    Episodes = 0 #Current
+    NumReplays = 1
+    UpdateRoot = 1
+    TemporalDifference = 2
+    RefreshValues = 0
+    Interleave = 1
+}
+
+Object = RlBackwardTrainer
+{
+    ID = BackwardTrainer
+    Version = 0
+    LearningRule = LambdaReturn
+    History = History
+    Evaluator = Evaluator
+    Episodes = 0 #Current
+    NumReplays = 1
+    UpdateRoot = 1
+    TemporalDifference = 2
+    RefreshValues = 1
+    Interleave = 1
+}
+
+### LEARNING RULES ###
+
+Object = RlTD0
+{
+    ID = TD0
+    Version = 1
+    WeightSet = WeightSet
+    Alpha = 0.1
+    StepSizeMode = 2
+    UseOffPolicy = 1
+    Logistic = 1
+    MSE = 0
+    MinGrad = 0
+    Log = SimLog
+}
+
+Object = RlTDLambda
+{
+    ID = TDLambda
+    Version = 1
+    WeightSet = WeightSet
+    Alpha = 0.1
+    StepSizeMode = 2
+    UseOffPolicy = 1
+    Logistic = 1
+    MSE = 0
+    MinGrad = 0
+    Log = SimLog
+    Lambda = 0.4
+    Replacing = 0
+    ZeroThreshold = 0.00001
+}
+
+Object = RlLambdaReturn
+{
+    ID = LambdaReturn
+    Version = 1
+    WeightSet = WeightSet
+    Alpha = 0.1
+    StepSizeMode = 2
+    UseOffPolicy = 1
+    Logistic = 1
+    MSE = 0
+    MinGrad = 0
+    Log = SimLog
+    Lambda = 0.4
+}
+
+### END ###
