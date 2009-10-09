@@ -108,7 +108,7 @@ void RlAgent::NewGame()
         if (m_log->LogIsActive())
         {
             m_log->LogWeights(); // once per game
-            m_log->Debug(RlSetup::VOCAL) << "NewGame\n";
+            m_log->Debug(RlSetup::VOCAL) << "Starting new game\n";
             m_log->PrintBoard();
             m_log->PrintValue();
         }
@@ -247,6 +247,8 @@ bool RlAgent::CheckResign(RlFloat pwin) const
 
 RlFloat RlAgent::Score(bool resign) const
 {
+    static RlFloat epsilon = std::numeric_limits<RlFloat>::epsilon();
+
     if (m_log && m_log->LogIsActive())
         m_log->Debug(RlSetup::VOCAL) << m_board << "Game over: ";
 
@@ -268,15 +270,21 @@ RlFloat RlAgent::Score(bool resign) const
     }
     else
     {
-        RlFloat score = GoBoardUtil::ScoreSimpleEndPosition(
-            m_board, m_board.Rules().Komi().ToFloat(), true);
-        if (score > 0)
+        // The implementation of ScoreSimpleEndPosition in Fuego 0.4 is buggy
+        // the following code corrects the score computation
+        RlFloat whitescore = GoBoardUtil::ScoreSimpleEndPosition(
+            m_board, -m_board.Rules().Komi().ToFloat(), true);
+        RlFloat blackscore = RlPoint()->NumPoints() - whitescore;
+        if (m_log && m_log->LogIsActive())
+            m_log->Debug(RlSetup::VOCAL) << "B " << blackscore 
+                << ", W " << whitescore << "\n";
+        if (blackscore > whitescore - epsilon)
         {
             blackwin = 1;
             if (m_log && m_log->LogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "Black wins\n";
         }
-        else if (score < 0)
+        else if (blackscore < whitescore + epsilon)
         {
             blackwin = 0;
             if (m_log && m_log->LogIsActive())
