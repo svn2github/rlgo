@@ -32,10 +32,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(top_srcdir)/configure \
-	$(top_srcdir)/scripts/analyze-match.sh.in \
-	$(top_srcdir)/scripts/getprogram.sh.in \
-	$(top_srcdir)/scripts/match.sh.in AUTHORS COPYING \
+	$(srcdir)/Makefile.in $(top_srcdir)/configure AUTHORS COPYING \
 	COPYING.LESSER ChangeLog INSTALL NEWS TODO config.guess \
 	config.sub depcomp install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -43,6 +40,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
 	$(top_srcdir)/m4/ax_boost_filesystem.m4 \
 	$(top_srcdir)/m4/ax_boost_system.m4 \
 	$(top_srcdir)/m4/ax_boost_thread.m4 \
+	$(top_srcdir)/m4/ax_boost_unit_test_framework.m4 \
 	$(top_srcdir)/m4/ax_cflags_gcc_option.m4 \
 	$(top_srcdir)/m4/ax_cflags_warn_all.m4 \
 	$(top_srcdir)/configure.ac
@@ -52,8 +50,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/utils/RlConfig.h
-CONFIG_CLEAN_FILES = scripts/getprogram.sh scripts/match.sh \
-	scripts/analyze-match.sh
+CONFIG_CLEAN_FILES =
 SOURCES =
 DIST_SOURCES =
 RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
@@ -90,6 +87,7 @@ BOOST_FILESYSTEM_LIB = @BOOST_FILESYSTEM_LIB@
 BOOST_LDFLAGS = @BOOST_LDFLAGS@
 BOOST_SYSTEM_LIB = @BOOST_SYSTEM_LIB@
 BOOST_THREAD_LIB = @BOOST_THREAD_LIB@
+BOOST_UNIT_TEST_FRAMEWORK_LIB = @BOOST_UNIT_TEST_FRAMEWORK_LIB@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
@@ -193,38 +191,11 @@ rlgo \
 policies \
 features \
 learning \
-rlgomain
-
-EXTRA_DIST = \
-input/LocalShapes-3x3.w \
-settings/dyna2-settings.set \
-settings/localshape-settings.set \
-settings/tdlearn-settings.set \
-settings/tdsearch-settings.set \
-settings/vanilla-uct.cfg \
-scripts/analyze-elo.sh \
-scripts/analyze-experiment.sh \
-scripts/analyze-match.sh.in \
-scripts/analyze-matches.sh \
-scripts/analyze-tournament.sh \
-scripts/calc-elo.py \
-scripts/elo.txt \
-scripts/experiment.sh \
-scripts/farm.py \
-scripts/generate-players.sh \
-scripts/getprogram.sh.in \
-scripts/match.sh.in \
-scripts/multi-elo.sh \
-scripts/multi-matches.sh \
-scripts/multi-run.sh \
-scripts/pair.py \
-scripts/plot-tournament.sh \
-scripts/submit-host.sh \
-scripts/submit-para.sh \
-scripts/submit-seq.sh \
-scripts/submit-test.sh \
-scripts/tournament-mt.sh \
-scripts/tournament.sh
+rlgomain \
+unittest \
+input \
+scripts \
+settings
 
 all: all-recursive
 
@@ -262,12 +233,6 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 	cd $(srcdir) && $(AUTOCONF)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
-scripts/getprogram.sh: $(top_builddir)/config.status $(top_srcdir)/scripts/getprogram.sh.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-scripts/match.sh: $(top_builddir)/config.status $(top_srcdir)/scripts/match.sh.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-scripts/analyze-match.sh: $(top_builddir)/config.status $(top_srcdir)/scripts/analyze-match.sh.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 # This directory's subdirectories are mostly independent; you can cd
 # into them and run `make' without going through this Makefile.

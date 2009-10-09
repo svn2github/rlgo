@@ -12,6 +12,7 @@ AX_BOOST_BASE([1.33.1])
 AX_BOOST_THREAD
 AX_BOOST_SYSTEM
 AX_BOOST_FILESYSTEM
+AX_BOOST_UNIT_TEST_FRAMEWORK
 
 AC_ARG_WITH([fuego-dir], 
     [AS_HELP_STRING(
@@ -91,4 +92,4 @@ fi
 AX_CXXFLAGS_WARN_ALL
 AX_CXXFLAGS_GCC_OPTION(-Wextra)
 
-AC_OUTPUT([Makefile utils/Makefile rlgo/Makefile policies/Makefile features/Makefile learning/Makefile rlgomain/Makefile scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh])
+AC_OUTPUT([Makefile utils/Makefile rlgo/Makefile policies/Makefile features/Makefile learning/Makefile rlgomain/Makefile unittest/Makefile input/Makefile scripts/Makefile settings/Makefile scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh])
