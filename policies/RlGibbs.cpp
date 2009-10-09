@@ -80,8 +80,7 @@ void RlGibbs::EvaluateMoves(RlState& state)
     {
         SgMove move = m_moves[m];
         SG_ASSERT(m_board.IsLegal(move));
-        RlFloat eval = m_evaluator->EvaluateMove(
-            move, state.Colour(), true); // relative
+        RlFloat eval = m_evaluator->EvaluateMove(move, state.Colour());
         SANITY_CHECK(eval, -RlInfinity, +RlInfinity);
         m_evals.push_back(eval);
         m_values.push_back(Logistic(eval));

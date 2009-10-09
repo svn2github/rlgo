@@ -145,17 +145,15 @@ void RlEvaluator::SubWeights(const RlChangeList& changes, RlFloat& eval)
     }
 }
 
-RlFloat RlEvaluator::EvaluateMove(
-    SgMove move, SgBlackWhite colour, bool relative, RlChangeList* changelist)
+RlFloat RlEvaluator::EvaluateMove(SgMove move, SgBlackWhite colour)
 {
     if (m_differences)
-        return EvalMoveDiffs(move, colour, relative);
+        return EvalMoveDiffs(move, colour);
     else
-        return EvalMoveSimple(move, colour, relative, changelist);
+        return EvalMoveSimple(move, colour);
 }
 
-RlFloat RlEvaluator::EvalMoveSimple(
-    SgMove move, SgBlackWhite colour, bool relative, RlChangeList* changelist)
+RlFloat RlEvaluator::EvalMoveSimple(SgMove move, SgBlackWhite colour)
 {
     RlFloat weightchange;
 
@@ -163,17 +161,11 @@ RlFloat RlEvaluator::EvalMoveSimple(
 
     m_tracker->DoEvaluate(move, colour);
     AddWeights(m_tracker->ChangeList(), weightchange);
-    if (changelist)
-        changelist->CopyList(m_tracker->ChangeList());
     m_board.Undo();
-    if (relative)
-        return weightchange;
-    else
-        return m_eval + weightchange;
+    return m_eval + weightchange;
 }
 
-RlFloat RlEvaluator::EvalMoveDiffs(
-    SgMove move, SgBlackWhite colour, bool relative)
+RlFloat RlEvaluator::EvalMoveDiffs(SgMove move, SgBlackWhite colour)
 {    
     // Add differences to current evaluation (recalculate where necessary)
     RlFloat weightchange;
@@ -193,10 +185,7 @@ RlFloat RlEvaluator::EvalMoveDiffs(
         m_dirty.IncPruned(true);
     }
     
-    if (relative)
-        return weightchange;
-    else
-        return m_eval + weightchange;
+    return m_eval + weightchange;
 }
 
 void RlEvaluator::FindBest(RlState& state)
@@ -211,7 +200,7 @@ void RlEvaluator::FindBest(RlState& state)
             i_filter; ++i_filter)
     {
         SgMove move = *i_filter;
-        RlFloat eval = EvaluateMove(move, colour, true); // relative evaluation
+        RlFloat eval = EvaluateMove(move, colour);
         if ((colour == SG_BLACK && eval >= state.m_bestEval)
             || (colour == SG_WHITE && eval <= state.m_bestEval))
         {

@@ -53,8 +53,7 @@ public:
 
     /** Evaluate a candidate move. 
         Collect changes in changelist (if specified). */
-    RlFloat EvaluateMove(SgMove move, SgBlackWhite colour,
-        bool relative = false, RlChangeList* changelist = 0);
+    RlFloat EvaluateMove(SgMove move, SgBlackWhite colour);
 
     RlFloat Eval() { return m_eval; }
 
@@ -97,10 +96,8 @@ protected:
     void AddWeights(const RlChangeList& changes, RlFloat& eval);
     void SubWeights(const RlChangeList& changes, RlFloat& eval);
 
-    RlFloat EvalMoveSimple(SgMove move, SgBlackWhite colour,
-        bool relative = false, RlChangeList* changelist = 0);
-    RlFloat EvalMoveDiffs(SgMove move, SgBlackWhite colour, 
-        bool relative = false);
+    RlFloat EvalMoveSimple(SgMove move, SgBlackWhite colour);
+    RlFloat EvalMoveDiffs(SgMove move, SgBlackWhite colour);
 
 private:
 
