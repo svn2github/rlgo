@@ -82,7 +82,7 @@ void RlManualTracker::Reset()
     RlTracker::Reset();
     for (int f = 0; f < m_manual->m_numFeatures; ++f)
         if (m_manual->m_active[f])
-            NewChange(f, f, 1);
+            NewChange(f, f, m_manual->m_active[f]);
 }
 
 void RlManualTracker::Execute(SgMove move, SgBlackWhite colour, bool execute)
