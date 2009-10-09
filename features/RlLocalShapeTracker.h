@@ -45,10 +45,6 @@ public:
     /** Verify that all indices correctly correspond to board */
     void Verify() const;
 
-    /** Generate change list containing all shape features 
-    relating to point p */
-    void GeneratePointChanges(SgPoint p);
-
     /** Local shapes support undo */
     virtual bool SupportUndo() const { return true; }
 

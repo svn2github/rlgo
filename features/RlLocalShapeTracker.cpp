@@ -98,7 +98,6 @@ void RlLocalShapeTracker::Reset()
             }        
         }
 
-        //!!!!!!!!!!!!!! check this
         // Add one change for each anchor
         for (int y = 0; y < m_shapes->GetYNum(); ++y)
         {
@@ -373,20 +372,6 @@ void RlLocalShapeTracker::Verify() const
             if (index != m_index[point])
                 throw SgException("Incremental update error");
         }
-    }
-}
-
-void RlLocalShapeTracker::GeneratePointChanges(SgPoint p)
-{
-    //ANNA
-    vector<int> indices; 
-    int slot = -1;
-    // this gets the indices of all the relevant features
-    m_shapes->GetFeaturesAt(p, indices);
-    // now set up the change list
-    for (int i = 0; i < ssize(indices); ++i) 
-    {
-        NewChange(slot, indices[i], 1);
     }
 }
 
