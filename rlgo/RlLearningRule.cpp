@@ -85,6 +85,20 @@ void RlLearningRule::SetData(RlHistory* history,
     m_isDataSet = true;
 }
 
+void RlLearningRule::SetData(RlState& oldstate, RlState& newstate)
+{
+    m_timeStep = oldstate.TimeStep();
+    m_oldState = &oldstate;
+    m_newState = &newstate;
+    m_terminal = m_newState->Terminal();
+    m_reward = m_newState->Reward();
+    m_colour = m_oldState->Colour();
+    SG_ASSERT(m_oldState->Evaluated());
+    CalcValues();
+    m_onPolicy = true; // @todo: allow for off-policy here
+    m_isDataSet = true;
+}
+
 void RlLearningRule::InitLogs()
 {
     if (!m_log)

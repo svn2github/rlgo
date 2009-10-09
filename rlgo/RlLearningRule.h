@@ -44,27 +44,26 @@ public:
     /** End an episode */
     virtual void End();
 
-    /** Do a step of learning */
+    /** Do a step of learning (SetData, Learn) */
     void DoLearn(RlHistory* history, int episode, int t1, int t2);
 
     /** Whether forwards and backwards execution can be used with this rule */
     virtual bool IsForwards() const { return true; }
     virtual bool IsBackwards() const { return true; }
 
+    /** Set data for this timestep.
+        SetData must be called before Learn for each step */
+    virtual void SetData(RlHistory* history, int from, int to, int episode);
+    virtual void SetData(RlState& oldstate, RlState& newstate);
+
+    /** Update all weights. SetData must be called before Learn each step */
+    virtual void Learn();
+
     /** Accessors */
     RlFloat GetDelta() const { return m_delta; }    
     RlFloat GetReward() const { return m_reward; }
 
     static const int MAX_TD = 2;
-
-public: //protected:
-
-    /** Update all weights. SetData must be called before Learn each step */
-    virtual void Learn();
-
-    /** Set data for this timestep.
-        SetData must be called before Learn for each step */
-    virtual void SetData(RlHistory* history, int from, int to, int episode);
 
 protected:
 
@@ -136,8 +135,8 @@ protected:
     RlFloat m_minGrad;
     
     /** Current learning data */
-    RlState* m_oldState;
-    RlState* m_newState;
+    RlState* m_oldState; //@todo: should this be const?
+    RlState* m_newState; //@todo: should this be const?
     RlFloat m_oldValue;
     RlFloat m_newValue;
     RlFloat m_reward;
