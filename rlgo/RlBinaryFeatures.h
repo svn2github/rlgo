@@ -15,6 +15,7 @@
 #include <map>
 
 class RlTracker;
+class RlWeightSet;
 
 //----------------------------------------------------------------------------
 /** An abstract class for storing a set of binary features */
@@ -99,6 +100,10 @@ public:
     /** Collect all points touching this feature */
     virtual void CollectPoints(int featureindex, 
         std::vector<SgPoint>& points) const;
+
+    /** Output a latex formatted table of the top weighted features */
+    virtual void TopTex(std::ostream& tex, const RlWeightSet* wset, 
+        int rows, int cols) const;
 };
 
 #endif

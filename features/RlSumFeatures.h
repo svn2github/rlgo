@@ -62,11 +62,13 @@ public:
     /** Check whether a feature touches the specified point */
     virtual bool Touches(int featureindex, SgPoint point) const;
 
-    /** Get sum feature index for a local feature index of one set */
-    int GetFeatureIndex(int set, int localindex) const;
+    /** Output a latex formatted table of the top weighted features */
+    virtual void TopTex(std::ostream& tex, const RlWeightSet* wset, 
+        int rows, int cols) const;
 
 protected:
 
+    int GetFeatureIndex(int set, int localindex) const;
     int GetFeatureSet(int featureindex) const;
 
 private:
@@ -76,12 +78,6 @@ private:
     
 friend class RlSumTracker;
 };
-
-inline int RlSumFeatures::GetFeatureIndex(int set, int localindex) const
-{ 
-    SG_ASSERT(set >= 0 && set < ssize(m_featureSets));
-    return m_offset[set] + localindex; 
-}
 
 //----------------------------------------------------------------------------
 /** Tracker for sum features */

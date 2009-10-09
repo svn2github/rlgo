@@ -68,6 +68,7 @@ am_librlgo_rlgo_a_OBJECTS = librlgo_rlgo_a-RlAgent.$(OBJEXT) \
 	librlgo_rlgo_a-RlSetup.$(OBJEXT) \
 	librlgo_rlgo_a-RlSimulator.$(OBJEXT) \
 	librlgo_rlgo_a-RlState.$(OBJEXT) \
+	librlgo_rlgo_a-RlTex.$(OBJEXT) \
 	librlgo_rlgo_a-RlTrace.$(OBJEXT) \
 	librlgo_rlgo_a-RlTracker.$(OBJEXT) \
 	librlgo_rlgo_a-RlTrainer.$(OBJEXT) \
@@ -207,6 +208,7 @@ RlPolicy.cpp \
 RlSetup.cpp \
 RlSimulator.cpp \
 RlState.cpp \
+RlTex.cpp \
 RlTrace.cpp \
 RlTracker.cpp \
 RlTrainer.cpp \
@@ -229,6 +231,7 @@ RlPolicy.h \
 RlSetup.h \
 RlSimulator.h \
 RlState.h \
+RlTex.h \
 RlTrace.h \
 RlTracker.h \
 RlTrainer.h \
@@ -306,6 +309,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlSetup.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlSimulator.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlState.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTex.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTrace.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTracker.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTrainer.Po@am__quote@
@@ -521,6 +525,20 @@ librlgo_rlgo_a-RlState.obj: RlState.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlState.cpp' object='librlgo_rlgo_a-RlState.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlState.obj `if test -f 'RlState.cpp'; then $(CYGPATH_W) 'RlState.cpp'; else $(CYGPATH_W) '$(srcdir)/RlState.cpp'; fi`
+
+librlgo_rlgo_a-RlTex.o: RlTex.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlTex.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlTex.Tpo -c -o librlgo_rlgo_a-RlTex.o `test -f 'RlTex.cpp' || echo '$(srcdir)/'`RlTex.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlTex.Tpo $(DEPDIR)/librlgo_rlgo_a-RlTex.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTex.cpp' object='librlgo_rlgo_a-RlTex.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlTex.o `test -f 'RlTex.cpp' || echo '$(srcdir)/'`RlTex.cpp
+
+librlgo_rlgo_a-RlTex.obj: RlTex.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlTex.obj -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlTex.Tpo -c -o librlgo_rlgo_a-RlTex.obj `if test -f 'RlTex.cpp'; then $(CYGPATH_W) 'RlTex.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTex.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlTex.Tpo $(DEPDIR)/librlgo_rlgo_a-RlTex.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTex.cpp' object='librlgo_rlgo_a-RlTex.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlTex.obj `if test -f 'RlTex.cpp'; then $(CYGPATH_W) 'RlTex.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTex.cpp'; fi`
 
 librlgo_rlgo_a-RlTrace.o: RlTrace.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlTrace.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlTrace.Tpo -c -o librlgo_rlgo_a-RlTrace.o `test -f 'RlTrace.cpp' || echo '$(srcdir)/'`RlTrace.cpp

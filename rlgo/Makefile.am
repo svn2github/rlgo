@@ -15,6 +15,7 @@ RlPolicy.cpp \
 RlSetup.cpp \
 RlSimulator.cpp \
 RlState.cpp \
+RlTex.cpp \
 RlTrace.cpp \
 RlTracker.cpp \
 RlTrainer.cpp \
@@ -37,6 +38,7 @@ RlPolicy.h \
 RlSetup.h \
 RlSimulator.h \
 RlState.h \
+RlTex.h \
 RlTrace.h \
 RlTracker.h \
 RlTrainer.h \

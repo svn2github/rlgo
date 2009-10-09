@@ -15,7 +15,6 @@
 #include "RlPolicy.h"
 #include "RlSetup.h"
 #include "RlSimulator.h"
-//!!!!!!!!!!!!#include "RlTex.h"
 #include "RlTrace.h"
 #include "GoGame.h"
 #include "SgGameWriter.h"
@@ -281,7 +280,7 @@ void RlAgentLog::PrintValue()
 
     Debug(RlSetup::VOCAL) << "Value: " << value << " (";
     Debug(RlSetup::VOCAL).precision(4);
-    Debug(RlSetup::VOCAL) << pwin * 100 << "%)\n";
+    Debug(RlSetup::VOCAL) << pwin * 100 << "% winning for Black)\n";
 
     Debug(RlSetup::VERBOSE) << "Active features:\n";
     RlWeightSet* wset = m_agent->GetWeightSet();
@@ -345,10 +344,6 @@ void RlAgentLog::LogStep()
 
 void RlAgentLog::TopTex()
 {
-    //!!!!!!!!!!!!!
-    // commented out until I figure out how to deal with
-    // calling sumfeatures from rlgo module
-    /*
     static const int rows = 10, cols = 2;
 
     if (LogIsActive() && m_topTex)
@@ -356,11 +351,9 @@ void RlAgentLog::TopTex()
         bfs::path texpath = RlLog::GenLogName(
             this, "Tex", ".tex", m_numGames);
         bfs::ofstream texfile(texpath);
-        RlTexTable textable(texfile, cols);
-        textable.TopFeatures(
-            m_agent->GetWeightSet(), m_agent->GetFeatureSet(), rows);
+        m_agent->GetFeatureSet()->TopTex(
+            texfile, m_agent->GetWeightSet(), rows, cols);
     }
-    */
 }
 
 void RlAgentLog::SaveRecord()

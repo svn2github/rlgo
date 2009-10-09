@@ -7,6 +7,7 @@
 #include "SgSystem.h"
 #include "RlBinaryFeatures.h"
 
+#include "RlTex.h"
 #include "RlWeightSet.h"
 #include "RlUtils.h"
 #include <sstream>
@@ -93,6 +94,15 @@ void RlBinaryFeatures::CollectPoints(int featureindex,
 {
     SG_UNUSED(featureindex);
     SG_UNUSED(points);
+}
+
+void RlBinaryFeatures::TopTex(ostream& tex, 
+    const RlWeightSet* wset, int rows, int cols) const
+{
+    RlTexTable textable(tex, cols);
+    textable.StartTable(false);
+    textable.TopFeatures(wset, this, rows, false);
+    textable.EndTable();
 }
 
 //----------------------------------------------------------------------------

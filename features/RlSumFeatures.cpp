@@ -6,6 +6,7 @@
 
 #include "SgSystem.h"
 #include "RlSumFeatures.h"
+#include "RlTex.h"
 
 using namespace std;
 
@@ -138,6 +139,12 @@ int RlSumFeatures::GetFeatureSet(int featureindex) const
     return ssize(m_featureSets) - 1;
 }
 
+int RlSumFeatures::GetFeatureIndex(int set, int localindex) const
+{ 
+    SG_ASSERT(set >= 0 && set < ssize(m_featureSets));
+    return m_offset[set] + localindex; 
+}
+
 SgPoint RlSumFeatures::GetPosition(int featureindex) const
 {
     int set = GetFeatureSet(featureindex);
@@ -158,6 +165,21 @@ bool RlSumFeatures::Touches(int featureindex, SgPoint pt) const
     int set = GetFeatureSet(featureindex);
     int newindex = featureindex - m_offset[set];
     return m_featureSets[set]->Touches(newindex, pt);
+}
+
+void RlSumFeatures::TopTex(ostream& tex, 
+    const RlWeightSet* wset, int rows, int cols) const
+{
+    RlTexTable textable(tex, cols);
+    textable.StartTable(true);
+    for (int i = 1; i < ssize(m_featureSets); ++i)
+    {
+        if (i > 0)
+            textable.Line();
+        textable.TopFeatures(wset, m_featureSets[i], 
+            rows, true, GetFeatureIndex(i, 0));
+    }
+    textable.EndTable();
 }
 
 //----------------------------------------------------------------------------

@@ -10,7 +10,7 @@
 #include "RlLocalShape.h"
 #include "RlLocalShapeTracker.h"
 #include "RlShapeUtil.h"
-//!!!#include "RlTex.h"
+#include "RlTex.h"
 
 using namespace std;
 using namespace RlShapeUtil;
@@ -177,10 +177,6 @@ void RlLocalShapeFeatures::DescribeFeatureLong(
 void RlLocalShapeFeatures::DescribeFeatureTex(
     int shapeindex, int x, int y, ostream& tex) const
 {        
-    //!!!!!!!!!!!!!
-    // commented out until I figure out how to deal with
-    // calling sumfeatures from rlgo module
-    /*
     int offsetx, offsety;
     SgRect displayrect = DisplayRect(x, y, offsetx, offsety);
 
@@ -215,7 +211,6 @@ void RlLocalShapeFeatures::DescribeFeatureTex(
     }
 
     texboard.WriteEnd();
-    */
 }
 
 void RlLocalShapeFeatures::DisplayFeature(
