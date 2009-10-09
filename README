@@ -12,34 +12,29 @@ RLGO README
 
 2. Overview
 
-RLGO is a Go playing program based on reinforcement learning methods. It is built on top of the Fuego Computer Go library.
+RLGO is a Go playing program based on reinforcement learning and simulation-based search. 
+It is built on top of the Fuego Computer Go library.
 
 
 3. Building RLGO
 
-The following steps are required to build RLGO on a Unix based system:
+RLGO requires the following packages in order to build:
 
-a) Boost must be installed.
-b) Fuego 0.1 must be built.
-c) Build RLGO with the following steps:
+a) Boost (version 1.33.1 or higher) must be installed.
+b) Fuego 0.4 must be downloaded and built.
 
-cd rlgo/linux
-make
+In addition, RLGO requires the following packages to run experiment scripts:
+
+c) GoGui must be installed.
+d) GnuGo must be installed.
+e) BayesElo must be installed.
 
 See the INSTALL file for further installation issues.
 
+4. Running RLGO
 
-3. Running RLGO
-
-RLGO can be run from the command line as follows:
-
-cd rlgo/linux/build/release
-rlgo
-
-Alternatively, RLGO can be run from GoGui by specifying absolute paths for the following:
-
-Program: rlgo/linux/build/release/rlgo
-Working directory: rlgo/linux/build/release
+RLGO uses the Go Text Protocol (GTP) (http://www.lysator.liu.se/~gunnar/gtp/gtp2-spec-draft2/gtp2-spec.html).
+As with any GTP program, RLGO can be run from the command line, or from an interface such as GoGui.
 
 RLGO supports the following command line options:
 
@@ -58,20 +53,17 @@ If no settings file is specified then RLGO will use dyna2-settings.set by defaul
 
 Some particularly important settings to know about are:
 
-DataPath:   where to find the rlgo directory
 OutputPath: where output files (log files, saved games, etc.) should be placed
 BoardSize:  size of board to use
-TestGames:  play a series of test-games using self-play, instead of waiting for GTP commands
+SelfPlay:   play a series of test-games using self-play, instead of waiting for GTP commands
 MaxGames:   how many games to simulate before each real move
 
-To run RLGO from a different location, override the DataPath and OutputPath settings to point to the rlgo/data and rlgo/output directories respectively. 
-
-By default RLGO is launched in GTP mode. After initialisation, it will wait to receive GTP commands on  the standard input. To launch RLGO in self-test mode, specify some number of test games to play.
+By default RLGO is launched in GTP mode. After initialisation, it will wait to receive GTP commands on  the standard input. To launch RLGO in self-test mode, launch RLGO with the option -SelfPlay SelfPlay.
 
 RLGO must be initialised with the correct board size, using the BoardSize setting. It is not sufficient to set the boardsize using a GTP command.
 
 
-4. Settings files
+5. Settings files
 
 The setup of RLGO is controlled by a settings file. The settings file not only specifies the values of parameters, but also which objects are created by RLGO. The purpose of the settings file is to make it easy to run scripts that vary the setup of RLGO, for example to run RLGO with three different learning rules, or to run RLGO with four different step-sizes (see section 6).
 
@@ -85,9 +77,9 @@ Object = <CLASSNAME>
 	...
 }
 
-Settings may refer to other objects by their identifier <OBJECTNAME>. For example, RLGO supports many different learning rules (for example the dyna2-settings.set file includes TD0, TDLambda and LambdaReturn algorithms). When these rules are included in the settings file, objects of the specified classes are created and initialised on start-up. However, this does not imply that these objects are used! In this example, the trainer specifies which learning rule to use, for example by specifying LearningRule = TD0.
+Settings may refer to other objects by their identifier <OBJECTNAME>. For example, RLGO supports many different learning rules (for example the general-settings.set file includes TD0, TDLambda and LambdaReturn algorithms). When these rules are included in the settings file, objects of the specified classes are created and initialised on start-up. However, this does not imply that these objects are used! In this example, the trainer specifies which learning rule to use, for example by specifying LearningRule = TD0.
 
-Settings are case-sensitive and order-sensitive. There must be whitespace on either side of the equals sign " = ". Comments may be included in settings files by prefixing with a hash #. The tilde character is converted into a space internally (this avoids problems in scripts with multi-word settings). Some settings expect vectors of objects, in the following format (whitespace must be included):
+Settings are case-sensitive and order-sensitive. There must be whitespace on either side of the equals sign " = ". Comments may be included in settings files by prefixing with a hash #. The tilde character is converted into a space internally (this avoids problems in scripts with multi-word settings). Some settings expect vectors of objects, in the following format (whitespace must be included before, between and after each object name):
 
 <SETTING> = <NUM_OBJECTS> [ <OBJECTNAME1> <OBJECTNAME2> ... ]
 
@@ -103,97 +95,31 @@ c) RlOverride object (see above)
 
 Standard settings files for RLGO include:
 
-  localshape-settings.set Local shape features in long-term memory
-  tdlearn-settings.set    Settings for temporal-difference learning with permanent memory only
-  tdsearch-settings.set   Settings for temporal-difference search with permanent memory only
-  dyna2-settings.set      Dyna-2 with both long and short-term memories
-  tourney-settings.set    Dyna-2 with tournament settings (time control, alpha-beta search, pondering)
+  localshape-settings.set Local shape features with a long-term memory (no learning, no search)
+  tdlearn-settings.set    Temporal-difference learning with a long-term memory
+  tdsearch-settings.set   Temporal-difference search with a short-term memory
+  dyna2-settings.set      Dyna-2 search with long and short-term memories
+  tourney-settings.set    Settings for RLGO with tournament settings (time control, alpha-beta search, pondering)
+
 
 6. Running scripts
 
-Experiments with RLGO are executed by running scripts. The working directory is assumed to be rlgo/scripts. It is assumed that the current directory . is in the search path. 
+Experiments with RLGO are executed by running shell scripts in the scripts subdirectory. Each script provides its own command line options, which can be viewed by invoking the script with no arguments. Some examples of using these scripts are provided below:
 
-a) getprogram script
+rlgomain/rlgo -settings tdlearn -Alpha 0.2 -Lambda 0.9 -LearningRule TDLambda
+# Run RLGO with tdlearn-settings.set, but overriding the setting Alpha to have a value of 0.2, lambda to have a value of 0.9, and using the TD Lambda learning rule.
 
-The getprogram script outputs the complete command line for a particular Go program. It is invoked as follows:
+scripts/getprogram.sh tdsearch -MaxGames 10000
+# Output the command line for RLGO using tdsearch-settings.set and running 10000 simulations per move
 
-getprogram.sh <NAME>
+scripts/getprogram.sh gnugo0
+# Output the command line for running GnuGo level 0 in GTP mode
 
-The <NAME> of a Go program is a short abbreviation from the following list:
-
-	gnugod    GnuGo set to default playing strength
-	gnugo0    GnuGo set to level 0
-	fuego     Fuego
-	farm     Multi-process version of RLGO (invokes several different RLGO processes)
-
-Otherwise, if the file <NAME>-settings.set exists, then RLGO will be invoked using this settings file. Note that additional arguments will be passed through to the command line invocation. For example:
-
-getprogram.sh general -MaxGames 10000
-
-will invoke RLGO using the general settings file, with 10000 simulations per move.
-
-b) multi-play script
-
-This is a script to run a series of matches between RLGO and a fixed opponent, varying the value of one setting in RLGO. This script uses the gogui-twogtp program (part of the GoGui package), and GnuGo. It assumes that they are available on the path. The command line arguments to multi-play are as follows:
-
-multi-play.sh player opponent path setting values size minutes games submit [options]
-
-player:   Tag used to identify player in the getprogram.sh script
-opponent: Tag used to identify opponent in the getprogram.sh script
-path:     Output path where match data should be saved
-setting:  Setting to vary in player
-values:   List of values to try for setting, e.g. "0.1 0.2 0.3"
-size:     Board size to use
-minutes:  Time control to use (0 for no time control)
-games:    Number of games to play in each match
-submit:   Script used to play matches, listed below
-options:  Any set of options supported by RLGO
-
-seqplay.sh:           Play matches sequentially
-paraplay.sh:          Play matches in parallel
-queueplay.sh hours:   Submit matches to queue, requesting this number of hours
-hostplay.sh hostfile: Submit matches to hosts listed in file
-testplay.sh:          Output match commands without executing them
-
-For example, the following invocation will play three 1000-game matches in parallel between RLGO and GnuGo level 0, using three different learning rules. The output will be placed into the rlgo/output/alpha directory, including RLGO's log files and .sgf game records of all games. RLGO will execute 10000 simulations per move.
-
-multi-play.sh general gnugo0 ../output/alpha LearningRule "TD0 TDLamda LambdaReturn" 9 0 1000 paraplay.sh -MaxGames 10000
-
-c) analyze script
-
-This script analyzes the output of a match run by the multi-play script. It outputs a table giving the results of each match for each setting, and a corresponding Elo rating. The command line arguments are as follows:
-
-analyze.sh path setting values [elo]
-
-path:     Path where match data is saved
-setting:  Setting varied in player
-values:   List of values tried for setting
-elo:      Base Elo rating for comparison
-
-For example the following command will analyze the results of the multi-play match from the previous example. Elo ratings will be generated relative to GnuGo level 0, which is assigned a 1600 Elo rating:
+scripts/multi-matches.sh tdlearn gnugo0 output/learningrules LearningRule "TD0 TDLamda LambdaReturn" 9 0 1000 submit-para.sh -MaxGames 10000
+# Play three 1000-game matches in parallel between RLGO using tdlearn-settings.set and GnuGo level 0, using three different learning rules. The output will be placed into the output/learningrules directory, including RLGO's log files and .sgf game records of all games. RLGO will execute 10000 simulations per move.
 
 analyze.sh ../output/alpha LearningRule "TD0 TDLamda LambdaReturn" 1600
+# Analyze the results of the above multi-matches.sh invocation. Elo ratings will be generated relative to GnuGo level 0, which is assigned a 1600 Elo rating.
 
-d) multi-run script
-
-This script runs several different versions of RLGO in self-play mode, varying a single setting. This script allows training runs to be performed with different settings. The command line arguments are:
-
-multi-run.sh player path setting values games submit [options]
-
-player:   Tag used to identify player in the getprogram.sh script
-path:     Path where match data should be saved
-setting:  Setting to vary in player
-values:   List of values to try for setting, e.g. "0.1 0.2 0.3"
-games:    Number of games to run
-submit:   Script used to play matches, listed below
-options:  Any set of options supported by RLGO
-
-seqplay.sh:           Play matches sequentially
-paraplay.sh:          Play matches in parallel
-queueplay.sh hours:   Submit matches to queue, requesting this number of hours
-hostplay.sh hostfile: Submit matches to hosts listed in file
-testplay.sh:          Output match commands without executing them
-
-For example, the following invocation will run four training runs of 100000 games in parallel, using four different values for the step-size. The output will be placed into the rlgo/output/alpha directory.
-
-multi-run.sh permanent ../output/alpha Alpha "0.1 0.05 0.02 0.01" 9 0 1000 paraplay.sh -MaxGames 10000
+scripts/multi-run.sh tdlearn output/alpha Alpha "0.1 0.05 0.02 0.01" 9 0 1000 submit-para.sh -MaxGames 100000
+# Run four training runs of 100000 games in parallel, using RLGO and tdlearn-settings.set, using four different values for the step-size. The output will be placed into the output/alpha directory.
