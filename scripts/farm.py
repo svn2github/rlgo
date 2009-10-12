@@ -8,44 +8,60 @@ import popen2
 import sys
 import string
 import time
+import os
     
-def farm(numprocesses, dir, master, slave, args):
+def farm(numprocesses, scriptdir, master, slave):
     players = []
     for i in xrange(numprocesses):
         ismaster = (i == 0)
         if ismaster:
-            cmdline = shellex("getprogram.sh %s -Process %d -RandomSeed %d %s" % (master, i, i, args))
+            cmdline = "%s -Process %d -RandomSeed %d" % (master, i, i)
         else:
-            cmdline = shellex("getprogram.sh %s -Process %d -RandomSeed %d %s" % (slave, i, i, args))
+            cmdline = "%s -Process %d -RandomSeed %d" % (slave, i, i)
         debugname = "RLGO.%d" % i
         player = gtp.GtpConnection(cmdline, debugname)
         players.append(player)
 
     time.sleep(1)
-    print "Farm is ready"
+    print "Farm is ready: %d players" % len(players)
     cmd = ""
     while cmd != "quit":
         cmd = readcmd()
         cmdargs = cmd.split()
         if cmdargs[0] == "genmove":
-            response = execute(players[0:1], cmd)
-            execute(players[1:], "play %s %s" % (cmdargs[1], response))
+            responses = execute(players, makecommands2("genmove", "reg_genmove", cmdargs[1], numprocesses))
+            execute(players[1:], makecommands("play %s %s" % (cmdargs[1], responses[0]), numprocesses - 1))
         else:
-            response = execute(players, cmd)
-        writecmd(response)
+            responses = execute(players, makecommands(cmd, numprocesses))
+        writecmd(responses[0])
 
-def execute(players, cmd):
+def execute(players, cmds):
 
     # Forward command to all players
-    for player in players:
-        player.write_cmd(cmd)
+    for i in xrange(len(players)):
+        players[i].write_cmd(cmds[i])
 
     # Read all responses but only return final (master) response
-    response = ""
+    responses = []
     for player in players:
-        response = player.read_cmd()
+        responses.append(player.read_cmd())
         
-    return response
+    return responses
+
+def makecommands(cmd, numprocesses):
+    cmds = []
+    for i in xrange(numprocesses):
+        cmds.append(cmd)
+    return cmds
+
+def makecommands2(mastercmd, slavecmd, args, numprocesses):
+    cmds = []
+    for i in xrange(numprocesses):
+        if i == 0:
+            cmds.append("%s %s" % (mastercmd, args))
+        else:
+            cmds.append("%s %s" % (slavecmd, args))
+    return cmds
 
 def readcmd():
     result = raw_input()
@@ -60,26 +76,16 @@ def writecmd(response):
     print "= %s\n" % response
     sys.stdout.flush()
 
-def shellex(command):
-    subprocess = popen2.Popen3(command)
-    return subprocess.fromchild.readline()    
-
 def main(argv):
-    if len(argv) < 4:
-        print "farm.py numprocesses rlgo_dir master slave args"
+    if len(argv) != 4:
+        print "farm.py numprocesses master_cmd slave_cmd"
         sys.exit()
+    scriptdir = os.path.dirname(argv[0])
     numprocesses = int(argv[1])
-    dir = argv[2]
-    master = argv[3]
-    slave = argv[4]
-    args = ""
-    for arg in argv[5:]:
-        args = "%s %s" % (args, arg)
+    master = argv[2]
+    slave = argv[3]
 
-    if "-DataPath" not in argv[5:]:
-       args = "%s -DataPath %s" % (args, dir) 
-
-    farm(numprocesses, dir, master, slave, args)
+    farm(numprocesses, scriptdir, master, slave)
 
 if __name__ == "__main__":
     main(sys.argv)

@@ -14,7 +14,6 @@ GNUGO0="$GNUGO --level 0"
 GNUGOD="$GNUGO"
 FUEGO="@fuego@"
 RLGO="$RLGODIR/rlgomain/rlgo"
-SETTINGS="$RLGODIR/settings/$NAME-settings.set"
 
 case "$NAME" in
     gnugod ) 
@@ -56,12 +55,21 @@ case "$NAME" in
             exit 0
         fi 
         ;;
-    farm ) 
-        echo "python $SCRIPTDIR/farm.py $NUMPROCESSES $SCRIPTDIR general general $OPTIONS"
+    farm ) # Run multi-process version of RLGO, with specified settings file, via farm.py script
+        RLGOCMD=`$SCRIPTDIR/getprogram.sh $OPTIONS`
+        echo "python $SCRIPTDIR/farm.py $NUMPROCESSES \"$RLGOCMD\" \"$RLGOCMD"\"
+        exit 0 
+        ;;
+    tfarm ) # Run multi-process version of RLGO with tournament settings
+        RLGOCMD=`$SCRIPTDIR/getprogram.sh tourney $OPTIONS`
+        MASTER="$RLGOCMD -MainAgent.Policy TourneySearch"
+        SLAVE="$RLGOCMD"
+        echo "python $SCRIPTDIR/farm.py $NUMPROCESSES \"$MASTER\" \"$SLAVE\""
         exit 0 
         ;;
 esac
 
+SETTINGS="$RLGODIR/settings/$NAME-settings.set"
 if [ -e $SETTINGS ]
 then
     echo $RLGO -settings $NAME $OPTIONS
