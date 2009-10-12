@@ -67,7 +67,7 @@ void RlLog::Step()
         for (vector<any>::iterator iValues = m_values.begin(); 
             iValues != m_values.end(); ++iValues)
         {
-            //!!! This is ugly, but boost::any doesn't support operator<<
+            // This is ugly, but boost::any doesn't support operator<<
             if (iValues->type() == typeid(char))
                 m_logFile << m_separator << any_cast<char>(*iValues);
             if (iValues->type() == typeid(int))

@@ -344,7 +344,7 @@ void RlSearch::StepPlyLog(int depth)
     SgSearchStatistics stats;
     GetStatistics(&stats);
     SgVector<SgMove> pv;
-    //!!! prevvalue deprecated in Fuego
+    //@todo: prevvalue deprecated in Fuego
     // int value = PrevValue(&pv);
     // RlFloat eval = UnscaleEval(value);
     // RlFloat pwin = Logistic(eval);
