@@ -19,7 +19,9 @@ SETTING=$2
 VALUES=$3
 TITLE=$4
 KEYPOS=$5
+MINELO=0
 MAXELO=1800
+XLABEL="Simulations per move" # or "Training games"
 
 if [ "$KEYPOS"=="" ]
 then
@@ -28,12 +30,12 @@ fi
 
 echo "set terminal postscript colour \"Helvetica\" 18" > $PATHSTEM/ratings.plt
 echo "set output \"$PATHSTEM/$SETTING-ratings.ps\"" >> $PATHSTEM/ratings.plt
-echo "set xlabel \"Simulations per move\"" >> $PATHSTEM/ratings.plt #@LOCAL
+echo "set xlabel \"$XLABEL\"" >> $PATHSTEM/ratings.plt
 echo "set ylabel \"Elo rating\"" >> $PATHSTEM/ratings.plt
 echo "set logscale x" >> $PATHSTEM/ratings.plt
 echo "set key $KEYPOS" >> $PATHSTEM/ratings.plt
-echo "set xrange [100:*]" >> $PATHSTEM/ratings.plt
-echo "set yrange [0:$MAXELO]" >> $PATHSTEM/ratings.plt
+echo "set xrange [10:*]" >> $PATHSTEM/ratings.plt
+echo "set yrange [$MINELO:$MAXELO]" >> $PATHSTEM/ratings.plt
 echo "set title \"$TITLE\"" >> $PATHSTEM/ratings.plt
 echo "set style increment user" >> $PATHSTEM/ratings.plt
 echo "set style line 6 lt rgb \"brown\"" >> $PATHSTEM/ratings.plt # Avoid yellow!
