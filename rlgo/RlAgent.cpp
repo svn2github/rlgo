@@ -272,19 +272,20 @@ RlFloat RlAgent::Score(bool resign) const
     {
         // The implementation of ScoreSimpleEndPosition in Fuego 0.4 is buggy
         // the following code corrects the score computation
+        RlFloat komi = m_board.Rules().Komi().ToFloat();
         RlFloat whitescore = GoBoardUtil::ScoreSimpleEndPosition(
-            m_board, -m_board.Rules().Komi().ToFloat(), true);
+            m_board, 0, true);
         RlFloat blackscore = RlPoint()->NumPoints() - whitescore;
         if (m_log && m_log->LogIsActive())
             m_log->Debug(RlSetup::VOCAL) << "B " << blackscore 
-                << ", W " << whitescore << "\n";
-        if (blackscore > whitescore - epsilon)
+                << ", W " << whitescore << ", komi " << komi << "\n";
+        if (blackscore > whitescore + komi + epsilon)
         {
             blackwin = 1;
             if (m_log && m_log->LogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "Black wins\n";
         }
-        else if (blackscore < whitescore + epsilon)
+        else if (blackscore < whitescore + komi - epsilon)
         {
             blackwin = 0;
             if (m_log && m_log->LogIsActive())
