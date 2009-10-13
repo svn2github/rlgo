@@ -1,0 +1,19 @@
+#-----------------------------------------------------------------------------
+# Dyna-2 search using local shapes in both long and short-term memories
+#-----------------------------------------------------------------------------
+
+Object = RlOverride
+{
+    ID = Dyna2Override
+    NumOverrides = 2
+    Token = WeightFile
+    Value = LocalShapes-3x3.w
+    Token = OutputPath
+    Value = output/dyna2
+}
+
+Object = RlInclude
+{
+    ID = IncludeTDSearch
+    Include = tdsearch.set
+}

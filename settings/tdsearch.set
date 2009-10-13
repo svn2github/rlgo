@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# General settings for RLGO, using permanent and transient memories
+# Temporal-difference search using local shapes in a short-term memory
 #-----------------------------------------------------------------------------
 
 ### MAIN ###
@@ -9,7 +9,7 @@ Object = RlSetup
     ID = Setup
     Version = 7
     InputPath = input
-    OutputPath = output/general
+    OutputPath = output/tdsearch
     BoardSize = 9
     Rules = cgos
     RandomSeed = 1 # 0 means randomise, -1 means use default
@@ -26,14 +26,15 @@ Object = RlSetup
     NumGtp = 0
 }
 
+# For running games of self-play in test mode (not used for search)
 Object = RlSimulator
 {
-    ID = SelfPlay # For running games of self-play in test mode
+    ID = SelfPlay 
     Version = 12
     Agent = MainAgent
     ControlMode = 0 # MaxGames
     MinGames = 1000
-    MaxGames = 1000
+    MaxGames = 1000 # Main parameter specifying simulations per move
     SafetyTime = 0
     Truncate = -1 # Never truncate
     Resign = 0 # Never resign
@@ -63,7 +64,7 @@ Object = RlRealAgent
     ResignThreshold = 0
     Prune = 0
     Simulator = Simulator
-    WeightFile = LocalShapes-3x3.w
+    WeightFile = NULL
     ResetWeights = 2 # Reset on new game
     MinWeight = 0 [ ]
     MaxWeight = 0 [ ]
@@ -74,7 +75,7 @@ Object = RlSimAgent
 {
     ID = SimAgent
     Version = 22
-    Policy = TwoStage # e-greedy then Fuego playout policy
+    Policy = TwoStage
     Evaluator = SimEvaluator
     FeatureSet = MainFeatures
     WeightSet = WeightSet
@@ -112,7 +113,7 @@ Object = RlAgentLog
     Version = 3
     Agent = SimAgent
     DebugLevel = 2
-    LogMode = 1
+    LogMode = 0
     Interval = 1000
     IntervalMul = 0
     LogStartOnly = 1
@@ -136,7 +137,7 @@ Object = RlSimulator
     MinGames = 100
     MaxGames = 2000 # Main parameter specifying simulations per move
     SafetyTime = 0
-    Truncate = 32 # Truncate simulations and finish games using FuegoPlayout
+    Truncate = -1
     Resign = 1
     DefaultPolicy = FuegoOnPolicy
     FuegoPlayout = FuegoPlayout
@@ -208,45 +209,19 @@ Object = RlLocalShapeSet
 
 Object = RlRandomPolicy
 {
-    ID = RandomOnPolicy
+    ID = Random
     Version = 1
     Evaluator = SimEvaluator
     OnPolicy = 1
-}
-
-Object = RlRandomPolicy
-{
-    ID = RandomOffPolicy
-    Version = 1
-    Evaluator = SimEvaluator
-    OnPolicy = 0
-}
-
-Object = RlEpsilonPolicy
-{
-    ID = MixedRandomOnPolicy
-    Version = 3
-    PPolicy = RandomOnPolicy
-    NPolicy = FuegoOnPolicy
-    Epsilon = 0.4
-}
-
-Object = RlEpsilonPolicy
-{
-    ID = MixedRandomOffPolicy
-    Version = 3
-    PPolicy = RandomOffPolicy
-    NPolicy = FuegoOffPolicy
-    Epsilon = 0.4
 }
 
 Object = RlEpsilonPolicy
 {
     ID = Epsilon
     Version = 3
-    PPolicy = MixedRandomOffPolicy
+    PPolicy = Random
     NPolicy = SimGreedy
-    Epsilon = 0.3
+    Epsilon = 0.1
 }
 
 Object = RlGreedy
@@ -278,58 +253,13 @@ Object = RlFuegoPlayoutPolicy
     Incremental = 1
 }
 
-Object = RlFuegoPlayoutPolicy
-{
-    ID = FuegoOffPolicy
-    OnPolicy = 0
-    FuegoPlayout = FuegoPlayout
-    Incremental = 1
-}
-
 Object = RlTwoStagePolicy
 {
     ID = TwoStage
     Version = 2
     Policy1 = Epsilon
-    Policy2 = MixedRandomOnPolicy
+    Policy2 = FuegoOnPolicy
     SwitchTime = 6
-}
-
-Object = RlGibbs
-{
-    ID = Gibbs
-    Version = 2
-    Evaluator = SimEvaluator
-    Log = SimLog
-    OnPolicy = 1
-    Temperature = 1
-    Centre = 1
-    Redraw = 0
-}
-
-Object = RlMainSearch
-{
-    ID = SimpleSearch
-    Version = 1
-    Evaluator = Evaluator
-    OnPolicy = 1
-    Version = 5
-    SearchAgent = MainAgent
-    HashSize = 4194304 # 16Mb hash-table
-    Iterative = 1
-    Killers = 1
-    OpponentBest = 1
-    NullMoveDepth = 0
-    MinDepth = 1
-    MaxDepth = 5
-    Trace = 0
-    Log = 1
-    ProbCut = 0
-    AbortFrequency = 1000
-    MaxBreadth = 0
-    ControlMode = 0 # None
-    SafetyTime = 0
-    Shared = NULL
 }
 
 ### MOVE FILTERS ###
@@ -346,7 +276,7 @@ Object = RlSimpleEyeFilter
     ConsiderPass = 0
 }
 
-### TRAINERS ###
+### LEARNING ###
 
 Object = RlForwardTrainer
 {
@@ -357,13 +287,11 @@ Object = RlForwardTrainer
     Evaluator = SimEvaluator
     Episodes = 0 #Current
     NumReplays = 1
-    UpdateRoot = 0
+    UpdateRoot = 1
     TemporalDifference = 2
     RefreshValues = 0
-    Interleave = 0
+    Interleave = 1
 }
-
-### LEARNING RULES ###
 
 Object = RlTD0
 {
@@ -377,38 +305,6 @@ Object = RlTD0
     MSE = 0
     MinGrad = 0
     Log = SimLog
-}
-
-Object = RlTDLambda
-{
-    ID = TDLambda
-    Version = 1
-    WeightSet = WeightSet
-    Alpha = 0.1
-    StepSizeMode = 2
-    UseOffPolicy = 1
-    Logistic = 1
-    MSE = 0
-    MinGrad = 0
-    Log = SimLog
-    Lambda = 0.4
-    Replacing = 0
-    ZeroThreshold = 0.00001
-}
-
-Object = RlLambdaReturn
-{
-    ID = LambdaReturn
-    Version = 1
-    WeightSet = WeightSet
-    Alpha = 0.1
-    StepSizeMode = 2
-    UseOffPolicy = 1
-    Logistic = 1
-    MSE = 0
-    MinGrad = 0
-    Log = SimLog
-    Lambda = 0.4
 }
 
 ### END ###

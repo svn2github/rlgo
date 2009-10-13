@@ -57,7 +57,7 @@ case "$NAME" in
         ;;
     farm ) # Run multi-process version of RLGO, with specified settings file, via farm.py script
         RLGOCMD=`$SCRIPTDIR/getprogram.sh $OPTIONS`
-        echo "python $SCRIPTDIR/farm.py $NUMPROCESSES \"$RLGOCMD\" \"$RLGOCMD"\"
+        echo "python $SCRIPTDIR/farm.py $NUMPROCESSES \"$RLGOCMD\" \"$RLGOCMD\""
         exit 0 
         ;;
     tfarm ) # Run multi-process version of RLGO with tournament settings

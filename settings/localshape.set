@@ -26,25 +26,26 @@ Object = RlSetup
     NumGtp = 0
 }
 
+# For running games of self-play
 Object = RlSimulator
 {
-    ID = SelfPlay # For running games of self-play in test mode
+    ID = SelfPlay
     Version = 12
     Agent = MainAgent
     ControlMode = 0 # MaxGames
     MinGames = 1000
-    MaxGames = 1000000 # Main parameter specifying number of simulations to run
+    MaxGames = 1000000 # Main parameter specifying number of self-play games to run
     SafetyTime = 0
     Truncate = -1 # Never truncate
     Resign = 0 # Never resign
     DefaultPolicy = NULL
     FuegoPlayout = NULL
-    MaxSimMoves = 200 # Abandon simulations that exceed this length
-    MinSimAfterPass = 0 # Only use MinGames simulations if opponent passes
+    MaxSimMoves = 200 # Abandon games that exceed this length
+    MinSimAfterPass = 0
     FastReset = 0 # Never use fast reset for real agent
-    Log = 0 # Log data about simulations
-    Record = 0 # Log game records from simulations
-    Pondering = 0 # Think on opponent time
+    Log = 0 # Log data about games
+    Record = 0 # Log game records
+    Pondering = 0
 }
 
 ### AGENTS ###
@@ -139,42 +140,6 @@ Object = RlGreedy
     Version = 1
     Evaluator = Evaluator
     History = History
-}
-
-Object = RlGibbs
-{
-    ID = Gibbs
-    Version = 1
-    Evaluator = Evaluator
-    OnPolicy = 1
-    Temperature = 1
-    Centre = 1
-    Redraw = 0
-}
-
-Object = RlMainSearch
-{
-    ID = SimpleSearch
-    Version = 1
-    Evaluator = Evaluator
-    OnPolicy = 1
-    Version = 5
-    SearchAgent = MainAgent
-    HashSize = 4194304 # 16Mb hash-table
-    Iterative = 1
-    Killers = 1
-    OpponentBest = 1
-    NullMoveDepth = 0
-    MinDepth = 1
-    MaxDepth = 5
-    Trace = 0
-    Log = 0
-    ProbCut = 0
-    AbortFrequency = 1000
-    MaxBreadth = 0
-    ControlMode = 0 # None
-    SafetyTime = 0
-    Shared = NULL
 }
 
 ### MOVE FILTERS ###

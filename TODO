@@ -1,8 +1,9 @@
 Remove GoBoard from AutoObject constructor
-Sort out SumFeatures and Tex
+*Fix hard maxmove limit in RLGO
 Move RlTrace into Utils
-Fix history to use vectors instead of static arrays
-make distcheck fails
-execute permission on automake shell scripts
-parallel RLGO invocation
+*make distcheck fails
 test CGOS
+*test scripts
+put delete script back in
+experience replay
+evaluate fixed policy script

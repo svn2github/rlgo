@@ -1743,6 +1743,10 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 ac_config_headers="$ac_config_headers utils/RlConfig.h"
 
+ac_config_files="$ac_config_files Makefile utils/Makefile rlgo/Makefile policies/Makefile features/Makefile learning/Makefile rlgomain/Makefile unittest/Makefile input/Makefile scripts/Makefile settings/Makefile"
+
+ac_config_files="$ac_config_files scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh"
+
 am__api_version='1.10'
 
 ac_aux_dir=
@@ -6097,8 +6101,6 @@ case ".$ac_cv_cxxflags_gcc_option__Wextra" in
 esac
 
 
-ac_config_files="$ac_config_files Makefile utils/Makefile rlgo/Makefile policies/Makefile features/Makefile learning/Makefile rlgomain/Makefile unittest/Makefile input/Makefile scripts/Makefile settings/Makefile scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh"
-
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
 # tests run on this system so they can be shared between configure
@@ -6691,7 +6693,6 @@ for ac_config_target in $ac_config_targets
 do
   case $ac_config_target in
     "utils/RlConfig.h") CONFIG_HEADERS="$CONFIG_HEADERS utils/RlConfig.h" ;;
-    "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "utils/Makefile") CONFIG_FILES="$CONFIG_FILES utils/Makefile" ;;
     "rlgo/Makefile") CONFIG_FILES="$CONFIG_FILES rlgo/Makefile" ;;
@@ -6706,6 +6707,7 @@ do
     "scripts/getprogram.sh") CONFIG_FILES="$CONFIG_FILES scripts/getprogram.sh" ;;
     "scripts/match.sh") CONFIG_FILES="$CONFIG_FILES scripts/match.sh" ;;
     "scripts/analyze-match.sh") CONFIG_FILES="$CONFIG_FILES scripts/analyze-match.sh" ;;
+    "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
 
   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
 echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
@@ -7356,6 +7358,9 @@ echo "$as_me: executing $ac_file commands" >&6;}
 
 
   case $ac_file$ac_mode in
+    "scripts/getprogram.sh":F) chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh ;;
+    "scripts/match.sh":F) chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh ;;
+    "scripts/analyze-match.sh":F) chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh ;;
     "depfiles":C) test x"$AMDEP_TRUE" != x"" || for mf in $CONFIG_FILES; do
   # Strip MF so we end up with the name of the file.
   mf=`echo "$mf" | sed -e 's/:.*$//'`

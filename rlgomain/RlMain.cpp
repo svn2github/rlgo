@@ -37,7 +37,7 @@ string g_config;
 bfs::path g_execFile; // Executable filename
 bfs::path g_execDir; // Executable directory
 bfs::path g_rlgoDir; // Root directory of RLGO distribution
-bfs::path g_settingsFile("dyna2-settings.set"); // Default settings file
+bfs::path g_settingsFile("dyna2.set"); // Default settings file
 
 // @} // @name
 
@@ -141,11 +141,6 @@ void FindSettingsFile()
     if (exists(g_rlgoDir / "settings" / (settings + ".set")))
     {
         g_settingsFile = bfs::path(settings + ".set");
-        return;
-    }
-    if (exists(g_rlgoDir / "settings" / (settings + "-settings.set")))
-    {
-        g_settingsFile = bfs::path(settings + "-settings.set");
         return;
     }
     throw SgException("Could not find settings file");

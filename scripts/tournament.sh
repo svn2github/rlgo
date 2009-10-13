@@ -5,7 +5,7 @@
 if [ $# -lt 7 ]
 then
     echo "Usage:"
-    echo "tournament.sh shortnames programnames path size minutes games nummatches [thread]"
+    echo "tournament.sh shortnames programnames path size minutes games nummatches submit [thread]"
     echo ""
     echo "shortnames:   File containing list of short names to label programs"
     echo "programnames: File containing list of program names to use"
@@ -14,7 +14,13 @@ then
     echo "minutes:      Time control to use"
     echo "games:        Number of games to play in each match"
     echo "nummatches:   Number of matches to run in tournament"
+    echo "submit:       Script used to play matches, listed below"
     echo "thread:       Thread number (optional)"
+    echo ""
+    echo "submit-seq.sh:               Play matches sequentially"
+    echo "submit-para.sh:              Play matches in parallel"
+    echo "\"submit-host.sh hostfile\": Submit matches to hosts listed in file"
+    echo "submit-test.sh:              Output match commands without executing"
     exit 1
 fi
 
@@ -26,7 +32,8 @@ SIZE=$4
 MINUTES=$5
 NUMGAMES=$6
 NUMMATCHES=$7
-THREAD=$8
+SUBMIT=$8
+THREAD=$9
 
 if [ $THREAD == ""]
 then
@@ -35,15 +42,9 @@ fi
 
 NUMPLAYERS=`awk 'END {print NR}' $SHORTNAMES`
 
-if [ $MINUTES == 0 ]
-then
-    GAMETIME=""
-else
-    GAMETIME="-time $MINUTES"
-fi
-
-REFEREE=`$SCRIPTDIR/getprogram.sh gnugod`
 mkdir -p $PATHSTEM
+PIDPATH=$PATHSTEM/PID-LOG
+touch $PIDPATH
 
 # Initialise win file to all zeros
 echo -n "" > $PATHSTEM/wins.txt
@@ -71,7 +72,9 @@ do
     BSHORT=`awk "NR==$((PB+1))"' { print }' $SHORTNAMES`
     WSHORT=`awk "NR==$((PW+1))"' { print }' $SHORTNAMES`
     echo "Playing match $((i+1)) of $NUMMATCHES between $BSHORT and $WSHORT ($NUMGAMES games)"
-    twogtp -black "$BLACK" -white "$WHITE" -referee "$REFEREE" -auto -alternate -komi 7.5 -size $SIZE $GAMETIME -games $NUMGAMES -maxmoves 200 -force -sgffile $NEWPATH/games
+    MATCHCMD=`$SCRIPTDIR/match.sh "$NEWPATH" "$BLACK" "$WHITE" "$SIZE" "$MINUTES" "$NUMGAMES"`
+    $SCRIPTDIR/$SUBMIT "$NEWPATH" "$PREFIX" "$MATCHCMD" "$i" "$PIDPATH"
+
     awk '$4~/B+/ {print "addresult '"${PW} ${PB}"' 0" } $4~/W+/ {print "addresult '"${PW} ${PB}"' 2" }' $NEWPATH/games.dat >> $PATHSTEM/thread-$THREAD/results.txt
     BWINS=`awk 'BEGIN {bwins=0} $4~/B+/ {bwins++} END {print bwins}' $NEWPATH/games.dat`
     WWINS=`awk 'BEGIN {wwins=0} $4~/W+/ {wwins++} END {print wwins}' $NEWPATH/games.dat`

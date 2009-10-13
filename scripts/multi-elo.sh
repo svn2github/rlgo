@@ -127,6 +127,6 @@ for VALUE2 in $VALUES2
 fi
 
 # Run tournament and plot results
-$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM $SIZE 0 2 $MATCHES 1
+$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM $SIZE 0 2 $MATCHES submit-seq 1
 $SCRIPTDIR/analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
 $SCRIPTDIR/plot-tournament.sh $PATHSTEM $SETTING1 "$VALUES1" "$TITLE"

@@ -20,4 +20,4 @@ fi
 
 REFEREE=`$SCRIPTDIR/getprogram.sh gnugod`
 
-echo "@twogtp@ -black \"$PROGRAM1\" -white \"$PROGRAM2\" -referee \"$REFEREE\" -auto -alternate -komi 7.5 -size $SIZE $GAMETIME -games $GAMES -force -sgffile $NEWPATH/games"
+echo "@twogtp@ -black \"$PROGRAM1\" -white \"$PROGRAM2\" -referee \"$REFEREE\" -auto -alternate -komi 7.5 -size $SIZE $GAMETIME -games $GAMES -maxmoves 1000 -force -sgffile $NEWPATH/games"

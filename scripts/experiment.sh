@@ -32,7 +32,7 @@ OPTIONS=$@
 
 $SCRIPTDIR/multi-run.sh $TRAINPLAYER $PATHSTEM $SETTING "$VALUES" $GAMES seqplay.sh $OPTIONS
 $SCRIPTDIR/generate-players.sh $TESTPLAYER $PATHSTEM $SETTING "$VALUES"
-$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM 9 0 2 100000 1
+$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM 9 0 2 100000 submit-seq.sh 1
 $SCRIPTDIR/analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
 $SCRIPTDIR/plot-tournament.sh $PATHSTEM $SETTING "$VALUES" "$TITLE"
 $SCRIPTDIR/plot-tournament2.sh $PATHSTEM $SETTING "$VALUES" "$TITLE"
