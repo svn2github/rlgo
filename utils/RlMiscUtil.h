@@ -23,7 +23,7 @@ typedef SgStatistics<RlFloat, int> RlStat;
 // Maximum number of moves on any board size
 #define RL_MAX_MOVES SG_PASS+1
 // Maximum time-step in any game before an automatic draw is declared
-#define RL_MAX_TIME 202
+#define RL_MAX_TIME 1002
 
 //----------------------------------------------------------------------------
 
