@@ -165,6 +165,7 @@ private:
     SgTimeSearchControl m_timeControl;
     RlIterSearchControl m_iterControl;
     GoTimeControl m_timeManager;
+    const SgTimeRecord* m_timeRecord;
 };
 
 //----------------------------------------------------------------------------

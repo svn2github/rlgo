@@ -37,6 +37,9 @@ RlSetup::RlSetup(GoBoard& board, RlRealAgent* agent)
     m_debugLevel(VOCAL),
     m_verification(false),
     m_mainAgent(agent),
+    m_simAgent(0),
+    m_game(0),
+    m_timeRecord(true, 10),
     m_pointIndex(0)
 {
     s_mainSetup = this;

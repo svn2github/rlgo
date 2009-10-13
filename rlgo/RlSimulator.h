@@ -133,6 +133,9 @@ private:
     
     /** Simple time controller to determine how many simulations to perform */
     GoTimeControl m_timeControl;
+    
+    /** Pointer to current time record, or 0 if pondering */
+    SgTimeRecord* m_timeRecord;
         
     /** When to truncate simulated games (-1 = never) */
     int m_truncate;

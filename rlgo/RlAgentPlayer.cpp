@@ -28,7 +28,12 @@ SgMove RlAgentPlayer::GenMove(const SgTimeRecord& time, SgBlackWhite toPlay)
     SG_UNUSED(time);
     SG_UNUSED(toPlay);
     
+    // @todo: allow non-alternating play: may be consequences in learning rules
+    if (toPlay != m_agent->Board().ToPlay())
+        throw SgException("RLGO requires alternating play"); 
+    
     // Select move and update the agent accordingly
+    RlSetup::Get()->SetTimeRecord(time);
     return m_agent->SelectMove();
 }
 

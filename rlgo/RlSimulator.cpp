@@ -81,6 +81,7 @@ void RlSimulator::LoadSettings(istream& settings)
         {
             RlFloat remain, finalspace, fastfactor;
             int fastopen;
+            settings >> RlSetting<int>("MinGames", m_minGames);
             settings >> RlSetting<int>("FastOpen", fastopen);
             settings >> RlSetting<RlFloat>("FastFactor", fastfactor);
             settings >> RlSetting<RlFloat>("RemainingConstant", remain);
@@ -189,7 +190,7 @@ void RlSimulator::SimulateMaxTime()
 
     for (m_numGames = 0; m_elapsedTime.GetTime() < m_searchTime; ++m_numGames)
     {
-        if (Unsafe())
+        if (Unsafe() && m_numGames > m_minGames)
             break;
         SelfPlayGame();
     }
@@ -197,17 +198,15 @@ void RlSimulator::SimulateMaxTime()
 
 void RlSimulator::SimulateControlTime()
 {
-    SgTimeRecord timerecord = RlSetup::Get()->GetGame()->Time();
-
     if (m_minSimAfterPass && m_board.GetLastMove() == SG_PASS)
         m_searchTime = m_minTime;
     else
-        m_searchTime = m_timeControl.TimeForCurrentMove(timerecord)
-            * m_fraction;
+        m_searchTime = m_timeControl.TimeForCurrentMove(
+            RlSetup::Get()->GetTimeRecord()) * m_fraction;
 
     for (m_numGames = 0; m_elapsedTime.GetTime() < m_searchTime; ++m_numGames)
     {
-        if (Unsafe())
+        if (Unsafe() && m_numGames > m_minGames)
             break;
         SelfPlayGame();
     }
@@ -224,8 +223,7 @@ void RlSimulator::StartClock()
 {
     m_lastTime = 0;
     m_elapsedTime.Start();
-    SgTimeRecord timerecord = RlSetup::Get()->GetGame()->Time();
-    m_timeLeft = timerecord.TimeLeft(m_board.ToPlay());
+    m_timeLeft = RlSetup::Get()->GetTimeRecord().TimeLeft(m_board.ToPlay());
 }
 
 void RlSimulator::ClearStats()

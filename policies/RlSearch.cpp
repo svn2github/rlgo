@@ -491,7 +491,6 @@ void RlMainSearch::Initialise()
 
 int RlMainSearch::RunSearch(SgVector<SgMove>* pv, SgNode* node)
 {
-    SgTimeRecord timerecord = RlSetup::Get()->GetGame()->Time();
     switch (m_controlMode)
     {
         case eMaxTime:
@@ -504,7 +503,7 @@ int RlMainSearch::RunSearch(SgVector<SgMove>* pv, SgNode* node)
         case eControlTime:
         {
             RlFloat searchtime = 
-                m_timeManager.TimeForCurrentMove(timerecord)
+                m_timeManager.TimeForCurrentMove(RlSetup::Get()->GetTimeRecord())
                 * m_fraction; // proportion of time to spend on search
             SetSearchControl(&m_timeControl);
             m_timeControl.SetMaxTime(searchtime);
@@ -514,7 +513,7 @@ int RlMainSearch::RunSearch(SgVector<SgMove>* pv, SgNode* node)
         case eControlIter:
         {
             RlFloat searchtime = 
-                m_timeManager.TimeForCurrentMove(timerecord)
+                m_timeManager.TimeForCurrentMove(RlSetup::Get()->GetTimeRecord())
                 * m_fraction; // proportion of time to spend on search
             SetSearchControl(&m_iterControl);
             m_iterControl.SetMinDepth(m_minDepth);
@@ -561,8 +560,7 @@ void RlMainSearch::GenerateAll(SgVector<SgMove>& moves)
 
 int RlMainSearch::GetDepth() const
 {
-    SgTimeRecord timerecord = RlSetup::Get()->GetGame()->Time();
-    RlFloat timeleft = timerecord.TimeLeft(Board().ToPlay());
+    RlFloat timeleft = RlSetup::Get()->GetTimeRecord().TimeLeft(Board().ToPlay());
 
     int depth = m_maxDepth;
     if (m_safetyTime != 0 && timeleft < m_safetyTime)

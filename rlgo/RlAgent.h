@@ -86,6 +86,7 @@ public:
     
     /** Accessor functions */
     //@todo: improve encapsulation
+    GoBoard& Board() { return m_board; }
     RlBinaryFeatures* GetFeatureSet() const { return m_featureSet;}
     RlWeightSet* GetWeightSet() const { return m_weightSet;}
     RlPolicy* GetPolicy() { return m_policy; } //@todo: const

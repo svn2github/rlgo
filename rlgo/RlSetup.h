@@ -9,6 +9,7 @@
 
 #include "RlFactory.h"
 #include "SgDebug.h"
+#include "SgTimeRecord.h"
 #include <boost/filesystem/path.hpp>
 #include <fstream>
 #include <vector>
@@ -61,6 +62,9 @@ public:
     
     void SetGame(GoGame* game) { m_game = game; }
     GoGame* GetGame() const { return m_game; }
+    
+    const SgTimeRecord& GetTimeRecord() { return m_timeRecord; }
+    void SetTimeRecord(const SgTimeRecord& timerecord) { m_timeRecord = timerecord; }
     
     RlSimulator* GetSelfPlay() { return m_selfPlay; }
     void SetSelfPlay(RlSimulator* selfplay) { m_selfPlay = selfplay; }
@@ -148,9 +152,12 @@ private:
     /** Agent used by player to execute simulations (may be NULL) */
     RlSimAgent* m_simAgent;
         
-    /** The main game record */
+    /** The main game record @TODO: remove this altogether */
     GoGame* m_game;
-        
+    
+    /** The current time record (set during GenMove) */
+    SgTimeRecord m_timeRecord;
+    
     /** Convert source weight file into target weight file */
     std::string m_convertSource, m_convertTarget;
     
