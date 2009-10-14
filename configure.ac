@@ -5,7 +5,9 @@ AC_PREREQ([2.59])
 AC_CONFIG_SRCDIR([rlgo/RlAgent.cpp])
 AM_CONFIG_HEADER([utils/RlConfig.h])
 AC_CONFIG_FILES([Makefile utils/Makefile rlgo/Makefile policies/Makefile features/Makefile learning/Makefile rlgomain/Makefile unittest/Makefile input/Makefile scripts/Makefile settings/Makefile])
-AC_CONFIG_FILES([scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh], [chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh])
+AC_CONFIG_FILES([scripts/getprogram.sh], [chmod +x scripts/getprogram.sh])
+AC_CONFIG_FILES([scripts/match.sh], [chmod +x scripts/match.sh])
+AC_CONFIG_FILES([scripts/analyze-match.sh], [chmod +x scripts/analyze-match.sh])
 AM_INIT_AUTOMAKE([rlgo], [2.5])
 AM_MAINTAINER_MODE
 AC_PROG_CXX
