@@ -8,6 +8,7 @@ RLGO README
   4. Running RLGO
   5. Settings files
   6. Running scripts
+  7. Additional information
 
 
 2. Overview
@@ -20,7 +21,7 @@ It is built on top of the Fuego Computer Go library.
 
 RLGO requires the following packages in order to build:
 
-a) Boost (version 1.33.1 or higher) must be installed.
+a) Boost C++ libraries (version 1.33.1 or higher) must be installed.
 b) Fuego 0.4 must be downloaded and built.
 
 In addition, RLGO requires the following packages to run experiment scripts:
@@ -28,8 +29,10 @@ In addition, RLGO requires the following packages to run experiment scripts:
 c) GoGui must be installed.
 d) GnuGo must be installed.
 e) BayesElo must be installed.
+f) GnuPlot must be installed.
 
 See the INSTALL file for further installation issues.
+
 
 4. Running RLGO
 
@@ -123,3 +126,9 @@ analyze.sh ../output/alpha LearningRule "TD0 TDLamda LambdaReturn" 1600
 
 scripts/multi-run.sh tdlearn output/alpha Alpha "0.1 0.05 0.02 0.01" 9 0 1000 submit-para.sh -MaxGames 100000
 # Run four training runs of 100000 games in parallel, using RLGO and tdlearn.set, using four different values for the step-size. The output will be placed into the output/alpha directory.
+
+
+7. Additional Information
+
+Further information about the concepts used in RLGO can be found in CONCEPTS
+Pseudocode and experimental results can be found in David Silver's Ph.D. thesis
