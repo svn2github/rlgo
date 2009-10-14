@@ -564,7 +564,12 @@ int RlMainSearch::GetDepth() const
 
     int depth = m_maxDepth;
     if (m_safetyTime != 0 && timeleft < m_safetyTime)
+    {
+        RlDebug(RlSetup::QUIET) 
+            << "Inside safety time, searching to minimum depth " 
+            << m_minDepth << "\n";
         depth = m_minDepth; 
+    }
     SG_ASSERT(depth);
     return depth;
 }

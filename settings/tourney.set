@@ -20,8 +20,8 @@ Object = RlOverride
 
 Object = RlInclude
 {
-    ID = HybridInclude
-    Include = hybrid.set
+    ID = Dyna2Include
+    Include = dyna2.set
 }
 
 Object = RlSimulator
@@ -63,7 +63,7 @@ Object = RlMainSearch
     Killers = 1
     OpponentBest = 1
     NullMoveDepth = 2
-    MinDepth = 5
+    MinDepth = 1 #@LOCAL
     MaxDepth = 20
     Trace = 0
     Log = 1
@@ -78,7 +78,7 @@ Object = RlMainSearch
     FinalSpace = 1.0
     Fraction = 1.0
     BranchPower = 0.25
-    SafetyTime = 20
+    SafetyTime = 8
     Shared = NULL #@LOCAL shared-memory.mem
 }
 
