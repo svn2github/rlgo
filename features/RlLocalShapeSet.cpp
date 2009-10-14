@@ -107,27 +107,26 @@ void RlLocalShapeSet::AddShapes(int xsize, int ysize, int sharetypes)
         
     if (sharetypes & (1 << eNone))
         AddShares(new RlLocalShapeShare(
-            m_board, shapes, false), xsize, ysize);
+            m_board, shapes, false));
     if (sharetypes & (1 << eNLI))
         AddShares(new RlLIFeatureShare(
-            m_board, shapes, false), xsize, ysize);
+            m_board, shapes, false));
     if (sharetypes & (1 << eNLD))
         AddShares(new RlLDFeatureShare(
-            m_board, shapes, false), xsize, ysize);
+            m_board, shapes, false));
     if (sharetypes & (1 << eLI))
         AddShares(new RlLIFeatureShare(
-            m_board, shapes, true), xsize, ysize);
+            m_board, shapes, true));
     if (sharetypes & (1 << eLD))
         AddShares(new RlLDFeatureShare(
-            m_board, shapes, true), xsize, ysize);
+            m_board, shapes, true));
     if (sharetypes & (1 << eCI))
         AddShares(new RlCIFeatureShare(
-            m_board, shapes), xsize, ysize);
+            m_board, shapes));
     //@todo: this is currently a memory leak, although harmless for now
 }
 
-void RlLocalShapeSet::AddShares(RlLocalShapeShare* shares,
-    int xsize, int ysize)
+void RlLocalShapeSet::AddShares(RlLocalShapeShare* shares)
 {
     AddFeatureSet(shares);
     shares->IgnoreEmpty(m_ignoreEmpty);

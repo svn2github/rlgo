@@ -50,7 +50,7 @@ public:
 protected:
 
     int GetShareType(const std::vector<std::string>& types);
-    void AddShares(RlLocalShapeShare* shares, int xsize, int ysize);
+    void AddShares(RlLocalShapeShare* shares);
         
 private:
 
