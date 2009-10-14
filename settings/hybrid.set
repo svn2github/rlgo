@@ -25,7 +25,6 @@ Object = RlMainSearch
     Evaluator = Evaluator
     OnPolicy = 1
     Version = 5
-    SearchAgent = MainAgent
     HashSize = 4194304 # 16Mb hash-table
     Iterative = 1
     Killers = 1

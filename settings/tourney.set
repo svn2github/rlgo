@@ -1,7 +1,6 @@
 #-----------------------------------------------------------------------------
 # Best settings to run RLGO in competitive play
 # Uses pondering, time controls, and alpha-beta search
-# @TODO: GTP time controls must be supplied, otherwise it plays instantly
 #-----------------------------------------------------------------------------
 
 Object = RlOverride
@@ -47,23 +46,22 @@ Object = RlSimulator
     FastReset = 1
     Log = 0
     Record = 0
-    Pondering = 0 #@LOCAL
+    Pondering = 1
 }
 
 Object = RlMainSearch
 {
     ID = TourneySearch
     Version = 1
-    Evaluator = Evaluator
+    Evaluator = Evaluator # NB Not SimEvaluator, which uses differences
     OnPolicy = 1
     Version = 5
-    SearchAgent = MainAgent
     HashSize = 4194304 # 16Mb hash-table
     Iterative = 1
     Killers = 1
     OpponentBest = 1
     NullMoveDepth = 2
-    MinDepth = 1 #@LOCAL
+    MinDepth = 5
     MaxDepth = 20
     Trace = 0
     Log = 1
@@ -79,7 +77,6 @@ Object = RlMainSearch
     Fraction = 1.0
     BranchPower = 0.25
     SafetyTime = 8
-    Shared = NULL #@LOCAL shared-memory.mem
 }
 
 ### SIMULATION POLICY ###
