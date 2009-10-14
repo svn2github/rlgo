@@ -76,19 +76,12 @@ void RlLocalShapeTracker::Reset()
             }
         }
         
-        //@@@todo: why doesn't move history work?
-        //for (int i = 0; i < m_board.MoveNumber(); ++i)
-        //{
-        //    SgPoint stone = m_board.Move(i).Point();
-        //    SgBlackWhite colour = m_board.Move(i).Color();
-
-        // Update index once for each move
-        for (GoBoard::Iterator i_board(m_board); i_board; ++i_board)        
+        // Update once for each move in history
+        for (int i = 0; i < m_board.MoveNumber(); ++i)
         {
-            SgPoint stone = *i_board;
-            SgBlackWhite colour = m_board.GetColor(stone);
-            if (colour == SG_EMPTY)
-                continue;
+            SgPoint stone = m_board.Move(i).Point();
+            SgBlackWhite colour = m_board.Move(i).Color();
+
             int c = ColourIndex(colour);
             vector<LocalMove>& localmoves = m_localMoves[c][stone];
             for (vector<LocalMove>::iterator i_local = localmoves.begin(); 

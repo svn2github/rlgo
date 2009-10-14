@@ -212,6 +212,26 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
     BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 16);
+
+    // Check fast reset
+    bd.Init(5);
+    Reset(tracker, shapes);
+    Play(Pt(3, 3), SG_BLACK, bd, tracker, shapes);
+    Play(Pt(2, 3), SG_WHITE, bd, tracker, shapes);
+    Play(Pt(2, 2), SG_BLACK, bd, tracker, shapes);
+    Play(Pt(3, 4), SG_WHITE, bd, tracker, shapes);
+    Play(Pt(4, 2), SG_BLACK, bd, tracker, shapes);
+    Play(Pt(4, 3), SG_WHITE, bd, tracker, shapes);
+    Play(Pt(5, 2), SG_BLACK, bd, tracker, shapes);
+    tracker.SetMark();
+    Reset(tracker, shapes); // fast reset using mark
+
+    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f1), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f2), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
+    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 16);
 }
 
 } // namespace
