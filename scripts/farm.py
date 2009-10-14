@@ -15,9 +15,9 @@ def farm(numprocesses, scriptdir, master, slave):
     for i in xrange(numprocesses):
         ismaster = (i == 0)
         if ismaster:
-            cmdline = "%s -Process %d -RandomSeed %d" % (master, i, i)
+            cmdline = "%s -ShareName ipc.mem -Process %d -RandomSeed %d" % (master, i, i)
         else:
-            cmdline = "%s -Process %d -RandomSeed %d" % (slave, i, i)
+            cmdline = "%s -ShareName ipc.mem -Process %d -RandomSeed %d" % (slave, i, i)
         debugname = "RLGO.%d" % i
         player = gtp.GtpConnection(cmdline, debugname)
         players.append(player)

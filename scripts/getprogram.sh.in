@@ -63,13 +63,13 @@ case "$NAME" in
     tfarm ) # Run multi-process version of RLGO with tournament settings
         RLGOCMD=`$SCRIPTDIR/getprogram.sh tourney $OPTIONS`
         MASTER="$RLGOCMD -MainAgent.Policy TourneySearch"
-        SLAVE="$RLGOCMD"
+        SLAVE="$RLGOCMD -MainAgent.Policy Greedy" # Will ponder during master search
         echo "python $SCRIPTDIR/farm.py $NUMPROCESSES \"$MASTER\" \"$SLAVE\""
         exit 0 
         ;;
 esac
 
-SETTINGS="$RLGODIR/settings/$NAME-settings.set"
+SETTINGS="$RLGODIR/settings/$NAME.set"
 if [ -e $SETTINGS ]
 then
     echo $RLGO -settings $NAME $OPTIONS
