@@ -21,8 +21,6 @@ Object = RlSetup
     MainAgent = MainAgent
     SimAgent = NULL
     BookFile = NULL
-    ConvertSource = NULL
-    ConvertTarget = NULL
     NumGtp = 0
 }
 

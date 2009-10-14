@@ -53,8 +53,6 @@ public:
     void SetDebugLevel(int level) { m_debugLevel = level; }
     bool GetVerification() const { return m_verification; }
     
-    bool GetConvert(bfs::path& source, bfs::path& target) const;
-    
     RlRealAgent* GetMainAgent() { return m_mainAgent; }
     RlSimAgent* GetSimAgent() { return m_simAgent; }
     void SetMainAgent(RlRealAgent* agent) { m_mainAgent = agent; }
@@ -157,9 +155,6 @@ private:
     
     /** The current time record (set during GenMove) */
     SgTimeRecord m_timeRecord;
-    
-    /** Convert source weight file into target weight file */
-    std::string m_convertSource, m_convertTarget;
     
     /** Any GTP commands used during setup (e.g. time controls) */
     std::vector<std::string> m_gtpCommands;

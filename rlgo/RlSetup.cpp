@@ -71,8 +71,6 @@ void RlSetup::LoadSettings(std::istream& settings)
     settings >> RlSetting<RlRealAgent*>("MainAgent", m_mainAgent);
     settings >> RlSetting<RlSimAgent*>("SimAgent", m_simAgent);
     settings >> RlSetting<string>("BookFile", bookfile);
-    settings >> RlSetting<string>("ConvertSource", m_convertSource);
-    settings >> RlSetting<string>("ConvertTarget", m_convertTarget);
     
     settings >> RlSetting<int>("NumGtp", numgtp);    
     for (int i = 0; i < numgtp; ++i)
@@ -128,18 +126,6 @@ void RlSetup::Initialise()
     if (!m_bookFile.empty() && m_bookFile != "NULL")
         m_gtpCommands.push_back(string("book_load ") 
             + (m_mainPath / m_inputPath / m_bookFile).native_file_string());
-}
-
-bool RlSetup::GetConvert(bfs::path& source, bfs::path& target) const
-{
-    if (m_convertSource.empty() || m_convertSource == "NULL" || 
-        m_convertTarget.empty() || m_convertTarget == "NULL")
-        return false;
-
-    source = m_convertSource;
-    target = m_convertTarget;
-    
-    return true;
 }
 
 void ReplaceAll(string& source, 
