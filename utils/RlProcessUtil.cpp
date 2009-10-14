@@ -35,10 +35,10 @@ RlSharedMemory::RlSharedMemory(
         throw SgException("Shared file " + filename + " doesn't exist");
     m_id = shmget(key, bytes, 0644 | IPC_CREAT);
     if (m_id == -1)
-        Error();
+        Error("shmget");
     m_data = (char*) shmat(m_id, 0, 0);
     if (m_data == (char*) -1)
-        Error();
+        Error("shmat");
 }
 
 RlSharedMemory::~RlSharedMemory()
@@ -50,25 +50,31 @@ RlSharedMemory::~RlSharedMemory()
     shmctl(m_id, IPC_RMID, 0);
 }
 
-void RlSharedMemory::Error()
+void RlSharedMemory::Error(const string& funcname)
 {
     // Note: must ensure that system allows large shared memory segments
     // On Mac OS X, specify in /etc/rc: sysctl -w kern.sysv.shmmax=blah
     switch(errno)
     {
     case EACCES:
-        throw SgException("Don't have permission for existing shared memory");
+        throw SgException("Don't have permission for existing shared memory ["
+            + funcname + "]");
     case ENOSPC:
-        throw SgException("Too many shared memory identifiers");
+        throw SgException("Too many shared memory identifiers ["
+            + funcname + "]");
     case ENOMEM:
-        throw SgException("Not enough memory for shared memory object");
+        throw SgException("Not enough memory for shared memory object ["
+            + funcname + "]");
     case EINVAL:
-        throw SgException("Invalid shared memory arg (size exceeds shmmax?)");
+        throw SgException("Invalid shared memory arg (size exceeds shmmax?) ["
+            + funcname + "]");
     case EEXIST:
     case ENOENT:
-        throw SgException("This error should not occur");
+        throw SgException("This error should not occur ["
+            + funcname + "]");
     default:
-        throw SgException("Failed to share memory: unknown error");
+        throw SgException("Failed to share memory: unknown error ["
+            + funcname + "]");
     }
 }
 

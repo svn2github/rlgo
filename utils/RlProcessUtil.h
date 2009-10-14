@@ -23,7 +23,7 @@ public:
     
     char* GetData() { return m_data; }
 
-    void Error();
+    void Error(const std::string& funcname);
     
 private:
 
