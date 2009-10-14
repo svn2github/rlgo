@@ -24,7 +24,6 @@ librlgo_utils_a_CPPFLAGS = \
 $(BOOST_CPPFLAGS) \
 -I@fuego_dir@ \
 -I@fuego_dir@/smartgame \
--I@fuego_dir@/go \
--I@top_srcdir@
+-I@fuego_dir@/go
 
 DISTCLEANFILES = *~

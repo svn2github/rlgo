@@ -51,7 +51,6 @@ $(BOOST_CPPFLAGS) \
 -I@fuego_dir@/smartgame \
 -I@fuego_dir@/go \
 -I@fuego_dir@/gouct \
--I@top_srcdir@/utils \
--I@top_srcdir@
+-I@top_srcdir@/utils
 
 DISTCLEANFILES = *~

@@ -1745,7 +1745,11 @@ ac_config_headers="$ac_config_headers utils/RlConfig.h"
 
 ac_config_files="$ac_config_files Makefile utils/Makefile rlgo/Makefile policies/Makefile features/Makefile learning/Makefile rlgomain/Makefile unittest/Makefile input/Makefile scripts/Makefile settings/Makefile"
 
-ac_config_files="$ac_config_files scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh"
+ac_config_files="$ac_config_files scripts/getprogram.sh"
+
+ac_config_files="$ac_config_files scripts/match.sh"
+
+ac_config_files="$ac_config_files scripts/analyze-match.sh"
 
 am__api_version='1.10'
 
@@ -7358,9 +7362,9 @@ echo "$as_me: executing $ac_file commands" >&6;}
 
 
   case $ac_file$ac_mode in
-    "scripts/getprogram.sh":F) chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh ;;
-    "scripts/match.sh":F) chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh ;;
-    "scripts/analyze-match.sh":F) chmod +x scripts/getprogram.sh scripts/match.sh scripts/analyze-match.sh ;;
+    "scripts/getprogram.sh":F) chmod +x scripts/getprogram.sh ;;
+    "scripts/match.sh":F) chmod +x scripts/match.sh ;;
+    "scripts/analyze-match.sh":F) chmod +x scripts/analyze-match.sh ;;
     "depfiles":C) test x"$AMDEP_TRUE" != x"" || for mf in $CONFIG_FILES; do
   # Strip MF so we end up with the name of the file.
   mf=`echo "$mf" | sed -e 's/:.*$//'`

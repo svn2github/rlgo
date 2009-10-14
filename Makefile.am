@@ -18,3 +18,6 @@ unittest \
 input \
 scripts \
 settings
+
+EXTRA_DIST = \
+CONCEPTS

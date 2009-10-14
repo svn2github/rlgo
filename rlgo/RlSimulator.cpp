@@ -18,7 +18,6 @@
 #include "RlLearningRule.h"
 #include "RlPolicy.h"
 #include "RlSetup.h"
-#include "RlTrainer.h"
 #include "RlFuegoPlayout.h"
 #include "RlUtils.h"
 

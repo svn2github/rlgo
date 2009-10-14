@@ -153,7 +153,14 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 twogtp = @twogtp@
 EXTRA_DIST = \
-LocalShapes-3x3.w
+LocalShapes-3x3.w \
+shared-memory.mem \
+shared-memory.sem
+
+DISTCLEANFILES = \
+*~ \
+input/shares \
+Successors-*.dat
 
 all: all-am
 
@@ -244,6 +251,7 @@ clean-generic:
 
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
+	-test -z "$(DISTCLEANFILES)" || rm -f $(DISTCLEANFILES)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"

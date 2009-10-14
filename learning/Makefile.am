@@ -14,7 +14,6 @@ $(BOOST_CPPFLAGS) \
 -I@fuego_dir@/smartgame \
 -I@fuego_dir@/go \
 -I@top_srcdir@/utils \
--I@top_srcdir@/rlgo \
--I@top_srcdir@
+-I@top_srcdir@/rlgo
 
 DISTCLEANFILES = *~

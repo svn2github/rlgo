@@ -18,22 +18,22 @@ rlgo_unittest_LDADD = \
 @fuego_dir@/smartgame/libfuego_smartgame.a \
 @fuego_dir@/go/libfuego_go.a \
 @fuego_dir@/gouct/libfuego_gouct.a \
-@top_srcdir@/utils/librlgo_utils.a \
-@top_srcdir@/rlgo/librlgo_rlgo.a \
-@top_srcdir@/policies/librlgo_policies.a \
-@top_srcdir@/learning/librlgo_learning.a \
-@top_srcdir@/features/librlgo_features.a \
+@top_builddir@/utils/librlgo_utils.a \
+@top_builddir@/rlgo/librlgo_rlgo.a \
+@top_builddir@/policies/librlgo_policies.a \
+@top_builddir@/learning/librlgo_learning.a \
+@top_builddir@/features/librlgo_features.a \
 $(BOOST_FILESYSTEM_LIB) \
 $(BOOST_SYSTEM_LIB) \
 $(BOOST_THREAD_LIB) \
 $(BOOST_UNIT_TEST_FRAMEWORK_LIB)
 
 rlgo_unittest_DEPENDENCIES = \
-@top_srcdir@/utils/librlgo_utils.a \
-@top_srcdir@/rlgo/librlgo_rlgo.a \
-@top_srcdir@/policies/librlgo_policies.a \
-@top_srcdir@/learning/librlgo_learning.a \
-@top_srcdir@/features/librlgo_features.a
+@top_builddir@/utils/librlgo_utils.a \
+@top_builddir@/rlgo/librlgo_rlgo.a \
+@top_builddir@/policies/librlgo_policies.a \
+@top_builddir@/learning/librlgo_learning.a \
+@top_builddir@/features/librlgo_features.a
 
 rlgo_unittest_CPPFLAGS = \
 -DDATADIR='"@datadir@"' \
@@ -47,7 +47,6 @@ $(BOOST_CPPFLAGS) \
 -I@top_srcdir@/rlgo \
 -I@top_srcdir@/policies \
 -I@top_srcdir@/learning \
--I@top_srcdir@/features \
--I@top_srcdir@
+-I@top_srcdir@/features
 
 DISTCLEANFILES = *~
