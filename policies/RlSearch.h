@@ -1,6 +1,6 @@
 //----------------------------------------------------------------------------
 /** @file RlSearch.h
-    Full width alpha-beta search using agent evaluation
+    Full width alpha-beta search using RLGO evaluation
 */
 //----------------------------------------------------------------------------
 
@@ -13,12 +13,8 @@
 #include "SgVector.h"
 #include "RlPolicy.h"
 
-class RlAgent;
 class RlLog;
-class RlSharedMemory;
 class RlTrace;
-
-// @todo: remove agent from search class
 
 //----------------------------------------------------------------------------
 /** Search control that estimates remaining search time at each iteration */
@@ -51,7 +47,7 @@ class RlSearch : public GoSearch, public RlPolicy
 {
 public:
 
-    RlSearch(GoBoard& board, RlEvaluator* evaluator = 0, RlAgent* agent = 0);
+    RlSearch(GoBoard& board, RlEvaluator* evaluator = 0);
     ~RlSearch();
 
     /** GoSearch virtuals */
@@ -69,8 +65,6 @@ public:
 
     /** Accessors */
     virtual int GetDepth() const { return m_maxDepth; }
-    RlAgent* GetAgent() { return m_agent; }
-    const SgMove* GetVariation() const { return m_variation; }
 
 protected:
 
@@ -95,14 +89,11 @@ protected:
     bool m_log;
     bool m_useProbCut;
     RlFloat m_searchValue;
-    SgMove* m_variation;
     
 private:
 
     int m_hashSize;
     SgSearchHashTable* m_hashTable;
-
-    RlAgent* m_agent;
 
     std::string m_probCutFile;
     std::auto_ptr<RlLog> m_searchLog;
@@ -119,16 +110,10 @@ public:
 
     DECLARE_OBJECT(RlMainSearch);
 
-    RlMainSearch(GoBoard& board, RlEvaluator* evaluator = 0, 
-        RlAgent* agent = 0);
-
-    ~RlMainSearch();
+    RlMainSearch(GoBoard& board, RlEvaluator* evaluator = 0);
 
     /** AutoObject virtuals */
     virtual void LoadSettings(std::istream& settings);
-
-    /** Initialise after loading */
-    virtual void Initialise();
 
     /** Generate all legal moves in main search */
     virtual void Generate(SgVector<SgMove>* moves, int depth);
@@ -159,9 +144,6 @@ private:
     RlFloat m_branchPower;
     RlFloat m_safetyTime;
         
-    std::string m_sharedMemoryId;
-    RlSharedMemory* m_sharedMemory;
-
     SgTimeSearchControl m_timeControl;
     RlIterSearchControl m_iterControl;
     GoTimeControl m_timeManager;

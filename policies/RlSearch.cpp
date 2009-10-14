@@ -10,7 +10,6 @@
 #include "GoBoardUtil.h"
 #include "GoGame.h"
 #include "GoTimeControl.h"
-#include "RlAgent.h"
 #include "RlEvaluator.h"
 #include "RlMoveFilter.h"
 #include "RlProcessUtil.h"
@@ -38,7 +37,7 @@ const int MAX_EVAL = 30000; // SgSearch uses signed 16-bit values in hashtable
 
 //----------------------------------------------------------------------------
 
-RlSearch::RlSearch(GoBoard& board, RlEvaluator* evaluator, RlAgent* agent)
+RlSearch::RlSearch(GoBoard& board, RlEvaluator* evaluator)
 :   GoSearch(board, 0),
     RlPolicy(board, evaluator),
     m_minDepth(0),
@@ -48,9 +47,7 @@ RlSearch::RlSearch(GoBoard& board, RlEvaluator* evaluator, RlAgent* agent)
     m_log(true),
     m_useProbCut(false),
     m_searchValue(0),
-    m_variation(0),
-    m_hashTable(0),
-    m_agent(agent)
+    m_hashTable(0)
 {
     SetKillers(true);
     SetOpponentBest(true);
@@ -70,7 +67,6 @@ void RlSearch::LoadSettings(istream& settings)
     int version, abortfreq, nullmovedepth;
     bool killers, opponentbest;
     settings >> RlVersion(version, 5, 5);
-    settings >> RlSetting<RlAgent*>("SearchAgent", m_agent);
     settings >> RlSetting<int>("HashSize", m_hashSize);
     settings >> RlSetting<bool>("Iterative", m_iterative);
     settings >> RlSetting<bool>("Killers", killers);
@@ -151,7 +147,6 @@ int RlSearch::SearchToDepth(int depth, SgVector<SgMove>* pv, SgNode* tracenode)
         StepLog(depth, value, pv);
     }
 
-    ClearVariation(); // In case search was aborted
     m_searchValue = UnscaleEval(value);
     return value;
 }
@@ -173,8 +168,6 @@ bool RlSearch::Execute(SgMove move, int* delta, int depth)
         return false;
     m_evaluator->Execute(move, toplay, false);
 
-    if (m_variation)
-        m_variation[CurrentDepth()] = move;
     return true;
 }
 
@@ -182,8 +175,6 @@ void RlSearch::TakeBack()
 {
     GoSearch::TakeBack();
     m_evaluator->Undo(false);
-    if (m_variation)
-        m_variation[CurrentDepth() - 1] = SG_NULLMOVE;
     // NB current depth only decremented by SgSearch after this call completes
 }
 
@@ -400,39 +391,22 @@ bool RlSearch::SearchValue(RlFloat& value) const
     return true;
 }
 
-void RlSearch::ClearVariation()
-{
-    for (int i = 0; i < RL_MAX_TIME; ++i)
-        m_variation[i] = SG_NULLMOVE;
-}
-
 //----------------------------------------------------------------------------
 
 IMPLEMENT_OBJECT(RlMainSearch);
 
-RlMainSearch::RlMainSearch(GoBoard& board, RlEvaluator* evaluator, 
-    RlAgent* agent)
-:   RlSearch(board, evaluator, agent),
+RlMainSearch::RlMainSearch(GoBoard& board, RlEvaluator* evaluator)
+:   RlSearch(board, evaluator),
     m_controlMode(eNone),
     m_maxBreadth(0),
     m_maxTime(0),
     m_fraction(1.0),
     m_branchPower(0.5f),
-    m_sharedMemoryId("NULL"),
-    m_sharedMemory(0),
     m_timeControl(m_maxTime),
     m_iterControl(Board(), m_minDepth, 
         m_maxTime, m_maxTime * 2, m_branchPower),
     m_timeManager(Board())
 {
-}
-
-RlMainSearch::~RlMainSearch()
-{
-    if (m_sharedMemory)
-        delete m_sharedMemory;
-    else
-        delete m_variation;
 }
 
 void RlMainSearch::LoadSettings(istream& settings)
@@ -469,24 +443,6 @@ void RlMainSearch::LoadSettings(istream& settings)
         }
     }
     settings >> RlSetting<RlFloat>("SafetyTime", m_safetyTime);
-    settings >> RlSetting<string>("Shared", m_sharedMemoryId);
-}
-
-void RlMainSearch::Initialise()
-{
-    RlSearch::Initialise();
-    if (m_sharedMemoryId != "NULL")
-    {
-        int bytes = RL_MAX_TIME * sizeof(SgMove);
-        bfs::path pathname = GetInputPath() / m_sharedMemoryId;
-        m_sharedMemory = new RlSharedMemory(pathname, 0, bytes);
-        m_variation = (SgMove*) m_sharedMemory->GetData();
-    }
-    else
-    {
-        m_variation = new SgMove[RL_MAX_TIME];
-    }
-    ClearVariation();
 }
 
 int RlMainSearch::RunSearch(SgVector<SgMove>* pv, SgNode* node)
