@@ -1,0 +1,139 @@
+#-----------------------------------------------------------------------------
+# Best settings to run RLGO in competitive play
+# Uses pondering, time controls, and alpha-beta search
+# @TODO: GTP time controls must be supplied, otherwise it plays instantly
+#-----------------------------------------------------------------------------
+
+Object = RlOverride
+{
+    ID = SimOverride
+    NumOverrides = 4
+    Token = MainAgent.Policy
+    Value = TourneySearch
+    Token = MainAgent.Simulator
+    Value = TourneySimulator
+    Token = SimAgent.Policy
+    Value = TwoStageMixed
+    Token = RandomSeed
+    Value = -1
+}
+
+Object = RlInclude
+{
+    ID = HybridInclude
+    Include = hybrid.set
+}
+
+Object = RlSimulator
+{
+    ID = TourneySimulator
+    Version = 12
+    Agent = SimAgent
+    ControlMode = 2 # TimeControl
+    MinGames = 100
+    FastOpen = 0
+    FastFactor = 0
+    RemainingConstant = 0.5
+    MinTime = 0.1
+    FinalSpace = 1.0
+    Fraction = 1.0
+    SafetyTime = 8
+    Truncate = 32
+    Resign = 1
+    DefaultPolicy = FuegoOnPolicy
+    FuegoPlayout = FuegoPlayout
+    MaxSimMoves = 200
+    MinSimAfterPass = 0
+    FastReset = 1
+    Log = 0
+    Record = 0
+    Pondering = 0 #@LOCAL
+}
+
+Object = RlMainSearch
+{
+    ID = TourneySearch
+    Version = 1
+    Evaluator = Evaluator
+    OnPolicy = 1
+    Version = 5
+    SearchAgent = MainAgent
+    HashSize = 4194304 # 16Mb hash-table
+    Iterative = 1
+    Killers = 1
+    OpponentBest = 1
+    NullMoveDepth = 2
+    MinDepth = 5
+    MaxDepth = 20
+    Trace = 0
+    Log = 1
+    ProbCut = 0
+    AbortFrequency = 1000
+    MaxBreadth = 0
+    ControlMode = 3 # ControlIter
+    FastOpen = 0
+    FastFactor = 0
+    RemainingConstant = 0.5
+    MinTime = 0
+    FinalSpace = 1.0
+    Fraction = 1.0
+    BranchPower = 0.25
+    SafetyTime = 20
+    Shared = NULL #@LOCAL shared-memory.mem
+}
+
+### SIMULATION POLICY ###
+
+Object = RlRandomPolicy
+{
+    ID = RandomOffPolicy
+    Version = 1
+    Evaluator = SimEvaluator
+    OnPolicy = 0
+}
+
+Object = RlEpsilonPolicy
+{
+    ID = MixedRandomOnPolicy
+    Version = 3
+    PPolicy = Random
+    NPolicy = FuegoOnPolicy
+    Epsilon = 0.4
+}
+
+Object = RlEpsilonPolicy
+{
+    ID = MixedRandomOffPolicy
+    Version = 3
+    PPolicy = RandomOffPolicy
+    NPolicy = FuegoOffPolicy
+    Epsilon = 0.4
+}
+
+Object = RlEpsilonPolicy
+{
+    ID = EpsilonMixed
+    Version = 3
+    PPolicy = MixedRandomOffPolicy
+    NPolicy = SimGreedy
+    Epsilon = 0.3
+}
+
+Object = RlFuegoPlayoutPolicy
+{
+    ID = FuegoOffPolicy
+    OnPolicy = 0
+    FuegoPlayout = FuegoPlayout
+    Incremental = 1
+}
+
+Object = RlTwoStagePolicy
+{
+    ID = TwoStageMixed
+    Version = 2
+    Policy1 = EpsilonMixed
+    Policy2 = MixedRandomOnPolicy
+    SwitchTime = 6
+}
+
+### END ###

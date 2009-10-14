@@ -1,0 +1,45 @@
+#-----------------------------------------------------------------------------
+# Hybrid search using Dyna-2 and then alpha-beta
+#-----------------------------------------------------------------------------
+
+Object = RlOverride
+{
+    ID = HybridOverride
+    NumOverrides = 2
+    Token = MainAgent.Policy
+    Value = SimpleSearch
+    Token = OutputPath
+    Value = output/hybrid
+}
+
+Object = RlInclude
+{
+    ID = IncludeDyna2
+    Include = dyna2.set
+}
+
+Object = RlMainSearch
+{
+    ID = SimpleSearch
+    Version = 1
+    Evaluator = Evaluator
+    OnPolicy = 1
+    Version = 5
+    SearchAgent = MainAgent
+    HashSize = 4194304 # 16Mb hash-table
+    Iterative = 1
+    Killers = 1
+    OpponentBest = 1
+    NullMoveDepth = 0
+    MinDepth = 1
+    MaxDepth = 5 // 5-ply full-width exhaustive search
+    Trace = 0
+    Log = 1
+    ProbCut = 0
+    AbortFrequency = 1000
+    MaxBreadth = 0
+    ControlMode = 0 # None
+    SafetyTime = 0
+    Shared = NULL
+}
+
