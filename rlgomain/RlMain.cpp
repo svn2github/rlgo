@@ -37,7 +37,7 @@ string g_config;
 bfs::path g_execFile; // Executable filename
 bfs::path g_execDir; // Executable directory
 bfs::path g_rlgoDir; // Root directory of RLGO distribution
-bfs::path g_settingsFile("dyna2.set"); // Default settings file
+bfs::path g_settingsFile("tourney.set"); // Default settings file
 
 // @} // @name
 
