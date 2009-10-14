@@ -1,0 +1,98 @@
+RLGO CONCEPT OVERVIEW
+
+RLGO is designed for fast, incremental, online reinforcement learning algorithms. It represents the state (the current Go position) by a sparse vector of binary features. It represents the value function as a logistic linear combination of these features with a set of corresponding weights. RLGO is designed to efficiently and incrementally update both the
+ features and the value function. It uses fast, incremental learning algorithms to update the weights online based on simulated games of self-play. 
+
+1. FEATURES
+
+RLGO supports a number of different sets of features. Most of these feature sets are binary, that is each feature has a binary value: 1 if the feature is present and 0 otherwise. RLGO is designed to efficiently track the status of large, sparse vectors of binary features. 
+
+1.1 Binary Feature Set
+
+Each RlBinaryFeatureSet class represents a set of features numbered sequentially from zero to numfeatures-1. Each integer is this range represents a single binary feature. The binary feature set knows the semantics of these integers (called feature indices), e.g. how to display or describe a feature index in human readable form.
+
+Note that binary features are not always strictly binary. For example when weight sharing is used (see below), there may be multiple occurrences of a single feature. Negative occurrences are also supported.
+
+Several different binary feature sets are implemented in RLGO (see the FeatureSets directory). The standard RLGO feature sets are the LocalShapeFeatures, which implement MxN rectangular shape features.
+
+1.2 ActiveSet
+
+The RlActiveSet class is a compact representation of the current feature vector. It stores the occurrences of all features with non-zero values. It provides an Iterator class to efficiently loop through all features with non-zero values. Similarly, the RlChangeList class is a compact representation of a set of changes to the feature vector, storing those features which have turned on or off in the last time-step.
+
+1.3 Tracker
+
+A tracker is responsible for incrementally updating the current feature vector for a binary feature set. There is one RlTracker class corresponding to each RlBinaryFeatureSet class. Trackers maintain both an ActiveSet (the current feature vector in compressed form) and a ChangeList (the current delta to the feature vector, in compressed form).
+
+1.4 Feature transformations
+
+Feature sets may be tranformed or combined together in a number of ways. Each of these transformations results in a new binary feature set, with its own indexing system from 0 to N-1. 
+
+1.4.1 Weight sharing
+
+A single binary feature set can be transformed into a new set by weight sharing (using an RlWeightShare class). Each RlWeightShare class defines equivalence classes over features, and a canonical example of each equivalence class. The number of features in the transformed feature set is the total number of equivalence classes.
+
+Each feature can be shared with a positive or negative sign. This allows black shapes and white shapes to share a single weight, but with opposite signs (e.g. so a black shape will have +1 occurrence and an equivalent white shape -1 occurrence). 
+
+1.4.2 Sum features
+
+Multiple feature vectors can be combined together to give a single, larger feature vector. The number of features in the combined set is the sum of the number of features in each subset.
+
+1.4.3 Product features
+
+Multiple feature vectors can also be combined together by forming their Cartesian product. This allows conjunctions of different features to be formed. The number of features in the combined set is the product of the number of features in each subset.
+
+1.5 Top-level features
+
+Feature transformations may be chained together in any way, but must ultimately be combined into a single feature set at the top-level. Only this top-level feature set is used during evaluation and learning. In the following sections, any discussion of features refers only to these top-level features.
+
+Note that every feature set requires a corresponding tracker, in order to incrementally update the feature vector. A chain or tree of transformations must have a corresponding chain or tree of trackers. The trackers propagate both the ChangeList and the ActiveSet up to a single, top-level tracker that is used during evaluation (see below).
+
+1.6 Undo
+
+Some of the trackers in RLGO (including LocalShapeFeatures) support Undo. This means that an incremental update can be efficiently removed if a move is taken back. Undo support is required during Alpha-Beta search, which means that some feature sets are not supported with alpha-beta search.
+
+2. EVALUATION
+
+RLGO is designed to efficiently and incrementally evaluate positions, based on a sparse vector of binary features. The evaluation is a linear combination of features and weights. An evaluation of 0 represents an even position, +ve favours black and -ve favours white. The RlEvaluator class is responsible for incrementally tracking the evaluation. This evaluation can be squashed into a value function in the range [0,1] by using a logistic function.
+
+RLGO stores one RlWeight object for each top-level feature. By default, this object just contains a single weight. However, additional learning data can be stored with each weight (e.g. a step-size, eligibility trace, or update count). The #defines in the RlWeight.h file define precisely what data is stored with each weight. The RlWeightSet class contains all weights.
+
+Weights can be loaded and saved to a data file. RLGO ships with one data file, LocalShapes-3x3.w, which contains the weights of all 1x1, 2x2 and 3x3 local shape features after a million training games.
+
+3. LEARNING
+
+RLGO uses incremental learning algorithms to update the feature weights.
+
+3.1 State and history
+
+The agent's internal state (active features, evaluation, best move, etc.) is stored in an RlState object. A complete history of RlState objects is remembered for the complete game, and from previous games.
+
+Learning does not take place online during the course of each game. Instead, the agent trains at the end of each game, based on the information stored in the history.
+
+3.2 Trainer
+
+After each game, an RlTrainer object is used to sweep through the agent's experience and execute a learning rule. There are forwards, backwards and random trainers, depending on how the experience should be swept through. Trainers can also replay experience from previous games (potentially much faster than re-generating new games). 
+
+A temporal difference parameter specifies which pairs of states should be learned from. For example, a temporal difference of 2 indicates that s_t should be updated from s_{t+2} at every timestep. A learning rule is executed with each such pair of states.
+
+3.3 Learning rule
+
+A learning rule updates some weights given a pair of states s and s'. RLGO supports many different learning rules (see the LearningRules directory). 
+
+Each learning rule iterates through the ActiveSet for s (i.e. the non-zero features in the source state s). The weights corresponding to each active feature are then adjusted according to some update algorithm.
+
+RLGO includes learning rules for Monte-Carlo, TD(0), TD(lambda) and the lambda-return algorithm (i.e. a forwards view implementation of TD(lambda),  which is more computationally efficient that backwards view TD(lambda)).
+
+4. POLICIES
+
+RLGO selects move according to an RlPolicy class. Several different Policy classes are implemented (see the policies directory) including Random, Greedy, Epsilon greedy, Gibbs, alpha-beta search.
+
+5. SIMULATOR
+
+The simulator is responsible for playing games of self-play. The states are stored in the agent's history. A fast, default policy can be specified to complete simulations after some number of steps. This default policy is invoked after the simulator Truncates a playout (currently after some fixed number of moves). After truncation, states are not stored in the history, and are therefore not updated by the trainer, except for the final result of the playout.
+
+6. AGENTS
+
+The top-level API to RLGO is provided by the RlAgent class. The agent contains the main objects in RLGO (feature set, weight set, trainer, simulator, etc.)
+
+RLGO can be run with a single agent, to do basic evaluation and learning with a permanent memory. It can also be run with two agents, where the second agent executes self-play games of simulated experience, and evaluates and learns with a transient memory. The RlRealAgent and RlSimAgent classes are used for real and simulated experience respectively.

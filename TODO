@@ -1,9 +1,0 @@
-Remove GoBoard from AutoObject constructor
-*Fix hard maxmove limit in RLGO
-Move RlTrace into Utils
-*make distcheck fails
-test CGOS
-*test scripts
-put delete script back in
-experience replay
-evaluate fixed policy script
