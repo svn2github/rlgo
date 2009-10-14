@@ -17,7 +17,8 @@ class RlLocalShapeTracker : public RlTracker
 {
 public:
 
-    RlLocalShapeTracker(GoBoard& board, RlLocalShapeFeatures* shapes = 0);
+    RlLocalShapeTracker(GoBoard& board, RlLocalShapeFeatures* shapes,
+        bool successorFile = true);
     ~RlLocalShapeTracker(); 
 
     /** Reset to current board position */
@@ -47,6 +48,9 @@ public:
 
     /** Local shapes support undo */
     virtual bool SupportUndo() const { return true; }
+
+    /** Delete successor file */
+    void DeleteSuccessorFile();
 
 protected:
 

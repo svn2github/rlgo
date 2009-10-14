@@ -23,9 +23,10 @@ using namespace SgPointUtil;
 //----------------------------------------------------------------------------
 
 RlLocalShapeTracker::RlLocalShapeTracker(GoBoard& board, 
-    RlLocalShapeFeatures* shapes)
+    RlLocalShapeFeatures* shapes, bool successorFile)
 :   RlTracker(board),
-    m_shapes(shapes)
+    m_shapes(shapes),
+    m_successorFile(successorFile)
 {
     m_shapes->EnsureInitialised();
 
@@ -299,6 +300,9 @@ bfs::path RlLocalShapeTracker::GetFileName()
 
 bool RlLocalShapeTracker::LoadSuccessors()
 {
+    if (!m_successorFile)
+        return false;
+
     bfs::ifstream succ(GetFileName(), ios::binary);
     if (!succ)
         return false;
@@ -311,6 +315,9 @@ bool RlLocalShapeTracker::LoadSuccessors()
 
 bool RlLocalShapeTracker::SaveSuccessors()
 {
+    if (!m_successorFile)
+        return false;
+
     bfs::ofstream succ(GetFileName(), ios::binary);
     if (!succ)
         return false;
@@ -320,6 +327,13 @@ bool RlLocalShapeTracker::SaveSuccessors()
     succ.write((char*) m_successor, m_numEntries * sizeof(int));
     RlDebug(RlSetup::VOCAL) << " done\n";
     return true;
+}
+
+void RlLocalShapeTracker::DeleteSuccessorFile()
+{
+    RlDebug(RlSetup::VOCAL) << "Deleting successor file for " 
+        << m_shapes->SetName() << "\n";
+    bfs::remove(GetFileName());
 }
 
 int RlLocalShapeTracker::GetSuccessor(
