@@ -54,7 +54,7 @@ Object = RlRealAgent
     Version = 22
     Policy = Greedy
     Evaluator = Evaluator
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     WeightSet = WeightSet
     History = History
     Trainer = NULL
@@ -75,7 +75,7 @@ Object = RlSimAgent
     Version = 22
     Policy = TwoStage
     Evaluator = SimEvaluator
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     WeightSet = WeightSet
     History = SimHistory
     Trainer = CurrentTrainer
@@ -164,7 +164,7 @@ Object = RlHistory
 Object = RlWeightSet
 {
     ID = WeightSet
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     ShareName = NULL
     Strict = 1
     StreamMode = 1 # StreamValue
@@ -174,25 +174,27 @@ Object = RlEvaluator
 {
     ID = Evaluator
     Version = 6
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     WeightSet = WeightSet
     MoveFilter = SimpleEyes
     Differences = 0
+    SupportUndo = 1
 }
 
 Object = RlEvaluator
 {
     ID = SimEvaluator
     Version = 6
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     WeightSet = WeightSet
     MoveFilter = SimSimpleEyes
     Differences = 1
+    SupportUndo = 0
 }
 
 Object = RlLocalShapeSet
 {
-    ID = MainFeatures #LocalShapeSet
+    ID = LocalShapeSet
     Version = 14
     ShapeSpec = SQUARE
     MinSize = 1

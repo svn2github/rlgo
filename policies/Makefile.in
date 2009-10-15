@@ -56,12 +56,12 @@ librlgo_policies_a_AR = $(AR) $(ARFLAGS)
 librlgo_policies_a_LIBADD =
 am_librlgo_policies_a_OBJECTS =  \
 	librlgo_policies_a-RlEpsilonPolicy.$(OBJEXT) \
+	librlgo_policies_a-RlFuegoPolicy.$(OBJEXT) \
 	librlgo_policies_a-RlGibbs.$(OBJEXT) \
 	librlgo_policies_a-RlMCPolicy.$(OBJEXT) \
 	librlgo_policies_a-RlPriorityPolicy.$(OBJEXT) \
 	librlgo_policies_a-RlSearch.$(OBJEXT) \
-	librlgo_policies_a-RlTwoStagePolicy.$(OBJEXT) \
-	librlgo_policies_a-RlFuegoPolicy.$(OBJEXT)
+	librlgo_policies_a-RlTwoStagePolicy.$(OBJEXT)
 librlgo_policies_a_OBJECTS = $(am_librlgo_policies_a_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(top_builddir)/utils@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
@@ -183,21 +183,21 @@ twogtp = @twogtp@
 noinst_LIBRARIES = librlgo_policies.a
 librlgo_policies_a_SOURCES = \
 RlEpsilonPolicy.cpp \
+RlFuegoPolicy.cpp \
 RlGibbs.cpp \
 RlMCPolicy.cpp \
 RlPriorityPolicy.cpp \
 RlSearch.cpp \
-RlTwoStagePolicy.cpp \
-RlFuegoPolicy.cpp
+RlTwoStagePolicy.cpp
 
 noinst_HEADERS = \
 RlEpsilonPolicy.h \
+RlFuegoPolicy.h \
 RlGibbs.h \
 RlMCPolicy.h \
 RlPriorityPolicy.h \
 RlSearch.h \
-RlTwoStagePolicy.h \
-RlFuegoPolicy.h
+RlTwoStagePolicy.h
 
 librlgo_policies_a_CPPFLAGS = \
 $(BOOST_CPPFLAGS) \
@@ -292,6 +292,20 @@ librlgo_policies_a-RlEpsilonPolicy.obj: RlEpsilonPolicy.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_policies_a-RlEpsilonPolicy.obj `if test -f 'RlEpsilonPolicy.cpp'; then $(CYGPATH_W) 'RlEpsilonPolicy.cpp'; else $(CYGPATH_W) '$(srcdir)/RlEpsilonPolicy.cpp'; fi`
 
+librlgo_policies_a-RlFuegoPolicy.o: RlFuegoPolicy.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_policies_a-RlFuegoPolicy.o -MD -MP -MF $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo -c -o librlgo_policies_a-RlFuegoPolicy.o `test -f 'RlFuegoPolicy.cpp' || echo '$(srcdir)/'`RlFuegoPolicy.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlFuegoPolicy.cpp' object='librlgo_policies_a-RlFuegoPolicy.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_policies_a-RlFuegoPolicy.o `test -f 'RlFuegoPolicy.cpp' || echo '$(srcdir)/'`RlFuegoPolicy.cpp
+
+librlgo_policies_a-RlFuegoPolicy.obj: RlFuegoPolicy.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_policies_a-RlFuegoPolicy.obj -MD -MP -MF $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo -c -o librlgo_policies_a-RlFuegoPolicy.obj `if test -f 'RlFuegoPolicy.cpp'; then $(CYGPATH_W) 'RlFuegoPolicy.cpp'; else $(CYGPATH_W) '$(srcdir)/RlFuegoPolicy.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlFuegoPolicy.cpp' object='librlgo_policies_a-RlFuegoPolicy.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_policies_a-RlFuegoPolicy.obj `if test -f 'RlFuegoPolicy.cpp'; then $(CYGPATH_W) 'RlFuegoPolicy.cpp'; else $(CYGPATH_W) '$(srcdir)/RlFuegoPolicy.cpp'; fi`
+
 librlgo_policies_a-RlGibbs.o: RlGibbs.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_policies_a-RlGibbs.o -MD -MP -MF $(DEPDIR)/librlgo_policies_a-RlGibbs.Tpo -c -o librlgo_policies_a-RlGibbs.o `test -f 'RlGibbs.cpp' || echo '$(srcdir)/'`RlGibbs.cpp
 @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_policies_a-RlGibbs.Tpo $(DEPDIR)/librlgo_policies_a-RlGibbs.Po
@@ -361,20 +375,6 @@ librlgo_policies_a-RlTwoStagePolicy.obj: RlTwoStagePolicy.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTwoStagePolicy.cpp' object='librlgo_policies_a-RlTwoStagePolicy.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_policies_a-RlTwoStagePolicy.obj `if test -f 'RlTwoStagePolicy.cpp'; then $(CYGPATH_W) 'RlTwoStagePolicy.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTwoStagePolicy.cpp'; fi`
-
-librlgo_policies_a-RlFuegoPolicy.o: RlFuegoPolicy.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_policies_a-RlFuegoPolicy.o -MD -MP -MF $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo -c -o librlgo_policies_a-RlFuegoPolicy.o `test -f 'RlFuegoPolicy.cpp' || echo '$(srcdir)/'`RlFuegoPolicy.cpp
-@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlFuegoPolicy.cpp' object='librlgo_policies_a-RlFuegoPolicy.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_policies_a-RlFuegoPolicy.o `test -f 'RlFuegoPolicy.cpp' || echo '$(srcdir)/'`RlFuegoPolicy.cpp
-
-librlgo_policies_a-RlFuegoPolicy.obj: RlFuegoPolicy.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_policies_a-RlFuegoPolicy.obj -MD -MP -MF $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo -c -o librlgo_policies_a-RlFuegoPolicy.obj `if test -f 'RlFuegoPolicy.cpp'; then $(CYGPATH_W) 'RlFuegoPolicy.cpp'; else $(CYGPATH_W) '$(srcdir)/RlFuegoPolicy.cpp'; fi`
-@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Tpo $(DEPDIR)/librlgo_policies_a-RlFuegoPolicy.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlFuegoPolicy.cpp' object='librlgo_policies_a-RlFuegoPolicy.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_policies_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_policies_a-RlFuegoPolicy.obj `if test -f 'RlFuegoPolicy.cpp'; then $(CYGPATH_W) 'RlFuegoPolicy.cpp'; else $(CYGPATH_W) '$(srcdir)/RlFuegoPolicy.cpp'; fi`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \

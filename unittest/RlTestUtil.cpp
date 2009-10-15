@@ -50,7 +50,7 @@ void Play(SgPoint point, SgBlackWhite colour,
     // Play/undo all moves at each step
     TryAll(bd, tracker);
     bd.Play(point, colour);
-    tracker.DoExecute(point, colour);
+    tracker.DoExecute(point, colour, true);
     DisplayActive(tracker, features);
 }
 

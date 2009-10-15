@@ -240,12 +240,16 @@ void RlSimulator::DisplayStats()
         << m_numGames << " games in " << seconds << " seconds: " 
         << m_numGames / seconds << " games/second ("
         << m_totalSteps / seconds << " moves/second)\n";
-    RlDebug(RlSetup::VOCAL) << "Average length: " 
-        << m_totalSteps / m_numGames << "\n";
-    RlDebug(RlSetup::VOCAL) << "Average score: " 
-        << m_averageScore << "\n";
-    RlDebug(RlSetup::VOCAL) << "Most frequent first move: " 
-        << SgWritePoint(GetFreqMove()) << "\n";
+
+    if (m_numGames > 0)
+    {
+        RlDebug(RlSetup::VOCAL) << "Average length: " 
+            << m_totalSteps / m_numGames << "\n";
+        RlDebug(RlSetup::VOCAL) << "Average score: " 
+            << m_averageScore << "\n";
+        RlDebug(RlSetup::VOCAL) << "Most frequent first move: " 
+            << SgWritePoint(GetFreqMove()) << "\n";
+    }
 }
 
 void RlSimulator::Ponder()

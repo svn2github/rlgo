@@ -8,7 +8,7 @@ Object = RlSetup
 {
     ID = Setup
     Version = 7
-    DataPath = data
+    InputPath = input
     OutputPath = output/localshape
     BoardSize = 9
     Rules = cgos
@@ -54,7 +54,7 @@ Object = RlRealAgent
     Version = 22
     Policy = Greedy
     Evaluator = Evaluator
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     WeightSet = WeightSet
     History = History
     Trainer = NULL
@@ -101,7 +101,7 @@ Object = RlHistory
 Object = RlWeightSet
 {
     ID = WeightSet
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     ShareName = NULL
     Strict = 1
     StreamMode = 0 # StreamAll
@@ -111,15 +111,16 @@ Object = RlEvaluator
 {
     ID = Evaluator
     Version = 6
-    FeatureSet = MainFeatures
+    FeatureSet = LocalShapeSet
     WeightSet = WeightSet
     MoveFilter = SimpleEyes
     Differences = 0 # Dirty set is completely reset with real evaluator anyway
+    SupportUndo = 1
 }
 
 Object = RlLocalShapeSet
 {
-    ID = MainFeatures
+    ID = LocalShapeSet
     Version = 14
     ShapeSpec = SQUARE
     MinSize = 1

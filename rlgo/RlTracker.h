@@ -88,6 +88,10 @@ public:
     
     /** Restore change list from undo stack, and subtract from active set */
     virtual void SubChanges();
+    
+    /** Colour graph to make sure that tracker doesn't get duplicate calls */
+    void Tick() { m_tick++; }
+    int Tock() const { return m_tick; }
 
 protected:
 
@@ -110,6 +114,9 @@ private:
 
     /** Mark is set if data has been stored for fast reset */
     bool m_mark;
+
+    /** For graph colouring */
+    int m_tick;
 
     /** Current set of changes for this tracker 
         Use to update active features by calling AddChanges */

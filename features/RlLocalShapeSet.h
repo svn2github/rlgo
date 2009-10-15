@@ -9,6 +9,7 @@
 
 #include "RlSumFeatures.h"
 
+class RlLocalShapeFeatures;
 class RlLocalShapeShare;
 
 //----------------------------------------------------------------------------
@@ -22,6 +23,7 @@ public:
     DECLARE_OBJECT(RlLocalShapeSet);
     
     RlLocalShapeSet(GoBoard& board);
+    ~RlLocalShapeSet();
         
     virtual void LoadSettings(std::istream& settings);
 
@@ -47,11 +49,9 @@ public:
         m_maxSize = maxsize;
     }
 
-protected:
+    void SaveUnsharedWeights(const RlWeightSet& sharedweights,
+        const bfs::path& filename);
 
-    int GetShareType(const std::vector<std::string>& types);
-    void AddShares(RlLocalShapeShare* shares);
-        
 private:
 
     /** Whether to use square, almost-square, or rectangular shapes */
@@ -65,6 +65,19 @@ private:
     
     /** Whether to ignore empty shapes or existing subshapes */
     bool m_ignoreEmpty, m_ignoreSelfInverse;
+
+    struct ShapeSet
+    {
+        ShapeSet(RlLocalShapeFeatures* shapes)
+        :   m_shapes(shapes) { }
+    
+        RlLocalShapeFeatures* m_shapes;
+        std::vector<RlLocalShapeShare*> m_shares;
+    };
+    std::vector<ShapeSet> m_shapeSets;
+
+    int GetShareType(const std::vector<std::string>& types);
+    void AddShares(RlLocalShapeShare* shares, ShapeSet& shapeset);
 };
 
 

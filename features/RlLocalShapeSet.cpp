@@ -9,6 +9,9 @@
 #include "RlLocalShapeFeatures.h"
 #include "RlLocalShapeShare.h"
 #include "RlShapeUtil.h"
+#include "RlWeightSet.h"
+
+#include <boost/filesystem/fstream.hpp>
 
 using namespace std;
 using namespace RlShapeUtil;
@@ -25,6 +28,18 @@ RlLocalShapeSet::RlLocalShapeSet(GoBoard& board)
     m_ignoreEmpty(true),
     m_ignoreSelfInverse(true)
 {
+}
+
+RlLocalShapeSet::~RlLocalShapeSet()
+{
+    for (vector<ShapeSet>::iterator i_shapeSet = m_shapeSets.begin();
+        i_shapeSet != m_shapeSets.end(); ++i_shapeSet)
+    {
+        delete i_shapeSet->m_shapes;
+        for (vector<RlLocalShapeShare*>::iterator i_shares = i_shapeSet->m_shares.begin();
+            i_shares != i_shapeSet->m_shares.end(); ++i_shares)
+            delete *i_shares;
+    }    
 }
 
 void RlLocalShapeSet::LoadSettings(istream& settings)
@@ -104,33 +119,86 @@ void RlLocalShapeSet::AddShapes(int xsize, int ysize, int sharetypes)
 {
     RlLocalShapeFeatures* shapes = 
         new RlLocalShapeFeatures(m_board, xsize, ysize);
+    ShapeSet shapeset(shapes);
         
     if (sharetypes & (1 << eNone))
-        AddShares(new RlLocalShapeShare(
-            m_board, shapes, false));
+        AddFeatureSet(shapes);
     if (sharetypes & (1 << eNLI))
         AddShares(new RlLIFeatureShare(
-            m_board, shapes, false));
+            m_board, shapes, false), shapeset);
     if (sharetypes & (1 << eNLD))
         AddShares(new RlLDFeatureShare(
-            m_board, shapes, false));
+            m_board, shapes, false), shapeset);
     if (sharetypes & (1 << eLI))
         AddShares(new RlLIFeatureShare(
-            m_board, shapes, true));
+            m_board, shapes, true), shapeset);
     if (sharetypes & (1 << eLD))
         AddShares(new RlLDFeatureShare(
-            m_board, shapes, true));
+            m_board, shapes, true), shapeset);
     if (sharetypes & (1 << eCI))
         AddShares(new RlCIFeatureShare(
-            m_board, shapes));
-    //@todo: this is currently a memory leak, although harmless for now
+            m_board, shapes), shapeset);
+
+    m_shapeSets.push_back(shapeset);
 }
 
-void RlLocalShapeSet::AddShares(RlLocalShapeShare* shares)
+void RlLocalShapeSet::AddShares(RlLocalShapeShare* shares,
+    ShapeSet& shapeset)
 {
     AddFeatureSet(shares);
     shares->IgnoreEmpty(m_ignoreEmpty);
     shares->IgnoreSelfInverse(m_ignoreSelfInverse);
+    shapeset.m_shares.push_back(shares);
 }
+
+void RlLocalShapeSet::SaveUnsharedWeights(const RlWeightSet& sharedweights,
+    const bfs::path& filename)
+{
+    // Create unshared features corresponding to shared features
+    RlLocalShapeSet unsharedfeatureset(m_board);
+    for (int shapeset = 0; shapeset < ssize(m_shapeSets); ++shapeset)
+        unsharedfeatureset.AddFeatureSet(
+            new RlLocalShapeFeatures(
+                m_board,
+                m_shapeSets[shapeset].m_shapes->GetXSize(), 
+                m_shapeSets[shapeset].m_shapes->GetYSize()));
+    unsharedfeatureset.EnsureInitialised();
+
+    // Create weight set for unshared features
+    RlWeightSet unsharedweights(m_board, &unsharedfeatureset);
+    unsharedweights.ZeroWeights();
+    unsharedweights.EnsureInitialised();
     
+    // Convert shared weights to unshared weights
+    int sharecount = 0;
+    for (int shapeset = 0; shapeset < ssize(m_shapeSets); ++shapeset)
+    {
+        for (int sh = 0; sh < ssize(m_shapeSets[shapeset].m_shares); sh++)
+        {
+            for (int localunsharedindex = 0; 
+                localunsharedindex < m_shapeSets[shapeset].m_shapes->GetNumFeatures(); 
+                ++localunsharedindex)
+            {
+                int localsharedindex = m_shapeSets[shapeset].m_shares[sh]
+                    ->GetOutputFeature(localunsharedindex);
+                int sign = m_shapeSets[shapeset].m_shares[sh]
+                    ->GetSign(localunsharedindex);
+                if (localsharedindex == -1 || sign == 0)
+                    continue;
+                int globalunsharedindex = unsharedfeatureset.GetFeatureIndex(
+                    shapeset, localunsharedindex);
+                int globalsharedindex = GetFeatureIndex(
+                    sharecount, localsharedindex);
+                unsharedweights.Get(globalunsharedindex).Weight() 
+                    += sharedweights.Get(globalsharedindex).Weight() * sign;
+            }
+            sharecount++;
+        }
+    }
+
+    // Save data
+    bfs::ofstream weightfile(filename);
+    unsharedweights.Save(weightfile);
+}
+
 //----------------------------------------------------------------------------

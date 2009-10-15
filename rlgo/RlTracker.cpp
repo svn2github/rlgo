@@ -16,12 +16,14 @@ using namespace SgPointUtil;
 
 RlTracker::RlTracker(GoBoard& board)
 :   m_board(board),
-    m_mark(false)
+    m_mark(false),
+    m_tick(0)
 {
 }
 
 void RlTracker::Initialise()
 {
+    Tick();
     int activesize = GetActiveSize();
     m_active.Resize(activesize);
     m_changeList.Clear();
@@ -58,6 +60,7 @@ void RlTracker::DoUndo()
 
 void RlTracker::Reset()
 {
+    Tick();
     m_active.Clear();
     m_changeStack.Clear();
 }
@@ -69,14 +72,17 @@ void RlTracker::Execute(SgMove move, SgBlackWhite colour,
     SG_UNUSED(colour);
     SG_UNUSED(execute);
     SG_UNUSED(store);
+    Tick();
 }
 
 void RlTracker::Undo()
 {
+    Tick();
 }
 
 void RlTracker::PropagateChanges()
 {
+    Tick();
 }
 
 void RlTracker::UpdateDirty(SgMove move, SgBlackWhite colour, 
@@ -85,16 +91,19 @@ void RlTracker::UpdateDirty(SgMove move, SgBlackWhite colour,
     SG_UNUSED(move);
     SG_UNUSED(colour);
     SG_UNUSED(dirty);
+    Tick();
 }
 
 void RlTracker::ClearChanges()
 {
+    Tick();
     m_changeList.Clear();
 }
 
 void RlTracker::AddChanges(bool store)
 {
     // Call this after changes have been accumulated
+    Tick();
     for (RlChangeList::Iterator i_changes(m_changeList); 
         i_changes; ++i_changes)
     {
@@ -106,6 +115,7 @@ void RlTracker::AddChanges(bool store)
 
 void RlTracker::SubChanges()
 {
+    Tick();
     m_changeStack.Restore(m_changeList);
     for (RlChangeList::ReverseIterator i_changes(m_changeList); 
             i_changes; ++i_changes)

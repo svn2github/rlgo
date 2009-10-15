@@ -182,7 +182,7 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 16);
+    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 14);
 
     // Undo moves again
     for (int i = 0; i < 7; ++i)
@@ -193,7 +193,7 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 0);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 0);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 0);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 16);
+    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 0);
 
     // Start game and test Reset() from current position
     bd.Init(5);
@@ -211,7 +211,7 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 16);
+    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 14);
 
     // Check fast reset
     bd.Init(5);
@@ -231,7 +231,7 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
     BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 16);
+    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 14);
 }
 
 } // namespace

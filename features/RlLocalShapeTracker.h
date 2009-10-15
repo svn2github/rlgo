@@ -82,12 +82,19 @@ protected:
     /** Whether to load/save successors to a file */
     bool m_successorFile;
 
+    /** Current set of feature indices */
     SgArray<int, SG_MAXPOINT> m_index;
+    
+    /** Stored set of feature indices for fast resetting */
     SgArray<int, SG_MAXPOINT> m_markIndex;
-    int* m_successor;
-    int m_numLocal;
-    int m_numEntries;
 
+    /** Successor table */
+    int* m_successor;
+    
+    /** Features to ignore (don't include in change list) */
+    bool* m_ignore;
+
+    /** Stored changes for subsequent undo */
     struct Change
     {
         Change(int step, SgPoint anchor, int index)
@@ -100,7 +107,9 @@ protected:
     
     std::vector<Change> m_changes;
     int m_step;
-    
+
+    /** Successor data is stored according to a local move index 
+        at each specified anchor point */
     struct LocalMove
     {
         SgPoint m_anchor;
@@ -108,6 +117,9 @@ protected:
     };
 
     std::vector<LocalMove> m_localMoves[3][SG_MAXPOINT];
+
+    int m_numLocal;
+    int m_numEntries;
 };
 
 //----------------------------------------------------------------------------

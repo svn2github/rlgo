@@ -39,3 +39,10 @@ Use ./configure --help for more details.
 To test some basic functionality of RLGO, build the unit tests:
  
 make check
+
+Shared Memory
+=============
+
+RLGO can be run in multi-process mode via shared memory. 
+However, the system kernel parameter shmmax must be large enough for all weights
+(>4Mb for 3x3 local shape features)

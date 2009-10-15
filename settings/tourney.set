@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------
-# Best settings to run RLGO in competitive play
+# Tournament settings to run RLGO in competitive play
 # Uses pondering, time controls, and alpha-beta search
 #-----------------------------------------------------------------------------
 

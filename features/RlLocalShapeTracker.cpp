@@ -33,6 +33,7 @@ RlLocalShapeTracker::RlLocalShapeTracker(GoBoard& board,
     m_numLocal = m_shapes->GetXSize() * m_shapes->GetYSize() * 3;
     m_numEntries = m_shapes->GetNumFeatures() * m_numLocal;
     m_successor = new int[m_numEntries];
+    m_ignore = new bool[m_shapes->GetNumFeatures()];
 
     MakeLocalMoves();
     if (!LoadSuccessors())
@@ -45,6 +46,7 @@ RlLocalShapeTracker::RlLocalShapeTracker(GoBoard& board,
 RlLocalShapeTracker::~RlLocalShapeTracker()
 {
     delete [] m_successor;
+    delete [] m_ignore;
 }
 
 void RlLocalShapeTracker::Reset()
@@ -59,7 +61,8 @@ void RlLocalShapeTracker::Reset()
             {
                 SgPoint pt = Pt(x + 1, y + 1);
                 m_index[pt] = m_markIndex[pt];
-                NewChange(GetOffset(pt), m_index[pt], +1);
+                if (!m_ignore[m_index[pt]])
+                    NewChange(GetOffset(pt), m_index[pt], +1);
             }
         }
     }
@@ -76,20 +79,24 @@ void RlLocalShapeTracker::Reset()
             }
         }
         
-        // Update once for each move in history
-        for (int i = 0; i < m_board.MoveNumber(); ++i)
+        // Update once for each stone on the board
+        for (GoBlockIterator i_block(m_board); i_block; ++i_block)
         {
-            SgPoint stone = m_board.Move(i).Point();
-            SgBlackWhite colour = m_board.Move(i).Color();
-
-            int c = ColourIndex(colour);
-            vector<LocalMove>& localmoves = m_localMoves[c][stone];
-            for (vector<LocalMove>::iterator i_local = localmoves.begin(); 
-                i_local != localmoves.end(); ++i_local)
+            for (GoBoard::StoneIterator i_stone(m_board, *i_block); 
+                i_stone; ++i_stone)
             {
-                m_index[i_local->m_anchor] = GetSuccessor(
-                    m_index[i_local->m_anchor], i_local->m_localMove);
-            }        
+                SgPoint stone = *i_stone;
+                SgBlackWhite colour = m_board.GetColor(stone);
+
+                int c = ColourIndex(colour);
+                vector<LocalMove>& localmoves = m_localMoves[c][stone];
+                for (vector<LocalMove>::iterator i_local = localmoves.begin(); 
+                    i_local != localmoves.end(); ++i_local)
+                {
+                    m_index[i_local->m_anchor] = GetSuccessor(
+                        m_index[i_local->m_anchor], i_local->m_localMove);
+                }
+            }
         }
 
         // Add one change for each anchor
@@ -98,7 +105,8 @@ void RlLocalShapeTracker::Reset()
             for (int x = 0; x < m_shapes->GetXNum(); ++x)
             {
                 SgPoint pt = Pt(x + 1, y + 1);
-                NewChange(GetOffset(pt), m_index[pt], +1);
+                if (!m_ignore[m_index[pt]])
+                    NewChange(GetOffset(pt), m_index[pt], +1);
             }
         }
     }
@@ -161,25 +169,30 @@ void RlLocalShapeTracker::UpdateStone(SgPoint stone, SgEmptyBlackWhite colour,
     for (vector<LocalMove>::iterator i_local = localmoves.begin(); 
         i_local != localmoves.end(); ++i_local)
     {
+        SgPoint anchor = i_local->m_anchor;
         if (execute)
         {
-            SgPoint anchor = i_local->m_anchor;
             int slot = GetOffset(anchor);
             if (store)
                 Store(anchor);
-            NewChange(slot, m_index[anchor], -1);
+            if (!m_ignore[m_index[anchor]])
+                NewChange(slot, m_index[anchor], -1);
+                
             m_index[anchor] = GetSuccessor(
                 m_index[anchor], i_local->m_localMove);
-            NewChange(slot, m_index[anchor], +1);
+            assert(m_index[anchor] != -1);
+            if (!m_ignore[m_index[anchor]])
+                NewChange(slot, m_index[anchor], +1);
         }
         else
         {
-            SgPoint anchor = i_local->m_anchor;
             int slot = GetOffset(anchor);
-            NewChange(slot, m_index[anchor], -1);
+            if (!m_ignore[m_index[anchor]])
+                NewChange(slot, m_index[anchor], -1);
             int successor = GetSuccessor(
                 m_index[anchor], i_local->m_localMove);
-            NewChange(slot, successor, +1);
+            if (!m_ignore[successor])
+                NewChange(slot, successor, +1);
         }
     }
 }
@@ -272,13 +285,14 @@ void RlLocalShapeTracker::MakeSuccessors()
 {
     RlDebug(RlSetup::VOCAL) << "Making successors for " 
         << m_shapes->SetName() << "...";
-    memset(m_successor, 0, m_numEntries * sizeof(int));
     for (int index = 0; index < m_shapes->GetNumFeatures(); ++index)
         for (int x = 0; x < m_shapes->GetXSize(); ++x)
             for (int y = 0; y < m_shapes->GetYSize(); ++y)
                 for (int c = 0; c < 3; ++c)
                     m_successor[index * m_numLocal + GetLocalMove(x, y, c)] 
                         = m_shapes->LocalMove(index, x, y, c);
+    for (int index = 0; index < m_shapes->GetNumFeatures(); ++index)
+        m_ignore[index] = m_shapes->IsEmpty(index);
     RlDebug(RlSetup::VOCAL) << " done\n";
 }
 
@@ -303,6 +317,7 @@ bool RlLocalShapeTracker::LoadSuccessors()
     RlDebug(RlSetup::VOCAL) << "Loading successors for " 
         << m_shapes->SetName() << "...";
     succ.read((char*) m_successor, m_numEntries * sizeof(int));
+    succ.read((char*) m_ignore, m_shapes->GetNumFeatures() * sizeof(bool));
     RlDebug(RlSetup::VOCAL) << " done\n";
     return true;
 }
@@ -319,6 +334,7 @@ bool RlLocalShapeTracker::SaveSuccessors()
     RlDebug(RlSetup::VOCAL) << "Saving successors for " 
         << m_shapes->SetName() << "...";
     succ.write((char*) m_successor, m_numEntries * sizeof(int));
+    succ.write((char*) m_ignore, m_shapes->GetNumFeatures() * sizeof(bool));
     RlDebug(RlSetup::VOCAL) << " done\n";
     return true;
 }
