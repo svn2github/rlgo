@@ -25,7 +25,8 @@ public:
     virtual void Reset();
     
     /** Incremental execute */
-    virtual void Execute(SgMove move, SgBlackWhite colour, bool execute);
+    virtual void Execute(SgMove move, SgBlackWhite colour, 
+        bool execute, bool store);
 
     /** Incremental undo */
     virtual void Undo();
@@ -46,9 +47,6 @@ public:
     /** Verify that all indices correctly correspond to board */
     void Verify() const;
 
-    /** Local shapes support undo */
-    virtual bool SupportUndo() const { return true; }
-
     /** Delete successor file */
     void DeleteSuccessorFile();
 
@@ -58,7 +56,8 @@ protected:
     void MakeMove(SgMove move, SgBlackWhite colour, bool execute);
 
     /** Main function to update representation for one changed stone */
-    void UpdateStone(SgPoint stone, SgBlackWhite colour, bool execute);
+    void UpdateStone(SgPoint stone, SgBlackWhite colour, 
+        bool execute, bool store);
     
     /** Lookup local move index */
     int GetLocalMove(int x, int y, int c) const;

@@ -27,7 +27,8 @@ RlEvaluator::RlEvaluator(GoBoard& board,
     m_featureSet(featureset),
     m_weightSet(weightset),
     m_moveFilter(filter),
-    m_differences(false)
+    m_differences(false),
+    m_supportUndo(true)
 {
 }
 
@@ -39,7 +40,8 @@ void RlEvaluator::LoadSettings(istream& settings)
     settings >> RlSetting<RlBinaryFeatures*>("FeatureSet", m_featureSet);
     settings >> RlSetting<RlWeightSet*>("WeightSet", m_weightSet);
     settings >> RlSetting<RlMoveFilter*>("MoveFilter", m_moveFilter);
-    settings >> RlSetting<bool>("Differences", m_differences);    
+    settings >> RlSetting<bool>("Differences", m_differences);
+    settings >> RlSetting<bool>("SupportUndo", m_supportUndo);
 }
 
 void RlEvaluator::Initialise()
@@ -83,7 +85,7 @@ void RlEvaluator::Execute(SgMove move, SgBlackWhite colour, bool real)
     // When a simulated move is executed, update incrementally
     else
     {
-        m_tracker->DoExecute(move, colour);
+        m_tracker->DoExecute(move, colour, m_supportUndo);
         AddWeights(m_tracker->ChangeList(), m_eval);
 
         if (m_differences)
@@ -108,9 +110,8 @@ void RlEvaluator::Undo(bool real)
     // When a simulated move is undone, update incrementally
     else
     {
-        if (!m_tracker->SupportUndo())
-            throw SgException("Undo not supported for current features");
-            
+        if (!m_supportUndo)
+            throw SgException("This evaluator does not support undo");
         m_tracker->DoUndo();
         SubWeights(m_tracker->ChangeList(), m_eval);
         

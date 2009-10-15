@@ -69,14 +69,12 @@ public:
     virtual void Reset();
     
     /** Incremental execute */
-    virtual void Execute(SgMove move, SgBlackWhite colour, bool execute);
+    virtual void Execute(SgMove move, SgBlackWhite colour, 
+        bool execute, bool store);
 
     /** Incremental undo */
     virtual void Undo();
     
-    /** Whether undo is supported by all trackers */
-    virtual bool SupportUndo() const;
-
     /** Add/subtract changelist from active set */
     virtual void AddChanges(bool store);
     virtual void SubChanges();
@@ -84,10 +82,6 @@ public:
     /** Update dirty moves */
     virtual void UpdateDirty(SgMove move, SgBlackWhite colour,
         RlDirtySet& dirty);
-
-    /** Track changes to features after evaluation change */
-    virtual void TrackEval(int q, RlFloat eval, 
-        bool execute, bool incremental);
 
     /** Clear all changes including child trackers */
     virtual void ClearChanges();

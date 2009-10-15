@@ -85,9 +85,10 @@ void RlManualTracker::Reset()
             NewChange(f, f, m_manual->m_active[f]);
 }
 
-void RlManualTracker::Execute(SgMove move, SgBlackWhite colour, bool execute)
+void RlManualTracker::Execute(SgMove move, SgBlackWhite colour, 
+    bool execute, bool store)
 {
-    RlTracker::Execute(move, colour, execute);
+    RlTracker::Execute(move, colour, execute, store);
     Update();
 }
 

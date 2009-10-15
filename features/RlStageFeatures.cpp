@@ -84,10 +84,10 @@ void RlStageTracker::Reset()
     NewChange(0, m_stageFeatures->GetFeatureIndex(m_timeStep), 1);
 }
 
-void RlStageTracker::Execute(
-    SgMove move, SgBlackWhite colour, bool execute)
+void RlStageTracker::Execute(SgMove move, SgBlackWhite colour, 
+    bool execute, bool store)
 {
-    RlTracker::Execute(move, colour, execute);
+    RlTracker::Execute(move, colour, execute, store);
     int oldstage = m_stageFeatures->GetFeatureIndex(m_timeStep);
     int newstage = m_stageFeatures->GetFeatureIndex(m_timeStep + 1);
     if (newstage != oldstage)

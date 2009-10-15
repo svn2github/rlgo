@@ -29,8 +29,9 @@ public:
     /** Clear changes, reset, and apply changes */
     void DoReset();
     
-    /** Clear changes, execute, and apply changes */
-    void DoExecute(SgMove move, SgBlackWhite colour);
+    /** Clear changes, execute, and apply changes 
+        Specify whether to store changes for subsequent undo */
+    void DoExecute(SgMove move, SgBlackWhite colour, bool store);
     
     /** Clear changes, and execute without applying changes */
     void DoEvaluate(SgMove move, SgBlackWhite colour);
@@ -59,28 +60,22 @@ public:
     virtual void ClearMark() { m_mark = false; }
     bool MarkSet() const { return m_mark; }
 
-    /** Specify whether undo functionality is supported */
-    virtual bool SupportUndo() const { return false; }
-
     //-------------------------------------------------------------------------
     /* The previous functions provide the main API, and should be preferred. 
        Certain compound trackers may need to control the order of calling,
        for which the following functions are provided for finer control. */
 
     /** Reset evaluation and features to current board position */
-    virtual void Reset();
+    virtual void Reset() = 0;
     
     /** Update features from this move
         Called after board is updated */
-    virtual void Execute(SgMove move, SgBlackWhite colour, bool execute);
+    virtual void Execute(SgMove move, SgBlackWhite colour, 
+        bool execute, bool store) = 0;
     
     /** Update features from undo
         Called after board is updated */
-    virtual void Undo();
-
-    /** Track changes to features after evaluation change */
-    virtual void TrackEval(int q, RlFloat eval, 
-        bool execute, bool incremental);
+    virtual void Undo() = 0;
 
     /** Clear all changes including child trackers */
     virtual void ClearChanges();
@@ -93,10 +88,6 @@ public:
     
     /** Restore change list from undo stack, and subtract from active set */
     virtual void SubChanges();
-    
-    /** Colour graph to make sure that tracker doesn't get duplicate calls */
-    void Tick() { m_tick++; }
-    int Tock() const { return m_tick; }
 
 protected:
 
@@ -111,16 +102,20 @@ protected:
 protected:
 
     GoBoard& m_board; //@todo: constify
-    
+
 private:
 
+    /** Currently active features for this tracker */
     RlActiveSet m_active;
-    
-    bool m_mark;
-    int m_tick;
 
+    /** Mark is set if data has been stored for fast reset */
+    bool m_mark;
+
+    /** Current set of changes for this tracker 
+        Use to update active features by calling AddChanges */
     RlChangeList m_changeList;
     
+    /** Stack of previous changes if undo is supported */
     struct ChangeStack
     {
     

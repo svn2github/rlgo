@@ -79,10 +79,10 @@ void RlToPlayTracker::Reset()
         NewChange(0, 1, 1);
 }
 
-void RlToPlayTracker::Execute(
-    SgMove move, SgBlackWhite colour, bool execute)
+void RlToPlayTracker::Execute(SgMove move, SgBlackWhite colour, 
+    bool execute, bool store)
 {
-    RlTracker::Execute(move, colour, execute);
+    RlTracker::Execute(move, colour, execute, store);
     SgBlackWhite newcolour = m_board.ToPlay();
     if (newcolour == SG_BLACK)
     {

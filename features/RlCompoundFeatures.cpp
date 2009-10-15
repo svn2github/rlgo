@@ -95,57 +95,43 @@ void RlCompoundTracker::Initialise()
 {
     RlTracker::Initialise();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->Initialise();
+        m_trackers[i]->Initialise();
 }
 
 void RlCompoundTracker::Reset()
 {
     RlTracker::Reset();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->Reset();
+        m_trackers[i]->Reset();
 }
 
-void RlCompoundTracker::Execute(SgMove move, SgBlackWhite colour, bool execute)
+void RlCompoundTracker::Execute(SgMove move, SgBlackWhite colour, 
+    bool execute, bool store)
 {
-    RlTracker::Execute(move, colour, execute);
+    RlTracker::Execute(move, colour, execute, store);
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->Execute(move, colour, execute);
+        m_trackers[i]->Execute(move, colour, execute, store);
 }
 
 void RlCompoundTracker::Undo()
 {
     RlTracker::Undo();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->Undo();
-}
-
-bool RlCompoundTracker::SupportUndo() const
-{
-    for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            if (!m_trackers[i]->SupportUndo())
-                return false;
-    return true;
+        m_trackers[i]->Undo();
 }
 
 void RlCompoundTracker::AddChanges(bool store)
 {
     RlTracker::AddChanges(store);
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->AddChanges(store);
+        m_trackers[i]->AddChanges(store);
 }
 
 void RlCompoundTracker::SubChanges()
 {
     RlTracker::SubChanges();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->SubChanges();
+        m_trackers[i]->SubChanges();
 }
 
 void RlCompoundTracker::UpdateDirty(SgMove move, SgBlackWhite colour, 
@@ -153,49 +139,35 @@ void RlCompoundTracker::UpdateDirty(SgMove move, SgBlackWhite colour,
 {
     RlTracker::UpdateDirty(move, colour, dirty);
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->UpdateDirty(move, colour, dirty);
-}
-
-void RlCompoundTracker::TrackEval(int q, RlFloat eval, 
-    bool execute, bool incremental)
-{
-    RlTracker::TrackEval(q, eval, execute, incremental);
-    for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->TrackEval(q, eval, execute, incremental);
+        m_trackers[i]->UpdateDirty(move, colour, dirty);
 }
 
 void RlCompoundTracker::SetMark()
 {
     RlTracker::SetMark();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->SetMark();
+        m_trackers[i]->SetMark();
 }
 
 void RlCompoundTracker::ClearMark()
 {
     RlTracker::ClearMark();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->ClearMark();
+        m_trackers[i]->ClearMark();
 }
 
 void RlCompoundTracker::ClearChanges()
 {
     RlTracker::ClearChanges();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->ClearChanges();
+        m_trackers[i]->ClearChanges();
 }
 
 void RlCompoundTracker::PropagateChanges()
 {
     RlTracker::PropagateChanges();
     for (int i = 0; i < ssize(m_trackers); ++i)
-        if (m_trackers[i]->Tock() != Tock())
-            m_trackers[i]->PropagateChanges();
+        m_trackers[i]->PropagateChanges();
 }
 
 //----------------------------------------------------------------------------

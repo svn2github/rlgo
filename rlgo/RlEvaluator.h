@@ -115,6 +115,9 @@ private:
     
     /** Whether to use differences */
     bool m_differences;
+    
+    /** Whether to support undo */
+    bool m_supportUndo;
 
     /** Current evaluation */
     RlFloat m_eval;

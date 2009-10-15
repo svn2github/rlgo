@@ -49,7 +49,8 @@ public:
     virtual void Reset();
     
     /** Incremental execute */
-    virtual void Execute(SgMove move, SgBlackWhite colour, bool execute);
+    virtual void Execute(SgMove move, SgBlackWhite colour, 
+        bool execute, bool store);
 
     /** Incremental undo */
     virtual void Undo();

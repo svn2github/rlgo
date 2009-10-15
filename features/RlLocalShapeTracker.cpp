@@ -111,19 +111,19 @@ void RlLocalShapeTracker::Reset()
 }
 
 void RlLocalShapeTracker::Execute(SgMove move, SgBlackWhite colour, 
-    bool execute)
+    bool execute, bool store)
 {
-    RlTracker::Execute(move, colour, execute); 
+    RlTracker::Execute(move, colour, execute, store); 
 
     if (move != SG_PASS)
     {
-        UpdateStone(move, colour, execute);
+        UpdateStone(move, colour, execute, store);
         if (m_board.CapturingMove())
         {
             for (GoPointList::Iterator i_captures(m_board.CapturedStones()); 
                 i_captures; ++i_captures)
             {
-                UpdateStone(*i_captures, SG_EMPTY, execute);
+                UpdateStone(*i_captures, SG_EMPTY, execute, store);
             }
         }
     }
@@ -154,7 +154,7 @@ void RlLocalShapeTracker::Undo()
 }
 
 void RlLocalShapeTracker::UpdateStone(SgPoint stone, SgEmptyBlackWhite colour,
-    bool execute)
+    bool execute, bool store)
 {
     int c = ColourIndex(colour);
     vector<LocalMove>& localmoves = m_localMoves[c][stone];
@@ -165,7 +165,8 @@ void RlLocalShapeTracker::UpdateStone(SgPoint stone, SgEmptyBlackWhite colour,
         {
             SgPoint anchor = i_local->m_anchor;
             int slot = GetOffset(anchor);
-            Store(anchor);
+            if (store)
+                Store(anchor);
             NewChange(slot, m_index[anchor], -1);
             m_index[anchor] = GetSuccessor(
                 m_index[anchor], i_local->m_localMove);
@@ -359,8 +360,7 @@ inline int RlLocalShapeTracker::GetOffset(SgPoint anchor) const
 
 inline void RlLocalShapeTracker::Store(SgPoint anchor)
 {
-    if (SupportUndo())
-        m_changes.push_back(Change(m_step, anchor, m_index[anchor]));
+    m_changes.push_back(Change(m_step, anchor, m_index[anchor]));
 }
 
 void RlLocalShapeTracker::Verify() const
