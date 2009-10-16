@@ -43,7 +43,7 @@ do
     DATFILE=$NEWPATH/games.dat
     if [ -e $DATFILE ]
     then
-        `$SCRIPTDIR/analyze-match.sh $NEWPATH`
+        eval `$SCRIPTDIR/analyze-match.sh $NEWPATH`
         awk '$1 != "#" && $1 != "#GAME"' $DATFILE > $NEWPATH/filtered.dat
         FILES="$FILES $NEWPATH/filtered.dat"
         RESULTS=`awk '{cpu+=$8; games++} $4~/B+/ {wins++} END { pwins=wins/games; printf "%d\t%d\t%.1f\t%.1f\t%.1f", games, wins, cpu/games, 100*pwins, 100*sqrt(pwins*(1.0-pwins)/games) }' $FILES`

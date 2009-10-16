@@ -2,12 +2,14 @@
 
 #----------------------------------------------------------------------------#
 # Get command line for program
-if [ $# -lt 3 ]
+if [ $# -lt 1 ]
 then
     echo "Usage:"
-    echo "getprogram.sh name [name2] options"
+    echo "getprogram.sh name [numprocesses] [name2] options"
     echo ""
-    echo "name:     Base player to run weights with (see below)"
+    echo "name:         Name of player to run (see below)"
+    echo "numprocesses: Number of processes to run (for farm, tfarm)"
+    echo "name2:        Name of player to run for each process (for farm)"
     echo "options:  Any set of options supported by the program"
     echo ""
     echo "The following programs are currently supported:"
@@ -78,11 +80,18 @@ case "$NAME" in
         fi 
         ;;
     farm ) # Run multi-process version of RLGO, with specified settings file, via farm.py script
-        RLGOCMD=`$SCRIPTDIR/getprogram.sh $OPTIONS`
+        NUMPROCESSES=$1
+        NAME2=$2
+        shift; shift
+        OPTIONS=$@
+        RLGOCMD=`$SCRIPTDIR/getprogram.sh $NAME2 $OPTIONS`
         echo "python $SCRIPTDIR/farm.py $NUMPROCESSES \"$RLGOCMD\" \"$RLGOCMD\""
         exit 0 
         ;;
     tfarm ) # Run multi-process version of RLGO with tournament settings
+        NUMPROCESSES=$1
+        shift
+        OPTIONS=$@
         RLGOCMD=`$SCRIPTDIR/getprogram.sh tourney $OPTIONS`
         MASTER="$RLGOCMD -MainAgent.Policy TourneySearch"
         SLAVE="$RLGOCMD -MainAgent.Policy Greedy" # Will ponder during master search

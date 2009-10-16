@@ -72,7 +72,7 @@ do
     BSHORT=`awk "NR==$((PB+1))"' { print }' $SHORTNAMES`
     WSHORT=`awk "NR==$((PW+1))"' { print }' $SHORTNAMES`
     echo "Playing match $((i+1)) of $NUMMATCHES between $BSHORT and $WSHORT ($NUMGAMES games)"
-    MATCHCMD=`$SCRIPTDIR/match.sh "$NEWPATH" "$BLACK" "$WHITE" "$SIZE" "$MINUTES" "$NUMGAMES"`
+    MATCHCMD=eval `$SCRIPTDIR/match.sh "$NEWPATH" "$BLACK" "$WHITE" "$SIZE" "$MINUTES" "$NUMGAMES"`
     $SCRIPTDIR/$SUBMIT "$NEWPATH" "$PREFIX" "$MATCHCMD" "$i" "$PIDPATH"
 
     awk '$4~/B+/ {print "addresult '"${PW} ${PB}"' 0" } $4~/W+/ {print "addresult '"${PW} ${PB}"' 2" }' $NEWPATH/games.dat >> $PATHSTEM/process-$PROC/results.txt

@@ -1,0 +1,10 @@
+play B e5
+play W c5
+genmove B
+genmove W
+clear_board
+play B c3
+play W f6
+genmove B
+genmove W
+quit

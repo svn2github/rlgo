@@ -78,6 +78,7 @@ def writecmd(response):
     sys.stdout.flush()
 
 def main(argv):
+    print argv
     if len(argv) != 4:
         print "farm.py numprocesses master_cmd slave_cmd"
         print "    numprocesses: total number of processes to run with RLGO"

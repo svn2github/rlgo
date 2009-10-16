@@ -8,7 +8,7 @@ then
     echo "analyze-tournament.sh shortnames path"
     echo ""
     echo "shortnames:   File containing list of short names to label programs"
-    echo "path:         Path to put matches played in tournament"
+    echo "path:         Path of tournament"
     exit 1
 fi
 
