@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------------#
-# A very simple interface for the Go Text Protocol
+# A very simple python interface for the Go Text Protocol
 
 import popen2
 import sys

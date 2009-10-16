@@ -2,6 +2,28 @@
 
 #----------------------------------------------------------------------------#
 # Get command line for program
+if [ $# -lt 3 ]
+then
+    echo "Usage:"
+    echo "getprogram.sh name [name2] options"
+    echo ""
+    echo "name:     Base player to run weights with (see below)"
+    echo "options:  Any set of options supported by the program"
+    echo ""
+    echo "The following programs are currently supported:"
+    echo "gnugo0:       GnuGo at playing level 0"
+    echo "gnugod:       GnuGo at default playing level"
+    echo "fuego:        Fuego"
+    echo "vanilla-uct:  Fuego set to run with vanilla UCT" 
+    echo "farm:         Multi-process RLGO running with settings name2"
+    echo "tfarm:        Multi-process RLGO running with tournament settings"
+    echo "localshape:   RLGO with localshape settings"
+    echo "tdlearn:      RLGO with tdlearn settings"
+    echo "tdsearch:     RLGO with tdsearch settings"
+    echo "dyna2:        RLGO with dyna2 settings"
+    echo "tourney:      RLGO with tournament settings"
+    exit 1
+fi
 
 SCRIPTDIR=`dirname $0`
 RLGODIR="$SCRIPTDIR/.."
@@ -22,7 +44,7 @@ case "$NAME" in
             echo "Not found"
             exit 1
         else 
-            echo "$GNUGOD"
+            echo "$GNUGOD $OPTIONS"
             exit 0
         fi ;;
     gnugo0 )
@@ -31,7 +53,7 @@ case "$NAME" in
             echo "Not found"
             exit 1
         else 
-            echo "$GNUGO0"
+            echo "$GNUGO0 $OPTIONS"
             exit 0
         fi 
         ;;

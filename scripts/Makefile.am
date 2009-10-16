@@ -5,7 +5,6 @@ analyze-match.sh.in \
 analyze-matches.sh \
 analyze-tournament.sh \
 calc-elo.py \
-elo.txt \
 experiment.sh \
 farm.py \
 generate-players.sh \

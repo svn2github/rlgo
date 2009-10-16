@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
 #----------------------------------------------------------------------------#
-# Python script to farm out many processes and forward GTP commands
+# Python script to run multi-process RLGO 
+# and forward GTP commands to each process
 
 import gtp
 import popen2
@@ -79,6 +80,9 @@ def writecmd(response):
 def main(argv):
     if len(argv) != 4:
         print "farm.py numprocesses master_cmd slave_cmd"
+        print "    numprocesses: total number of processes to run with RLGO"
+        print "    master_cmd:   command to launch RLGO master process"
+        print "    slave_cmd:    command to launch RLGO slave processes"
         sys.exit()
     scriptdir = os.path.dirname(argv[0])
     numprocesses = int(argv[1])

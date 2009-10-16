@@ -2,6 +2,14 @@
 
 #----------------------------------------------------------------------------#
 # Analyze single match between run two programs using gogui-twogtp
+if [ $# -lt 1 ]
+then
+    echo "Usage:"
+    echo "analyze-match.sh path"
+    echo ""
+    echo "path: Path where match was played"
+    exit 1
+fi
 
 NEWPATH=$1
 echo "@twogtp@ -analyze $NEWPATH/games.dat -force"

@@ -5,7 +5,7 @@
 if [ $# -lt 2 ]
 then
     echo "Usage:"
-    echo "analyze-tournament.sh shortnames path numthreads"
+    echo "analyze-tournament.sh shortnames path"
     echo ""
     echo "shortnames:   File containing list of short names to label programs"
     echo "path:         Path to put matches played in tournament"
@@ -16,9 +16,9 @@ SHORTNAMES=$1
 PATHSTEM=$2
 
 awk '{print "addplayer " $1}' $SHORTNAMES > $PATHSTEM/eloscript.txt
-for THREAD in $PATHSTEM/thread-*
+for PROC in $PATHSTEM/process-*
 do
-    cat $THREAD/results.txt >> $PATHSTEM/eloscript.txt
+    cat $PROC/results.txt >> $PATHSTEM/eloscript.txt
 done
 
 echo -n -e "elo\n" >> $PATHSTEM/eloscript.txt

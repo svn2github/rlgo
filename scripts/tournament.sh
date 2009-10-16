@@ -5,7 +5,7 @@
 if [ $# -lt 7 ]
 then
     echo "Usage:"
-    echo "tournament.sh shortnames programnames path size minutes games nummatches submit [thread]"
+    echo "tournament.sh shortnames programnames path size minutes games nummatches submit [process]"
     echo ""
     echo "shortnames:   File containing list of short names to label programs"
     echo "programnames: File containing list of program names to use"
@@ -15,7 +15,7 @@ then
     echo "games:        Number of games to play in each match"
     echo "nummatches:   Number of matches to run in tournament"
     echo "submit:       Script used to play matches, listed below"
-    echo "thread:       Thread number (optional)"
+    echo "process:      Process number (optional)"
     echo ""
     echo "submit-seq.sh:               Play matches sequentially"
     echo "submit-para.sh:              Play matches in parallel"
@@ -33,11 +33,11 @@ MINUTES=$5
 NUMGAMES=$6
 NUMMATCHES=$7
 SUBMIT=$8
-THREAD=$9
+PROC=$9
 
-if [ $THREAD == ""]
+if [ $PROC == ""]
 then
-    THREAD=0
+    PROC=0
 fi
 
 NUMPLAYERS=`awk 'END {print NR}' $SHORTNAMES`
@@ -54,15 +54,15 @@ do
     echo -e -n "$SHORT\t0\n" >> $PATHSTEM/wins.txt
 done
 
-if [ -e $PATHSTEM/thread-$THREAD ]
+if [ -e $PATHSTEM/process-$PROC ]
 then
-    echo "Tournament data already exists in $PATHSTEM/thread-$THREAD"
+    echo "Tournament data already exists in $PATHSTEM/process-$PROC"
     exit
 fi
 
 for ((i=0; i<NUMMATCHES; ++i))
 do
-    NEWPATH=$PATHSTEM/thread-$THREAD/match-$i
+    NEWPATH=$PATHSTEM/process-$PROC/match-$i
     mkdir -p $NEWPATH
     PB=$((RANDOM % NUMPLAYERS))
     #PW=$((RANDOM % NUMPLAYERS)) # For uniform random pairing
@@ -75,7 +75,7 @@ do
     MATCHCMD=`$SCRIPTDIR/match.sh "$NEWPATH" "$BLACK" "$WHITE" "$SIZE" "$MINUTES" "$NUMGAMES"`
     $SCRIPTDIR/$SUBMIT "$NEWPATH" "$PREFIX" "$MATCHCMD" "$i" "$PIDPATH"
 
-    awk '$4~/B+/ {print "addresult '"${PW} ${PB}"' 0" } $4~/W+/ {print "addresult '"${PW} ${PB}"' 2" }' $NEWPATH/games.dat >> $PATHSTEM/thread-$THREAD/results.txt
+    awk '$4~/B+/ {print "addresult '"${PW} ${PB}"' 0" } $4~/W+/ {print "addresult '"${PW} ${PB}"' 2" }' $NEWPATH/games.dat >> $PATHSTEM/process-$PROC/results.txt
     BWINS=`awk 'BEGIN {bwins=0} $4~/B+/ {bwins++} END {print bwins}' $NEWPATH/games.dat`
     WWINS=`awk 'BEGIN {wwins=0} $4~/W+/ {wwins++} END {print wwins}' $NEWPATH/games.dat`
     echo "Result: $BWINS-$WWINS"

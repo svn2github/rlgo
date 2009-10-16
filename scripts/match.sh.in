@@ -2,6 +2,18 @@
 
 #----------------------------------------------------------------------------#
 # Run single match between two programs using gogui-twogtp
+if [ $# -lt 6 ]
+then
+    echo "Usage:"
+    echo "multi-play.sh player opponent path setting values size minutes games submit [options]"
+    echo ""
+    echo "path:     Output path where match data should be saved"
+    echo "program1: Command to launch program1"
+    echo "program2: Command to launch program2"
+    echo "size:     Board size to use"
+    echo "minutes:  Time control to use (0 for no time control)"
+    echo "games:    Number of games to play in each match"
+fi
 
 SCRIPTDIR=`dirname $0`
 NEWPATH=$1
