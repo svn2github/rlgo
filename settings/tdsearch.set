@@ -18,6 +18,7 @@ Object = RlSetup
     DebugOutput = 1
     DebugLevel = 2
     Verification = 0
+    DefaultTime = 1
     MainAgent = MainAgent
     SimAgent = SimAgent
     BookFile = NULL

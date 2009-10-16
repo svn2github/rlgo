@@ -52,6 +52,7 @@ public:
     bool DebugLevel(int level) const { return m_debugLevel >= level; }
     void SetDebugLevel(int level) { m_debugLevel = level; }
     bool GetVerification() const { return m_verification; }
+    int GetDefaultTime() const { return m_defaultTime; }
     
     RlRealAgent* GetMainAgent() { return m_mainAgent; }
     RlSimAgent* GetSimAgent() { return m_simAgent; }
@@ -143,7 +144,12 @@ private:
     
     /** Whether to run slow verification code */
     bool m_verification;
-    
+        
+    /** Default time control (number of seconds per move)
+        If no GTP time settings are provided
+        and time settings are used */
+    int m_defaultTime;
+
     /** Top-level agent used by player */
     RlRealAgent* m_mainAgent;
 

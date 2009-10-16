@@ -36,6 +36,7 @@ RlSetup::RlSetup(GoBoard& board, RlRealAgent* agent)
     m_debugOutput(STD),
     m_debugLevel(VOCAL),
     m_verification(false),
+    m_defaultTime(10),
     m_mainAgent(agent),
     m_simAgent(0),
     m_game(0),
@@ -68,6 +69,7 @@ void RlSetup::LoadSettings(std::istream& settings)
     settings >> RlSetting<int>("DebugOutput", m_debugOutput);
     settings >> RlSetting<int>("DebugLevel", m_debugLevel);
     settings >> RlSetting<bool>("Verification", m_verification);
+    settings >> RlSetting<int>("DefaultTime", m_defaultTime);
     settings >> RlSetting<RlRealAgent*>("MainAgent", m_mainAgent);
     settings >> RlSetting<RlSimAgent*>("SimAgent", m_simAgent);
     settings >> RlSetting<string>("BookFile", bookfile);
