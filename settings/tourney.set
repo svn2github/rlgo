@@ -55,7 +55,7 @@ Object = RlMainSearch
 {
     ID = TourneySearch
     Version = 1
-    Evaluator = Evaluator # NB Not SimEvaluator, which uses differences
+    Evaluator = FusedEvaluator
     OnPolicy = 1
     Version = 5
     HashSize = 4194304 # 16Mb hash-table
@@ -79,6 +79,46 @@ Object = RlMainSearch
     Fraction = 1.0
     BranchPower = 0.25
     SafetyTime = 8
+    ConvertEvaluator = Evaluator
+    Convert = Fusion
+}
+
+### LOCAL SHAPE CONVERSION ###
+# Before searching fuse weights into a single set of 3x3 shapes for speed
+
+Object = RlEvaluator
+{
+    ID = FusedEvaluator
+    Version = 6
+    FeatureSet = FusedShapes
+    WeightSet = FusedWeights
+    MoveFilter = SimpleEyes
+    Differences = 0 # Using differences is slower during alpha-beta
+    SupportUndo = 1 # Necessary during alpha-beta
+}
+
+Object = RlWeightSet
+{
+    ID = FusedWeights
+    FeatureSet = FusedShapes
+    ShareName = NULL
+    Strict = 1
+    StreamMode = 0 # StreamAll
+}
+
+Object = RlLocalShapeFeatures
+{
+    ID = FusedShapes
+    Version = 1
+    XSize = 3
+    YSize = 3
+}
+
+Object = RlLocalShapeFusion
+{
+    ID = Fusion
+    LocalShapeSet = LocalShapeSet
+    FusedFeatures = FusedShapes
 }
 
 ### SIMULATION POLICY ###
