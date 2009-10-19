@@ -126,7 +126,6 @@ Object = RlLocalShapeSet
     ShapeSpec = SQUARE
     MinSize = 1
     MaxSize = 3
-    Symmetry = 1
     ShareTypes = 2 [ LI LD ]
     IgnoreEmpty = 1
     IgnoreSelfInverse = 1
