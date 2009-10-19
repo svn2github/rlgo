@@ -28,6 +28,7 @@ RlAgent.h \
 RlAgentLog.h \
 RlAgentPlayer.h \
 RlBinaryFeatures.h \
+RlConvert.h \
 RlDirtySet.h \
 RlEvaluator.h \
 RlFuegoPlayout.h \

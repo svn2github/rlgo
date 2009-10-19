@@ -11,6 +11,7 @@
 #include "GoGame.h"
 #include "GoTimeControl.h"
 #include "RlEvaluator.h"
+#include "RlConvert.h"
 #include "RlMoveFilter.h"
 #include "RlProcessUtil.h"
 #include "RlSetup.h"
@@ -104,7 +105,10 @@ void RlSearch::Initialise()
 SgMove RlSearch::SelectMove(RlState& state)
 {
     // Search does not currently support difference computations
+    // (and it's faster this way too)
     m_evaluator->EnsureSimple();
+    m_evaluator->EnsureSupportUndo();
+    m_evaluator->Reset();
 
     // If there are no legal moves then return Pass immediately
     if (m_evaluator->GetMoveFilter()->Empty(state.Colour()))
@@ -128,6 +132,7 @@ SgMove RlSearch::SelectMove(RlState& state)
     if (m_trace)
         AppendTrace(RlSetup::Get()->GetGame()->CurrentNode());
         
+    m_evaluator->Reset();
     return bestmove;
 }
 
@@ -405,7 +410,9 @@ RlMainSearch::RlMainSearch(GoBoard& board, RlEvaluator* evaluator)
     m_timeControl(m_maxTime),
     m_iterControl(Board(), m_minDepth, 
         m_maxTime, m_maxTime * 2, m_branchPower),
-    m_timeManager(Board())
+    m_timeManager(Board()),
+    m_convertEvaluator(0),
+    m_convert(0)
 {
 }
 
@@ -443,10 +450,19 @@ void RlMainSearch::LoadSettings(istream& settings)
         }
     }
     settings >> RlSetting<RlFloat>("SafetyTime", m_safetyTime);
+    settings >> RlSetting<RlEvaluator*>("ConvertEvaluator", m_convertEvaluator);
+    settings >> RlSetting<RlConvert*>("Convert", m_convert);
 }
 
 int RlMainSearch::RunSearch(SgVector<SgMove>* pv, SgNode* node)
 {
+    if (m_convertEvaluator && m_convert)
+    {
+        m_convert->Convert(
+            m_convertEvaluator->GetWeightSet(),
+            m_evaluator->GetWeightSet());
+    }
+
     switch (m_controlMode)
     {
         case eMaxTime:
@@ -512,6 +528,20 @@ void RlMainSearch::GenerateAll(SgVector<SgMove>& moves)
 {
     // Includes potentially illegal or disallowed moves
     m_evaluator->GetMoveFilter()->GetVacantVector(moves);
+    
+    // Move capturing and capture defending moves to the front
+    /*
+    for (GoBlockIterator i_block(Board()); i_block; ++i_block)
+    {
+        SgPoint pt = *i_block;
+        if (Board().InAtari(pt))
+        {
+            SgPoint atari = Board().TheLiberty(pt);
+            moves.Exclude(atari);
+            moves.Push(atari);
+        }
+    }
+    */
 }
 
 int RlMainSearch::GetDepth() const

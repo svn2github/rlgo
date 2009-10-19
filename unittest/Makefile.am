@@ -5,6 +5,7 @@ rlgo_unittest_SOURCES = \
 RlActiveSetTest.cpp \
 RlEvaluatorTest.cpp \
 RlTDTest.cpp \
+RlLocalShapeConvertTest.cpp \
 RlLocalShapeTest.cpp \
 RlTestMain.cpp \
 RlTestUtil.cpp

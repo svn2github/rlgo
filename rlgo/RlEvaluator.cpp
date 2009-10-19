@@ -270,6 +270,12 @@ void RlEvaluator::EnsureSimple()
         throw SgException("Differences must be disabled for simple operation");
 }
 
+void RlEvaluator::EnsureSupportUndo()
+{
+    if (!m_supportUndo)
+        throw SgException("Undo not supported");
+}
+
 //----------------------------------------------------------------------------
 
 void RlMoveSorter::Sort(RlEvaluator* evaluator, SgBlackWhite toplay)

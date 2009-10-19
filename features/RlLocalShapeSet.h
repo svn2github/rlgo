@@ -22,13 +22,30 @@ public:
 
     DECLARE_OBJECT(RlLocalShapeSet);
     
-    RlLocalShapeSet(GoBoard& board);
+    RlLocalShapeSet(GoBoard& board, 
+        int minsize = 1, 
+        int maxsize = 3,
+        int shapespec = RlShapeUtil::eSquare, 
+        int sharetypes = (1 << RlShapeUtil::eNone));
     ~RlLocalShapeSet();
         
     virtual void LoadSettings(std::istream& settings);
+    virtual void Initialise();
+
+    int GetMinSize() const { return m_minSize; }
+    int GetMaxSize() const { return m_maxSize; }
+    int GetShapeSpec() const { return m_shapeSpec; }
+    int GetShareTypes() const { return m_shareTypes; }
+
+    int GetNumShapeSets() const { return m_shapeSets.size(); }
+    int GetNumShares(int set) const { return m_shapeSets[set].m_shares.size(); }
+    RlLocalShapeFeatures* GetShapes(int set) { return m_shapeSets[set].m_shapes; }
+    RlLocalShapeShare* GetShare(int set, int sh) { return m_shapeSets[set].m_shares[sh]; }
+
+protected:
 
     /** Add shapes of specified type */
-    void AddAnyShapes(const std::string& shapespec, int sharetypes);
+    void AddAnyShapes(int shapespec, int sharetypes);
 
     /** Add all shapes up to specified size */
     void AddAllShapes(int sharetypes);
@@ -43,26 +60,17 @@ public:
     void AddShapes(int xsize, int ysize,
         int sharetypes);
 
-    void SetShapeSize(int minsize, int maxsize)
-    {
-        m_minSize = minsize;
-        m_maxSize = maxsize;
-    }
-
-    void SaveUnsharedWeights(const RlWeightSet& sharedweights,
-        const bfs::path& filename);
-
 private:
 
     /** Whether to use square, almost-square, or rectangular shapes */
     int m_shapeSpec;
     
+    /** Flags for weight sharing types (LI, LD, etc.) */
+    int m_shareTypes;
+
     /** The minimum and maximum value of x or y to consider for shapes */
     int m_minSize, m_maxSize;
 
-    /** Whether symmetry should be used for hashed features */
-    bool m_symmetry;
-    
     /** Whether to ignore empty shapes or existing subshapes */
     bool m_ignoreEmpty, m_ignoreSelfInverse;
 
@@ -76,7 +84,7 @@ private:
     };
     std::vector<ShapeSet> m_shapeSets;
 
-    int GetShareType(const std::vector<std::string>& types);
+    int ReadShareTypes(const std::vector<std::string>& types);
     void AddShares(RlLocalShapeShare* shares, ShapeSet& shapeset);
 };
 

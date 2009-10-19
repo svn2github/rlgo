@@ -13,6 +13,7 @@
 #include "SgVector.h"
 #include "RlPolicy.h"
 
+class RlConvert;
 class RlLog;
 class RlTrace;
 
@@ -148,6 +149,11 @@ private:
     RlIterSearchControl m_iterControl;
     GoTimeControl m_timeManager;
     const SgTimeRecord* m_timeRecord;
+
+    /** If m_convert != 0
+        m_convertEvaluator is converted into m_evaluator at start of search */
+    RlEvaluator* m_convertEvaluator;
+    RlConvert* m_convert;
 };
 
 //----------------------------------------------------------------------------

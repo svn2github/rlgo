@@ -57,6 +57,7 @@ librlgo_features_a_LIBADD =
 am_librlgo_features_a_OBJECTS =  \
 	librlgo_features_a-RlCompoundFeatures.$(OBJEXT) \
 	librlgo_features_a-RlLocalShape.$(OBJEXT) \
+	librlgo_features_a-RlLocalShapeConvert.$(OBJEXT) \
 	librlgo_features_a-RlLocalShapeFeatures.$(OBJEXT) \
 	librlgo_features_a-RlLocalShapeSet.$(OBJEXT) \
 	librlgo_features_a-RlLocalShapeShare.$(OBJEXT) \
@@ -189,6 +190,7 @@ noinst_LIBRARIES = librlgo_features.a
 librlgo_features_a_SOURCES = \
 RlCompoundFeatures.cpp \
 RlLocalShape.cpp \
+RlLocalShapeConvert.cpp \
 RlLocalShapeFeatures.cpp \
 RlLocalShapeSet.cpp \
 RlLocalShapeShare.cpp \
@@ -203,6 +205,7 @@ RlToPlayFeatures.cpp
 noinst_HEADERS = \
 RlCompoundFeatures.h \
 RlLocalShape.h \
+RlLocalShapeConvert.h \
 RlLocalShapeFeatures.h \
 RlLocalShapeSet.h \
 RlLocalShapeShare.h \
@@ -272,6 +275,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlCompoundFeatures.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShape.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShapeFeatures.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShapeSet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShapeShare.Po@am__quote@
@@ -324,6 +328,20 @@ librlgo_features_a-RlLocalShape.obj: RlLocalShape.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLocalShape.cpp' object='librlgo_features_a-RlLocalShape.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_features_a-RlLocalShape.obj `if test -f 'RlLocalShape.cpp'; then $(CYGPATH_W) 'RlLocalShape.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLocalShape.cpp'; fi`
+
+librlgo_features_a-RlLocalShapeConvert.o: RlLocalShapeConvert.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_features_a-RlLocalShapeConvert.o -MD -MP -MF $(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Tpo -c -o librlgo_features_a-RlLocalShapeConvert.o `test -f 'RlLocalShapeConvert.cpp' || echo '$(srcdir)/'`RlLocalShapeConvert.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Tpo $(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLocalShapeConvert.cpp' object='librlgo_features_a-RlLocalShapeConvert.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_features_a-RlLocalShapeConvert.o `test -f 'RlLocalShapeConvert.cpp' || echo '$(srcdir)/'`RlLocalShapeConvert.cpp
+
+librlgo_features_a-RlLocalShapeConvert.obj: RlLocalShapeConvert.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_features_a-RlLocalShapeConvert.obj -MD -MP -MF $(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Tpo -c -o librlgo_features_a-RlLocalShapeConvert.obj `if test -f 'RlLocalShapeConvert.cpp'; then $(CYGPATH_W) 'RlLocalShapeConvert.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLocalShapeConvert.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Tpo $(DEPDIR)/librlgo_features_a-RlLocalShapeConvert.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLocalShapeConvert.cpp' object='librlgo_features_a-RlLocalShapeConvert.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_features_a-RlLocalShapeConvert.obj `if test -f 'RlLocalShapeConvert.cpp'; then $(CYGPATH_W) 'RlLocalShapeConvert.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLocalShapeConvert.cpp'; fi`
 
 librlgo_features_a-RlLocalShapeFeatures.o: RlLocalShapeFeatures.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_features_a-RlLocalShapeFeatures.o -MD -MP -MF $(DEPDIR)/librlgo_features_a-RlLocalShapeFeatures.Tpo -c -o librlgo_features_a-RlLocalShapeFeatures.o `test -f 'RlLocalShapeFeatures.cpp' || echo '$(srcdir)/'`RlLocalShapeFeatures.cpp

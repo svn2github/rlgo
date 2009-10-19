@@ -66,8 +66,6 @@ public:
     virtual void TopTex(std::ostream& tex, const RlWeightSet* wset, 
         int rows, int cols) const;
 
-protected:
-
     int GetFeatureIndex(int set, int localindex) const;
     int GetFeatureSet(int featureindex) const;
 

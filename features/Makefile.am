@@ -3,6 +3,7 @@ noinst_LIBRARIES = librlgo_features.a
 librlgo_features_a_SOURCES = \
 RlCompoundFeatures.cpp \
 RlLocalShape.cpp \
+RlLocalShapeConvert.cpp \
 RlLocalShapeFeatures.cpp \
 RlLocalShapeSet.cpp \
 RlLocalShapeShare.cpp \
@@ -17,6 +18,7 @@ RlToPlayFeatures.cpp
 noinst_HEADERS = \
 RlCompoundFeatures.h \
 RlLocalShape.h \
+RlLocalShapeConvert.h \
 RlLocalShapeFeatures.h \
 RlLocalShapeSet.h \
 RlLocalShapeShare.h \

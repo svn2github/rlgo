@@ -91,6 +91,12 @@ public:
     /** Ensure that differences are not enabled */
     void EnsureSimple();
 
+    /** Ensure that undo is supported */
+    void EnsureSupportUndo();
+
+    RlBinaryFeatures* GetFeatureSet() { return m_featureSet; }
+    RlWeightSet* GetWeightSet() { return m_weightSet; }
+
 protected:
 
     void AddWeights(const RlChangeList& changes, RlFloat& eval);

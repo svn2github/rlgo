@@ -53,6 +53,7 @@ CONFIG_CLEAN_FILES =
 am_rlgo_unittest_OBJECTS = rlgo_unittest-RlActiveSetTest.$(OBJEXT) \
 	rlgo_unittest-RlEvaluatorTest.$(OBJEXT) \
 	rlgo_unittest-RlTDTest.$(OBJEXT) \
+	rlgo_unittest-RlLocalShapeConvertTest.$(OBJEXT) \
 	rlgo_unittest-RlLocalShapeTest.$(OBJEXT) \
 	rlgo_unittest-RlTestMain.$(OBJEXT) \
 	rlgo_unittest-RlTestUtil.$(OBJEXT)
@@ -181,6 +182,7 @@ rlgo_unittest_SOURCES = \
 RlActiveSetTest.cpp \
 RlEvaluatorTest.cpp \
 RlTDTest.cpp \
+RlLocalShapeConvertTest.cpp \
 RlLocalShapeTest.cpp \
 RlTestMain.cpp \
 RlTestUtil.cpp
@@ -273,6 +275,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlActiveSetTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlEvaluatorTest.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlLocalShapeTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlTDTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlTestMain.Po@am__quote@
@@ -333,6 +336,20 @@ rlgo_unittest-RlTDTest.obj: RlTDTest.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTDTest.cpp' object='rlgo_unittest-RlTDTest.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o rlgo_unittest-RlTDTest.obj `if test -f 'RlTDTest.cpp'; then $(CYGPATH_W) 'RlTDTest.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTDTest.cpp'; fi`
+
+rlgo_unittest-RlLocalShapeConvertTest.o: RlLocalShapeConvertTest.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT rlgo_unittest-RlLocalShapeConvertTest.o -MD -MP -MF $(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Tpo -c -o rlgo_unittest-RlLocalShapeConvertTest.o `test -f 'RlLocalShapeConvertTest.cpp' || echo '$(srcdir)/'`RlLocalShapeConvertTest.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Tpo $(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLocalShapeConvertTest.cpp' object='rlgo_unittest-RlLocalShapeConvertTest.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o rlgo_unittest-RlLocalShapeConvertTest.o `test -f 'RlLocalShapeConvertTest.cpp' || echo '$(srcdir)/'`RlLocalShapeConvertTest.cpp
+
+rlgo_unittest-RlLocalShapeConvertTest.obj: RlLocalShapeConvertTest.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT rlgo_unittest-RlLocalShapeConvertTest.obj -MD -MP -MF $(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Tpo -c -o rlgo_unittest-RlLocalShapeConvertTest.obj `if test -f 'RlLocalShapeConvertTest.cpp'; then $(CYGPATH_W) 'RlLocalShapeConvertTest.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLocalShapeConvertTest.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Tpo $(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLocalShapeConvertTest.cpp' object='rlgo_unittest-RlLocalShapeConvertTest.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o rlgo_unittest-RlLocalShapeConvertTest.obj `if test -f 'RlLocalShapeConvertTest.cpp'; then $(CYGPATH_W) 'RlLocalShapeConvertTest.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLocalShapeConvertTest.cpp'; fi`
 
 rlgo_unittest-RlLocalShapeTest.o: RlLocalShapeTest.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT rlgo_unittest-RlLocalShapeTest.o -MD -MP -MF $(DEPDIR)/rlgo_unittest-RlLocalShapeTest.Tpo -c -o rlgo_unittest-RlLocalShapeTest.o `test -f 'RlLocalShapeTest.cpp' || echo '$(srcdir)/'`RlLocalShapeTest.cpp

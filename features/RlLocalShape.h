@@ -12,7 +12,9 @@
 #include "SgRect.h"
 
 //----------------------------------------------------------------------------
-
+/** Class for computing shape index for local configurations of stones
+    This class is not designed for efficiency, and should not usually
+    be directly used online */
 class RlLocalShape
 {
 public:
