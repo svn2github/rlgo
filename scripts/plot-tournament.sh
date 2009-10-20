@@ -41,7 +41,7 @@ echo "set style increment user" >> $PATHSTEM/ratings.plt
 echo "set style line 6 lt rgb \"brown\"" >> $PATHSTEM/ratings.plt # Avoid yellow!
 echo -n "plot " >> $PATHSTEM/ratings.plt
 
-ELOBASE=`awk '$2 == "GnuGoD" { total += $3; count++ } END { print 1800 - total/count; }' $PATHSTEM/ratings.txt`
+ELOBASE=`awk '$2 == "GnuGoD" { total += $3; count++ } END { if (count == 0) print 1800; else print 1800 - total/count; }' $PATHSTEM/ratings.txt`
 COMMA=0
 COUNT=1
 for VALUE in $VALUES

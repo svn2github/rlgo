@@ -1,6 +1,7 @@
 TESTS = \
 test-getprogram.sh \
-test-matches.sh
+test-matches.sh \
+test-experiment.sh
 
 EXTRA_DIST = \
 analyze-elo.sh \
@@ -24,6 +25,8 @@ submit-para.sh \
 submit-seq.sh \
 submit-test.sh \
 test.gtp \
+test-experiment.sh \
+test-matches.sh \
 test-getprogram.sh \
 tournament-mt.sh \
 tournament.sh

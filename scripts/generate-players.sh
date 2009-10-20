@@ -2,7 +2,7 @@
 
 #----------------------------------------------------------------------------#
 # Generate a set of programs from a set of weight files
-if [ $# -lt 3 ]
+if [ $# -lt 5 ]
 then
     echo "Usage:"
     echo "generate-players.sh player path"
@@ -11,6 +11,7 @@ then
     echo "path:     Path where weight files are saved"
     echo "setting:  Setting to vary"
     echo "values:   Values of setting used"
+    echo "numgnugo: Number of gnugo players to include"
     echo "options:  Any set of options supported by RLGO"
     exit 1
 fi
@@ -20,14 +21,14 @@ PLAYER=$1
 PATHSTEM=$2
 SETTING=$3
 VALUES=$4
-shift; shift; shift; shift
+NUMGNUGO=$5
+shift; shift; shift; shift; shift
 OPTIONS=$@
 
 PREFIX=MainLogWeightsN
 SUFFIX=w
 
 GNUGO=`$SCRIPTDIR/getprogram.sh gnugod`
-NUMGNUGO=2
 for ((i=1; i<=NUMGNUGO; ++i))
 do
     echo "GnuGoD" > $PATHSTEM/short-names.txt
