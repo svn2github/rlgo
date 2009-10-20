@@ -88,7 +88,7 @@ RlSetup* RlEngine::InitSettings(const bfs::path& settingsfile,
 
 void RlEngine::SetOverrides(const vector<pair<string, string> >& overrides)
 {
-    // DataPath gets set with following priority:
+    // Settings get specified with following priority:
     //  1. Command line
     //  2. Environment variable
     //  3. Settings file

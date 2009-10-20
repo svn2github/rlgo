@@ -102,7 +102,8 @@ void RlAgentLog::TraceFeatures()
 {
     // Read features to trace from input file
     RlBinaryFeatures* featureset = m_agent->m_featureSet;
-    bfs::ifstream tracefeatures(GetInputPath() / m_traceFile);
+    bfs::path trpath = bfs::complete(m_traceFile, GetInputPath());
+    bfs::ifstream tracefeatures(trpath);
     tracefeatures >> ws;
     while (!tracefeatures.eof())
     {

@@ -428,7 +428,7 @@ void RlRealAgent::InitWeights()
 
     if (!m_weightFile.empty() && m_weightFile != "NULL")
     {
-        bfs::path wpath = GetInputPath() / m_weightFile;
+        bfs::path wpath = bfs::complete(m_weightFile, GetInputPath());
         Load(wpath);
     }
 }

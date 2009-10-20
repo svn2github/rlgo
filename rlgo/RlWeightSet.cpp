@@ -12,6 +12,7 @@
 #include "RlSetup.h"
 #include "RlUtils.h"
 #include "SgException.h"
+#include <boost/filesystem/operations.hpp>
 
 using namespace RlPathUtil;
 using namespace std;
@@ -55,7 +56,7 @@ void RlWeightSet::Initialise()
     else
     {
         int bytes = m_numWeights * sizeof(RlWeight);
-        bfs::path pathname = GetInputPath() / m_shareName;
+        bfs::path pathname = bfs::complete(m_shareName, GetInputPath());
         m_sharedMemory = new RlSharedMemory(pathname, 0, bytes);
         m_weights = (RlWeight*) m_sharedMemory->GetData();    
     }
