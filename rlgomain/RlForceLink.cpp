@@ -4,6 +4,7 @@
 #include "RlForceLink.h"
 #include "RlAgent.h"
 #include "RlAgentLog.h"
+#include "RlConvert.h"
 #include "RlEvaluator.h"
 #include "RlFactory.h"
 #include "RlFuegoPlayout.h"
@@ -13,6 +14,7 @@
 #include "RlSimulator.h"
 #include "RlTrainer.h"
 #include "RlWeightSet.h"
+#include "RlLocalShapeConvert.h"
 #include "RlLocalShapeFeatures.h"
 #include "RlLocalShapeSet.h"
 #include "RlLocalShapeShare.h"
@@ -53,6 +55,8 @@ void RlForceLink()
     RlBackwardTrainer::ForceLink();
     RlRandomTrainer::ForceLink();
     RlWeightSet::ForceLink();
+    RlLocalShapeFusion::ForceLink();
+    RlLocalShapeUnshare::ForceLink();
     RlLocalShapeFeatures::ForceLink();
     RlLocalShapeSet::ForceLink();
     RlLocalShapeShare::ForceLink();

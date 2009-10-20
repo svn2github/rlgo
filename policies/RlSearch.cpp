@@ -529,8 +529,7 @@ void RlMainSearch::GenerateAll(SgVector<SgMove>& moves)
     // Includes potentially illegal or disallowed moves
     m_evaluator->GetMoveFilter()->GetVacantVector(moves);
     
-    // Move capturing and capture defending moves to the front
-    /*
+    // Promote capturing and capture defending moves to the front
     for (GoBlockIterator i_block(Board()); i_block; ++i_block)
     {
         SgPoint pt = *i_block;
@@ -541,7 +540,6 @@ void RlMainSearch::GenerateAll(SgVector<SgMove>& moves)
             moves.Push(atari);
         }
     }
-    */
 }
 
 int RlMainSearch::GetDepth() const
