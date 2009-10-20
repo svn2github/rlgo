@@ -13,6 +13,7 @@ then
     echo "size:     Board size to use"
     echo "minutes:  Time control to use (0 for no time control)"
     echo "games:    Number of games to play in each match"
+    exit 1
 fi
 
 SCRIPTDIR=`dirname $0`

@@ -38,7 +38,6 @@ SUBMIT=$9
 shift; shift; shift; shift; shift; shift; shift; shift; shift
 OPTIONS=$@
 
-DATAPATH="-DataPath ../data"
 COUNT=1
 
 if [ ! -d $PATHSTEM ] 
@@ -72,7 +71,7 @@ do
         exit
     fi
     OUTPUTPATH="-OutputPath $NEWPATH"
-    PROGRAM1=`$SCRIPTDIR/getprogram.sh $PLAYER -BoardSize $SIZE $OUTPUTPATH $DATAPATH $OVERRIDE $OPTIONS ` 
+    PROGRAM1=`$SCRIPTDIR/getprogram.sh $PLAYER -BoardSize $SIZE $OUTPUTPATH $OVERRIDE $OPTIONS ` 
     PROGRAM2=`$SCRIPTDIR/getprogram.sh $OPPONENT `
     echo "Program1: $PROGRAM1"
     echo "Program2: $PROGRAM2"

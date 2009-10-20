@@ -155,7 +155,8 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 twogtp = @twogtp@
 TESTS = \
-test-getprogram.sh
+test-getprogram.sh \
+test-matches.sh
 
 EXTRA_DIST = \
 analyze-elo.sh \

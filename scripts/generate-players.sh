@@ -24,7 +24,7 @@ shift; shift; shift; shift
 OPTIONS=$@
 
 PREFIX=MainLogWeightsN
-SUFFIX=EXPECTATION
+SUFFIX=w
 
 GNUGO=`$SCRIPTDIR/getprogram.sh gnugod`
 NUMGNUGO=2
@@ -45,16 +45,18 @@ do
         PATHSUB=$VALUE
     fi
     NEWPATH=$PATHSTEM/match-$PATHSUB
+    ABSPATH=`cd $NEWPATH; pwd`
 
     for WEIGHTFILE in $NEWPATH/$PREFIX*.$SUFFIX
     do
-	SHORTWEIGHT=${WEIGHTFILE##$NEWPATH/$PREFIX}
-    N=${SHORTWEIGHT%%.$SUFFIX}
-	mkdir -p $NEWPATH/player-$N
-	NAME="$PLAYER""_$PATHSUB:$N"
-	PROGRAM=`$SCRIPTDIR/getprogram.sh $PLAYER -WeightFile $WEIGHTFILE -DataPath ../data -OutputPath $NEWPATH/player-$N $OVERRIDE $OPTIONS`
-	echo "$NAME" >> $PATHSTEM/short-names.txt
-	echo "$PROGRAM" >> $PATHSTEM/program-names.txt
+        SHORTWEIGHT=${WEIGHTFILE##$NEWPATH/$PREFIX}
+        WFILE=`basename $WEIGHTFILE`
+        N=${SHORTWEIGHT%%.$SUFFIX}
+        mkdir -p $NEWPATH/player-$N
+        NAME="$PLAYER""_$PATHSUB:$N"
+        PROGRAM=`$SCRIPTDIR/getprogram.sh $PLAYER -WeightFile $ABSPATH/$WFILE -OutputPath $NEWPATH/player-$N $OVERRIDE $OPTIONS`
+        echo "$NAME" >> $PATHSTEM/short-names.txt
+        echo "$PROGRAM" >> $PATHSTEM/program-names.txt
     done
 
     COUNT=$((COUNT+1))

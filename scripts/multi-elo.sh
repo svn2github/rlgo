@@ -39,7 +39,6 @@ OPTIONS=$@
 USEFUEGO=1 # Whether to include vanilla UCT players based on Fuego
 NUMGNUGO=7 # Should set to the length of VALUES2
 GNUGO=`$SCRIPTDIR/getprogram.sh gnugod`
-DATAPATH="-DataPath ../data"
 
 if [ ! -d $PATHSTEM ] 
 then
@@ -94,7 +93,7 @@ do
         fi
         mkdir -p $NEWPATH
         OUTPUTPATH="-OutputPath $NEWPATH"
-        PROGRAM=`$SCRIPTDIR/getprogram.sh $PLAYER -BoardSize $SIZE $OUTPUTPATH $DATAPATH $OVERRIDE $OPTIONS`
+        PROGRAM=`$SCRIPTDIR/getprogram.sh $PLAYER -BoardSize $SIZE $OUTPUTPATH $OVERRIDE $OPTIONS`
         NAME="$PLAYER""_$PATHSUB1"":$PATHSUB2"
 
         echo "$NAME" >> $PATHSTEM/short-names.txt

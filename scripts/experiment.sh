@@ -6,7 +6,7 @@
 if [ $# -lt 7 ]
 then
     echo "Usage:"
-    echo "experiment.sh train-player test-player path setting values title games submit [options]"
+    echo "experiment.sh train-player test-player path setting values title games matches [options]"
     echo ""
     echo "train-player:   Tag used to identify training player in the getprogram.sh script"
     echo "test-player:    Tag used to identify testing player in the getprogram.sh script"
@@ -14,7 +14,8 @@ then
     echo "setting:  Setting to vary in player"
     echo "values:   List of values to try for setting, e.g. \"0.1 0.2 0.3\""
     echo "title:    Title of the plot"
-    echo "games:    Number of games to run"
+    echo "games:    Number of training games"
+    echo "matches:  Number of testing matches"
     echo "options:  Any set of options supported by RLGO, passed to both train and test player"
     exit 1
 fi
@@ -27,12 +28,13 @@ SETTING=$4
 VALUES=$5
 TITLE=$6
 GAMES=$7
-shift; shift; shift; shift; shift; shift; shift
+MATCHES=$8
+shift; shift; shift; shift; shift; shift; shift; shift
 OPTIONS=$@
 
-$SCRIPTDIR/multi-run.sh $TRAINPLAYER $PATHSTEM $SETTING "$VALUES" $GAMES seqplay.sh $OPTIONS
+$SCRIPTDIR/multi-run.sh $TRAINPLAYER $PATHSTEM $SETTING "$VALUES" $GAMES submit-seq.sh $OPTIONS
 $SCRIPTDIR/generate-players.sh $TESTPLAYER $PATHSTEM $SETTING "$VALUES"
-$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM 9 0 2 100000 submit-seq.sh 1
+$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM 9 0 2 $MATCHES submit-seq.sh 1
 $SCRIPTDIR/analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
 $SCRIPTDIR/plot-tournament.sh $PATHSTEM $SETTING "$VALUES" "$TITLE"
 $SCRIPTDIR/plot-tournament2.sh $PATHSTEM $SETTING "$VALUES" "$TITLE"

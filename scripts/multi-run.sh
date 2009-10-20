@@ -32,7 +32,6 @@ SUBMIT=$6
 shift; shift; shift; shift; shift; shift
 OPTIONS=$@
 
-DATAPATH="-DataPath ../data"
 SELFPLAY="-SelfPlay SelfPlay -SelfPlay.MaxGames $GAMES"
 COUNT=1
 
@@ -62,7 +61,7 @@ do
         exit
     fi
     OUTPUTPATH="-OutputPath $NEWPATH"
-    PROGRAM=`$SCRIPTDIR/getprogram.sh $PLAYER $BOARDSIZE $OUTPUTPATH $DATAPATH $OVERRIDE $SELFPLAY $OPTIONS ` 
+    PROGRAM=`$SCRIPTDIR/getprogram.sh $PLAYER $BOARDSIZE $OUTPUTPATH $OVERRIDE $SELFPLAY $OPTIONS ` 
     echo "Program: $PROGRAM"
     echo "$SETTING = $VALUE"
     if [ "$PROGRAM" == "Unknown" ]
@@ -74,7 +73,7 @@ do
     PREFIX="script-$PATHSUB"
     MATCHCMD=$PROGRAM
     ANALYZECMD=":"
-    $SUBMIT "$NEWPATH" "$PREFIX" "$MATCHCMD" "$COUNT" "$PIDPATH"
+    $SCRIPTDIR/$SUBMIT "$NEWPATH" "$PREFIX" "$MATCHCMD" "$COUNT" "$PIDPATH"
     COUNT=$((COUNT+1))
 done
 

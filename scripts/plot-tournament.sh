@@ -64,9 +64,9 @@ do
     fi
     if [ $VALUE == "UCT-Random" ] || [ $VALUE == "UCT-Fuego" ]
     then
-	PLOTTITLE="$VALUE"
+        PLOTTITLE="$VALUE"
     else
-	PLOTTITLE="$SETTING=$VALUE"
+        PLOTTITLE="$SETTING=$VALUE"
     fi
     echo -n "\"$PATHSTEM/$PATHSUB-ratings.txt\" u 1:2:3 w errorlines title \"$PLOTTITLE\"" >> $PATHSTEM/ratings.plt
     COMMA=1
