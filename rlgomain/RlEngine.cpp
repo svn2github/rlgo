@@ -70,11 +70,11 @@ RlSetup* RlEngine::InitSettings(const bfs::path& settingsfile,
 
     setup->SetMainPath(rlgoPath);
     SgRandom::SetSeed(setup->GetRandomSeed());
-    SetTimeLimit(setup->GetDefaultTime());
 
     // Initialise board to specified board size and rules
     Init(setup->GetBoardSize());
     SetNamedRules(setup->GetRules());
+    SetTimeLimit(setup->GetDefaultTime());
     
     // Initialise all objects in factory
     RlGetFactory().Initialise();

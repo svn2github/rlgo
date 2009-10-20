@@ -127,25 +127,10 @@ void RlSetup::Initialise()
 
     if (!m_bookFile.empty() && m_bookFile != "NULL")
         m_gtpCommands.push_back(string("book_load ") 
-            + (m_mainPath / m_inputPath / m_bookFile).native_file_string());
-}
+            + bfs::complete(m_bookFile, m_mainPath / m_inputPath).
+            native_file_string());
 
-void ReplaceAll(string& source, 
-    const string& find, const string& replace)
-{
-    //@TODO: Once Boost 1.33 is supported more widely (e.g. Glacier)
-    //replace_all(source, find, replace);
-    
-    string::size_type i = 0;
-    while (i != string::npos)
-    {
-        i = source.find(find);
-        if (i != string::npos)
-        {
-            source.replace(i, find.length(), replace);
-            i += replace.length();
-        }
-    }
+    m_timeRecord = SgTimeRecord(true, m_defaultTime);
 }
 
 //----------------------------------------------------------------------------
