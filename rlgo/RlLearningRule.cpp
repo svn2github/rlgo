@@ -285,7 +285,7 @@ void RlLearningRule::Learn()
     m_isDataSet = false;
 }
 
-void RlLearningRule::UpdateWeight(RlWeight& weight, RlOccur occurrences)
+inline void RlLearningRule::UpdateWeight(RlWeight& weight, RlOccur occurrences)
 {
     if (!CheckOnPolicy())
         return;

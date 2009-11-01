@@ -29,20 +29,24 @@ void TryAll(GoBoard& bd, RlTracker& tracker)
         if (bd.IsLegal(p, colour))
         {
             bd.Play(p, colour);
-            tracker.DoEvaluate(p, colour);
+            tracker.Execute(p, colour, false, false);
             bd.Undo();
         }
     }
 }
 
-void Reset(RlTracker& tracker, RlBinaryFeatures& features)
+void Reset(RlTracker& tracker, RlActiveSet& active, RlBinaryFeatures& features)
 {
-    tracker.DoReset();
-    DisplayActive(tracker, features);
+    tracker.Reset();
+    for (RlChangeList::Iterator i_changes(tracker.ChangeList()); 
+        i_changes; ++i_changes)
+        active.Change(*i_changes);
+    DisplayActive(active, features);
 }
 
 void Play(SgPoint point, SgBlackWhite colour, 
-    GoBoard& bd, RlTracker& tracker, RlBinaryFeatures& features)
+    GoBoard& bd, RlTracker& tracker, RlActiveSet& active, 
+    RlBinaryFeatures& features)
 {
     if (printdebug)
         cout << "Play " << SgBW(colour) << SgWritePoint(point) << endl;
@@ -50,11 +54,14 @@ void Play(SgPoint point, SgBlackWhite colour,
     // Play/undo all moves at each step
     TryAll(bd, tracker);
     bd.Play(point, colour);
-    tracker.DoExecute(point, colour, true);
-    DisplayActive(tracker, features);
+    tracker.Execute(point, colour, true, true);
+    for (RlChangeList::Iterator i_changes(tracker.ChangeList()); 
+        i_changes; ++i_changes)
+        active.Change(*i_changes);
+    DisplayActive(active, features);
 }
 
-void Undo(GoBoard& bd, RlTracker& tracker, RlBinaryFeatures& features)
+void Undo(GoBoard& bd, RlTracker& tracker, RlActiveSet& active, RlBinaryFeatures& features)
 {
     if (printdebug)
         cout << "Undo" << endl;
@@ -62,8 +69,11 @@ void Undo(GoBoard& bd, RlTracker& tracker, RlBinaryFeatures& features)
     // Play/undo all moves at each step
     TryAll(bd, tracker);
     bd.Undo();
-    tracker.DoUndo();
-    DisplayActive(tracker, features);
+    tracker.Undo();
+    for (RlChangeList::Iterator i_changes(tracker.ChangeList()); 
+        i_changes; ++i_changes)
+        active.Change(*i_changes);
+    DisplayActive(active, features);
 }
 
 SgRect MakeRect(int x, int y)
@@ -71,10 +81,10 @@ SgRect MakeRect(int x, int y)
     return SgRect(x, x, y, y);
 }
 
-int CountOccurrences(RlTracker& tracker, int featureindex)
+int CountOccurrences(const RlActiveSet& active, int featureindex)
 {
     int total = 0;
-    for (RlActiveSet::Iterator i_active(tracker.Active()); 
+    for (RlActiveSet::Iterator i_active(active); 
         i_active; ++i_active)
     {
         if (i_active->m_featureIndex == featureindex)
@@ -83,14 +93,14 @@ int CountOccurrences(RlTracker& tracker, int featureindex)
     return total;
 }
 
-void DisplayActive(RlTracker& tracker, RlBinaryFeatures& features)
+void DisplayActive(const RlActiveSet& active, RlBinaryFeatures& features)
 {
     if (!printdebug)
         return;
 
     cout << features.GetBoard();
-    cout << "Active: " << tracker.Active().GetTotalActive() << endl;
-    for (RlActiveSet::Iterator i_active(tracker.Active()); 
+    cout << "Active: " << active.GetTotalActive() << endl;
+    for (RlActiveSet::Iterator i_active(active); 
         i_active; ++i_active)
     {
         int index = i_active->m_featureIndex;

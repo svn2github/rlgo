@@ -165,8 +165,15 @@ public:
     RlSharedTracker(GoBoard& board, const RlSharedFeatures* features,
         RlTracker* tracker);
 
-    /** Propagate changes from child trackers */
-    virtual void PropagateChanges();
+    /** Reset to current board position */
+    virtual void Reset();
+    
+    /** Incremental execute */
+    virtual void Execute(SgMove move, SgBlackWhite colour, 
+        bool execute, bool store);
+
+    /** Incremental undo */
+    virtual void Undo();
 
     /** Size of active set */
     virtual int GetActiveSize() const;

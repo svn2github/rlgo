@@ -174,32 +174,36 @@ void RlLocalShapeUnshare::Convert(const RlWeightSet* sharedweights,
 {
     // Convert shared weights to unshared weights
     unsharedweights->ZeroWeights();
-    int sharecount = 0;
-    for (int shapeset = 0; 
-        shapeset < m_sharedShapeSet->GetNumShapeSets(); 
-        ++shapeset)
+    int numsharedsets = m_sharedShapeSet->GetNumShapeSets();
+    int numunsharedsets = m_unsharedShapeSet->GetNumShapeSets();
+    for (int unsharedset = 0; unsharedset < numunsharedsets; ++unsharedset)
     {
-        for (int sh = 0; sh < m_sharedShapeSet->GetNumShares(shapeset); sh++)
+        for (int sharedset = 0; sharedset < numsharedsets; ++sharedset)
         {
+            if (m_sharedShapeSet->GetShapes(sharedset)->GetXSize()
+                != m_unsharedShapeSet->GetShapes(unsharedset)->GetXSize()
+                || m_sharedShapeSet->GetShapes(sharedset)->GetYSize()
+                != m_unsharedShapeSet->GetShapes(unsharedset)->GetYSize())
+                continue;
+            
             for (int localunsharedindex = 0; 
-                localunsharedindex < m_sharedShapeSet->GetShapes(shapeset)
+                localunsharedindex < m_sharedShapeSet->GetShapes(sharedset)
                     ->GetNumFeatures(); 
                 ++localunsharedindex)
             {
-                int localsharedindex = m_sharedShapeSet->GetShare(shapeset, sh)
+                int localsharedindex = m_sharedShapeSet->GetShare(sharedset)
                     ->GetOutputFeature(localunsharedindex);
-                int sign = m_sharedShapeSet->GetShare(shapeset, sh)
+                int sign = m_sharedShapeSet->GetShare(sharedset)
                     ->GetSign(localunsharedindex);
                 if (localsharedindex == -1 || sign == 0)
                     continue;
                 int globalunsharedindex = m_unsharedShapeSet->GetFeatureIndex(
-                    shapeset, localunsharedindex);
+                    unsharedset, localunsharedindex);
                 int globalsharedindex = m_sharedShapeSet->GetFeatureIndex(
-                    sharecount, localsharedindex);
+                    sharedset, localsharedindex);
                 unsharedweights->Get(globalunsharedindex).Weight() 
                     += sharedweights->Get(globalsharedindex).Weight() * sign;
             }
-            sharecount++;
         }
     }
 }

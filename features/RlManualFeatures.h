@@ -42,12 +42,12 @@ public:
     virtual void DescribeSet(std::ostream& name) const;
 
     void Clear();
-    void Set(int feature, int count) { m_active[feature] = count; }
+    void Set(int feature, int count) { m_values[feature] = count; }
 
 private:
 
     int m_numFeatures;
-    std::vector<int> m_active;
+    std::vector<int> m_values;
     
 friend class RlManualTracker;
 };
@@ -73,12 +73,9 @@ public:
     /** Size of active set */
     virtual int GetActiveSize() const;
 
-protected:
-
-    void Update();
-
 private:
 
+    std::vector<int> m_current;
     RlManualFeatureSet* m_manual;
 };
 

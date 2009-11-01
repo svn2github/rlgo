@@ -154,6 +154,8 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     shapes.EnsureInitialised();
     RlLocalShapeTracker tracker(bd, &shapes, false);
     tracker.Initialise();
+    RlActiveSet active;
+    active.Resize(tracker.GetActiveSize());
 
     // Identify features
     int f1 = shapes.GetFeature("01-01-..-.X");
@@ -168,32 +170,33 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     BOOST_CHECK(f5 != -1);
     
     // Play moves
-    Reset(tracker, shapes);
-    Play(Pt(3, 3), SG_BLACK, bd, tracker, shapes);
-    Play(Pt(2, 3), SG_WHITE, bd, tracker, shapes);
-    Play(Pt(2, 2), SG_BLACK, bd, tracker, shapes);
-    Play(Pt(3, 4), SG_WHITE, bd, tracker, shapes);
-    Play(Pt(4, 2), SG_BLACK, bd, tracker, shapes);
-    Play(Pt(4, 3), SG_WHITE, bd, tracker, shapes);
-    Play(Pt(5, 2), SG_BLACK, bd, tracker, shapes);
+    active.Clear();
+    Reset(tracker, active, shapes);
+    Play(Pt(3, 3), SG_BLACK, bd, tracker, active, shapes);
+    Play(Pt(2, 3), SG_WHITE, bd, tracker, active, shapes);
+    Play(Pt(2, 2), SG_BLACK, bd, tracker, active, shapes);
+    Play(Pt(3, 4), SG_WHITE, bd, tracker, active, shapes);
+    Play(Pt(4, 2), SG_BLACK, bd, tracker, active, shapes);
+    Play(Pt(4, 3), SG_WHITE, bd, tracker, active, shapes);
+    Play(Pt(5, 2), SG_BLACK, bd, tracker, active, shapes);
 
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f1), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f2), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 14);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f1), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f2), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f3), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f4), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f5), 1);
+    BOOST_CHECK_EQUAL(active.GetTotalActive(), 14);
 
     // Undo moves again
     for (int i = 0; i < 7; ++i)
-        Undo(bd, tracker, shapes);
+        Undo(bd, tracker, active, shapes);
 
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f1), 0);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f2), 0);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 0);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 0);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 0);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 0);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f1), 0);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f2), 0);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f3), 0);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f4), 0);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f5), 0);
+    BOOST_CHECK_EQUAL(active.GetTotalActive(), 0);
 
     // Start game and test Reset() from current position
     bd.Init(5);
@@ -204,34 +207,37 @@ BOOST_AUTO_TEST_CASE(RlLocalShapeTrackerTest)
     bd.Play(Pt(4, 2), SG_BLACK);
     bd.Play(Pt(4, 3), SG_WHITE);
     bd.Play(Pt(5, 2), SG_BLACK);
-    Reset(tracker, shapes);
+    active.Clear();
+    Reset(tracker, active, shapes);
 
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f1), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f2), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 14);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f1), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f2), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f3), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f4), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f5), 1);
+    BOOST_CHECK_EQUAL(active.GetTotalActive(), 14);
 
     // Check fast reset
     bd.Init(5);
-    Reset(tracker, shapes);
-    Play(Pt(3, 3), SG_BLACK, bd, tracker, shapes);
-    Play(Pt(2, 3), SG_WHITE, bd, tracker, shapes);
-    Play(Pt(2, 2), SG_BLACK, bd, tracker, shapes);
-    Play(Pt(3, 4), SG_WHITE, bd, tracker, shapes);
-    Play(Pt(4, 2), SG_BLACK, bd, tracker, shapes);
-    Play(Pt(4, 3), SG_WHITE, bd, tracker, shapes);
-    Play(Pt(5, 2), SG_BLACK, bd, tracker, shapes);
+    active.Clear();    
+    Reset(tracker, active, shapes);
+    Play(Pt(3, 3), SG_BLACK, bd, tracker, active, shapes);
+    Play(Pt(2, 3), SG_WHITE, bd, tracker, active, shapes);
+    Play(Pt(2, 2), SG_BLACK, bd, tracker, active, shapes);
+    Play(Pt(3, 4), SG_WHITE, bd, tracker, active, shapes);
+    Play(Pt(4, 2), SG_BLACK, bd, tracker, active, shapes);
+    Play(Pt(4, 3), SG_WHITE, bd, tracker, active, shapes);
+    Play(Pt(5, 2), SG_BLACK, bd, tracker, active, shapes);
     tracker.SetMark();
-    Reset(tracker, shapes); // fast reset using mark
+    active.Clear();
+    Reset(tracker, active, shapes); // fast reset using mark
 
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f1), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f2), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f3), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f4), 1);
-    BOOST_CHECK_EQUAL(CountOccurrences(tracker, f5), 1);
-    BOOST_CHECK_EQUAL(tracker.Active().GetTotalActive(), 14);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f1), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f2), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f3), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f4), 1);
+    BOOST_CHECK_EQUAL(CountOccurrences(active, f5), 1);
+    BOOST_CHECK_EQUAL(active.GetTotalActive(), 14);
 }
 
 } // namespace

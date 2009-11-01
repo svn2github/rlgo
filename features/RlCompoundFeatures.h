@@ -75,19 +75,9 @@ public:
     /** Incremental undo */
     virtual void Undo();
     
-    /** Add/subtract changelist from active set */
-    virtual void AddChanges(bool store);
-    virtual void SubChanges();
-
     /** Update dirty moves */
     virtual void UpdateDirty(SgMove move, SgBlackWhite colour,
         RlDirtySet& dirty);
-
-    /** Clear all changes including child trackers */
-    virtual void ClearChanges();
-
-    /** Propagate changes from child trackers */
-    virtual void PropagateChanges();
 
     /** Remember current position for fast resets */
     virtual void SetMark();

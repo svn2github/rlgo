@@ -36,9 +36,7 @@ RlLocalShapeSet::~RlLocalShapeSet()
         i_shapeSet != m_shapeSets.end(); ++i_shapeSet)
     {
         delete i_shapeSet->m_shapes;
-        for (vector<RlLocalShapeShare*>::iterator i_shares = i_shapeSet->m_shares.begin();
-            i_shares != i_shapeSet->m_shares.end(); ++i_shares)
-            delete *i_shares;
+        delete i_shapeSet->m_shares;
     }    
 }
 
@@ -120,39 +118,59 @@ void RlLocalShapeSet::AddRectShapes(int maxoffset, int sharetypes)
 }
 
 void RlLocalShapeSet::AddShapes(int xsize, int ysize, int sharetypes)
-{
-    RlLocalShapeFeatures* shapes = 
-        new RlLocalShapeFeatures(m_board, xsize, ysize);
-    ShapeSet shapeset(shapes);
-        
+{        
+    ShapeSet shapeset;
     if (sharetypes & (1 << eNone))
-        AddFeatureSet(shapes);
+    {
+        shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
+        shapeset.m_shares = 0;
+        AddShapeSet(shapeset);
+    }
     if (sharetypes & (1 << eNLI))
-        AddShares(new RlLIFeatureShare(
-            m_board, shapes, false), shapeset);
+    {
+        shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
+        shapeset.m_shares = new RlLIFeatureShare(m_board, shapeset.m_shapes, false);
+        AddShapeSet(shapeset);
+    }
     if (sharetypes & (1 << eNLD))
-        AddShares(new RlLDFeatureShare(
-            m_board, shapes, false), shapeset);
+    {
+        shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
+        shapeset.m_shares = new RlLDFeatureShare(m_board, shapeset.m_shapes, false);
+        AddShapeSet(shapeset);
+    }
     if (sharetypes & (1 << eLI))
-        AddShares(new RlLIFeatureShare(
-            m_board, shapes, true), shapeset);
+    {
+        shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
+        shapeset.m_shares = new RlLDFeatureShare(m_board, shapeset.m_shapes, true);
+        AddShapeSet(shapeset);
+    }
     if (sharetypes & (1 << eLD))
-        AddShares(new RlLDFeatureShare(
-            m_board, shapes, true), shapeset);
+    {
+        shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
+        shapeset.m_shares = new RlLDFeatureShare(m_board, shapeset.m_shapes, true);
+        AddShapeSet(shapeset);
+    }
     if (sharetypes & (1 << eCI))
-        AddShares(new RlCIFeatureShare(
-            m_board, shapes), shapeset);
-
-    m_shapeSets.push_back(shapeset);
+    {
+        shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
+        shapeset.m_shares = new RlCIFeatureShare(m_board, shapeset.m_shapes);
+        AddShapeSet(shapeset);
+    }
 }
 
-void RlLocalShapeSet::AddShares(RlLocalShapeShare* shares,
-    ShapeSet& shapeset)
+void RlLocalShapeSet::AddShapeSet(ShapeSet& shapeset)
 {
-    AddFeatureSet(shares);
-    shares->IgnoreEmpty(m_ignoreEmpty);
-    shares->IgnoreSelfInverse(m_ignoreSelfInverse);
-    shapeset.m_shares.push_back(shares);
+    if (shapeset.m_shares)
+    {
+        AddFeatureSet(shapeset.m_shares);
+        shapeset.m_shares->IgnoreEmpty(m_ignoreEmpty);
+        shapeset.m_shares->IgnoreSelfInverse(m_ignoreSelfInverse);
+    }
+    else
+    {
+        AddFeatureSet(shapeset.m_shapes);
+    }
+    m_shapeSets.push_back(shapeset);
 }
 
 //----------------------------------------------------------------------------

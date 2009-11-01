@@ -366,6 +366,7 @@ RlSharedTracker::RlSharedTracker(GoBoard& board,
 
 void RlSharedTracker::ShareChanges()
 {
+    ClearChanges();
     for (RlChangeList::Iterator i_changes(m_tracker->ChangeList());
         i_changes; ++i_changes)
     {
@@ -378,9 +379,22 @@ void RlSharedTracker::ShareChanges()
     }
 }
 
-void RlSharedTracker::PropagateChanges()
+void RlSharedTracker::Reset()
 {
-    RlCompoundTracker::PropagateChanges();
+    RlCompoundTracker::Reset();
+    ShareChanges();
+}
+
+void RlSharedTracker::Execute(SgMove move, SgBlackWhite colour, 
+    bool execute, bool store)
+{
+    RlCompoundTracker::Execute(move, colour, execute, store);
+    ShareChanges();
+}
+
+void RlSharedTracker::Undo()
+{
+    RlCompoundTracker::Undo();
     ShareChanges();
 }
 

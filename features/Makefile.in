@@ -63,7 +63,6 @@ am_librlgo_features_a_OBJECTS =  \
 	librlgo_features_a-RlLocalShapeShare.$(OBJEXT) \
 	librlgo_features_a-RlLocalShapeTracker.$(OBJEXT) \
 	librlgo_features_a-RlManualFeatures.$(OBJEXT) \
-	librlgo_features_a-RlProductFeatures.$(OBJEXT) \
 	librlgo_features_a-RlSharedFeatures.$(OBJEXT) \
 	librlgo_features_a-RlStageFeatures.$(OBJEXT) \
 	librlgo_features_a-RlSumFeatures.$(OBJEXT) \
@@ -196,7 +195,6 @@ RlLocalShapeSet.cpp \
 RlLocalShapeShare.cpp \
 RlLocalShapeTracker.cpp \
 RlManualFeatures.cpp \
-RlProductFeatures.cpp \
 RlSharedFeatures.cpp \
 RlStageFeatures.cpp \
 RlSumFeatures.cpp \
@@ -211,7 +209,6 @@ RlLocalShapeSet.h \
 RlLocalShapeShare.h \
 RlLocalShapeTracker.h \
 RlManualFeatures.h \
-RlProductFeatures.h \
 RlSharedFeatures.h \
 RlStageFeatures.h \
 RlSumFeatures.h \
@@ -281,7 +278,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShapeShare.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlLocalShapeTracker.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlManualFeatures.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlProductFeatures.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlSharedFeatures.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlStageFeatures.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_features_a-RlSumFeatures.Po@am__quote@
@@ -412,20 +408,6 @@ librlgo_features_a-RlManualFeatures.obj: RlManualFeatures.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlManualFeatures.cpp' object='librlgo_features_a-RlManualFeatures.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_features_a-RlManualFeatures.obj `if test -f 'RlManualFeatures.cpp'; then $(CYGPATH_W) 'RlManualFeatures.cpp'; else $(CYGPATH_W) '$(srcdir)/RlManualFeatures.cpp'; fi`
-
-librlgo_features_a-RlProductFeatures.o: RlProductFeatures.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_features_a-RlProductFeatures.o -MD -MP -MF $(DEPDIR)/librlgo_features_a-RlProductFeatures.Tpo -c -o librlgo_features_a-RlProductFeatures.o `test -f 'RlProductFeatures.cpp' || echo '$(srcdir)/'`RlProductFeatures.cpp
-@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_features_a-RlProductFeatures.Tpo $(DEPDIR)/librlgo_features_a-RlProductFeatures.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlProductFeatures.cpp' object='librlgo_features_a-RlProductFeatures.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_features_a-RlProductFeatures.o `test -f 'RlProductFeatures.cpp' || echo '$(srcdir)/'`RlProductFeatures.cpp
-
-librlgo_features_a-RlProductFeatures.obj: RlProductFeatures.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_features_a-RlProductFeatures.obj -MD -MP -MF $(DEPDIR)/librlgo_features_a-RlProductFeatures.Tpo -c -o librlgo_features_a-RlProductFeatures.obj `if test -f 'RlProductFeatures.cpp'; then $(CYGPATH_W) 'RlProductFeatures.cpp'; else $(CYGPATH_W) '$(srcdir)/RlProductFeatures.cpp'; fi`
-@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_features_a-RlProductFeatures.Tpo $(DEPDIR)/librlgo_features_a-RlProductFeatures.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlProductFeatures.cpp' object='librlgo_features_a-RlProductFeatures.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_features_a-RlProductFeatures.obj `if test -f 'RlProductFeatures.cpp'; then $(CYGPATH_W) 'RlProductFeatures.cpp'; else $(CYGPATH_W) '$(srcdir)/RlProductFeatures.cpp'; fi`
 
 librlgo_features_a-RlSharedFeatures.o: RlSharedFeatures.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_features_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_features_a-RlSharedFeatures.o -MD -MP -MF $(DEPDIR)/librlgo_features_a-RlSharedFeatures.Tpo -c -o librlgo_features_a-RlSharedFeatures.o `test -f 'RlSharedFeatures.cpp' || echo '$(srcdir)/'`RlSharedFeatures.cpp

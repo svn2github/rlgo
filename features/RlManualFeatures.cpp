@@ -29,7 +29,7 @@ void RlManualFeatureSet::Initialise()
 {
     SG_ASSERT(m_numFeatures);
     for (int i = 0; i < m_numFeatures; ++i)
-        m_active.push_back(0);
+        m_values.push_back(0);
     RlBinaryFeatures::Initialise();
 }
 
@@ -44,7 +44,7 @@ RlTracker* RlManualFeatureSet::CreateTracker(
 void RlManualFeatureSet::Clear()
 {
     for (int i = 0; i < m_numFeatures; ++i)
-        m_active[i] = 0;
+        m_values[i] = 0;
 }
 
 int RlManualFeatureSet::GetNumFeatures() const
@@ -74,42 +74,51 @@ void RlManualFeatureSet::DescribeSet(ostream& name) const
 RlManualTracker::RlManualTracker(GoBoard& board, RlManualFeatureSet* manual)
 :   RlTracker(board),
     m_manual(manual)
-{ 
+{
+    m_current.resize(m_manual->m_numFeatures, 0);
 }
 
 void RlManualTracker::Reset()
 {
     RlTracker::Reset();
     for (int f = 0; f < m_manual->m_numFeatures; ++f)
-        if (m_manual->m_active[f])
-            NewChange(f, f, m_manual->m_active[f]);
+    {
+        m_current[f] = m_manual->m_values[f];
+        if (m_current[f])
+            NewChange(f, f, m_manual->m_values[f]);
+    }
 }
 
 void RlManualTracker::Execute(SgMove move, SgBlackWhite colour, 
     bool execute, bool store)
 {
     RlTracker::Execute(move, colour, execute, store);
-    Update();
+    for (int f = 0; f < m_manual->m_numFeatures; ++f)
+    {
+        if (m_current[f])
+            NewChange(f, f, -m_current[f]);
+        m_current[f] = m_manual->m_values[f];
+        if (m_current[f])
+            NewChange(f, f, m_current[f]);
+    }
 }
 
 void RlManualTracker::Undo()
 {
     RlTracker::Undo();
+    for (int f = 0; f < m_manual->m_numFeatures; ++f)
+    {
+        if (m_current[f])
+            NewChange(f, f, -m_current[f]);
+        m_current[f] = m_manual->m_values[f];
+        if (m_current[f])
+            NewChange(f, f, m_current[f]);
+    }
 }
 
 int RlManualTracker::GetActiveSize() const
 {
     return m_manual->m_numFeatures;
-}
-
-void RlManualTracker::Update()
-{
-    for (int f = 0; f < m_manual->m_numFeatures; ++f)
-    {
-        int occur = Active().GetOccurrences(f);
-        if (occur != m_manual->m_active[f])
-            NewChange(f, f, m_manual->m_active[f] - occur);
-    }
 }
 
 //----------------------------------------------------------------------------

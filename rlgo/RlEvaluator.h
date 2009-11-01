@@ -74,7 +74,7 @@ public:
     const RlMoveFilter* GetMoveFilter() const { return m_moveFilter; }
     
     /** Get currently active features */
-    const RlActiveSet& Active() const { return m_tracker->Active(); }
+    const RlActiveSet& Active() const { return m_active; }
 
     /** Get currently tracked change list */
     const RlChangeList& ChangeList() const { return m_tracker->ChangeList(); }
@@ -101,6 +101,8 @@ protected:
 
     void AddWeights(const RlChangeList& changes, RlFloat& eval);
     void SubWeights(const RlChangeList& changes, RlFloat& eval);
+    void AddWeightsUpdateActive(const RlChangeList& changes, RlFloat& eval);
+    void SubWeightsUpdateActive(const RlChangeList& changes, RlFloat& eval);
 
     RlFloat EvalMoveSimple(SgMove move, SgBlackWhite colour);
     RlFloat EvalMoveDiffs(SgMove move, SgBlackWhite colour);
@@ -124,6 +126,9 @@ private:
     
     /** Whether to support undo */
     bool m_supportUndo;
+
+    /** Current set of active features */
+    RlActiveSet m_active;
 
     /** Current evaluation */
     RlFloat m_eval;

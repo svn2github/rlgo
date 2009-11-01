@@ -38,9 +38,8 @@ public:
     int GetShareTypes() const { return m_shareTypes; }
 
     int GetNumShapeSets() const { return m_shapeSets.size(); }
-    int GetNumShares(int set) const { return m_shapeSets[set].m_shares.size(); }
     RlLocalShapeFeatures* GetShapes(int set) { return m_shapeSets[set].m_shapes; }
-    RlLocalShapeShare* GetShare(int set, int sh) { return m_shapeSets[set].m_shares[sh]; }
+    RlLocalShapeShare* GetShare(int set) { return m_shapeSets[set].m_shares; }
 
 protected:
 
@@ -76,16 +75,13 @@ private:
 
     struct ShapeSet
     {
-        ShapeSet(RlLocalShapeFeatures* shapes)
-        :   m_shapes(shapes) { }
-    
         RlLocalShapeFeatures* m_shapes;
-        std::vector<RlLocalShapeShare*> m_shares;
+        RlLocalShapeShare* m_shares;
     };
     std::vector<ShapeSet> m_shapeSets;
 
     int ReadShareTypes(const std::vector<std::string>& types);
-    void AddShares(RlLocalShapeShare* shares, ShapeSet& shapeset);
+    void AddShapeSet(ShapeSet& shapeset);
 };
 
 

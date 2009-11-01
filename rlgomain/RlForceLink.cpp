@@ -18,8 +18,8 @@
 #include "RlLocalShapeFeatures.h"
 #include "RlLocalShapeSet.h"
 #include "RlLocalShapeShare.h"
-#include "RlManualFeatures.h"
-#include "RlProductFeatures.h"
+//#include "RlManualFeatures.h"
+//#include "RlProductFeatures.h"
 #include "RlSharedFeatures.h"
 #include "RlStageFeatures.h"
 #include "RlSumFeatures.h"
@@ -63,8 +63,8 @@ void RlForceLink()
     RlLDFeatureShare::ForceLink();
     RlLIFeatureShare::ForceLink();
     RlCIFeatureShare::ForceLink();
-    RlManualFeatureSet::ForceLink();
-    RlProductFeatures::ForceLink();
+    //RlManualFeatureSet::ForceLink();
+    //RlProductFeatures::ForceLink();
     RlSharedFeatures::ForceLink();
     RlStageFeatures::ForceLink();
     RlSumFeatures::ForceLink();

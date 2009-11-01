@@ -12,6 +12,7 @@
 
 class RlTracker;
 class RlBinaryFeatures;
+class RlActiveSet;
 
 //----------------------------------------------------------------------------
 
@@ -25,13 +26,15 @@ extern float testtol;
 extern bool printdebug;
 
 void TryAll(GoBoard& bd, RlTracker& tracker);
-void Reset(RlTracker& tracker, RlBinaryFeatures& features);
+void Reset(RlTracker& tracker, RlActiveSet& active, RlBinaryFeatures& features);
 void Play(SgPoint point, SgBlackWhite colour, 
-    GoBoard& bd, RlTracker& tracker, RlBinaryFeatures& features);
-void Undo(GoBoard& bd, RlTracker& tracker, RlBinaryFeatures& features);
-int CountOccurrences(RlTracker& tracker, int f);
+    GoBoard& bd, RlTracker& tracker, RlActiveSet& active, 
+    RlBinaryFeatures& features);
+void Undo(GoBoard& bd, RlTracker& tracker, RlActiveSet& active, 
+    RlBinaryFeatures& features);
+int CountOccurrences(const RlActiveSet& active, int featureindex);
 SgRect MakeRect(int x, int y);
-void DisplayActive(RlTracker& tracker, RlBinaryFeatures& features);
+void DisplayActive(const RlActiveSet& active, RlBinaryFeatures& features);
 
 //----------------------------------------------------------------------------
 

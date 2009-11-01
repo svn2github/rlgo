@@ -198,6 +198,25 @@ void RlSumTracker::AddTracker(RlTracker* tracker)
     m_totalSlots += tracker->GetActiveSize();
 }
 
+void RlSumTracker::Reset()
+{
+    RlCompoundTracker::Reset();
+    SumChanges();
+}
+
+void RlSumTracker::Execute(SgMove move, SgBlackWhite colour,
+    bool execute, bool store)
+{
+    RlCompoundTracker::Execute(move, colour, execute, store);
+    SumChanges();
+}
+
+void RlSumTracker::Undo()
+{
+    RlCompoundTracker::Undo();
+    SumChanges();
+}
+
 void RlSumTracker::SumChanges()
 {
     for (int i = 0; i < ssize(m_trackers); ++i)
@@ -211,12 +230,6 @@ void RlSumTracker::SumChanges()
                 i_changes->m_occurrences);
         }
     }
-}
-
-void RlSumTracker::PropagateChanges()
-{
-    RlCompoundTracker::PropagateChanges();
-    SumChanges();
 }
 
 int RlSumTracker::GetActiveSize() const

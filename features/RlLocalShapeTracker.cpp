@@ -152,9 +152,14 @@ void RlLocalShapeTracker::Undo()
         Change& change = m_changes.back();
         if (change.m_step != m_step)
             break;
-        
-        m_index[change.m_anchor] = change.m_index;
         m_changes.pop_back();
+        
+        int slot = GetOffset(change.m_anchor);
+        if (!m_ignore[m_index[change.m_anchor]])
+            NewChange(slot, m_index[change.m_anchor], -1);
+        m_index[change.m_anchor] = change.m_index;
+        if (!m_ignore[m_index[change.m_anchor]])
+            NewChange(slot, m_index[change.m_anchor], +1);
     }
 
     if (RlSetup::Get()->GetVerification())

@@ -9,7 +9,6 @@ RlLocalShapeSet.cpp \
 RlLocalShapeShare.cpp \
 RlLocalShapeTracker.cpp \
 RlManualFeatures.cpp \
-RlProductFeatures.cpp \
 RlSharedFeatures.cpp \
 RlStageFeatures.cpp \
 RlSumFeatures.cpp \
@@ -24,7 +23,6 @@ RlLocalShapeSet.h \
 RlLocalShapeShare.h \
 RlLocalShapeTracker.h \
 RlManualFeatures.h \
-RlProductFeatures.h \
 RlSharedFeatures.h \
 RlStageFeatures.h \
 RlSumFeatures.h \

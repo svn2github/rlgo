@@ -53,6 +53,7 @@ void RlEvaluator::Initialise()
     map<RlBinaryFeatures*, RlTracker*> trackermap;
     m_tracker = m_featureSet->CreateTracker(trackermap);
     m_tracker->Initialise();    
+    m_active.Resize(m_tracker->GetActiveSize());
 }
 
 void RlEvaluator::Reset()
@@ -68,8 +69,9 @@ void RlEvaluator::Reset()
     if (m_differences)
         m_dirty.MarkAll(m_board);
 
-    m_tracker->DoReset();
-    AddWeights(m_tracker->ChangeList(), m_eval);
+    m_tracker->Reset();
+    m_active.Clear();
+    AddWeightsUpdateActive(m_tracker->ChangeList(), m_eval);
 }
 
 void RlEvaluator::Execute(SgMove move, SgBlackWhite colour, bool real)
@@ -85,9 +87,8 @@ void RlEvaluator::Execute(SgMove move, SgBlackWhite colour, bool real)
     // When a simulated move is executed, update incrementally
     else
     {
-        m_tracker->DoExecute(move, colour, m_supportUndo);
-        AddWeights(m_tracker->ChangeList(), m_eval);
-
+        m_tracker->Execute(move, colour, true, m_supportUndo);
+        AddWeightsUpdateActive(m_tracker->ChangeList(), m_eval);
         if (m_differences)
             m_tracker->UpdateDirty(move, colour, m_dirty);
         if (m_moveFilter)
@@ -112,8 +113,8 @@ void RlEvaluator::Undo(bool real)
     {
         if (!m_supportUndo)
             throw SgException("This evaluator does not support undo");
-        m_tracker->DoUndo();
-        SubWeights(m_tracker->ChangeList(), m_eval);
+        m_tracker->Undo();
+        AddWeightsUpdateActive(m_tracker->ChangeList(), m_eval);
         
         if (m_differences)
             m_dirty.MarkAll(m_board); // @todo: could do something smarter here
@@ -137,12 +138,14 @@ void RlEvaluator::AddWeights(const RlChangeList& changes, RlFloat& eval)
     }
 }
 
-void RlEvaluator::SubWeights(const RlChangeList& changes, RlFloat& eval)
+void RlEvaluator::AddWeightsUpdateActive(
+    const RlChangeList& changes, RlFloat& eval)
 {
     for (RlChangeList::Iterator i_changes(changes); i_changes; ++i_changes)
     {
         RlWeight& weight = m_weightSet->Get(i_changes->m_featureIndex);
-        eval -= weight.Weight() * i_changes->m_occurrences;
+        eval += weight.Weight() * i_changes->m_occurrences;
+        m_active.Change(*i_changes);
     }
 }
 
@@ -160,7 +163,7 @@ RlFloat RlEvaluator::EvalMoveSimple(SgMove move, SgBlackWhite colour)
 
     m_board.Play(move, colour);
 
-    m_tracker->DoEvaluate(move, colour);
+    m_tracker->Execute(move, colour, false, false);
     AddWeights(m_tracker->ChangeList(), weightchange);
     m_board.Undo();
     return m_eval + weightchange;
@@ -173,7 +176,7 @@ RlFloat RlEvaluator::EvalMoveDiffs(SgMove move, SgBlackWhite colour)
     if (m_dirty.IsDirty(move, colour))
     {
         m_board.Play(move, colour);
-        m_tracker->DoEvaluate(move, colour);
+        m_tracker->Execute(move, colour, false, false);
         AddWeights(m_tracker->ChangeList(), weightchange);
         m_diffs[BWIndex(colour)][move] = weightchange;
         m_dirty.Clear(move, colour);
