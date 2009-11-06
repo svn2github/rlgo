@@ -141,7 +141,7 @@ void RlLocalShapeSet::AddShapes(int xsize, int ysize, int sharetypes)
     if (sharetypes & (1 << eLI))
     {
         shapeset.m_shapes = new RlLocalShapeFeatures(m_board, xsize, ysize);
-        shapeset.m_shares = new RlLDFeatureShare(m_board, shapeset.m_shapes, true);
+        shapeset.m_shares = new RlLIFeatureShare(m_board, shapeset.m_shapes, true);
         AddShapeSet(shapeset);
     }
     if (sharetypes & (1 << eLD))
