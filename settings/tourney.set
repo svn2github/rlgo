@@ -78,6 +78,7 @@ Object = RlAlphaBeta
     KillerHeuristic = 1
     NumKillers = 3
     OpponentKillers = 3
+    CutMargin = 0.4
     BranchPower = 0.25
 }
 

@@ -27,6 +27,7 @@ RlAlphaBeta::RlAlphaBeta(GoBoard& board, RlEvaluator* evaluator)
     m_killerHeuristic(true),
     m_numKillers(2),
     m_opponentKillers(2),
+    m_cutMargin(0.1),
     m_branchPower(0.25)
 {
 }
@@ -46,6 +47,7 @@ void RlAlphaBeta::LoadSettings(istream& settings)
     settings >> RlSetting<bool>("KillerHeuristic", m_killerHeuristic);
     settings >> RlSetting<int>("NumKillers", m_numKillers);
     settings >> RlSetting<int>("OpponentKillers", m_opponentKillers);
+    settings >> RlSetting<RlFloat>("CutMargin", m_cutMargin);
     settings >> RlSetting<RlFloat>("BranchPower", m_branchPower);
 }
 
@@ -129,18 +131,18 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
     }
 
     // Evaluate leaf node
-    if (depth == 0)
+    if (depth == 0 || TwoPasses(m_board))
     {
         m_stats.m_leafCount++;
         return Evaluate();
     }
     
-    // Probcut
+    // ProbCut
     if (depth >= 2 && beta < RlInfinity)
     {
-        RlFloat margin = 0.1;
-        eval = AlphaBeta(depth - 2, beta + margin, beta + margin + 0.001);
-        if (eval > beta + margin)
+        const RlFloat grain = 0.0001;
+        eval = AlphaBeta(depth - 2, beta + m_cutMargin, beta + m_cutMargin + grain);
+        if (eval > beta + m_cutMargin)
             return beta;
     }
     
@@ -149,8 +151,6 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
     m_stats.m_interiorDepth += (m_iterationDepth - depth);
     vector<SgMove> moves;
     GenerateMoves(moves, depth, bestMove);
-    if (moves.empty())
-        return Evaluate();
     
     // Main loop
     for (vector<SgMove>::reverse_iterator i_moves = moves.rbegin(); 
@@ -322,22 +322,22 @@ bool RlAlphaBeta::CheckAbort()
     return false;
 }
 
-void RlAlphaBeta::PrincipalVariation(vector<SgMove>& pv) const
+void RlAlphaBeta::PrincipalVariation(vector<SgMove>& pv)
 {
     // Walk the transposition table to retrieve the principal variation
-    pv.clear();
     HashEntry entry = LookupHash();
     while (entry.m_hash == m_board.GetHashCodeInclToPlay()
         && entry.m_bestMove != SG_NULLMOVE
-        && entry.m_flags == HashEntry::RL_EXACT)
+        && entry.m_flags == HashEntry::RL_EXACT
+        && !TwoPasses(m_board))
     {
-        pv.push_back(entry.m_bestMove);
-        m_evaluator->PlayExecute(entry.m_bestMove, m_board.ToPlay(), false);
+        Play(entry.m_bestMove);
         entry = LookupHash();
     }
 
+    pv = m_variation;
     for (int i = 0; i < ssize(pv); ++i)
-        m_evaluator->TakeBackUndo(false);
+        Undo();
 }
 
 void RlAlphaBeta::StaticMoveOrder()
@@ -358,6 +358,7 @@ void RlAlphaBeta::StaticMoveOrder()
     sorter.SortMoves(m_board.ToPlay()); // best moves will be last
 
     m_sortedMoves.clear();
+    m_sortedMoves.push_back(SG_PASS);
     for (int i = 0; i < sorter.GetNumMoves(); ++i)
         m_sortedMoves.push_back(sorter.GetMove(i));
 }

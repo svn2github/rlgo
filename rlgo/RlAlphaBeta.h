@@ -104,7 +104,7 @@ private:
         // 24 bytes per hash entry
     };
     
-    void PrincipalVariation(std::vector<SgMove>& pv) const;
+    void PrincipalVariation(std::vector<SgMove>& pv);
     void StaticMoveOrder();
     void GenerateMoves(std::vector<SgMove>& moves, int depth, SgMove bestMove);
     RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta);
@@ -146,6 +146,9 @@ private:
     
     /** Number of opponent killer moves to use (<= m_numKillers) */
     int m_opponentKillers;
+    
+    /** Margin to use for cutting nodes */
+    RlFloat m_cutMargin;
     
     /** Power to use when estimating time for next iteration */
     RlFloat m_branchPower;
