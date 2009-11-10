@@ -28,6 +28,7 @@ RlAlphaBeta::RlAlphaBeta(GoBoard& board, RlEvaluator* evaluator)
     m_numKillers(2),
     m_opponentKillers(2),
     m_cutMargin(0.1),
+    m_maxCuts(1),
     m_branchPower(0.25)
 {
 }
@@ -48,6 +49,7 @@ void RlAlphaBeta::LoadSettings(istream& settings)
     settings >> RlSetting<int>("NumKillers", m_numKillers);
     settings >> RlSetting<int>("OpponentKillers", m_opponentKillers);
     settings >> RlSetting<RlFloat>("CutMargin", m_cutMargin);
+    settings >> RlSetting<int>("MaxCuts", m_maxCuts);
     settings >> RlSetting<RlFloat>("BranchPower", m_branchPower);
 }
 
@@ -107,7 +109,8 @@ RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
     for (m_iterationDepth = 1; ; ++m_iterationDepth)
     {
         m_stats.Clear();
-        RlFloat eval = AlphaBeta(m_iterationDepth, -RlInfinity, +RlInfinity);
+        RlFloat eval = AlphaBeta(m_iterationDepth, 
+            -RlInfinity, +RlInfinity, 0);
         PrincipalVariation(pv);
         m_stats.Output(m_iterationDepth, eval, m_board.ToPlay(), pv,
             RlDebug(RlSetup::VOCAL));
@@ -116,7 +119,8 @@ RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
     }
 }
 
-RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
+RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta, 
+    int numcuts)
 {
     RlFloat eval;
     SgMove bestMove = SG_NULLMOVE;
@@ -138,10 +142,11 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
     }
     
     // ProbCut
-    if (depth >= 2 && beta < RlInfinity)
+    if (depth >= 2 && numcuts < m_maxCuts && beta < RlInfinity)
     {
         const RlFloat grain = 0.0001;
-        eval = AlphaBeta(depth - 2, beta + m_cutMargin, beta + m_cutMargin + grain);
+        eval = AlphaBeta(depth - 2, 
+            beta + m_cutMargin, beta + m_cutMargin + grain, numcuts + 1);
         if (eval > beta + m_cutMargin)
             return beta;
     }
@@ -160,7 +165,7 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
         if (ConsiderMove(move))
         {
             Play(move);
-            RlFloat eval = -AlphaBeta(depth - 1, -beta, -alpha);
+            RlFloat eval = -AlphaBeta(depth - 1, -beta, -alpha, 0);
             Undo();
             m_stats.m_interiorWidth++;
             

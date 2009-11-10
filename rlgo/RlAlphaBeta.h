@@ -107,7 +107,7 @@ private:
     void PrincipalVariation(std::vector<SgMove>& pv);
     void StaticMoveOrder();
     void GenerateMoves(std::vector<SgMove>& moves, int depth, SgMove bestMove);
-    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta);
+    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta, int numcuts);
     RlFloat Evaluate();
     void PromoteKillers(std::vector<SgMove>& moves, int depth);
     void Promote(std::vector<SgMove>& moves, SgMove move);
@@ -149,6 +149,9 @@ private:
     
     /** Margin to use for cutting nodes */
     RlFloat m_cutMargin;
+    
+    /** Maximum number of recursive cuts */
+    int m_maxCuts;
     
     /** Power to use when estimating time for next iteration */
     RlFloat m_branchPower;
