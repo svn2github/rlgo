@@ -135,6 +135,15 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
         return Evaluate();
     }
     
+    // Probcut
+    if (depth >= 2 && beta < RlInfinity)
+    {
+        RlFloat margin = 0.1;
+        eval = AlphaBeta(depth - 2, beta + margin, beta + margin + 0.001);
+        if (eval > beta + margin)
+            return beta;
+    }
+    
     // Move generation
     m_stats.m_interiorCount++;
     m_stats.m_interiorDepth += (m_iterationDepth - depth);
