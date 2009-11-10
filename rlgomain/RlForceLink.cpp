@@ -4,6 +4,7 @@
 #include "RlForceLink.h"
 #include "RlAgent.h"
 #include "RlAgentLog.h"
+#include "RlAlphaBeta.h"
 #include "RlConvert.h"
 #include "RlEvaluator.h"
 #include "RlFactory.h"
@@ -40,6 +41,7 @@ void RlForceLink()
     RlRealAgent::ForceLink();
     RlSimAgent::ForceLink();
     RlAgentLog::ForceLink();
+    RlAlphaBeta::ForceLink();
     RlEvaluator::ForceLink();
     RlHistory::ForceLink();
     RlMoveFilter::ForceLink();
@@ -82,7 +84,7 @@ void RlForceLink()
     RlSimMaxPolicy::ForceLink();
     RlPriorityPolicy::ForceLink();
     RlAtariPolicy::ForceLink();
-    RlMainSearch::ForceLink();
+    RlSearchPolicy::ForceLink();
     RlTwoStagePolicy::ForceLink();
     RlLogTwoStagePolicy::ForceLink();
     RlLinearTwoStagePolicy::ForceLink();

@@ -6,20 +6,14 @@
 #include "SgSystem.h"
 #include "RlSimulator.h"
 
-#include "GoBoardUtil.h"
-#include "GoGame.h"
 #include "SgProp.h"
-#include "SgRandom.h"
-#include "SgTimeRecord.h"
 #include "RlAgent.h"
 #include "RlAgentLog.h"
-#include "RlBinaryFeatures.h"
 #include "RlEvaluator.h"
-#include "RlLearningRule.h"
 #include "RlPolicy.h"
 #include "RlSetup.h"
+#include "RlTimeControl.h"
 #include "RlFuegoPlayout.h"
-#include "RlUtils.h"
 
 #include <boost/lexical_cast.hpp>
 
@@ -37,72 +31,33 @@ RlSimulator::RlSimulator(GoBoard& board, RlAgent* agent, int maxgames)
 :   RlAutoObject(board),
     m_agent(agent),
     m_controlMode(eMaxGames),
-    m_minGames(maxgames / 10),
+    m_timeControl(0),
     m_maxGames(maxgames),
-    m_minTime(0.1f),
-    m_maxTime(1.0),
-    m_fraction(1),
-    m_safetyTime(0),
-    m_timeControl(board),
     m_truncate(-1),
     m_defaultPolicy(0),
     m_fuegoPlayout(0),
     m_maxSimMoves(RL_MAX_TIME - 2),
-    m_minSimAfterPass(false),
     m_log(false),
     m_record(false),
     m_pondering(false),
-    m_ready(false)
+    m_ready(false),
+    m_gameRecorder(board)
 {
 }
 
 void RlSimulator::LoadSettings(istream& settings)
 {
     int version;
-    settings >> RlVersion(version, 12, 12);
+    settings >> RlVersion(version, 13, 13);
     settings >> RlSetting<RlAgent*>("Agent", m_agent);
     settings >> RlSetting<int>("ControlMode", m_controlMode);
-    switch (m_controlMode)
-    {
-        case eMaxGames:
-        {
-            settings >> RlSetting<int>("MinGames", m_minGames);
-            settings >> RlSetting<int>("MaxGames", m_maxGames);
-            break;
-        }
-        case eMaxTime:
-        {
-            settings >> RlSetting<double>("MinTime", m_minTime);
-            settings >> RlSetting<double>("MaxTime", m_maxTime);
-            break;
-        }
-        case eControlTime:
-        {
-            RlFloat remain, finalspace, fastfactor;
-            int fastopen;
-            settings >> RlSetting<int>("MinGames", m_minGames);
-            settings >> RlSetting<int>("FastOpen", fastopen);
-            settings >> RlSetting<RlFloat>("FastFactor", fastfactor);
-            settings >> RlSetting<RlFloat>("RemainingConstant", remain);
-            settings >> RlSetting<double>("MinTime", m_minTime);
-            settings >> RlSetting<RlFloat>("FinalSpace", finalspace);
-            settings >> RlSetting<RlFloat>("Fraction", m_fraction);
-            m_timeControl.SetFastOpenMoves(fastopen);
-            m_timeControl.SetFastOpenFactor(fastfactor);
-            m_timeControl.SetRemainingConstant(remain);
-            m_timeControl.SetMinTime(m_minTime);
-            m_timeControl.SetFinalSpace(finalspace);
-            break;
-        }
-    }
-    
-    settings >> RlSetting<double>("SafetyTime", m_safetyTime);
+    settings >> RlSetting<RlTimeControl*>("TimeControl", m_timeControl);
+    settings >> RlSetting<int>("MaxGames", m_maxGames);
     settings >> RlSetting<int>("Truncate", m_truncate);
     settings >> RlSetting<bool>("Resign", m_resign);
     settings >> RlSetting<RlPolicy*>("DefaultPolicy", m_defaultPolicy);
     settings >> RlSetting<RlFuegoPlayout*>("FuegoPlayout", m_fuegoPlayout);
     settings >> RlSetting<int>("MaxSimMoves", m_maxSimMoves);
-    settings >> RlSetting<bool>("MinSimAfterPass", m_minSimAfterPass);
     settings >> RlSetting<bool>("FastReset", m_fastReset);
     settings >> RlSetting<bool>("Log", m_log);
     settings >> RlSetting<bool>("Record", m_record);
@@ -137,8 +92,9 @@ void RlSimulator::Simulate(int controlmode)
     m_board.Rules().SetKoRule(GoRules::SIMPLEKO);
 
     ClearStats();
-    StartClock();
-    RecordStart();
+    m_elapsedTime.Start();
+    if (m_record)
+        m_gameRecorder.RecordStart(this);
 
     switch (controlmode)
     {
@@ -148,15 +104,13 @@ void RlSimulator::Simulate(int controlmode)
         case eMaxTime:
             SimulateMaxTime();
             break;
-        case eControlTime:
-            SimulateControlTime();
-            break;
         case ePonder:
             SimulatePonder();
             break;
     }
 
-    RecordEnd();
+    if (m_record)
+        m_gameRecorder.RecordEnd();
     DisplayStats();
 
     m_agent->GetEvaluator()->Reset();
@@ -166,63 +120,22 @@ void RlSimulator::Simulate(int controlmode)
 
 void RlSimulator::SimulateMaxGames()
 {
-    int maxgames;
-    if (m_minSimAfterPass && m_board.GetLastMove() == SG_PASS)
-        maxgames = m_minGames;
-    else
-        maxgames = m_maxGames;
-
-    for (m_numGames = 0; m_numGames < maxgames; ++m_numGames)
-    {
-        if (Unsafe())
-            break;
+    for (m_numGames = 0; m_numGames < m_maxGames; ++m_numGames)
         SelfPlayGame();
-    }
 }
 
 void RlSimulator::SimulateMaxTime()
 {
-    if (m_minSimAfterPass && m_board.GetLastMove() == SG_PASS)
-        m_searchTime = m_minTime;
-    else
-        m_searchTime = m_maxTime;
-
-    for (m_numGames = 0; m_elapsedTime.GetTime() < m_searchTime; ++m_numGames)
-    {
-        if (Unsafe() && m_numGames > m_minGames)
-            break;
+    double searchTime = m_timeControl->TimeForCurrentMove(
+        RlSetup::Get()->GetTimeRecord());
+    for (m_numGames = 0; m_elapsedTime.GetTime() < searchTime; ++m_numGames)
         SelfPlayGame();
-    }
-}
-
-void RlSimulator::SimulateControlTime()
-{
-    if (m_minSimAfterPass && m_board.GetLastMove() == SG_PASS)
-        m_searchTime = m_minTime;
-    else
-        m_searchTime = m_timeControl.TimeForCurrentMove(
-            RlSetup::Get()->GetTimeRecord()) * m_fraction;
-
-    for (m_numGames = 0; m_elapsedTime.GetTime() < m_searchTime; ++m_numGames)
-    {
-        if (Unsafe() && m_numGames > m_minGames)
-            break;
-        SelfPlayGame();
-    }
 }
 
 void RlSimulator::SimulatePonder()
 { 
     for (m_numGames = 0; !SgUserAbort(); ++m_numGames)
         SelfPlayGame();
-}
-    
-
-void RlSimulator::StartClock()
-{
-    m_lastTime = 0;
-    m_elapsedTime.Start();
-    m_timeLeft = RlSetup::Get()->GetTimeRecord().TimeLeft(m_board.ToPlay());
 }
 
 void RlSimulator::ClearStats()
@@ -273,7 +186,8 @@ SgMove RlSimulator::SelectAndPlay(SgBlackWhite toplay, int movenum)
     m_agent->Execute(move, toplay);
     if (m_fuegoPlayout)
         m_fuegoPlayout->OnPlay();
-    RecordMove(move, toplay);
+    if (m_record)
+        m_gameRecorder.RecordMove(move, toplay);
     if (movenum == 0)
         m_freqs[move]++;
     return move;
@@ -290,14 +204,7 @@ inline bool RlSimulator::Truncate(int nummoves)
     // Truncate 1. after fixed number of moves in simulation 
     // 2. if there is no representation in the current state
     //    (to avoid backups passing through unknown states)
-    if (m_truncate >= 0 && nummoves >= m_truncate)
-        return true;
-    //@TODO: make this work properly
-    // currently causes some games to terminate early
-    //if (m_board.MoveNumber() > 0 && 
-    //    m_agent->GetState().Active().GetTotalActive() == 0)
-    //    return true;
-    return false;
+    return m_truncate >= 0 && nummoves >= m_truncate;
 }
 
 void RlSimulator::PlayOut(int& nummoves, bool& resign)
@@ -323,7 +230,8 @@ void RlSimulator::PlayOut(int& nummoves, bool& resign)
             //@todo: this is currently broken: it does record in history.
             m_agent->Execute(move, toplay, true);            
         }
-        RecordMove(move, toplay);
+        if (m_record)
+            m_gameRecorder.RecordMove(move, toplay);
     }
     resign = QuickResign(m_board, m_board.ToPlay());
 }
@@ -338,7 +246,8 @@ void RlSimulator::SelfPlayGame()
     SgBlackWhite toplay = m_board.ToPlay();
     if (m_fuegoPlayout)
         m_fuegoPlayout->OnStart();
-    RecordVarStart();
+    if (m_record)
+        m_gameRecorder.RecordVarStart();
     
     // Main loop
     m_agent->NewGame();
@@ -361,7 +270,8 @@ void RlSimulator::SelfPlayGame()
     // Reset board to original position
     if (m_fuegoPlayout)
         m_fuegoPlayout->OnEnd();
-    RecordVarEnd();
+    if (m_record)
+        m_gameRecorder.RecordVarEnd();
     for (int i = 0; i < nummoves; ++i)
         m_board.Undo();
         
@@ -376,13 +286,8 @@ void RlSimulator::SelfPlayGame()
 
 void RlSimulator::StepLog(int nummoves, RlFloat score)
 {
-    double elapsed = m_elapsedTime.GetTime();
-    double gametime = elapsed - m_lastTime;
-    m_lastTime = elapsed;
-
     m_simLog->Log("NumMoves", nummoves);
     m_simLog->Log("Score", score);
-    m_simLog->Log("TimeUsed", gametime);
     m_simLog->Step();
 }
 
@@ -391,7 +296,6 @@ void RlSimulator::InitLog()
     m_simLog.reset(new RlLog(this));    
     m_simLog->AddItem("NumMoves");
     m_simLog->AddItem("Score");
-    m_simLog->AddItem("TimeUsed");
 }
 
 SgMove RlSimulator::GetFreqMove() const
@@ -410,17 +314,6 @@ SgMove RlSimulator::GetFreqMove() const
     return maxmove;
 }
 
-bool RlSimulator::Unsafe() const
-{
-    if (m_safetyTime != 0 && m_timeLeft < m_safetyTime)
-    {
-        RlDebug(RlSetup::QUIET) 
-            << "Inside safety time, cutting off simulation\n";
-        return true;
-    }
-    return false;
-}
-
 void RlSimulator::GetAllFreqs(vector<RlFloat>& freqs) const
 {
     for (GoBoard::Iterator i_board(m_board); i_board; ++i_board)
@@ -428,54 +321,53 @@ void RlSimulator::GetAllFreqs(vector<RlFloat>& freqs) const
             / static_cast<RlFloat>(m_numGames));
 }
 
-void RlSimulator::RecordStart()
+//----------------------------------------------------------------------------
+
+RlGameRecorder::RlGameRecorder(const GoBoard& board)
+:   m_board(board),
+    m_count(0)
 {
-    if (m_record)
+}
+
+void RlGameRecorder::RecordStart(RlAutoObject* caller)
+{
+    m_gameRecord.close();
+    bfs::path filename = RlLog::GenLogName(caller, 
+        "Games" + lexical_cast<string>(m_count++), ".sgf");
+    m_gameRecord.open(filename);
+    if (!m_gameRecord)
+        throw SgException("Failed to save simulation record");
+
+    m_gameRecord << "(;FF[4]KM[" << m_board.Rules().Komi() << "]"
+        << "SZ[" << m_board.Size() << "]";
+    for (int i = 0; i < m_board.MoveNumber(); ++i)
     {
-        static int count = 0;
-        bfs::path filename = RlLog::GenLogName(this, 
-            "Games" + lexical_cast<string>(count++), ".sgf");
-        m_gameRecord.close();
-        m_gameRecord.open(filename);
-        if (!m_gameRecord)
-            throw SgException("Failed to save simulation record");
-
-        m_gameRecord << "(;FF[4]KM[" << m_board.Rules().Komi() << "]"
-            << "SZ[" << m_board.Size() << "]";
-        for (int i = 0; i < m_board.MoveNumber(); ++i)
-        {
-            RlStone stone = GetHistory(m_board, i);
-            RecordMove(stone.first, stone.second);
-        }
-        m_gameRecord << "\n";
+        RlStone stone = GetHistory(m_board, i);
+        RecordMove(stone.first, stone.second);
     }
+    m_gameRecord << "\n";
 }
 
-void RlSimulator::RecordEnd()
+void RlGameRecorder::RecordEnd()
 {
-    if (m_record)
-        m_gameRecord << ")\n";
+    m_gameRecord << ")\n";
 }
 
-void RlSimulator::RecordVarStart()
+void RlGameRecorder::RecordVarStart()
 {
-    if (m_record)
-        m_gameRecord << "(";
+    m_gameRecord << "(";
 }
 
-void RlSimulator::RecordVarEnd()
+void RlGameRecorder::RecordVarEnd()
 {
-    if (m_record)
-        m_gameRecord << ")\n";
+    m_gameRecord << ")\n";
 }
 
-void RlSimulator::RecordMove(SgMove move, SgBlackWhite toplay)
+void RlGameRecorder::RecordMove(SgMove move, SgBlackWhite toplay)
 {
-    if (m_record)
-        m_gameRecord << ";" << SgBW(toplay) << "[" 
-            << PointToSgfString(move, m_board.Size(), SG_PROPPOINTFMT_GO, 4)
-            << "]";
+    m_gameRecord << ";" << SgBW(toplay) << "[" 
+        << PointToSgfString(move, m_board.Size(), SG_PROPPOINTFMT_GO, 4)
+        << "]";
 }
 
 //----------------------------------------------------------------------------
-

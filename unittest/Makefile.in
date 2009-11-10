@@ -51,6 +51,7 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/utils/RlConfig.h
 CONFIG_CLEAN_FILES =
 am_rlgo_unittest_OBJECTS = rlgo_unittest-RlActiveSetTest.$(OBJEXT) \
+	rlgo_unittest-RlAlphaBetaTest.$(OBJEXT) \
 	rlgo_unittest-RlEvaluatorTest.$(OBJEXT) \
 	rlgo_unittest-RlTDTest.$(OBJEXT) \
 	rlgo_unittest-RlLocalShapeConvertTest.$(OBJEXT) \
@@ -180,6 +181,7 @@ top_srcdir = @top_srcdir@
 twogtp = @twogtp@
 rlgo_unittest_SOURCES = \
 RlActiveSetTest.cpp \
+RlAlphaBetaTest.cpp \
 RlEvaluatorTest.cpp \
 RlTDTest.cpp \
 RlLocalShapeConvertTest.cpp \
@@ -274,6 +276,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlActiveSetTest.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlEvaluatorTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlLocalShapeConvertTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rlgo_unittest-RlLocalShapeTest.Po@am__quote@
@@ -308,6 +311,20 @@ rlgo_unittest-RlActiveSetTest.obj: RlActiveSetTest.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlActiveSetTest.cpp' object='rlgo_unittest-RlActiveSetTest.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o rlgo_unittest-RlActiveSetTest.obj `if test -f 'RlActiveSetTest.cpp'; then $(CYGPATH_W) 'RlActiveSetTest.cpp'; else $(CYGPATH_W) '$(srcdir)/RlActiveSetTest.cpp'; fi`
+
+rlgo_unittest-RlAlphaBetaTest.o: RlAlphaBetaTest.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT rlgo_unittest-RlAlphaBetaTest.o -MD -MP -MF $(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Tpo -c -o rlgo_unittest-RlAlphaBetaTest.o `test -f 'RlAlphaBetaTest.cpp' || echo '$(srcdir)/'`RlAlphaBetaTest.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Tpo $(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAlphaBetaTest.cpp' object='rlgo_unittest-RlAlphaBetaTest.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o rlgo_unittest-RlAlphaBetaTest.o `test -f 'RlAlphaBetaTest.cpp' || echo '$(srcdir)/'`RlAlphaBetaTest.cpp
+
+rlgo_unittest-RlAlphaBetaTest.obj: RlAlphaBetaTest.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT rlgo_unittest-RlAlphaBetaTest.obj -MD -MP -MF $(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Tpo -c -o rlgo_unittest-RlAlphaBetaTest.obj `if test -f 'RlAlphaBetaTest.cpp'; then $(CYGPATH_W) 'RlAlphaBetaTest.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAlphaBetaTest.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Tpo $(DEPDIR)/rlgo_unittest-RlAlphaBetaTest.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAlphaBetaTest.cpp' object='rlgo_unittest-RlAlphaBetaTest.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o rlgo_unittest-RlAlphaBetaTest.obj `if test -f 'RlAlphaBetaTest.cpp'; then $(CYGPATH_W) 'RlAlphaBetaTest.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAlphaBetaTest.cpp'; fi`
 
 rlgo_unittest-RlEvaluatorTest.o: RlEvaluatorTest.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(rlgo_unittest_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT rlgo_unittest-RlEvaluatorTest.o -MD -MP -MF $(DEPDIR)/rlgo_unittest-RlEvaluatorTest.Tpo -c -o rlgo_unittest-RlEvaluatorTest.o `test -f 'RlEvaluatorTest.cpp' || echo '$(srcdir)/'`RlEvaluatorTest.cpp

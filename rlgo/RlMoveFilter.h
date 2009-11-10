@@ -45,11 +45,11 @@ public:
         Calls ConsiderMove on all vacant points. */
     void GetMoveVector(SgBlackWhite colour, std::vector<SgMove>& moves) const;
     
-    /** Make an SgList of all vacant moves (even if disallowed or illegal) */
-    void GetVacantList(SgList<SgMove>& moves) const;
-
     /** Make an SgVector of all vacant moves (even if disallowed or illegal) */
     void GetVacantVector(SgVector<SgMove>& moves) const;
+
+    /** Make an STL vector of all vacant moves (even if disallowed or illegal) */
+    void GetVacantVector(std::vector<SgMove>& moves) const;
     
     /** No allowed moves */
     bool Empty(SgBlackWhite colour) const;

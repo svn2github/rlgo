@@ -25,62 +25,70 @@ Object = RlInclude
     Include = dyna2.set
 }
 
-Object = RlSimulator
+Object = RlTimeControl
 {
-    ID = TourneySimulator
-    Version = 12
-    Agent = SimAgent
-    ControlMode = 2 # TimeControl
-    MinGames = 100
+    ID = TimeControl
     FastOpen = 0
     FastFactor = 0
     RemainingConstant = 0.5
     MinTime = 0.1
     FinalSpace = 1.0
-    Fraction = 1.0
-    SafetyTime = 8
+    Fraction = 0.5
+    SafetyTime = 5
+}
+
+Object = RlSimulator
+{
+    ID = TourneySimulator
+    Version = 13
+    Agent = SimAgent
+    ControlMode = 1 # TimeControl
+    TimeControl = TimeControl
+    MaxGames = -1
     Truncate = 32
     Resign = 1
     DefaultPolicy = FuegoOnPolicy
     FuegoPlayout = FuegoPlayout
     MaxSimMoves = 200
-    MinSimAfterPass = 0
     FastReset = 1
     Log = 0
     Record = 0
     Pondering = 1
 }
 
-Object = RlMainSearch
+Object = RlSearchPolicy
 {
     ID = TourneySearch
-    Version = 1
-    Evaluator = FusedEvaluator
-    OnPolicy = 1
-    Version = 5
-    HashSize = 4194304 # 16Mb hash-table
-    Iterative = 1
-    Killers = 1
-    OpponentBest = 1
-    NullMoveDepth = 2
-    MinDepth = 5
-    MaxDepth = 20
-    Trace = 0
-    Log = 1
-    ProbCut = 0
-    AbortFrequency = 1000
-    MaxBreadth = 0
-    ControlMode = 3 # ControlIter
-    FastOpen = 0
-    FastFactor = 0
-    RemainingConstant = 0.5
-    MinTime = 0
-    FinalSpace = 1.0
-    Fraction = 1.0
-    BranchPower = 0.25
-    SafetyTime = 8
+    AlphaBeta = AlphaBeta
+    SearchEvaluator = FusedEvaluator
     ConvertEvaluator = Evaluator
     Convert = Fusion
+    ControlMode = 2 # Predicted time of next iteration
+    TimeControl = TimeControl
+}
+
+Object = RlAlphaBeta
+{
+    ID = AlphaBeta
+    Evaluator = FusedEvaluator
+    MaxDepth = 100
+    MaxTime = 10 # overridden by time controls
+    MaxPredictedTime = 10 # overridden by time controls
+    HashSize = 4194304 # 100Mb hash-table
+    Quiescence = 0
+    EnsureParity = 1
+    ReadLadders = 0
+    MaxQDepth = 9
+    MaxLadderDepth = 5
+    NullMovePruning = 0 #@LOCAL
+    NullMoveDepth = 3
+    KillerHeuristic = 1
+    NumKillers = 3
+    OpponentKillers = 3
+    Grain = 0.01
+    EstimateTenukiValue = 0
+    TenukiValue = 0.2
+    BranchPower = 0.25
 }
 
 ### LOCAL SHAPE CONVERSION ###

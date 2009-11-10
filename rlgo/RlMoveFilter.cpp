@@ -164,24 +164,25 @@ void RlMoveFilter::GetMoveVector(SgBlackWhite colour,
         moves.push_back(*i_allowed);
 }
 
-void RlMoveFilter::GetVacantList(SgList<SgMove>& moves) const
+void RlMoveFilter::GetVacantVector(SgVector<SgMove>& moves) const
 {
-    //@todo: replace SgList by std::list
+    moves.Clear();
     for (list<SgMove>::const_iterator i_vacant = m_vacant.begin();
         i_vacant != m_vacant.end(); ++i_vacant)
     {
         SgMove move = *i_vacant;
-        moves.Push(move);
+        moves.PushBack(move);
     }
 }
 
-void RlMoveFilter::GetVacantVector(SgVector<SgMove>& moves) const
+void RlMoveFilter::GetVacantVector(std::vector<SgMove>& moves) const
 {
+    moves.clear();
     for (list<SgMove>::const_iterator i_vacant = m_vacant.begin();
         i_vacant != m_vacant.end(); ++i_vacant)
     {
         SgMove move = *i_vacant;
-        moves.Append(move);
+        moves.push_back(move);
     }
 }
 

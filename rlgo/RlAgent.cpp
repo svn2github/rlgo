@@ -80,7 +80,6 @@ void RlAgent::Initialise()
     if (m_trainer)
         m_trainer->EnsureInitialised();
 
-    m_history->Clear();
     m_history->Resize(m_evaluator->GetActiveSize());
 }
 

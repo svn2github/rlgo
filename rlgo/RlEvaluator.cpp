@@ -48,6 +48,7 @@ void RlEvaluator::Initialise()
 {
     m_featureSet->EnsureInitialised();
     m_weightSet->EnsureInitialised();
+    m_moveFilter->EnsureInitialised();
     
     // Tracker map ensures that each feature creates just one tracker
     map<RlBinaryFeatures*, RlTracker*> trackermap;
@@ -281,7 +282,7 @@ void RlEvaluator::EnsureSupportUndo()
 
 //----------------------------------------------------------------------------
 
-void RlMoveSorter::Sort(RlEvaluator* evaluator, SgBlackWhite toplay)
+void RlMoveSorter::Evaluate(RlEvaluator* evaluator, SgBlackWhite toplay)
 {
     m_evals.clear();
     
@@ -293,8 +294,6 @@ void RlMoveSorter::Sort(RlEvaluator* evaluator, SgBlackWhite toplay)
         RlFloat eval = evaluator->EvaluateMove(move, toplay);
         m_evals.push_back(EvalPair(move, eval));
     }
-    
-    SortMoves(toplay);
 }
 
 void RlMoveSorter::SortMoves(SgBlackWhite toplay)

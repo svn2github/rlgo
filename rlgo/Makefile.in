@@ -57,6 +57,7 @@ librlgo_rlgo_a_LIBADD =
 am_librlgo_rlgo_a_OBJECTS = librlgo_rlgo_a-RlAgent.$(OBJEXT) \
 	librlgo_rlgo_a-RlAgentLog.$(OBJEXT) \
 	librlgo_rlgo_a-RlAgentPlayer.$(OBJEXT) \
+	librlgo_rlgo_a-RlAlphaBeta.$(OBJEXT) \
 	librlgo_rlgo_a-RlBinaryFeatures.$(OBJEXT) \
 	librlgo_rlgo_a-RlDirtySet.$(OBJEXT) \
 	librlgo_rlgo_a-RlEvaluator.$(OBJEXT) \
@@ -69,6 +70,7 @@ am_librlgo_rlgo_a_OBJECTS = librlgo_rlgo_a-RlAgent.$(OBJEXT) \
 	librlgo_rlgo_a-RlSimulator.$(OBJEXT) \
 	librlgo_rlgo_a-RlState.$(OBJEXT) \
 	librlgo_rlgo_a-RlTex.$(OBJEXT) \
+	librlgo_rlgo_a-RlTimeControl.$(OBJEXT) \
 	librlgo_rlgo_a-RlTrace.$(OBJEXT) \
 	librlgo_rlgo_a-RlTracker.$(OBJEXT) \
 	librlgo_rlgo_a-RlTrainer.$(OBJEXT) \
@@ -197,6 +199,7 @@ librlgo_rlgo_a_SOURCES = \
 RlAgent.cpp \
 RlAgentLog.cpp \
 RlAgentPlayer.cpp \
+RlAlphaBeta.cpp \
 RlBinaryFeatures.cpp \
 RlDirtySet.cpp \
 RlEvaluator.cpp \
@@ -209,6 +212,7 @@ RlSetup.cpp \
 RlSimulator.cpp \
 RlState.cpp \
 RlTex.cpp \
+RlTimeControl.cpp \
 RlTrace.cpp \
 RlTracker.cpp \
 RlTrainer.cpp \
@@ -220,6 +224,7 @@ RlActiveSet.h \
 RlAgent.h \
 RlAgentLog.h \
 RlAgentPlayer.h \
+RlAlphaBeta.h \
 RlBinaryFeatures.h \
 RlConvert.h \
 RlDirtySet.h \
@@ -233,6 +238,7 @@ RlSetup.h \
 RlSimulator.h \
 RlState.h \
 RlTex.h \
+RlTimeControl.h \
 RlTrace.h \
 RlTracker.h \
 RlTrainer.h \
@@ -298,6 +304,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgent.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgentPlayer.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlBinaryFeatures.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlDirtySet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlEvaluator.Po@am__quote@
@@ -310,6 +317,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlSimulator.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlState.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTex.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTrace.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTracker.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlTrainer.Po@am__quote@
@@ -371,6 +379,20 @@ librlgo_rlgo_a-RlAgentPlayer.obj: RlAgentPlayer.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAgentPlayer.cpp' object='librlgo_rlgo_a-RlAgentPlayer.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAgentPlayer.obj `if test -f 'RlAgentPlayer.cpp'; then $(CYGPATH_W) 'RlAgentPlayer.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAgentPlayer.cpp'; fi`
+
+librlgo_rlgo_a-RlAlphaBeta.o: RlAlphaBeta.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAlphaBeta.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Tpo -c -o librlgo_rlgo_a-RlAlphaBeta.o `test -f 'RlAlphaBeta.cpp' || echo '$(srcdir)/'`RlAlphaBeta.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Tpo $(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAlphaBeta.cpp' object='librlgo_rlgo_a-RlAlphaBeta.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAlphaBeta.o `test -f 'RlAlphaBeta.cpp' || echo '$(srcdir)/'`RlAlphaBeta.cpp
+
+librlgo_rlgo_a-RlAlphaBeta.obj: RlAlphaBeta.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAlphaBeta.obj -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Tpo -c -o librlgo_rlgo_a-RlAlphaBeta.obj `if test -f 'RlAlphaBeta.cpp'; then $(CYGPATH_W) 'RlAlphaBeta.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAlphaBeta.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Tpo $(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAlphaBeta.cpp' object='librlgo_rlgo_a-RlAlphaBeta.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAlphaBeta.obj `if test -f 'RlAlphaBeta.cpp'; then $(CYGPATH_W) 'RlAlphaBeta.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAlphaBeta.cpp'; fi`
 
 librlgo_rlgo_a-RlBinaryFeatures.o: RlBinaryFeatures.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlBinaryFeatures.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlBinaryFeatures.Tpo -c -o librlgo_rlgo_a-RlBinaryFeatures.o `test -f 'RlBinaryFeatures.cpp' || echo '$(srcdir)/'`RlBinaryFeatures.cpp
@@ -539,6 +561,20 @@ librlgo_rlgo_a-RlTex.obj: RlTex.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTex.cpp' object='librlgo_rlgo_a-RlTex.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlTex.obj `if test -f 'RlTex.cpp'; then $(CYGPATH_W) 'RlTex.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTex.cpp'; fi`
+
+librlgo_rlgo_a-RlTimeControl.o: RlTimeControl.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlTimeControl.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Tpo -c -o librlgo_rlgo_a-RlTimeControl.o `test -f 'RlTimeControl.cpp' || echo '$(srcdir)/'`RlTimeControl.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Tpo $(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTimeControl.cpp' object='librlgo_rlgo_a-RlTimeControl.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlTimeControl.o `test -f 'RlTimeControl.cpp' || echo '$(srcdir)/'`RlTimeControl.cpp
+
+librlgo_rlgo_a-RlTimeControl.obj: RlTimeControl.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlTimeControl.obj -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Tpo -c -o librlgo_rlgo_a-RlTimeControl.obj `if test -f 'RlTimeControl.cpp'; then $(CYGPATH_W) 'RlTimeControl.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTimeControl.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Tpo $(DEPDIR)/librlgo_rlgo_a-RlTimeControl.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlTimeControl.cpp' object='librlgo_rlgo_a-RlTimeControl.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlTimeControl.obj `if test -f 'RlTimeControl.cpp'; then $(CYGPATH_W) 'RlTimeControl.cpp'; else $(CYGPATH_W) '$(srcdir)/RlTimeControl.cpp'; fi`
 
 librlgo_rlgo_a-RlTrace.o: RlTrace.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlTrace.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlTrace.Tpo -c -o librlgo_rlgo_a-RlTrace.o `test -f 'RlTrace.cpp' || echo '$(srcdir)/'`RlTrace.cpp

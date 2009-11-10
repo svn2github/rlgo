@@ -10,6 +10,7 @@
 #include "RlLocalShapeFeatures.h"
 #include "RlLocalShapeSet.h"
 #include "RlLocalShapeShare.h"
+#include "RlSetup.h"
 #include "RlShapeUtil.h"
 #include "RlWeightSet.h"
 
@@ -53,7 +54,9 @@ void RlLocalShapeFusion::Initialise()
     if (m_localShapeSet->GetShareTypes() != (1 << eNone))
         throw SgException("Fusion can't use weight sharing, apply unshare conversion first");
 
+    RlDebug(RlSetup::VOCAL) << "Making fuse table...";
     MakeFuseTable();
+    RlDebug(RlSetup::VOCAL) << " done\n";
 }
 
 void RlLocalShapeFusion::MakeFuseTable()
@@ -162,9 +165,6 @@ void RlLocalShapeUnshare::Initialise()
     m_sharedShapeSet->EnsureInitialised();
     m_unsharedShapeSet->EnsureInitialised();
 
-    if (m_sharedShapeSet->GetNumShapeSets() != 
-        m_unsharedShapeSet->GetNumShapeSets())
-        throw SgException("Shared and unshared shape sets must match");
     if (m_unsharedShapeSet->GetShareTypes() != (1 << eNone))
         throw SgException("Unshared shape set using weight sharing");
 }

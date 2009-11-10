@@ -149,9 +149,24 @@ class RlMoveSorter
 {
 public:
 
-    /** Evaluate moves and sort into best first order (according to colour) */
-    void Sort(RlEvaluator* evaluator, SgBlackWhite toplay);
-    
+    /** Evaluate all legal moves */
+    void Evaluate(RlEvaluator* evaluator, SgBlackWhite toplay);
+
+    /** Add a move to sort */
+    void AddMove(SgMove move, RlFloat eval)
+    {
+        m_evals.push_back(EvalPair(move, eval));
+    }
+
+    /** Clear all moves */
+    void ClearMoves()
+    {
+        m_evals.clear();
+    }
+
+    /** Sort moves into best first order (according to colour) */
+    void SortMoves(SgBlackWhite toplay);
+
     /** Get the rank of a move in the sorted list */
     int GetRank(SgMove move) const;
 
@@ -164,8 +179,6 @@ public:
     RlFloat GetEval(int i) const { return m_evals[i].m_eval; }
 
 private:
-
-    void SortMoves(SgBlackWhite toplay);
 
     struct EvalPair
     {

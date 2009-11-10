@@ -7,153 +7,49 @@
 #ifndef RLSEARCH_H
 #define RLSEARCH_H
 
-#include "GoSearch.h"
-#include "GoTimeControl.h"
-#include "SgHashTable.h"
-#include "SgVector.h"
+#include "RlAlphaBeta.h"
 #include "RlPolicy.h"
 
 class RlConvert;
-class RlLog;
-class RlTrace;
-
-//----------------------------------------------------------------------------
-/** Search control that estimates remaining search time at each iteration */
-class RlIterSearchControl : public SgSearchControl
-{
-public:
-    
-    RlIterSearchControl(GoBoard& board, int mindepth, 
-        double fulltime, double aborttime, double branchpower);
-    
-    virtual bool Abort(double elapsedTime, int numNodes);
-    virtual bool StartNextIteration(int depth, double elapsedTime,
-        int numNodes);
-          
-    void SetMinDepth(int mindepth);
-    void SetMaxTime(double fulltime, double aborttime);
-    void SetBranchPower(double branchpower);
-    
-private:
-
-    GoBoard& m_board;
-    int m_minDepth;
-    double m_fullTime, m_abortTime;
-    double m_branchPower;
-};
+class RlTimeControl;
 
 //----------------------------------------------------------------------------
 /** Search class using RL evaluator */
-class RlSearch : public GoSearch, public RlPolicy
+class RlSearchPolicy : public RlPolicy
 {
 public:
 
-    RlSearch(GoBoard& board, RlEvaluator* evaluator = 0);
-    ~RlSearch();
+    DECLARE_OBJECT(RlSearchPolicy);
 
-    /** GoSearch virtuals */
-    virtual bool Execute(SgMove move, int* delta, int depth);
-    virtual void TakeBack();
-    virtual int Evaluate(SgVector<SgMove>* sequence, bool* isExact, int depth);
-    virtual bool TraceIsOn() const;
-    virtual void StartOfDepth(int depthLimit);
+    RlSearchPolicy(GoBoard& board, RlEvaluator* searchevaluator = 0, 
+        RlAlphaBeta* alphabeta = 0);
 
-    /** Policy virtuals */
-    virtual SgMove SelectMove(RlState& state);
     virtual void LoadSettings(std::istream& settings);
-    virtual void Initialise();
+    virtual SgMove SelectMove(RlState& state);
     virtual bool SearchValue(RlFloat& value) const;
 
-    /** Accessors */
-    virtual int GetDepth() const { return m_maxDepth; }
-
-protected:
-
-    int SearchToDepth(int depth, SgVector<SgMove>* pv, SgNode* tracenode);
-    virtual int RunSearch(SgVector<SgMove>* pv, SgNode* tracenode) = 0;
-
-    int ScaleEval(RlFloat value);
-    RlFloat UnscaleEval(int value);
-    void ClearVariation();
-
-    // Logging
-    virtual void InitLog();
-    virtual void StepLog(int depth, int value, SgVector<SgMove>* pv);
-    virtual void StepPlyLog(int depth);
-    void FinalPlyLog();
-    std::string WriteSequence(SgVector<SgMove>& sequence);
-    void InitProbCut();
-
-    int m_minDepth, m_maxDepth;
-    bool m_iterative;
-    bool m_trace;
-    bool m_log;
-    bool m_useProbCut;
-    RlFloat m_searchValue;
-    
 private:
 
-    int m_hashSize;
-    SgSearchHashTable* m_hashTable;
-
-    std::string m_probCutFile;
-    std::auto_ptr<RlLog> m_searchLog;
-    std::auto_ptr<RlTrace> m_searchTrace;
-
-    SgProbCut probcut;
-};
-
-//----------------------------------------------------------------------------
-/** Main search class */
-class RlMainSearch : public RlSearch
-{
-public:
-
-    DECLARE_OBJECT(RlMainSearch);
-
-    RlMainSearch(GoBoard& board, RlEvaluator* evaluator = 0);
-
-    /** AutoObject virtuals */
-    virtual void LoadSettings(std::istream& settings);
-
-    /** Generate all legal moves in main search */
-    virtual void Generate(SgVector<SgMove>* moves, int depth);
-
-    virtual int GetDepth() const;
-
-protected:
-
-    void GenerateN(SgVector<SgMove>& moves, int N);
-    void GenerateAll(SgVector<SgMove>& moves);
-    virtual int RunSearch(SgVector<SgMove>* pv, SgNode* tracenode);
-
-private:
-
-    enum
-    {
-        eNone,
-        eMaxTime,
-        eControlTime,
-        eControlIter
-    };
-    
-    int m_controlMode;
-    int m_oddEven;
-    int m_maxBreadth;
-    RlFloat m_maxTime;
-    RlFloat m_fraction;
-    RlFloat m_branchPower;
-    RlFloat m_safetyTime;
-        
-    SgTimeSearchControl m_timeControl;
-    RlIterSearchControl m_iterControl;
-    GoTimeControl m_timeManager;
-    const SgTimeRecord* m_timeRecord;
+    RlAlphaBeta* m_alphaBeta;
 
     /** If m_convert != 0
         m_convertEvaluator is converted into m_evaluator at start of search */
     RlEvaluator* m_convertEvaluator;
     RlConvert* m_convert;
+
+    enum
+    {
+        RL_DEPTH,
+        RL_ELAPSED,
+        RL_PREDICTED
+    };
+
+    /** Time management */
+    int m_controlMode;
+    RlTimeControl* m_timeControl;
+
+    RlFloat m_searchValue;
+    std::vector<SgMove> m_principalVariation;
 };
 
 //----------------------------------------------------------------------------

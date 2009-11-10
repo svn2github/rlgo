@@ -4,6 +4,7 @@ librlgo_rlgo_a_SOURCES = \
 RlAgent.cpp \
 RlAgentLog.cpp \
 RlAgentPlayer.cpp \
+RlAlphaBeta.cpp \
 RlBinaryFeatures.cpp \
 RlDirtySet.cpp \
 RlEvaluator.cpp \
@@ -16,6 +17,7 @@ RlSetup.cpp \
 RlSimulator.cpp \
 RlState.cpp \
 RlTex.cpp \
+RlTimeControl.cpp \
 RlTrace.cpp \
 RlTracker.cpp \
 RlTrainer.cpp \
@@ -27,6 +29,7 @@ RlActiveSet.h \
 RlAgent.h \
 RlAgentLog.h \
 RlAgentPlayer.h \
+RlAlphaBeta.h \
 RlBinaryFeatures.h \
 RlConvert.h \
 RlDirtySet.h \
@@ -40,6 +43,7 @@ RlSetup.h \
 RlSimulator.h \
 RlState.h \
 RlTex.h \
+RlTimeControl.h \
 RlTrace.h \
 RlTracker.h \
 RlTrainer.h \

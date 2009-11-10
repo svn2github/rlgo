@@ -9,6 +9,7 @@
 
 #include "GoTimeControl.h"
 #include "RlFactory.h"
+#include "RlTimeControl.h"
 #include "RlTrace.h"
 #include "RlWeight.h"
 #include "SgArray.h"
@@ -21,6 +22,27 @@
 class RlAgent;
 class RlPolicy;
 class RlFuegoPlayout;
+
+//----------------------------------------------------------------------------
+/** Simple class for recording straight simulations to .sgf file */
+class RlGameRecorder
+{
+public:
+
+    RlGameRecorder(const GoBoard& board);
+
+    void RecordStart(RlAutoObject* caller);
+    void RecordEnd();
+    void RecordVarStart();
+    void RecordVarEnd();
+    void RecordMove(SgMove move, SgBlackWhite colour);
+    
+private:
+
+    const GoBoard& m_board;
+    int m_count;
+    bfs::ofstream m_gameRecord;
+};
 
 //----------------------------------------------------------------------------
 
@@ -73,14 +95,11 @@ protected:
 
     void SimulateMaxGames();
     void SimulateMaxTime();
-    void SimulateControlTime();
     void SimulatePonder();
     void Simulate(int controlmode);
 
     void ClearStats();
     void DisplayStats();
-    void StartClock();
-    bool Unsafe() const;
 
     void SelfPlayGame();
     SgMove SelectAndPlay(SgBlackWhite toplay, int movenum);
@@ -88,12 +107,6 @@ protected:
     bool Truncate(int nummoves);
     void PlayOut(int& movenum, bool& resign);
 
-    void RecordStart();
-    void RecordEnd();
-    void RecordVarStart();
-    void RecordVarEnd();
-    void RecordMove(SgMove move, SgBlackWhite colour);
-    
 private:
 
     /** Agent used to simulate moves */
@@ -103,39 +116,20 @@ private:
     {
         eMaxGames,
         eMaxTime,
-        eControlTime,
         ePonder
     };
 
     /** Control mode to use for simulation */
     int m_controlMode;
 
-    /** Min/max number of games to simulate each move (0 for no maximum) */
-    int m_minGames;
+    /** Time controller to determine how many simulations to perform */
+    RlTimeControl* m_timeControl;
+
+    /** Maximum number of games to simulate each move */
     int m_maxGames;
-    
-    /** Min/max time to spend on simulations each move */
-    double m_minTime;
-    double m_maxTime;
 
-    /** Proportion of time to allocate to simulation */
-    RlFloat m_fraction;
-
-    /** Don't simulate during safety time (0 for no safety time) */
-    double m_safetyTime;
-
-    /** Time elapsed in simulations this move */
-    SgTimer m_elapsedTime;
-    double m_lastTime;
-    double m_searchTime;
-    double m_timeLeft;
+    /** Number of games simulated */
     int m_numGames;
-    
-    /** Simple time controller to determine how many simulations to perform */
-    GoTimeControl m_timeControl;
-    
-    /** Pointer to current time record, or 0 if pondering */
-    SgTimeRecord* m_timeRecord;
         
     /** When to truncate simulated games (-1 = never) */
     int m_truncate;
@@ -152,9 +146,6 @@ private:
     /** Maximum number of moves in simulation */
     int m_maxSimMoves;
     
-    /** Do minimal simulation if opponent passed */
-    bool m_minSimAfterPass;
-
     /** Remember start position for fast resets */
     bool m_fastReset;
     
@@ -172,11 +163,13 @@ private:
         
     std::auto_ptr<RlLog> m_simLog;
     std::auto_ptr<RlLog> m_evalLog;
-    bfs::ofstream m_gameRecord;
     RlFloat m_averageScore;
     int m_totalSteps;
+    SgTimer m_elapsedTime;
 
     SgArray<int, SG_PASS + 1> m_freqs;
+    
+    RlGameRecorder m_gameRecorder;
 };
 
 //----------------------------------------------------------------------------

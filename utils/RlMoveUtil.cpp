@@ -105,6 +105,25 @@ RlFloat GetEntropy(const vector<RlFloat>& probs)
     return entropy;
 }
 
+std::string WriteMoveSequence(const std::vector<SgMove>& sequence)
+{
+    if (sequence.empty())
+        return "NONE";
+
+    std::ostringstream oss;
+    bool first = true;
+    for (vector<SgMove>::const_iterator i_sequence = sequence.begin(); 
+        i_sequence != sequence.end(); ++i_sequence)
+    {
+        if (!first)
+            oss << " ";
+        oss << SgWritePoint(*i_sequence);
+        first = false;
+    }
+    
+    return oss.str();
+}
+
 } // namespace RlMoveUtil
 
 //----------------------------------------------------------------------------

@@ -433,7 +433,8 @@ void RlAgentLog::PrintBest()
 
     Debug(RlSetup::VOCAL) << "Best moves: ";
     RlMoveSorter sorter;
-    sorter.Sort(m_policy->Evaluator(), m_board.ToPlay());
+    sorter.Evaluate(m_policy->Evaluator(), m_board.ToPlay());
+    sorter.SortMoves(m_board.ToPlay());
 
     Debug(RlSetup::VOCAL).precision(4);
     for (int i = 0; i < m_numBest && i < sorter.GetNumMoves(); ++i)

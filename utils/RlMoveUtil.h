@@ -71,6 +71,54 @@ inline const RlStone& RlStoneList::GetStone(int index) const
 }
 
 //----------------------------------------------------------------------------
+/** For some reason SgMarker doesn't have an exclude function...
+    so define one here. */
+class RlMarker
+{
+public:
+
+    RlMarker()
+    {
+        Init();
+    }
+
+    void Include(SgPoint p)
+    {
+        m_mark[p] = m_thisMark;
+    }
+    
+    void Exclude(SgPoint p)
+    {
+        m_mark[p] = m_thisMark - 1;
+    }
+    
+    bool Contains(SgPoint p) const
+    {
+        return m_mark[p] == m_thisMark;
+    }
+    
+    void Clear()
+    {
+        if (++m_thisMark == 0)
+            Init();
+    }
+
+private:
+
+    void Init()
+    {
+        m_thisMark = 1;
+        m_mark.Fill(0);    
+    }
+
+    /** Current marker number */
+    int m_thisMark;
+
+    /** Marked points */
+    SgArray<int,SG_MAXPOINT> m_mark;
+};
+
+//----------------------------------------------------------------------------
 
 namespace RlMoveUtil
 {
@@ -92,6 +140,10 @@ inline int Manhattan(SgPoint p1, SgPoint p2)
     return abs(SgPointUtil::Row(p1) - SgPointUtil::Row(p2)) 
         + abs(SgPointUtil::Col(p1) - SgPointUtil::Col(p2));
 }
+
+std::string WriteMoveSequence(const std::vector<SgMove>& sequence);
+
+//----------------------------------------------------------------------------
 
 } // namespace RlMoveUtil
 

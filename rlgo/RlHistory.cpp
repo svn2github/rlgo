@@ -29,9 +29,6 @@ void RlHistory::LoadSettings(istream& settings)
 void RlHistory::Initialise()
 {
     SG_ASSERT(m_capacity > 0);
-    RlDebug(RlSetup::VOCAL) << "Initialising history... ";
-    m_history.resize(m_capacity);
-    RlDebug(RlSetup::VOCAL) << "done\n" ;
 }
 
 void RlHistory::Clear()
@@ -51,8 +48,11 @@ void RlHistory::Resize(int activesize)
 {
     // Only resize when empty
     SG_ASSERT(m_numEpisodes == 0);
+    RlDebug(RlSetup::VOCAL) << "Creating history... ";
+    m_history.resize(m_capacity);
     for (int i = 0; i < m_capacity; ++i)
         m_history[i].Resize(activesize);
+    RlDebug(RlSetup::VOCAL) << "done\n" ;
 }
 
 void RlHistory::NewEpisode()

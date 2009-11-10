@@ -3,6 +3,7 @@ check_PROGRAMS = rlgo_unittest
 
 rlgo_unittest_SOURCES = \
 RlActiveSetTest.cpp \
+RlAlphaBetaTest.cpp \
 RlEvaluatorTest.cpp \
 RlTDTest.cpp \
 RlLocalShapeConvertTest.cpp \
