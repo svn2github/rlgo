@@ -46,13 +46,9 @@ public:
     int m_nodeCount;
     int m_interiorCount;
     int m_leafCount;
-    int m_qCount;
-    int m_nullCount;
     int m_hashCount;
     int m_interiorDepth;
     int m_interiorWidth;
-    int m_qDepth;
-    int m_qWidth;
     
     /** Timer for current search depth */
     SgTimer m_timer;
@@ -87,15 +83,6 @@ public:
     void SetMaxDepth(int value) { m_maxDepth = value; }
     void SetMaxTime(double value) { m_maxTime = value; }
     void SetMaxPredictedTime(double value) { m_maxPredictedTime = value; }    
-    void SetQuiescence(bool value) { m_quiescence = value; }
-    void SetReadLadders(bool value) { m_readLadders = value; }
-    void SetMaxQDepth(int value) { m_maxQDepth = value; }
-    void SetMaxLadderDepth(int value) { m_maxLadderDepth = value; }
-    void SetEnsureParity(bool value) { m_ensureParity = value; }
-    void SetNullMovePruning(bool value) { m_nullMovePruning = value; }
-    void SetNullMoveDepth(int value) { m_nullMoveDepth = value; }
-    void SetEstimateTenukiValue(bool value) { m_estimateTenukiValue = value; }
-    void SetTenukiValue(RlFloat value) { m_tenukiValue = value; }
     
 private:
 
@@ -119,19 +106,9 @@ private:
     
     void PrincipalVariation(std::vector<SgMove>& pv) const;
     void StaticMoveOrder();
-    RlFloat EstimateTenukiValue();
     void GenerateMoves(std::vector<SgMove>& moves, int depth, SgMove bestMove);
-    RlFloat AlphaBetaSearch();
-    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta, 
-        bool lastNull = false);
+    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta);
     RlFloat Evaluate();
-    RlFloat EvaluateWithParity(int depth);
-    void GenerateCaptureMoves(std::vector<SgMove>& moves);
-    void GenerateLadderMoves(std::vector<SgMove>& moves);
-    RlFloat QuiesceRoot(RlFloat alpha, RlFloat beta);
-    RlFloat Quiesce(int depth, RlFloat alpha, RlFloat beta);
-
-    bool NullMovePrune(int depth, RlFloat beta, bool lastNull);
     void PromoteKillers(std::vector<SgMove>& moves, int depth);
     void Promote(std::vector<SgMove>& moves, SgMove move);
     HashEntry& LookupHash();
@@ -161,61 +138,21 @@ private:
     /** Number of entries in the hash table */
     int m_hashSize;
     
-    /** Whether to use quiescence search */
-    bool m_quiescence;
-    
-    /** Whether to ensure that all branches are evaluated to same parity
-        (same colour to play at leaf evaluation) */
-    bool m_ensureParity;
-    
-    /** Whether to read ladders during quiescence search */
-    bool m_readLadders;
-
-    /** Maximum depth for quiescence search */
-    int m_maxQDepth;
-
-    /** Maximum depth for reading ladders in quiescence search */
-    int m_maxLadderDepth;
-    
-    /** Whether to use null move pruning */
-    bool m_nullMovePruning;
-    
-    /** Relative depth of null move search */
-    int m_nullMoveDepth;
-    
     /** Whether to use killer heuristic */
     bool m_killerHeuristic;
     
     /** Number of killer moves to store and use */
     int m_numKillers;
     
-    /** Number of opponent killer moves to use (<= m_killer) */
+    /** Number of opponent killer moves to use (<= m_numKillers) */
     int m_opponentKillers;
     
-    /** Minimum grain of discrimination during search */
-    RlFloat m_grain;
-
-    /** Whether to compute tenuki value (see below) automatically */
-    bool m_estimateTenukiValue;
-
-    /** The value of playing tenuki during q-search. */
-    RlFloat m_tenukiValue;
-
     /** Power to use when estimating time for next iteration */
     RlFloat m_branchPower;
 
     /** The hash table */
     HashEntry* m_hashTable;
     
-    /** Used during q-search to avoid recapturing kos */
-    RlMarker m_koMarker;
-    
-    /** Used during q-search to mark ladders to pursue */
-    RlMarker m_ladderMarker;
-    
-    /** How many times each player has played tenuki during q-search */
-    SgBWArray<int> m_numTenuki;
-
     /** Current maximum depth during iterative deepening */
     int m_iterationDepth;
     

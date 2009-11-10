@@ -13,15 +13,6 @@ using namespace GoBoardUtil;
 using namespace RlMoveUtil;
 using namespace std;
 
-//@todo: move into utils
-inline SgPoint Seed(const GoBoard& bd, SgPoint pt)
-{
-    GoBoard::StoneIterator i_stone(bd, bd.Anchor(pt));
-    return *i_stone;
-}
-
-vector<SgMove> var;
-
 //-----------------------------------------------------------------------------
 
 IMPLEMENT_OBJECT(RlAlphaBeta);
@@ -33,19 +24,9 @@ RlAlphaBeta::RlAlphaBeta(GoBoard& board, RlEvaluator* evaluator)
     m_maxTime(10),
     m_maxPredictedTime(RlInfinity),
     m_hashSize(0x100000),
-    m_quiescence(true),
-    m_ensureParity(true),
-    m_readLadders(true),
-    m_maxQDepth(12),
-    m_maxLadderDepth(9),
-    m_nullMovePruning(false),
-    m_nullMoveDepth(2),
     m_killerHeuristic(true),
     m_numKillers(2),
     m_opponentKillers(2),
-    m_grain(0.01),
-    m_estimateTenukiValue(true),
-    m_tenukiValue(1.0),
     m_branchPower(0.25)
 {
 }
@@ -62,19 +43,9 @@ void RlAlphaBeta::LoadSettings(istream& settings)
     settings >> RlSetting<double>("MaxTime", m_maxTime);
     settings >> RlSetting<double>("MaxPredictedTime", m_maxPredictedTime);
     settings >> RlSetting<int>("HashSize", m_hashSize);
-    settings >> RlSetting<bool>("Quiescence", m_quiescence);
-    settings >> RlSetting<bool>("EnsureParity", m_ensureParity);
-    settings >> RlSetting<bool>("ReadLadders", m_readLadders);
-    settings >> RlSetting<int>("MaxQDepth", m_maxQDepth);
-    settings >> RlSetting<int>("MaxLadderDepth", m_maxLadderDepth);
-    settings >> RlSetting<bool>("NullMovePruning", m_nullMovePruning);
-    settings >> RlSetting<int>("NullMoveDepth", m_nullMoveDepth);
     settings >> RlSetting<bool>("KillerHeuristic", m_killerHeuristic);
     settings >> RlSetting<int>("NumKillers", m_numKillers);
     settings >> RlSetting<int>("OpponentKillers", m_opponentKillers);
-    settings >> RlSetting<RlFloat>("Grain", m_grain);
-    settings >> RlSetting<bool>("EstimateTenukiValue", m_estimateTenukiValue);
-    settings >> RlSetting<RlFloat>("TenukiValue", m_tenukiValue);
     settings >> RlSetting<RlFloat>("BranchPower", m_branchPower);
 }
 
@@ -129,11 +100,8 @@ inline void RlAlphaBeta::Promote(vector<SgMove>& moves, SgMove move)
 
 RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
 {
-    StaticMoveOrder();
-    if (m_estimateTenukiValue)
-        m_tenukiValue = EstimateTenukiValue();
-
     m_stats.m_elapsedTime = 0;
+    StaticMoveOrder();
     for (m_iterationDepth = 1; ; ++m_iterationDepth)
     {
         m_stats.Clear();
@@ -146,8 +114,7 @@ RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
     }
 }
 
-RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
-    bool lastNull)
+RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta)
 {
     RlFloat eval;
     SgMove bestMove = SG_NULLMOVE;
@@ -165,40 +132,16 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
     if (depth == 0)
     {
         m_stats.m_leafCount++;
-        if (m_quiescence)
-        {
-            eval = QuiesceRoot(alpha, beta);
-            StoreHash(depth, SG_NULLMOVE, eval, HashEntry::RL_EXACT);
-            return eval;
-        }
-        else
-        {
-            return Evaluate();
-        }
+        return Evaluate();
     }
     
-    // Scout
-    if (!lastNull && beta < RlInfinity)
-    {
-        eval = AlphaBeta(depth, beta - m_grain, beta, true);
-        if (eval >= beta)
-            return beta;
-    }
-
-    // Null move pruning
-    if (NullMovePrune(depth, beta, lastNull))
-    {
-        m_stats.m_nullCount++;
-        return beta;
-    }
-
     // Move generation
     m_stats.m_interiorCount++;
     m_stats.m_interiorDepth += (m_iterationDepth - depth);
     vector<SgMove> moves;
     GenerateMoves(moves, depth, bestMove);
-    if (moves.empty()) //@todo: consider pass move
-        return EvaluateWithParity(depth);
+    if (moves.empty())
+        return Evaluate();
     
     // Main loop
     for (vector<SgMove>::reverse_iterator i_moves = moves.rbegin(); 
@@ -231,164 +174,6 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
     StoreHash(depth, bestMove, alpha, hashFlags);
     MarkKiller(depth, bestMove);
     return alpha;
-}
-
-inline void RlAlphaBeta::GenerateCaptureMoves(vector<SgMove>& moves)
-{
-    // Defend own blocks
-    for (GoBlockIterator i_block(m_board); i_block; ++i_block)
-    {
-        SgPoint pt = *i_block;
-        if (m_board.InAtari(pt)
-            && m_board.GetColor(pt) == m_board.ToPlay())
-        {
-            SgPoint lib = m_board.TheLiberty(pt);
-            moves.push_back(lib);
-        }
-    }
-
-    // Capture opponent blocks
-    for (GoBlockIterator i_block(m_board); i_block; ++i_block)
-    {
-        SgPoint pt = *i_block;
-        if (m_board.InAtari(pt)
-            && m_board.GetColor(pt) == m_board.Opponent())
-        {
-            SgPoint lib = m_board.TheLiberty(pt);
-            moves.push_back(lib);
-        }
-    }
-}
-
-inline void RlAlphaBeta::GenerateLadderMoves(vector<SgMove>& moves)
-{
-    for (GoBlockIterator i_block(m_board); i_block; ++i_block)
-    {
-        SgPoint pt = *i_block;
-        if (m_board.NumLiberties(pt) == 2 &&
-            m_ladderMarker.Contains(Seed(m_board, pt)))
-        {
-            for (GoBoard::LibertyIterator i_lib(m_board, pt); i_lib; ++i_lib)
-            {
-                SgPoint lib = *i_lib;
-                moves.push_back(lib);
-            }
-        }
-    }
-}
-
-RlFloat RlAlphaBeta::QuiesceRoot(RlFloat alpha, RlFloat beta)
-{
-    m_koMarker.Clear();
-    m_numTenuki[SG_BLACK] = 0;
-    m_numTenuki[SG_WHITE] = 0;
-    if (m_readLadders)
-    {
-        m_ladderMarker.Clear();
-        for (GoBlockIterator i_block(m_board); i_block; ++i_block)
-        {
-            SgPoint pt = *i_block;
-            if (m_board.NumLiberties(pt) <= 2)
-                m_ladderMarker.Include(Seed(m_board, pt));
-        }
-    }
-    return Quiesce(0, alpha, beta);
-}
-
-RlFloat RlAlphaBeta::Quiesce(int depth, RlFloat alpha, RlFloat beta)
-{
-    m_stats.m_qCount++;
-    m_stats.m_qDepth += depth;
-
-    // Use leaf evaluation at max depth or after two successive tenukis
-    if (depth <= -m_maxQDepth || TwoPasses(m_board))
-        return EvaluateWithParity(depth);
-
-    // Generate capture/defend 
-    vector<SgMove> moves;
-    GenerateCaptureMoves(moves);
-    for (vector<SgMove>::reverse_iterator i_moves = moves.rbegin();
-        i_moves != moves.rend(); ++i_moves)
-    {
-        SgMove move = *i_moves;
-        
-        if (m_board.IsLegal(move)
-            && !m_koMarker.Contains(move))
-        {
-            Play(move);
-            m_koMarker.Include(move);
-            RlFloat eval = -Quiesce(depth - 1, -beta, -alpha);
-            m_koMarker.Exclude(move);
-            Undo();
-            m_stats.m_qWidth++;
-
-            if (eval >= beta)
-                return beta;
-            if (eval > alpha)
-                alpha = eval;
-        }
-    }
-
-    // Generate tenuki
-    SgBlackWhite toplay = m_board.ToPlay();
-    m_numTenuki[toplay]++;
-    Play(SG_PASS);
-    RlFloat eval = -Quiesce(depth - 1, 
-        -beta + m_tenukiValue, -alpha + m_tenukiValue) 
-        + m_tenukiValue;
-    Undo();
-    m_numTenuki[toplay]--;
-
-    if (eval >= beta)
-        return beta;
-    if (eval > alpha)
-        alpha = eval;            
-
-    // Generate ladder moves
-    if (m_readLadders && 
-        depth >= -m_maxLadderDepth && 
-        m_numTenuki[toplay] == 0)
-    {
-        moves.clear();
-        GenerateLadderMoves(moves);
-        for (vector<SgMove>::reverse_iterator i_moves = moves.rbegin();
-            i_moves != moves.rend(); ++i_moves)
-        {
-            SgMove move = *i_moves;
-            
-            if (m_board.IsLegal(move)
-                && !m_koMarker.Contains(move))
-            {
-                Play(move);
-                m_koMarker.Include(move);
-                RlFloat eval = -Quiesce(depth - 1, -beta, -alpha);
-                m_koMarker.Exclude(move);
-                Undo();
-                m_stats.m_qWidth++;
-
-                if (eval >= beta)
-                    return beta;
-                if (eval > alpha)
-                    alpha = eval;            
-            }        
-        }
-    }
-    
-    return alpha;
-}
-
-bool RlAlphaBeta::NullMovePrune(int depth, RlFloat beta, bool lastNull)
-{
-    if (!m_nullMovePruning || lastNull || depth < m_nullMoveDepth)
-        return false;
-    if (beta >= RlInfinity)
-        return false;
-    
-    Play(SG_PASS);
-    RlFloat eval = -AlphaBeta(depth - m_nullMoveDepth, -beta, -beta + m_grain,
-        true); // remember null move
-    Undo();
-    return eval >= beta;
 }
 
 inline RlAlphaBeta::HashEntry& RlAlphaBeta::LookupHash()
@@ -471,21 +256,8 @@ inline RlFloat RlAlphaBeta::Evaluate()
 {
     m_stats.m_evalCount++;
     RlFloat eval = m_evaluator->Eval();
-    //for (int i = 0; i < ssize(m_variation); ++i)
-    //    cout << SgWritePoint(m_variation[i]) << " ";
-    //cout << eval << endl;
     if (m_board.ToPlay() == SG_WHITE)
         eval = -eval;
-    return eval;
-}
-
-inline RlFloat RlAlphaBeta::EvaluateWithParity(int depth)
-{
-    // Take account of the value of having the current move
-    RlFloat eval = Evaluate();
-    if (m_ensureParity && (depth + RL_MAX_DEPTH) % 2 == 1)
-        eval += m_tenukiValue;
-
     return eval;
 }
 
@@ -581,36 +353,6 @@ void RlAlphaBeta::StaticMoveOrder()
         m_sortedMoves.push_back(sorter.GetMove(i));
 }
 
-RlFloat RlAlphaBeta::EstimateTenukiValue()
-{
-    RlFloat eval1 = Evaluate();
-    RlFloat eval2 = -RlInfinity;
-
-    vector<SgMove> qmoves;
-    GenerateCaptureMoves(qmoves);
-    if (m_readLadders)
-        GenerateLadderMoves(qmoves);
-
-    // Estimate tenuki value from best quiet move at root
-    for (GoBoard::Iterator i_board(m_board); i_board; ++i_board)
-    {
-        SgMove move = *i_board;
-        if (ConsiderMove(move) && 
-            find(qmoves.begin(), qmoves.end(), move) == qmoves.end())
-        {
-            Play(move);
-            RlFloat eval = -Evaluate();
-            if (eval > eval2)
-                eval2 = eval;
-            Undo();
-        }
-    }
-    
-    RlFloat tenukiValue = eval2 - eval1;
-    RlDebug(RlSetup::VOCAL) << "Tenuki value: " << tenukiValue << endl;
-    return tenukiValue;
-}
-
 //-----------------------------------------------------------------------------
 
 void RlSearchStatistics::Clear()
@@ -619,12 +361,8 @@ void RlSearchStatistics::Clear()
     m_nodeCount = 0;
     m_interiorCount = 0;
     m_leafCount = 0;
-    m_qCount = 0;
-    m_nullCount = 0;
     m_interiorDepth = 0;
     m_interiorWidth = 0;
-    m_qDepth = 0;
-    m_qWidth = 0;
     m_hashCount = 0;
     m_timer.Start();
 }
@@ -639,18 +377,11 @@ void RlSearchStatistics::Output(int depth, RlFloat eval, SgBlackWhite toplay,
     ostr << "Nodes: " << m_nodeCount << "\n";
     ostr << "\tHash hits: " << m_hashCount << "\n";
     ostr << "\tLeaf nodes: " << m_leafCount << "\n";
-    ostr << "\tNull move pruned nodes: " << m_nullCount << "\n";
     ostr << "\tInterior nodes: " << m_interiorCount << "\n";
     if (m_interiorCount > 0)
     {
         ostr << "\t\tInterior depth: " << (RlFloat) m_interiorDepth / m_interiorCount << "\n";
         ostr << "\t\tInterior width: " << (RlFloat) m_interiorWidth / m_interiorCount << "\n";
-    }
-    ostr << "Quiescence nodes: " << m_qCount << "\n";
-    if (m_qCount > 0)
-    {
-        ostr << "\tQuiescence depth: " << -(RlFloat) m_qDepth / m_qCount << "\n";
-        ostr << "\tQuiescence width: " << (RlFloat) m_qWidth / m_qCount << "\n";
     }
     ostr << "Evaluations: " << m_evalCount << "\n";
     ostr << "Time used: " << m_timer.GetTime() << "\n";
@@ -660,23 +391,3 @@ void RlSearchStatistics::Output(int depth, RlFloat eval, SgBlackWhite toplay,
 }
 
 //-----------------------------------------------------------------------------
-/*
-
-RlFloat RlAlphaBeta::MTDSearch(RlFloat f)
-{
-    RlFloat eval = f;
-    RlFloat upperbound = +RlInfinity;
-    RlFloat lowerbound = -RlInfinity;
-    while (upperbound >= lowerbound + m_grain)
-    {
-        RlFloat beta = eval == lowerbound ? eval + m_grain : eval;
-        eval = AlphaBeta(m_iterationDepth, beta - m_grain, beta);
-        if (eval < beta)
-            upperbound = eval;
-        else
-            lowerbound = eval;
-    }
-    return f;
-}
-
-*/

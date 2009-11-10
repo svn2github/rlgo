@@ -75,19 +75,9 @@ Object = RlAlphaBeta
     MaxTime = 10 # overridden by time controls
     MaxPredictedTime = 10 # overridden by time controls
     HashSize = 4194304 # 100Mb hash-table
-    Quiescence = 0
-    EnsureParity = 1
-    ReadLadders = 0
-    MaxQDepth = 9
-    MaxLadderDepth = 5
-    NullMovePruning = 0 #@LOCAL
-    NullMoveDepth = 3
     KillerHeuristic = 1
     NumKillers = 3
     OpponentKillers = 3
-    Grain = 0.01
-    EstimateTenukiValue = 0
-    TenukiValue = 0.2
     BranchPower = 0.25
 }
 
