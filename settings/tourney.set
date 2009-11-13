@@ -75,11 +75,16 @@ Object = RlAlphaBeta
     MaxTime = 10 # overridden by time controls
     MaxPredictedTime = 10 # overridden by time controls
     HashSize = 4194304 # 100Mb hash-table
+    SortDepth = 3
+    HistoryHeuristic = 1
     KillerHeuristic = 1
     NumKillers = 3
-    OpponentKillers = 3
-    CutMargin = 0.2
-    MaxCuts = 2
+    OpponentKillers = 2
+    PVS = 1
+    CutMargin = 0.1
+    MaxReductions = 2
+    MaxExtensions = 0
+    EnsureParity = 1
     BranchPower = 0.25
 }
 

@@ -16,49 +16,6 @@ using namespace RlMathUtil;
 
 //-----------------------------------------------------------------------------
 
-class RlKiller
-{
-public:
-
-    RlKiller();
-    void Init(int numkillers);
-    void MarkKiller(SgMove move);
-    SgMove& GetKiller(int n);
-    SgMove GetKiller(int n) const;
-    
-private:
-
-    int m_numKillers;
-    SgMove m_killerMoves[RL_MAX_KILLERS];
-};
-
-//-----------------------------------------------------------------------------
-
-class RlSearchStatistics
-{
-public:
-
-    void Clear();
-    void Output(int depth, RlFloat eval, SgBlackWhite toplay, 
-        const std::vector<SgMove>& pv, std::ostream& ostr);
-
-    int m_evalCount;
-    int m_nodeCount;
-    int m_interiorCount;
-    int m_leafCount;
-    int m_hashCount;
-    int m_interiorDepth;
-    int m_interiorWidth;
-    
-    /** Timer for current search depth */
-    SgTimer m_timer;
-
-    /** Time since search began */
-    double m_elapsedTime;    
-};
-
-//-----------------------------------------------------------------------------
-
 class RlAlphaBeta : public RlAutoObject
 {
 public:
@@ -83,46 +40,84 @@ public:
     void SetMaxDepth(int value) { m_maxDepth = value; }
     void SetMaxTime(double value) { m_maxTime = value; }
     void SetMaxPredictedTime(double value) { m_maxPredictedTime = value; }    
-    
+    void SetMaxReductions(int value) { m_maxReductions = value; }
+    void SetMaxExtensions(int value) { m_maxExtensions = value; }
+
+    // Make public for unit testing only
+    class Killer
+    {
+    public:
+
+        Killer();
+        void Init(int numkillers);
+        void MarkKiller(SgMove move);
+        SgMove& GetKiller(int n);
+        SgMove GetKiller(int n) const;
+        
+    private:
+
+        int m_numKillers;
+        SgMove m_killerMoves[RL_MAX_KILLERS];
+    };
+
 private:
 
     struct HashEntry
     {
-        enum
-        {
-            RL_EXACT = 0,
-            RL_ALPHA = 1,
-            RL_BETA = 2,
-            RL_INVALID = 3
-        };
-        
         RlHash m_hash;
-        short m_depth;
-        short m_flags;
-        RlFloat m_eval;
+        int m_depth;
+        RlFloat m_lowerBound;
+        RlFloat m_upperBound;
         SgMove m_bestMove;
-        // 24 bytes per hash entry
+    };
+
+    enum
+    {
+        STAT_NODES,
+        STAT_HASHHITS,
+        STAT_HASHMISSES,
+        STAT_HASHCUTS,
+        STAT_COLLISIONS,
+        STAT_EVALUATIONS,
+        STAT_REDUCTIONS,
+        STAT_REDCUTS,
+        STAT_PVS,
+        STAT_PVSCUTS,
+        STAT_EXTENSIONS,
+        STAT_PARITY,
+        STAT_BETACUTS,
+        STAT_NOCUTS,
+        STAT_FULLWIDTH,
+        STAT_CHILDREN,
+        STAT_PVBETA,
+        NUM_STATS
     };
     
+    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta, 
+        int numReductions, int numExtensions, bool pv);
     void PrincipalVariation(std::vector<SgMove>& pv);
-    void StaticMoveOrder();
+    void SortMoves(std::vector<SgMove>& moves);
     void GenerateMoves(std::vector<SgMove>& moves, int depth, SgMove bestMove);
-    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta, int numcuts);
-    RlFloat Evaluate();
+    void GenerateExtensions(std::vector<SgMove>& extensions);
     void PromoteKillers(std::vector<SgMove>& moves, int depth);
     void Promote(std::vector<SgMove>& moves, SgMove move);
     HashEntry& LookupHash();
     const HashEntry& LookupHash() const;
-    bool ProbeHash(int depth, RlFloat alpha, RlFloat beta, 
+    bool ProbeHash(int depth, RlFloat& alpha, RlFloat& beta, 
         RlFloat& eval, SgMove& bestMove);
-    void StoreHash(int depth, SgMove move, RlFloat eval, int hashFlags);
+    void StoreHash(int depth, SgMove move, RlFloat eval, 
+        bool lower, bool upper);
+    RlFloat Evaluate();
     void Play(SgMove move);
     void Undo();
     bool ConsiderMove(SgMove move);
     void MarkKiller(int depth, SgMove move);
     bool CheckAbort();
+    void OutputStatistics(RlFloat eval, const std::vector<SgMove>& pv, 
+        std::ostream& ostr);
+    void OutputStatistic(const std::string& name, 
+        int stat, std::ostream& ostr);
     void ClearStatistics();
-    void PrintStatistics(RlFloat eval);
 
     RlEvaluator* m_evaluator;
 
@@ -137,7 +132,13 @@ private:
     
     /** Number of entries in the hash table */
     int m_hashSize;
+
+    /** Perform a full move sort at this depth or more */
+    int m_sortDepth;
     
+    /** Whether to use history heuristic */
+    bool m_historyHeuristic;
+
     /** Whether to use killer heuristic */
     bool m_killerHeuristic;
     
@@ -150,11 +151,23 @@ private:
     /** Margin to use for cutting nodes */
     RlFloat m_cutMargin;
     
-    /** Maximum number of recursive cuts */
-    int m_maxCuts;
+    /** Maximum number of recursive depth reductions in the same node */
+    int m_maxReductions;
+
+    /** Maximum number of depth extensions in any variation */
+    int m_maxExtensions;
+    
+    /** Whether to ensure odd/even parity when using depth extensions */
+    bool m_ensureParity;
+
+    /** Whether to use null window PVS search */
+    bool m_pvs;
     
     /** Power to use when estimating time for next iteration */
     RlFloat m_branchPower;
+
+    /** Minimum unit of discrimination */
+    RlFloat m_grain;
 
     /** The hash table */
     HashEntry* m_hashTable;
@@ -163,43 +176,52 @@ private:
     int m_iterationDepth;
     
     /** Killer moves */
-    RlKiller m_killer[RL_MAX_DEPTH];
+    Killer m_killer[RL_MAX_DEPTH];
+    
+    /** History score */
+    int m_history[RL_MAX_MOVES];
 
-    /** All moves sorted by static evaluation at root */
+    /** All moves sorted by history score */
     std::vector<SgMove> m_sortedMoves;
     
     /** Current variation */
     std::vector<SgMove> m_variation;
 
     /** Statistics for current iteration of search */
-    RlSearchStatistics m_stats;
+    int m_stats[RL_MAX_DEPTH][NUM_STATS];
+
+    /** Timer for current search depth */
+    SgTimer m_timer;
+
+    /** Time since search began */
+    double m_elapsedTime;    
 };
 
 //-----------------------------------------------------------------------------
 
-inline RlKiller::RlKiller()
+inline RlAlphaBeta::Killer::Killer()
 {
     Init(RL_MAX_KILLERS);
 }
 
-inline void RlKiller::Init(int numkillers)
+inline void RlAlphaBeta::Killer::Init(int numkillers)
 {
     m_numKillers = numkillers;
     for (int n = 0; n < numkillers; n++)
         m_killerMoves[n] = SG_NULLMOVE;
 }
 
-inline SgMove& RlKiller::GetKiller(int n)
+inline SgMove& RlAlphaBeta::Killer::GetKiller(int n)
 {
     return m_killerMoves[n];
 }
 
-inline SgMove RlKiller::GetKiller(int n) const
+inline SgMove RlAlphaBeta::Killer::GetKiller(int n) const
 {
     return m_killerMoves[n];
 }
 
-inline void RlKiller::MarkKiller(SgMove move)
+inline void RlAlphaBeta::Killer::MarkKiller(SgMove move)
 {
     SG_ASSERT(move != SG_NULLMOVE);
 
