@@ -25,11 +25,17 @@ typedef SgStatistics<RlFloat, int> RlStat;
 // Maximum time-step in any game before an automatic draw is declared
 #define RL_MAX_TIME 1002
 
+const RlFloat RlInfinity = 1e8;
+
 //----------------------------------------------------------------------------
 
 #define ssize(X) (static_cast<signed>(X.size()))
 
-const RlFloat RlInfinity = 1e8;
+template <class T>
+inline bool Contains(const std::vector<T>& vec, const T& element)
+{
+    return find(vec.begin(), vec.end(), element) != vec.end();
+}
 
 //----------------------------------------------------------------------------
 /** Sanity checking */
