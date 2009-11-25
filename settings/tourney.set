@@ -80,11 +80,12 @@ Object = RlAlphaBeta
     KillerHeuristic = 1
     NumKillers = 3
     OpponentKillers = 2
-    PVS = 1
-    CutMargin = 0.1
-    MaxReductions = 2
+    CutMargin = 20
+    MaxReductions = 3
     MaxExtensions = 0
     EnsureParity = 1
+    PVS = 1
+    LateMove = 4
     BranchPower = 0.25
 }
 
