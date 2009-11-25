@@ -110,7 +110,7 @@ do
 done
 
 # Generate vanilla UCT players
-if [ $USEFUEGO == 1 && $SETTING2 == "MaxGames" ]
+if [ $USEFUEGO == 1 ] && [ $SETTING2 == "MaxGames" ]
 then
 for VALUE2 in $VALUES2
     do
@@ -126,6 +126,6 @@ for VALUE2 in $VALUES2
 fi
 
 # Run tournament and plot results
-$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM $SIZE 0 2 $MATCHES submit-seq 1
+$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM $SIZE 0 2 $MATCHES $SCRIPTDIR/submit-seq.sh 1
 $SCRIPTDIR/analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
 $SCRIPTDIR/plot-tournament.sh $PATHSTEM $SETTING1 "$VALUES1" "$TITLE"
