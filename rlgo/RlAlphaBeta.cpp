@@ -29,12 +29,13 @@ RlAlphaBeta::RlAlphaBeta(GoBoard& board, RlEvaluator* evaluator)
     m_killerHeuristic(true),
     m_numKillers(2),
     m_opponentKillers(2),
-    m_cutMargin(0.1),
+    m_cutMargin(10),
     m_maxReductions(1),
     m_maxExtensions(0),
     m_ensureParity(true),
-    m_branchPower(0.25),
-    m_grain(0.0001)
+    m_pvs(true),
+    m_lateMove(4),
+    m_branchPower(0.25)
 {
 }
 
@@ -55,11 +56,12 @@ void RlAlphaBeta::LoadSettings(istream& settings)
     settings >> RlSetting<bool>("KillerHeuristic", m_killerHeuristic);
     settings >> RlSetting<int>("NumKillers", m_numKillers);
     settings >> RlSetting<int>("OpponentKillers", m_opponentKillers);
-    settings >> RlSetting<bool>("PVS", m_pvs);
-    settings >> RlSetting<RlFloat>("CutMargin", m_cutMargin);
+    settings >> RlSetting<int>("CutMargin", m_cutMargin);
     settings >> RlSetting<int>("MaxReductions", m_maxReductions);
     settings >> RlSetting<int>("MaxExtensions", m_maxExtensions);
     settings >> RlSetting<bool>("EnsureParity", m_ensureParity);
+    settings >> RlSetting<bool>("PVS", m_pvs);
+    settings >> RlSetting<int>("LateMove", m_lateMove);
     settings >> RlSetting<RlFloat>("BranchPower", m_branchPower);
 }
 
@@ -71,15 +73,16 @@ void RlAlphaBeta::Initialise()
     Clear();
 }
 
-RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
+int RlAlphaBeta::Search(vector<SgMove>& pv)
 {
     m_elapsedTime = 0;
+
     for (m_iterationDepth = 1; ; ++m_iterationDepth)
     {
         m_timer.Start();
         ClearStatistics();
-        RlFloat eval = AlphaBeta(m_iterationDepth, 
-            -RL_MAX_EVAL, +RL_MAX_EVAL, 0, 0, true);
+        int eval = AlphaBeta(m_iterationDepth, 
+            -RL_SEARCH_MAX, +RL_SEARCH_MAX, 0, 0, 0);
         PrincipalVariation(pv);
         OutputStatistics(eval, pv, RlDebug(RlSetup::VOCAL));
         if (CheckAbort())
@@ -87,10 +90,10 @@ RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
     }
 }
 
-RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta, 
-    int numReductions, int numExtensions, bool pv)
+int RlAlphaBeta::AlphaBeta(int depth, int alpha, int beta, 
+    int numReductions, int numExtensions, int child)
 {
-    RlFloat eval;
+    int eval;
     bool lower = false;
     SgMove bestMove = SG_NULLMOVE;
     bool parity = (numExtensions % 2) == 0;
@@ -101,57 +104,60 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
     if (m_ensureParity && depth == 0 && !parity)
     {
         m_stats[depth][STAT_PARITY]++;
-        return AlphaBeta(1, alpha, beta, 0, 0, pv);
+        return AlphaBeta(1, alpha, beta, 0, 0, child);
     }
 
     // Evaluate leaf node
     if (depth == 0 || TwoPasses(m_board))
-    {
-        m_stats[depth][STAT_EVALUATIONS]++;
-        return Evaluate();
-    }
-
-    // Depth reductions
-    if (depth >= 2 && numReductions < m_maxReductions && beta < +RL_MAX_EVAL)
-    {
-        m_stats[depth][STAT_REDUCTIONS]++;
-        eval = AlphaBeta(depth - 2, 
-            beta + m_cutMargin, beta + m_cutMargin + m_grain, 
-            numReductions + 1, numExtensions, pv);
-        if (eval > beta + m_cutMargin)
-        {
-            m_stats[depth][STAT_REDCUTS]++;
-            return beta;
-        }
-    }
+        return Evaluate(depth);
 
     // Check hash table for existing value
-    // (also picks up best move from reduced depth search)
     if (ProbeHash(depth, alpha, beta, eval, bestMove))
         return eval;
-                
-    // Principal variation search
-    if (m_pvs && !pv && beta < RL_MAX_EVAL && beta - alpha > m_grain * 2)
+
+    // Depth reductions
+    if (depth >= 2 && numReductions < m_maxReductions && beta < +RL_SEARCH_MAX)
     {
-        m_stats[depth][STAT_PVS]++;
-        eval = AlphaBeta(depth, beta, beta + m_grain, 
-            numReductions + 1, numExtensions, pv);
-        if (eval > beta)
-        {
-            m_stats[depth][STAT_PVSCUTS]++;
-            return beta;
-        }
+        m_stats[depth][STAT_REDUCTIONS]++;
+        eval = AlphaBeta(depth - 2, beta + m_cutMargin - 1, beta + m_cutMargin, 
+            numReductions + 1, numExtensions, child);
+        if (eval >= beta + m_cutMargin)
+            return BetaCut(depth, beta, ProbeBestMove(), STAT_REDCUTS);
     }
 
+    // Late move reductions
+    if (depth >= 2 && child > m_lateMove && numReductions < m_maxReductions
+        && beta < +RL_SEARCH_MAX)
+    {
+        m_stats[depth][STAT_LATE]++;
+        eval = AlphaBeta(depth - 2, beta - 1, beta,
+            m_maxReductions, numExtensions, child); // don't reduce recursively
+        if (eval >= beta)
+            return BetaCut(depth, beta, ProbeBestMove(), STAT_LATECUTS);
+    }
+
+    // Principal variation search
+    if (m_pvs && child > 0 && beta < RL_SEARCH_MAX && beta - alpha > 1)
+    {
+        m_stats[depth][STAT_PVS]++;
+        eval = AlphaBeta(depth, beta - 1, beta, 
+            numReductions, numExtensions, child);
+        if (eval >= beta)
+            return BetaCut(depth, beta, ProbeBestMove(), STAT_PVSCUTS);
+    }
+    
+    if (bestMove == SG_NULLMOVE)
+        bestMove = ProbeBestMove();
+        
     // Move generation
     vector<SgMove> moves, extensions;
     GenerateMoves(moves, depth, bestMove);
     if (numExtensions < m_maxExtensions)
         GenerateExtensions(extensions);
-    m_stats[depth][STAT_FULLWIDTH]++;
-    pv = true;
-    
+
     // Main loop
+    m_stats[depth][STAT_FULLWIDTH]++;
+    child = 0;
     for (vector<SgMove>::reverse_iterator i_moves = moves.rbegin(); 
         i_moves != moves.rend(); ++i_moves)
     {
@@ -165,18 +171,12 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
             Play(move);
             eval = -AlphaBeta(depth - 1 + isExtension, 
                 -beta, -alpha, 
-                0, numExtensions + isExtension, pv);
+                0, numExtensions + isExtension, child);
             Undo();
             m_stats[depth][STAT_CHILDREN]++;
             
             if (eval >= beta)
-            {
-                StoreHash(depth, move, beta, true, false);
-                MarkKiller(depth, move);
-                m_stats[depth][STAT_BETACUTS]++;
-                m_stats[depth][STAT_PVBETA] += pv;
-                return beta;
-            }
+                return BetaCut(depth, beta, move, STAT_BETACUTS);
 
             if (eval > alpha)
             {
@@ -184,7 +184,7 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
                 bestMove = move;
                 lower = true;
             }
-            pv = false;
+            child++;
         }
     }
 
@@ -192,6 +192,14 @@ RlFloat RlAlphaBeta::AlphaBeta(int depth, RlFloat alpha, RlFloat beta,
     MarkKiller(depth, bestMove);
     m_stats[depth][STAT_NOCUTS]++;
     return alpha;
+}
+
+int RlAlphaBeta::BetaCut(int depth, int beta, SgMove bestMove, int stat)
+{
+    m_stats[depth][stat]++;
+    StoreHash(depth, bestMove, beta, true, false);
+    MarkKiller(depth, bestMove);
+    return beta;
 }
 
 void RlAlphaBeta::SortMoves(vector<SgMove>& moves)
@@ -289,15 +297,24 @@ inline const RlAlphaBeta::HashEntry& RlAlphaBeta::LookupHash() const
     return m_hashTable[index];
 }
 
-inline bool RlAlphaBeta::ProbeHash(int depth, RlFloat& alpha, RlFloat& beta, 
-    RlFloat& eval, SgMove& bestMove)
+inline SgMove RlAlphaBeta::ProbeBestMove()
+{
+    HashEntry& entry = LookupHash();
+    if (entry.m_hash == m_board.GetHashCodeInclToPlay())
+        return entry.m_bestMove;
+    else
+        return SG_NULLMOVE;
+}
+
+inline bool RlAlphaBeta::ProbeHash(int depth, int& alpha, int& beta, 
+    int& eval, SgMove& bestMove)
 {
     HashEntry& entry = LookupHash();
     if (entry.m_hash == m_board.GetHashCodeInclToPlay())
     {
         m_stats[depth][STAT_HASHHITS]++;
         bestMove = entry.m_bestMove;
-        if (entry.m_depth == depth)
+        if (entry.m_depth >= depth)
         {
             if (entry.m_upperBound <= alpha)
             {
@@ -327,7 +344,7 @@ inline bool RlAlphaBeta::ProbeHash(int depth, RlFloat& alpha, RlFloat& beta,
     return false;
 }    
 
-inline void RlAlphaBeta::StoreHash(int depth, SgMove move, RlFloat eval,
+inline void RlAlphaBeta::StoreHash(int depth, SgMove move, int eval,
     bool lower, bool upper)
 {
     HashEntry& entry = LookupHash();
@@ -338,8 +355,8 @@ inline void RlAlphaBeta::StoreHash(int depth, SgMove move, RlFloat eval,
         entry.m_hash = m_board.GetHashCodeInclToPlay();
         entry.m_depth = depth;
         entry.m_bestMove = move;
-        entry.m_lowerBound = lower ? eval : -RL_MAX_EVAL;
-        entry.m_upperBound = upper ? eval : +RL_MAX_EVAL;
+        entry.m_lowerBound = lower ? eval : -RL_SEARCH_MAX;
+        entry.m_upperBound = upper ? eval : +RL_SEARCH_MAX;
     }
     
     // Update bounds
@@ -378,17 +395,20 @@ void RlAlphaBeta::Clear()
         entry.m_hash = RlHash(0);
         entry.m_depth = -RL_MAX_DEPTH;
         entry.m_bestMove = SG_NULLMOVE;
-        entry.m_lowerBound = -RL_MAX_EVAL;
-        entry.m_upperBound = +RL_MAX_EVAL;
+        entry.m_lowerBound = -RL_SEARCH_MAX;
+        entry.m_upperBound = +RL_SEARCH_MAX;
     }    
     RlDebug(RlSetup::VOCAL) << " done\n";
 };
 
-inline RlFloat RlAlphaBeta::Evaluate()
+inline int RlAlphaBeta::Evaluate(int depth)
 {
-    RlFloat eval = m_evaluator->Eval();
+    RlFloat feval = Truncate(m_evaluator->Eval());
+    int eval = (int) (feval * 100);
     if (m_board.ToPlay() == SG_WHITE)
         eval = -eval;
+
+    m_stats[depth][STAT_EVALUATIONS]++;
     return eval;
 }
 
@@ -464,11 +484,11 @@ void RlAlphaBeta::PrincipalVariation(vector<SgMove>& pv)
         Undo();
 }
 
-void RlAlphaBeta::OutputStatistics(RlFloat eval, 
+void RlAlphaBeta::OutputStatistics(int eval, 
     const vector<SgMove>& pv, ostream& ostr)
 {    
-    RlFloat bval = m_board.ToPlay() == SG_BLACK ? eval : -eval;
-    RlFloat pwin = Logistic(bval);
+    int bval = m_board.ToPlay() == SG_BLACK ? eval : -eval;
+    int pwin = Logistic((RlFloat) bval / 100);
     
     ostr << "\nDepth: " << m_iterationDepth << endl;
     ostr << "Principal variation: " << WriteMoveSequence(pv) << endl;
@@ -484,7 +504,6 @@ void RlAlphaBeta::OutputStatistics(RlFloat eval,
     OutputStatistic("Nodes", STAT_NODES, ostr);
     OutputStatistic("Evaluations", STAT_EVALUATIONS, ostr);
     OutputStatistic("Beta cuts", STAT_BETACUTS, ostr);
-    OutputStatistic("PV beta cuts", STAT_PVBETA, ostr);
     OutputStatistic("No cuts", STAT_NOCUTS, ostr);
     OutputStatistic("Hash hits", STAT_HASHHITS, ostr);
     OutputStatistic("Hash misses", STAT_HASHMISSES, ostr);
@@ -499,6 +518,11 @@ void RlAlphaBeta::OutputStatistics(RlFloat eval,
     {
         OutputStatistic("PVS", STAT_PVS, ostr);
         OutputStatistic("PVSCuts", STAT_PVSCUTS, ostr);
+    }
+    if (m_lateMove < SG_MAX_MOVES)
+    {
+        OutputStatistic("Late", STAT_LATE, ostr);
+        OutputStatistic("LateCuts", STAT_LATECUTS, ostr);
     }
     if (m_maxExtensions > 0)
     {

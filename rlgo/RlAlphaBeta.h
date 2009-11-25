@@ -9,6 +9,7 @@
 #include "RlUtils.h"
 #include "SgTimer.h"
 
+const int RL_SEARCH_MAX = 1600;
 const int RL_MAX_KILLERS = 16;
 const int RL_MAX_DEPTH = SG_MAX_MOVES * 2;
 
@@ -32,7 +33,7 @@ public:
     /** Iterative deepening alpha-beta search.
         Iterations continue until abort criterion is matched (depth or time) 
         Returns root value and principal variation. */
-    RlFloat Search(std::vector<SgMove>& pv);
+    int Search(std::vector<SgMove>& pv);
 
     /** Clear hash table and other search data */
     void Clear();
@@ -66,8 +67,8 @@ private:
     {
         RlHash m_hash;
         int m_depth;
-        RlFloat m_lowerBound;
-        RlFloat m_upperBound;
+        int m_lowerBound;
+        int m_upperBound;
         SgMove m_bestMove;
     };
 
@@ -83,18 +84,20 @@ private:
         STAT_REDCUTS,
         STAT_PVS,
         STAT_PVSCUTS,
+        STAT_LATE,
+        STAT_LATECUTS,
         STAT_EXTENSIONS,
         STAT_PARITY,
         STAT_BETACUTS,
         STAT_NOCUTS,
         STAT_FULLWIDTH,
         STAT_CHILDREN,
-        STAT_PVBETA,
         NUM_STATS
     };
     
-    RlFloat AlphaBeta(int depth, RlFloat alpha, RlFloat beta, 
-        int numReductions, int numExtensions, bool pv);
+    int AlphaBeta(int depth, int alpha, int beta, 
+        int numReductions, int numExtensions, int child);
+    int BetaCut(int depth, int beta, SgMove bestMove, int stat);
     void PrincipalVariation(std::vector<SgMove>& pv);
     void SortMoves(std::vector<SgMove>& moves);
     void GenerateMoves(std::vector<SgMove>& moves, int depth, SgMove bestMove);
@@ -103,17 +106,18 @@ private:
     void Promote(std::vector<SgMove>& moves, SgMove move);
     HashEntry& LookupHash();
     const HashEntry& LookupHash() const;
-    bool ProbeHash(int depth, RlFloat& alpha, RlFloat& beta, 
-        RlFloat& eval, SgMove& bestMove);
-    void StoreHash(int depth, SgMove move, RlFloat eval, 
+    SgMove ProbeBestMove();
+    bool ProbeHash(int depth, int& alpha, int& beta, 
+        int& eval, SgMove& bestMove);
+    void StoreHash(int depth, SgMove move, int eval, 
         bool lower, bool upper);
-    RlFloat Evaluate();
+    int Evaluate(int depth);
     void Play(SgMove move);
     void Undo();
     bool ConsiderMove(SgMove move);
     void MarkKiller(int depth, SgMove move);
     bool CheckAbort();
-    void OutputStatistics(RlFloat eval, const std::vector<SgMove>& pv, 
+    void OutputStatistics(int eval, const std::vector<SgMove>& pv, 
         std::ostream& ostr);
     void OutputStatistic(const std::string& name, 
         int stat, std::ostream& ostr);
@@ -149,7 +153,7 @@ private:
     int m_opponentKillers;
     
     /** Margin to use for cutting nodes */
-    RlFloat m_cutMargin;
+    int m_cutMargin;
     
     /** Maximum number of recursive depth reductions in the same node */
     int m_maxReductions;
@@ -162,13 +166,14 @@ private:
 
     /** Whether to use null window PVS search */
     bool m_pvs;
+
+    /** Use late move reductions on children with this branch or more
+        Large number means never use */
+    int m_lateMove;
     
     /** Power to use when estimating time for next iteration */
     RlFloat m_branchPower;
-
-    /** Minimum unit of discrimination */
-    RlFloat m_grain;
-
+    
     /** The hash table */
     HashEntry* m_hashTable;
     
