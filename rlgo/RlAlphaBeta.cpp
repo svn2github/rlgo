@@ -118,22 +118,24 @@ int RlAlphaBeta::AlphaBeta(int depth, int alpha, int beta,
     // Depth reductions
     if (depth >= 2 && numReductions < m_maxReductions && beta < +RL_SEARCH_MAX)
     {
-        m_stats[depth][STAT_REDUCTIONS]++;
-        eval = AlphaBeta(depth - 2, beta + m_cutMargin - 1, beta + m_cutMargin, 
-            numReductions + 1, numExtensions, child);
-        if (eval >= beta + m_cutMargin)
-            return BetaCut(depth, beta, ProbeBestMove(), STAT_REDCUTS);
-    }
-
-    // Late move reductions
-    if (depth >= 2 && child > m_lateMove && numReductions < m_maxReductions
-        && beta < +RL_SEARCH_MAX)
-    {
-        m_stats[depth][STAT_LATE]++;
-        eval = AlphaBeta(depth - 2, beta - 1, beta,
-            m_maxReductions, numExtensions, child); // don't reduce recursively
-        if (eval >= beta)
-            return BetaCut(depth, beta, ProbeBestMove(), STAT_LATECUTS);
+        if (child > m_lateMove)
+        {
+            // Late move reductions
+            m_stats[depth][STAT_LATE]++;
+            eval = AlphaBeta(depth - 2, beta - 1, beta,
+                m_maxReductions, numExtensions, child); // don't reduce recursively
+            if (eval >= beta)
+                return BetaCut(depth, beta, ProbeBestMove(), STAT_LATECUTS);
+        }
+        else
+        {
+            // Soft margin depth reductions
+            m_stats[depth][STAT_REDUCTIONS]++;
+            eval = AlphaBeta(depth - 2, beta + m_cutMargin - 1, beta + m_cutMargin, 
+                numReductions + 1, numExtensions, child); // reduce recursively
+            if (eval >= beta + m_cutMargin)
+                return BetaCut(depth, beta, ProbeBestMove(), STAT_REDCUTS);
+        }
     }
 
     // Principal variation search
