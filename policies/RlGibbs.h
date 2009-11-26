@@ -18,7 +18,7 @@ public:
     DECLARE_OBJECT(RlGibbs);
 
     RlGibbs(GoBoard& board, RlEvaluator* evaluator = 0, 
-         RlAgentLog* log = 0, RlFloat temperature = 1.0);
+         RlLogger* log = 0, RlFloat temperature = 1.0);
 
     /** Load settings from specified file */
     virtual void LoadSettings(std::istream& settings);

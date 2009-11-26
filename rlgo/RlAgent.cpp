@@ -7,7 +7,7 @@
 #include "SgSystem.h"
 #include "RlAgent.h"
 
-#include "RlAgentLog.h"
+#include "RlAgentLogger.h"
 #include "RlBinaryFeatures.h"
 #include "RlWeightSet.h"
 #include "RlEvaluator.h"
@@ -46,9 +46,12 @@ RlAgent::RlAgent(
     m_weightSet(weightset),
     m_history(history),
     m_trainer(trainer),
+    m_tester(0),
     m_log(0),
+    m_trainingGames(-1),
     m_resignThreshold(0),
-    m_prune(false)
+    m_prune(false),
+    m_numGames(-1)
 {
 }
 
@@ -62,7 +65,9 @@ void RlAgent::LoadSettings(istream& settings)
     settings >> RlSetting<RlWeightSet*>("WeightSet", m_weightSet);
     settings >> RlSetting<RlHistory*>("History", m_history);
     settings >> RlSetting<RlTrainer*>("Trainer", m_trainer);
-    settings >> RlSetting<RlAgentLog*>("Log", m_log);
+    settings >> RlSetting<RlTrainer*>("Tester", m_tester);
+    settings >> RlSetting<int>("TrainingGames", m_trainingGames);
+    settings >> RlSetting<RlAgentLogger*>("Log", m_log);
     settings >> RlSetting<RlFloat>("ResignThreshold", m_resignThreshold);
     settings >> RlSetting<bool>("Prune", m_prune);
 }
@@ -79,12 +84,15 @@ void RlAgent::Initialise()
         m_history->EnsureInitialised();
     if (m_trainer)
         m_trainer->EnsureInitialised();
+    if (m_tester)
+        m_tester->EnsureInitialised();
 
     m_history->Resize(m_evaluator->GetActiveSize());
 }
 
 void RlAgent::NewGame()
 {
+    m_numGames++;
     m_timestep = 0;
     m_history->NewEpisode();
     m_history->AddState(0, m_board.ToPlay());
@@ -104,7 +112,7 @@ void RlAgent::NewGame()
     if (m_log)
     {
         m_log->StartGame();
-        if (m_log->LogIsActive())
+        if (m_log->GameLogIsActive())
         {
             m_log->LogWeights(); // once per game
             m_log->Debug(RlSetup::VOCAL) << "Starting new game\n";
@@ -121,13 +129,18 @@ RlFloat RlAgent::EndGame(bool resign, bool train)
     m_history->TerminateEpisode(score);
 
     // Learn from this episode
-    if (m_trainer && train)
-        m_trainer->Train();
+    if (train)
+    {
+        if (Training() && m_trainer)
+            m_trainer->Train();
+        if (!Training() && m_tester)
+            m_tester->Train();
+    }
 
     m_featureSet->End();
 
     // Log the following once per game, at the end:
-    if (m_log && m_log->LogIsActive())
+    if (m_log && m_log->GameLogIsActive())
     {
         m_log->LogStep();
         m_log->EndGame();
@@ -164,7 +177,8 @@ void RlAgent::Execute(SgMove move, SgBlackWhite colour, bool updateboard)
     SG_UNUSED(colour);
     SG_UNUSED(updateboard);
 
-    if (m_log && m_log->StepLogIsActive())
+    m_log->StepMove();
+    if (m_log && m_log->MoveLogIsActive())
     {
         m_log->LogStep();
         m_log->LogEval();
@@ -179,7 +193,7 @@ void RlAgent::Execute(SgMove move, SgBlackWhite colour, bool updateboard)
     GetState().SetEval(m_evaluator->Eval());
     SetActive();
 
-    if (m_log && m_log->StepLogIsActive())
+    if (m_log && m_log->MoveLogIsActive())
     {
         m_log->PrintBoard();
         m_log->PrintValue();
@@ -248,7 +262,7 @@ RlFloat RlAgent::Score(bool resign) const
 {
     static RlFloat epsilon = std::numeric_limits<RlFloat>::epsilon();
 
-    if (m_log && m_log->LogIsActive())
+    if (m_log && m_log->GameLogIsActive())
         m_log->Debug(RlSetup::VOCAL) << m_board << "Game over: ";
 
     RlFloat blackwin;
@@ -257,13 +271,13 @@ RlFloat RlAgent::Score(bool resign) const
         if (m_board.ToPlay() == SG_BLACK)
         {
             blackwin = 0;
-            if (m_log && m_log->LogIsActive())
+            if (m_log && m_log->GameLogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "Black resigns\n";
         }
         else
         {
             blackwin = 1;
-            if (m_log && m_log->LogIsActive())
+            if (m_log && m_log->GameLogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "White resigns\n";
         }
     }
@@ -275,24 +289,24 @@ RlFloat RlAgent::Score(bool resign) const
         RlFloat whitescore = GoBoardUtil::ScoreSimpleEndPosition(
             m_board, 0, true);
         RlFloat blackscore = RlPoint()->NumPoints() - whitescore;
-        if (m_log && m_log->LogIsActive())
+        if (m_log && m_log->GameLogIsActive())
             m_log->Debug(RlSetup::VOCAL) << "B " << blackscore 
                 << ", W " << whitescore << ", komi " << komi << "\n";
         if (blackscore > whitescore + komi + epsilon)
         {
             blackwin = 1;
-            if (m_log && m_log->LogIsActive())
+            if (m_log && m_log->GameLogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "Black wins\n";
         }
         else if (blackscore < whitescore + komi - epsilon)
         {
             blackwin = 0;
-            if (m_log && m_log->LogIsActive())
+            if (m_log && m_log->GameLogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "White wins\n";
         }
         else
         {
-            if (m_log && m_log->LogIsActive())
+            if (m_log && m_log->GameLogIsActive())
                 m_log->Debug(RlSetup::VOCAL) << "Draw\n";
             blackwin = 0.5;
         }

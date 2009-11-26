@@ -14,7 +14,7 @@
 #include "RlState.h"
 #include "RlTrace.h"
 
-class RlAgentLog;
+class RlLogger;
 class RlEvaluator;
 class RlHistory;
 class RlSimulator;
@@ -28,7 +28,7 @@ class RlPolicy : public RlAutoObject
 public:
     
     RlPolicy(GoBoard& board, RlEvaluator* evaluator = 0,
-        RlAgentLog* log = 0);
+        RlLogger* log = 0);
     
     /** Load settings from specified file */
     virtual void LoadSettings(std::istream& settings);
@@ -67,7 +67,7 @@ protected:
     virtual void LogPolicy(const RlState& state, SgBlackWhite move);
     
     RlEvaluator* m_evaluator;
-    RlAgentLog* m_log;
+    RlLogger* m_log;
     
     /** Whether the moves selected by this policy should considered
         on-policy or off-policy during learning */
@@ -118,27 +118,6 @@ public:
 
     /** Select a move in the current position for the specified colour */
     virtual SgMove SelectMove(RlState& state);
-};
-
-//----------------------------------------------------------------------------
-/** Select most frequently chosen move in simulation */
-class RlSimMaxPolicy : public RlPolicy
-{
-public:
-
-    DECLARE_OBJECT(RlSimMaxPolicy);
-    
-    RlSimMaxPolicy(GoBoard& board, RlSimulator* simulator = 0);
-
-    /** Load settings from specified file */
-    virtual void LoadSettings(std::istream& settings);
-
-    /** Select a move in the current position for the specified colour */
-    virtual SgMove SelectMove(RlState& state);
-        
-private:
-
-    RlSimulator* m_simulator;
 };
 
 //----------------------------------------------------------------------------

@@ -85,7 +85,7 @@ Object = RlAlphaBeta
     MaxExtensions = 0
     EnsureParity = 1
     PVS = 1
-    LateMove = 4
+    LateMove = 100
     BranchPower = 0.25
 }
 

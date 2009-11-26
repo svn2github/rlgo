@@ -31,11 +31,12 @@ using namespace boost::test_tools;
 
 namespace {
 
+vector<SgMove> pv;
 double tol = 0.01;
 
 BOOST_AUTO_TEST_CASE(RlKillerTest)
 {
-    RlKiller killer;
+    RlAlphaBeta::Killer killer;
     killer.Init(3);
     BOOST_CHECK_EQUAL(killer.GetKiller(0), SG_NULLMOVE);
     BOOST_CHECK_EQUAL(killer.GetKiller(1), SG_NULLMOVE);
@@ -88,38 +89,19 @@ void MakeWeights(GoBoard& bd, RlWeightSet& unsharedweights)
     unshare.Convert(&sharedweights, &unsharedweights);
 }
 
-RlFloat SearchValue(RlAlphaBeta& alphabeta, int depth, bool q, bool ladder)
+RlFloat SearchValue(RlAlphaBeta& alphabeta, int depth, bool ladder)
 {
     alphabeta.Clear();
     alphabeta.SetMaxDepth(depth);
     alphabeta.SetMaxTime(+RlInfinity);
     alphabeta.SetMaxPredictedTime(+RlInfinity);
-    alphabeta.SetQuiescence(q);
-    alphabeta.SetEnsureParity(true);
-    alphabeta.SetReadLadders(ladder);
-    alphabeta.SetMaxLadderDepth(5);
-    alphabeta.SetEstimateTenukiValue(false);
-    alphabeta.SetTenukiValue(1.0);
+    alphabeta.SetMaxExtensions(ladder ? 10 : 0);
 
-    vector<SgMove> pv;
     return alphabeta.Search(pv);
 }
 
-SgMove SearchMove(RlAlphaBeta& alphabeta, int depth, bool q, bool ladder)
+SgMove SearchMove()
 {
-    alphabeta.Clear();
-    alphabeta.SetMaxDepth(depth);
-    alphabeta.SetMaxTime(+RlInfinity);
-    alphabeta.SetMaxPredictedTime(+RlInfinity);
-    alphabeta.SetQuiescence(q);
-    alphabeta.SetEnsureParity(true);
-    alphabeta.SetReadLadders(ladder);
-    alphabeta.SetMaxLadderDepth(5);
-    alphabeta.SetEstimateTenukiValue(false);
-    alphabeta.SetTenukiValue(1.0);
-
-    vector<SgMove> pv;
-    alphabeta.Search(pv);
     return pv.front();
 }
 
@@ -132,32 +114,29 @@ void TestLadders(RlEvaluator& evaluator, RlAlphaBeta& alphabeta)
     // . . . . .
     evaluator.Reset();
     evaluator.PlayExecute(Pt(3, 3), SG_BLACK, false);
-    evaluator.PlayExecute(Pt(3, 2), SG_WHITE, false);
-    evaluator.PlayExecute(Pt(2, 2), SG_BLACK, false);
     evaluator.PlayExecute(SG_PASS, SG_WHITE, false);
+    evaluator.PlayExecute(Pt(2, 2), SG_BLACK, false);
+    evaluator.PlayExecute(Pt(3, 2), SG_WHITE, false);
 
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, false, false), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, true, false), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, true, true), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(alphabeta, 1, true, true), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, false, false), 1.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, true, false), 1.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, true, true), 2.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(alphabeta, 2, true, true), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, false, false), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, true, false), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(alphabeta, 3, true, true), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, true, true), 3.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, false, false), 1.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, true, false), 2.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(alphabeta, 4, true, true), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, true, true), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, false, false), 3.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, true, false), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(alphabeta, 5, true, true), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, true, true), 3.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 6, false, false), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 7, false, false), 3.0, tol);
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, false), 2.0, tol);
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, true), 3.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, false), 1.0, tol);
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, true), 2.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, false), 2.0, tol);
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, true), 3.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, false), 1.0, tol);
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, true), 2.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, false), 3.0, tol);
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, true), 3.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 6, false), 2.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 7, false), 3.0, tol);
+    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
 
     evaluator.TakeBackUndo(false);
     evaluator.TakeBackUndo(false);
@@ -178,11 +157,10 @@ BOOST_AUTO_TEST_CASE(RlAlphaBetaTestLadders)
     alphabeta.EnsureInitialised();
     MakeWeights(bd, weights);
 
-    alphabeta.SetNullMovePruning(false);
-    TestLadders(evaluator, alphabeta);
-    //alphabeta.SetNullMovePruning(true);
-    //alphabeta.SetNullMoveDepth(2);
+    //alphabeta.SetMaxReductions(1);
     //TestLadders(evaluator, alphabeta);
+    alphabeta.SetMaxReductions(0);
+    TestLadders(evaluator, alphabeta);
 }
 
 } // namespace

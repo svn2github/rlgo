@@ -3,7 +3,7 @@
 #include "SgSystem.h"
 #include "RlForceLink.h"
 #include "RlAgent.h"
-#include "RlAgentLog.h"
+#include "RlAgentLogger.h"
 #include "RlAlphaBeta.h"
 #include "RlConvert.h"
 #include "RlEvaluator.h"
@@ -40,7 +40,7 @@ void RlForceLink()
 {
     RlRealAgent::ForceLink();
     RlSimAgent::ForceLink();
-    RlAgentLog::ForceLink();
+    RlAgentLogger::ForceLink();
     RlAlphaBeta::ForceLink();
     RlEvaluator::ForceLink();
     RlHistory::ForceLink();
@@ -81,7 +81,6 @@ void RlForceLink()
     RlGreedy::ForceLink();
     RlRandomPolicy::ForceLink();
     RlMCPolicy::ForceLink();
-    RlSimMaxPolicy::ForceLink();
     RlPriorityPolicy::ForceLink();
     RlAtariPolicy::ForceLink();
     RlSearchPolicy::ForceLink();

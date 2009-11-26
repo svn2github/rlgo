@@ -13,7 +13,7 @@ using namespace std;
 
 IMPLEMENT_OBJECT(RlMonteCarlo);
 
-RlMonteCarlo::RlMonteCarlo(GoBoard& board, RlWeightSet* wset, RlAgentLog* log)
+RlMonteCarlo::RlMonteCarlo(GoBoard& board, RlWeightSet* wset, RlLogger* log)
 :   RlLearningRule(board, wset, log)
 {
 }

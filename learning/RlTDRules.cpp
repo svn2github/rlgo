@@ -7,7 +7,7 @@
 #include "SgSystem.h"
 #include "RlTDRules.h"
 
-#include "RlAgentLog.h"
+#include "RlState.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ using namespace std;
 
 IMPLEMENT_OBJECT(RlTD0);
 
-RlTD0::RlTD0(GoBoard& board, RlWeightSet* wset, RlAgentLog* log)
+RlTD0::RlTD0(GoBoard& board, RlWeightSet* wset, RlLogger* log)
 :   RlLearningRule(board, wset, log)
 {
 }
@@ -31,7 +31,7 @@ void RlTD0::CalcDelta()
 IMPLEMENT_OBJECT(RlLambdaReturn);
 
 RlLambdaReturn::RlLambdaReturn(GoBoard& board, RlWeightSet* wset,
-    RlAgentLog* log, RlFloat lambda)
+    RlLogger* log, RlFloat lambda)
 :   RlLearningRule(board, wset, log),
     m_lambda(lambda)
 {
@@ -67,7 +67,7 @@ void RlLambdaReturn::CalcDelta()
 
 IMPLEMENT_OBJECT(RlTDLambda);
 
-RlTDLambda::RlTDLambda(GoBoard& board, RlWeightSet* wset, RlAgentLog* log,
+RlTDLambda::RlTDLambda(GoBoard& board, RlWeightSet* wset, RlLogger* log,
     RlFloat lambda, bool replacing)
 :   RlTD0(board, wset, log),
     m_lambda(lambda),
@@ -97,6 +97,14 @@ void RlTDLambda::Learn()
 {
     RlWeight::EnsureEligibility();
 
+    CalcDelta();
+    CalcLogisticGradient();
+    CalcStepSize();
+    m_numSteps++;
+    LogLearn();
+    if (!m_updateWeights)
+        return;
+
     // Don't use off-policy experience
     if (!m_useOffPolicy && !m_onPolicy)
     {
@@ -104,10 +112,7 @@ void RlTDLambda::Learn()
         return;
     }
 
-    CalcDelta();
-    CalcLogisticGradient();
-    CalcStepSize();
-    LogLearn();
+    // Main TD-lambda update
     DecayEligibility();
     for (RlActiveSet::Iterator i_active(m_oldState->Active()); 
         i_active; ++i_active)
@@ -118,8 +123,6 @@ void RlTDLambda::Learn()
         UpdateActive(weight, occur);
     }
     UpdateEligible();
-    m_learnCount++;
-    m_numSteps++;
 }
 
 void RlTDLambda::ClearEligibility()

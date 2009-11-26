@@ -57,6 +57,8 @@ Object = RlRealAgent
     WeightSet = WeightSet
     History = History
     Trainer = NULL
+    Tester = NULL
+    TrainingGames = -1 # Always train, never test
     Log = MainLog
     ResignThreshold = 0
     Prune = 0
@@ -67,7 +69,7 @@ Object = RlRealAgent
     MaxWeight = 1 [ 0 ]
 }
 
-Object = RlAgentLog
+Object = RlAgentLogger
 {
     ID = MainLog
     Version = 4
@@ -77,11 +79,11 @@ Object = RlAgentLog
     Interval = 100
     IntervalMul = 2
     LogStartOnly = 1
+    TraceFeatures = NULL
     SaveRecord = 1
     SaveWeights = 1
     TopTex = 1
     LiveGraphics = 0
-    TraceFeatures = NULL
     Pause = 0
     Policy = Greedy
     NumPV = 8

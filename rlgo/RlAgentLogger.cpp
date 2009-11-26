@@ -1,11 +1,11 @@
 //----------------------------------------------------------------------------
-/** @file RlAgentLog.cpp
-    See RlAgentLog.h
+/** @file RlAgentLogger.cpp
+    See RlAgentLogger.h
 */
 //----------------------------------------------------------------------------
 
 #include "SgSystem.h"
-#include "RlAgentLog.h"
+#include "RlAgentLogger.h"
 
 #include "RlBinaryFeatures.h"
 #include "RlWeightSet.h"
@@ -33,60 +33,46 @@ using namespace SgPropUtil;
 
 //----------------------------------------------------------------------------
 
-IMPLEMENT_OBJECT(RlAgentLog);
+IMPLEMENT_OBJECT(RlAgentLogger);
 
-RlAgentLog::RlAgentLog(GoBoard& board)
-:   RlAutoObject(board),
-    m_active(false),
+RlAgentLogger::RlAgentLogger(GoBoard& board)
+:   RlLogger(board),
     m_agent(0),
-    m_debugLevel(RlSetup::VOCAL),
-    m_logMode(LOG_LINEAR),
-    m_logNext(0),
-    m_interval(1),
-    m_intervalMul(2),
-    m_numGames(-1),
-    m_logStartOnly(false),
     m_saveRecord(true),
     m_saveWeights(false),
     m_topTex(0),
     m_liveGraphics(false),
-    m_traceFile(""),
     m_pause(0),
     m_numPV(10),
     m_numBest(4)
 {
 }
 
-void RlAgentLog::LoadSettings(istream& settings)
+void RlAgentLogger::LoadSettings(istream& settings)
 {
     int version;
     settings >> RlVersion(version, 4, 3);
     settings >> RlSetting<RlAgent*>("Agent", m_agent);
-    settings >> RlSetting<int>("DebugLevel", m_debugLevel);
-    settings >> RlSetting<int>("LogMode", m_logMode);
-    settings >> RlSetting<RlFloat>("Interval", m_interval);
-    settings >> RlSetting<RlFloat>("IntervalMul", m_intervalMul);
-    settings >> RlSetting<bool>("LogStartOnly", m_logStartOnly);
+    RlLogger::LoadSettings(settings);
     settings >> RlSetting<bool>("SaveRecord", m_saveRecord);
     settings >> RlSetting<bool>("SaveWeights", m_saveWeights);
     settings >> RlSetting<int>("TopTex", m_topTex);
     settings >> RlSetting<bool>("LiveGraphics", m_liveGraphics);
-    settings >> RlSetting<string>("TraceFeatures", m_traceFile);
     settings >> RlSetting<RlFloat>("Pause", m_pause);
     settings >> RlSetting<RlPolicy*>("Policy", m_policy);
     settings >> RlSetting<int>("NumPV", m_numPV);
     settings >> RlSetting<int>("NumBest", m_numBest);
 }
 
-void RlAgentLog::Initialise()
+void RlAgentLogger::Initialise()
 {
     m_agent->EnsureInitialised();
+    TraceFeatures(m_agent->m_featureSet);
     InitLogs();
     AddItems();
-    TraceFeatures();
 }    
 
-void RlAgentLog::InitLogs()
+void RlAgentLogger::InitLogs()
 {
     m_featureTrace.reset(
         new RlTrace(this, "Weight"));
@@ -98,31 +84,7 @@ void RlAgentLog::InitLogs()
     m_evalLog.reset(new RlLog(this, "Eval"));
 }
 
-void RlAgentLog::TraceFeatures()
-{
-    // Read features to trace from input file
-    RlBinaryFeatures* featureset = m_agent->m_featureSet;
-    bfs::path trpath = bfs::complete(m_traceFile, GetInputPath());
-    bfs::ifstream tracefeatures(trpath);
-    tracefeatures >> ws;
-    while (!tracefeatures.eof())
-    {
-        int featureindex = featureset->ReadFeature(tracefeatures);
-        if (featureindex >= 0)
-        {
-            ostringstream oss;
-            featureset->DescribeFeature(featureindex, oss);
-            string featurename = oss.str();
-            m_traceIndices[featureindex] = m_traceFeatures.size();
-            m_traceFeatures.push_back(
-                pair<string, int>(featurename, featureindex));
-            m_featureTrace->AddItemToAll(featurename, featureindex);
-        }
-        tracefeatures >> ws;
-    }
-}
-
-void RlAgentLog::AddItems()
+void RlAgentLogger::AddItems()
 {
     m_featureTrace->AddLog("Weight");
 #ifdef RL_ELIGIBILITY
@@ -166,12 +128,17 @@ void RlAgentLog::AddItems()
     }
     
     m_timeTrace->AddLog("Value");
+
+    for (int i = 0; i < GetNumTraceFeatures(); ++i)
+        m_featureTrace->AddItemToAll(
+            GetTraceFeatureName(i), 
+            GetTraceFeatureIndex(i));
 }
 
-void RlAgentLog::LogWeights()
+void RlAgentLogger::LogWeights()
 {
-    if (!LogIsActive()) return;
-    for (int i = 0; i < ssize(m_traceFeatures); ++i)
+    if (!GameLogIsActive()) return;
+    for (int i = 0; i < GetNumTraceFeatures(); ++i)
     {
         int featureindex = GetTraceFeatureIndex(i);
         RlWeightSet* wset = m_agent->GetWeightSet();
@@ -197,12 +164,12 @@ void RlAgentLog::LogWeights()
     m_featureTrace->StepAll();
 }
 
-void RlAgentLog::LogGame()
+void RlAgentLogger::LogGame()
 {
-    if (!LogIsActive()) return;
+    if (!GameLogIsActive()) return;
     int length = m_agent->m_history->GetLength();
     RlFloat freturn = m_agent->GetHistory()->GetReturn();
-    m_gameLog->Log("Game", m_numGames);
+    m_gameLog->Log("Game", m_agent->m_numGames);
     m_gameLog->Log("Length", length);
     m_gameLog->Log("Return", freturn);
     m_gameLog->Step();
@@ -211,13 +178,13 @@ void RlAgentLog::LogGame()
     m_timeTrace->StepAll();
 }
 
-void RlAgentLog::LogEval()
+void RlAgentLogger::LogEval()
 {
     // @todo: best, worst, range and numevals tracked here
     // @todo: highlight best eval in live graphics
     // @todo: afterstate evals for all indices (value, uncertainty, etc.)
     
-    if (!StepLogIsActive()) return;
+    if (!MoveLogIsActive()) return;
 
     if (m_liveGraphics)
     {
@@ -239,7 +206,7 @@ void RlAgentLog::LogEval()
         cerr << endl;
 }
 
-void RlAgentLog::LogEvalMove(SgMove move)
+void RlAgentLogger::LogEvalMove(SgMove move)
 {
     RlEvaluator* evaluator = m_agent->GetEvaluator();
     SgBlackWhite toplay = m_board.ToPlay();    
@@ -271,9 +238,9 @@ void RlAgentLog::LogEvalMove(SgMove move)
     }
 }
 
-void RlAgentLog::PrintValue()
+void RlAgentLogger::PrintValue()
 {
-    if (!StepLogIsActive()) return;
+    if (!MoveLogIsActive()) return;
 
     RlState& state = m_agent->GetState();
     RlFloat value = state.Eval();
@@ -300,9 +267,9 @@ void RlAgentLog::PrintValue()
     }
 }
 
-void RlAgentLog::LogStep()
+void RlAgentLogger::LogStep()
 {
-    if (!StepLogIsActive()) return;
+    if (!MoveLogIsActive()) return;
 
     RlState& state = m_agent->GetState();
     Debug(RlSetup::VOCAL) << "\n" << m_agent->m_timestep << ": "
@@ -312,7 +279,7 @@ void RlAgentLog::LogStep()
     RlFloat value = state.Evaluated() ? state.Eval() : 0;
     RlFloat pwin = Logistic(value);
 
-    m_stepLog->Log("Game", GameIndex());
+    m_stepLog->Log("Game", m_agent->m_numGames);
     m_stepLog->Log("TimeStep", state.TimeStep());
     m_stepLog->Log("Colour", SgBW(state.Colour()));
     m_stepLog->Log("Move", state.Move());
@@ -343,26 +310,26 @@ void RlAgentLog::LogStep()
         ;
 }
 
-void RlAgentLog::TopTex()
+void RlAgentLogger::TopTex()
 {
     static const int rows = 10, cols = 2;
 
-    if (LogIsActive() && m_topTex)
+    if (GameLogIsActive() && m_topTex)
     {
         bfs::path texpath = RlLog::GenLogName(
-            this, "Tex", ".tex", m_numGames);
+            this, "Tex", ".tex", m_agent->m_numGames);
         bfs::ofstream texfile(texpath);
         m_agent->GetFeatureSet()->TopTex(
             texfile, m_agent->GetWeightSet(), rows, cols);
     }
 }
 
-void RlAgentLog::SaveRecord()
+void RlAgentLogger::SaveRecord()
 {
-    if (LogIsActive() && m_saveRecord)
+    if (GameLogIsActive() && m_saveRecord)
     {
         bfs::path recordpath = RlLog::GenLogName(
-            this, "Record", ".sgf", m_numGames);
+            this, "Record", ".sgf", m_agent->m_numGames);
         bfs::ofstream gamerecord(recordpath);
         if (!gamerecord)
         {
@@ -385,30 +352,30 @@ void RlAgentLog::SaveRecord()
     }
 }
 
-void RlAgentLog::SaveWeights()
+void RlAgentLogger::SaveWeights()
 {
-    if (LogIsActive() && m_saveWeights)
+    if (GameLogIsActive() && m_saveWeights)
     {
         bfs::path weightpath = RlLog::GenLogName(
             this, 
             "Weights", 
             string(".w"), 
-            m_numGames);
+            m_agent->m_numGames);
         m_agent->Save(weightpath);
     }
 }
 
-void RlAgentLog::PrintBoard()
+void RlAgentLogger::PrintBoard()
 {
-    if (!StepLogIsActive())
+    if (!MoveLogIsActive())
         return;
 
     Debug(RlSetup::VOCAL) << m_board;
 }
 
-void RlAgentLog::PrintPV()
+void RlAgentLogger::PrintPV()
 {
-    if (!StepLogIsActive())
+    if (!MoveLogIsActive())
         return;
 
     Debug(RlSetup::VOCAL) << "PV: ";
@@ -426,9 +393,9 @@ void RlAgentLog::PrintPV()
     Debug(RlSetup::VOCAL) << "\n";
 }
 
-void RlAgentLog::PrintBest()
+void RlAgentLogger::PrintBest()
 {
-    if (!StepLogIsActive())
+    if (!MoveLogIsActive())
         return;
 
     Debug(RlSetup::VOCAL) << "Best moves: ";
@@ -446,37 +413,5 @@ void RlAgentLog::PrintBest()
     }
     Debug(RlSetup::VOCAL) << "\n";
 }
-
-void RlAgentLog::StartGame()
-{
-    m_numGames++;
-    m_active = m_logMode != LOG_NEVER && m_numGames == m_logNext;
-    if (!m_active)
-        return;
-
-    m_logNext = m_numGames + m_interval;
-    switch (m_logMode)
-    {
-    case LOG_LINEAR: // e.g. 0, 100, 200, 300, ...
-        break;
-    case LOG_EXP: // e.g. 0, 100, 200, 400, 800, ...
-        if (m_numGames > 0)
-            m_interval *= m_intervalMul;
-        break;
-    case LOG_EXPINTERVAL: // e.g. 0, 100, 300, 700, 1500, ...
-        m_interval *= m_intervalMul;
-        break;
-    case LOG_NICE: // e.g. 0, 1..9, 10..90, 100..900, ...
-        if (m_numGames > 0 && 
-            m_numGames + m_interval >= m_interval * m_intervalMul)
-            m_interval *= m_intervalMul;
-        break;
-    }
-}
-
-void RlAgentLog::EndGame()
-{        
-}
-
 
 //----------------------------------------------------------------------------

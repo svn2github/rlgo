@@ -55,7 +55,7 @@ ARFLAGS = cru
 librlgo_rlgo_a_AR = $(AR) $(ARFLAGS)
 librlgo_rlgo_a_LIBADD =
 am_librlgo_rlgo_a_OBJECTS = librlgo_rlgo_a-RlAgent.$(OBJEXT) \
-	librlgo_rlgo_a-RlAgentLog.$(OBJEXT) \
+	librlgo_rlgo_a-RlAgentLogger.$(OBJEXT) \
 	librlgo_rlgo_a-RlAgentPlayer.$(OBJEXT) \
 	librlgo_rlgo_a-RlAlphaBeta.$(OBJEXT) \
 	librlgo_rlgo_a-RlBinaryFeatures.$(OBJEXT) \
@@ -64,6 +64,7 @@ am_librlgo_rlgo_a_OBJECTS = librlgo_rlgo_a-RlAgent.$(OBJEXT) \
 	librlgo_rlgo_a-RlFuegoPlayout.$(OBJEXT) \
 	librlgo_rlgo_a-RlHistory.$(OBJEXT) \
 	librlgo_rlgo_a-RlLearningRule.$(OBJEXT) \
+	librlgo_rlgo_a-RlLogger.$(OBJEXT) \
 	librlgo_rlgo_a-RlMoveFilter.$(OBJEXT) \
 	librlgo_rlgo_a-RlPolicy.$(OBJEXT) \
 	librlgo_rlgo_a-RlSetup.$(OBJEXT) \
@@ -197,7 +198,7 @@ twogtp = @twogtp@
 noinst_LIBRARIES = librlgo_rlgo.a
 librlgo_rlgo_a_SOURCES = \
 RlAgent.cpp \
-RlAgentLog.cpp \
+RlAgentLogger.cpp \
 RlAgentPlayer.cpp \
 RlAlphaBeta.cpp \
 RlBinaryFeatures.cpp \
@@ -206,6 +207,7 @@ RlEvaluator.cpp \
 RlFuegoPlayout.cpp \
 RlHistory.cpp \
 RlLearningRule.cpp \
+RlLogger.cpp \
 RlMoveFilter.cpp \
 RlPolicy.cpp \
 RlSetup.cpp \
@@ -222,7 +224,7 @@ RlWeightSet.cpp
 noinst_HEADERS = \
 RlActiveSet.h \
 RlAgent.h \
-RlAgentLog.h \
+RlAgentLogger.h \
 RlAgentPlayer.h \
 RlAlphaBeta.h \
 RlBinaryFeatures.h \
@@ -232,6 +234,7 @@ RlEvaluator.h \
 RlFuegoPlayout.h \
 RlHistory.h \
 RlLearningRule.h \
+RlLogger.h \
 RlMoveFilter.h \
 RlPolicy.h \
 RlSetup.h \
@@ -302,7 +305,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgent.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAgentPlayer.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlAlphaBeta.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlBinaryFeatures.Po@am__quote@
@@ -311,6 +314,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlFuegoPlayout.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlHistory.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlLearningRule.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlLogger.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlMoveFilter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlPolicy.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/librlgo_rlgo_a-RlSetup.Po@am__quote@
@@ -352,19 +356,19 @@ librlgo_rlgo_a-RlAgent.obj: RlAgent.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAgent.obj `if test -f 'RlAgent.cpp'; then $(CYGPATH_W) 'RlAgent.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAgent.cpp'; fi`
 
-librlgo_rlgo_a-RlAgentLog.o: RlAgentLog.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAgentLog.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Tpo -c -o librlgo_rlgo_a-RlAgentLog.o `test -f 'RlAgentLog.cpp' || echo '$(srcdir)/'`RlAgentLog.cpp
-@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Tpo $(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAgentLog.cpp' object='librlgo_rlgo_a-RlAgentLog.o' libtool=no @AMDEPBACKSLASH@
+librlgo_rlgo_a-RlAgentLogger.o: RlAgentLogger.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAgentLogger.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Tpo -c -o librlgo_rlgo_a-RlAgentLogger.o `test -f 'RlAgentLogger.cpp' || echo '$(srcdir)/'`RlAgentLogger.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Tpo $(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAgentLogger.cpp' object='librlgo_rlgo_a-RlAgentLogger.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAgentLog.o `test -f 'RlAgentLog.cpp' || echo '$(srcdir)/'`RlAgentLog.cpp
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAgentLogger.o `test -f 'RlAgentLogger.cpp' || echo '$(srcdir)/'`RlAgentLogger.cpp
 
-librlgo_rlgo_a-RlAgentLog.obj: RlAgentLog.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAgentLog.obj -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Tpo -c -o librlgo_rlgo_a-RlAgentLog.obj `if test -f 'RlAgentLog.cpp'; then $(CYGPATH_W) 'RlAgentLog.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAgentLog.cpp'; fi`
-@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Tpo $(DEPDIR)/librlgo_rlgo_a-RlAgentLog.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAgentLog.cpp' object='librlgo_rlgo_a-RlAgentLog.obj' libtool=no @AMDEPBACKSLASH@
+librlgo_rlgo_a-RlAgentLogger.obj: RlAgentLogger.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAgentLogger.obj -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Tpo -c -o librlgo_rlgo_a-RlAgentLogger.obj `if test -f 'RlAgentLogger.cpp'; then $(CYGPATH_W) 'RlAgentLogger.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAgentLogger.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Tpo $(DEPDIR)/librlgo_rlgo_a-RlAgentLogger.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlAgentLogger.cpp' object='librlgo_rlgo_a-RlAgentLogger.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAgentLog.obj `if test -f 'RlAgentLog.cpp'; then $(CYGPATH_W) 'RlAgentLog.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAgentLog.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlAgentLogger.obj `if test -f 'RlAgentLogger.cpp'; then $(CYGPATH_W) 'RlAgentLogger.cpp'; else $(CYGPATH_W) '$(srcdir)/RlAgentLogger.cpp'; fi`
 
 librlgo_rlgo_a-RlAgentPlayer.o: RlAgentPlayer.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlAgentPlayer.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlAgentPlayer.Tpo -c -o librlgo_rlgo_a-RlAgentPlayer.o `test -f 'RlAgentPlayer.cpp' || echo '$(srcdir)/'`RlAgentPlayer.cpp
@@ -477,6 +481,20 @@ librlgo_rlgo_a-RlLearningRule.obj: RlLearningRule.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLearningRule.cpp' object='librlgo_rlgo_a-RlLearningRule.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlLearningRule.obj `if test -f 'RlLearningRule.cpp'; then $(CYGPATH_W) 'RlLearningRule.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLearningRule.cpp'; fi`
+
+librlgo_rlgo_a-RlLogger.o: RlLogger.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlLogger.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlLogger.Tpo -c -o librlgo_rlgo_a-RlLogger.o `test -f 'RlLogger.cpp' || echo '$(srcdir)/'`RlLogger.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlLogger.Tpo $(DEPDIR)/librlgo_rlgo_a-RlLogger.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLogger.cpp' object='librlgo_rlgo_a-RlLogger.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlLogger.o `test -f 'RlLogger.cpp' || echo '$(srcdir)/'`RlLogger.cpp
+
+librlgo_rlgo_a-RlLogger.obj: RlLogger.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlLogger.obj -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlLogger.Tpo -c -o librlgo_rlgo_a-RlLogger.obj `if test -f 'RlLogger.cpp'; then $(CYGPATH_W) 'RlLogger.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLogger.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/librlgo_rlgo_a-RlLogger.Tpo $(DEPDIR)/librlgo_rlgo_a-RlLogger.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='RlLogger.cpp' object='librlgo_rlgo_a-RlLogger.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o librlgo_rlgo_a-RlLogger.obj `if test -f 'RlLogger.cpp'; then $(CYGPATH_W) 'RlLogger.cpp'; else $(CYGPATH_W) '$(srcdir)/RlLogger.cpp'; fi`
 
 librlgo_rlgo_a-RlMoveFilter.o: RlMoveFilter.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(librlgo_rlgo_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT librlgo_rlgo_a-RlMoveFilter.o -MD -MP -MF $(DEPDIR)/librlgo_rlgo_a-RlMoveFilter.Tpo -c -o librlgo_rlgo_a-RlMoveFilter.o `test -f 'RlMoveFilter.cpp' || echo '$(srcdir)/'`RlMoveFilter.cpp

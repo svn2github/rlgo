@@ -17,7 +17,7 @@ public:
 
     DECLARE_OBJECT(RlTD0);
 
-    RlTD0(GoBoard& board, RlWeightSet* wset = 0, RlAgentLog* log = 0);
+    RlTD0(GoBoard& board, RlWeightSet* wset = 0, RlLogger* log = 0);
 
 protected:
 
@@ -34,7 +34,7 @@ public:
     DECLARE_OBJECT(RlLambdaReturn);
 
     RlLambdaReturn(GoBoard& board, RlWeightSet* wset = 0, 
-        RlAgentLog* log = 0, RlFloat lambda = 0.9f);
+        RlLogger* log = 0, RlFloat lambda = 0.9f);
 
     /** Load settings from specified file */
     virtual void LoadSettings(std::istream& settings);
@@ -62,7 +62,7 @@ public:
 
     DECLARE_OBJECT(RlTDLambda);
 
-    RlTDLambda(GoBoard& board, RlWeightSet* wset = 0, RlAgentLog* log = 0, 
+    RlTDLambda(GoBoard& board, RlWeightSet* wset = 0, RlLogger* log = 0, 
         RlFloat lambda = 1.0, bool replacing = false);
 
     /** Load settings from specified file */

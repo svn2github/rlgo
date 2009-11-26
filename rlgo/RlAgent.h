@@ -21,7 +21,7 @@
 
 namespace bfs = boost::filesystem;
 
-class RlAgentLog;
+class RlAgentLogger;
 class RlBinaryFeatures;
 class RlWeightSet;
 class RlEvaluator;
@@ -93,9 +93,10 @@ public:
     RlEvaluator* GetEvaluator() { return m_evaluator; }
     RlHistory* GetHistory() { return m_history; }
     RlTrainer* GetTrainer() { return m_trainer; }
+    RlTrainer* GetTester() { return m_tester; }
     int GetTimeStep() const { return m_timestep; }
     RlState& GetState() { return m_history->GetState(m_timestep); }
-    RlAgentLog* GetLog() { return m_log; }
+    RlAgentLogger* GetLog() { return m_log; }
 
     void SetPolicy(RlPolicy* policy) { m_policy = policy; }
 
@@ -115,6 +116,12 @@ protected:
 
     /** Score final position */
     RlFloat Score(bool resign) const;
+    
+    /** Check whether agent is in training or testing phase */
+    bool Training() const 
+    { 
+        return m_trainingGames < 0 || m_numGames < m_trainingGames;
+    }
 
 protected:
 
@@ -124,7 +131,12 @@ protected:
     RlWeightSet* m_weightSet;
     RlHistory* m_history;
     RlTrainer* m_trainer;
-    RlAgentLog* m_log;
+    RlTrainer* m_tester;
+    RlAgentLogger* m_log;
+
+    /** Only update weights for this number of games
+        (set to -1 to always update weights) */
+    int m_trainingGames; 
 
     /** Threshold at which to resign game */
     RlFloat m_resignThreshold;
@@ -134,8 +146,11 @@ protected:
 
     /** Current update timestep */
     int m_timestep;
+    
+    /** Current game number */
+    int m_numGames;
 
-friend class RlAgentLog;
+friend class RlAgentLogger;
 };
 
 //----------------------------------------------------------------------------

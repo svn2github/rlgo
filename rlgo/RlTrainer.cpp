@@ -28,7 +28,8 @@ RlTrainer::RlTrainer(GoBoard& board, RlLearningRule* rule,
     m_updateRoot(true),
     m_temporalDifference(2),
     m_refreshValues(true),
-    m_interleave(true)
+    m_interleave(true),
+    m_updateWeights(true)
 {
 }
 
@@ -45,6 +46,7 @@ void RlTrainer::LoadSettings(istream& settings)
     settings >> RlSetting<int>("TemporalDifference", m_temporalDifference);
     settings >> RlSetting<bool>("RefreshValues", m_refreshValues);
     settings >> RlSetting<bool>("Interleave", m_interleave);
+    settings >> RlSetting<bool>("UpdateWeights", m_updateWeights);
 
     if (m_temporalDifference > RlLearningRule::MAX_TD)
         throw SgException("Temporal difference exceeds maximum");
@@ -83,6 +85,7 @@ RlEpisodicTrainer::RlEpisodicTrainer(GoBoard& board, RlLearningRule* rule,
 
 void RlEpisodicTrainer::Train()
 {
+    m_learningRule->SetUpdateWeights(m_updateWeights);
     int gap = m_interleave ? 1 : m_temporalDifference;
     int start = m_updateRoot ? 0 : 1;
 
@@ -170,6 +173,7 @@ RlRandomTrainer::RlRandomTrainer(GoBoard& board, RlLearningRule* rule,
 void RlRandomTrainer::Train()
 {
     // Replay randomly selected transitions from the history
+    m_learningRule->SetUpdateWeights(m_updateWeights);
     int start = m_updateRoot ? 0 : 1;
     for (int i = 0; i < m_numReplays; ++i)
     {

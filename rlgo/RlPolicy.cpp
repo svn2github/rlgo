@@ -10,9 +10,9 @@
 #include "RlPolicy.h"
 
 #include "RlAgent.h"
-#include "RlAgentLog.h"
 #include "RlWeightSet.h"
 #include "RlEvaluator.h"
+#include "RlLogger.h"
 #include "RlMoveFilter.h"
 #include "RlSimulator.h"
 
@@ -25,7 +25,7 @@ using namespace RlMoveUtil;
 
 //----------------------------------------------------------------------------
 
-RlPolicy::RlPolicy(GoBoard& board, RlEvaluator* evaluator, RlAgentLog* log)
+RlPolicy::RlPolicy(GoBoard& board, RlEvaluator* evaluator, RlLogger* log)
 :   RlAutoObject(board),
     m_evaluator(evaluator),
     m_log(log),
@@ -39,7 +39,7 @@ void RlPolicy::LoadSettings(istream& settings)
     settings >> RlVersion(version, 2, 1);
     settings >> RlSetting<RlEvaluator*>("Evaluator", m_evaluator);
     if (version >= 2)
-        settings >> RlSetting<RlAgentLog*>("Log", m_log);
+        settings >> RlSetting<RlLogger*>("Log", m_log);
     settings >> RlSetting<bool>("OnPolicy", m_onPolicy);
 }
 
@@ -85,7 +85,7 @@ void RlPolicy::InitLogs()
 
 void RlPolicy::LogPolicy(const RlState& state, SgBlackWhite move)
 {
-    if (m_log && m_log->StepLogIsActive())
+    if (m_log && m_log->MoveLogIsActive())
     {
         m_policyLog->Log("TimeStep", state.TimeStep());
         m_policyLog->Log("SelectedMove", SgWritePoint(move));
@@ -120,7 +120,7 @@ void RlGreedy::InitLogs()
 
 void RlGreedy::LogPolicy(const RlState& state, SgMove move)
 {
-    if (m_log && m_log->StepLogIsActive())
+    if (m_log && m_log->MoveLogIsActive())
         m_policyLog->Log("BestMove", SgWritePoint(state.BestMove()));
     RlPolicy::LogPolicy(state, move);
 }
@@ -148,29 +148,6 @@ SgMove RlRandomPolicy::SelectMove(RlState& state)
     state.SetPolicyType(m_onPolicy ? RlState::POL_ON : RlState::POL_OFF);
     const RlMoveFilter* filter = m_evaluator->GetMoveFilter();
     SgMove move = filter->GetRandomMove(state.Colour());
-    LogPolicy(state, move);
-    return move;
-}
-
-//----------------------------------------------------------------------------
-
-IMPLEMENT_OBJECT(RlSimMaxPolicy);
-
-RlSimMaxPolicy::RlSimMaxPolicy(GoBoard& board, RlSimulator* simulator)
-:   RlPolicy(board),
-    m_simulator(simulator)
-{
-}
-
-void RlSimMaxPolicy::LoadSettings(istream& settings)
-{
-    settings >> RlSetting<RlSimulator*>("Simulator", m_simulator);
-}
-
-SgMove RlSimMaxPolicy::SelectMove(RlState& state)
-{
-    state.SetPolicyType(m_onPolicy ? RlState::POL_ON : RlState::POL_OFF);
-    SgMove move = m_simulator->GetFreqMove();
     LogPolicy(state, move);
     return move;
 }

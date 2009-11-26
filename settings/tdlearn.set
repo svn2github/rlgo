@@ -6,11 +6,13 @@
 Object = RlOverride
 {
     ID = Override
-    NumOverrides = 8
+    NumOverrides = 9
     Token = MainAgent.WeightFile
     Value = NULL
     Token = MainAgent.Trainer
-    Value = CurrentTrainer
+    Value = ForwardTrainer
+    Token = MainAgent.Tester
+    Value = Tester
     Token = MainAgent.Policy
     Value = EpsilonGreedy 
     Token = SaveWeights
@@ -33,7 +35,7 @@ Object = RlInclude
 
 Object = RlForwardTrainer
 {
-    ID = CurrentTrainer
+    ID = ForwardTrainer
     Version = 0
     LearningRule = TD0
     History = History
@@ -44,6 +46,39 @@ Object = RlForwardTrainer
     TemporalDifference = 2
     RefreshValues = 1
     Interleave = 1
+    UpdateWeights = 1
+}
+
+Object = RlBackwardTrainer
+{
+    ID = BackwardTrainer
+    Version = 0
+    LearningRule = LambdaReturn
+    History = History
+    Evaluator = Evaluator
+    Episodes = 0 #Current
+    NumReplays = 1
+    UpdateRoot = 1
+    TemporalDifference = 2
+    RefreshValues = 1
+    Interleave = 0
+    UpdateWeights = 1
+}
+
+Object = RlForwardTrainer
+{
+    ID = Tester
+    Version = 0
+    LearningRule = TD0
+    History = History
+    Evaluator = Evaluator
+    Episodes = 0 #Current
+    NumReplays = 1
+    UpdateRoot = 1
+    TemporalDifference = 2
+    RefreshValues = 1
+    Interleave = 1
+    UpdateWeights = 0
 }
 
 Object = RlTD0
@@ -58,6 +93,21 @@ Object = RlTD0
     MSE = 0
     MinGrad = 0
     Log = MainLog
+}
+
+Object = RlLambdaReturn
+{
+    ID = LambdaReturn
+    Version = 1
+    WeightSet = WeightSet
+    Alpha = 0.1
+    StepSizeMode = 1
+    UseOffPolicy = 1
+    Logistic = 1
+    MSE = 0
+    MinGrad = 0
+    Log = MainLog
+    Lambda = 0.4
 }
 
 Object = RlEpsilonPolicy

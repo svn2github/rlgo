@@ -2,7 +2,7 @@ noinst_LIBRARIES = librlgo_rlgo.a
 
 librlgo_rlgo_a_SOURCES = \
 RlAgent.cpp \
-RlAgentLog.cpp \
+RlAgentLogger.cpp \
 RlAgentPlayer.cpp \
 RlAlphaBeta.cpp \
 RlBinaryFeatures.cpp \
@@ -11,6 +11,7 @@ RlEvaluator.cpp \
 RlFuegoPlayout.cpp \
 RlHistory.cpp \
 RlLearningRule.cpp \
+RlLogger.cpp \
 RlMoveFilter.cpp \
 RlPolicy.cpp \
 RlSetup.cpp \
@@ -27,7 +28,7 @@ RlWeightSet.cpp
 noinst_HEADERS = \
 RlActiveSet.h \
 RlAgent.h \
-RlAgentLog.h \
+RlAgentLogger.h \
 RlAgentPlayer.h \
 RlAlphaBeta.h \
 RlBinaryFeatures.h \
@@ -37,6 +38,7 @@ RlEvaluator.h \
 RlFuegoPlayout.h \
 RlHistory.h \
 RlLearningRule.h \
+RlLogger.h \
 RlMoveFilter.h \
 RlPolicy.h \
 RlSetup.h \

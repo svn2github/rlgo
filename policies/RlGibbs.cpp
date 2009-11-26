@@ -7,8 +7,8 @@
 #include "SgSystem.h"
 #include "RlGibbs.h"
 
-#include "RlAgentLog.h"
 #include "RlEvaluator.h"
+#include "RlLogger.h"
 #include "RlMoveFilter.h"
 #include "RlMoveUtil.h"
 
@@ -20,7 +20,7 @@ using namespace RlMoveUtil;
 
 IMPLEMENT_OBJECT(RlGibbs);
 
-RlGibbs::RlGibbs(GoBoard& board, RlEvaluator* evaluator, RlAgentLog* log, 
+RlGibbs::RlGibbs(GoBoard& board, RlEvaluator* evaluator, RlLogger* log, 
     RlFloat temperature)
 :   RlPolicy(board, evaluator, log),
     m_temperature(temperature),
@@ -176,7 +176,7 @@ void RlGibbs::InitLogs()
 
 void RlGibbs::LogPolicy(const RlState& state, SgMove move)
 {
-    if (m_log && m_log->StepLogIsActive())
+    if (m_log && m_log->MoveLogIsActive())
     {
         m_policyLog->Log("Mean", m_statMean.Mean());
         m_policyLog->Log("Entropy", m_statEntropy.Mean());

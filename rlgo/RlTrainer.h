@@ -71,6 +71,10 @@ protected:
     /** Whether to interleave updates, or to do a single trajectory
         (Only relevant for episodic updates with temporal difference > 1) */
     bool m_interleave;
+    
+    /** Whether to update weights during learning (e.g. training stage)
+        or just to measure error (e.g. testing stage) */
+    bool m_updateWeights;
 };
 
 //----------------------------------------------------------------------------

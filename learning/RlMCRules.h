@@ -17,7 +17,7 @@ public:
 
     DECLARE_OBJECT(RlMonteCarlo);
 
-    RlMonteCarlo(GoBoard& board, RlWeightSet* wset = 0, RlAgentLog* log = 0);
+    RlMonteCarlo(GoBoard& board, RlWeightSet* wset = 0, RlLogger* log = 0);
 
 protected:
 

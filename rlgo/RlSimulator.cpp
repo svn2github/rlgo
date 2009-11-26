@@ -8,7 +8,6 @@
 
 #include "SgProp.h"
 #include "RlAgent.h"
-#include "RlAgentLog.h"
 #include "RlEvaluator.h"
 #include "RlPolicy.h"
 #include "RlSetup.h"

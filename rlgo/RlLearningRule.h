@@ -8,16 +8,15 @@
 #define RLLEARNINGRULE_H
 
 #include "RlActiveSet.h"
-#include "RlAgentLog.h"
-#include "RlWeight.h"
-#include "RlWeightSet.h"
 #include "RlFactory.h"
+#include "RlLogger.h"
 #include "RlTrace.h"
 #include "RlWeight.h"
+#include "RlWeightSet.h"
 
 #include <list>
 
-class RlAgentLog;
+class RlLog;
 class RlWeightSet;
 class RlHistory;
 class RlState;
@@ -28,7 +27,7 @@ class RlLearningRule : public RlAutoObject
 {
 public:
 
-    RlLearningRule(GoBoard& board, RlWeightSet* wset = 0, RlAgentLog* log = 0);
+    RlLearningRule(GoBoard& board, RlWeightSet* wset = 0, RlLogger* log = 0);
 
     //@todo: The ability to AddSettings without using a settings file
 
@@ -59,6 +58,10 @@ public:
     /** Update all weights. SetData must be called before Learn each step */
     virtual void Learn();
 
+    /** Specify whether weights should be updated during learning.
+        Can use during separate training and testing stages */
+    void SetUpdateWeights(bool update) { m_updateWeights = update; }
+        
     /** Accessors */
     RlFloat GetDelta() const { return m_delta; }    
     RlFloat GetReward() const { return m_reward; }
@@ -93,6 +96,7 @@ protected:
         RlFloat update, RlFloat w);
     int TraceID(RlWeight& weight) const;
     bool DoLog(RlWeight& weight) const;
+    bool Training() const;
 
     /** Basic weight update */
     void UpdateWeight(RlWeight& weight, RlOccur occurrences);
@@ -104,15 +108,14 @@ protected:
 protected:
 
     RlWeightSet* m_weightSet;
-    RlAgentLog* m_log;
+    RlLogger* m_log;
 
     /** Step size modes */
     enum
     {
         RL_CONSTANT,   // Step-size is set to constant value of alpha
         RL_NORM,       // Step-size is normalised to give total update of alpha
-        RL_BINARY,     // As above, but assumes binary features for efficiency
-        RL_RECIPROCAL  // Step-size set to alpha/N where N is number of games
+        RL_BINARY      // As above, but assumes binary features for efficiency
     };
 
     /** Basic step-size */
@@ -133,7 +136,7 @@ protected:
 
     /** Cap the value to avoid region with flat gradient */
     RlFloat m_minGrad;
-    
+
     /** Current learning data */
     RlState* m_oldState; //@todo: should this be const?
     RlState* m_newState; //@todo: should this be const?
@@ -162,8 +165,10 @@ protected:
     //before Learn.
     bool m_isDataSet;
     
+    /** Only update weights during learning if this is set */
+    bool m_updateWeights;
+    
     /** Debugging statistics */
-    int m_learnCount;
     int m_numSteps;
     int m_numGames;
     
@@ -193,7 +198,7 @@ inline int RlLearningRule::TraceID(RlWeight& weight) const
 inline bool RlLearningRule::DoLog(RlWeight& weight) const
 {
     return m_log 
-        && m_log->LogIsActive()
+        && m_log->GameLogIsActive()
         && m_updateTrace->ExistsLog(m_weightSet->GetFeatureIndex(&weight));
 }
 
