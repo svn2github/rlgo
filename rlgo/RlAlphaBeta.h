@@ -84,8 +84,6 @@ private:
         STAT_REDCUTS,
         STAT_PVS,
         STAT_PVSCUTS,
-        STAT_LATE,
-        STAT_LATECUTS,
         STAT_EXTENSIONS,
         STAT_PARITY,
         STAT_BETACUTS,
@@ -167,10 +165,6 @@ private:
     /** Whether to use null window PVS search */
     bool m_pvs;
 
-    /** Use late move reductions on children with this branch or more
-        Large number means never use */
-    int m_lateMove;
-    
     /** Power to use when estimating time for next iteration */
     RlFloat m_branchPower;
     

@@ -34,7 +34,6 @@ RlAlphaBeta::RlAlphaBeta(GoBoard& board, RlEvaluator* evaluator)
     m_maxExtensions(0),
     m_ensureParity(true),
     m_pvs(true),
-    m_lateMove(4),
     m_branchPower(0.25)
 {
 }
@@ -61,7 +60,6 @@ void RlAlphaBeta::LoadSettings(istream& settings)
     settings >> RlSetting<int>("MaxExtensions", m_maxExtensions);
     settings >> RlSetting<bool>("EnsureParity", m_ensureParity);
     settings >> RlSetting<bool>("PVS", m_pvs);
-    settings >> RlSetting<int>("LateMove", m_lateMove);
     settings >> RlSetting<RlFloat>("BranchPower", m_branchPower);
 }
 
@@ -115,27 +113,14 @@ int RlAlphaBeta::AlphaBeta(int depth, int alpha, int beta,
     if (ProbeHash(depth, alpha, beta, eval, bestMove))
         return eval;
 
-    // Depth reductions
+    // Soft margin depth reductions
     if (depth >= 2 && numReductions < m_maxReductions && beta < +RL_SEARCH_MAX)
     {
-        if (child > m_lateMove)
-        {
-            // Late move reductions
-            m_stats[depth][STAT_LATE]++;
-            eval = AlphaBeta(depth - 2, beta - 1, beta,
-                m_maxReductions, numExtensions, child); // don't reduce recursively
-            if (eval >= beta)
-                return BetaCut(depth, beta, ProbeBestMove(), STAT_LATECUTS);
-        }
-        else
-        {
-            // Soft margin depth reductions
-            m_stats[depth][STAT_REDUCTIONS]++;
-            eval = AlphaBeta(depth - 2, beta + m_cutMargin - 1, beta + m_cutMargin, 
-                numReductions + 1, numExtensions, child); // reduce recursively
-            if (eval >= beta + m_cutMargin)
-                return BetaCut(depth, beta, ProbeBestMove(), STAT_REDCUTS);
-        }
+        m_stats[depth][STAT_REDUCTIONS]++;
+        eval = AlphaBeta(depth - 2, beta + m_cutMargin - 1, beta + m_cutMargin, 
+            numReductions + 1, numExtensions, child); // reduce recursively
+        if (eval >= beta + m_cutMargin)
+            return BetaCut(depth, beta, ProbeBestMove(), STAT_REDCUTS);
     }
 
     // Principal variation search
@@ -520,11 +505,6 @@ void RlAlphaBeta::OutputStatistics(int eval,
     {
         OutputStatistic("PVS", STAT_PVS, ostr);
         OutputStatistic("PVSCuts", STAT_PVSCUTS, ostr);
-    }
-    if (m_lateMove < SG_MAX_MOVES)
-    {
-        OutputStatistic("Late", STAT_LATE, ostr);
-        OutputStatistic("LateCuts", STAT_LATECUTS, ostr);
     }
     if (m_maxExtensions > 0)
     {
