@@ -130,7 +130,7 @@ void RlEvaluator::TakeBackUndo(bool real)
     Undo(real);
 }
 
-void RlEvaluator::AddWeights(const RlChangeList& changes, RlFloat& eval)
+inline void RlEvaluator::AddWeights(const RlChangeList& changes, RlFloat& eval)
 {
     for (RlChangeList::Iterator i_changes(changes); i_changes; ++i_changes)
     {
@@ -139,7 +139,7 @@ void RlEvaluator::AddWeights(const RlChangeList& changes, RlFloat& eval)
     }
 }
 
-void RlEvaluator::AddWeightsUpdateActive(
+inline void RlEvaluator::AddWeightsUpdateActive(
     const RlChangeList& changes, RlFloat& eval)
 {
     for (RlChangeList::Iterator i_changes(changes); i_changes; ++i_changes)
@@ -160,7 +160,7 @@ RlFloat RlEvaluator::EvaluateMove(SgMove move, SgBlackWhite colour)
 
 RlFloat RlEvaluator::EvalMoveSimple(SgMove move, SgBlackWhite colour)
 {
-    RlFloat weightchange;
+    RlFloat weightchange = 0;
 
     m_board.Play(move, colour);
 
@@ -173,7 +173,7 @@ RlFloat RlEvaluator::EvalMoveSimple(SgMove move, SgBlackWhite colour)
 RlFloat RlEvaluator::EvalMoveDiffs(SgMove move, SgBlackWhite colour)
 {    
     // Add differences to current evaluation (recalculate where necessary)
-    RlFloat weightchange;
+    RlFloat weightchange = 0;
     if (m_dirty.IsDirty(move, colour))
     {
         m_board.Play(move, colour);
