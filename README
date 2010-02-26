@@ -52,7 +52,7 @@ The value "Bar" must be a single alphanumeric string.
 The tilde character '~' will be replaced by a space during the override 
   (to allow for multi-word strings).
 
-If no settings file is specified then RLGO will use dyna2.set by default.
+If no settings file is specified then RLGO will use tourney.set by default.
 
 Some particularly important settings to know about are:
 
@@ -64,6 +64,13 @@ MaxGames:   how many games to simulate before each real move
 By default RLGO is launched in GTP mode. After initialisation, it will wait to receive GTP commands on  the standard input. To launch RLGO in self-test mode, launch RLGO with the option -SelfPlay SelfPlay.
 
 RLGO must be initialised with the correct board size, using the BoardSize setting. It is not sufficient to set the boardsize using a GTP command.
+
+An example of running RLGO is given below:
+
+rlgomain/rlgo -settings tdlearn -Alpha 0.2 -Trainer BackwardTrainer -LearningRule LambdaReturn -Lambda 0.9
+# Run RLGO directly with tdlearn.set, but overriding the setting Alpha to have a value of 0.2, Lambda to have a value of 0.9, using the lambda return learning rule and training in backward sweeps after each game.
+
+
 
 
 5. Settings files
@@ -80,7 +87,7 @@ Object = <CLASSNAME>
 	...
 }
 
-Settings may refer to other objects by their identifier <OBJECTNAME>. For example, RLGO supports many different learning rules (for example the general.set file includes TD0, TDLambda and LambdaReturn algorithms). When these rules are included in the settings file, objects of the specified classes are created and initialised on start-up. However, this does not imply that these objects are used! In this example, the trainer specifies which learning rule to use, for example by specifying LearningRule = TD0.
+Settings may refer to other objects by their identifier <OBJECTNAME>. For example, RLGO supports different learning rules (for example the tdlearn.set file includes TD0 and LambdaReturn algorithms). When these rules are included in the settings file, objects of the specified classes are created and initialised on start-up. However, this does not imply that these objects are used! In this example, the trainer specifies which learning rule to use, for example by specifying LearningRule = TD0.
 
 Settings are case-sensitive and order-sensitive. There must be whitespace on either side of the equals sign " = ". Comments may be included in settings files by prefixing with a hash #. The tilde character is converted into a space internally (this avoids problems in scripts with multi-word settings). Some settings expect vectors of objects, in the following format (whitespace must be included before, between and after each object name):
 
@@ -107,28 +114,17 @@ Standard settings files for RLGO include:
 
 6. Running scripts
 
-Experiments with RLGO are executed by running shell scripts in the scripts subdirectory. Each script provides its own command line options, which can be viewed by invoking the script with no arguments. Some examples of using these scripts are provided below:
+Experiments with RLGO are executed by running the shell scripts found in the scripts subdirectory. Each script provides its own command line options, which can be viewed by invoking the script with no arguments. Some examples of running RLGO using these scripts are provided below:
 
-rlgomain/rlgo -settings tdlearn -Alpha 0.2 -Lambda 0.9 -LearningRule TDLambda
-# Run RLGO with tdlearn.set, but overriding the setting Alpha to have a value of 0.2, lambda to have a value of 0.9, and using the TD Lambda learning rule.
+scripts/experiment.sh tdlearn localshape output/tdlearn-shapes MaxSize "1 2 3" "Compare local shapes using TD learning" 100000 20000 1
+# Train RLGO using tdlearn.set settings, and test RLGO using localshape.set settings. Compares three different versions of RLGO, using 1x1, 2x2 and 3x3 local shapes. Plays 100000 training games and 20000 testing games, and includes one GnuGo opponent in the testing tournament. Puts the output results and plots into output/tdlearn-shapes. 
 
-scripts/getprogram.sh tdsearch -MaxGames 10000
-# Output the command line for RLGO using tdsearch.set and running 10000 simulations per move
-
-scripts/getprogram.sh gnugo0
-# Output the command line for running GnuGo level 0 in GTP mode
-
-scripts/multi-matches.sh tdlearn gnugo0 output/learningrules LearningRule "TD0 TDLamda LambdaReturn" 9 0 1000 submit-para.sh -MaxGames 10000
-# Play three 1000-game matches in parallel between RLGO using tdlearn.set and GnuGo level 0, using three different learning rules. The output will be placed into the output/learningrules directory, including RLGO's log files and .sgf game records of all games. RLGO will execute 10000 simulations per move.
-
-analyze.sh ../output/alpha LearningRule "TD0 TDLamda LambdaReturn" 1600
-# Analyze the results of the above multi-matches.sh invocation. Elo ratings will be generated relative to GnuGo level 0, which is assigned a 1600 Elo rating.
-
-scripts/multi-run.sh tdlearn output/alpha Alpha "0.1 0.05 0.02 0.01" 9 0 1000 submit-para.sh -MaxGames 100000
-# Run four training runs of 100000 games in parallel, using RLGO and tdlearn.set, using four different values for the step-size. The output will be placed into the output/alpha directory.
+scripts/multi-elo.sh tdsearch output/local-shapes TrainingGames "100 1000 10000" MaxSize "1 2 3" 9 1000 "Compare local shapes using TD search"
+# Run a tournament between RLGO using tdsearch.set settings. Compares nine different versions of RLGO, using 1x1, 2x2 and 3x3 local shapes, and using 100, 1000 or 10000 games. Plays 1000 matches on 9x9 boards. Puts the output results and plots into output/tdsearch-shapes. 
 
 
 7. Additional Information
 
 Further information about the concepts used in RLGO can be found in CONCEPTS
-Pseudocode and experimental results can be found in David Silver's Ph.D. thesis
+Pseudocode and experimental results can be found in David Silver's Ph.D. thesis: 
+http://webdocs.cs.ualberta.ca/~silver/David_Silver/Publications_files/thesis.pdf
