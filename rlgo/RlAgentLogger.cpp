@@ -312,7 +312,7 @@ void RlAgentLogger::LogStep()
 
 void RlAgentLogger::TopTex()
 {
-    static const int rows = 10, cols = 2;
+    static const int rows = 2, cols = 10;
 
     if (GameLogIsActive() && m_topTex)
     {
