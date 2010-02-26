@@ -65,8 +65,8 @@ Object = RlRealAgent
     Simulator = NULL
     WeightFile = SharedShapes-3x3.w
     ResetWeights = 1 # Reset on init
-    MinWeight = 1 [ 0 ]
-    MaxWeight = 1 [ 0 ]
+    MinWeight = 0
+    MaxWeight = 0
 }
 
 Object = RlAgentLogger

@@ -65,8 +65,8 @@ Object = RlRealAgent
     Simulator = Simulator
     WeightFile = NULL
     ResetWeights = 2 # Reset on new game
-    MinWeight = 0 [ ]
-    MaxWeight = 0 [ ]
+    MinWeight = 0
+    MaxWeight = 0
     AnswersAll = 1 # Only change answers for predictive RLGO
 }
 
