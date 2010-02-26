@@ -18,10 +18,11 @@ then
     exit 1
 fi
 
+SCRIPTDIR=`dirname $0`
 PATHSTEM=$1
 SETTING=$2
 VALUES=$3
 TITLE=$4
 
-analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
-plot-tournament.sh $PATHSTEM $SETTING "$VALUES" "$TITLE"
+$SCRIPTDIR/analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
+$SCRIPTDIR/plot-tournament.sh $PATHSTEM $SETTING "$VALUES" "$TITLE"

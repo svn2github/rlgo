@@ -1,7 +1,6 @@
 TESTS = \
 test-getprogram.sh \
-test-matches.sh \
-test-experiment.sh
+test-matches.sh
 
 EXTRA_DIST = \
 analyze-elo.sh \
