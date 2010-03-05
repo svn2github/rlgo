@@ -15,6 +15,7 @@
 #include "RlEvaluator.h"
 #include "RlManualFeatures.h"
 #include "RlMoveFilter.h"
+#include "RlState.h"
 #include "RlWeightSet.h"
 #include "RlTestUtil.h"
 

@@ -89,7 +89,7 @@ void MakeWeights(GoBoard& bd, RlWeightSet& unsharedweights)
     unshare.Convert(&sharedweights, &unsharedweights);
 }
 
-RlFloat SearchValue(RlAlphaBeta& alphabeta, int depth, bool ladder)
+RlFloat RunSearch(RlAlphaBeta& alphabeta, int depth, bool ladder)
 {
     alphabeta.Clear();
     alphabeta.SetMaxDepth(depth);
@@ -98,11 +98,6 @@ RlFloat SearchValue(RlAlphaBeta& alphabeta, int depth, bool ladder)
     alphabeta.SetMaxExtensions(ladder ? 10 : 0);
 
     return alphabeta.Search(pv);
-}
-
-SgMove SearchMove()
-{
-    return pv.front();
 }
 
 void TestLadders(RlEvaluator& evaluator, RlAlphaBeta& alphabeta)
@@ -118,25 +113,25 @@ void TestLadders(RlEvaluator& evaluator, RlAlphaBeta& alphabeta)
     evaluator.PlayExecute(Pt(2, 2), SG_BLACK, false);
     evaluator.PlayExecute(Pt(3, 2), SG_WHITE, false);
 
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, false), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 1, true), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, false), 1.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 2, true), 2.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, false), 2.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 3, true), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, false), 1.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 4, true), 2.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, false), 3.0, tol);
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 5, true), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 6, false), 2.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
-    BOOST_CHECK_CLOSE(SearchValue(alphabeta, 7, false), 3.0, tol);
-    BOOST_CHECK_EQUAL(SearchMove(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 1, false), 2.0, tol);
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 1, true), 3.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 2, false), 1.0, tol);
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 2, true), 2.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 3, false), 2.0, tol);
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 3, true), 3.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 4, false), 1.0, tol);
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 4, true), 2.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 5, false), 3.0, tol);
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 5, true), 3.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 6, false), 2.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
+    BOOST_CHECK_CLOSE(RunSearch(alphabeta, 7, false), 3.0, tol);
+    BOOST_CHECK_EQUAL(pv.front(), Pt(4, 2));
 
     evaluator.TakeBackUndo(false);
     evaluator.TakeBackUndo(false);
@@ -157,8 +152,6 @@ BOOST_AUTO_TEST_CASE(RlAlphaBetaTestLadders)
     alphabeta.EnsureInitialised();
     MakeWeights(bd, weights);
 
-    //alphabeta.SetMaxReductions(1);
-    //TestLadders(evaluator, alphabeta);
     alphabeta.SetMaxReductions(0);
     TestLadders(evaluator, alphabeta);
 }
