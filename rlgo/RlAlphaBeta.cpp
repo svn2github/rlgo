@@ -71,7 +71,7 @@ void RlAlphaBeta::Initialise()
     Clear();
 }
 
-int RlAlphaBeta::Search(vector<SgMove>& pv)
+RlFloat RlAlphaBeta::Search(vector<SgMove>& pv)
 {
     m_elapsedTime = 0;
 
@@ -79,12 +79,14 @@ int RlAlphaBeta::Search(vector<SgMove>& pv)
     {
         m_timer.Start();
         ClearStatistics();
+        SortMoves(m_sortedMoves);
         int eval = AlphaBeta(m_iterationDepth, 
-            -RL_SEARCH_MAX, +RL_SEARCH_MAX, 0, 0, 0);
+            -RL_SEARCH_MAX, +RL_SEARCH_MAX, 
+            0, 0, 0); // from toplay's point of view
         PrincipalVariation(pv);
         OutputStatistics(eval, pv, RlDebug(RlSetup::VOCAL));
         if (CheckAbort())
-            return m_board.ToPlay() == SG_BLACK ? eval : -eval;
+            return FloatValue(eval); // from black's point of view
     }
 }
 
@@ -397,6 +399,13 @@ inline int RlAlphaBeta::Evaluate(int depth)
 
     m_stats[depth][STAT_EVALUATIONS]++;
     return eval;
+}
+
+inline RlFloat RlAlphaBeta::FloatValue(int eval) const
+{
+    if (m_board.ToPlay() == SG_WHITE)
+        eval = -eval;
+    return (float) eval / 100;
 }
 
 inline void RlAlphaBeta::Play(SgMove move)

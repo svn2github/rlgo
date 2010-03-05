@@ -33,7 +33,7 @@ public:
     /** Iterative deepening alpha-beta search.
         Iterations continue until abort criterion is matched (depth or time) 
         Returns root value and principal variation. */
-    int Search(std::vector<SgMove>& pv);
+    RlFloat Search(std::vector<SgMove>& pv);
 
     /** Clear hash table and other search data */
     void Clear();
@@ -110,6 +110,7 @@ private:
     void StoreHash(int depth, SgMove move, int eval, 
         bool lower, bool upper);
     int Evaluate(int depth);
+    RlFloat FloatValue(int eval) const;
     void Play(SgMove move);
     void Undo();
     bool ConsiderMove(SgMove move);
