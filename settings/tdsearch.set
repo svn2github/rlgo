@@ -74,7 +74,7 @@ Object = RlSimAgent
 {
     ID = SimAgent
     Version = 22
-    Policy = TwoStage
+    Policy = TwoStageMixed
     Evaluator = SimEvaluator
     FeatureSet = LocalShapeSet
     WeightSet = WeightSet
@@ -205,7 +205,7 @@ Object = RlLocalShapeSet
     IgnoreSelfInverse = 0
 }
 
-### POLICIES ###
+### SIMPLE POLICIES ###
 
 Object = RlRandomPolicy
 {
@@ -213,6 +213,14 @@ Object = RlRandomPolicy
     Version = 1
     Evaluator = SimEvaluator
     OnPolicy = 1
+}
+
+Object = RlRandomPolicy
+{
+    ID = RandomOffPolicy
+    Version = 1
+    Evaluator = SimEvaluator
+    OnPolicy = 0
 }
 
 Object = RlEpsilonPolicy
@@ -253,6 +261,48 @@ Object = RlFuegoPlayoutPolicy
     Incremental = 1
 }
 
+Object = RlFuegoPlayoutPolicy
+{
+    ID = FuegoOffPolicy
+    OnPolicy = 0
+    FuegoPlayout = FuegoPlayout
+    Incremental = 1
+}
+
+### COMPOUND POLICIES ###
+
+# 40% random, 60% fuego playouts
+Object = RlEpsilonPolicy
+{
+    ID = MixedRandomOnPolicy
+    Version = 3
+    PPolicy = Random
+    NPolicy = FuegoOnPolicy
+    Epsilon = 0.4
+}
+
+# 40% random, 60% fuego playouts
+Object = RlEpsilonPolicy
+{
+    ID = MixedRandomOffPolicy
+    Version = 3
+    PPolicy = RandomOffPolicy
+    NPolicy = FuegoOffPolicy
+    Epsilon = 0.4
+}
+
+# 70% greedy, 12% random, 18% fuego playouts
+Object = RlEpsilonPolicy
+{
+    ID = EpsilonMixed
+    Version = 3
+    PPolicy = MixedRandomOffPolicy
+    NPolicy = SimGreedy
+    Epsilon = 0.3
+}
+
+# Simple two stage policy: 90% greedy, 10% random; then 100% fuego
+# "Scientific" simulation policy. Used for Chapter 6 experiments in thesis.
 Object = RlTwoStagePolicy
 {
     ID = TwoStage
@@ -261,6 +311,18 @@ Object = RlTwoStagePolicy
     Policy2 = FuegoOnPolicy
     SwitchTime = 6
 }
+
+# Mixed two stage policy: 70% greedy, 12% random, 18% fuego; then 40% random, 60% fuego
+# "Tournament" simulation policy. Used for Chapter 7 tournament results in thesis
+Object = RlTwoStagePolicy
+{
+    ID = TwoStageMixed
+    Version = 2
+    Policy1 = EpsilonMixed
+    Policy2 = MixedRandomOnPolicy
+    SwitchTime = 6
+}
+
 
 ### MOVE FILTERS ###
 

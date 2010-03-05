@@ -85,7 +85,6 @@ Object = RlAlphaBeta
     MaxExtensions = 0
     EnsureParity = 1
     PVS = 1
-    LateMove = 100
     BranchPower = 0.25
 }
 
@@ -125,60 +124,6 @@ Object = RlLocalShapeFusion
     ID = Fusion
     LocalShapeSet = LocalShapeSet
     FusedFeatures = FusedShapes
-}
-
-### SIMULATION POLICY ###
-
-Object = RlRandomPolicy
-{
-    ID = RandomOffPolicy
-    Version = 1
-    Evaluator = SimEvaluator
-    OnPolicy = 0
-}
-
-Object = RlEpsilonPolicy
-{
-    ID = MixedRandomOnPolicy
-    Version = 3
-    PPolicy = Random
-    NPolicy = FuegoOnPolicy
-    Epsilon = 0.4
-}
-
-Object = RlEpsilonPolicy
-{
-    ID = MixedRandomOffPolicy
-    Version = 3
-    PPolicy = RandomOffPolicy
-    NPolicy = FuegoOffPolicy
-    Epsilon = 0.4
-}
-
-Object = RlEpsilonPolicy
-{
-    ID = EpsilonMixed
-    Version = 3
-    PPolicy = MixedRandomOffPolicy
-    NPolicy = SimGreedy
-    Epsilon = 0.3
-}
-
-Object = RlFuegoPlayoutPolicy
-{
-    ID = FuegoOffPolicy
-    OnPolicy = 0
-    FuegoPlayout = FuegoPlayout
-    Incremental = 1
-}
-
-Object = RlTwoStagePolicy
-{
-    ID = TwoStageMixed
-    Version = 2
-    Policy1 = EpsilonMixed
-    Policy2 = MixedRandomOnPolicy
-    SwitchTime = 6
 }
 
 ### END ###
