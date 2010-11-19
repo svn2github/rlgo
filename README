@@ -119,8 +119,8 @@ Experiments with RLGO are executed by running the shell scripts found in the scr
 scripts/experiment.sh tdlearn localshape output/tdlearn-shapes MaxSize "1 2 3" "Compare local shapes using TD learning" 100000 20000 1
 # Train RLGO using tdlearn.set settings, and test RLGO using localshape.set settings. Compares three different versions of RLGO, using 1x1, 2x2 and 3x3 local shapes. Plays 100000 training games and 20000 testing games, and includes one GnuGo opponent in the testing tournament. Puts the output results and plots into output/tdlearn-shapes. 
 
-scripts/multi-elo.sh tdsearch output/local-shapes TrainingGames "100 1000 10000" MaxSize "1 2 3" 9 1000 "Compare local shapes using TD search"
-# Run a tournament between RLGO using tdsearch.set settings. Compares nine different versions of RLGO, using 1x1, 2x2 and 3x3 local shapes, and using 100, 1000 or 10000 games. Plays 1000 matches on 9x9 boards. Puts the output results and plots into output/tdsearch-shapes. 
+scripts/multi-elo.sh tdsearch output/local-shapes MaxGames "100 1000 10000" MaxSize "1 2 3" 9 1000 "Compare local shapes using TD search"
+# Run a tournament between RLGO using tdsearch.set settings. Compares nine different versions of RLGO, using 1x1, 2x2 and 3x3 local shapes, and using 100, 1000 or 10000 simulations per move. Plays 1000 matches on 9x9 boards. Puts the output results and plots into output/local-shapes. 
 
 
 7. Additional Information

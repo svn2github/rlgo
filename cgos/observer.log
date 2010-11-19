@@ -1,0 +1,14 @@
+2010-11-19 12:00:45,606 - INFO: Starting GTP engine, command line: gogui
+2010-11-19 12:00:46,644 - DEBUG: Sending: list_commands
+Shutting down GTP engine, command line: gogui
+2010-11-19 12:18:21,917 - INFO: Starting GTP engine, command line: gogui
+2010-11-19 12:18:22,923 - DEBUG: Sending: list_commands
+2010-11-19 12:22:29,445 - DEBUG: Response: []
+2010-11-19 12:42:54,503 - INFO: Starting GTP engine, command line: gogui
+2010-11-19 12:42:54,578 - INFO: about to popen...
+2010-11-19 12:42:54,621 - INFO: popened!
+2010-11-19 12:42:55,622 - DEBUG: Sending: list_commands
+Shutting down GTP engine, command line: gogui
+2010-11-19 12:44:18,716 - INFO: Starting GTP engine, command line: gogui
+2010-11-19 12:44:19,742 - DEBUG: Sending: list_commands
+2010-11-19 12:44:38,105 - DEBUG: Response: []

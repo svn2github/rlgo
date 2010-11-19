@@ -1,0 +1,2124 @@
+2010-11-19 12:23:22,088 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:23:22,278 - ERROR: Switch failed. Engine failed to start: [Errno 2] No such file or directory
+2010-11-19 12:23:22,279 - INFO: Shutting down CGOS connection
+2010-11-19 12:23:33,807 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:23:33,816 - ERROR: Switch failed. Engine failed to start: [Errno 2] No such file or directory
+2010-11-19 12:23:33,817 - INFO: Shutting down CGOS connection
+2010-11-19 12:23:54,534 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:23:54,545 - ERROR: Switch failed. Engine failed to start: [Errno 2] No such file or directory
+2010-11-19 12:23:54,546 - INFO: Shutting down CGOS connection
+2010-11-19 12:24:32,112 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:24:32,122 - ERROR: Switch failed. Engine failed to start: [Errno 2] No such file or directory
+2010-11-19 12:24:32,122 - INFO: Shutting down CGOS connection
+2010-11-19 12:29:41,167 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:29:41,194 - ERROR: Switch failed. Engine failed to start: [Errno 2] No such file or directory
+2010-11-19 12:29:41,195 - INFO: Shutting down CGOS connection
+2010-11-19 12:32:30,601 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:32:30,604 - ERROR: Switch failed. Engine failed to start: 'module' object has no attribute 'STDIN'
+2010-11-19 12:32:30,604 - INFO: Shutting down CGOS connection
+2010-11-19 12:33:05,351 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:33:05,561 - ERROR: Switch failed. Engine failed to start: [Errno 2] No such file or directory
+2010-11-19 12:33:05,561 - INFO: Shutting down CGOS connection
+2010-11-19 12:38:04,474 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:38:05,499 - INFO: Attempting to connect to server '127.0.0.1', port 1919
+2010-11-19 12:38:05,500 - ERROR: Connection failed: [Errno 61] Connection refused
+2010-11-19 12:38:05,500 - ERROR: Could not connect to 127.0.0.1. Will try again.
+2010-11-19 12:38:37,494 - INFO: Attempting to connect to server '127.0.0.1', port 1919
+2010-11-19 12:38:37,495 - ERROR: Connection failed: [Errno 61] Connection refused
+2010-11-19 12:38:37,495 - ERROR: Could not connect to 127.0.0.1. Will try again.
+2010-11-19 12:39:10,489 - INFO: Attempting to connect to server '127.0.0.1', port 1919
+2010-11-19 12:39:10,490 - ERROR: Connection failed: [Errno 61] Connection refused
+2010-11-19 12:39:10,490 - ERROR: Could not connect to 127.0.0.1. Will try again.
+2010-11-19 12:39:41,484 - INFO: Attempting to connect to server '127.0.0.1', port 1919
+2010-11-19 12:39:41,485 - ERROR: Connection failed: [Errno 61] Connection refused
+2010-11-19 12:39:41,485 - ERROR: Could not connect to 127.0.0.1. Will try again.
+2010-11-19 12:40:14,479 - INFO: Attempting to connect to server '127.0.0.1', port 1919
+2010-11-19 12:40:14,480 - ERROR: Connection failed: [Errno 61] Connection refused
+2010-11-19 12:40:14,480 - ERROR: Could not connect to 127.0.0.1. Will try again.
+2010-11-19 12:40:21,967 - INFO: Shutting down CGOS connection
+2010-11-19 12:40:52,785 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:40:53,795 - INFO: Attempting to connect to server 'cgos.boardspace.net', port 6867
+2010-11-19 12:40:53,825 - INFO: Connected
+2010-11-19 12:41:13,537 - DEBUG: Server sent: protocol
+2010-11-19 12:41:13,537 - DEBUG: Responding: e1 cgosPython 0.3.0 beta
+2010-11-19 12:41:13,660 - DEBUG: Server sent: username
+2010-11-19 12:41:13,660 - DEBUG: Responding: myuser
+2010-11-19 12:41:13,687 - DEBUG: Server sent: password
+2010-11-19 12:41:13,688 - DEBUG: Responding: mypw
+2010-11-19 12:41:28,841 - DEBUG: Server sent: info Maximum time until next round: 09:56
+2010-11-19 12:41:28,842 - INFO: Server info: Maximum time until next round: 09:56
+2010-11-19 12:42:20,464 - INFO: Shutting down CGOS connection
+2010-11-19 12:44:08,860 - INFO: Chose engine 1 ("Gnugo Level 8") as next player. Switching and re-connecting.
+2010-11-19 12:44:09,872 - INFO: Attempting to connect to server 'cgos.boardspace.net', port 6867
+2010-11-19 12:44:09,903 - INFO: Connected
+2010-11-19 12:44:11,123 - DEBUG: Server sent: protocol
+2010-11-19 12:44:11,124 - DEBUG: Responding: e1 cgosPython 0.3.0 beta
+2010-11-19 12:44:11,269 - DEBUG: Server sent: username
+2010-11-19 12:44:11,270 - DEBUG: Responding: myuser
+2010-11-19 12:44:11,331 - DEBUG: Server sent: password
+2010-11-19 12:44:11,332 - DEBUG: Responding: mypw
+2010-11-19 12:44:14,370 - INFO: Shutting down CGOS connection
+2010-11-19 12:45:00,452 - INFO: Chose engine 1 ("rtest") as next player. Switching and re-connecting.
+2010-11-19 12:45:17,611 - INFO: Attempting to connect to server 'cgos.boardspace.net', port 6867
+2010-11-19 12:45:17,823 - INFO: Connected
+2010-11-19 12:45:17,871 - DEBUG: Server sent: protocol
+2010-11-19 12:45:17,884 - DEBUG: Responding: e1 cgosPython 0.3.0 beta
+2010-11-19 12:45:20,973 - DEBUG: Server sent: username
+2010-11-19 12:45:20,973 - DEBUG: Responding: silver
+2010-11-19 12:45:21,001 - DEBUG: Server sent: password
+2010-11-19 12:45:21,002 - DEBUG: Responding: rlgo2.4
+2010-11-19 12:46:28,839 - DEBUG: Server sent: info Maximum time until next round: 05:38
+2010-11-19 12:46:28,894 - INFO: Server info: Maximum time until next round: 05:38
+2010-11-19 12:47:43,866 - DEBUG: Server sent: info Maximum time until next round: 04:28
+2010-11-19 12:47:43,903 - INFO: Server info: Maximum time until next round: 04:28
+2010-11-19 12:48:58,927 - DEBUG: Server sent: info Maximum time until next round: 02:44
+2010-11-19 12:48:58,927 - INFO: Server info: Maximum time until next round: 02:44
+2010-11-19 12:50:13,974 - DEBUG: Server sent: info Maximum time until next round: 01:44
+2010-11-19 12:50:14,035 - INFO: Server info: Maximum time until next round: 01:44
+2010-11-19 12:51:50,304 - DEBUG: Server sent: setup 1277343 9 7.5 300000 AmiGoGtp-1.5(1173) silver(1500?)
+2010-11-19 12:51:50,406 - INFO: Starting game against AmiGoGtp-1.5(1173). Local engine ("rtest", rated 1500?) is playing black.
+2010-11-19 12:52:06,470 - DEBUG: Server sent: genmove b 300000
+2010-11-19 12:52:18,794 - DEBUG: Responding: e4
+2010-11-19 12:52:19,120 - DEBUG: Server sent: play w f7 300000
+2010-11-19 12:52:19,159 - DEBUG: Server sent: genmove b 288366
+2010-11-19 12:52:42,607 - DEBUG: Responding: d7
+2010-11-19 12:52:42,609 - DEBUG: Server sent: info Maximum time until next round: 09:52
+2010-11-19 12:52:42,609 - INFO: Server info: Maximum time until next round: 09:52
+2010-11-19 12:52:42,883 - DEBUG: Server sent: play w g5 300000
+2010-11-19 12:52:42,910 - DEBUG: Server sent: genmove b 265596
+2010-11-19 12:52:54,414 - DEBUG: Responding: f3
+2010-11-19 12:52:54,732 - DEBUG: Server sent: play w e6 300000
+2010-11-19 12:52:54,914 - DEBUG: Server sent: genmove b 254784
+2010-11-19 12:53:03,797 - DEBUG: Responding: d6
+2010-11-19 12:53:04,129 - DEBUG: Server sent: play w e5 300000
+2010-11-19 12:53:04,157 - DEBUG: Server sent: genmove b 246438
+2010-11-19 12:53:15,138 - DEBUG: Responding: d5
+2010-11-19 12:53:15,493 - DEBUG: Server sent: play w d4 300000
+2010-11-19 12:53:15,517 - DEBUG: Server sent: genmove b 236135
+2010-11-19 12:53:26,353 - DEBUG: Responding: c4
+2010-11-19 12:53:26,690 - DEBUG: Server sent: play w d3 300000
+2010-11-19 12:53:26,711 - DEBUG: Server sent: genmove b 225991
+2010-11-19 12:53:34,241 - DEBUG: Responding: g2
+2010-11-19 12:53:34,574 - DEBUG: Server sent: play w e3 300000
+2010-11-19 12:53:34,600 - DEBUG: Server sent: genmove b 219155
+2010-11-19 12:53:42,032 - DEBUG: Responding: f4
+2010-11-19 12:53:42,365 - DEBUG: Server sent: play w f5 300000
+2010-11-19 12:53:42,390 - DEBUG: Server sent: genmove b 212417
+2010-11-19 12:53:49,989 - DEBUG: Responding: c3
+2010-11-19 12:53:50,375 - DEBUG: Server sent: play w c2 300000
+2010-11-19 12:53:50,402 - DEBUG: Server sent: genmove b 205486
+2010-11-19 12:53:50,402 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 205 sec
+2010-11-19 12:54:04,452 - DEBUG: Responding: f2
+2010-11-19 12:54:04,452 - DEBUG: Server sent: info Maximum time until next round: 09:16
+2010-11-19 12:54:04,453 - INFO: Server info: Maximum time until next round: 09:16
+2010-11-19 12:54:04,736 - DEBUG: Server sent: play w b2 300000
+2010-11-19 12:54:04,764 - DEBUG: Server sent: genmove b 192129
+2010-11-19 12:54:15,609 - DEBUG: Responding: d2
+2010-11-19 12:54:15,934 - DEBUG: Server sent: play w d1 300000
+2010-11-19 12:54:16,008 - DEBUG: Server sent: genmove b 181977
+2010-11-19 12:54:23,496 - DEBUG: Responding: e2
+2010-11-19 12:54:23,929 - DEBUG: Server sent: play w c1 300000
+2010-11-19 12:54:24,020 - DEBUG: Server sent: genmove b 175135
+2010-11-19 12:54:32,147 - DEBUG: Responding: e8
+2010-11-19 12:54:32,472 - DEBUG: Server sent: play w e1 300000
+2010-11-19 12:54:32,499 - DEBUG: Server sent: genmove b 167621
+2010-11-19 12:54:39,183 - DEBUG: Responding: c8
+2010-11-19 12:54:39,488 - DEBUG: Server sent: play w f1 300000
+2010-11-19 12:54:39,515 - DEBUG: Server sent: genmove b 161632
+2010-11-19 12:54:48,612 - DEBUG: Responding: g1
+2010-11-19 12:54:48,978 - DEBUG: Server sent: play w f8 300000
+2010-11-19 12:54:49,065 - DEBUG: Server sent: genmove b 153200
+2010-11-19 12:54:54,783 - DEBUG: Responding: b3
+2010-11-19 12:54:54,784 - DEBUG: Server sent: info Maximum time until next round: 08:08
+2010-11-19 12:54:54,784 - INFO: Server info: Maximum time until next round: 08:08
+2010-11-19 12:54:55,059 - DEBUG: Server sent: play w a3 300000
+2010-11-19 12:54:55,086 - DEBUG: Server sent: genmove b 148115
+2010-11-19 12:55:02,608 - DEBUG: Responding: a4
+2010-11-19 12:55:03,009 - DEBUG: Server sent: play w e9 300000
+2010-11-19 12:55:03,138 - DEBUG: Server sent: genmove b 141276
+2010-11-19 12:55:08,969 - DEBUG: Responding: d9
+2010-11-19 12:55:14,998 - DEBUG: Server sent: play w f9 300000
+2010-11-19 12:55:15,026 - DEBUG: Server sent: genmove b 130275
+2010-11-19 12:55:24,533 - DEBUG: Responding: b7
+2010-11-19 12:55:27,795 - DEBUG: Server sent: play w e7 299571
+2010-11-19 12:55:27,890 - DEBUG: Server sent: genmove b 119406
+2010-11-19 12:55:27,890 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 119 sec
+2010-11-19 12:55:32,591 - DEBUG: Responding: d8
+2010-11-19 12:55:32,905 - DEBUG: Server sent: play w g4 299571
+2010-11-19 12:55:32,932 - DEBUG: Server sent: genmove b 115332
+2010-11-19 12:55:39,570 - DEBUG: Responding: c6
+2010-11-19 12:55:39,946 - DEBUG: Server sent: play w h3 299571
+2010-11-19 12:55:40,019 - DEBUG: Server sent: genmove b 109381
+2010-11-19 12:55:49,223 - DEBUG: Responding: a2
+2010-11-19 12:55:49,596 - DEBUG: Server sent: play w h2 299571
+2010-11-19 12:55:49,624 - DEBUG: Server sent: genmove b 100823
+2010-11-19 12:55:53,553 - DEBUG: Responding: b5
+2010-11-19 12:55:54,019 - DEBUG: Server sent: play w h1 299571
+2010-11-19 12:55:54,047 - DEBUG: Server sent: genmove b 97415
+2010-11-19 12:55:57,732 - DEBUG: Responding: a6
+2010-11-19 12:55:58,038 - DEBUG: Server sent: play w g3 299571
+2010-11-19 12:55:58,065 - DEBUG: Server sent: genmove b 94423
+2010-11-19 12:56:01,740 - DEBUG: Responding: b9
+2010-11-19 12:56:01,740 - DEBUG: Server sent: info Maximum time until next round: 06:39
+2010-11-19 12:56:01,740 - INFO: Server info: Maximum time until next round: 06:39
+2010-11-19 12:56:02,038 - DEBUG: Server sent: play w pass 299571
+2010-11-19 12:56:02,057 - DEBUG: Server sent: genmove b 91442
+2010-11-19 12:56:02,324 - DEBUG: Responding: a8
+2010-11-19 12:56:02,641 - DEBUG: Server sent: play w pass 299571
+2010-11-19 12:56:02,668 - DEBUG: Server sent: genmove b 91442
+2010-11-19 12:56:02,959 - DEBUG: Responding: d3
+2010-11-19 12:56:03,314 - DEBUG: Server sent: play w pass 299571
+2010-11-19 12:56:03,341 - DEBUG: Server sent: genmove b 91442
+2010-11-19 12:56:03,572 - DEBUG: Responding: b1
+2010-11-19 12:56:03,886 - DEBUG: Server sent: play w pass 299571
+2010-11-19 12:56:03,913 - DEBUG: Server sent: genmove b 91442
+2010-11-19 12:56:04,163 - DEBUG: Responding: pass
+2010-11-19 12:56:04,194 - DEBUG: Server sent: gameover 2010-11-19 B+5.5
+2010-11-19 12:56:04,263 - INFO: Game over. Result: B+5.5
+2010-11-19 12:56:04,263 - INFO: Local engine won :-)
+2010-11-19 12:56:04,359 - INFO: Saving SGF file: 2010-11-19-12-56-04-silver-AmiGoGtp15.sgf
+2010-11-19 12:56:04,362 - DEBUG: Responding: ready
+2010-11-19 12:57:14,780 - DEBUG: Server sent: info Maximum time until next round: 05:16
+2010-11-19 12:57:14,922 - INFO: Server info: Maximum time until next round: 05:16
+2010-11-19 12:58:29,828 - DEBUG: Server sent: info Maximum time until next round: 04:05
+2010-11-19 12:58:29,868 - INFO: Server info: Maximum time until next round: 04:05
+2010-11-19 12:59:44,945 - DEBUG: Server sent: info Maximum time until next round: 02:50
+2010-11-19 12:59:44,964 - INFO: Server info: Maximum time until next round: 02:50
+2010-11-19 13:01:20,986 - DEBUG: Server sent: setup 1277359 9 7.5 300000 soft_n(1537) silver(1526?)
+2010-11-19 13:01:20,986 - INFO: Starting game against soft_n(1537). Local engine ("rtest", rated 1526?) is playing black.
+2010-11-19 13:01:40,387 - DEBUG: Server sent: genmove b 300000
+2010-11-19 13:01:51,893 - DEBUG: Responding: f5
+2010-11-19 13:01:52,654 - DEBUG: Server sent: play w d5 300000
+2010-11-19 13:01:52,747 - DEBUG: Server sent: genmove b 289216
+2010-11-19 13:02:02,556 - DEBUG: Responding: d6
+2010-11-19 13:02:03,273 - DEBUG: Server sent: play w f6 300000
+2010-11-19 13:02:03,303 - DEBUG: Server sent: genmove b 280027
+2010-11-19 13:02:20,673 - DEBUG: Responding: e5
+2010-11-19 13:02:20,674 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 13:02:20,674 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 13:02:21,425 - DEBUG: Server sent: play w e6 300000
+2010-11-19 13:02:21,453 - DEBUG: Server sent: genmove b 263340
+2010-11-19 13:02:30,405 - DEBUG: Responding: d4
+2010-11-19 13:02:34,456 - DEBUG: Server sent: play w c5 300000
+2010-11-19 13:02:34,554 - DEBUG: Server sent: genmove b 251713
+2010-11-19 13:02:47,158 - DEBUG: Responding: g6
+2010-11-19 13:02:47,867 - DEBUG: Server sent: play w g5 300000
+2010-11-19 13:02:47,894 - DEBUG: Server sent: genmove b 239730
+2010-11-19 13:03:00,256 - DEBUG: Responding: g7
+2010-11-19 13:03:00,918 - DEBUG: Server sent: play w e4 300000
+2010-11-19 13:03:01,040 - DEBUG: Server sent: genmove b 228472
+2010-11-19 13:03:11,406 - DEBUG: Responding: f4
+2010-11-19 13:03:17,226 - DEBUG: Server sent: info Maximum time until next round: 09:11
+2010-11-19 13:03:17,226 - INFO: Server info: Maximum time until next round: 09:11
+2010-11-19 13:03:17,870 - DEBUG: Server sent: play w e3 300000
+2010-11-19 13:03:17,899 - DEBUG: Server sent: genmove b 212986
+2010-11-19 13:03:26,999 - DEBUG: Responding: f3
+2010-11-19 13:03:27,739 - DEBUG: Server sent: play w f2 300000
+2010-11-19 13:03:27,767 - DEBUG: Server sent: genmove b 204553
+2010-11-19 13:03:35,534 - DEBUG: Responding: e2
+2010-11-19 13:03:36,230 - DEBUG: Server sent: play w d3 300000
+2010-11-19 13:03:36,259 - DEBUG: Server sent: genmove b 197463
+2010-11-19 13:03:36,259 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 197 sec
+2010-11-19 13:03:46,043 - DEBUG: Responding: e7
+2010-11-19 13:03:46,816 - DEBUG: Server sent: play w g3 300000
+2010-11-19 13:03:46,940 - DEBUG: Server sent: genmove b 188367
+2010-11-19 13:03:53,638 - DEBUG: Responding: f7
+2010-11-19 13:03:54,403 - DEBUG: Server sent: play w c3 300000
+2010-11-19 13:03:54,434 - DEBUG: Server sent: genmove b 182215
+2010-11-19 13:04:03,017 - DEBUG: Responding: g2
+2010-11-19 13:04:03,811 - DEBUG: Server sent: play w f1 300000
+2010-11-19 13:04:03,839 - DEBUG: Server sent: genmove b 174297
+2010-11-19 13:04:11,655 - DEBUG: Responding: g1
+2010-11-19 13:04:12,401 - DEBUG: Server sent: play w e6 300000
+2010-11-19 13:04:12,429 - DEBUG: Server sent: genmove b 167075
+2010-11-19 13:04:20,065 - DEBUG: Responding: c6
+2010-11-19 13:04:20,792 - DEBUG: Server sent: play w h2 300000
+2010-11-19 13:04:20,822 - DEBUG: Server sent: genmove b 160131
+2010-11-19 13:04:27,570 - DEBUG: Responding: e1
+2010-11-19 13:04:28,262 - DEBUG: Server sent: play w f2 300000
+2010-11-19 13:04:28,289 - DEBUG: Server sent: genmove b 154055
+2010-11-19 13:04:35,058 - DEBUG: Responding: g4
+2010-11-19 13:04:35,058 - DEBUG: Server sent: info Maximum time until next round: 07:42
+2010-11-19 13:04:35,058 - INFO: Server info: Maximum time until next round: 07:42
+2010-11-19 13:04:35,860 - DEBUG: Server sent: play w h3 300000
+2010-11-19 13:04:35,888 - DEBUG: Server sent: genmove b 147954
+2010-11-19 13:04:41,159 - DEBUG: Responding: b6
+2010-11-19 13:04:42,001 - DEBUG: Server sent: play w h4 300000
+2010-11-19 13:04:42,029 - DEBUG: Server sent: genmove b 143265
+2010-11-19 13:04:47,989 - DEBUG: Responding: h5
+2010-11-19 13:04:48,747 - DEBUG: Server sent: play w c4 300000
+2010-11-19 13:04:48,827 - DEBUG: Server sent: genmove b 137882
+2010-11-19 13:04:56,087 - DEBUG: Responding: b5
+2010-11-19 13:04:56,846 - DEBUG: Server sent: play w h6 300000
+2010-11-19 13:04:56,874 - DEBUG: Server sent: genmove b 131246
+2010-11-19 13:04:56,874 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 131 sec
+2010-11-19 13:05:02,951 - DEBUG: Responding: h7
+2010-11-19 13:05:03,810 - DEBUG: Server sent: play w b4 300000
+2010-11-19 13:05:03,837 - DEBUG: Server sent: genmove b 125777
+2010-11-19 13:05:12,319 - DEBUG: Responding: f1
+2010-11-19 13:05:13,131 - DEBUG: Server sent: play w d7 300000
+2010-11-19 13:05:13,158 - DEBUG: Server sent: genmove b 117891
+2010-11-19 13:05:20,073 - DEBUG: Responding: j6
+2010-11-19 13:05:20,816 - DEBUG: Server sent: play w b7 300000
+2010-11-19 13:05:20,843 - DEBUG: Server sent: genmove b 111547
+2010-11-19 13:05:25,082 - DEBUG: Responding: c7
+2010-11-19 13:05:25,769 - DEBUG: Server sent: play w d8 300000
+2010-11-19 13:05:25,838 - DEBUG: Server sent: genmove b 107995
+2010-11-19 13:05:33,960 - DEBUG: Responding: b8
+2010-11-19 13:05:34,730 - DEBUG: Server sent: play w c8 300000
+2010-11-19 13:05:34,825 - DEBUG: Server sent: genmove b 100491
+2010-11-19 13:05:38,996 - DEBUG: Responding: a7
+2010-11-19 13:05:53,773 - DEBUG: Server sent: info Maximum time until next round: 06:32
+2010-11-19 13:05:53,774 - INFO: Server info: Maximum time until next round: 06:32
+2010-11-19 13:05:54,302 - DEBUG: Server sent: play w a5 300000
+2010-11-19 13:05:54,330 - DEBUG: Server sent: genmove b 82264
+2010-11-19 13:05:59,319 - DEBUG: Responding: f6
+2010-11-19 13:06:00,009 - DEBUG: Server sent: play w a4 300000
+2010-11-19 13:06:00,085 - DEBUG: Server sent: genmove b 77954
+2010-11-19 13:06:03,384 - DEBUG: Responding: a6
+2010-11-19 13:06:06,507 - DEBUG: Server sent: gameover 2010-11-19 B+Resign
+2010-11-19 13:06:06,507 - INFO: Game over. Result: B+Resign
+2010-11-19 13:06:06,507 - INFO: Local engine won :-)
+2010-11-19 13:06:06,508 - INFO: Saving SGF file: 2010-11-19-13-06-06-silver-softn.sgf
+2010-11-19 13:06:06,568 - DEBUG: Responding: ready
+2010-11-19 13:06:54,897 - DEBUG: Server sent: info Maximum time until next round: 05:33
+2010-11-19 13:06:54,897 - INFO: Server info: Maximum time until next round: 05:33
+2010-11-19 13:08:37,486 - DEBUG: Server sent: setup 1277379 9 7.5 300000 silver(1625?) _NeuroGo2.1,r(1733)
+2010-11-19 13:08:37,486 - INFO: Starting game against _NeuroGo2.1,r(1733). Local engine ("rtest", rated 1625?) is playing white.
+2010-11-19 13:08:46,904 - DEBUG: Server sent: play b D4 300000
+2010-11-19 13:08:46,931 - DEBUG: Server sent: genmove w 300000
+2010-11-19 13:08:59,083 - DEBUG: Responding: f6
+2010-11-19 13:08:59,563 - DEBUG: Server sent: play b D6 300000
+2010-11-19 13:08:59,590 - DEBUG: Server sent: genmove w 288428
+2010-11-19 13:09:13,417 - DEBUG: Responding: e5
+2010-11-19 13:09:13,955 - DEBUG: Server sent: play b D5 300000
+2010-11-19 13:09:14,299 - DEBUG: Server sent: genmove w 275252
+2010-11-19 13:09:25,408 - DEBUG: Responding: e7
+2010-11-19 13:09:25,408 - DEBUG: Server sent: info Maximum time until next round: 09:57
+2010-11-19 13:09:25,408 - INFO: Server info: Maximum time until next round: 09:57
+2010-11-19 13:09:25,912 - DEBUG: Server sent: play b G4 300000
+2010-11-19 13:09:25,982 - DEBUG: Server sent: genmove w 264497
+2010-11-19 13:09:35,838 - DEBUG: Responding: e4
+2010-11-19 13:09:36,396 - DEBUG: Server sent: play b E3 300000
+2010-11-19 13:09:36,692 - DEBUG: Server sent: genmove w 255273
+2010-11-19 13:09:48,532 - DEBUG: Responding: f3
+2010-11-19 13:09:49,043 - DEBUG: Server sent: play b F4 300000
+2010-11-19 13:09:49,070 - DEBUG: Server sent: genmove w 243850
+2010-11-19 13:09:57,831 - DEBUG: Responding: d3
+2010-11-19 13:09:58,503 - DEBUG: Server sent: play b E2 300000
+2010-11-19 13:09:58,530 - DEBUG: Server sent: genmove w 235781
+2010-11-19 13:10:07,719 - DEBUG: Responding: f5
+2010-11-19 13:10:35,252 - DEBUG: Server sent: info Maximum time until next round: 09:15
+2010-11-19 13:10:35,252 - INFO: Server info: Maximum time until next round: 09:15
+2010-11-19 13:10:35,853 - DEBUG: Server sent: play b C3 300000
+2010-11-19 13:10:35,922 - DEBUG: Server sent: genmove w 199782
+2010-11-19 13:10:43,416 - DEBUG: Responding: g3
+2010-11-19 13:10:44,034 - DEBUG: Server sent: play b H4 300000
+2010-11-19 13:10:44,062 - DEBUG: Server sent: genmove w 192917
+2010-11-19 13:10:52,838 - DEBUG: Responding: f2
+2010-11-19 13:10:53,455 - DEBUG: Server sent: play b E1 300000
+2010-11-19 13:10:53,482 - DEBUG: Server sent: genmove w 184763
+2010-11-19 13:10:53,482 - INFO: Engine "rtest" playing white. 10 moves generated. Time left: 184 sec
+2010-11-19 13:11:08,258 - DEBUG: Responding: h3
+2010-11-19 13:11:08,913 - DEBUG: Server sent: play b D7 300000
+2010-11-19 13:11:08,941 - DEBUG: Server sent: genmove w 170662
+2010-11-19 13:11:16,405 - DEBUG: Responding: h5
+2010-11-19 13:11:17,061 - DEBUG: Server sent: play b E8 300000
+2010-11-19 13:11:17,077 - DEBUG: Server sent: genmove w 163885
+2010-11-19 13:11:23,625 - DEBUG: Responding: f8
+2010-11-19 13:11:24,375 - DEBUG: Server sent: play b E6 300000
+2010-11-19 13:11:24,456 - DEBUG: Server sent: genmove w 158032
+2010-11-19 13:11:33,381 - DEBUG: Responding: f7
+2010-11-19 13:11:33,961 - DEBUG: Server sent: play b E9 300000
+2010-11-19 13:11:34,029 - DEBUG: Server sent: genmove w 149650
+2010-11-19 13:11:39,748 - DEBUG: Responding: f1
+2010-11-19 13:11:39,749 - DEBUG: Server sent: info Maximum time until next round: 07:46
+2010-11-19 13:11:39,749 - INFO: Server info: Maximum time until next round: 07:46
+2010-11-19 13:11:40,367 - DEBUG: Server sent: play b C1 300000
+2010-11-19 13:11:40,394 - DEBUG: Server sent: genmove w 144583
+2010-11-19 13:12:04,642 - DEBUG: Responding: f9
+2010-11-19 13:12:05,233 - DEBUG: Server sent: play b C8 300000
+2010-11-19 13:12:05,317 - DEBUG: Server sent: genmove w 121026
+2010-11-19 13:12:16,014 - DEBUG: Responding: g5
+2010-11-19 13:12:16,685 - DEBUG: Server sent: play b B7 300000
+2010-11-19 13:12:16,713 - DEBUG: Server sent: genmove w 110906
+2010-11-19 13:12:23,761 - DEBUG: Responding: h7
+2010-11-19 13:12:24,089 - DEBUG: Server sent: play b B5 300000
+2010-11-19 13:12:24,164 - DEBUG: Server sent: genmove w 104552
+2010-11-19 13:12:29,028 - DEBUG: Responding: d1
+2010-11-19 13:12:29,695 - DEBUG: Server sent: play b D2 300000
+2010-11-19 13:12:29,723 - DEBUG: Server sent: genmove w 100331
+2010-11-19 13:12:33,697 - DEBUG: Responding: g8
+2010-11-19 13:12:38,450 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:38,528 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:38,528 - INFO: Engine "rtest" playing white. 20 moves generated. Time left: 92 sec
+2010-11-19 13:12:38,795 - DEBUG: Responding: j4
+2010-11-19 13:12:39,354 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:39,423 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:39,692 - DEBUG: Responding: j3
+2010-11-19 13:12:40,242 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:40,284 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:40,528 - DEBUG: Responding: h1
+2010-11-19 13:12:40,968 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:40,996 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:41,217 - DEBUG: Responding: j2
+2010-11-19 13:12:41,778 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:41,805 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:42,088 - DEBUG: Responding: j8
+2010-11-19 13:12:42,574 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:42,601 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:42,910 - DEBUG: Responding: g4
+2010-11-19 13:12:43,473 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:43,500 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:43,779 - DEBUG: Responding: h9
+2010-11-19 13:12:44,339 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:12:44,364 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:44,814 - DEBUG: Responding: b1
+2010-11-19 13:12:45,372 - DEBUG: Server sent: play b B2 300000
+2010-11-19 13:12:45,400 - DEBUG: Server sent: genmove w 92790
+2010-11-19 13:12:48,702 - DEBUG: Responding: j7
+2010-11-19 13:12:49,093 - DEBUG: Server sent: play b C6 300000
+2010-11-19 13:12:49,174 - DEBUG: Server sent: genmove w 90182
+2010-11-19 13:12:52,871 - DEBUG: Responding: j6
+2010-11-19 13:12:52,899 - DEBUG: Server sent: info Maximum time until next round: 07:02
+2010-11-19 13:12:52,899 - INFO: Server info: Maximum time until next round: 07:02
+2010-11-19 13:12:53,426 - DEBUG: Server sent: play b A1 300000
+2010-11-19 13:12:53,453 - DEBUG: Server sent: genmove w 87121
+2010-11-19 13:12:53,453 - INFO: Engine "rtest" playing white. 30 moves generated. Time left: 87 sec
+2010-11-19 13:12:58,349 - DEBUG: Responding: g6
+2010-11-19 13:12:58,934 - DEBUG: Server sent: play b D9 300000
+2010-11-19 13:12:59,064 - DEBUG: Server sent: genmove w 82876
+2010-11-19 13:13:02,963 - DEBUG: Responding: g2
+2010-11-19 13:13:03,455 - DEBUG: Server sent: play b C9 300000
+2010-11-19 13:13:03,555 - DEBUG: Server sent: genmove w 79568
+2010-11-19 13:13:06,695 - DEBUG: Responding: pass
+2010-11-19 13:13:07,297 - DEBUG: Server sent: play b A2 300000
+2010-11-19 13:13:07,325 - DEBUG: Server sent: genmove w 77021
+2010-11-19 13:13:10,380 - DEBUG: Responding: pass
+2010-11-19 13:13:10,900 - DEBUG: Server sent: play b D3 300000
+2010-11-19 13:13:10,974 - DEBUG: Server sent: genmove w 74660
+2010-11-19 13:13:13,871 - DEBUG: Responding: pass
+2010-11-19 13:13:14,323 - DEBUG: Server sent: play b B4 300000
+2010-11-19 13:13:14,350 - DEBUG: Server sent: genmove w 72410
+2010-11-19 13:13:17,297 - DEBUG: Responding: pass
+2010-11-19 13:13:17,832 - DEBUG: Server sent: play b C2 300000
+2010-11-19 13:13:17,928 - DEBUG: Server sent: genmove w 70155
+2010-11-19 13:13:20,809 - DEBUG: Responding: pass
+2010-11-19 13:13:21,359 - DEBUG: Server sent: play b B8 300000
+2010-11-19 13:13:21,387 - DEBUG: Server sent: genmove w 67900
+2010-11-19 13:13:24,223 - DEBUG: Responding: pass
+2010-11-19 13:13:24,786 - DEBUG: Server sent: play b A6 300000
+2010-11-19 13:13:24,813 - DEBUG: Server sent: genmove w 65730
+2010-11-19 13:13:27,932 - DEBUG: Responding: pass
+2010-11-19 13:13:28,517 - DEBUG: Server sent: play b A5 300000
+2010-11-19 13:13:28,544 - DEBUG: Server sent: genmove w 63273
+2010-11-19 13:13:31,345 - DEBUG: Responding: pass
+2010-11-19 13:13:31,834 - DEBUG: Server sent: play b A8 300000
+2010-11-19 13:13:31,864 - DEBUG: Server sent: genmove w 61168
+2010-11-19 13:13:31,864 - INFO: Engine "rtest" playing white. 40 moves generated. Time left: 61 sec
+2010-11-19 13:13:34,718 - DEBUG: Responding: pass
+2010-11-19 13:13:35,226 - DEBUG: Server sent: play b A3 300000
+2010-11-19 13:13:35,253 - DEBUG: Server sent: genmove w 59005
+2010-11-19 13:13:37,727 - DEBUG: Responding: pass
+2010-11-19 13:13:38,234 - DEBUG: Server sent: play b C5 300000
+2010-11-19 13:13:38,324 - DEBUG: Server sent: genmove w 57226
+2010-11-19 13:13:40,410 - DEBUG: Responding: pass
+2010-11-19 13:13:40,945 - DEBUG: Server sent: play b B9 300000
+2010-11-19 13:13:40,973 - DEBUG: Server sent: genmove w 55771
+2010-11-19 13:13:42,797 - DEBUG: Responding: pass
+2010-11-19 13:13:43,257 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:13:43,285 - DEBUG: Server sent: gameover 2010-11-19 W+4.5
+2010-11-19 13:13:43,285 - INFO: Game over. Result: W+4.5
+2010-11-19 13:13:43,285 - INFO: Local engine won :-)
+2010-11-19 13:13:43,286 - INFO: Saving SGF file: 2010-11-19-13-13-43-NeuroGo21r-silver.sgf
+2010-11-19 13:13:43,346 - DEBUG: Responding: ready
+2010-11-19 13:13:52,935 - DEBUG: Server sent: info Maximum time until next round: 05:38
+2010-11-19 13:13:52,935 - INFO: Server info: Maximum time until next round: 05:38
+2010-11-19 13:14:54,277 - DEBUG: Server sent: info Maximum time until next round: 04:38
+2010-11-19 13:14:54,278 - INFO: Server info: Maximum time until next round: 04:38
+2010-11-19 13:16:09,288 - DEBUG: Server sent: info Maximum time until next round: 03:15
+2010-11-19 13:16:09,288 - INFO: Server info: Maximum time until next round: 03:15
+2010-11-19 13:16:09,288 - INFO: Client up for 0 hours, 31 mins, 9 seconds. Local engines won 3 games, lost 0.
+2010-11-19 13:17:24,365 - DEBUG: Server sent: info Maximum time until next round: 02:08
+2010-11-19 13:17:24,365 - INFO: Server info: Maximum time until next round: 02:08
+2010-11-19 13:19:07,481 - DEBUG: Server sent: setup 1277397 9 7.5 300000 silver(1741?) _Brown1.0,R(902)
+2010-11-19 13:19:07,482 - INFO: Starting game against _Brown1.0,R(902). Local engine ("rtest", rated 1741?) is playing white.
+2010-11-19 13:19:22,498 - DEBUG: Server sent: play b A6 300000
+2010-11-19 13:19:22,788 - DEBUG: Server sent: genmove w 300000
+2010-11-19 13:19:32,908 - DEBUG: Responding: f4
+2010-11-19 13:19:33,329 - DEBUG: Server sent: play b B2 300000
+2010-11-19 13:19:33,409 - DEBUG: Server sent: genmove w 290303
+2010-11-19 13:19:58,629 - DEBUG: Responding: d3
+2010-11-19 13:19:58,630 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 13:19:58,630 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 13:19:59,044 - DEBUG: Server sent: play b A2 300000
+2010-11-19 13:19:59,072 - DEBUG: Server sent: genmove w 265720
+2010-11-19 13:20:09,509 - DEBUG: Responding: f6
+2010-11-19 13:20:09,949 - DEBUG: Server sent: play b E9 300000
+2010-11-19 13:20:10,249 - DEBUG: Server sent: genmove w 255973
+2010-11-19 13:20:21,825 - DEBUG: Responding: d5
+2010-11-19 13:20:27,320 - DEBUG: Server sent: play b E1 300000
+2010-11-19 13:20:27,347 - DEBUG: Server sent: genmove w 240009
+2010-11-19 13:20:36,626 - DEBUG: Responding: f3
+2010-11-19 13:20:37,052 - DEBUG: Server sent: play b H3 300000
+2010-11-19 13:20:37,079 - DEBUG: Server sent: genmove w 231351
+2010-11-19 13:20:47,026 - DEBUG: Responding: e8
+2010-11-19 13:20:47,591 - DEBUG: Server sent: play b H1 300000
+2010-11-19 13:20:47,619 - DEBUG: Server sent: genmove w 222083
+2010-11-19 13:21:03,734 - DEBUG: Responding: d8
+2010-11-19 13:21:03,735 - DEBUG: Server sent: info Maximum time until next round: 09:13
+2010-11-19 13:21:03,735 - INFO: Server info: Maximum time until next round: 09:13
+2010-11-19 13:21:04,131 - DEBUG: Server sent: play b H9 300000
+2010-11-19 13:21:04,212 - DEBUG: Server sent: genmove w 206559
+2010-11-19 13:21:15,992 - DEBUG: Responding: g6
+2010-11-19 13:21:16,376 - DEBUG: Server sent: play b H7 300000
+2010-11-19 13:21:16,403 - DEBUG: Server sent: genmove w 195419
+2010-11-19 13:21:28,372 - DEBUG: Responding: h6
+2010-11-19 13:21:28,854 - DEBUG: Server sent: play b C4 300000
+2010-11-19 13:21:28,882 - DEBUG: Server sent: genmove w 184140
+2010-11-19 13:21:28,882 - INFO: Engine "rtest" playing white. 10 moves generated. Time left: 184 sec
+2010-11-19 13:21:37,219 - DEBUG: Responding: c6
+2010-11-19 13:21:37,646 - DEBUG: Server sent: play b C2 300000
+2010-11-19 13:21:37,673 - DEBUG: Server sent: genmove w 176398
+2010-11-19 13:21:43,776 - DEBUG: Responding: g8
+2010-11-19 13:21:44,167 - DEBUG: Server sent: play b F2 300000
+2010-11-19 13:21:44,190 - DEBUG: Server sent: genmove w 170986
+2010-11-19 13:21:51,258 - DEBUG: Responding: b5
+2010-11-19 13:21:51,720 - DEBUG: Server sent: play b C9 300000
+2010-11-19 13:21:52,019 - DEBUG: Server sent: genmove w 164586
+2010-11-19 13:22:00,275 - DEBUG: Responding: c8
+2010-11-19 13:22:00,639 - DEBUG: Server sent: play b A1 300000
+2010-11-19 13:22:00,661 - DEBUG: Server sent: genmove w 156750
+2010-11-19 13:22:07,099 - DEBUG: Responding: c3
+2010-11-19 13:22:07,554 - DEBUG: Server sent: play b E5 300000
+2010-11-19 13:22:07,582 - DEBUG: Server sent: genmove w 151006
+2010-11-19 13:22:22,026 - DEBUG: Responding: e6
+2010-11-19 13:22:22,026 - DEBUG: Server sent: info Maximum time until next round: 08:15
+2010-11-19 13:22:22,026 - INFO: Server info: Maximum time until next round: 08:15
+2010-11-19 13:22:22,411 - DEBUG: Server sent: play b F7 300000
+2010-11-19 13:22:22,710 - DEBUG: Server sent: genmove w 137161
+2010-11-19 13:22:27,844 - DEBUG: Responding: g7
+2010-11-19 13:22:29,156 - DEBUG: Server sent: play b F1 300000
+2010-11-19 13:22:29,183 - DEBUG: Server sent: genmove w 131695
+2010-11-19 13:22:34,504 - DEBUG: Responding: b3
+2010-11-19 13:22:34,963 - DEBUG: Server sent: play b D7 300000
+2010-11-19 13:22:35,036 - DEBUG: Server sent: genmove w 126958
+2010-11-19 13:22:42,712 - DEBUG: Responding: c7
+2010-11-19 13:22:43,090 - DEBUG: Server sent: play b A4 300000
+2010-11-19 13:22:43,117 - DEBUG: Server sent: genmove w 119920
+2010-11-19 13:22:48,454 - DEBUG: Responding: b4
+2010-11-19 13:22:48,813 - DEBUG: Server sent: play b A3 300000
+2010-11-19 13:22:48,840 - DEBUG: Server sent: genmove w 115277
+2010-11-19 13:22:48,840 - INFO: Engine "rtest" playing white. 20 moves generated. Time left: 115 sec
+2010-11-19 13:22:54,390 - DEBUG: Responding: a5
+2010-11-19 13:22:54,855 - DEBUG: Server sent: play b B1 300000
+2010-11-19 13:22:54,882 - DEBUG: Server sent: genmove w 110390
+2010-11-19 13:22:59,262 - DEBUG: Responding: e4
+2010-11-19 13:22:59,943 - DEBUG: Server sent: play b G2 300000
+2010-11-19 13:22:59,973 - DEBUG: Server sent: genmove w 106408
+2010-11-19 13:23:04,397 - DEBUG: Responding: d2
+2010-11-19 13:23:04,990 - DEBUG: Server sent: play b H2 300000
+2010-11-19 13:23:05,017 - DEBUG: Server sent: genmove w 102676
+2010-11-19 13:23:08,840 - DEBUG: Responding: f9
+2010-11-19 13:23:09,277 - DEBUG: Server sent: play b A7 300000
+2010-11-19 13:23:09,304 - DEBUG: Server sent: genmove w 99457
+2010-11-19 13:23:15,251 - DEBUG: Responding: d9
+2010-11-19 13:23:15,708 - DEBUG: Server sent: play b F5 300000
+2010-11-19 13:23:15,736 - DEBUG: Server sent: genmove w 94172
+2010-11-19 13:23:19,863 - DEBUG: Responding: g5
+2010-11-19 13:23:20,220 - DEBUG: Server sent: play b E7 300000
+2010-11-19 13:23:20,248 - DEBUG: Server sent: genmove w 90738
+2010-11-19 13:23:26,968 - DEBUG: Responding: d6
+2010-11-19 13:23:27,346 - DEBUG: Server sent: play b J1 300000
+2010-11-19 13:23:27,374 - DEBUG: Server sent: genmove w 84710
+2010-11-19 13:23:31,518 - DEBUG: Responding: d1
+2010-11-19 13:23:31,519 - DEBUG: Server sent: info Maximum time until next round: 06:29
+2010-11-19 13:23:31,519 - INFO: Server info: Maximum time until next round: 06:29
+2010-11-19 13:23:31,986 - DEBUG: Server sent: play b G4 300000
+2010-11-19 13:23:32,013 - DEBUG: Server sent: genmove w 81229
+2010-11-19 13:23:35,279 - DEBUG: Responding: h4
+2010-11-19 13:23:35,708 - DEBUG: Server sent: play b D4 300000
+2010-11-19 13:23:35,735 - DEBUG: Server sent: genmove w 78642
+2010-11-19 13:23:38,886 - DEBUG: Responding: h8
+2010-11-19 13:23:39,302 - DEBUG: Server sent: play b A9 300000
+2010-11-19 13:23:39,593 - DEBUG: Server sent: genmove w 76185
+2010-11-19 13:23:39,593 - INFO: Engine "rtest" playing white. 30 moves generated. Time left: 76 sec
+2010-11-19 13:23:42,689 - DEBUG: Responding: j3
+2010-11-19 13:23:43,121 - DEBUG: Server sent: play b J8 300000
+2010-11-19 13:23:43,148 - DEBUG: Server sent: genmove w 73519
+2010-11-19 13:23:52,679 - DEBUG: Responding: g3
+2010-11-19 13:23:53,091 - DEBUG: Server sent: play b F5 300000
+2010-11-19 13:23:53,119 - DEBUG: Server sent: genmove w 64644
+2010-11-19 13:23:55,463 - DEBUG: Responding: b8
+2010-11-19 13:23:55,912 - DEBUG: Server sent: play b G9 300000
+2010-11-19 13:23:55,940 - DEBUG: Server sent: genmove w 62980
+2010-11-19 13:23:58,232 - DEBUG: Responding: a8
+2010-11-19 13:23:58,597 - DEBUG: Server sent: play b E2 300000
+2010-11-19 13:23:58,622 - DEBUG: Server sent: genmove w 61382
+2010-11-19 13:24:01,295 - DEBUG: Responding: e3
+2010-11-19 13:24:01,711 - DEBUG: Server sent: play b J5 300000
+2010-11-19 13:24:01,738 - DEBUG: Server sent: genmove w 59403
+2010-11-19 13:24:04,515 - DEBUG: Responding: j4
+2010-11-19 13:24:04,990 - DEBUG: Server sent: play b H5 300000
+2010-11-19 13:24:05,018 - DEBUG: Server sent: genmove w 57320
+2010-11-19 13:24:08,073 - DEBUG: Responding: b7
+2010-11-19 13:24:08,444 - DEBUG: Server sent: play b J7 300000
+2010-11-19 13:24:08,561 - DEBUG: Server sent: genmove w 54893
+2010-11-19 13:24:10,941 - DEBUG: Responding: j6
+2010-11-19 13:24:11,362 - DEBUG: Server sent: play b H5 300000
+2010-11-19 13:24:11,389 - DEBUG: Server sent: genmove w 53119
+2010-11-19 13:24:15,997 - DEBUG: Responding: j2
+2010-11-19 13:24:16,464 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:24:16,484 - DEBUG: Server sent: genmove w 49178
+2010-11-19 13:24:16,830 - DEBUG: Responding: g1
+2010-11-19 13:24:17,376 - DEBUG: Server sent: play b G2 300000
+2010-11-19 13:24:17,403 - DEBUG: Server sent: genmove w 49178
+2010-11-19 13:24:17,403 - INFO: Engine "rtest" playing white. 40 moves generated. Time left: 49 sec
+2010-11-19 13:24:20,137 - DEBUG: Responding: h1
+2010-11-19 13:24:20,552 - DEBUG: Server sent: play b H3 300000
+2010-11-19 13:24:20,580 - DEBUG: Server sent: genmove w 47049
+2010-11-19 13:24:22,558 - DEBUG: Responding: f2
+2010-11-19 13:24:23,007 - DEBUG: Server sent: play b E1 300000
+2010-11-19 13:24:23,034 - DEBUG: Server sent: genmove w 45711
+2010-11-19 13:24:25,071 - DEBUG: Responding: e2
+2010-11-19 13:24:25,425 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:24:25,454 - DEBUG: Server sent: genmove w 44306
+2010-11-19 13:24:25,705 - DEBUG: Responding: e5
+2010-11-19 13:24:26,183 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:24:26,270 - DEBUG: Server sent: genmove w 44306
+2010-11-19 13:24:26,523 - DEBUG: Responding: j5
+2010-11-19 13:24:27,041 - DEBUG: Server sent: play b PASS 300000
+2010-11-19 13:24:27,143 - DEBUG: Server sent: genmove w 44306
+2010-11-19 13:24:27,389 - DEBUG: Responding: pass
+2010-11-19 13:24:27,575 - DEBUG: Server sent: gameover 2010-11-19 W+31.5
+2010-11-19 13:24:27,575 - INFO: Game over. Result: W+31.5
+2010-11-19 13:24:27,575 - INFO: Local engine won :-)
+2010-11-19 13:24:27,576 - INFO: Saving SGF file: 2010-11-19-13-24-27-Brown10R-silver.sgf
+2010-11-19 13:24:27,577 - DEBUG: Responding: ready
+2010-11-19 13:24:43,689 - DEBUG: Server sent: info Maximum time until next round: 04:55
+2010-11-19 13:24:43,689 - INFO: Server info: Maximum time until next round: 04:55
+2010-11-19 13:25:58,737 - DEBUG: Server sent: info Maximum time until next round: 03:45
+2010-11-19 13:25:58,740 - INFO: Server info: Maximum time until next round: 03:45
+2010-11-19 13:27:13,785 - DEBUG: Server sent: info Maximum time until next round: 02:38
+2010-11-19 13:27:13,785 - INFO: Server info: Maximum time until next round: 02:38
+2010-11-19 13:28:25,763 - DEBUG: Server sent: setup 1277415 9 7.5 300000 _Gnu3.8L1,r(1820) silver(1743?)
+2010-11-19 13:28:25,763 - INFO: Starting game against _Gnu3.8L1,r(1820). Local engine ("rtest", rated 1743?) is playing black.
+2010-11-19 13:28:34,865 - DEBUG: Server sent: genmove b 300000
+2010-11-19 13:28:51,496 - DEBUG: Responding: e6
+2010-11-19 13:28:51,496 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 13:28:51,496 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 13:28:51,922 - DEBUG: Server sent: play w D7 300000
+2010-11-19 13:28:51,950 - DEBUG: Server sent: genmove b 284075
+2010-11-19 13:29:05,733 - DEBUG: Responding: d6
+2010-11-19 13:29:06,750 - DEBUG: Server sent: play w C7 300000
+2010-11-19 13:29:06,831 - DEBUG: Server sent: genmove b 270439
+2010-11-19 13:29:16,579 - DEBUG: Responding: e7
+2010-11-19 13:29:17,077 - DEBUG: Server sent: play w G7 300000
+2010-11-19 13:29:17,101 - DEBUG: Server sent: genmove b 261330
+2010-11-19 13:29:25,856 - DEBUG: Responding: e8
+2010-11-19 13:29:31,801 - DEBUG: Server sent: play w G4 300000
+2010-11-19 13:29:31,934 - DEBUG: Server sent: genmove b 248077
+2010-11-19 13:29:42,748 - DEBUG: Responding: e3
+2010-11-19 13:29:43,985 - DEBUG: Server sent: play w B6 299602
+2010-11-19 13:29:44,066 - DEBUG: Server sent: genmove b 237825
+2010-11-19 13:30:00,345 - DEBUG: Responding: e2
+2010-11-19 13:30:00,345 - DEBUG: Server sent: info Maximum time until next round: 09:08
+2010-11-19 13:30:00,345 - INFO: Server info: Maximum time until next round: 09:08
+2010-11-19 13:30:01,388 - DEBUG: Server sent: play w B8 299423
+2010-11-19 13:30:01,415 - DEBUG: Server sent: genmove b 222126
+2010-11-19 13:30:14,075 - DEBUG: Responding: d8
+2010-11-19 13:30:14,785 - DEBUG: Server sent: play w A7 299423
+2010-11-19 13:30:14,813 - DEBUG: Server sent: genmove b 210054
+2010-11-19 13:30:24,040 - DEBUG: Responding: g2
+2010-11-19 13:31:03,333 - DEBUG: Server sent: play w H4 260910
+2010-11-19 13:31:03,352 - DEBUG: Server sent: genmove b 201521
+2010-11-19 13:31:19,347 - DEBUG: Responding: g8
+2010-11-19 13:31:19,348 - DEBUG: Server sent: info Maximum time until next round: 08:16
+2010-11-19 13:31:19,348 - INFO: Server info: Maximum time until next round: 08:16
+2010-11-19 13:31:47,459 - DEBUG: Server sent: play w H8 244495
+2010-11-19 13:31:47,486 - DEBUG: Server sent: genmove b 175345
+2010-11-19 13:31:47,487 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 175 sec
+2010-11-19 13:31:54,532 - DEBUG: Responding: b5
+2010-11-19 13:31:55,030 - DEBUG: Server sent: play w F8 244495
+2010-11-19 13:31:55,057 - DEBUG: Server sent: genmove b 168944
+2010-11-19 13:32:01,730 - DEBUG: Responding: g6
+2010-11-19 13:32:02,613 - DEBUG: Server sent: play w H6 244436
+2010-11-19 13:32:02,640 - DEBUG: Server sent: genmove b 162940
+2010-11-19 13:32:12,632 - DEBUG: Responding: c5
+2010-11-19 13:32:13,308 - DEBUG: Server sent: play w C6 244436
+2010-11-19 13:32:13,404 - DEBUG: Server sent: genmove b 153621
+2010-11-19 13:32:20,094 - DEBUG: Responding: b9
+2010-11-19 13:32:20,094 - DEBUG: Server sent: info Maximum time until next round: 07:12
+2010-11-19 13:32:20,094 - INFO: Server info: Maximum time until next round: 07:12
+2010-11-19 13:32:21,350 - DEBUG: Server sent: play w C9 244032
+2010-11-19 13:32:21,425 - DEBUG: Server sent: genmove b 147556
+2010-11-19 13:32:27,570 - DEBUG: Responding: c8
+2010-11-19 13:32:28,310 - DEBUG: Server sent: play w A5 244032
+2010-11-19 13:32:28,337 - DEBUG: Server sent: genmove b 141963
+2010-11-19 13:32:40,216 - DEBUG: Responding: a4
+2010-11-19 13:32:40,976 - DEBUG: Server sent: play w B4 244032
+2010-11-19 13:32:41,006 - DEBUG: Server sent: genmove b 130775
+2010-11-19 13:32:55,190 - DEBUG: Responding: a6
+2010-11-19 13:32:56,177 - DEBUG: Server sent: play w F6 243825
+2010-11-19 13:32:56,204 - DEBUG: Server sent: genmove b 117281
+2010-11-19 13:34:12,800 - DEBUG: Responding: a5
+2010-11-19 13:34:12,801 - DEBUG: Server sent: info Maximum time until next round: 05:27
+2010-11-19 13:34:12,801 - INFO: Server info: Maximum time until next round: 05:27
+2010-11-19 13:34:13,365 - DEBUG: Server sent: play w F5 243825
+2010-11-19 13:34:13,390 - DEBUG: Server sent: genmove b 41368
+2010-11-19 13:34:16,690 - DEBUG: Responding: d4
+2010-11-19 13:34:17,156 - DEBUG: Server sent: play w H2 243825
+2010-11-19 13:34:17,184 - DEBUG: Server sent: genmove b 38762
+2010-11-19 13:34:18,911 - DEBUG: Responding: e5
+2010-11-19 13:34:19,362 - DEBUG: Server sent: play w G3 243825
+2010-11-19 13:34:19,434 - DEBUG: Server sent: genmove b 37726
+2010-11-19 13:34:19,434 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 37 sec
+2010-11-19 13:34:21,739 - DEBUG: Responding: f2
+2010-11-19 13:34:22,166 - DEBUG: Server sent: play w G1 243825
+2010-11-19 13:34:22,193 - DEBUG: Server sent: genmove b 36071
+2010-11-19 13:34:23,630 - DEBUG: Responding: d2
+2010-11-19 13:34:24,063 - DEBUG: Server sent: play w E9 243825
+2010-11-19 13:34:24,149 - DEBUG: Server sent: genmove b 35327
+2010-11-19 13:34:25,547 - DEBUG: Responding: d9
+2010-11-19 13:34:25,972 - DEBUG: Server sent: play w F9 243825
+2010-11-19 13:34:26,043 - DEBUG: Server sent: genmove b 34563
+2010-11-19 13:34:27,383 - DEBUG: Responding: b7
+2010-11-19 13:34:27,891 - DEBUG: Server sent: play w F7 243825
+2010-11-19 13:34:27,969 - DEBUG: Server sent: genmove b 33853
+2010-11-19 13:34:29,537 - DEBUG: Responding: f1
+2010-11-19 13:34:29,984 - DEBUG: Server sent: play w H1 243825
+2010-11-19 13:34:30,011 - DEBUG: Server sent: genmove b 32911
+2010-11-19 13:34:31,410 - DEBUG: Responding: b2
+2010-11-19 13:34:31,893 - DEBUG: Server sent: play w F4 243825
+2010-11-19 13:34:31,975 - DEBUG: Server sent: genmove b 32175
+2010-11-19 13:34:33,323 - DEBUG: Responding: a3
+2010-11-19 13:34:33,775 - DEBUG: Server sent: play w E4 243825
+2010-11-19 13:34:33,802 - DEBUG: Server sent: genmove b 31464
+2010-11-19 13:34:35,066 - DEBUG: Responding: a2
+2010-11-19 13:34:35,484 - DEBUG: Server sent: play w F3 243825
+2010-11-19 13:34:35,511 - DEBUG: Server sent: genmove b 30895
+2010-11-19 13:34:37,513 - DEBUG: Responding: d1
+2010-11-19 13:34:37,903 - DEBUG: Server sent: play w J7 243825
+2010-11-19 13:34:37,925 - DEBUG: Server sent: genmove b 29587
+2010-11-19 13:34:40,691 - DEBUG: Responding: b1
+2010-11-19 13:34:41,115 - DEBUG: Server sent: play w H5 243825
+2010-11-19 13:34:41,142 - DEBUG: Server sent: genmove b 27514
+2010-11-19 13:34:41,142 - INFO: Engine "rtest" playing black. 30 moves generated. Time left: 27 sec
+2010-11-19 13:34:42,774 - DEBUG: Responding: c1
+2010-11-19 13:34:43,263 - DEBUG: Server sent: play w J8 243825
+2010-11-19 13:34:43,334 - DEBUG: Server sent: genmove b 26577
+2010-11-19 13:34:44,384 - DEBUG: Responding: h9
+2010-11-19 13:34:44,836 - DEBUG: Server sent: play w J5 243825
+2010-11-19 13:34:44,863 - DEBUG: Server sent: genmove b 26110
+2010-11-19 13:34:46,128 - DEBUG: Responding: c3
+2010-11-19 13:34:46,544 - DEBUG: Server sent: play w G9 243825
+2010-11-19 13:34:46,613 - DEBUG: Server sent: genmove b 25539
+2010-11-19 13:34:47,977 - DEBUG: Responding: c4
+2010-11-19 13:34:47,977 - DEBUG: Server sent: info Maximum time until next round: 04:28
+2010-11-19 13:34:47,977 - INFO: Server info: Maximum time until next round: 04:28
+2010-11-19 13:34:48,373 - DEBUG: Server sent: play w J9 243825
+2010-11-19 13:34:48,400 - DEBUG: Server sent: genmove b 24829
+2010-11-19 13:34:49,931 - DEBUG: Responding: b6
+2010-11-19 13:34:50,362 - DEBUG: Server sent: play w G5 243825
+2010-11-19 13:34:50,459 - DEBUG: Server sent: genmove b 23972
+2010-11-19 13:34:51,612 - DEBUG: Responding: h3
+2010-11-19 13:34:51,979 - DEBUG: Server sent: play w J3 243825
+2010-11-19 13:34:52,007 - DEBUG: Server sent: genmove b 23442
+2010-11-19 13:34:53,183 - DEBUG: Responding: c7
+2010-11-19 13:34:53,602 - DEBUG: Server sent: play w PASS 243825
+2010-11-19 13:34:53,629 - DEBUG: Server sent: genmove b 22944
+2010-11-19 13:34:53,886 - DEBUG: Responding: b3
+2010-11-19 13:34:54,414 - DEBUG: Server sent: play w PASS 243825
+2010-11-19 13:34:54,441 - DEBUG: Server sent: genmove b 22944
+2010-11-19 13:34:54,696 - DEBUG: Responding: a8
+2010-11-19 13:34:55,110 - DEBUG: Server sent: play w PASS 243825
+2010-11-19 13:34:55,137 - DEBUG: Server sent: genmove b 22944
+2010-11-19 13:34:55,408 - DEBUG: Responding: pass
+2010-11-19 13:34:55,460 - DEBUG: Server sent: gameover 2010-11-19 B+3.5
+2010-11-19 13:34:55,460 - INFO: Game over. Result: B+3.5
+2010-11-19 13:34:55,461 - INFO: Local engine won :-)
+2010-11-19 13:34:55,462 - INFO: Saving SGF file: 2010-11-19-13-34-55-silver-Gnu38L1r.sgf
+2010-11-19 13:34:55,519 - DEBUG: Responding: ready
+2010-11-19 13:35:57,175 - DEBUG: Server sent: info Maximum time until next round: 03:13
+2010-11-19 13:35:57,175 - INFO: Server info: Maximum time until next round: 03:13
+2010-11-19 13:37:12,120 - DEBUG: Server sent: info Maximum time until next round: 02:07
+2010-11-19 13:37:12,120 - INFO: Server info: Maximum time until next round: 02:07
+2010-11-19 13:38:13,073 - DEBUG: Server sent: setup 1277425 9 7.5 300000 silver(1846?) _Gnu3.8L1,R(1819)
+2010-11-19 13:38:13,073 - INFO: Starting game against _Gnu3.8L1,R(1819). Local engine ("rtest", rated 1846?) is playing white.
+2010-11-19 13:38:36,691 - DEBUG: Server sent: play b E5 300000
+2010-11-19 13:38:36,718 - DEBUG: Server sent: genmove w 300000
+2010-11-19 13:38:54,745 - DEBUG: Responding: e4
+2010-11-19 13:38:54,746 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 13:38:54,746 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 13:38:55,556 - DEBUG: Server sent: play b F5 300000
+2010-11-19 13:38:55,583 - DEBUG: Server sent: genmove w 282663
+2010-11-19 13:39:08,277 - DEBUG: Responding: d5
+2010-11-19 13:39:08,995 - DEBUG: Server sent: play b D6 300000
+2010-11-19 13:39:09,022 - DEBUG: Server sent: genmove w 270565
+2010-11-19 13:39:23,693 - DEBUG: Responding: c5
+2010-11-19 13:39:24,607 - DEBUG: Server sent: play b G3 299954
+2010-11-19 13:39:24,634 - DEBUG: Server sent: genmove w 256498
+2010-11-19 13:39:33,549 - DEBUG: Responding: c6
+2010-11-19 13:39:34,976 - DEBUG: Server sent: play b F7 299346
+2010-11-19 13:39:35,006 - DEBUG: Server sent: genmove w 248250
+2010-11-19 13:39:45,727 - DEBUG: Responding: d7
+2010-11-19 13:39:46,647 - DEBUG: Server sent: play b E2 299303
+2010-11-19 13:39:46,674 - DEBUG: Server sent: genmove w 238205
+2010-11-19 13:39:54,795 - DEBUG: Responding: e7
+2010-11-19 13:39:54,796 - DEBUG: Server sent: info Maximum time until next round: 09:33
+2010-11-19 13:39:54,796 - INFO: Server info: Maximum time until next round: 09:33
+2010-11-19 13:39:58,019 - DEBUG: Server sent: play b F8 296961
+2010-11-19 13:39:58,038 - DEBUG: Server sent: genmove w 230667
+2010-11-19 13:40:10,271 - DEBUG: Responding: d3
+2010-11-19 13:40:11,553 - DEBUG: Server sent: play b E6 296468
+2010-11-19 13:40:11,654 - DEBUG: Server sent: genmove w 219042
+2010-11-19 13:40:19,937 - DEBUG: Responding: f4
+2010-11-19 13:40:21,073 - DEBUG: Server sent: play b G4 296111
+2010-11-19 13:40:21,100 - DEBUG: Server sent: genmove w 211371
+2010-11-19 13:40:28,358 - DEBUG: Responding: f2
+2010-11-19 13:40:31,288 - DEBUG: Server sent: play b F3 294051
+2010-11-19 13:40:31,316 - DEBUG: Server sent: genmove w 204807
+2010-11-19 13:40:31,316 - INFO: Engine "rtest" playing white. 10 moves generated. Time left: 204 sec
+2010-11-19 13:40:39,504 - DEBUG: Responding: g5
+2010-11-19 13:40:40,542 - DEBUG: Server sent: play b F6 293791
+2010-11-19 13:40:40,570 - DEBUG: Server sent: genmove w 197221
+2010-11-19 13:40:53,303 - DEBUG: Responding: e3
+2010-11-19 13:40:55,599 - DEBUG: Server sent: play b D2 292324
+2010-11-19 13:40:55,626 - DEBUG: Server sent: genmove w 185180
+2010-11-19 13:41:03,385 - DEBUG: Responding: g2
+2010-11-19 13:41:07,576 - DEBUG: Server sent: play b H2 288927
+2010-11-19 13:41:07,604 - DEBUG: Server sent: genmove w 178049
+2010-11-19 13:41:19,178 - DEBUG: Responding: h4
+2010-11-19 13:41:19,178 - DEBUG: Server sent: info Maximum time until next round: 07:59
+2010-11-19 13:41:19,178 - INFO: Server info: Maximum time until next round: 07:59
+2010-11-19 13:41:22,068 - DEBUG: Server sent: play b H3 286923
+2010-11-19 13:41:22,095 - DEBUG: Server sent: genmove w 167166
+2010-11-19 13:41:30,048 - DEBUG: Responding: c3
+2010-11-19 13:41:31,023 - DEBUG: Server sent: play b C7 286727
+2010-11-19 13:41:31,362 - DEBUG: Server sent: genmove w 159801
+2010-11-19 13:41:42,451 - DEBUG: Responding: c2
+2010-11-19 13:41:43,866 - DEBUG: Server sent: play b B7 286124
+2010-11-19 13:41:43,894 - DEBUG: Server sent: genmove w 149062
+2010-11-19 13:41:51,567 - DEBUG: Responding: f1
+2010-11-19 13:41:52,416 - DEBUG: Server sent: play b A4 286054
+2010-11-19 13:41:52,444 - DEBUG: Server sent: genmove w 142078
+2010-11-19 13:42:01,875 - DEBUG: Responding: h5
+2010-11-19 13:42:03,402 - DEBUG: Server sent: play b H1 285307
+2010-11-19 13:42:03,433 - DEBUG: Server sent: genmove w 133340
+2010-11-19 13:42:08,148 - DEBUG: Responding: h7
+2010-11-19 13:42:10,701 - DEBUG: Server sent: play b G6 283570
+2010-11-19 13:42:10,728 - DEBUG: Server sent: genmove w 129315
+2010-11-19 13:42:15,646 - DEBUG: Responding: h6
+2010-11-19 13:42:17,870 - DEBUG: Server sent: play b G1 282200
+2010-11-19 13:42:17,897 - DEBUG: Server sent: genmove w 125054
+2010-11-19 13:42:17,898 - INFO: Engine "rtest" playing white. 20 moves generated. Time left: 125 sec
+2010-11-19 13:42:23,189 - DEBUG: Responding: d8
+2010-11-19 13:42:23,211 - DEBUG: Server sent: info Maximum time until next round: 06:44
+2010-11-19 13:42:23,212 - INFO: Server info: Maximum time until next round: 06:44
+2010-11-19 13:42:25,037 - DEBUG: Server sent: play b G8 281201
+2010-11-19 13:42:25,065 - DEBUG: Server sent: genmove w 120363
+2010-11-19 13:42:29,908 - DEBUG: Responding: h8
+2010-11-19 13:42:31,405 - DEBUG: Server sent: play b H9 280482
+2010-11-19 13:42:31,476 - DEBUG: Server sent: genmove w 116161
+2010-11-19 13:42:35,907 - DEBUG: Responding: c8
+2010-11-19 13:42:37,289 - DEBUG: Server sent: play b B8 279879
+2010-11-19 13:42:37,368 - DEBUG: Server sent: genmove w 112380
+2010-11-19 13:42:43,647 - DEBUG: Responding: c1
+2010-11-19 13:42:44,826 - DEBUG: Server sent: play b E1 279509
+2010-11-19 13:42:44,853 - DEBUG: Server sent: genmove w 106712
+2010-11-19 13:42:51,458 - DEBUG: Responding: f2
+2010-11-19 13:42:52,345 - DEBUG: Server sent: play b B6 279401
+2010-11-19 13:42:52,371 - DEBUG: Server sent: genmove w 100801
+2010-11-19 13:42:56,047 - DEBUG: Responding: g9
+2010-11-19 13:42:59,281 - DEBUG: Server sent: play b F9 276945
+2010-11-19 13:42:59,308 - DEBUG: Server sent: genmove w 97820
+2010-11-19 13:43:03,668 - DEBUG: Responding: b9
+2010-11-19 13:43:08,737 - DEBUG: Server sent: play b B5 272662
+2010-11-19 13:43:08,756 - DEBUG: Server sent: genmove w 94154
+2010-11-19 13:43:12,568 - DEBUG: Responding: g7
+2010-11-19 13:43:16,739 - DEBUG: Server sent: play b C4 269339
+2010-11-19 13:43:16,766 - DEBUG: Server sent: genmove w 91037
+2010-11-19 13:43:21,941 - DEBUG: Responding: d4
+2010-11-19 13:43:29,754 - DEBUG: Server sent: play b E8 262304
+2010-11-19 13:43:29,829 - DEBUG: Server sent: genmove w 86487
+2010-11-19 13:43:34,591 - DEBUG: Responding: d9
+2010-11-19 13:43:37,830 - DEBUG: Server sent: play b J8 259925
+2010-11-19 13:43:37,859 - DEBUG: Server sent: genmove w 82372
+2010-11-19 13:43:37,859 - INFO: Engine "rtest" playing white. 30 moves generated. Time left: 82 sec
+2010-11-19 13:43:41,299 - DEBUG: Responding: j7
+2010-11-19 13:43:41,300 - DEBUG: Server sent: info Maximum time until next round: 05:44
+2010-11-19 13:43:41,300 - INFO: Server info: Maximum time until next round: 05:44
+2010-11-19 13:43:47,693 - DEBUG: Server sent: play b B4 254310
+2010-11-19 13:43:47,769 - DEBUG: Server sent: genmove w 79543
+2010-11-19 13:43:50,846 - DEBUG: Responding: j9
+2010-11-19 13:43:54,931 - DEBUG: Server sent: play b A8 251089
+2010-11-19 13:43:55,017 - DEBUG: Server sent: genmove w 77111
+2010-11-19 13:43:58,372 - DEBUG: Responding: g9
+2010-11-19 13:43:59,741 - DEBUG: Server sent: play b B3 250523
+2010-11-19 13:43:59,829 - DEBUG: Server sent: genmove w 74305
+2010-11-19 13:44:02,923 - DEBUG: Responding: e9
+2010-11-19 13:44:03,506 - DEBUG: Server sent: play b J4 250523
+2010-11-19 13:44:03,533 - DEBUG: Server sent: genmove w 71738
+2010-11-19 13:44:08,499 - DEBUG: Responding: f6
+2010-11-19 13:44:09,005 - DEBUG: Server sent: play b J5 250523
+2010-11-19 13:44:09,032 - DEBUG: Server sent: genmove w 67428
+2010-11-19 13:44:13,943 - DEBUG: Responding: d6
+2010-11-19 13:44:14,429 - DEBUG: Server sent: play b F1 250523
+2010-11-19 13:44:14,453 - DEBUG: Server sent: genmove w 63212
+2010-11-19 13:44:16,974 - DEBUG: Responding: b2
+2010-11-19 13:44:17,442 - DEBUG: Server sent: play b A6 250523
+2010-11-19 13:44:17,530 - DEBUG: Server sent: genmove w 61387
+2010-11-19 13:44:21,847 - DEBUG: Responding: a2
+2010-11-19 13:44:22,239 - DEBUG: Server sent: play b J3 250523
+2010-11-19 13:44:22,266 - DEBUG: Server sent: genmove w 57700
+2010-11-19 13:44:24,712 - DEBUG: Responding: e5
+2010-11-19 13:44:25,151 - DEBUG: Server sent: play b A9 250523
+2010-11-19 13:44:25,178 - DEBUG: Server sent: genmove w 55948
+2010-11-19 13:44:28,067 - DEBUG: Responding: f9
+2010-11-19 13:44:28,716 - DEBUG: Server sent: play b C9 250523
+2010-11-19 13:44:28,816 - DEBUG: Server sent: genmove w 53724
+2010-11-19 13:44:28,816 - INFO: Engine "rtest" playing white. 40 moves generated. Time left: 53 sec
+2010-11-19 13:44:31,024 - DEBUG: Responding: j6
+2010-11-19 13:44:31,485 - DEBUG: Server sent: play b B9 250523
+2010-11-19 13:44:31,512 - DEBUG: Server sent: genmove w 52035
+2010-11-19 13:44:34,100 - DEBUG: Responding: a1
+2010-11-19 13:44:34,551 - DEBUG: Server sent: play b A3 250523
+2010-11-19 13:44:34,578 - DEBUG: Server sent: genmove w 50136
+2010-11-19 13:44:36,999 - DEBUG: Responding: f8
+2010-11-19 13:44:37,395 - DEBUG: Server sent: play b D1 250523
+2010-11-19 13:44:37,422 - DEBUG: Server sent: genmove w 48341
+2010-11-19 13:44:39,371 - DEBUG: Responding: j1
+2010-11-19 13:44:39,808 - DEBUG: Server sent: play b G2 250523
+2010-11-19 13:44:39,831 - DEBUG: Server sent: genmove w 47086
+2010-11-19 13:44:41,800 - DEBUG: Responding: pass
+2010-11-19 13:44:42,207 - DEBUG: Server sent: play b J2 250523
+2010-11-19 13:44:42,234 - DEBUG: Server sent: genmove w 45811
+2010-11-19 13:44:43,764 - DEBUG: Responding: pass
+2010-11-19 13:44:44,279 - DEBUG: Server sent: play b PASS 250523
+2010-11-19 13:44:44,306 - DEBUG: Server sent: gameover 2010-11-19 W+16.5
+2010-11-19 13:44:44,307 - INFO: Game over. Result: W+16.5
+2010-11-19 13:44:44,307 - INFO: Local engine won :-)
+2010-11-19 13:44:44,307 - INFO: Saving SGF file: 2010-11-19-13-44-44-Gnu38L1R-silver.sgf
+2010-11-19 13:44:44,329 - DEBUG: Responding: ready
+2010-11-19 13:44:53,391 - DEBUG: Server sent: info Maximum time until next round: 05:10
+2010-11-19 13:44:53,392 - INFO: Server info: Maximum time until next round: 05:10
+2010-11-19 13:46:06,085 - DEBUG: Server sent: setup 1277445 9 7.5 300000 soft_c(2180) silver(1922?)
+2010-11-19 13:46:06,085 - INFO: Starting game against soft_c(2180). Local engine ("rtest", rated 1922?) is playing black.
+2010-11-19 13:46:23,213 - DEBUG: Server sent: genmove b 300000
+2010-11-19 13:46:38,053 - DEBUG: Responding: d5
+2010-11-19 13:46:38,493 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 13:46:38,493 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 13:46:38,494 - INFO: Client up for 1 hours, 1 mins, 38 seconds. Local engines won 6 games, lost 0.
+2010-11-19 13:46:39,533 - DEBUG: Server sent: play w g4 299298
+2010-11-19 13:46:39,560 - DEBUG: Server sent: genmove b 285879
+2010-11-19 13:46:50,901 - DEBUG: Responding: f5
+2010-11-19 13:46:52,365 - DEBUG: Server sent: play w g5 298644
+2010-11-19 13:46:52,393 - DEBUG: Server sent: genmove b 275198
+2010-11-19 13:47:03,118 - DEBUG: Responding: f6
+2010-11-19 13:47:04,340 - DEBUG: Server sent: play w d3 298227
+2010-11-19 13:47:04,367 - DEBUG: Server sent: genmove b 265140
+2010-11-19 13:47:17,335 - DEBUG: Responding: e3
+2010-11-19 13:47:19,084 - DEBUG: Server sent: play w g6 297353
+2010-11-19 13:47:19,111 - DEBUG: Server sent: genmove b 252861
+2010-11-19 13:47:28,471 - DEBUG: Responding: g7
+2010-11-19 13:47:29,671 - DEBUG: Server sent: play w h7 296932
+2010-11-19 13:47:29,707 - DEBUG: Server sent: genmove b 244100
+2010-11-19 13:47:41,747 - DEBUG: Responding: g3
+2010-11-19 13:47:43,284 - DEBUG: Server sent: play w f4 296174
+2010-11-19 13:47:43,311 - DEBUG: Server sent: genmove b 232744
+2010-11-19 13:47:51,785 - DEBUG: Responding: e4
+2010-11-19 13:47:53,015 - DEBUG: Server sent: play w f7 295752
+2010-11-19 13:47:53,043 - DEBUG: Server sent: genmove b 224933
+2010-11-19 13:48:00,986 - DEBUG: Responding: g8
+2010-11-19 13:48:00,987 - DEBUG: Server sent: info Maximum time until next round: 09:35
+2010-11-19 13:48:00,987 - INFO: Server info: Maximum time until next round: 09:35
+2010-11-19 13:48:02,188 - DEBUG: Server sent: play w f3 295423
+2010-11-19 13:48:02,215 - DEBUG: Server sent: genmove b 217682
+2010-11-19 13:48:09,779 - DEBUG: Responding: e2
+2010-11-19 13:48:10,746 - DEBUG: Server sent: play w e7 295235
+2010-11-19 13:48:10,774 - DEBUG: Server sent: genmove b 210719
+2010-11-19 13:48:10,774 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 210 sec
+2010-11-19 13:48:27,839 - DEBUG: Responding: d7
+2010-11-19 13:48:28,909 - DEBUG: Server sent: play w d8 294943
+2010-11-19 13:48:28,937 - DEBUG: Server sent: genmove b 194346
+2010-11-19 13:48:35,905 - DEBUG: Responding: d6
+2010-11-19 13:48:37,123 - DEBUG: Server sent: play w c8 294522
+2010-11-19 13:48:37,151 - DEBUG: Server sent: genmove b 188070
+2010-11-19 13:48:51,165 - DEBUG: Responding: h8
+2010-11-19 13:48:52,357 - DEBUG: Server sent: play w h6 294147
+2010-11-19 13:48:52,384 - DEBUG: Server sent: genmove b 174725
+2010-11-19 13:49:02,303 - DEBUG: Responding: g2
+2010-11-19 13:49:03,633 - DEBUG: Server sent: play w f8 293596
+2010-11-19 13:49:03,659 - DEBUG: Server sent: genmove b 165465
+2010-11-19 13:49:14,176 - DEBUG: Responding: h4
+2010-11-19 13:49:14,177 - DEBUG: Server sent: info Maximum time until next round: 08:05
+2010-11-19 13:49:14,177 - INFO: Server info: Maximum time until next round: 08:05
+2010-11-19 13:49:15,447 - DEBUG: Server sent: play w h3 293130
+2010-11-19 13:49:15,474 - DEBUG: Server sent: genmove b 155615
+2010-11-19 13:49:20,935 - DEBUG: Responding: h2
+2010-11-19 13:49:22,000 - DEBUG: Server sent: play w b6 292847
+2010-11-19 13:49:22,024 - DEBUG: Server sent: genmove b 150847
+2010-11-19 13:49:28,700 - DEBUG: Responding: j8
+2010-11-19 13:49:29,933 - DEBUG: Server sent: play w h9 292482
+2010-11-19 13:49:30,219 - DEBUG: Server sent: genmove b 144864
+2010-11-19 13:49:35,311 - DEBUG: Responding: b5
+2010-11-19 13:49:36,437 - DEBUG: Server sent: play w e6 292163
+2010-11-19 13:49:36,464 - DEBUG: Server sent: genmove b 140089
+2010-11-19 13:49:42,316 - DEBUG: Responding: e5
+2010-11-19 13:49:43,503 - DEBUG: Server sent: play w j3 291758
+2010-11-19 13:49:43,530 - DEBUG: Server sent: genmove b 134930
+2010-11-19 13:49:58,732 - DEBUG: Responding: f9
+2010-11-19 13:49:59,828 - DEBUG: Server sent: play w e8 291547
+2010-11-19 13:50:00,124 - DEBUG: Server sent: genmove b 120417
+2010-11-19 13:50:00,124 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 120 sec
+2010-11-19 13:50:05,586 - DEBUG: Responding: b7
+2010-11-19 13:50:06,893 - DEBUG: Server sent: play w c7 291103
+2010-11-19 13:50:06,920 - DEBUG: Server sent: genmove b 115276
+2010-11-19 13:50:12,780 - DEBUG: Responding: c6
+2010-11-19 13:50:13,931 - DEBUG: Server sent: play w b8 290766
+2010-11-19 13:50:13,973 - DEBUG: Server sent: genmove b 110028
+2010-11-19 13:50:20,602 - DEBUG: Responding: j2
+2010-11-19 13:50:21,897 - DEBUG: Server sent: play w a7 290289
+2010-11-19 13:50:21,969 - DEBUG: Server sent: genmove b 104002
+2010-11-19 13:50:26,028 - DEBUG: Responding: h5
+2010-11-19 13:50:26,028 - DEBUG: Server sent: info Maximum time until next round: 06:45
+2010-11-19 13:50:26,028 - INFO: Server info: Maximum time until next round: 06:45
+2010-11-19 13:50:27,508 - DEBUG: Server sent: gameover 2010-11-19 B+Resign
+2010-11-19 13:50:27,508 - INFO: Game over. Result: B+Resign
+2010-11-19 13:50:27,508 - INFO: Local engine won :-)
+2010-11-19 13:50:27,508 - INFO: Saving SGF file: 2010-11-19-13-50-27-silver-softc.sgf
+2010-11-19 13:50:27,509 - DEBUG: Responding: ready
+2010-11-19 13:51:27,427 - DEBUG: Server sent: info Maximum time until next round: 06:13
+2010-11-19 13:51:27,428 - INFO: Server info: Maximum time until next round: 06:13
+2010-11-19 13:52:42,519 - DEBUG: Server sent: info Maximum time until next round: 04:05
+2010-11-19 13:52:42,799 - INFO: Server info: Maximum time until next round: 04:05
+2010-11-19 13:53:57,948 - DEBUG: Server sent: setup 1277464 9 7.5 300000 _NeuroGo2.1,r(1715) silver(2049?)
+2010-11-19 13:53:57,949 - INFO: Starting game against _NeuroGo2.1,r(1715). Local engine ("rtest", rated 2049?) is playing black.
+2010-11-19 13:54:04,221 - DEBUG: Server sent: genmove b 300000
+2010-11-19 13:54:15,713 - DEBUG: Responding: f7
+2010-11-19 13:54:16,303 - DEBUG: Server sent: play w F4 300000
+2010-11-19 13:54:16,330 - DEBUG: Server sent: genmove b 289139
+2010-11-19 13:54:26,540 - DEBUG: Responding: d6
+2010-11-19 13:54:26,540 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 13:54:26,540 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 13:54:27,052 - DEBUG: Server sent: play w C4 300000
+2010-11-19 13:54:27,080 - DEBUG: Server sent: genmove b 279554
+2010-11-19 13:54:59,975 - DEBUG: Responding: d4
+2010-11-19 13:55:00,583 - DEBUG: Server sent: play w D3 300000
+2010-11-19 13:55:00,610 - DEBUG: Server sent: genmove b 247272
+2010-11-19 13:55:09,176 - DEBUG: Responding: c5
+2010-11-19 13:55:11,176 - DEBUG: Server sent: play w B4 300000
+2010-11-19 13:55:11,203 - DEBUG: Server sent: genmove b 237895
+2010-11-19 13:55:28,479 - DEBUG: Responding: c3
+2010-11-19 13:55:28,479 - DEBUG: Server sent: info Maximum time until next round: 09:22
+2010-11-19 13:55:28,479 - INFO: Server info: Maximum time until next round: 09:22
+2010-11-19 13:55:29,001 - DEBUG: Server sent: play w C2 300000
+2010-11-19 13:55:29,023 - DEBUG: Server sent: genmove b 221309
+2010-11-19 13:55:41,576 - DEBUG: Responding: e3
+2010-11-19 13:55:42,238 - DEBUG: Server sent: play w D2 300000
+2010-11-19 13:55:42,264 - DEBUG: Server sent: genmove b 209420
+2010-11-19 13:56:12,566 - DEBUG: Responding: e4
+2010-11-19 13:56:13,225 - DEBUG: Server sent: play w F3 300000
+2010-11-19 13:56:13,253 - DEBUG: Server sent: genmove b 179807
+2010-11-19 13:56:21,578 - DEBUG: Responding: e2
+2010-11-19 13:56:22,047 - DEBUG: Server sent: play w G6 300000
+2010-11-19 13:56:22,074 - DEBUG: Server sent: genmove b 172150
+2010-11-19 13:56:34,452 - DEBUG: Responding: g7
+2010-11-19 13:56:34,930 - DEBUG: Server sent: play w C7 300000
+2010-11-19 13:56:35,273 - DEBUG: Server sent: genmove b 160463
+2010-11-19 13:56:35,273 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 160 sec
+2010-11-19 13:56:41,277 - DEBUG: Responding: f1
+2010-11-19 13:56:41,277 - DEBUG: Server sent: info Maximum time until next round: 08:06
+2010-11-19 13:56:41,278 - INFO: Server info: Maximum time until next round: 08:06
+2010-11-19 13:56:41,792 - DEBUG: Server sent: play w B5 300000
+2010-11-19 13:56:41,873 - DEBUG: Server sent: genmove b 154832
+2010-11-19 13:56:47,928 - DEBUG: Responding: e5
+2010-11-19 13:56:49,881 - DEBUG: Server sent: play w D7 300000
+2010-11-19 13:56:49,909 - DEBUG: Server sent: genmove b 148053
+2010-11-19 13:56:56,104 - DEBUG: Responding: e7
+2010-11-19 13:56:56,734 - DEBUG: Server sent: play w H6 300000
+2010-11-19 13:56:56,829 - DEBUG: Server sent: genmove b 142460
+2010-11-19 13:57:28,557 - DEBUG: Responding: f5
+2010-11-19 13:57:29,248 - DEBUG: Server sent: play w G3 300000
+2010-11-19 13:57:29,275 - DEBUG: Server sent: genmove b 111328
+2010-11-19 13:57:34,095 - DEBUG: Responding: g5
+2010-11-19 13:57:34,551 - DEBUG: Server sent: play w H4 300000
+2010-11-19 13:57:34,579 - DEBUG: Server sent: genmove b 107203
+2010-11-19 13:57:44,977 - DEBUG: Responding: h5
+2010-11-19 13:57:45,630 - DEBUG: Server sent: play w J5 300000
+2010-11-19 13:57:45,657 - DEBUG: Server sent: genmove b 97498
+2010-11-19 13:57:55,922 - DEBUG: Responding: h2
+2010-11-19 13:57:55,922 - DEBUG: Server sent: info Maximum time until next round: 07:08
+2010-11-19 13:57:55,922 - INFO: Server info: Maximum time until next round: 07:08
+2010-11-19 13:57:56,377 - DEBUG: Server sent: play w H3 300000
+2010-11-19 13:57:56,405 - DEBUG: Server sent: genmove b 87928
+2010-11-19 13:57:59,806 - DEBUG: Responding: h7
+2010-11-19 13:58:00,321 - DEBUG: Server sent: play w J2 300000
+2010-11-19 13:58:00,348 - DEBUG: Server sent: genmove b 85206
+2010-11-19 13:58:03,414 - DEBUG: Responding: h1
+2010-11-19 13:58:03,899 - DEBUG: Server sent: play w E8 300000
+2010-11-19 13:58:03,926 - DEBUG: Server sent: genmove b 82809
+2010-11-19 13:58:15,391 - DEBUG: Responding: c6
+2010-11-19 13:58:15,963 - DEBUG: Server sent: play w B6 300000
+2010-11-19 13:58:15,990 - DEBUG: Server sent: genmove b 72038
+2010-11-19 13:58:15,990 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 72 sec
+2010-11-19 13:58:18,725 - DEBUG: Responding: f8
+2010-11-19 13:58:19,277 - DEBUG: Server sent: play w E9 300000
+2010-11-19 13:58:19,351 - DEBUG: Server sent: genmove b 69997
+2010-11-19 13:58:21,922 - DEBUG: Responding: f9
+2010-11-19 13:58:22,494 - DEBUG: Server sent: play w C9 300000
+2010-11-19 13:58:22,567 - DEBUG: Server sent: genmove b 68074
+2010-11-19 13:58:25,481 - DEBUG: Responding: g1
+2010-11-19 13:58:26,002 - DEBUG: Server sent: play w D1 300000
+2010-11-19 13:58:26,029 - DEBUG: Server sent: genmove b 65807
+2010-11-19 13:58:28,883 - DEBUG: Responding: e1
+2010-11-19 13:58:29,426 - DEBUG: Server sent: play w H8 300000
+2010-11-19 13:58:29,453 - DEBUG: Server sent: genmove b 63636
+2010-11-19 13:58:32,256 - DEBUG: Responding: f6
+2010-11-19 13:58:32,817 - DEBUG: Server sent: play w B8 300000
+2010-11-19 13:58:32,844 - DEBUG: Server sent: genmove b 61528
+2010-11-19 13:58:35,602 - DEBUG: Responding: j4
+2010-11-19 13:58:36,155 - DEBUG: Server sent: play w PASS 300000
+2010-11-19 13:58:36,182 - DEBUG: Server sent: genmove b 59465
+2010-11-19 13:58:36,444 - DEBUG: Responding: pass
+2010-11-19 13:58:36,486 - DEBUG: Server sent: gameover 2010-11-19 W+7.5
+2010-11-19 13:58:36,486 - INFO: Game over. Result: W+7.5
+2010-11-19 13:58:36,487 - INFO: Local engine lost :'(
+2010-11-19 13:58:36,487 - INFO: Saving SGF file: 2010-11-19-13-58-36-silver-NeuroGo21r.sgf
+2010-11-19 13:58:36,923 - DEBUG: Responding: ready
+2010-11-19 13:59:10,862 - DEBUG: Server sent: info Maximum time until next round: 06:19
+2010-11-19 13:59:10,863 - INFO: Server info: Maximum time until next round: 06:19
+2010-11-19 14:00:26,217 - DEBUG: Server sent: info Maximum time until next round: 05:03
+2010-11-19 14:00:26,217 - INFO: Server info: Maximum time until next round: 05:03
+2010-11-19 14:01:15,569 - DEBUG: Server sent: setup 1277472 9 7.5 300000 ToGo-207_2c(2589) silver(1918?)
+2010-11-19 14:01:15,569 - INFO: Starting game against ToGo-207_2c(2589). Local engine ("rtest", rated 1918?) is playing black.
+2010-11-19 14:01:30,924 - DEBUG: Server sent: genmove b 300000
+2010-11-19 14:01:51,722 - DEBUG: Responding: f5
+2010-11-19 14:01:51,723 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 14:01:51,723 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 14:02:04,411 - DEBUG: Server sent: play w c5 288109
+2010-11-19 14:02:04,432 - DEBUG: Server sent: genmove b 279857
+2010-11-19 14:02:16,986 - DEBUG: Responding: e6
+2010-11-19 14:02:29,591 - DEBUG: Server sent: play w d7 276330
+2010-11-19 14:02:29,619 - DEBUG: Server sent: genmove b 267943
+2010-11-19 14:02:39,933 - DEBUG: Responding: d4
+2010-11-19 14:02:48,955 - DEBUG: Server sent: info Maximum time until next round: 09:08
+2010-11-19 14:02:48,978 - INFO: Server info: Maximum time until next round: 09:08
+2010-11-19 14:02:52,628 - DEBUG: Server sent: play w c4 264567
+2010-11-19 14:02:52,736 - DEBUG: Server sent: genmove b 258235
+2010-11-19 14:03:08,062 - DEBUG: Responding: c6
+2010-11-19 14:03:20,686 - DEBUG: Server sent: play w d6 252830
+2010-11-19 14:03:20,712 - DEBUG: Server sent: genmove b 243424
+2010-11-19 14:03:30,738 - DEBUG: Responding: d5
+2010-11-19 14:03:43,244 - DEBUG: Server sent: play w e7 241129
+2010-11-19 14:03:43,271 - DEBUG: Server sent: genmove b 233968
+2010-11-19 14:03:52,576 - DEBUG: Responding: f7
+2010-11-19 14:04:03,975 - DEBUG: Server sent: info Maximum time until next round: 08:41
+2010-11-19 14:04:03,975 - INFO: Server info: Maximum time until next round: 08:41
+2010-11-19 14:04:05,117 - DEBUG: Server sent: play w f8 229429
+2010-11-19 14:04:05,192 - DEBUG: Server sent: genmove b 225356
+2010-11-19 14:04:19,181 - DEBUG: Responding: g7
+2010-11-19 14:04:31,634 - DEBUG: Server sent: play w c3 217767
+2010-11-19 14:04:31,661 - DEBUG: Server sent: genmove b 211948
+2010-11-19 14:04:39,515 - DEBUG: Responding: d3
+2010-11-19 14:04:51,911 - DEBUG: Server sent: play w g8 206176
+2010-11-19 14:04:52,208 - DEBUG: Server sent: genmove b 204772
+2010-11-19 14:04:59,432 - DEBUG: Responding: c2
+2010-11-19 14:05:11,769 - DEBUG: Server sent: play w b2 194656
+2010-11-19 14:05:11,797 - DEBUG: Server sent: genmove b 197939
+2010-11-19 14:05:11,797 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 197 sec
+2010-11-19 14:05:22,033 - DEBUG: Responding: c7
+2010-11-19 14:05:22,033 - DEBUG: Server sent: info Maximum time until next round: 06:43
+2010-11-19 14:05:22,033 - INFO: Server info: Maximum time until next round: 06:43
+2010-11-19 14:05:34,294 - DEBUG: Server sent: play w b6 183271
+2010-11-19 14:05:34,321 - DEBUG: Server sent: genmove b 188360
+2010-11-19 14:05:43,404 - DEBUG: Responding: c8
+2010-11-19 14:05:55,487 - DEBUG: Server sent: play w e8 172016
+2010-11-19 14:05:55,797 - DEBUG: Server sent: genmove b 179869
+2010-11-19 14:06:03,351 - DEBUG: Responding: b7
+2010-11-19 14:06:15,350 - DEBUG: Server sent: play w h7 160883
+2010-11-19 14:06:15,653 - DEBUG: Server sent: genmove b 172656
+2010-11-19 14:06:21,503 - DEBUG: Responding: e2
+2010-11-19 14:06:33,268 - DEBUG: Server sent: play w a6 149979
+2010-11-19 14:06:33,295 - DEBUG: Server sent: genmove b 167123
+2010-11-19 14:06:41,963 - DEBUG: Responding: b1
+2010-11-19 14:06:41,963 - DEBUG: Server sent: info Maximum time until next round: 05:59
+2010-11-19 14:06:41,963 - INFO: Server info: Maximum time until next round: 05:59
+2010-11-19 14:06:53,452 - DEBUG: Server sent: play w a4 139266
+2010-11-19 14:06:53,480 - DEBUG: Server sent: genmove b 159099
+2010-11-19 14:06:59,638 - DEBUG: Responding: a2
+2010-11-19 14:07:10,980 - DEBUG: Server sent: play w b3 128700
+2010-11-19 14:07:11,008 - DEBUG: Server sent: genmove b 153634
+2010-11-19 14:07:17,447 - DEBUG: Responding: b5
+2010-11-19 14:07:28,504 - DEBUG: Server sent: play w d8 118421
+2010-11-19 14:07:28,786 - DEBUG: Server sent: genmove b 147889
+2010-11-19 14:07:37,070 - DEBUG: Responding: h6
+2010-11-19 14:07:48,007 - DEBUG: Server sent: play w h8 108365
+2010-11-19 14:07:48,180 - DEBUG: Server sent: genmove b 140043
+2010-11-19 14:08:08,197 - DEBUG: Responding: a1
+2010-11-19 14:08:08,198 - DEBUG: Server sent: info Maximum time until next round: 04:15
+2010-11-19 14:08:08,198 - INFO: Server info: Maximum time until next round: 04:15
+2010-11-19 14:08:18,827 - DEBUG: Server sent: play w a8 98616
+2010-11-19 14:08:18,854 - DEBUG: Server sent: genmove b 120422
+2010-11-19 14:08:24,163 - DEBUG: Responding: c1
+2010-11-19 14:08:34,389 - DEBUG: Server sent: play w e5 89210
+2010-11-19 14:08:34,417 - DEBUG: Server sent: genmove b 115726
+2010-11-19 14:08:34,417 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 115 sec
+2010-11-19 14:08:38,467 - DEBUG: Responding: e4
+2010-11-19 14:08:48,088 - DEBUG: Server sent: play w d2 80369
+2010-11-19 14:08:48,115 - DEBUG: Server sent: genmove b 112349
+2010-11-19 14:08:55,866 - DEBUG: Responding: d1
+2010-11-19 14:09:04,184 - DEBUG: Server sent: info Maximum time until next round: 03:16
+2010-11-19 14:09:04,184 - INFO: Server info: Maximum time until next round: 03:16
+2010-11-19 14:09:04,782 - DEBUG: Server sent: play w h5 72232
+2010-11-19 14:09:04,810 - DEBUG: Server sent: genmove b 105290
+2010-11-19 14:09:09,557 - DEBUG: Responding: a3
+2010-11-19 14:09:18,208 - DEBUG: Server sent: gameover 2010-11-19 B+Resign
+2010-11-19 14:09:18,208 - INFO: Game over. Result: B+Resign
+2010-11-19 14:09:18,209 - INFO: Local engine won :-)
+2010-11-19 14:09:18,209 - INFO: Saving SGF file: 2010-11-19-14-09-18-silver-ToGo2072c.sgf
+2010-11-19 14:09:18,210 - DEBUG: Responding: ready
+2010-11-19 14:10:19,237 - DEBUG: Server sent: info Maximum time until next round: 02:21
+2010-11-19 14:10:19,237 - INFO: Server info: Maximum time until next round: 02:21
+2010-11-19 14:11:14,519 - DEBUG: Server sent: setup 1277481 9 7.5 300000 gnugo-3.8-mc(1924) silver(2059?)
+2010-11-19 14:11:14,519 - INFO: Starting game against gnugo-3.8-mc(1924). Local engine ("rtest", rated 2059?) is playing black.
+2010-11-19 14:11:40,627 - DEBUG: Server sent: genmove b 300000
+2010-11-19 14:11:53,959 - DEBUG: Responding: e6
+2010-11-19 14:11:54,447 - DEBUG: Server sent: play w E4 300000
+2010-11-19 14:11:54,475 - DEBUG: Server sent: genmove b 287301
+2010-11-19 14:12:06,667 - DEBUG: Responding: e5
+2010-11-19 14:12:06,667 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 14:12:06,667 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 14:12:21,887 - DEBUG: Server sent: play w C3 285624
+2010-11-19 14:12:21,914 - DEBUG: Server sent: genmove b 275793
+2010-11-19 14:12:33,580 - DEBUG: Responding: d4
+2010-11-19 14:12:51,611 - DEBUG: Server sent: play w D3 268796
+2010-11-19 14:12:51,639 - DEBUG: Server sent: genmove b 264744
+2010-11-19 14:13:07,224 - DEBUG: Responding: f4
+2010-11-19 14:13:11,011 - DEBUG: Server sent: info Maximum time until next round: 09:30
+2010-11-19 14:13:11,012 - INFO: Server info: Maximum time until next round: 09:30
+2010-11-19 14:13:17,343 - DEBUG: Server sent: play w E3 259454
+2010-11-19 14:13:17,370 - DEBUG: Server sent: genmove b 249771
+2010-11-19 14:13:28,746 - DEBUG: Responding: f3
+2010-11-19 14:13:36,288 - DEBUG: Server sent: play w C7 252690
+2010-11-19 14:13:36,359 - DEBUG: Server sent: genmove b 239089
+2010-11-19 14:13:45,832 - DEBUG: Responding: f2
+2010-11-19 14:13:57,855 - DEBUG: Server sent: play w D5 241541
+2010-11-19 14:13:57,882 - DEBUG: Server sent: genmove b 230263
+2010-11-19 14:14:07,356 - DEBUG: Responding: d6
+2010-11-19 14:14:12,801 - DEBUG: Server sent: info Maximum time until next round: 07:44
+2010-11-19 14:14:12,801 - INFO: Server info: Maximum time until next round: 07:44
+2010-11-19 14:14:13,518 - DEBUG: Server sent: play w C5 236214
+2010-11-19 14:14:13,545 - DEBUG: Server sent: genmove b 221387
+2010-11-19 14:14:22,365 - DEBUG: Responding: c6
+2010-11-19 14:14:29,594 - DEBUG: Server sent: play w B6 229789
+2010-11-19 14:14:29,621 - DEBUG: Server sent: genmove b 213204
+2010-11-19 14:14:43,702 - DEBUG: Responding: b7
+2010-11-19 14:14:52,527 - DEBUG: Server sent: play w B8 221801
+2010-11-19 14:14:52,554 - DEBUG: Server sent: genmove b 199790
+2010-11-19 14:14:52,554 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 199 sec
+2010-11-19 14:15:11,397 - DEBUG: Responding: b5
+2010-11-19 14:15:21,204 - DEBUG: Server sent: play w C4 212809
+2010-11-19 14:15:21,223 - DEBUG: Server sent: genmove b 181580
+2010-11-19 14:15:27,231 - DEBUG: Responding: a6
+2010-11-19 14:15:27,767 - DEBUG: Server sent: info Maximum time until next round: 06:37
+2010-11-19 14:15:27,768 - INFO: Server info: Maximum time until next round: 06:37
+2010-11-19 14:15:37,064 - DEBUG: Server sent: play w G7 203846
+2010-11-19 14:15:37,091 - DEBUG: Server sent: genmove b 176236
+2010-11-19 14:16:02,574 - DEBUG: Responding: g5
+2010-11-19 14:16:11,568 - DEBUG: Server sent: play w E8 195716
+2010-11-19 14:16:11,595 - DEBUG: Server sent: genmove b 151351
+2010-11-19 14:16:18,504 - DEBUG: Responding: d8
+2010-11-19 14:16:30,201 - DEBUG: Server sent: play w E7 184878
+2010-11-19 14:16:30,489 - DEBUG: Server sent: genmove b 145045
+2010-11-19 14:16:38,207 - DEBUG: Responding: d7
+2010-11-19 14:16:42,901 - DEBUG: Server sent: info Maximum time until next round: 05:32
+2010-11-19 14:16:42,901 - INFO: Server info: Maximum time until next round: 05:32
+2010-11-19 14:16:42,901 - INFO: Client up for 1 hours, 31 mins, 42 seconds. Local engines won 8 games, lost 1.
+2010-11-19 14:16:46,916 - DEBUG: Server sent: play w H5 176947
+2010-11-19 14:16:46,943 - DEBUG: Server sent: genmove b 137682
+2010-11-19 14:16:53,947 - DEBUG: Responding: h6
+2010-11-19 14:17:02,863 - DEBUG: Server sent: play w H7 168907
+2010-11-19 14:17:02,935 - DEBUG: Server sent: genmove b 131347
+2010-11-19 14:17:09,467 - DEBUG: Responding: g6
+2010-11-19 14:17:19,450 - DEBUG: Server sent: play w J6 159778
+2010-11-19 14:17:19,786 - DEBUG: Server sent: genmove b 125389
+2010-11-19 14:17:25,949 - DEBUG: Responding: h4
+2010-11-19 14:17:34,909 - DEBUG: Server sent: play w E2 151634
+2010-11-19 14:17:34,937 - DEBUG: Server sent: genmove b 119536
+2010-11-19 14:17:41,380 - DEBUG: Responding: e9
+2010-11-19 14:17:50,983 - DEBUG: Server sent: play w F8 142835
+2010-11-19 14:17:51,010 - DEBUG: Server sent: genmove b 113747
+2010-11-19 14:17:55,520 - DEBUG: Responding: j5
+2010-11-19 14:17:57,851 - DEBUG: Server sent: info Maximum time until next round: 04:10
+2010-11-19 14:17:57,851 - INFO: Server info: Maximum time until next round: 04:10
+2010-11-19 14:18:04,708 - DEBUG: Server sent: play w J8 134456
+2010-11-19 14:18:04,996 - DEBUG: Server sent: genmove b 109893
+2010-11-19 14:18:04,996 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 109 sec
+2010-11-19 14:18:09,042 - DEBUG: Responding: e1
+2010-11-19 14:18:18,336 - DEBUG: Server sent: play w D1 126024
+2010-11-19 14:18:18,354 - DEBUG: Server sent: genmove b 106260
+2010-11-19 14:18:22,260 - DEBUG: Responding: f1
+2010-11-19 14:18:30,812 - DEBUG: Server sent: play w B4 118272
+2010-11-19 14:18:30,840 - DEBUG: Server sent: genmove b 102973
+2010-11-19 14:18:34,629 - DEBUG: Responding: a4
+2010-11-19 14:18:43,236 - DEBUG: Server sent: play w H9 110458
+2010-11-19 14:18:43,319 - DEBUG: Server sent: genmove b 99840
+2010-11-19 14:18:49,982 - DEBUG: Responding: a5
+2010-11-19 14:18:57,491 - DEBUG: Server sent: play w A3 103728
+2010-11-19 14:18:57,522 - DEBUG: Server sent: genmove b 93813
+2010-11-19 14:19:00,992 - DEBUG: Responding: b6
+2010-11-19 14:19:08,078 - DEBUG: Server sent: play w F9 97512
+2010-11-19 14:19:08,106 - DEBUG: Server sent: genmove b 91025
+2010-11-19 14:19:15,951 - DEBUG: Responding: d9
+2010-11-19 14:19:15,952 - DEBUG: Server sent: info Maximum time until next round: 03:03
+2010-11-19 14:19:15,952 - INFO: Server info: Maximum time until next round: 03:03
+2010-11-19 14:19:23,118 - DEBUG: Server sent: play w F6 91127
+2010-11-19 14:19:23,146 - DEBUG: Server sent: genmove b 83787
+2010-11-19 14:19:27,844 - DEBUG: Responding: f5
+2010-11-19 14:19:31,117 - DEBUG: Server sent: play w F7 88673
+2010-11-19 14:19:31,144 - DEBUG: Server sent: genmove b 79780
+2010-11-19 14:19:35,577 - DEBUG: Responding: j7
+2010-11-19 14:19:36,049 - DEBUG: Server sent: play w G8 88673
+2010-11-19 14:19:36,147 - DEBUG: Server sent: genmove b 75997
+2010-11-19 14:19:39,217 - DEBUG: Responding: j6
+2010-11-19 14:19:39,670 - DEBUG: Server sent: play w B3 88673
+2010-11-19 14:19:39,697 - DEBUG: Server sent: genmove b 73537
+2010-11-19 14:19:43,620 - DEBUG: Responding: j3
+2010-11-19 14:19:44,083 - DEBUG: Server sent: play w D2 88673
+2010-11-19 14:19:44,101 - DEBUG: Server sent: genmove b 70308
+2010-11-19 14:19:44,102 - INFO: Engine "rtest" playing black. 30 moves generated. Time left: 70 sec
+2010-11-19 14:19:47,345 - DEBUG: Responding: g3
+2010-11-19 14:19:47,784 - DEBUG: Server sent: play w C1 88673
+2010-11-19 14:19:47,811 - DEBUG: Server sent: genmove b 67754
+2010-11-19 14:19:51,013 - DEBUG: Responding: h2
+2010-11-19 14:19:51,447 - DEBUG: Server sent: play w A2 88673
+2010-11-19 14:19:51,475 - DEBUG: Server sent: genmove b 65246
+2010-11-19 14:19:54,471 - DEBUG: Responding: g2
+2010-11-19 14:19:54,936 - DEBUG: Server sent: play w PASS 88673
+2010-11-19 14:19:54,964 - DEBUG: Server sent: genmove b 62944
+2010-11-19 14:19:55,214 - DEBUG: Responding: j2
+2010-11-19 14:19:55,649 - DEBUG: Server sent: play w PASS 88673
+2010-11-19 14:19:55,677 - DEBUG: Server sent: genmove b 62944
+2010-11-19 14:19:55,961 - DEBUG: Responding: h1
+2010-11-19 14:19:56,417 - DEBUG: Server sent: play w PASS 88673
+2010-11-19 14:19:56,443 - DEBUG: Server sent: genmove b 62944
+2010-11-19 14:19:56,723 - DEBUG: Responding: b2
+2010-11-19 14:19:57,171 - DEBUG: Server sent: play w B1 88673
+2010-11-19 14:19:57,198 - DEBUG: Server sent: genmove b 62944
+2010-11-19 14:20:00,412 - DEBUG: Responding: b9
+2010-11-19 14:20:00,897 - DEBUG: Server sent: play w C2 88673
+2010-11-19 14:20:00,929 - DEBUG: Server sent: genmove b 60394
+2010-11-19 14:20:03,789 - DEBUG: Responding: a8
+2010-11-19 14:20:04,236 - DEBUG: Server sent: play w PASS 88673
+2010-11-19 14:20:04,263 - DEBUG: Server sent: genmove b 58222
+2010-11-19 14:20:04,643 - DEBUG: Responding: c9
+2010-11-19 14:20:05,108 - DEBUG: Server sent: play w PASS 88673
+2010-11-19 14:20:05,184 - DEBUG: Server sent: genmove b 58222
+2010-11-19 14:20:05,456 - DEBUG: Responding: pass
+2010-11-19 14:20:06,132 - DEBUG: Server sent: gameover 2010-11-19 B+0.5
+2010-11-19 14:20:06,132 - INFO: Game over. Result: B+0.5
+2010-11-19 14:20:06,133 - INFO: Local engine won :-)
+2010-11-19 14:20:06,133 - INFO: Saving SGF file: 2010-11-19-14-20-06-silver-gnugo38mc.sgf
+2010-11-19 14:20:06,134 - DEBUG: Responding: ready
+2010-11-19 14:20:19,137 - DEBUG: Server sent: info Maximum time until next round: 01:56
+2010-11-19 14:20:19,137 - INFO: Server info: Maximum time until next round: 01:56
+2010-11-19 14:21:30,804 - DEBUG: Server sent: setup 1277503 9 7.5 300000 unyugo-0.4.5(1806) silver(2103?)
+2010-11-19 14:21:30,804 - INFO: Starting game against unyugo-0.4.5(1806). Local engine ("rtest", rated 2103?) is playing black.
+2010-11-19 14:21:42,479 - DEBUG: Server sent: genmove b 300000
+2010-11-19 14:21:55,405 - DEBUG: Responding: d5
+2010-11-19 14:21:57,525 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 14:21:57,526 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 14:22:11,860 - DEBUG: Server sent: play w E6 284372
+2010-11-19 14:22:11,887 - DEBUG: Server sent: genmove b 287726
+2010-11-19 14:22:24,829 - DEBUG: Responding: e5
+2010-11-19 14:22:38,306 - DEBUG: Server sent: play w F6 271681
+2010-11-19 14:22:38,333 - DEBUG: Server sent: genmove b 275453
+2010-11-19 14:22:49,005 - DEBUG: Responding: f5
+2010-11-19 14:23:04,382 - DEBUG: Server sent: play w G5 257133
+2010-11-19 14:23:04,410 - DEBUG: Server sent: genmove b 265462
+2010-11-19 14:23:14,329 - DEBUG: Responding: g4
+2010-11-19 14:23:14,330 - DEBUG: Server sent: info Maximum time until next round: 09:26
+2010-11-19 14:23:14,330 - INFO: Server info: Maximum time until next round: 09:26
+2010-11-19 14:23:26,327 - DEBUG: Server sent: play w G6 245912
+2010-11-19 14:23:26,354 - DEBUG: Server sent: genmove b 256184
+2010-11-19 14:23:43,661 - DEBUG: Responding: d6
+2010-11-19 14:23:55,984 - DEBUG: Server sent: play w H4 234427
+2010-11-19 14:23:56,012 - DEBUG: Server sent: genmove b 239548
+2010-11-19 14:24:07,937 - DEBUG: Responding: g3
+2010-11-19 14:24:17,282 - DEBUG: Server sent: play w D7 225878
+2010-11-19 14:24:17,309 - DEBUG: Server sent: genmove b 228274
+2010-11-19 14:24:30,434 - DEBUG: Responding: c7
+2010-11-19 14:24:30,435 - DEBUG: Server sent: info Maximum time until next round: 09:02
+2010-11-19 14:24:30,435 - INFO: Server info: Maximum time until next round: 09:02
+2010-11-19 14:24:40,729 - DEBUG: Server sent: play w H3 216374
+2010-11-19 14:24:40,756 - DEBUG: Server sent: genmove b 215823
+2010-11-19 14:24:48,612 - DEBUG: Responding: g2
+2010-11-19 14:25:00,198 - DEBUG: Server sent: play w C8 205565
+2010-11-19 14:25:00,226 - DEBUG: Server sent: genmove b 208647
+2010-11-19 14:25:15,410 - DEBUG: Responding: d8
+2010-11-19 14:25:25,534 - DEBUG: Server sent: play w E7 196221
+2010-11-19 14:25:25,854 - DEBUG: Server sent: genmove b 194152
+2010-11-19 14:25:25,854 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 194 sec
+2010-11-19 14:25:36,272 - DEBUG: Responding: b8
+2010-11-19 14:25:42,622 - DEBUG: Server sent: info Maximum time until next round: 08:35
+2010-11-19 14:25:42,623 - INFO: Server info: Maximum time until next round: 08:35
+2010-11-19 14:25:47,584 - DEBUG: Server sent: play w C2 185708
+2010-11-19 14:25:47,611 - DEBUG: Server sent: genmove b 184132
+2010-11-19 14:25:54,535 - DEBUG: Responding: c9
+2010-11-19 14:26:04,178 - DEBUG: Server sent: play w B3 176874
+2010-11-19 14:26:04,199 - DEBUG: Server sent: genmove b 177882
+2010-11-19 14:26:22,718 - DEBUG: Responding: c3
+2010-11-19 14:26:34,784 - DEBUG: Server sent: play w C4 165650
+2010-11-19 14:26:34,812 - DEBUG: Server sent: genmove b 160030
+2010-11-19 14:26:40,740 - DEBUG: Responding: d3
+2010-11-19 14:26:51,063 - DEBUG: Server sent: play w B1 156211
+2010-11-19 14:26:51,090 - DEBUG: Server sent: genmove b 154731
+2010-11-19 14:26:56,656 - DEBUG: Responding: a2
+2010-11-19 14:26:57,718 - DEBUG: Server sent: info Maximum time until next round: 05:07
+2010-11-19 14:26:57,718 - INFO: Server info: Maximum time until next round: 05:07
+2010-11-19 14:27:04,270 - DEBUG: Server sent: play w D2 149385
+2010-11-19 14:27:04,297 - DEBUG: Server sent: genmove b 149753
+2010-11-19 14:27:15,173 - DEBUG: Responding: e3
+2010-11-19 14:27:23,466 - DEBUG: Server sent: play w A3 141869
+2010-11-19 14:27:23,493 - DEBUG: Server sent: genmove b 139561
+2010-11-19 14:27:28,674 - DEBUG: Responding: d1
+2010-11-19 14:27:38,160 - DEBUG: Server sent: play w E2 133339
+2010-11-19 14:27:38,187 - DEBUG: Server sent: genmove b 134936
+2010-11-19 14:27:44,065 - DEBUG: Responding: b5
+2010-11-19 14:27:51,369 - DEBUG: Server sent: play w F2 126812
+2010-11-19 14:27:51,397 - DEBUG: Server sent: genmove b 129710
+2010-11-19 14:27:55,986 - DEBUG: Responding: h2
+2010-11-19 14:28:05,496 - DEBUG: Server sent: play w F8 118079
+2010-11-19 14:28:05,576 - DEBUG: Server sent: genmove b 125815
+2010-11-19 14:28:11,680 - DEBUG: Responding: f4
+2010-11-19 14:28:12,703 - DEBUG: Server sent: info Maximum time until next round: 03:57
+2010-11-19 14:28:12,704 - INFO: Server info: Maximum time until next round: 03:57
+2010-11-19 14:28:18,508 - DEBUG: Server sent: play w H6 112051
+2010-11-19 14:28:18,535 - DEBUG: Server sent: genmove b 120330
+2010-11-19 14:28:18,535 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 120 sec
+2010-11-19 14:28:22,814 - DEBUG: Responding: h8
+2010-11-19 14:28:30,684 - DEBUG: Server sent: play w G8 105049
+2010-11-19 14:28:30,711 - DEBUG: Server sent: genmove b 116746
+2010-11-19 14:28:35,266 - DEBUG: Responding: j5
+2010-11-19 14:28:42,681 - DEBUG: Server sent: play w J6 98415
+2010-11-19 14:28:42,708 - DEBUG: Server sent: genmove b 112793
+2010-11-19 14:28:51,920 - DEBUG: Responding: f1
+2010-11-19 14:28:59,147 - DEBUG: Server sent: play w E1 91994
+2010-11-19 14:28:59,173 - DEBUG: Server sent: genmove b 104255
+2010-11-19 14:29:02,782 - DEBUG: Responding: g7
+2010-11-19 14:29:09,797 - DEBUG: Server sent: play w H7 85800
+2010-11-19 14:29:09,822 - DEBUG: Server sent: genmove b 101333
+2010-11-19 14:29:14,138 - DEBUG: Responding: h9
+2010-11-19 14:29:21,160 - DEBUG: Server sent: play w B2 79630
+2010-11-19 14:29:21,187 - DEBUG: Server sent: genmove b 97652
+2010-11-19 14:29:24,983 - DEBUG: Responding: e8
+2010-11-19 14:29:27,814 - DEBUG: Server sent: info Maximum time until next round: 02:51
+2010-11-19 14:29:27,814 - INFO: Server info: Maximum time until next round: 02:51
+2010-11-19 14:29:31,911 - DEBUG: Server sent: play w F9 73499
+2010-11-19 14:29:31,937 - DEBUG: Server sent: genmove b 94494
+2010-11-19 14:29:36,460 - DEBUG: Responding: e9
+2010-11-19 14:29:43,705 - DEBUG: Server sent: play w H5 67046
+2010-11-19 14:29:43,788 - DEBUG: Server sent: genmove b 90634
+2010-11-19 14:29:47,433 - DEBUG: Responding: j8
+2010-11-19 14:29:53,204 - DEBUG: Server sent: play w F7 62139
+2010-11-19 14:29:53,231 - DEBUG: Server sent: genmove b 87626
+2010-11-19 14:29:57,552 - DEBUG: Responding: j2
+2010-11-19 14:30:03,354 - DEBUG: Server sent: play w B4 57138
+2010-11-19 14:30:03,381 - DEBUG: Server sent: genmove b 83891
+2010-11-19 14:30:08,024 - DEBUG: Responding: j3
+2010-11-19 14:30:10,917 - DEBUG: Server sent: play w J4 55063
+2010-11-19 14:30:10,945 - DEBUG: Server sent: genmove b 79942
+2010-11-19 14:30:10,945 - INFO: Engine "rtest" playing black. 30 moves generated. Time left: 79 sec
+2010-11-19 14:30:14,759 - DEBUG: Responding: a5
+2010-11-19 14:30:19,930 - DEBUG: Server sent: play w C6 50749
+2010-11-19 14:30:19,958 - DEBUG: Server sent: genmove b 76755
+2010-11-19 14:30:23,168 - DEBUG: Responding: c5
+2010-11-19 14:30:25,456 - DEBUG: Server sent: play w B7 49272
+2010-11-19 14:30:25,548 - DEBUG: Server sent: genmove b 74185
+2010-11-19 14:30:29,491 - DEBUG: Responding: c8
+2010-11-19 14:30:31,704 - DEBUG: Server sent: play w D4 47868
+2010-11-19 14:30:31,729 - DEBUG: Server sent: genmove b 70837
+2010-11-19 14:30:34,290 - DEBUG: Responding: g1
+2010-11-19 14:30:36,364 - DEBUG: Server sent: play w A8 46635
+2010-11-19 14:30:36,437 - DEBUG: Server sent: genmove b 68944
+2010-11-19 14:30:39,847 - DEBUG: Responding: f3
+2010-11-19 14:30:42,131 - DEBUG: Server sent: play w B9 45129
+2010-11-19 14:30:42,158 - DEBUG: Server sent: genmove b 66122
+2010-11-19 14:30:46,112 - DEBUG: Responding: b6
+2010-11-19 14:30:46,113 - DEBUG: Server sent: info Maximum time until next round: 01:50
+2010-11-19 14:30:46,113 - INFO: Server info: Maximum time until next round: 01:50
+2010-11-19 14:30:48,083 - DEBUG: Server sent: play w E4 44012
+2010-11-19 14:30:48,159 - DEBUG: Server sent: genmove b 62862
+2010-11-19 14:30:51,165 - DEBUG: Responding: a4
+2010-11-19 14:30:53,408 - DEBUG: Server sent: play w A9 42575
+2010-11-19 14:30:53,496 - DEBUG: Server sent: genmove b 60428
+2010-11-19 14:30:56,161 - DEBUG: Responding: c6
+2010-11-19 14:30:57,836 - DEBUG: Server sent: play w A1 41679
+2010-11-19 14:30:57,863 - DEBUG: Server sent: genmove b 58370
+2010-11-19 14:31:01,334 - DEBUG: Responding: pass
+2010-11-19 14:31:03,013 - DEBUG: Server sent: play w H1 40779
+2010-11-19 14:31:03,090 - DEBUG: Server sent: genmove b 55593
+2010-11-19 14:31:05,680 - DEBUG: Responding: pass
+2010-11-19 14:31:06,828 - DEBUG: Server sent: play w G9 40457
+2010-11-19 14:31:06,910 - DEBUG: Server sent: genmove b 53634
+2010-11-19 14:31:06,910 - INFO: Engine "rtest" playing black. 40 moves generated. Time left: 53 sec
+2010-11-19 14:31:09,163 - DEBUG: Responding: pass
+2010-11-19 14:31:09,998 - DEBUG: Server sent: play w J7 40444
+2010-11-19 14:31:10,067 - DEBUG: Server sent: genmove b 51985
+2010-11-19 14:31:12,346 - DEBUG: Responding: pass
+2010-11-19 14:31:12,980 - DEBUG: Server sent: play w J9 40444
+2010-11-19 14:31:13,007 - DEBUG: Server sent: genmove b 50318
+2010-11-19 14:31:15,459 - DEBUG: Responding: j8
+2010-11-19 14:31:16,103 - DEBUG: Server sent: play w H9 40444
+2010-11-19 14:31:16,247 - DEBUG: Server sent: genmove b 48559
+2010-11-19 14:31:18,323 - DEBUG: Responding: pass
+2010-11-19 14:31:18,878 - DEBUG: Server sent: play w C1 40444
+2010-11-19 14:31:18,905 - DEBUG: Server sent: genmove b 47061
+2010-11-19 14:31:21,264 - DEBUG: Responding: pass
+2010-11-19 14:31:21,750 - DEBUG: Server sent: play w A6 40444
+2010-11-19 14:31:21,823 - DEBUG: Server sent: genmove b 45397
+2010-11-19 14:31:24,082 - DEBUG: Responding: pass
+2010-11-19 14:31:24,516 - DEBUG: Server sent: play w H8 40444
+2010-11-19 14:31:24,597 - DEBUG: Server sent: genmove b 43783
+2010-11-19 14:31:26,783 - DEBUG: Responding: pass
+2010-11-19 14:31:27,261 - DEBUG: Server sent: play w PASS 40444
+2010-11-19 14:31:27,288 - DEBUG: Server sent: gameover 2010-11-19 W+25.5
+2010-11-19 14:31:27,289 - INFO: Game over. Result: W+25.5
+2010-11-19 14:31:27,289 - INFO: Local engine lost :'(
+2010-11-19 14:31:27,289 - INFO: Saving SGF file: 2010-11-19-14-31-27-silver-unyugo045.sgf
+2010-11-19 14:31:27,433 - DEBUG: Responding: ready
+2010-11-19 14:31:55,148 - DEBUG: Server sent: setup 1277515 9 7.5 300000 silver(1990?) soft_c(2185)
+2010-11-19 14:31:55,148 - INFO: Starting game against soft_c(2185). Local engine ("rtest", rated 1990?) is playing white.
+2010-11-19 14:32:04,876 - DEBUG: Server sent: play b f3 299495
+2010-11-19 14:32:04,899 - DEBUG: Server sent: genmove w 300000
+2010-11-19 14:32:17,411 - DEBUG: Responding: d6
+2010-11-19 14:32:18,538 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 14:32:18,538 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 14:32:18,699 - DEBUG: Server sent: play b f6 299046
+2010-11-19 14:32:18,717 - DEBUG: Server sent: genmove w 288029
+2010-11-19 14:32:28,852 - DEBUG: Responding: d4
+2010-11-19 14:32:30,405 - DEBUG: Server sent: play b d3 298295
+2010-11-19 14:32:30,432 - DEBUG: Server sent: genmove w 278563
+2010-11-19 14:32:40,907 - DEBUG: Responding: e4
+2010-11-19 14:32:42,151 - DEBUG: Server sent: play b e3 297834
+2010-11-19 14:32:42,178 - DEBUG: Server sent: genmove w 268777
+2010-11-19 14:32:51,078 - DEBUG: Responding: f4
+2010-11-19 14:32:52,182 - DEBUG: Server sent: play b g4 297577
+2010-11-19 14:32:52,201 - DEBUG: Server sent: genmove w 260570
+2010-11-19 14:33:01,925 - DEBUG: Responding: g5
+2010-11-19 14:33:03,382 - DEBUG: Server sent: play b f5 296898
+2010-11-19 14:33:03,410 - DEBUG: Server sent: genmove w 251479
+2010-11-19 14:33:15,222 - DEBUG: Responding: g3
+2010-11-19 14:33:16,234 - DEBUG: Server sent: play b h4 296726
+2010-11-19 14:33:16,262 - DEBUG: Server sent: genmove w 240359
+2010-11-19 14:33:24,314 - DEBUG: Responding: c4
+2010-11-19 14:33:25,816 - DEBUG: Server sent: play b e7 296004
+2010-11-19 14:33:25,843 - DEBUG: Server sent: genmove w 232939
+2010-11-19 14:33:36,075 - DEBUG: Responding: h3
+2010-11-19 14:33:36,076 - DEBUG: Server sent: info Maximum time until next round: 09:31
+2010-11-19 14:33:36,076 - INFO: Server info: Maximum time until next round: 09:31
+2010-11-19 14:33:37,162 - DEBUG: Server sent: play b h5 295695
+2010-11-19 14:33:37,189 - DEBUG: Server sent: genmove w 223400
+2010-11-19 14:33:45,274 - DEBUG: Responding: c3
+2010-11-19 14:33:46,849 - DEBUG: Server sent: play b f2 294899
+2010-11-19 14:33:46,876 - DEBUG: Server sent: genmove w 216009
+2010-11-19 14:33:46,876 - INFO: Engine "rtest" playing white. 10 moves generated. Time left: 216 sec
+2010-11-19 14:33:59,897 - DEBUG: Responding: d2
+2010-11-19 14:34:01,200 - DEBUG: Server sent: play b c2 294403
+2010-11-19 14:34:01,227 - DEBUG: Server sent: genmove w 203653
+2010-11-19 14:34:13,220 - DEBUG: Responding: b2
+2010-11-19 14:34:14,594 - DEBUG: Server sent: play b d7 293863
+2010-11-19 14:34:14,622 - DEBUG: Server sent: genmove w 192353
+2010-11-19 14:34:26,426 - DEBUG: Responding: g2
+2010-11-19 14:34:27,866 - DEBUG: Server sent: play b j3 293203
+2010-11-19 14:34:27,894 - DEBUG: Server sent: genmove w 181185
+2010-11-19 14:34:35,430 - DEBUG: Responding: e2
+2010-11-19 14:34:36,621 - DEBUG: Server sent: play b h2 292798
+2010-11-19 14:34:36,648 - DEBUG: Server sent: genmove w 174335
+2010-11-19 14:34:43,239 - DEBUG: Responding: f1
+2010-11-19 14:34:43,239 - DEBUG: Server sent: info Maximum time until next round: 07:47
+2010-11-19 14:34:43,239 - INFO: Server info: Maximum time until next round: 07:47
+2010-11-19 14:34:44,428 - DEBUG: Server sent: play b c6 292417
+2010-11-19 14:34:44,455 - DEBUG: Server sent: genmove w 168408
+2010-11-19 14:34:53,292 - DEBUG: Responding: b6
+2010-11-19 14:34:54,319 - DEBUG: Server sent: play b b7 292218
+2010-11-19 14:34:54,346 - DEBUG: Server sent: genmove w 160264
+2010-11-19 14:35:02,380 - DEBUG: Responding: b5
+2010-11-19 14:35:03,796 - DEBUG: Server sent: play b c5 291613
+2010-11-19 14:35:03,824 - DEBUG: Server sent: genmove w 152842
+2010-11-19 14:35:16,164 - DEBUG: Responding: j2
+2010-11-19 14:35:17,555 - DEBUG: Server sent: play b j1 291031
+2010-11-19 14:35:17,582 - DEBUG: Server sent: genmove w 141164
+2010-11-19 14:35:38,258 - DEBUG: Responding: h1
+2010-11-19 14:35:39,367 - DEBUG: Server sent: play b d5 290730
+2010-11-19 14:35:39,394 - DEBUG: Server sent: genmove w 121179
+2010-11-19 14:35:43,692 - DEBUG: Responding: a6
+2010-11-19 14:35:45,001 - DEBUG: Server sent: play b b4 290211
+2010-11-19 14:35:45,028 - DEBUG: Server sent: genmove w 117547
+2010-11-19 14:35:45,029 - INFO: Engine "rtest" playing white. 20 moves generated. Time left: 117 sec
+2010-11-19 14:35:50,118 - DEBUG: Responding: g6
+2010-11-19 14:35:51,147 - DEBUG: Server sent: play b h6 289968
+2010-11-19 14:35:51,272 - DEBUG: Server sent: genmove w 113140
+2010-11-19 14:35:57,087 - DEBUG: Responding: e5
+2010-11-19 14:35:57,087 - DEBUG: Server sent: info Maximum time until next round: 06:43
+2010-11-19 14:35:57,087 - INFO: Server info: Maximum time until next round: 06:43
+2010-11-19 14:35:58,129 - DEBUG: Server sent: play b e6 289707
+2010-11-19 14:35:58,156 - DEBUG: Server sent: genmove w 107910
+2010-11-19 14:36:01,833 - DEBUG: Responding: a4
+2010-11-19 14:36:03,325 - DEBUG: Server sent: play b g1 289064
+2010-11-19 14:36:03,352 - DEBUG: Server sent: genmove w 104900
+2010-11-19 14:36:07,565 - DEBUG: Responding: j4
+2010-11-19 14:36:08,573 - DEBUG: Server sent: play b j5 288836
+2010-11-19 14:36:08,600 - DEBUG: Server sent: genmove w 101337
+2010-11-19 14:36:12,699 - DEBUG: Responding: h1
+2010-11-19 14:36:13,747 - DEBUG: Server sent: play b a7 288570
+2010-11-19 14:36:13,773 - DEBUG: Server sent: genmove w 97930
+2010-11-19 14:36:18,852 - DEBUG: Responding: b3
+2010-11-19 14:36:19,819 - DEBUG: Server sent: play b g1 288422
+2010-11-19 14:36:19,847 - DEBUG: Server sent: genmove w 93504
+2010-11-19 14:36:23,439 - DEBUG: Responding: c7
+2010-11-19 14:36:24,724 - DEBUG: Server sent: gameover 2010-11-19 W+Resign
+2010-11-19 14:36:24,724 - INFO: Game over. Result: W+Resign
+2010-11-19 14:36:24,725 - INFO: Local engine won :-)
+2010-11-19 14:36:24,725 - INFO: Saving SGF file: 2010-11-19-14-36-24-softc-silver.sgf
+2010-11-19 14:36:24,803 - DEBUG: Responding: ready
+2010-11-19 14:37:07,552 - DEBUG: Server sent: info Maximum time until next round: 05:45
+2010-11-19 14:37:07,552 - INFO: Server info: Maximum time until next round: 05:45
+2010-11-19 14:38:22,750 - DEBUG: Server sent: info Maximum time until next round: 04:08
+2010-11-19 14:38:22,750 - INFO: Server info: Maximum time until next round: 04:08
+2010-11-19 14:39:38,077 - DEBUG: Server sent: info Maximum time until next round: 03:02
+2010-11-19 14:39:38,077 - INFO: Server info: Maximum time until next round: 03:02
+2010-11-19 14:40:51,590 - DEBUG: Server sent: setup 1277525 9 7.5 300000 silver(2087?) _Gnu3.8L1,r(1822)
+2010-11-19 14:40:51,655 - INFO: Starting game against _Gnu3.8L1,r(1822). Local engine ("rtest", rated 2087?) is playing white.
+2010-11-19 14:41:09,657 - DEBUG: Server sent: play b F6 300000
+2010-11-19 14:41:09,736 - DEBUG: Server sent: genmove w 300000
+2010-11-19 14:41:22,381 - DEBUG: Responding: e4
+2010-11-19 14:41:22,836 - DEBUG: Server sent: play b C6 300000
+2010-11-19 14:41:22,864 - DEBUG: Server sent: genmove w 287985
+2010-11-19 14:41:32,421 - DEBUG: Responding: g4
+2010-11-19 14:41:32,862 - DEBUG: Server sent: play b C3 300000
+2010-11-19 14:41:32,889 - DEBUG: Server sent: genmove w 279121
+2010-11-19 14:41:43,278 - DEBUG: Responding: c4
+2010-11-19 14:41:43,279 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 14:41:43,279 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 14:41:43,913 - DEBUG: Server sent: play b B4 300000
+2010-11-19 14:41:43,995 - DEBUG: Server sent: genmove w 269383
+2010-11-19 14:41:58,075 - DEBUG: Responding: c5
+2010-11-19 14:41:58,762 - DEBUG: Server sent: play b B5 300000
+2010-11-19 14:41:58,790 - DEBUG: Server sent: genmove w 255941
+2010-11-19 14:42:20,276 - DEBUG: Responding: d6
+2010-11-19 14:42:21,830 - DEBUG: Server sent: play b D7 299224
+2010-11-19 14:42:22,123 - DEBUG: Server sent: genmove w 235146
+2010-11-19 14:42:31,243 - DEBUG: Responding: d5
+2010-11-19 14:42:32,280 - DEBUG: Server sent: play b E6 298996
+2010-11-19 14:42:32,321 - DEBUG: Server sent: genmove w 226424
+2010-11-19 14:42:45,167 - DEBUG: Responding: c7
+2010-11-19 14:42:47,182 - DEBUG: Server sent: play b B6 297760
+2010-11-19 14:42:47,229 - DEBUG: Server sent: genmove w 214257
+2010-11-19 14:42:56,765 - DEBUG: Responding: e5
+2010-11-19 14:42:56,765 - DEBUG: Server sent: info Maximum time until next round: 09:29
+2010-11-19 14:42:56,766 - INFO: Server info: Maximum time until next round: 09:29
+2010-11-19 14:42:57,766 - DEBUG: Server sent: play b F8 297540
+2010-11-19 14:42:57,943 - DEBUG: Server sent: genmove w 205393
+2010-11-19 14:43:05,684 - DEBUG: Responding: d3
+2010-11-19 14:43:06,711 - DEBUG: Server sent: play b C2 297293
+2010-11-19 14:43:06,739 - DEBUG: Server sent: genmove w 198196
+2010-11-19 14:43:06,739 - INFO: Engine "rtest" playing white. 10 moves generated. Time left: 198 sec
+2010-11-19 14:43:16,391 - DEBUG: Responding: e7
+2010-11-19 14:43:17,295 - DEBUG: Server sent: play b D8 297169
+2010-11-19 14:43:17,593 - DEBUG: Server sent: genmove w 189236
+2010-11-19 14:43:24,482 - DEBUG: Responding: d2
+2010-11-19 14:43:25,680 - DEBUG: Server sent: play b G5 296814
+2010-11-19 14:43:25,756 - DEBUG: Server sent: genmove w 182769
+2010-11-19 14:43:59,118 - DEBUG: Responding: g7
+2010-11-19 14:44:00,827 - DEBUG: Server sent: play b F7 295884
+2010-11-19 14:44:00,854 - DEBUG: Server sent: genmove w 149984
+2010-11-19 14:44:08,643 - DEBUG: Responding: h5
+2010-11-19 14:44:09,396 - DEBUG: Server sent: play b H6 295884
+2010-11-19 14:44:09,423 - DEBUG: Server sent: genmove w 142861
+2010-11-19 14:44:15,143 - DEBUG: Responding: b3
+2010-11-19 14:44:15,143 - DEBUG: Server sent: info Maximum time until next round: 07:26
+2010-11-19 14:44:15,144 - INFO: Server info: Maximum time until next round: 07:26
+2010-11-19 14:44:15,947 - DEBUG: Server sent: play b B2 295859
+2010-11-19 14:44:15,974 - DEBUG: Server sent: genmove w 137750
+2010-11-19 14:44:24,177 - DEBUG: Responding: g6
+2010-11-19 14:44:25,031 - DEBUG: Server sent: play b F5 295784
+2010-11-19 14:44:25,322 - DEBUG: Server sent: genmove w 130241
+2010-11-19 14:44:31,869 - DEBUG: Responding: f4
+2010-11-19 14:44:32,656 - DEBUG: Server sent: play b H4 295784
+2010-11-19 14:44:32,683 - DEBUG: Server sent: genmove w 124097
+2010-11-19 14:44:38,012 - DEBUG: Responding: h7
+2010-11-19 14:44:38,920 - DEBUG: Server sent: play b J5 295655
+2010-11-19 14:44:38,947 - DEBUG: Server sent: genmove w 119463
+2010-11-19 14:44:46,829 - DEBUG: Responding: h3
+2010-11-19 14:44:47,388 - DEBUG: Server sent: play b J3 295655
+2010-11-19 14:44:47,410 - DEBUG: Server sent: genmove w 112273
+2010-11-19 14:44:53,280 - DEBUG: Responding: b7
+2010-11-19 14:44:55,774 - DEBUG: Server sent: play b G3 295655
+2010-11-19 14:44:55,802 - DEBUG: Server sent: genmove w 105338
+2010-11-19 14:44:55,802 - INFO: Engine "rtest" playing white. 20 moves generated. Time left: 105 sec
+2010-11-19 14:45:00,533 - DEBUG: Responding: a5
+2010-11-19 14:45:02,215 - DEBUG: Server sent: play b F3 294752
+2010-11-19 14:45:02,242 - DEBUG: Server sent: genmove w 101241
+2010-11-19 14:45:07,997 - DEBUG: Responding: e2
+2010-11-19 14:45:08,982 - DEBUG: Server sent: play b E3 294548
+2010-11-19 14:45:09,009 - DEBUG: Server sent: genmove w 96179
+2010-11-19 14:45:12,825 - DEBUG: Responding: d4
+2010-11-19 14:45:12,825 - DEBUG: Server sent: info Maximum time until next round: 06:45
+2010-11-19 14:45:12,825 - INFO: Server info: Maximum time until next round: 06:45
+2010-11-19 14:45:14,124 - DEBUG: Server sent: play b H2 294052
+2010-11-19 14:45:14,151 - DEBUG: Server sent: genmove w 93032
+2010-11-19 14:45:20,913 - DEBUG: Responding: j6
+2010-11-19 14:45:22,605 - DEBUG: Server sent: play b H5 293229
+2010-11-19 14:45:22,693 - DEBUG: Server sent: genmove w 86964
+2010-11-19 14:45:25,674 - DEBUG: Responding: a3
+2010-11-19 14:45:26,626 - DEBUG: Server sent: play b A2 293063
+2010-11-19 14:45:26,654 - DEBUG: Server sent: genmove w 84519
+2010-11-19 14:45:29,995 - DEBUG: Responding: a6
+2010-11-19 14:45:30,507 - DEBUG: Server sent: play b A4 293063
+2010-11-19 14:45:30,534 - DEBUG: Server sent: genmove w 81872
+2010-11-19 14:45:33,701 - DEBUG: Responding: a7
+2010-11-19 14:45:34,179 - DEBUG: Server sent: play b C8 293063
+2010-11-19 14:45:34,203 - DEBUG: Server sent: genmove w 79379
+2010-11-19 14:45:37,333 - DEBUG: Responding: a3
+2010-11-19 14:45:37,784 - DEBUG: Server sent: play b B3 293063
+2010-11-19 14:45:37,812 - DEBUG: Server sent: genmove w 76935
+2010-11-19 14:45:41,188 - DEBUG: Responding: f2
+2010-11-19 14:45:41,597 - DEBUG: Server sent: play b G2 293063
+2010-11-19 14:45:41,625 - DEBUG: Server sent: genmove w 74252
+2010-11-19 14:45:44,900 - DEBUG: Responding: g1
+2010-11-19 14:45:45,294 - DEBUG: Server sent: play b D1 293063
+2010-11-19 14:45:45,322 - DEBUG: Server sent: genmove w 71671
+2010-11-19 14:45:45,322 - INFO: Engine "rtest" playing white. 30 moves generated. Time left: 71 sec
+2010-11-19 14:45:49,474 - DEBUG: Responding: c1
+2010-11-19 14:45:49,917 - DEBUG: Server sent: play b B1 293063
+2010-11-19 14:45:49,937 - DEBUG: Server sent: genmove w 68208
+2010-11-19 14:45:52,752 - DEBUG: Responding: g8
+2010-11-19 14:45:53,155 - DEBUG: Server sent: play b F9 293063
+2010-11-19 14:45:53,178 - DEBUG: Server sent: genmove w 66086
+2010-11-19 14:45:56,449 - DEBUG: Responding: b8
+2010-11-19 14:45:56,991 - DEBUG: Server sent: play b C9 293063
+2010-11-19 14:45:57,093 - DEBUG: Server sent: genmove w 63477
+2010-11-19 14:46:04,968 - DEBUG: Responding: j8
+2010-11-19 14:46:05,408 - DEBUG: Server sent: play b H9 293063
+2010-11-19 14:46:05,495 - DEBUG: Server sent: genmove w 56221
+2010-11-19 14:46:07,715 - DEBUG: Responding: b9
+2010-11-19 14:46:08,279 - DEBUG: Server sent: play b E9 293063
+2010-11-19 14:46:08,359 - DEBUG: Server sent: genmove w 54565
+2010-11-19 14:46:11,034 - DEBUG: Responding: j7
+2010-11-19 14:46:11,422 - DEBUG: Server sent: play b H3 293063
+2010-11-19 14:46:11,449 - DEBUG: Server sent: genmove w 52471
+2010-11-19 14:46:14,124 - DEBUG: Responding: h1
+2010-11-19 14:46:14,579 - DEBUG: Server sent: play b G9 293063
+2010-11-19 14:46:14,697 - DEBUG: Server sent: genmove w 50466
+2010-11-19 14:46:16,604 - DEBUG: Responding: f1
+2010-11-19 14:46:17,180 - DEBUG: Server sent: play b H8 293063
+2010-11-19 14:46:17,208 - DEBUG: Server sent: genmove w 49128
+2010-11-19 14:46:19,878 - DEBUG: Responding: pass
+2010-11-19 14:46:20,268 - DEBUG: Server sent: play b J9 293063
+2010-11-19 14:46:20,367 - DEBUG: Server sent: genmove w 47152
+2010-11-19 14:46:23,011 - DEBUG: Responding: h7
+2010-11-19 14:46:23,386 - DEBUG: Server sent: play b G7 293063
+2010-11-19 14:46:23,415 - DEBUG: Server sent: genmove w 45131
+2010-11-19 14:46:23,415 - INFO: Engine "rtest" playing white. 40 moves generated. Time left: 45 sec
+2010-11-19 14:46:25,468 - DEBUG: Responding: e1
+2010-11-19 14:46:25,468 - DEBUG: Server sent: info Maximum time until next round: 05:36
+2010-11-19 14:46:25,468 - INFO: Server info: Maximum time until next round: 05:36
+2010-11-19 14:46:25,905 - DEBUG: Server sent: play b J7 293063
+2010-11-19 14:46:25,930 - DEBUG: Server sent: genmove w 43771
+2010-11-19 14:46:28,833 - DEBUG: Responding: j1
+2010-11-19 14:46:29,253 - DEBUG: Server sent: play b E8 293063
+2010-11-19 14:46:29,280 - DEBUG: Server sent: genmove w 41562
+2010-11-19 14:46:31,053 - DEBUG: Responding: c1
+2010-11-19 14:46:31,432 - DEBUG: Server sent: play b J2 293063
+2010-11-19 14:46:31,459 - DEBUG: Server sent: genmove w 40452
+2010-11-19 14:46:33,554 - DEBUG: Responding: pass
+2010-11-19 14:46:33,947 - DEBUG: Server sent: play b D1 293063
+2010-11-19 14:46:34,031 - DEBUG: Server sent: genmove w 39052
+2010-11-19 14:46:35,854 - DEBUG: Responding: f1
+2010-11-19 14:46:36,321 - DEBUG: Server sent: play b F2 293063
+2010-11-19 14:46:36,348 - DEBUG: Server sent: genmove w 37829
+2010-11-19 14:46:38,796 - DEBUG: Responding: h1
+2010-11-19 14:46:39,178 - DEBUG: Server sent: play b E1 293063
+2010-11-19 14:46:39,206 - DEBUG: Server sent: genmove w 36058
+2010-11-19 14:46:40,715 - DEBUG: Responding: g1
+2010-11-19 14:46:41,087 - DEBUG: Server sent: play b J1 293063
+2010-11-19 14:46:41,114 - DEBUG: Server sent: genmove w 35243
+2010-11-19 14:46:42,645 - DEBUG: Responding: d6
+2010-11-19 14:46:43,102 - DEBUG: Server sent: play b D5 293063
+2010-11-19 14:46:43,129 - DEBUG: Server sent: genmove w 34405
+2010-11-19 14:46:44,816 - DEBUG: Responding: f1
+2010-11-19 14:46:45,210 - DEBUG: Server sent: play b G1 293063
+2010-11-19 14:46:45,237 - DEBUG: Server sent: genmove w 33412
+2010-11-19 14:46:46,728 - DEBUG: Responding: pass
+2010-11-19 14:46:47,132 - DEBUG: Server sent: play b C5 293063
+2010-11-19 14:46:47,207 - DEBUG: Server sent: genmove w 32616
+2010-11-19 14:46:47,207 - INFO: Engine "rtest" playing white. 50 moves generated. Time left: 32 sec
+2010-11-19 14:46:48,607 - DEBUG: Responding: pass
+2010-11-19 14:46:49,046 - DEBUG: Server sent: play b A9 293063
+2010-11-19 14:46:49,067 - DEBUG: Server sent: genmove w 31859
+2010-11-19 14:46:50,503 - DEBUG: Responding: a8
+2010-11-19 14:46:50,944 - DEBUG: Server sent: play b A9 293063
+2010-11-19 14:46:51,019 - DEBUG: Server sent: genmove w 31116
+2010-11-19 14:46:52,594 - DEBUG: Responding: a8
+2010-11-19 14:46:52,957 - DEBUG: Server sent: play b B8 293063
+2010-11-19 14:46:52,983 - DEBUG: Server sent: genmove w 30186
+2010-11-19 14:46:54,204 - DEBUG: Responding: a7
+2010-11-19 14:46:54,596 - DEBUG: Server sent: play b B7 293063
+2010-11-19 14:46:54,678 - DEBUG: Server sent: genmove w 29660
+2010-11-19 14:46:56,099 - DEBUG: Responding: a6
+2010-11-19 14:46:56,628 - DEBUG: Server sent: play b A5 293063
+2010-11-19 14:46:56,656 - DEBUG: Server sent: genmove w 28819
+2010-11-19 14:46:58,335 - DEBUG: Responding: a8
+2010-11-19 14:46:58,842 - DEBUG: Server sent: play b A7 293063
+2010-11-19 14:46:58,869 - DEBUG: Server sent: genmove w 27816
+2010-11-19 14:47:00,127 - DEBUG: Responding: pass
+2010-11-19 14:47:00,495 - DEBUG: Server sent: play b PASS 293063
+2010-11-19 14:47:00,564 - DEBUG: Server sent: gameover 2010-11-19 B+73.5
+2010-11-19 14:47:00,564 - INFO: Game over. Result: B+73.5
+2010-11-19 14:47:00,564 - INFO: Local engine lost :'(
+2010-11-19 14:47:00,564 - INFO: Saving SGF file: 2010-11-19-14-47-00-Gnu38L1r-silver.sgf
+2010-11-19 14:47:00,661 - DEBUG: Responding: ready
+2010-11-19 14:47:00,662 - INFO: Client up for 2 hours, 2 mins, 0 seconds. Local engines won 10 games, lost 3.
+2010-11-19 14:47:40,103 - DEBUG: Server sent: info Maximum time until next round: 03:52
+2010-11-19 14:47:40,103 - INFO: Server info: Maximum time until next round: 03:52
+2010-11-19 14:48:55,141 - DEBUG: Server sent: info Maximum time until next round: 02:43
+2010-11-19 14:48:55,195 - INFO: Server info: Maximum time until next round: 02:43
+2010-11-19 14:50:10,153 - DEBUG: Server sent: info Maximum time until next round: 01:44
+2010-11-19 14:50:10,153 - INFO: Server info: Maximum time until next round: 01:44
+2010-11-19 14:51:06,304 - DEBUG: Server sent: setup 1277539 9 7.5 300000 silver(1986?) soft_e(2329)
+2010-11-19 14:51:06,304 - INFO: Starting game against soft_e(2329). Local engine ("rtest", rated 1986?) is playing white.
+2010-11-19 14:51:28,342 - DEBUG: Server sent: play b e5 299748
+2010-11-19 14:51:28,682 - DEBUG: Server sent: genmove w 300000
+2010-11-19 14:51:39,191 - DEBUG: Responding: d4
+2010-11-19 14:51:40,568 - DEBUG: Server sent: play b e4 299170
+2010-11-19 14:51:40,593 - DEBUG: Server sent: genmove w 289855
+2010-11-19 14:51:50,456 - DEBUG: Responding: d5
+2010-11-19 14:51:50,456 - DEBUG: Server sent: info Maximum time until next round: 09:58
+2010-11-19 14:51:50,456 - INFO: Server info: Maximum time until next round: 09:58
+2010-11-19 14:51:51,968 - DEBUG: Server sent: play b e6 298510
+2010-11-19 14:51:51,996 - DEBUG: Server sent: genmove w 280664
+2010-11-19 14:52:03,577 - DEBUG: Responding: d6
+2010-11-19 14:52:05,111 - DEBUG: Server sent: play b d7 297775
+2010-11-19 14:52:05,138 - DEBUG: Server sent: genmove w 269700
+2010-11-19 14:52:20,064 - DEBUG: Responding: e3
+2010-11-19 14:52:21,414 - DEBUG: Server sent: play b f3 297250
+2010-11-19 14:52:21,441 - DEBUG: Server sent: genmove w 255433
+2010-11-19 14:52:34,019 - DEBUG: Responding: d3
+2010-11-19 14:52:35,026 - DEBUG: Server sent: play b c7 297021
+2010-11-19 14:52:35,102 - DEBUG: Server sent: genmove w 243535
+2010-11-19 14:52:45,444 - DEBUG: Responding: f2
+2010-11-19 14:52:46,610 - DEBUG: Server sent: play b g3 296634
+2010-11-19 14:52:46,905 - DEBUG: Server sent: genmove w 233836
+2010-11-19 14:52:57,459 - DEBUG: Responding: g2
+2010-11-19 14:52:57,462 - DEBUG: Server sent: info Maximum time until next round: 09:30
+2010-11-19 14:52:57,462 - INFO: Server info: Maximum time until next round: 09:30
+2010-11-19 14:52:59,003 - DEBUG: Server sent: play b h4 295871
+2010-11-19 14:52:59,031 - DEBUG: Server sent: genmove w 223706
+2010-11-19 14:53:11,251 - DEBUG: Responding: h3
+2010-11-19 14:53:12,450 - DEBUG: Server sent: play b h2 295534
+2010-11-19 14:53:12,469 - DEBUG: Server sent: genmove w 212178
+2010-11-19 14:53:21,576 - DEBUG: Responding: b6
+2010-11-19 14:53:23,194 - DEBUG: Server sent: play b c6 294807
+2010-11-19 14:53:23,221 - DEBUG: Server sent: genmove w 203673
+2010-11-19 14:53:23,221 - INFO: Engine "rtest" playing white. 10 moves generated. Time left: 203 sec
+2010-11-19 14:53:31,694 - DEBUG: Responding: e7
+2010-11-19 14:53:32,919 - DEBUG: Server sent: play b f7 294377
+2010-11-19 14:53:32,948 - DEBUG: Server sent: genmove w 195797
+2010-11-19 14:53:42,020 - DEBUG: Responding: e8
+2010-11-19 14:53:43,005 - DEBUG: Server sent: play b f8 294179
+2010-11-19 14:53:43,032 - DEBUG: Server sent: genmove w 187391
+2010-11-19 14:53:50,892 - DEBUG: Responding: b7
+2010-11-19 14:53:52,055 - DEBUG: Server sent: play b b8 293823
+2010-11-19 14:53:52,082 - DEBUG: Server sent: genmove w 180224
+2010-11-19 14:53:58,931 - DEBUG: Responding: f6
+2010-11-19 14:53:59,978 - DEBUG: Server sent: play b f4 293555
+2010-11-19 14:54:00,274 - DEBUG: Server sent: genmove w 174041
+2010-11-19 14:54:07,622 - DEBUG: Responding: c5
+2010-11-19 14:54:08,754 - DEBUG: Server sent: play b e9 293227
+2010-11-19 14:54:08,826 - DEBUG: Server sent: genmove w 167117
+2010-11-19 14:54:17,828 - DEBUG: Responding: d8
+2010-11-19 14:54:17,828 - DEBUG: Server sent: info Maximum time until next round: 08:12
+2010-11-19 14:54:17,829 - INFO: Server info: Maximum time until next round: 08:12
+2010-11-19 14:54:18,885 - DEBUG: Server sent: play b c8 292950
+2010-11-19 14:54:19,002 - DEBUG: Server sent: genmove w 158737
+2010-11-19 14:54:29,351 - DEBUG: Responding: h1
+2010-11-19 14:54:30,442 - DEBUG: Server sent: play b j2 292637
+2010-11-19 14:54:30,469 - DEBUG: Server sent: genmove w 148991
+2010-11-19 14:54:37,061 - DEBUG: Responding: g7
+2010-11-19 14:54:38,151 - DEBUG: Server sent: play b g8 292329
+2010-11-19 14:54:38,226 - DEBUG: Server sent: genmove w 143091
+2010-11-19 14:54:43,765 - DEBUG: Responding: g5
+2010-11-19 14:54:44,861 - DEBUG: Server sent: play b h7 292044
+2010-11-19 14:54:44,927 - DEBUG: Server sent: genmove w 138165
+2010-11-19 14:54:52,010 - DEBUG: Responding: h6
+2010-11-19 14:54:53,025 - DEBUG: Server sent: play b h8 291809
+2010-11-19 14:54:53,095 - DEBUG: Server sent: genmove w 131734
+2010-11-19 14:54:53,095 - INFO: Engine "rtest" playing white. 20 moves generated. Time left: 131 sec
+2010-11-19 14:54:58,303 - DEBUG: Responding: j5
+2010-11-19 14:54:59,354 - DEBUG: Server sent: play b j4 291539
+2010-11-19 14:54:59,381 - DEBUG: Server sent: genmove w 127175
+2010-11-19 14:55:05,003 - DEBUG: Responding: g4
+2010-11-19 14:55:06,577 - DEBUG: Server sent: play b j3 290790
+2010-11-19 14:55:06,601 - DEBUG: Server sent: genmove w 122206
+2010-11-19 14:55:11,969 - DEBUG: Responding: h5
+2010-11-19 14:55:12,952 - DEBUG: Server sent: play b g6 290586
+2010-11-19 14:55:12,979 - DEBUG: Server sent: genmove w 117529
+2010-11-19 14:55:19,898 - DEBUG: Responding: g1
+2010-11-19 14:55:20,843 - DEBUG: Server sent: play b f5 290420
+2010-11-19 14:55:20,870 - DEBUG: Server sent: genmove w 111304
+2010-11-19 14:55:26,420 - DEBUG: Responding: a8
+2010-11-19 14:55:27,489 - DEBUG: Server sent: info Maximum time until next round: 06:35
+2010-11-19 14:55:27,489 - INFO: Server info: Maximum time until next round: 06:35
+2010-11-19 14:55:27,516 - DEBUG: Server sent: play b b9 290233
+2010-11-19 14:55:27,582 - DEBUG: Server sent: genmove w 106374
+2010-11-19 14:55:34,330 - DEBUG: Responding: j6
+2010-11-19 14:55:35,289 - DEBUG: Server sent: play b d9 290055
+2010-11-19 14:55:35,393 - DEBUG: Server sent: genmove w 100221
+2010-11-19 14:55:42,991 - DEBUG: Responding: j1
+2010-11-19 14:55:43,919 - DEBUG: Server sent: play b h3 289913
+2010-11-19 14:55:43,943 - DEBUG: Server sent: genmove w 93236
+2010-11-19 14:55:47,500 - DEBUG: Responding: e2
+2010-11-19 14:55:48,382 - DEBUG: Server sent: play b j7 289810
+2010-11-19 14:55:48,674 - DEBUG: Server sent: genmove w 90373
+2010-11-19 14:55:52,042 - DEBUG: Responding: e8
+2010-11-19 14:55:52,981 - DEBUG: Server sent: play b e7 289665
+2010-11-19 14:55:53,057 - DEBUG: Server sent: genmove w 87436
+2010-11-19 14:55:58,712 - DEBUG: Responding: b5
+2010-11-19 14:55:59,661 - DEBUG: Server sent: play b d8 289521
+2010-11-19 14:55:59,736 - DEBUG: Server sent: genmove w 82383
+2010-11-19 14:55:59,736 - INFO: Engine "rtest" playing white. 30 moves generated. Time left: 82 sec
+2010-11-19 14:56:03,360 - DEBUG: Responding: g5
+2010-11-19 14:56:04,252 - DEBUG: Server sent: play b h5 289407
+2010-11-19 14:56:04,279 - DEBUG: Server sent: genmove w 79405
+2010-11-19 14:56:07,882 - DEBUG: Responding: j6
+2010-11-19 14:56:08,794 - DEBUG: Server sent: play b h6 289282
+2010-11-19 14:56:08,813 - DEBUG: Server sent: genmove w 76497
+2010-11-19 14:56:12,162 - DEBUG: Responding: a7
+2010-11-19 14:56:13,023 - DEBUG: Server sent: play b j5 289200
+2010-11-19 14:56:13,050 - DEBUG: Server sent: genmove w 73842
+2010-11-19 14:56:19,732 - DEBUG: Responding: a9
+2010-11-19 14:56:20,707 - DEBUG: Server sent: play b g4 289025
+2010-11-19 14:56:20,734 - DEBUG: Server sent: genmove w 67833
+2010-11-19 14:56:23,676 - DEBUG: Responding: f9
+2010-11-19 14:56:24,608 - DEBUG: Server sent: play b g9 288873
+2010-11-19 14:56:24,682 - DEBUG: Server sent: genmove w 65585
+2010-11-19 14:56:27,802 - DEBUG: Responding: b2
+2010-11-19 14:56:28,705 - DEBUG: Server sent: play b e1 288748
+2010-11-19 14:56:28,733 - DEBUG: Server sent: genmove w 63110
+2010-11-19 14:56:31,710 - DEBUG: Responding: h9
+2010-11-19 14:56:32,614 - DEBUG: Server sent: play b j9 288623
+2010-11-19 14:56:32,641 - DEBUG: Server sent: genmove w 60826
+2010-11-19 14:56:35,009 - DEBUG: Responding: pass
+2010-11-19 14:56:35,857 - DEBUG: Server sent: play b d1 288553
+2010-11-19 14:56:35,884 - DEBUG: Server sent: genmove w 59154
+2010-11-19 14:56:38,299 - DEBUG: Responding: c2
+2010-11-19 14:56:39,234 - DEBUG: Server sent: play b c1 288421
+2010-11-19 14:56:39,262 - DEBUG: Server sent: genmove w 57409
+2010-11-19 14:56:41,565 - DEBUG: Responding: b1
+2010-11-19 14:56:42,418 - DEBUG: Server sent: play b c3 288362
+2010-11-19 14:56:42,446 - DEBUG: Server sent: genmove w 55784
+2010-11-19 14:56:42,446 - INFO: Engine "rtest" playing white. 40 moves generated. Time left: 55 sec
+2010-11-19 14:56:45,173 - DEBUG: Responding: b3
+2010-11-19 14:56:45,173 - DEBUG: Server sent: info Maximum time until next round: 05:45
+2010-11-19 14:56:45,173 - INFO: Server info: Maximum time until next round: 05:45
+2010-11-19 14:56:46,362 - DEBUG: Server sent: play b a2 287952
+2010-11-19 14:56:46,389 - DEBUG: Server sent: genmove w 53750
+2010-11-19 14:56:48,754 - DEBUG: Responding: pass
+2010-11-19 14:56:49,910 - DEBUG: Server sent: play b a3 287643
+2010-11-19 14:56:49,935 - DEBUG: Server sent: genmove w 52079
+2010-11-19 14:56:52,264 - DEBUG: Responding: a4
+2010-11-19 14:56:53,433 - DEBUG: Server sent: play b f1 287258
+2010-11-19 14:56:53,456 - DEBUG: Server sent: genmove w 50378
+2010-11-19 14:56:55,852 - DEBUG: Responding: c4
+2010-11-19 14:56:56,973 - DEBUG: Server sent: play b g5 286928
+2010-11-19 14:56:57,001 - DEBUG: Server sent: genmove w 48677
+2010-11-19 14:56:59,213 - DEBUG: Responding: pass
+2010-11-19 14:57:00,428 - DEBUG: Server sent: play b e8 286649
+2010-11-19 14:57:00,722 - DEBUG: Server sent: genmove w 47062
+2010-11-19 14:57:02,945 - DEBUG: Responding: pass
+2010-11-19 14:57:03,970 - DEBUG: Server sent: play b a6 286403
+2010-11-19 14:57:03,997 - DEBUG: Server sent: genmove w 45195
+2010-11-19 14:57:06,238 - DEBUG: Responding: pass
+2010-11-19 14:57:07,537 - DEBUG: Server sent: play b f6 285887
+2010-11-19 14:57:07,615 - DEBUG: Server sent: genmove w 43648
+2010-11-19 14:57:09,735 - DEBUG: Responding: pass
+2010-11-19 14:57:10,903 - DEBUG: Server sent: play b h9 285496
+2010-11-19 14:57:10,989 - DEBUG: Server sent: genmove w 42168
+2010-11-19 14:57:12,908 - DEBUG: Responding: pass
+2010-11-19 14:57:13,970 - DEBUG: Server sent: play b g7 285211
+2010-11-19 14:57:13,998 - DEBUG: Server sent: genmove w 40886
+2010-11-19 14:57:15,895 - DEBUG: Responding: pass
+2010-11-19 14:57:16,926 - DEBUG: Server sent: play b c9 284959
+2010-11-19 14:57:16,953 - DEBUG: Server sent: genmove w 39683
+2010-11-19 14:57:16,954 - INFO: Engine "rtest" playing white. 50 moves generated. Time left: 39 sec
+2010-11-19 14:57:18,758 - DEBUG: Responding: pass
+2010-11-19 14:57:19,702 - DEBUG: Server sent: play b j8 284800
+2010-11-19 14:57:19,733 - DEBUG: Server sent: genmove w 38571
+2010-11-19 14:57:21,524 - DEBUG: Responding: pass
+2010-11-19 14:57:22,561 - DEBUG: Server sent: play b pass 284566
+2010-11-19 14:57:22,588 - DEBUG: Server sent: gameover 2010-11-19 B+18.5
+2010-11-19 14:57:22,589 - INFO: Game over. Result: B+18.5
+2010-11-19 14:57:22,589 - INFO: Local engine lost :'(
+2010-11-19 14:57:22,589 - INFO: Saving SGF file: 2010-11-19-14-57-22-softe-silver.sgf
+2010-11-19 14:57:22,590 - DEBUG: Responding: ready
+2010-11-19 14:57:57,892 - DEBUG: Server sent: info Maximum time until next round: 03:58
+2010-11-19 14:57:57,892 - INFO: Server info: Maximum time until next round: 03:58
+2010-11-19 14:59:12,836 - DEBUG: Server sent: info Maximum time until next round: 02:55
+2010-11-19 14:59:12,837 - INFO: Server info: Maximum time until next round: 02:55
+2010-11-19 15:00:12,827 - DEBUG: Server sent: info Maximum time until next round: 02:13
+2010-11-19 15:00:12,827 - INFO: Server info: Maximum time until next round: 02:13
+2010-11-19 15:01:26,628 - DEBUG: Server sent: setup 1277557 9 7.5 300000 unyugo-0.4.5-8K(1767) silver(1972?)
+2010-11-19 15:01:26,629 - INFO: Starting game against unyugo-0.4.5-8K(1767). Local engine ("rtest", rated 1972?) is playing black.
+2010-11-19 15:01:34,581 - DEBUG: Server sent: genmove b 300000
+2010-11-19 15:02:00,284 - DEBUG: Responding: e6
+2010-11-19 15:02:00,284 - DEBUG: Server sent: info Maximum time until next round: 09:59
+2010-11-19 15:02:00,284 - INFO: Server info: Maximum time until next round: 09:59
+2010-11-19 15:02:04,177 - DEBUG: Server sent: play w E4 296927
+2010-11-19 15:02:04,194 - DEBUG: Server sent: genmove b 274983
+2010-11-19 15:02:15,027 - DEBUG: Responding: f5
+2010-11-19 15:02:19,074 - DEBUG: Server sent: play w F4 293700
+2010-11-19 15:02:19,101 - DEBUG: Server sent: genmove b 264828
+2010-11-19 15:02:29,681 - DEBUG: Responding: d5
+2010-11-19 15:02:33,976 - DEBUG: Server sent: play w D4 290216
+2010-11-19 15:02:34,003 - DEBUG: Server sent: genmove b 254882
+2010-11-19 15:02:42,478 - DEBUG: Responding: c5
+2010-11-19 15:02:46,243 - DEBUG: Server sent: play w G5 287229
+2010-11-19 15:02:46,271 - DEBUG: Server sent: genmove b 247101
+2010-11-19 15:02:55,525 - DEBUG: Responding: g6
+2010-11-19 15:02:59,430 - DEBUG: Server sent: play w C4 284103
+2010-11-19 15:02:59,457 - DEBUG: Server sent: genmove b 238540
+2010-11-19 15:03:09,312 - DEBUG: Responding: g4
+2010-11-19 15:03:09,313 - DEBUG: Server sent: info Maximum time until next round: 09:39
+2010-11-19 15:03:09,313 - INFO: Server info: Maximum time until next round: 09:39
+2010-11-19 15:03:21,324 - DEBUG: Server sent: play w B5 280945
+2010-11-19 15:03:21,371 - DEBUG: Server sent: genmove b 221336
+2010-11-19 15:03:33,914 - DEBUG: Responding: b6
+2010-11-19 15:03:45,071 - DEBUG: Server sent: play w E5 270613
+2010-11-19 15:03:45,098 - DEBUG: Server sent: genmove b 209382
+2010-11-19 15:03:53,619 - DEBUG: Responding: h5
+2010-11-19 15:03:57,569 - DEBUG: Server sent: play w F7 267502
+2010-11-19 15:03:57,597 - DEBUG: Server sent: genmove b 201532
+2010-11-19 15:04:19,597 - DEBUG: Responding: f6
+2010-11-19 15:04:20,898 - DEBUG: Server sent: info Maximum time until next round: 07:40
+2010-11-19 15:04:20,898 - INFO: Server info: Maximum time until next round: 07:40
+2010-11-19 15:04:23,558 - DEBUG: Server sent: play w G7 264319
+2010-11-19 15:04:23,586 - DEBUG: Server sent: genmove b 180184
+2010-11-19 15:04:23,586 - INFO: Engine "rtest" playing black. 10 moves generated. Time left: 180 sec
+2010-11-19 15:04:31,200 - DEBUG: Responding: g3
+2010-11-19 15:04:34,631 - DEBUG: Server sent: play w C6 261729
+2010-11-19 15:04:34,658 - DEBUG: Server sent: genmove b 173264
+2010-11-19 15:04:50,982 - DEBUG: Responding: d6
+2010-11-19 15:04:54,998 - DEBUG: Server sent: play w B4 258734
+2010-11-19 15:04:55,026 - DEBUG: Server sent: genmove b 157570
+2010-11-19 15:05:02,605 - DEBUG: Responding: c7
+2010-11-19 15:05:06,092 - DEBUG: Server sent: play w E8 256034
+2010-11-19 15:05:06,194 - DEBUG: Server sent: genmove b 150441
+2010-11-19 15:05:12,484 - DEBUG: Responding: h7
+2010-11-19 15:05:15,738 - DEBUG: Server sent: play w H8 253558
+2010-11-19 15:05:15,773 - DEBUG: Server sent: genmove b 144760
+2010-11-19 15:05:22,292 - DEBUG: Responding: j8
+2010-11-19 15:05:25,827 - DEBUG: Server sent: play w J7 250899
+2010-11-19 15:05:25,879 - DEBUG: Server sent: genmove b 138927
+2010-11-19 15:05:33,835 - DEBUG: Responding: j6
+2010-11-19 15:05:35,893 - DEBUG: Server sent: info Maximum time until next round: 06:38
+2010-11-19 15:05:35,893 - INFO: Server info: Maximum time until next round: 06:38
+2010-11-19 15:05:37,390 - DEBUG: Server sent: play w D8 248139
+2010-11-19 15:05:37,417 - DEBUG: Server sent: genmove b 131525
+2010-11-19 15:05:45,982 - DEBUG: Responding: g8
+2010-11-19 15:05:49,054 - DEBUG: Server sent: play w H9 245848
+2010-11-19 15:05:49,081 - DEBUG: Server sent: genmove b 123652
+2010-11-19 15:05:58,988 - DEBUG: Responding: g9
+2010-11-19 15:06:01,935 - DEBUG: Server sent: play w C8 243690
+2010-11-19 15:06:01,973 - DEBUG: Server sent: genmove b 114434
+2010-11-19 15:06:06,015 - DEBUG: Responding: b8
+2010-11-19 15:06:09,342 - DEBUG: Server sent: play w A7 241141
+2010-11-19 15:06:09,413 - DEBUG: Server sent: genmove b 111066
+2010-11-19 15:06:14,911 - DEBUG: Responding: a6
+2010-11-19 15:06:19,757 - DEBUG: Server sent: play w A8 238503
+2010-11-19 15:06:19,840 - DEBUG: Server sent: genmove b 104789
+2010-11-19 15:06:19,840 - INFO: Engine "rtest" playing black. 20 moves generated. Time left: 104 sec
+2010-11-19 15:06:23,697 - DEBUG: Responding: j9
+2010-11-19 15:06:26,640 - DEBUG: Server sent: play w F2 236440
+2010-11-19 15:06:26,668 - DEBUG: Server sent: genmove b 101570
+2010-11-19 15:06:30,410 - DEBUG: Responding: b7
+2010-11-19 15:06:33,253 - DEBUG: Server sent: play w E2 234384
+2010-11-19 15:06:33,273 - DEBUG: Server sent: genmove b 98418
+2010-11-19 15:06:37,250 - DEBUG: Responding: a9
+2010-11-19 15:06:38,916 - DEBUG: Server sent: play w D7 233498
+2010-11-19 15:06:39,019 - DEBUG: Server sent: genmove b 95135
+2010-11-19 15:06:46,513 - DEBUG: Responding: h3
+2010-11-19 15:06:48,216 - DEBUG: Server sent: play w H2 232574
+2010-11-19 15:06:48,245 - DEBUG: Server sent: genmove b 88258
+2010-11-19 15:06:55,977 - DEBUG: Responding: j4
+2010-11-19 15:06:55,978 - DEBUG: Server sent: info Maximum time until next round: 05:18
+2010-11-19 15:06:55,978 - INFO: Server info: Maximum time until next round: 05:18
+2010-11-19 15:06:57,684 - DEBUG: Server sent: play w G2 231677
+2010-11-19 15:06:57,711 - DEBUG: Server sent: genmove b 81187
+2010-11-19 15:07:01,028 - DEBUG: Responding: f3
+2010-11-19 15:07:02,528 - DEBUG: Server sent: play w D2 230957
+2010-11-19 15:07:02,555 - DEBUG: Server sent: genmove b 78563
+2010-11-19 15:07:07,721 - DEBUG: Responding: a8
+2010-11-19 15:07:09,027 - DEBUG: Server sent: play w E3 230453
+2010-11-19 15:07:09,107 - DEBUG: Server sent: genmove b 74091
+2010-11-19 15:07:12,220 - DEBUG: Responding: h9
+2010-11-19 15:07:13,546 - DEBUG: Server sent: play w F9 229936
+2010-11-19 15:07:13,570 - DEBUG: Server sent: genmove b 71570
+2010-11-19 15:07:16,181 - DEBUG: Responding: f8
+2010-11-19 15:07:17,398 - DEBUG: Server sent: play w C3 229519
+2010-11-19 15:07:17,425 - DEBUG: Server sent: genmove b 69632
+2010-11-19 15:07:20,034 - DEBUG: Responding: c6
+2010-11-19 15:07:21,272 - DEBUG: Server sent: play w A5 229061
+2010-11-19 15:07:21,299 - DEBUG: Server sent: genmove b 67717
+2010-11-19 15:07:21,299 - INFO: Engine "rtest" playing black. 30 moves generated. Time left: 67 sec
+2010-11-19 15:07:24,192 - DEBUG: Responding: c9
+2010-11-19 15:07:25,377 - DEBUG: Server sent: play w C1 228655
+2010-11-19 15:07:25,404 - DEBUG: Server sent: genmove b 65519
+2010-11-19 15:07:29,682 - DEBUG: Responding: j2
+2010-11-19 15:07:30,917 - DEBUG: Server sent: play w H1 228243
+2010-11-19 15:07:30,947 - DEBUG: Server sent: genmove b 61936
+2010-11-19 15:07:33,630 - DEBUG: Responding: e9
+2010-11-19 15:07:34,741 - DEBUG: Server sent: play w J1 227941
+2010-11-19 15:07:34,768 - DEBUG: Server sent: genmove b 59870
+2010-11-19 15:07:37,091 - DEBUG: Responding: d9
+2010-11-19 15:07:38,034 - DEBUG: Server sent: play w J3 227797
+2010-11-19 15:07:38,062 - DEBUG: Server sent: genmove b 58219
+2010-11-19 15:07:40,965 - DEBUG: Responding: b2
+2010-11-19 15:07:42,046 - DEBUG: Server sent: play w J2 227496
+2010-11-19 15:07:42,073 - DEBUG: Server sent: genmove b 56010
+2010-11-19 15:07:44,662 - DEBUG: Responding: a2
+2010-11-19 15:07:45,690 - DEBUG: Server sent: play w A1 227247
+2010-11-19 15:07:45,717 - DEBUG: Server sent: genmove b 54116
+2010-11-19 15:07:48,660 - DEBUG: Responding: a3
+2010-11-19 15:07:49,571 - DEBUG: Server sent: play w C2 227118
+2010-11-19 15:07:49,598 - DEBUG: Server sent: genmove b 51865
+2010-11-19 15:07:51,903 - DEBUG: Responding: b9
+2010-11-19 15:07:52,816 - DEBUG: Server sent: play w B3 227031
+2010-11-19 15:07:52,870 - DEBUG: Server sent: genmove b 50207
+2010-11-19 15:07:55,060 - DEBUG: Responding: b1
+2010-11-19 15:07:55,860 - DEBUG: Server sent: play w E1 227031
+2010-11-19 15:07:55,886 - DEBUG: Server sent: genmove b 48664
+2010-11-19 15:07:58,067 - DEBUG: Responding: f9
+2010-11-19 15:07:58,966 - DEBUG: Server sent: play w A4 226911
+2010-11-19 15:07:58,994 - DEBUG: Server sent: genmove b 47178
+2010-11-19 15:07:58,994 - INFO: Engine "rtest" playing black. 40 moves generated. Time left: 47 sec
+2010-11-19 15:08:00,983 - DEBUG: Responding: pass
+2010-11-19 15:08:01,755 - DEBUG: Server sent: play w A1 226911
+2010-11-19 15:08:01,783 - DEBUG: Server sent: genmove b 45883
+2010-11-19 15:08:03,723 - DEBUG: Responding: pass
+2010-11-19 15:08:04,407 - DEBUG: Server sent: play w PASS 226911
+2010-11-19 15:08:04,434 - DEBUG: Server sent: gameover 2010-11-19 W+5.5
+2010-11-19 15:08:04,435 - INFO: Game over. Result: W+5.5
+2010-11-19 15:08:04,435 - INFO: Local engine lost :'(
+2010-11-19 15:08:04,435 - INFO: Saving SGF file: 2010-11-19-15-08-04-silver-unyugo0458K.sgf
+2010-11-19 15:08:04,477 - DEBUG: Responding: ready
+2010-11-19 15:08:05,960 - DEBUG: Server sent: info Maximum time until next round: 03:53
+2010-11-19 15:08:05,960 - INFO: Server info: Maximum time until next round: 03:53
+2010-11-19 15:09:20,939 - DEBUG: Server sent: info Maximum time until next round: 02:49
+2010-11-19 15:09:20,964 - INFO: Server info: Maximum time until next round: 02:49
+2010-11-19 15:10:36,049 - DEBUG: Server sent: info Maximum time until next round: 01:51
+2010-11-19 15:10:36,076 - INFO: Server info: Maximum time until next round: 01:51
+2010-11-19 15:11:17,965 - DEBUG: Server sent: setup 1277568 9 7.5 300000 soft_e(2332) silver(1885?)
+2010-11-19 15:11:18,114 - INFO: Starting game against soft_e(2332). Local engine ("rtest", rated 1885?) is playing black.
+2010-11-19 16:25:18,819 - INFO: Shutting down CGOS connection

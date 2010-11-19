@@ -116,7 +116,8 @@ private:
     {
         eMaxGames,
         eMaxTime,
-        ePonder
+        ePonder,
+        eNoSimulation
     };
 
     /** Control mode to use for simulation */

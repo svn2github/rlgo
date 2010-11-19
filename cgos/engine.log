@@ -1,0 +1,3502 @@
+2010-11-19 12:23:22,088 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:23:33,807 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:23:54,535 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:24:32,112 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:29:41,168 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:29:41,168 - INFO: about to popen...
+2010-11-19 12:32:30,602 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:32:30,604 - INFO: about to popen...
+2010-11-19 12:33:05,357 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:33:05,372 - INFO: about to popen...
+2010-11-19 12:38:04,475 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:38:04,475 - INFO: about to popen...
+2010-11-19 12:38:04,494 - INFO: popened!
+2010-11-19 12:38:05,494 - DEBUG: Sending: list_commands
+2010-11-19 12:38:05,499 - DEBUG: Response: ['aa_confirm_safety', 'accurate_approxlib', 'accuratelib', 'advance_random_seed', 'all_legal', 'all_move_values', 'analyze_eyegraph', 'analyze_semeai', 'analyze_semeai_after_move', 'attack', 'attack_either', 'black', 'block_off', 'boardsize', 'break_in', 'captures', 'clear_board', 'clear_cache', 'color', 'combination_attack', 'combination_defend', 'connect', 'countlib', 'cputime', 'decrease_depths', 'defend', 'defend_both', 'disconnect', 'does_attack', 'does_defend', 'does_surround', 'dragon_data', 'dragon_status', 'dragon_stones', 'draw_search_area', 'dump_stack', 'echo', 'echo_err', 'estimate_score', 'eval_eye', 'experimental_score', 'eye_data', 'final_score', 'final_status', 'final_status_list', 'findlib', 'finish_sgftrace', 'fixed_handicap', 'followup_influence', 'genmove', 'genmove_black', 'genmove_white', 'get_connection_node_counter', 'get_handicap', 'get_komi', 'get_life_node_counter', 'get_owl_node_counter', 'get_random_seed', 'get_reading_node_counter', 'get_trymove_counter', 'gg-undo', 'gg_genmove', 'half_eye_data', 'help', 'increase_depths', 'initial_influence', 'is_legal', 'is_surrounded', 'kgs-genmove_cleanup', 'known_command', 'komi', 'ladder_attack', 'last_move', 'level', 'limit_search', 'list_commands', 'list_stones', 'loadsgf', 'move_influence', 'move_probabilities', 'move_reasons', 'move_uncertainty', 'move_history', 'name', 'new_score', 'orientation', 'owl_attack', 'owl_connection_defends', 'owl_defend', 'owl_does_attack', 'owl_does_defend', 'owl_substantial', 'owl_threaten_attack', 'owl_threaten_defense', 'place_free_handicap', 'play', 'popgo', 'printsgf', 'protocol_version', 'query_boardsize', 'query_orientation', 'quit', 'reg_genmove', 'report_uncertainty', 'reset_connection_node_counter', 'reset_life_node_counter', 'reset_owl_node_counter', 'reset_reading_node_counter', 'reset_search_mask', 'reset_trymove_counter', 'restricted_genmove', 'same_dragon', 'set_free_handicap', 'set_random_seed', 'set_search_diamond', 'set_search_limit', 'showboard', 'start_sgftrace', 'surround_map', 'tactical_analyze_semeai', 'test_eyeshape', 'time_left', 'time_settings', 'top_moves', 'top_moves_black', 'top_moves_white', 'tryko', 'trymove', 'tune_move_ordering', 'unconditional_status', 'undo', 'version', 'white', 'worm_cutstone', 'worm_data', 'worm_stones']
+2010-11-19 12:40:21,967 - INFO: Shutting down GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:40:21,969 - DEBUG: Sending: quit
+2010-11-19 12:40:21,974 - DEBUG: Response: []
+2010-11-19 12:40:52,785 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:40:52,785 - INFO: about to popen...
+2010-11-19 12:40:52,790 - INFO: popened!
+2010-11-19 12:40:53,791 - DEBUG: Sending: list_commands
+2010-11-19 12:40:53,795 - DEBUG: Response: ['aa_confirm_safety', 'accurate_approxlib', 'accuratelib', 'advance_random_seed', 'all_legal', 'all_move_values', 'analyze_eyegraph', 'analyze_semeai', 'analyze_semeai_after_move', 'attack', 'attack_either', 'black', 'block_off', 'boardsize', 'break_in', 'captures', 'clear_board', 'clear_cache', 'color', 'combination_attack', 'combination_defend', 'connect', 'countlib', 'cputime', 'decrease_depths', 'defend', 'defend_both', 'disconnect', 'does_attack', 'does_defend', 'does_surround', 'dragon_data', 'dragon_status', 'dragon_stones', 'draw_search_area', 'dump_stack', 'echo', 'echo_err', 'estimate_score', 'eval_eye', 'experimental_score', 'eye_data', 'final_score', 'final_status', 'final_status_list', 'findlib', 'finish_sgftrace', 'fixed_handicap', 'followup_influence', 'genmove', 'genmove_black', 'genmove_white', 'get_connection_node_counter', 'get_handicap', 'get_komi', 'get_life_node_counter', 'get_owl_node_counter', 'get_random_seed', 'get_reading_node_counter', 'get_trymove_counter', 'gg-undo', 'gg_genmove', 'half_eye_data', 'help', 'increase_depths', 'initial_influence', 'is_legal', 'is_surrounded', 'kgs-genmove_cleanup', 'known_command', 'komi', 'ladder_attack', 'last_move', 'level', 'limit_search', 'list_commands', 'list_stones', 'loadsgf', 'move_influence', 'move_probabilities', 'move_reasons', 'move_uncertainty', 'move_history', 'name', 'new_score', 'orientation', 'owl_attack', 'owl_connection_defends', 'owl_defend', 'owl_does_attack', 'owl_does_defend', 'owl_substantial', 'owl_threaten_attack', 'owl_threaten_defense', 'place_free_handicap', 'play', 'popgo', 'printsgf', 'protocol_version', 'query_boardsize', 'query_orientation', 'quit', 'reg_genmove', 'report_uncertainty', 'reset_connection_node_counter', 'reset_life_node_counter', 'reset_owl_node_counter', 'reset_reading_node_counter', 'reset_search_mask', 'reset_trymove_counter', 'restricted_genmove', 'same_dragon', 'set_free_handicap', 'set_random_seed', 'set_search_diamond', 'set_search_limit', 'showboard', 'start_sgftrace', 'surround_map', 'tactical_analyze_semeai', 'test_eyeshape', 'time_left', 'time_settings', 'top_moves', 'top_moves_black', 'top_moves_white', 'tryko', 'trymove', 'tune_move_ordering', 'unconditional_status', 'undo', 'version', 'white', 'worm_cutstone', 'worm_data', 'worm_stones']
+2010-11-19 12:44:08,860 - INFO: Starting GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:44:09,867 - DEBUG: Sending: list_commands
+2010-11-19 12:44:09,872 - DEBUG: Response: ['aa_confirm_safety', 'accurate_approxlib', 'accuratelib', 'advance_random_seed', 'all_legal', 'all_move_values', 'analyze_eyegraph', 'analyze_semeai', 'analyze_semeai_after_move', 'attack', 'attack_either', 'black', 'block_off', 'boardsize', 'break_in', 'captures', 'clear_board', 'clear_cache', 'color', 'combination_attack', 'combination_defend', 'connect', 'countlib', 'cputime', 'decrease_depths', 'defend', 'defend_both', 'disconnect', 'does_attack', 'does_defend', 'does_surround', 'dragon_data', 'dragon_status', 'dragon_stones', 'draw_search_area', 'dump_stack', 'echo', 'echo_err', 'estimate_score', 'eval_eye', 'experimental_score', 'eye_data', 'final_score', 'final_status', 'final_status_list', 'findlib', 'finish_sgftrace', 'fixed_handicap', 'followup_influence', 'genmove', 'genmove_black', 'genmove_white', 'get_connection_node_counter', 'get_handicap', 'get_komi', 'get_life_node_counter', 'get_owl_node_counter', 'get_random_seed', 'get_reading_node_counter', 'get_trymove_counter', 'gg-undo', 'gg_genmove', 'half_eye_data', 'help', 'increase_depths', 'initial_influence', 'is_legal', 'is_surrounded', 'kgs-genmove_cleanup', 'known_command', 'komi', 'ladder_attack', 'last_move', 'level', 'limit_search', 'list_commands', 'list_stones', 'loadsgf', 'move_influence', 'move_probabilities', 'move_reasons', 'move_uncertainty', 'move_history', 'name', 'new_score', 'orientation', 'owl_attack', 'owl_connection_defends', 'owl_defend', 'owl_does_attack', 'owl_does_defend', 'owl_substantial', 'owl_threaten_attack', 'owl_threaten_defense', 'place_free_handicap', 'play', 'popgo', 'printsgf', 'protocol_version', 'query_boardsize', 'query_orientation', 'quit', 'reg_genmove', 'report_uncertainty', 'reset_connection_node_counter', 'reset_life_node_counter', 'reset_owl_node_counter', 'reset_reading_node_counter', 'reset_search_mask', 'reset_trymove_counter', 'restricted_genmove', 'same_dragon', 'set_free_handicap', 'set_random_seed', 'set_search_diamond', 'set_search_limit', 'showboard', 'start_sgftrace', 'surround_map', 'tactical_analyze_semeai', 'test_eyeshape', 'time_left', 'time_settings', 'top_moves', 'top_moves_black', 'top_moves_white', 'tryko', 'trymove', 'tune_move_ordering', 'unconditional_status', 'undo', 'version', 'white', 'worm_cutstone', 'worm_data', 'worm_stones']
+2010-11-19 12:44:14,374 - INFO: Shutting down GTP engine, command line: gnugo --mode gtp --score aftermath --capture-all-dead --chinese-rules --level 8
+2010-11-19 12:44:14,375 - DEBUG: Sending: quit
+2010-11-19 12:44:14,379 - DEBUG: Response: []
+2010-11-19 12:45:00,452 - INFO: Starting GTP engine, command line: ../rlgomain/rlgo -settings tourney.set
+2010-11-19 12:45:01,456 - DEBUG: Sending: list_commands
+2010-11-19 12:45:17,510 - DEBUG: Response: ['all_legal', 'all_move_values', 'boardsize', 'book_add', 'book_clear', 'book_delete', 'book_info', 'book_load', 'book_position', 'book_save', 'book_save_as', 'clear_board', 'cputime', 'cputime_reset', 'echo', 'echo_err', 'final_score', 'fixed_handicap', 'genmove', 'get_komi', 'get_random_seed', 'gg-undo', 'go_board', 'go_clock', 'go_param', 'go_param_rules', 'go_param_timecontrol', 'go_player_board', 'go_point_info', 'go_point_numbers', 'go_rules', 'go_sentinel_file', 'go_set_info', 'gogui-analyze_commands', 'gogui-interrupt', 'gogui-play_sequence', 'gogui-setup', 'gogui-setup_player', 'is_legal', 'kgs-genmove_cleanup', 'known_command', 'komi', 'list_commands', 'list_stones', 'loadsgf', 'name', 'pid', 'place_free_handicap', 'play', 'protocol_version', 'quiet', 'quit', 'reg_genmove', 'reg_genmove_toplay', 'rlgo_active_all', 'rlgo_active_next', 'rlgo_active_prev', 'rlgo_active_weights', 'rlgo_dirty', 'rlgo_eval_params', 'rlgo_evaluate', 'rlgo_feature_next', 'rlgo_feature_prev', 'rlgo_license', 'rlgo_load_weights', 'rlgo_move_freqs', 'rlgo_movefilter', 'rlgo_newgame', 'rlgo_output_params', 'rlgo_page_next', 'rlgo_page_prev', 'rlgo_policy', 'rlgo_save_weights', 'rlgo_simulate', 'rlgo_variation', 'savesgf', 'set_free_handicap', 'set_random_seed', 'sg_compare_float', 'sg_compare_int', 'sg_debugger', 'sg_exec', 'sg_param', 'showboard', 'time_lastmove', 'time_left', 'time_settings', 'undo', 'version']
+2010-11-19 12:51:50,415 - DEBUG: Sending: boardsize 9
+2010-11-19 12:51:50,557 - DEBUG: Response: []
+2010-11-19 12:51:50,557 - DEBUG: Sending: komi 7.5
+2010-11-19 12:51:50,561 - DEBUG: Response: []
+2010-11-19 12:51:50,567 - DEBUG: Sending: clear_board
+2010-11-19 12:51:50,705 - DEBUG: Response: []
+2010-11-19 12:51:50,705 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 12:51:50,707 - DEBUG: Response: []
+2010-11-19 12:52:06,549 - DEBUG: Sending: time_left b 300 0
+2010-11-19 12:52:06,601 - DEBUG: Response: []
+2010-11-19 12:52:06,601 - DEBUG: Sending: genmove b
+2010-11-19 12:52:18,768 - DEBUG: Response: ['E4']
+2010-11-19 12:52:19,141 - DEBUG: Sending: play w f7
+2010-11-19 12:52:19,158 - DEBUG: Response: []
+2010-11-19 12:52:19,159 - DEBUG: Sending: time_left b 288 0
+2010-11-19 12:52:19,159 - DEBUG: Response: []
+2010-11-19 12:52:19,159 - DEBUG: Sending: genmove b
+2010-11-19 12:52:42,570 - DEBUG: Response: ['D7']
+2010-11-19 12:52:42,883 - DEBUG: Sending: play w g5
+2010-11-19 12:52:42,886 - DEBUG: Response: []
+2010-11-19 12:52:42,911 - DEBUG: Sending: time_left b 265 0
+2010-11-19 12:52:42,911 - DEBUG: Response: []
+2010-11-19 12:52:42,911 - DEBUG: Sending: genmove b
+2010-11-19 12:52:54,389 - DEBUG: Response: ['F3']
+2010-11-19 12:52:54,733 - DEBUG: Sending: play w e6
+2010-11-19 12:52:54,913 - DEBUG: Response: []
+2010-11-19 12:52:54,914 - DEBUG: Sending: time_left b 254 0
+2010-11-19 12:52:54,915 - DEBUG: Response: []
+2010-11-19 12:52:54,915 - DEBUG: Sending: genmove b
+2010-11-19 12:53:03,797 - DEBUG: Response: ['D6']
+2010-11-19 12:53:04,129 - DEBUG: Sending: play w e5
+2010-11-19 12:53:04,132 - DEBUG: Response: []
+2010-11-19 12:53:04,157 - DEBUG: Sending: time_left b 246 0
+2010-11-19 12:53:04,157 - DEBUG: Response: []
+2010-11-19 12:53:04,157 - DEBUG: Sending: genmove b
+2010-11-19 12:53:15,101 - DEBUG: Response: ['D5']
+2010-11-19 12:53:15,494 - DEBUG: Sending: play w d4
+2010-11-19 12:53:15,496 - DEBUG: Response: []
+2010-11-19 12:53:15,517 - DEBUG: Sending: time_left b 236 0
+2010-11-19 12:53:15,518 - DEBUG: Response: []
+2010-11-19 12:53:15,518 - DEBUG: Sending: genmove b
+2010-11-19 12:53:26,353 - DEBUG: Response: ['C4']
+2010-11-19 12:53:26,691 - DEBUG: Sending: play w d3
+2010-11-19 12:53:26,694 - DEBUG: Response: []
+2010-11-19 12:53:26,711 - DEBUG: Sending: time_left b 225 0
+2010-11-19 12:53:26,712 - DEBUG: Response: []
+2010-11-19 12:53:26,712 - DEBUG: Sending: genmove b
+2010-11-19 12:53:34,240 - DEBUG: Response: ['G2']
+2010-11-19 12:53:34,574 - DEBUG: Sending: play w e3
+2010-11-19 12:53:34,582 - DEBUG: Response: []
+2010-11-19 12:53:34,600 - DEBUG: Sending: time_left b 219 0
+2010-11-19 12:53:34,600 - DEBUG: Response: []
+2010-11-19 12:53:34,601 - DEBUG: Sending: genmove b
+2010-11-19 12:53:42,031 - DEBUG: Response: ['F4']
+2010-11-19 12:53:42,365 - DEBUG: Sending: play w f5
+2010-11-19 12:53:42,369 - DEBUG: Response: []
+2010-11-19 12:53:42,391 - DEBUG: Sending: time_left b 212 0
+2010-11-19 12:53:42,391 - DEBUG: Response: []
+2010-11-19 12:53:42,391 - DEBUG: Sending: genmove b
+2010-11-19 12:53:49,989 - DEBUG: Response: ['C3']
+2010-11-19 12:53:50,375 - DEBUG: Sending: play w c2
+2010-11-19 12:53:50,385 - DEBUG: Response: []
+2010-11-19 12:53:50,403 - DEBUG: Sending: time_left b 205 0
+2010-11-19 12:53:50,404 - DEBUG: Response: []
+2010-11-19 12:53:50,404 - DEBUG: Sending: genmove b
+2010-11-19 12:54:04,452 - DEBUG: Response: ['F2']
+2010-11-19 12:54:04,737 - DEBUG: Sending: play w b2
+2010-11-19 12:54:04,741 - DEBUG: Response: []
+2010-11-19 12:54:04,764 - DEBUG: Sending: time_left b 192 0
+2010-11-19 12:54:04,765 - DEBUG: Response: []
+2010-11-19 12:54:04,765 - DEBUG: Sending: genmove b
+2010-11-19 12:54:15,609 - DEBUG: Response: ['D2']
+2010-11-19 12:54:15,935 - DEBUG: Sending: play w d1
+2010-11-19 12:54:16,008 - DEBUG: Response: []
+2010-11-19 12:54:16,008 - DEBUG: Sending: time_left b 181 0
+2010-11-19 12:54:16,009 - DEBUG: Response: []
+2010-11-19 12:54:16,009 - DEBUG: Sending: genmove b
+2010-11-19 12:54:23,496 - DEBUG: Response: ['E2']
+2010-11-19 12:54:23,929 - DEBUG: Sending: play w c1
+2010-11-19 12:54:24,019 - DEBUG: Response: []
+2010-11-19 12:54:24,020 - DEBUG: Sending: time_left b 175 0
+2010-11-19 12:54:24,021 - DEBUG: Response: []
+2010-11-19 12:54:24,021 - DEBUG: Sending: genmove b
+2010-11-19 12:54:32,147 - DEBUG: Response: ['E8']
+2010-11-19 12:54:32,472 - DEBUG: Sending: play w e1
+2010-11-19 12:54:32,479 - DEBUG: Response: []
+2010-11-19 12:54:32,500 - DEBUG: Sending: time_left b 167 0
+2010-11-19 12:54:32,501 - DEBUG: Response: []
+2010-11-19 12:54:32,501 - DEBUG: Sending: genmove b
+2010-11-19 12:54:39,183 - DEBUG: Response: ['C8']
+2010-11-19 12:54:39,488 - DEBUG: Sending: play w f1
+2010-11-19 12:54:39,500 - DEBUG: Response: []
+2010-11-19 12:54:39,515 - DEBUG: Sending: time_left b 161 0
+2010-11-19 12:54:39,516 - DEBUG: Response: []
+2010-11-19 12:54:39,516 - DEBUG: Sending: genmove b
+2010-11-19 12:54:48,611 - DEBUG: Response: ['G1']
+2010-11-19 12:54:48,979 - DEBUG: Sending: play w f8
+2010-11-19 12:54:49,065 - DEBUG: Response: []
+2010-11-19 12:54:49,065 - DEBUG: Sending: time_left b 153 0
+2010-11-19 12:54:49,066 - DEBUG: Response: []
+2010-11-19 12:54:49,066 - DEBUG: Sending: genmove b
+2010-11-19 12:54:54,783 - DEBUG: Response: ['B3']
+2010-11-19 12:54:55,062 - DEBUG: Sending: play w a3
+2010-11-19 12:54:55,080 - DEBUG: Response: []
+2010-11-19 12:54:55,086 - DEBUG: Sending: time_left b 148 0
+2010-11-19 12:54:55,086 - DEBUG: Response: []
+2010-11-19 12:54:55,087 - DEBUG: Sending: genmove b
+2010-11-19 12:55:02,607 - DEBUG: Response: ['A4']
+2010-11-19 12:55:03,009 - DEBUG: Sending: play w e9
+2010-11-19 12:55:03,138 - DEBUG: Response: []
+2010-11-19 12:55:03,138 - DEBUG: Sending: time_left b 141 0
+2010-11-19 12:55:03,139 - DEBUG: Response: []
+2010-11-19 12:55:03,139 - DEBUG: Sending: genmove b
+2010-11-19 12:55:08,969 - DEBUG: Response: ['D9']
+2010-11-19 12:55:14,999 - DEBUG: Sending: play w f9
+2010-11-19 12:55:15,002 - DEBUG: Response: []
+2010-11-19 12:55:15,026 - DEBUG: Sending: time_left b 130 0
+2010-11-19 12:55:15,026 - DEBUG: Response: []
+2010-11-19 12:55:15,026 - DEBUG: Sending: genmove b
+2010-11-19 12:55:24,532 - DEBUG: Response: ['B7']
+2010-11-19 12:55:27,796 - DEBUG: Sending: play w e7
+2010-11-19 12:55:27,890 - DEBUG: Response: []
+2010-11-19 12:55:27,890 - DEBUG: Sending: time_left b 119 0
+2010-11-19 12:55:27,891 - DEBUG: Response: []
+2010-11-19 12:55:27,891 - DEBUG: Sending: genmove b
+2010-11-19 12:55:32,591 - DEBUG: Response: ['D8']
+2010-11-19 12:55:32,905 - DEBUG: Sending: play w g4
+2010-11-19 12:55:32,911 - DEBUG: Response: []
+2010-11-19 12:55:32,932 - DEBUG: Sending: time_left b 115 0
+2010-11-19 12:55:32,933 - DEBUG: Response: []
+2010-11-19 12:55:32,934 - DEBUG: Sending: genmove b
+2010-11-19 12:55:39,569 - DEBUG: Response: ['C6']
+2010-11-19 12:55:39,946 - DEBUG: Sending: play w h3
+2010-11-19 12:55:39,948 - DEBUG: Response: []
+2010-11-19 12:55:40,020 - DEBUG: Sending: time_left b 109 0
+2010-11-19 12:55:40,020 - DEBUG: Response: []
+2010-11-19 12:55:40,020 - DEBUG: Sending: genmove b
+2010-11-19 12:55:49,223 - DEBUG: Response: ['A2']
+2010-11-19 12:55:49,596 - DEBUG: Sending: play w h2
+2010-11-19 12:55:49,610 - DEBUG: Response: []
+2010-11-19 12:55:49,624 - DEBUG: Sending: time_left b 100 0
+2010-11-19 12:55:49,625 - DEBUG: Response: []
+2010-11-19 12:55:49,625 - DEBUG: Sending: genmove b
+2010-11-19 12:55:53,553 - DEBUG: Response: ['B5']
+2010-11-19 12:55:54,020 - DEBUG: Sending: play w h1
+2010-11-19 12:55:54,021 - DEBUG: Response: []
+2010-11-19 12:55:54,047 - DEBUG: Sending: time_left b 97 0
+2010-11-19 12:55:54,047 - DEBUG: Response: []
+2010-11-19 12:55:54,047 - DEBUG: Sending: genmove b
+2010-11-19 12:55:57,732 - DEBUG: Response: ['A6']
+2010-11-19 12:55:58,038 - DEBUG: Sending: play w g3
+2010-11-19 12:55:58,047 - DEBUG: Response: []
+2010-11-19 12:55:58,065 - DEBUG: Sending: time_left b 94 0
+2010-11-19 12:55:58,066 - DEBUG: Response: []
+2010-11-19 12:55:58,066 - DEBUG: Sending: genmove b
+2010-11-19 12:56:01,740 - DEBUG: Response: ['B9']
+2010-11-19 12:56:02,038 - DEBUG: Sending: play w pass
+2010-11-19 12:56:02,041 - DEBUG: Response: []
+2010-11-19 12:56:02,057 - DEBUG: Sending: time_left b 91 0
+2010-11-19 12:56:02,058 - DEBUG: Response: []
+2010-11-19 12:56:02,058 - DEBUG: Sending: genmove b
+2010-11-19 12:56:02,323 - DEBUG: Response: ['A8']
+2010-11-19 12:56:02,641 - DEBUG: Sending: play w pass
+2010-11-19 12:56:02,646 - DEBUG: Response: []
+2010-11-19 12:56:02,668 - DEBUG: Sending: time_left b 91 0
+2010-11-19 12:56:02,669 - DEBUG: Response: []
+2010-11-19 12:56:02,669 - DEBUG: Sending: genmove b
+2010-11-19 12:56:02,959 - DEBUG: Response: ['D3']
+2010-11-19 12:56:03,314 - DEBUG: Sending: play w pass
+2010-11-19 12:56:03,322 - DEBUG: Response: []
+2010-11-19 12:56:03,341 - DEBUG: Sending: time_left b 91 0
+2010-11-19 12:56:03,342 - DEBUG: Response: []
+2010-11-19 12:56:03,342 - DEBUG: Sending: genmove b
+2010-11-19 12:56:03,571 - DEBUG: Response: ['B1']
+2010-11-19 12:56:03,886 - DEBUG: Sending: play w pass
+2010-11-19 12:56:03,889 - DEBUG: Response: []
+2010-11-19 12:56:03,914 - DEBUG: Sending: time_left b 91 0
+2010-11-19 12:56:03,914 - DEBUG: Response: []
+2010-11-19 12:56:03,914 - DEBUG: Sending: genmove b
+2010-11-19 12:56:04,162 - DEBUG: Response: ['PASS']
+2010-11-19 13:01:21,067 - DEBUG: Sending: boardsize 9
+2010-11-19 13:01:21,113 - DEBUG: Response: []
+2010-11-19 13:01:21,113 - DEBUG: Sending: komi 7.5
+2010-11-19 13:01:21,114 - DEBUG: Response: []
+2010-11-19 13:01:21,114 - DEBUG: Sending: clear_board
+2010-11-19 13:01:21,308 - DEBUG: Response: []
+2010-11-19 13:01:21,308 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:01:21,309 - DEBUG: Response: []
+2010-11-19 13:01:40,390 - DEBUG: Sending: time_left b 300 0
+2010-11-19 13:01:40,396 - DEBUG: Response: []
+2010-11-19 13:01:40,397 - DEBUG: Sending: genmove b
+2010-11-19 13:01:51,893 - DEBUG: Response: ['F5']
+2010-11-19 13:01:52,654 - DEBUG: Sending: play w d5
+2010-11-19 13:01:52,746 - DEBUG: Response: []
+2010-11-19 13:01:52,747 - DEBUG: Sending: time_left b 289 0
+2010-11-19 13:01:52,748 - DEBUG: Response: []
+2010-11-19 13:01:52,748 - DEBUG: Sending: genmove b
+2010-11-19 13:02:02,556 - DEBUG: Response: ['D6']
+2010-11-19 13:02:03,273 - DEBUG: Sending: play w f6
+2010-11-19 13:02:03,303 - DEBUG: Response: []
+2010-11-19 13:02:03,303 - DEBUG: Sending: time_left b 280 0
+2010-11-19 13:02:03,304 - DEBUG: Response: []
+2010-11-19 13:02:03,304 - DEBUG: Sending: genmove b
+2010-11-19 13:02:20,673 - DEBUG: Response: ['E5']
+2010-11-19 13:02:21,428 - DEBUG: Sending: play w e6
+2010-11-19 13:02:21,432 - DEBUG: Response: []
+2010-11-19 13:02:21,453 - DEBUG: Sending: time_left b 263 0
+2010-11-19 13:02:21,454 - DEBUG: Response: []
+2010-11-19 13:02:21,454 - DEBUG: Sending: genmove b
+2010-11-19 13:02:30,405 - DEBUG: Response: ['D4']
+2010-11-19 13:02:34,456 - DEBUG: Sending: play w c5
+2010-11-19 13:02:34,554 - DEBUG: Response: []
+2010-11-19 13:02:34,554 - DEBUG: Sending: time_left b 251 0
+2010-11-19 13:02:34,556 - DEBUG: Response: []
+2010-11-19 13:02:34,556 - DEBUG: Sending: genmove b
+2010-11-19 13:02:47,158 - DEBUG: Response: ['G6']
+2010-11-19 13:02:47,867 - DEBUG: Sending: play w g5
+2010-11-19 13:02:47,890 - DEBUG: Response: []
+2010-11-19 13:02:47,894 - DEBUG: Sending: time_left b 239 0
+2010-11-19 13:02:47,894 - DEBUG: Response: []
+2010-11-19 13:02:47,894 - DEBUG: Sending: genmove b
+2010-11-19 13:03:00,256 - DEBUG: Response: ['G7']
+2010-11-19 13:03:00,918 - DEBUG: Sending: play w e4
+2010-11-19 13:03:01,039 - DEBUG: Response: []
+2010-11-19 13:03:01,040 - DEBUG: Sending: time_left b 228 0
+2010-11-19 13:03:01,041 - DEBUG: Response: []
+2010-11-19 13:03:01,041 - DEBUG: Sending: genmove b
+2010-11-19 13:03:11,406 - DEBUG: Response: ['F4']
+2010-11-19 13:03:17,870 - DEBUG: Sending: play w e3
+2010-11-19 13:03:17,873 - DEBUG: Response: []
+2010-11-19 13:03:17,900 - DEBUG: Sending: time_left b 212 0
+2010-11-19 13:03:17,901 - DEBUG: Response: []
+2010-11-19 13:03:17,901 - DEBUG: Sending: genmove b
+2010-11-19 13:03:26,999 - DEBUG: Response: ['F3']
+2010-11-19 13:03:27,740 - DEBUG: Sending: play w f2
+2010-11-19 13:03:27,742 - DEBUG: Response: []
+2010-11-19 13:03:27,767 - DEBUG: Sending: time_left b 204 0
+2010-11-19 13:03:27,768 - DEBUG: Response: []
+2010-11-19 13:03:27,768 - DEBUG: Sending: genmove b
+2010-11-19 13:03:35,534 - DEBUG: Response: ['E2']
+2010-11-19 13:03:36,230 - DEBUG: Sending: play w d3
+2010-11-19 13:03:36,232 - DEBUG: Response: []
+2010-11-19 13:03:36,259 - DEBUG: Sending: time_left b 197 0
+2010-11-19 13:03:36,260 - DEBUG: Response: []
+2010-11-19 13:03:36,260 - DEBUG: Sending: genmove b
+2010-11-19 13:03:46,043 - DEBUG: Response: ['E7']
+2010-11-19 13:03:46,817 - DEBUG: Sending: play w g3
+2010-11-19 13:03:46,939 - DEBUG: Response: []
+2010-11-19 13:03:46,940 - DEBUG: Sending: time_left b 188 0
+2010-11-19 13:03:46,940 - DEBUG: Response: []
+2010-11-19 13:03:46,940 - DEBUG: Sending: genmove b
+2010-11-19 13:03:53,638 - DEBUG: Response: ['F7']
+2010-11-19 13:03:54,403 - DEBUG: Sending: play w c3
+2010-11-19 13:03:54,434 - DEBUG: Response: []
+2010-11-19 13:03:54,434 - DEBUG: Sending: time_left b 182 0
+2010-11-19 13:03:54,435 - DEBUG: Response: []
+2010-11-19 13:03:54,435 - DEBUG: Sending: genmove b
+2010-11-19 13:04:03,017 - DEBUG: Response: ['G2']
+2010-11-19 13:04:03,811 - DEBUG: Sending: play w f1
+2010-11-19 13:04:03,814 - DEBUG: Response: []
+2010-11-19 13:04:03,840 - DEBUG: Sending: time_left b 174 0
+2010-11-19 13:04:03,840 - DEBUG: Response: []
+2010-11-19 13:04:03,840 - DEBUG: Sending: genmove b
+2010-11-19 13:04:11,655 - DEBUG: Response: ['G1']
+2010-11-19 13:04:12,401 - DEBUG: Sending: play w e6
+2010-11-19 13:04:12,403 - DEBUG: Response: []
+2010-11-19 13:04:12,429 - DEBUG: Sending: time_left b 167 0
+2010-11-19 13:04:12,429 - DEBUG: Response: []
+2010-11-19 13:04:12,429 - DEBUG: Sending: genmove b
+2010-11-19 13:04:20,065 - DEBUG: Response: ['C6']
+2010-11-19 13:04:20,792 - DEBUG: Sending: play w h2
+2010-11-19 13:04:20,798 - DEBUG: Response: []
+2010-11-19 13:04:20,822 - DEBUG: Sending: time_left b 160 0
+2010-11-19 13:04:20,823 - DEBUG: Response: []
+2010-11-19 13:04:20,824 - DEBUG: Sending: genmove b
+2010-11-19 13:04:27,570 - DEBUG: Response: ['E1']
+2010-11-19 13:04:28,262 - DEBUG: Sending: play w f2
+2010-11-19 13:04:28,264 - DEBUG: Response: []
+2010-11-19 13:04:28,289 - DEBUG: Sending: time_left b 154 0
+2010-11-19 13:04:28,290 - DEBUG: Response: []
+2010-11-19 13:04:28,290 - DEBUG: Sending: genmove b
+2010-11-19 13:04:35,058 - DEBUG: Response: ['G4']
+2010-11-19 13:04:35,860 - DEBUG: Sending: play w h3
+2010-11-19 13:04:35,865 - DEBUG: Response: []
+2010-11-19 13:04:35,888 - DEBUG: Sending: time_left b 147 0
+2010-11-19 13:04:35,889 - DEBUG: Response: []
+2010-11-19 13:04:35,889 - DEBUG: Sending: genmove b
+2010-11-19 13:04:41,159 - DEBUG: Response: ['B6']
+2010-11-19 13:04:42,001 - DEBUG: Sending: play w h4
+2010-11-19 13:04:42,002 - DEBUG: Response: []
+2010-11-19 13:04:42,029 - DEBUG: Sending: time_left b 143 0
+2010-11-19 13:04:42,029 - DEBUG: Response: []
+2010-11-19 13:04:42,029 - DEBUG: Sending: genmove b
+2010-11-19 13:04:47,989 - DEBUG: Response: ['H5']
+2010-11-19 13:04:48,748 - DEBUG: Sending: play w c4
+2010-11-19 13:04:48,827 - DEBUG: Response: []
+2010-11-19 13:04:48,827 - DEBUG: Sending: time_left b 137 0
+2010-11-19 13:04:48,828 - DEBUG: Response: []
+2010-11-19 13:04:48,828 - DEBUG: Sending: genmove b
+2010-11-19 13:04:56,087 - DEBUG: Response: ['B5']
+2010-11-19 13:04:56,846 - DEBUG: Sending: play w h6
+2010-11-19 13:04:56,847 - DEBUG: Response: []
+2010-11-19 13:04:56,875 - DEBUG: Sending: time_left b 131 0
+2010-11-19 13:04:56,875 - DEBUG: Response: []
+2010-11-19 13:04:56,875 - DEBUG: Sending: genmove b
+2010-11-19 13:05:02,951 - DEBUG: Response: ['H7']
+2010-11-19 13:05:03,810 - DEBUG: Sending: play w b4
+2010-11-19 13:05:03,811 - DEBUG: Response: []
+2010-11-19 13:05:03,837 - DEBUG: Sending: time_left b 125 0
+2010-11-19 13:05:03,838 - DEBUG: Response: []
+2010-11-19 13:05:03,838 - DEBUG: Sending: genmove b
+2010-11-19 13:05:12,319 - DEBUG: Response: ['F1']
+2010-11-19 13:05:13,131 - DEBUG: Sending: play w d7
+2010-11-19 13:05:13,133 - DEBUG: Response: []
+2010-11-19 13:05:13,158 - DEBUG: Sending: time_left b 117 0
+2010-11-19 13:05:13,159 - DEBUG: Response: []
+2010-11-19 13:05:13,159 - DEBUG: Sending: genmove b
+2010-11-19 13:05:20,073 - DEBUG: Response: ['J6']
+2010-11-19 13:05:20,816 - DEBUG: Sending: play w b7
+2010-11-19 13:05:20,819 - DEBUG: Response: []
+2010-11-19 13:05:20,843 - DEBUG: Sending: time_left b 111 0
+2010-11-19 13:05:20,843 - DEBUG: Response: []
+2010-11-19 13:05:20,843 - DEBUG: Sending: genmove b
+2010-11-19 13:05:25,082 - DEBUG: Response: ['C7']
+2010-11-19 13:05:25,769 - DEBUG: Sending: play w d8
+2010-11-19 13:05:25,838 - DEBUG: Response: []
+2010-11-19 13:05:25,838 - DEBUG: Sending: time_left b 107 0
+2010-11-19 13:05:25,839 - DEBUG: Response: []
+2010-11-19 13:05:25,839 - DEBUG: Sending: genmove b
+2010-11-19 13:05:33,959 - DEBUG: Response: ['B8']
+2010-11-19 13:05:34,730 - DEBUG: Sending: play w c8
+2010-11-19 13:05:34,825 - DEBUG: Response: []
+2010-11-19 13:05:34,825 - DEBUG: Sending: time_left b 100 0
+2010-11-19 13:05:34,826 - DEBUG: Response: []
+2010-11-19 13:05:34,827 - DEBUG: Sending: genmove b
+2010-11-19 13:05:38,996 - DEBUG: Response: ['A7']
+2010-11-19 13:05:54,303 - DEBUG: Sending: play w a5
+2010-11-19 13:05:54,306 - DEBUG: Response: []
+2010-11-19 13:05:54,330 - DEBUG: Sending: time_left b 82 0
+2010-11-19 13:05:54,330 - DEBUG: Response: []
+2010-11-19 13:05:54,330 - DEBUG: Sending: genmove b
+2010-11-19 13:05:59,318 - DEBUG: Response: ['F6']
+2010-11-19 13:06:00,009 - DEBUG: Sending: play w a4
+2010-11-19 13:06:00,085 - DEBUG: Response: []
+2010-11-19 13:06:00,085 - DEBUG: Sending: time_left b 77 0
+2010-11-19 13:06:00,086 - DEBUG: Response: []
+2010-11-19 13:06:00,086 - DEBUG: Sending: genmove b
+2010-11-19 13:06:03,384 - DEBUG: Response: ['A6']
+2010-11-19 13:08:37,486 - DEBUG: Sending: boardsize 9
+2010-11-19 13:08:37,489 - DEBUG: Response: []
+2010-11-19 13:08:37,489 - DEBUG: Sending: komi 7.5
+2010-11-19 13:08:37,491 - DEBUG: Response: []
+2010-11-19 13:08:37,491 - DEBUG: Sending: clear_board
+2010-11-19 13:08:37,568 - DEBUG: Response: []
+2010-11-19 13:08:37,569 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:08:37,569 - DEBUG: Response: []
+2010-11-19 13:08:46,905 - DEBUG: Sending: play b d4
+2010-11-19 13:08:46,907 - DEBUG: Response: []
+2010-11-19 13:08:46,932 - DEBUG: Sending: time_left w 300 0
+2010-11-19 13:08:46,932 - DEBUG: Response: []
+2010-11-19 13:08:46,932 - DEBUG: Sending: genmove w
+2010-11-19 13:08:59,083 - DEBUG: Response: ['F6']
+2010-11-19 13:08:59,563 - DEBUG: Sending: play b d6
+2010-11-19 13:08:59,564 - DEBUG: Response: []
+2010-11-19 13:08:59,590 - DEBUG: Sending: time_left w 288 0
+2010-11-19 13:08:59,591 - DEBUG: Response: []
+2010-11-19 13:08:59,591 - DEBUG: Sending: genmove w
+2010-11-19 13:09:13,417 - DEBUG: Response: ['E5']
+2010-11-19 13:09:13,955 - DEBUG: Sending: play b d5
+2010-11-19 13:09:14,298 - DEBUG: Response: []
+2010-11-19 13:09:14,299 - DEBUG: Sending: time_left w 275 0
+2010-11-19 13:09:14,300 - DEBUG: Response: []
+2010-11-19 13:09:14,300 - DEBUG: Sending: genmove w
+2010-11-19 13:09:25,407 - DEBUG: Response: ['E7']
+2010-11-19 13:09:25,913 - DEBUG: Sending: play b g4
+2010-11-19 13:09:25,981 - DEBUG: Response: []
+2010-11-19 13:09:25,982 - DEBUG: Sending: time_left w 264 0
+2010-11-19 13:09:25,983 - DEBUG: Response: []
+2010-11-19 13:09:25,983 - DEBUG: Sending: genmove w
+2010-11-19 13:09:35,838 - DEBUG: Response: ['E4']
+2010-11-19 13:09:36,397 - DEBUG: Sending: play b e3
+2010-11-19 13:09:36,692 - DEBUG: Response: []
+2010-11-19 13:09:36,693 - DEBUG: Sending: time_left w 255 0
+2010-11-19 13:09:36,694 - DEBUG: Response: []
+2010-11-19 13:09:36,694 - DEBUG: Sending: genmove w
+2010-11-19 13:09:48,532 - DEBUG: Response: ['F3']
+2010-11-19 13:09:49,043 - DEBUG: Sending: play b f4
+2010-11-19 13:09:49,045 - DEBUG: Response: []
+2010-11-19 13:09:49,071 - DEBUG: Sending: time_left w 243 0
+2010-11-19 13:09:49,071 - DEBUG: Response: []
+2010-11-19 13:09:49,071 - DEBUG: Sending: genmove w
+2010-11-19 13:09:57,831 - DEBUG: Response: ['D3']
+2010-11-19 13:09:58,503 - DEBUG: Sending: play b e2
+2010-11-19 13:09:58,505 - DEBUG: Response: []
+2010-11-19 13:09:58,530 - DEBUG: Sending: time_left w 235 0
+2010-11-19 13:09:58,531 - DEBUG: Response: []
+2010-11-19 13:09:58,531 - DEBUG: Sending: genmove w
+2010-11-19 13:10:07,719 - DEBUG: Response: ['F5']
+2010-11-19 13:10:35,853 - DEBUG: Sending: play b c3
+2010-11-19 13:10:35,922 - DEBUG: Response: []
+2010-11-19 13:10:35,922 - DEBUG: Sending: time_left w 199 0
+2010-11-19 13:10:35,922 - DEBUG: Response: []
+2010-11-19 13:10:35,923 - DEBUG: Sending: genmove w
+2010-11-19 13:10:43,415 - DEBUG: Response: ['G3']
+2010-11-19 13:10:44,034 - DEBUG: Sending: play b h4
+2010-11-19 13:10:44,036 - DEBUG: Response: []
+2010-11-19 13:10:44,062 - DEBUG: Sending: time_left w 192 0
+2010-11-19 13:10:44,062 - DEBUG: Response: []
+2010-11-19 13:10:44,062 - DEBUG: Sending: genmove w
+2010-11-19 13:10:52,838 - DEBUG: Response: ['F2']
+2010-11-19 13:10:53,455 - DEBUG: Sending: play b e1
+2010-11-19 13:10:53,456 - DEBUG: Response: []
+2010-11-19 13:10:53,482 - DEBUG: Sending: time_left w 184 0
+2010-11-19 13:10:53,483 - DEBUG: Response: []
+2010-11-19 13:10:53,484 - DEBUG: Sending: genmove w
+2010-11-19 13:11:08,258 - DEBUG: Response: ['H3']
+2010-11-19 13:11:08,914 - DEBUG: Sending: play b d7
+2010-11-19 13:11:08,916 - DEBUG: Response: []
+2010-11-19 13:11:08,941 - DEBUG: Sending: time_left w 170 0
+2010-11-19 13:11:08,942 - DEBUG: Response: []
+2010-11-19 13:11:08,942 - DEBUG: Sending: genmove w
+2010-11-19 13:11:16,405 - DEBUG: Response: ['H5']
+2010-11-19 13:11:17,061 - DEBUG: Sending: play b e8
+2010-11-19 13:11:17,064 - DEBUG: Response: []
+2010-11-19 13:11:17,078 - DEBUG: Sending: time_left w 163 0
+2010-11-19 13:11:17,079 - DEBUG: Response: []
+2010-11-19 13:11:17,079 - DEBUG: Sending: genmove w
+2010-11-19 13:11:23,624 - DEBUG: Response: ['F8']
+2010-11-19 13:11:24,375 - DEBUG: Sending: play b e6
+2010-11-19 13:11:24,455 - DEBUG: Response: []
+2010-11-19 13:11:24,456 - DEBUG: Sending: time_left w 158 0
+2010-11-19 13:11:24,456 - DEBUG: Response: []
+2010-11-19 13:11:24,457 - DEBUG: Sending: genmove w
+2010-11-19 13:11:33,381 - DEBUG: Response: ['F7']
+2010-11-19 13:11:33,961 - DEBUG: Sending: play b e9
+2010-11-19 13:11:34,028 - DEBUG: Response: []
+2010-11-19 13:11:34,029 - DEBUG: Sending: time_left w 149 0
+2010-11-19 13:11:34,030 - DEBUG: Response: []
+2010-11-19 13:11:34,030 - DEBUG: Sending: genmove w
+2010-11-19 13:11:39,748 - DEBUG: Response: ['F1']
+2010-11-19 13:11:40,367 - DEBUG: Sending: play b c1
+2010-11-19 13:11:40,369 - DEBUG: Response: []
+2010-11-19 13:11:40,394 - DEBUG: Sending: time_left w 144 0
+2010-11-19 13:11:40,394 - DEBUG: Response: []
+2010-11-19 13:11:40,394 - DEBUG: Sending: genmove w
+2010-11-19 13:12:04,642 - DEBUG: Response: ['F9']
+2010-11-19 13:12:05,233 - DEBUG: Sending: play b c8
+2010-11-19 13:12:05,317 - DEBUG: Response: []
+2010-11-19 13:12:05,317 - DEBUG: Sending: time_left w 121 0
+2010-11-19 13:12:05,318 - DEBUG: Response: []
+2010-11-19 13:12:05,318 - DEBUG: Sending: genmove w
+2010-11-19 13:12:16,014 - DEBUG: Response: ['G5']
+2010-11-19 13:12:16,685 - DEBUG: Sending: play b b7
+2010-11-19 13:12:16,687 - DEBUG: Response: []
+2010-11-19 13:12:16,713 - DEBUG: Sending: time_left w 110 0
+2010-11-19 13:12:16,714 - DEBUG: Response: []
+2010-11-19 13:12:16,714 - DEBUG: Sending: genmove w
+2010-11-19 13:12:23,761 - DEBUG: Response: ['H7']
+2010-11-19 13:12:24,089 - DEBUG: Sending: play b b5
+2010-11-19 13:12:24,163 - DEBUG: Response: []
+2010-11-19 13:12:24,164 - DEBUG: Sending: time_left w 104 0
+2010-11-19 13:12:24,164 - DEBUG: Response: []
+2010-11-19 13:12:24,164 - DEBUG: Sending: genmove w
+2010-11-19 13:12:29,027 - DEBUG: Response: ['D1']
+2010-11-19 13:12:29,696 - DEBUG: Sending: play b d2
+2010-11-19 13:12:29,697 - DEBUG: Response: []
+2010-11-19 13:12:29,723 - DEBUG: Sending: time_left w 100 0
+2010-11-19 13:12:29,724 - DEBUG: Response: []
+2010-11-19 13:12:29,724 - DEBUG: Sending: genmove w
+2010-11-19 13:12:33,696 - DEBUG: Response: ['G8']
+2010-11-19 13:12:38,451 - DEBUG: Sending: play b pass
+2010-11-19 13:12:38,527 - DEBUG: Response: []
+2010-11-19 13:12:38,528 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:38,529 - DEBUG: Response: []
+2010-11-19 13:12:38,529 - DEBUG: Sending: genmove w
+2010-11-19 13:12:38,795 - DEBUG: Response: ['J4']
+2010-11-19 13:12:39,354 - DEBUG: Sending: play b pass
+2010-11-19 13:12:39,423 - DEBUG: Response: []
+2010-11-19 13:12:39,423 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:39,424 - DEBUG: Response: []
+2010-11-19 13:12:39,424 - DEBUG: Sending: genmove w
+2010-11-19 13:12:39,691 - DEBUG: Response: ['J3']
+2010-11-19 13:12:40,243 - DEBUG: Sending: play b pass
+2010-11-19 13:12:40,283 - DEBUG: Response: []
+2010-11-19 13:12:40,284 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:40,284 - DEBUG: Response: []
+2010-11-19 13:12:40,284 - DEBUG: Sending: genmove w
+2010-11-19 13:12:40,528 - DEBUG: Response: ['H1']
+2010-11-19 13:12:40,969 - DEBUG: Sending: play b pass
+2010-11-19 13:12:40,970 - DEBUG: Response: []
+2010-11-19 13:12:40,996 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:40,996 - DEBUG: Response: []
+2010-11-19 13:12:40,996 - DEBUG: Sending: genmove w
+2010-11-19 13:12:41,217 - DEBUG: Response: ['J2']
+2010-11-19 13:12:41,778 - DEBUG: Sending: play b pass
+2010-11-19 13:12:41,783 - DEBUG: Response: []
+2010-11-19 13:12:41,805 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:41,806 - DEBUG: Response: []
+2010-11-19 13:12:41,806 - DEBUG: Sending: genmove w
+2010-11-19 13:12:42,088 - DEBUG: Response: ['J8']
+2010-11-19 13:12:42,574 - DEBUG: Sending: play b pass
+2010-11-19 13:12:42,576 - DEBUG: Response: []
+2010-11-19 13:12:42,601 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:42,601 - DEBUG: Response: []
+2010-11-19 13:12:42,602 - DEBUG: Sending: genmove w
+2010-11-19 13:12:42,909 - DEBUG: Response: ['G4']
+2010-11-19 13:12:43,473 - DEBUG: Sending: play b pass
+2010-11-19 13:12:43,475 - DEBUG: Response: []
+2010-11-19 13:12:43,500 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:43,501 - DEBUG: Response: []
+2010-11-19 13:12:43,501 - DEBUG: Sending: genmove w
+2010-11-19 13:12:43,779 - DEBUG: Response: ['H9']
+2010-11-19 13:12:44,339 - DEBUG: Sending: play b pass
+2010-11-19 13:12:44,363 - DEBUG: Response: []
+2010-11-19 13:12:44,364 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:44,365 - DEBUG: Response: []
+2010-11-19 13:12:44,365 - DEBUG: Sending: genmove w
+2010-11-19 13:12:44,814 - DEBUG: Response: ['B1']
+2010-11-19 13:12:45,373 - DEBUG: Sending: play b b2
+2010-11-19 13:12:45,375 - DEBUG: Response: []
+2010-11-19 13:12:45,400 - DEBUG: Sending: time_left w 92 0
+2010-11-19 13:12:45,401 - DEBUG: Response: []
+2010-11-19 13:12:45,401 - DEBUG: Sending: genmove w
+2010-11-19 13:12:48,702 - DEBUG: Response: ['J7']
+2010-11-19 13:12:49,094 - DEBUG: Sending: play b c6
+2010-11-19 13:12:49,174 - DEBUG: Response: []
+2010-11-19 13:12:49,174 - DEBUG: Sending: time_left w 90 0
+2010-11-19 13:12:49,175 - DEBUG: Response: []
+2010-11-19 13:12:49,175 - DEBUG: Sending: genmove w
+2010-11-19 13:12:52,871 - DEBUG: Response: ['J6']
+2010-11-19 13:12:53,426 - DEBUG: Sending: play b a1
+2010-11-19 13:12:53,431 - DEBUG: Response: []
+2010-11-19 13:12:53,453 - DEBUG: Sending: time_left w 87 0
+2010-11-19 13:12:53,454 - DEBUG: Response: []
+2010-11-19 13:12:53,454 - DEBUG: Sending: genmove w
+2010-11-19 13:12:58,349 - DEBUG: Response: ['G6']
+2010-11-19 13:12:58,934 - DEBUG: Sending: play b d9
+2010-11-19 13:12:58,941 - DEBUG: Response: []
+2010-11-19 13:12:59,064 - DEBUG: Sending: time_left w 82 0
+2010-11-19 13:12:59,065 - DEBUG: Response: []
+2010-11-19 13:12:59,065 - DEBUG: Sending: genmove w
+2010-11-19 13:13:02,963 - DEBUG: Response: ['G2']
+2010-11-19 13:13:03,455 - DEBUG: Sending: play b c9
+2010-11-19 13:13:03,555 - DEBUG: Response: []
+2010-11-19 13:13:03,555 - DEBUG: Sending: time_left w 79 0
+2010-11-19 13:13:03,557 - DEBUG: Response: []
+2010-11-19 13:13:03,557 - DEBUG: Sending: genmove w
+2010-11-19 13:13:06,695 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:07,298 - DEBUG: Sending: play b a2
+2010-11-19 13:13:07,299 - DEBUG: Response: []
+2010-11-19 13:13:07,325 - DEBUG: Sending: time_left w 77 0
+2010-11-19 13:13:07,326 - DEBUG: Response: []
+2010-11-19 13:13:07,326 - DEBUG: Sending: genmove w
+2010-11-19 13:13:10,380 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:10,900 - DEBUG: Sending: play b d3
+2010-11-19 13:13:10,973 - DEBUG: Response: []
+2010-11-19 13:13:10,974 - DEBUG: Sending: time_left w 74 0
+2010-11-19 13:13:10,974 - DEBUG: Response: []
+2010-11-19 13:13:10,975 - DEBUG: Sending: genmove w
+2010-11-19 13:13:13,871 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:14,323 - DEBUG: Sending: play b b4
+2010-11-19 13:13:14,325 - DEBUG: Response: []
+2010-11-19 13:13:14,350 - DEBUG: Sending: time_left w 72 0
+2010-11-19 13:13:14,350 - DEBUG: Response: []
+2010-11-19 13:13:14,350 - DEBUG: Sending: genmove w
+2010-11-19 13:13:17,297 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:17,832 - DEBUG: Sending: play b c2
+2010-11-19 13:13:17,927 - DEBUG: Response: []
+2010-11-19 13:13:17,928 - DEBUG: Sending: time_left w 70 0
+2010-11-19 13:13:17,929 - DEBUG: Response: []
+2010-11-19 13:13:17,929 - DEBUG: Sending: genmove w
+2010-11-19 13:13:20,808 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:21,359 - DEBUG: Sending: play b b8
+2010-11-19 13:13:21,361 - DEBUG: Response: []
+2010-11-19 13:13:21,387 - DEBUG: Sending: time_left w 67 0
+2010-11-19 13:13:21,388 - DEBUG: Response: []
+2010-11-19 13:13:21,388 - DEBUG: Sending: genmove w
+2010-11-19 13:13:24,223 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:24,786 - DEBUG: Sending: play b a6
+2010-11-19 13:13:24,788 - DEBUG: Response: []
+2010-11-19 13:13:24,814 - DEBUG: Sending: time_left w 65 0
+2010-11-19 13:13:24,814 - DEBUG: Response: []
+2010-11-19 13:13:24,814 - DEBUG: Sending: genmove w
+2010-11-19 13:13:27,932 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:28,517 - DEBUG: Sending: play b a5
+2010-11-19 13:13:28,519 - DEBUG: Response: []
+2010-11-19 13:13:28,545 - DEBUG: Sending: time_left w 63 0
+2010-11-19 13:13:28,545 - DEBUG: Response: []
+2010-11-19 13:13:28,545 - DEBUG: Sending: genmove w
+2010-11-19 13:13:31,345 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:31,834 - DEBUG: Sending: play b a8
+2010-11-19 13:13:31,835 - DEBUG: Response: []
+2010-11-19 13:13:31,864 - DEBUG: Sending: time_left w 61 0
+2010-11-19 13:13:31,865 - DEBUG: Response: []
+2010-11-19 13:13:31,865 - DEBUG: Sending: genmove w
+2010-11-19 13:13:34,718 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:35,226 - DEBUG: Sending: play b a3
+2010-11-19 13:13:35,228 - DEBUG: Response: []
+2010-11-19 13:13:35,253 - DEBUG: Sending: time_left w 59 0
+2010-11-19 13:13:35,255 - DEBUG: Response: []
+2010-11-19 13:13:35,255 - DEBUG: Sending: genmove w
+2010-11-19 13:13:37,727 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:38,234 - DEBUG: Sending: play b c5
+2010-11-19 13:13:38,324 - DEBUG: Response: []
+2010-11-19 13:13:38,325 - DEBUG: Sending: time_left w 57 0
+2010-11-19 13:13:38,325 - DEBUG: Response: []
+2010-11-19 13:13:38,325 - DEBUG: Sending: genmove w
+2010-11-19 13:13:40,410 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:40,945 - DEBUG: Sending: play b b9
+2010-11-19 13:13:40,947 - DEBUG: Response: []
+2010-11-19 13:13:40,973 - DEBUG: Sending: time_left w 55 0
+2010-11-19 13:13:40,975 - DEBUG: Response: []
+2010-11-19 13:13:40,975 - DEBUG: Sending: genmove w
+2010-11-19 13:13:42,797 - DEBUG: Response: ['PASS']
+2010-11-19 13:13:43,257 - DEBUG: Sending: play b pass
+2010-11-19 13:13:43,258 - DEBUG: Response: []
+2010-11-19 13:19:07,482 - DEBUG: Sending: boardsize 9
+2010-11-19 13:19:07,490 - DEBUG: Response: []
+2010-11-19 13:19:07,490 - DEBUG: Sending: komi 7.5
+2010-11-19 13:19:07,491 - DEBUG: Response: []
+2010-11-19 13:19:07,491 - DEBUG: Sending: clear_board
+2010-11-19 13:19:07,874 - DEBUG: Response: []
+2010-11-19 13:19:07,874 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:19:07,875 - DEBUG: Response: []
+2010-11-19 13:19:22,498 - DEBUG: Sending: play b a6
+2010-11-19 13:19:22,787 - DEBUG: Response: []
+2010-11-19 13:19:22,788 - DEBUG: Sending: time_left w 300 0
+2010-11-19 13:19:22,789 - DEBUG: Response: []
+2010-11-19 13:19:22,789 - DEBUG: Sending: genmove w
+2010-11-19 13:19:32,908 - DEBUG: Response: ['F4']
+2010-11-19 13:19:33,329 - DEBUG: Sending: play b b2
+2010-11-19 13:19:33,408 - DEBUG: Response: []
+2010-11-19 13:19:33,409 - DEBUG: Sending: time_left w 290 0
+2010-11-19 13:19:33,409 - DEBUG: Response: []
+2010-11-19 13:19:33,410 - DEBUG: Sending: genmove w
+2010-11-19 13:19:58,629 - DEBUG: Response: ['D3']
+2010-11-19 13:19:59,044 - DEBUG: Sending: play b a2
+2010-11-19 13:19:59,046 - DEBUG: Response: []
+2010-11-19 13:19:59,072 - DEBUG: Sending: time_left w 265 0
+2010-11-19 13:19:59,072 - DEBUG: Response: []
+2010-11-19 13:19:59,072 - DEBUG: Sending: genmove w
+2010-11-19 13:20:09,508 - DEBUG: Response: ['F6']
+2010-11-19 13:20:09,949 - DEBUG: Sending: play b e9
+2010-11-19 13:20:10,248 - DEBUG: Response: []
+2010-11-19 13:20:10,249 - DEBUG: Sending: time_left w 255 0
+2010-11-19 13:20:10,250 - DEBUG: Response: []
+2010-11-19 13:20:10,250 - DEBUG: Sending: genmove w
+2010-11-19 13:20:21,825 - DEBUG: Response: ['D5']
+2010-11-19 13:20:27,320 - DEBUG: Sending: play b e1
+2010-11-19 13:20:27,323 - DEBUG: Response: []
+2010-11-19 13:20:27,348 - DEBUG: Sending: time_left w 240 0
+2010-11-19 13:20:27,348 - DEBUG: Response: []
+2010-11-19 13:20:27,348 - DEBUG: Sending: genmove w
+2010-11-19 13:20:36,626 - DEBUG: Response: ['F3']
+2010-11-19 13:20:37,053 - DEBUG: Sending: play b h3
+2010-11-19 13:20:37,061 - DEBUG: Response: []
+2010-11-19 13:20:37,080 - DEBUG: Sending: time_left w 231 0
+2010-11-19 13:20:37,081 - DEBUG: Response: []
+2010-11-19 13:20:37,081 - DEBUG: Sending: genmove w
+2010-11-19 13:20:47,026 - DEBUG: Response: ['E8']
+2010-11-19 13:20:47,592 - DEBUG: Sending: play b h1
+2010-11-19 13:20:47,593 - DEBUG: Response: []
+2010-11-19 13:20:47,619 - DEBUG: Sending: time_left w 222 0
+2010-11-19 13:20:47,619 - DEBUG: Response: []
+2010-11-19 13:20:47,620 - DEBUG: Sending: genmove w
+2010-11-19 13:21:03,734 - DEBUG: Response: ['D8']
+2010-11-19 13:21:04,131 - DEBUG: Sending: play b h9
+2010-11-19 13:21:04,212 - DEBUG: Response: []
+2010-11-19 13:21:04,212 - DEBUG: Sending: time_left w 206 0
+2010-11-19 13:21:04,214 - DEBUG: Response: []
+2010-11-19 13:21:04,214 - DEBUG: Sending: genmove w
+2010-11-19 13:21:15,992 - DEBUG: Response: ['G6']
+2010-11-19 13:21:16,376 - DEBUG: Sending: play b h7
+2010-11-19 13:21:16,378 - DEBUG: Response: []
+2010-11-19 13:21:16,403 - DEBUG: Sending: time_left w 195 0
+2010-11-19 13:21:16,403 - DEBUG: Response: []
+2010-11-19 13:21:16,403 - DEBUG: Sending: genmove w
+2010-11-19 13:21:28,372 - DEBUG: Response: ['H6']
+2010-11-19 13:21:28,856 - DEBUG: Sending: play b c4
+2010-11-19 13:21:28,860 - DEBUG: Response: []
+2010-11-19 13:21:28,882 - DEBUG: Sending: time_left w 184 0
+2010-11-19 13:21:28,884 - DEBUG: Response: []
+2010-11-19 13:21:28,884 - DEBUG: Sending: genmove w
+2010-11-19 13:21:37,219 - DEBUG: Response: ['C6']
+2010-11-19 13:21:37,646 - DEBUG: Sending: play b c2
+2010-11-19 13:21:37,648 - DEBUG: Response: []
+2010-11-19 13:21:37,673 - DEBUG: Sending: time_left w 176 0
+2010-11-19 13:21:37,674 - DEBUG: Response: []
+2010-11-19 13:21:37,674 - DEBUG: Sending: genmove w
+2010-11-19 13:21:43,776 - DEBUG: Response: ['G8']
+2010-11-19 13:21:44,168 - DEBUG: Sending: play b f2
+2010-11-19 13:21:44,180 - DEBUG: Response: []
+2010-11-19 13:21:44,191 - DEBUG: Sending: time_left w 170 0
+2010-11-19 13:21:44,191 - DEBUG: Response: []
+2010-11-19 13:21:44,191 - DEBUG: Sending: genmove w
+2010-11-19 13:21:51,257 - DEBUG: Response: ['B5']
+2010-11-19 13:21:51,720 - DEBUG: Sending: play b c9
+2010-11-19 13:21:52,018 - DEBUG: Response: []
+2010-11-19 13:21:52,019 - DEBUG: Sending: time_left w 164 0
+2010-11-19 13:21:52,020 - DEBUG: Response: []
+2010-11-19 13:21:52,020 - DEBUG: Sending: genmove w
+2010-11-19 13:22:00,275 - DEBUG: Response: ['C8']
+2010-11-19 13:22:00,639 - DEBUG: Sending: play b a1
+2010-11-19 13:22:00,645 - DEBUG: Response: []
+2010-11-19 13:22:00,662 - DEBUG: Sending: time_left w 156 0
+2010-11-19 13:22:00,663 - DEBUG: Response: []
+2010-11-19 13:22:00,663 - DEBUG: Sending: genmove w
+2010-11-19 13:22:07,099 - DEBUG: Response: ['C3']
+2010-11-19 13:22:07,558 - DEBUG: Sending: play b e5
+2010-11-19 13:22:07,574 - DEBUG: Response: []
+2010-11-19 13:22:07,582 - DEBUG: Sending: time_left w 151 0
+2010-11-19 13:22:07,584 - DEBUG: Response: []
+2010-11-19 13:22:07,584 - DEBUG: Sending: genmove w
+2010-11-19 13:22:22,026 - DEBUG: Response: ['E6']
+2010-11-19 13:22:22,411 - DEBUG: Sending: play b f7
+2010-11-19 13:22:22,710 - DEBUG: Response: []
+2010-11-19 13:22:22,710 - DEBUG: Sending: time_left w 137 0
+2010-11-19 13:22:22,711 - DEBUG: Response: []
+2010-11-19 13:22:22,711 - DEBUG: Sending: genmove w
+2010-11-19 13:22:27,844 - DEBUG: Response: ['G7']
+2010-11-19 13:22:29,156 - DEBUG: Sending: play b f1
+2010-11-19 13:22:29,158 - DEBUG: Response: []
+2010-11-19 13:22:29,183 - DEBUG: Sending: time_left w 131 0
+2010-11-19 13:22:29,184 - DEBUG: Response: []
+2010-11-19 13:22:29,184 - DEBUG: Sending: genmove w
+2010-11-19 13:22:34,504 - DEBUG: Response: ['B3']
+2010-11-19 13:22:34,963 - DEBUG: Sending: play b d7
+2010-11-19 13:22:35,035 - DEBUG: Response: []
+2010-11-19 13:22:35,036 - DEBUG: Sending: time_left w 126 0
+2010-11-19 13:22:35,037 - DEBUG: Response: []
+2010-11-19 13:22:35,037 - DEBUG: Sending: genmove w
+2010-11-19 13:22:42,712 - DEBUG: Response: ['C7']
+2010-11-19 13:22:43,091 - DEBUG: Sending: play b a4
+2010-11-19 13:22:43,100 - DEBUG: Response: []
+2010-11-19 13:22:43,118 - DEBUG: Sending: time_left w 119 0
+2010-11-19 13:22:43,118 - DEBUG: Response: []
+2010-11-19 13:22:43,119 - DEBUG: Sending: genmove w
+2010-11-19 13:22:48,454 - DEBUG: Response: ['B4']
+2010-11-19 13:22:48,813 - DEBUG: Sending: play b a3
+2010-11-19 13:22:48,816 - DEBUG: Response: []
+2010-11-19 13:22:48,841 - DEBUG: Sending: time_left w 115 0
+2010-11-19 13:22:48,841 - DEBUG: Response: []
+2010-11-19 13:22:48,841 - DEBUG: Sending: genmove w
+2010-11-19 13:22:54,390 - DEBUG: Response: ['A5']
+2010-11-19 13:22:54,855 - DEBUG: Sending: play b b1
+2010-11-19 13:22:54,858 - DEBUG: Response: []
+2010-11-19 13:22:54,882 - DEBUG: Sending: time_left w 110 0
+2010-11-19 13:22:54,884 - DEBUG: Response: []
+2010-11-19 13:22:54,884 - DEBUG: Sending: genmove w
+2010-11-19 13:22:59,262 - DEBUG: Response: ['E4']
+2010-11-19 13:22:59,945 - DEBUG: Sending: play b g2
+2010-11-19 13:22:59,950 - DEBUG: Response: []
+2010-11-19 13:22:59,973 - DEBUG: Sending: time_left w 106 0
+2010-11-19 13:22:59,974 - DEBUG: Response: []
+2010-11-19 13:22:59,974 - DEBUG: Sending: genmove w
+2010-11-19 13:23:04,397 - DEBUG: Response: ['D2']
+2010-11-19 13:23:04,991 - DEBUG: Sending: play b h2
+2010-11-19 13:23:04,992 - DEBUG: Response: []
+2010-11-19 13:23:05,017 - DEBUG: Sending: time_left w 102 0
+2010-11-19 13:23:05,018 - DEBUG: Response: []
+2010-11-19 13:23:05,018 - DEBUG: Sending: genmove w
+2010-11-19 13:23:08,840 - DEBUG: Response: ['F9']
+2010-11-19 13:23:09,277 - DEBUG: Sending: play b a7
+2010-11-19 13:23:09,297 - DEBUG: Response: []
+2010-11-19 13:23:09,304 - DEBUG: Sending: time_left w 99 0
+2010-11-19 13:23:09,305 - DEBUG: Response: []
+2010-11-19 13:23:09,305 - DEBUG: Sending: genmove w
+2010-11-19 13:23:15,250 - DEBUG: Response: ['D9']
+2010-11-19 13:23:15,708 - DEBUG: Sending: play b f5
+2010-11-19 13:23:15,713 - DEBUG: Response: []
+2010-11-19 13:23:15,736 - DEBUG: Sending: time_left w 94 0
+2010-11-19 13:23:15,737 - DEBUG: Response: []
+2010-11-19 13:23:15,737 - DEBUG: Sending: genmove w
+2010-11-19 13:23:19,863 - DEBUG: Response: ['G5']
+2010-11-19 13:23:20,221 - DEBUG: Sending: play b e7
+2010-11-19 13:23:20,225 - DEBUG: Response: []
+2010-11-19 13:23:20,248 - DEBUG: Sending: time_left w 90 0
+2010-11-19 13:23:20,249 - DEBUG: Response: []
+2010-11-19 13:23:20,249 - DEBUG: Sending: genmove w
+2010-11-19 13:23:26,968 - DEBUG: Response: ['D6']
+2010-11-19 13:23:27,346 - DEBUG: Sending: play b j1
+2010-11-19 13:23:27,348 - DEBUG: Response: []
+2010-11-19 13:23:27,374 - DEBUG: Sending: time_left w 84 0
+2010-11-19 13:23:27,374 - DEBUG: Response: []
+2010-11-19 13:23:27,374 - DEBUG: Sending: genmove w
+2010-11-19 13:23:31,518 - DEBUG: Response: ['D1']
+2010-11-19 13:23:31,986 - DEBUG: Sending: play b g4
+2010-11-19 13:23:31,988 - DEBUG: Response: []
+2010-11-19 13:23:32,013 - DEBUG: Sending: time_left w 81 0
+2010-11-19 13:23:32,014 - DEBUG: Response: []
+2010-11-19 13:23:32,014 - DEBUG: Sending: genmove w
+2010-11-19 13:23:35,279 - DEBUG: Response: ['H4']
+2010-11-19 13:23:35,708 - DEBUG: Sending: play b d4
+2010-11-19 13:23:35,710 - DEBUG: Response: []
+2010-11-19 13:23:35,736 - DEBUG: Sending: time_left w 78 0
+2010-11-19 13:23:35,736 - DEBUG: Response: []
+2010-11-19 13:23:35,736 - DEBUG: Sending: genmove w
+2010-11-19 13:23:38,886 - DEBUG: Response: ['H8']
+2010-11-19 13:23:39,302 - DEBUG: Sending: play b a9
+2010-11-19 13:23:39,592 - DEBUG: Response: []
+2010-11-19 13:23:39,593 - DEBUG: Sending: time_left w 76 0
+2010-11-19 13:23:39,593 - DEBUG: Response: []
+2010-11-19 13:23:39,594 - DEBUG: Sending: genmove w
+2010-11-19 13:23:42,689 - DEBUG: Response: ['J3']
+2010-11-19 13:23:43,121 - DEBUG: Sending: play b j8
+2010-11-19 13:23:43,143 - DEBUG: Response: []
+2010-11-19 13:23:43,149 - DEBUG: Sending: time_left w 73 0
+2010-11-19 13:23:43,150 - DEBUG: Response: []
+2010-11-19 13:23:43,150 - DEBUG: Sending: genmove w
+2010-11-19 13:23:52,678 - DEBUG: Response: ['G3']
+2010-11-19 13:23:53,092 - DEBUG: Sending: play b f5
+2010-11-19 13:23:53,094 - DEBUG: Response: []
+2010-11-19 13:23:53,119 - DEBUG: Sending: time_left w 64 0
+2010-11-19 13:23:53,121 - DEBUG: Response: []
+2010-11-19 13:23:53,121 - DEBUG: Sending: genmove w
+2010-11-19 13:23:55,463 - DEBUG: Response: ['B8']
+2010-11-19 13:23:55,912 - DEBUG: Sending: play b g9
+2010-11-19 13:23:55,914 - DEBUG: Response: []
+2010-11-19 13:23:55,940 - DEBUG: Sending: time_left w 62 0
+2010-11-19 13:23:55,941 - DEBUG: Response: []
+2010-11-19 13:23:55,942 - DEBUG: Sending: genmove w
+2010-11-19 13:23:58,232 - DEBUG: Response: ['A8']
+2010-11-19 13:23:58,597 - DEBUG: Sending: play b e2
+2010-11-19 13:23:58,612 - DEBUG: Response: []
+2010-11-19 13:23:58,622 - DEBUG: Sending: time_left w 61 0
+2010-11-19 13:23:58,623 - DEBUG: Response: []
+2010-11-19 13:23:58,623 - DEBUG: Sending: genmove w
+2010-11-19 13:24:01,295 - DEBUG: Response: ['E3']
+2010-11-19 13:24:01,712 - DEBUG: Sending: play b j5
+2010-11-19 13:24:01,719 - DEBUG: Response: []
+2010-11-19 13:24:01,739 - DEBUG: Sending: time_left w 59 0
+2010-11-19 13:24:01,739 - DEBUG: Response: []
+2010-11-19 13:24:01,739 - DEBUG: Sending: genmove w
+2010-11-19 13:24:04,515 - DEBUG: Response: ['J4']
+2010-11-19 13:24:04,990 - DEBUG: Sending: play b h5
+2010-11-19 13:24:04,991 - DEBUG: Response: []
+2010-11-19 13:24:05,019 - DEBUG: Sending: time_left w 57 0
+2010-11-19 13:24:05,019 - DEBUG: Response: []
+2010-11-19 13:24:05,019 - DEBUG: Sending: genmove w
+2010-11-19 13:24:08,072 - DEBUG: Response: ['B7']
+2010-11-19 13:24:08,445 - DEBUG: Sending: play b j7
+2010-11-19 13:24:08,561 - DEBUG: Response: []
+2010-11-19 13:24:08,562 - DEBUG: Sending: time_left w 54 0
+2010-11-19 13:24:08,562 - DEBUG: Response: []
+2010-11-19 13:24:08,562 - DEBUG: Sending: genmove w
+2010-11-19 13:24:10,941 - DEBUG: Response: ['J6']
+2010-11-19 13:24:11,362 - DEBUG: Sending: play b h5
+2010-11-19 13:24:11,365 - DEBUG: Response: []
+2010-11-19 13:24:11,390 - DEBUG: Sending: time_left w 53 0
+2010-11-19 13:24:11,390 - DEBUG: Response: []
+2010-11-19 13:24:11,390 - DEBUG: Sending: genmove w
+2010-11-19 13:24:15,997 - DEBUG: Response: ['J2']
+2010-11-19 13:24:16,465 - DEBUG: Sending: play b pass
+2010-11-19 13:24:16,474 - DEBUG: Response: []
+2010-11-19 13:24:16,485 - DEBUG: Sending: time_left w 49 0
+2010-11-19 13:24:16,485 - DEBUG: Response: []
+2010-11-19 13:24:16,485 - DEBUG: Sending: genmove w
+2010-11-19 13:24:16,830 - DEBUG: Response: ['G1']
+2010-11-19 13:24:17,376 - DEBUG: Sending: play b g2
+2010-11-19 13:24:17,378 - DEBUG: Response: []
+2010-11-19 13:24:17,404 - DEBUG: Sending: time_left w 49 0
+2010-11-19 13:24:17,404 - DEBUG: Response: []
+2010-11-19 13:24:17,404 - DEBUG: Sending: genmove w
+2010-11-19 13:24:20,137 - DEBUG: Response: ['H1']
+2010-11-19 13:24:20,552 - DEBUG: Sending: play b h3
+2010-11-19 13:24:20,554 - DEBUG: Response: []
+2010-11-19 13:24:20,580 - DEBUG: Sending: time_left w 47 0
+2010-11-19 13:24:20,581 - DEBUG: Response: []
+2010-11-19 13:24:20,581 - DEBUG: Sending: genmove w
+2010-11-19 13:24:22,558 - DEBUG: Response: ['F2']
+2010-11-19 13:24:23,008 - DEBUG: Sending: play b e1
+2010-11-19 13:24:23,023 - DEBUG: Response: []
+2010-11-19 13:24:23,035 - DEBUG: Sending: time_left w 45 0
+2010-11-19 13:24:23,036 - DEBUG: Response: []
+2010-11-19 13:24:23,036 - DEBUG: Sending: genmove w
+2010-11-19 13:24:25,071 - DEBUG: Response: ['E2']
+2010-11-19 13:24:25,426 - DEBUG: Sending: play b pass
+2010-11-19 13:24:25,429 - DEBUG: Response: []
+2010-11-19 13:24:25,454 - DEBUG: Sending: time_left w 44 0
+2010-11-19 13:24:25,454 - DEBUG: Response: []
+2010-11-19 13:24:25,455 - DEBUG: Sending: genmove w
+2010-11-19 13:24:25,705 - DEBUG: Response: ['E5']
+2010-11-19 13:24:26,183 - DEBUG: Sending: play b pass
+2010-11-19 13:24:26,270 - DEBUG: Response: []
+2010-11-19 13:24:26,270 - DEBUG: Sending: time_left w 44 0
+2010-11-19 13:24:26,271 - DEBUG: Response: []
+2010-11-19 13:24:26,271 - DEBUG: Sending: genmove w
+2010-11-19 13:24:26,523 - DEBUG: Response: ['J5']
+2010-11-19 13:24:27,042 - DEBUG: Sending: play b pass
+2010-11-19 13:24:27,043 - DEBUG: Response: []
+2010-11-19 13:24:27,144 - DEBUG: Sending: time_left w 44 0
+2010-11-19 13:24:27,144 - DEBUG: Response: []
+2010-11-19 13:24:27,144 - DEBUG: Sending: genmove w
+2010-11-19 13:24:27,388 - DEBUG: Response: ['PASS']
+2010-11-19 13:28:25,763 - DEBUG: Sending: boardsize 9
+2010-11-19 13:28:25,769 - DEBUG: Response: []
+2010-11-19 13:28:25,769 - DEBUG: Sending: komi 7.5
+2010-11-19 13:28:25,770 - DEBUG: Response: []
+2010-11-19 13:28:25,770 - DEBUG: Sending: clear_board
+2010-11-19 13:28:26,168 - DEBUG: Response: []
+2010-11-19 13:28:26,168 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:28:26,180 - DEBUG: Response: []
+2010-11-19 13:28:34,866 - DEBUG: Sending: time_left b 300 0
+2010-11-19 13:28:34,866 - DEBUG: Response: []
+2010-11-19 13:28:34,866 - DEBUG: Sending: genmove b
+2010-11-19 13:28:51,496 - DEBUG: Response: ['E6']
+2010-11-19 13:28:51,923 - DEBUG: Sending: play w d7
+2010-11-19 13:28:51,925 - DEBUG: Response: []
+2010-11-19 13:28:51,950 - DEBUG: Sending: time_left b 284 0
+2010-11-19 13:28:51,951 - DEBUG: Response: []
+2010-11-19 13:28:51,951 - DEBUG: Sending: genmove b
+2010-11-19 13:29:05,733 - DEBUG: Response: ['D6']
+2010-11-19 13:29:06,751 - DEBUG: Sending: play w c7
+2010-11-19 13:29:06,831 - DEBUG: Response: []
+2010-11-19 13:29:06,831 - DEBUG: Sending: time_left b 270 0
+2010-11-19 13:29:06,832 - DEBUG: Response: []
+2010-11-19 13:29:06,832 - DEBUG: Sending: genmove b
+2010-11-19 13:29:16,579 - DEBUG: Response: ['E7']
+2010-11-19 13:29:17,077 - DEBUG: Sending: play w g7
+2010-11-19 13:29:17,099 - DEBUG: Response: []
+2010-11-19 13:29:17,101 - DEBUG: Sending: time_left b 261 0
+2010-11-19 13:29:17,103 - DEBUG: Response: []
+2010-11-19 13:29:17,103 - DEBUG: Sending: genmove b
+2010-11-19 13:29:25,856 - DEBUG: Response: ['E8']
+2010-11-19 13:29:31,840 - DEBUG: Sending: play w g4
+2010-11-19 13:29:31,934 - DEBUG: Response: []
+2010-11-19 13:29:31,934 - DEBUG: Sending: time_left b 248 0
+2010-11-19 13:29:31,934 - DEBUG: Response: []
+2010-11-19 13:29:31,934 - DEBUG: Sending: genmove b
+2010-11-19 13:29:42,747 - DEBUG: Response: ['E3']
+2010-11-19 13:29:43,985 - DEBUG: Sending: play w b6
+2010-11-19 13:29:44,065 - DEBUG: Response: []
+2010-11-19 13:29:44,066 - DEBUG: Sending: time_left b 237 0
+2010-11-19 13:29:44,066 - DEBUG: Response: []
+2010-11-19 13:29:44,066 - DEBUG: Sending: genmove b
+2010-11-19 13:30:00,344 - DEBUG: Response: ['E2']
+2010-11-19 13:30:01,388 - DEBUG: Sending: play w b8
+2010-11-19 13:30:01,392 - DEBUG: Response: []
+2010-11-19 13:30:01,416 - DEBUG: Sending: time_left b 222 0
+2010-11-19 13:30:01,416 - DEBUG: Response: []
+2010-11-19 13:30:01,416 - DEBUG: Sending: genmove b
+2010-11-19 13:30:14,075 - DEBUG: Response: ['D8']
+2010-11-19 13:30:14,786 - DEBUG: Sending: play w a7
+2010-11-19 13:30:14,787 - DEBUG: Response: []
+2010-11-19 13:30:14,813 - DEBUG: Sending: time_left b 210 0
+2010-11-19 13:30:14,815 - DEBUG: Response: []
+2010-11-19 13:30:14,815 - DEBUG: Sending: genmove b
+2010-11-19 13:30:24,039 - DEBUG: Response: ['G2']
+2010-11-19 13:31:03,333 - DEBUG: Sending: play w h4
+2010-11-19 13:31:03,335 - DEBUG: Response: []
+2010-11-19 13:31:03,352 - DEBUG: Sending: time_left b 201 0
+2010-11-19 13:31:03,353 - DEBUG: Response: []
+2010-11-19 13:31:03,353 - DEBUG: Sending: genmove b
+2010-11-19 13:31:19,347 - DEBUG: Response: ['G8']
+2010-11-19 13:31:47,460 - DEBUG: Sending: play w h8
+2010-11-19 13:31:47,461 - DEBUG: Response: []
+2010-11-19 13:31:47,487 - DEBUG: Sending: time_left b 175 0
+2010-11-19 13:31:47,488 - DEBUG: Response: []
+2010-11-19 13:31:47,488 - DEBUG: Sending: genmove b
+2010-11-19 13:31:54,531 - DEBUG: Response: ['B5']
+2010-11-19 13:31:55,030 - DEBUG: Sending: play w f8
+2010-11-19 13:31:55,032 - DEBUG: Response: []
+2010-11-19 13:31:55,057 - DEBUG: Sending: time_left b 168 0
+2010-11-19 13:31:55,057 - DEBUG: Response: []
+2010-11-19 13:31:55,057 - DEBUG: Sending: genmove b
+2010-11-19 13:32:01,730 - DEBUG: Response: ['G6']
+2010-11-19 13:32:02,613 - DEBUG: Sending: play w h6
+2010-11-19 13:32:02,615 - DEBUG: Response: []
+2010-11-19 13:32:02,640 - DEBUG: Sending: time_left b 162 0
+2010-11-19 13:32:02,641 - DEBUG: Response: []
+2010-11-19 13:32:02,641 - DEBUG: Sending: genmove b
+2010-11-19 13:32:12,632 - DEBUG: Response: ['C5']
+2010-11-19 13:32:13,308 - DEBUG: Sending: play w c6
+2010-11-19 13:32:13,403 - DEBUG: Response: []
+2010-11-19 13:32:13,404 - DEBUG: Sending: time_left b 153 0
+2010-11-19 13:32:13,404 - DEBUG: Response: []
+2010-11-19 13:32:13,404 - DEBUG: Sending: genmove b
+2010-11-19 13:32:20,094 - DEBUG: Response: ['B9']
+2010-11-19 13:32:21,351 - DEBUG: Sending: play w c9
+2010-11-19 13:32:21,425 - DEBUG: Response: []
+2010-11-19 13:32:21,425 - DEBUG: Sending: time_left b 147 0
+2010-11-19 13:32:21,426 - DEBUG: Response: []
+2010-11-19 13:32:21,426 - DEBUG: Sending: genmove b
+2010-11-19 13:32:27,570 - DEBUG: Response: ['C8']
+2010-11-19 13:32:28,310 - DEBUG: Sending: play w a5
+2010-11-19 13:32:28,319 - DEBUG: Response: []
+2010-11-19 13:32:28,337 - DEBUG: Sending: time_left b 141 0
+2010-11-19 13:32:28,338 - DEBUG: Response: []
+2010-11-19 13:32:28,338 - DEBUG: Sending: genmove b
+2010-11-19 13:32:40,216 - DEBUG: Response: ['A4']
+2010-11-19 13:32:40,977 - DEBUG: Sending: play w b4
+2010-11-19 13:32:40,978 - DEBUG: Response: []
+2010-11-19 13:32:41,006 - DEBUG: Sending: time_left b 130 0
+2010-11-19 13:32:41,006 - DEBUG: Response: []
+2010-11-19 13:32:41,006 - DEBUG: Sending: genmove b
+2010-11-19 13:32:55,189 - DEBUG: Response: ['A6']
+2010-11-19 13:32:56,177 - DEBUG: Sending: play w f6
+2010-11-19 13:32:56,179 - DEBUG: Response: []
+2010-11-19 13:32:56,204 - DEBUG: Sending: time_left b 117 0
+2010-11-19 13:32:56,205 - DEBUG: Response: []
+2010-11-19 13:32:56,205 - DEBUG: Sending: genmove b
+2010-11-19 13:34:12,800 - DEBUG: Response: ['A5']
+2010-11-19 13:34:13,365 - DEBUG: Sending: play w f5
+2010-11-19 13:34:13,378 - DEBUG: Response: []
+2010-11-19 13:34:13,390 - DEBUG: Sending: time_left b 41 0
+2010-11-19 13:34:13,391 - DEBUG: Response: []
+2010-11-19 13:34:13,391 - DEBUG: Sending: genmove b
+2010-11-19 13:34:16,690 - DEBUG: Response: ['D4']
+2010-11-19 13:34:17,159 - DEBUG: Sending: play w h2
+2010-11-19 13:34:17,162 - DEBUG: Response: []
+2010-11-19 13:34:17,184 - DEBUG: Sending: time_left b 38 0
+2010-11-19 13:34:17,184 - DEBUG: Response: []
+2010-11-19 13:34:17,184 - DEBUG: Sending: genmove b
+2010-11-19 13:34:18,911 - DEBUG: Response: ['E5']
+2010-11-19 13:34:19,363 - DEBUG: Sending: play w g3
+2010-11-19 13:34:19,434 - DEBUG: Response: []
+2010-11-19 13:34:19,434 - DEBUG: Sending: time_left b 37 0
+2010-11-19 13:34:19,435 - DEBUG: Response: []
+2010-11-19 13:34:19,435 - DEBUG: Sending: genmove b
+2010-11-19 13:34:21,739 - DEBUG: Response: ['F2']
+2010-11-19 13:34:22,166 - DEBUG: Sending: play w g1
+2010-11-19 13:34:22,167 - DEBUG: Response: []
+2010-11-19 13:34:22,193 - DEBUG: Sending: time_left b 36 0
+2010-11-19 13:34:22,193 - DEBUG: Response: []
+2010-11-19 13:34:22,194 - DEBUG: Sending: genmove b
+2010-11-19 13:34:23,630 - DEBUG: Response: ['D2']
+2010-11-19 13:34:24,063 - DEBUG: Sending: play w e9
+2010-11-19 13:34:24,149 - DEBUG: Response: []
+2010-11-19 13:34:24,149 - DEBUG: Sending: time_left b 35 0
+2010-11-19 13:34:24,151 - DEBUG: Response: []
+2010-11-19 13:34:24,151 - DEBUG: Sending: genmove b
+2010-11-19 13:34:25,547 - DEBUG: Response: ['D9']
+2010-11-19 13:34:25,973 - DEBUG: Sending: play w f9
+2010-11-19 13:34:26,043 - DEBUG: Response: []
+2010-11-19 13:34:26,044 - DEBUG: Sending: time_left b 34 0
+2010-11-19 13:34:26,044 - DEBUG: Response: []
+2010-11-19 13:34:26,044 - DEBUG: Sending: genmove b
+2010-11-19 13:34:27,383 - DEBUG: Response: ['B7']
+2010-11-19 13:34:27,891 - DEBUG: Sending: play w f7
+2010-11-19 13:34:27,969 - DEBUG: Response: []
+2010-11-19 13:34:27,970 - DEBUG: Sending: time_left b 33 0
+2010-11-19 13:34:27,970 - DEBUG: Response: []
+2010-11-19 13:34:27,970 - DEBUG: Sending: genmove b
+2010-11-19 13:34:29,537 - DEBUG: Response: ['F1']
+2010-11-19 13:34:29,984 - DEBUG: Sending: play w h1
+2010-11-19 13:34:30,002 - DEBUG: Response: []
+2010-11-19 13:34:30,011 - DEBUG: Sending: time_left b 32 0
+2010-11-19 13:34:30,012 - DEBUG: Response: []
+2010-11-19 13:34:30,012 - DEBUG: Sending: genmove b
+2010-11-19 13:34:31,410 - DEBUG: Response: ['B2']
+2010-11-19 13:34:31,893 - DEBUG: Sending: play w f4
+2010-11-19 13:34:31,975 - DEBUG: Response: []
+2010-11-19 13:34:31,975 - DEBUG: Sending: time_left b 32 0
+2010-11-19 13:34:31,976 - DEBUG: Response: []
+2010-11-19 13:34:31,976 - DEBUG: Sending: genmove b
+2010-11-19 13:34:33,323 - DEBUG: Response: ['A3']
+2010-11-19 13:34:33,775 - DEBUG: Sending: play w e4
+2010-11-19 13:34:33,777 - DEBUG: Response: []
+2010-11-19 13:34:33,868 - DEBUG: Sending: time_left b 31 0
+2010-11-19 13:34:33,869 - DEBUG: Response: []
+2010-11-19 13:34:33,869 - DEBUG: Sending: genmove b
+2010-11-19 13:34:35,065 - DEBUG: Response: ['A2']
+2010-11-19 13:34:35,484 - DEBUG: Sending: play w f3
+2010-11-19 13:34:35,490 - DEBUG: Response: []
+2010-11-19 13:34:35,511 - DEBUG: Sending: time_left b 30 0
+2010-11-19 13:34:35,511 - DEBUG: Response: []
+2010-11-19 13:34:35,512 - DEBUG: Sending: genmove b
+2010-11-19 13:34:37,513 - DEBUG: Response: ['D1']
+2010-11-19 13:34:37,903 - DEBUG: Sending: play w j7
+2010-11-19 13:34:37,910 - DEBUG: Response: []
+2010-11-19 13:34:37,925 - DEBUG: Sending: time_left b 29 0
+2010-11-19 13:34:37,926 - DEBUG: Response: []
+2010-11-19 13:34:37,926 - DEBUG: Sending: genmove b
+2010-11-19 13:34:40,691 - DEBUG: Response: ['B1']
+2010-11-19 13:34:41,115 - DEBUG: Sending: play w h5
+2010-11-19 13:34:41,117 - DEBUG: Response: []
+2010-11-19 13:34:41,142 - DEBUG: Sending: time_left b 27 0
+2010-11-19 13:34:41,142 - DEBUG: Response: []
+2010-11-19 13:34:41,142 - DEBUG: Sending: genmove b
+2010-11-19 13:34:42,774 - DEBUG: Response: ['C1']
+2010-11-19 13:34:43,263 - DEBUG: Sending: play w j8
+2010-11-19 13:34:43,333 - DEBUG: Response: []
+2010-11-19 13:34:43,334 - DEBUG: Sending: time_left b 26 0
+2010-11-19 13:34:43,335 - DEBUG: Response: []
+2010-11-19 13:34:43,335 - DEBUG: Sending: genmove b
+2010-11-19 13:34:44,383 - DEBUG: Response: ['H9']
+2010-11-19 13:34:44,836 - DEBUG: Sending: play w j5
+2010-11-19 13:34:44,837 - DEBUG: Response: []
+2010-11-19 13:34:44,863 - DEBUG: Sending: time_left b 26 0
+2010-11-19 13:34:44,864 - DEBUG: Response: []
+2010-11-19 13:34:44,864 - DEBUG: Sending: genmove b
+2010-11-19 13:34:46,128 - DEBUG: Response: ['C3']
+2010-11-19 13:34:46,544 - DEBUG: Sending: play w g9
+2010-11-19 13:34:46,612 - DEBUG: Response: []
+2010-11-19 13:34:46,613 - DEBUG: Sending: time_left b 25 0
+2010-11-19 13:34:46,613 - DEBUG: Response: []
+2010-11-19 13:34:46,613 - DEBUG: Sending: genmove b
+2010-11-19 13:34:47,977 - DEBUG: Response: ['C4']
+2010-11-19 13:34:48,373 - DEBUG: Sending: play w j9
+2010-11-19 13:34:48,375 - DEBUG: Response: []
+2010-11-19 13:34:48,400 - DEBUG: Sending: time_left b 24 0
+2010-11-19 13:34:48,402 - DEBUG: Response: []
+2010-11-19 13:34:48,402 - DEBUG: Sending: genmove b
+2010-11-19 13:34:49,931 - DEBUG: Response: ['B6']
+2010-11-19 13:34:50,362 - DEBUG: Sending: play w g5
+2010-11-19 13:34:50,459 - DEBUG: Response: []
+2010-11-19 13:34:50,460 - DEBUG: Sending: time_left b 23 0
+2010-11-19 13:34:50,460 - DEBUG: Response: []
+2010-11-19 13:34:50,460 - DEBUG: Sending: genmove b
+2010-11-19 13:34:51,611 - DEBUG: Response: ['H3']
+2010-11-19 13:34:51,979 - DEBUG: Sending: play w j3
+2010-11-19 13:34:51,981 - DEBUG: Response: []
+2010-11-19 13:34:52,007 - DEBUG: Sending: time_left b 23 0
+2010-11-19 13:34:52,007 - DEBUG: Response: []
+2010-11-19 13:34:52,007 - DEBUG: Sending: genmove b
+2010-11-19 13:34:53,183 - DEBUG: Response: ['C7']
+2010-11-19 13:34:53,602 - DEBUG: Sending: play w pass
+2010-11-19 13:34:53,621 - DEBUG: Response: []
+2010-11-19 13:34:53,629 - DEBUG: Sending: time_left b 22 0
+2010-11-19 13:34:53,630 - DEBUG: Response: []
+2010-11-19 13:34:53,630 - DEBUG: Sending: genmove b
+2010-11-19 13:34:53,886 - DEBUG: Response: ['B3']
+2010-11-19 13:34:54,414 - DEBUG: Sending: play w pass
+2010-11-19 13:34:54,424 - DEBUG: Response: []
+2010-11-19 13:34:54,441 - DEBUG: Sending: time_left b 22 0
+2010-11-19 13:34:54,442 - DEBUG: Response: []
+2010-11-19 13:34:54,443 - DEBUG: Sending: genmove b
+2010-11-19 13:34:54,696 - DEBUG: Response: ['A8']
+2010-11-19 13:34:55,111 - DEBUG: Sending: play w pass
+2010-11-19 13:34:55,112 - DEBUG: Response: []
+2010-11-19 13:34:55,138 - DEBUG: Sending: time_left b 22 0
+2010-11-19 13:34:55,138 - DEBUG: Response: []
+2010-11-19 13:34:55,138 - DEBUG: Sending: genmove b
+2010-11-19 13:34:55,408 - DEBUG: Response: ['PASS']
+2010-11-19 13:38:13,074 - DEBUG: Sending: boardsize 9
+2010-11-19 13:38:13,088 - DEBUG: Response: []
+2010-11-19 13:38:13,088 - DEBUG: Sending: komi 7.5
+2010-11-19 13:38:13,088 - DEBUG: Response: []
+2010-11-19 13:38:13,089 - DEBUG: Sending: clear_board
+2010-11-19 13:38:13,236 - DEBUG: Response: []
+2010-11-19 13:38:13,236 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:38:13,238 - DEBUG: Response: []
+2010-11-19 13:38:36,691 - DEBUG: Sending: play b e5
+2010-11-19 13:38:36,693 - DEBUG: Response: []
+2010-11-19 13:38:36,719 - DEBUG: Sending: time_left w 300 0
+2010-11-19 13:38:36,720 - DEBUG: Response: []
+2010-11-19 13:38:36,720 - DEBUG: Sending: genmove w
+2010-11-19 13:38:54,745 - DEBUG: Response: ['E4']
+2010-11-19 13:38:55,556 - DEBUG: Sending: play b f5
+2010-11-19 13:38:55,558 - DEBUG: Response: []
+2010-11-19 13:38:55,583 - DEBUG: Sending: time_left w 282 0
+2010-11-19 13:38:55,584 - DEBUG: Response: []
+2010-11-19 13:38:55,584 - DEBUG: Sending: genmove w
+2010-11-19 13:39:08,277 - DEBUG: Response: ['D5']
+2010-11-19 13:39:08,996 - DEBUG: Sending: play b d6
+2010-11-19 13:39:09,003 - DEBUG: Response: []
+2010-11-19 13:39:09,023 - DEBUG: Sending: time_left w 270 0
+2010-11-19 13:39:09,024 - DEBUG: Response: []
+2010-11-19 13:39:09,024 - DEBUG: Sending: genmove w
+2010-11-19 13:39:23,692 - DEBUG: Response: ['C5']
+2010-11-19 13:39:24,607 - DEBUG: Sending: play b g3
+2010-11-19 13:39:24,612 - DEBUG: Response: []
+2010-11-19 13:39:24,634 - DEBUG: Sending: time_left w 256 0
+2010-11-19 13:39:24,635 - DEBUG: Response: []
+2010-11-19 13:39:24,635 - DEBUG: Sending: genmove w
+2010-11-19 13:39:33,549 - DEBUG: Response: ['C6']
+2010-11-19 13:39:34,977 - DEBUG: Sending: play b f7
+2010-11-19 13:39:34,979 - DEBUG: Response: []
+2010-11-19 13:39:35,006 - DEBUG: Sending: time_left w 248 0
+2010-11-19 13:39:35,006 - DEBUG: Response: []
+2010-11-19 13:39:35,006 - DEBUG: Sending: genmove w
+2010-11-19 13:39:45,727 - DEBUG: Response: ['D7']
+2010-11-19 13:39:46,647 - DEBUG: Sending: play b e2
+2010-11-19 13:39:46,649 - DEBUG: Response: []
+2010-11-19 13:39:46,674 - DEBUG: Sending: time_left w 238 0
+2010-11-19 13:39:46,675 - DEBUG: Response: []
+2010-11-19 13:39:46,675 - DEBUG: Sending: genmove w
+2010-11-19 13:39:54,795 - DEBUG: Response: ['E7']
+2010-11-19 13:39:58,019 - DEBUG: Sending: play b f8
+2010-11-19 13:39:58,032 - DEBUG: Response: []
+2010-11-19 13:39:58,039 - DEBUG: Sending: time_left w 230 0
+2010-11-19 13:39:58,039 - DEBUG: Response: []
+2010-11-19 13:39:58,039 - DEBUG: Sending: genmove w
+2010-11-19 13:40:10,233 - DEBUG: Response: ['D3']
+2010-11-19 13:40:11,553 - DEBUG: Sending: play b e6
+2010-11-19 13:40:11,654 - DEBUG: Response: []
+2010-11-19 13:40:11,654 - DEBUG: Sending: time_left w 219 0
+2010-11-19 13:40:11,655 - DEBUG: Response: []
+2010-11-19 13:40:11,655 - DEBUG: Sending: genmove w
+2010-11-19 13:40:19,937 - DEBUG: Response: ['F4']
+2010-11-19 13:40:21,073 - DEBUG: Sending: play b g4
+2010-11-19 13:40:21,075 - DEBUG: Response: []
+2010-11-19 13:40:21,101 - DEBUG: Sending: time_left w 211 0
+2010-11-19 13:40:21,101 - DEBUG: Response: []
+2010-11-19 13:40:21,101 - DEBUG: Sending: genmove w
+2010-11-19 13:40:28,358 - DEBUG: Response: ['F2']
+2010-11-19 13:40:31,288 - DEBUG: Sending: play b f3
+2010-11-19 13:40:31,289 - DEBUG: Response: []
+2010-11-19 13:40:31,317 - DEBUG: Sending: time_left w 204 0
+2010-11-19 13:40:31,317 - DEBUG: Response: []
+2010-11-19 13:40:31,318 - DEBUG: Sending: genmove w
+2010-11-19 13:40:39,503 - DEBUG: Response: ['G5']
+2010-11-19 13:40:40,545 - DEBUG: Sending: play b f6
+2010-11-19 13:40:40,548 - DEBUG: Response: []
+2010-11-19 13:40:40,570 - DEBUG: Sending: time_left w 197 0
+2010-11-19 13:40:40,571 - DEBUG: Response: []
+2010-11-19 13:40:40,571 - DEBUG: Sending: genmove w
+2010-11-19 13:40:53,303 - DEBUG: Response: ['E3']
+2010-11-19 13:40:55,599 - DEBUG: Sending: play b d2
+2010-11-19 13:40:55,601 - DEBUG: Response: []
+2010-11-19 13:40:55,627 - DEBUG: Sending: time_left w 185 0
+2010-11-19 13:40:55,627 - DEBUG: Response: []
+2010-11-19 13:40:55,627 - DEBUG: Sending: genmove w
+2010-11-19 13:41:03,385 - DEBUG: Response: ['G2']
+2010-11-19 13:41:07,576 - DEBUG: Sending: play b h2
+2010-11-19 13:41:07,578 - DEBUG: Response: []
+2010-11-19 13:41:07,604 - DEBUG: Sending: time_left w 178 0
+2010-11-19 13:41:07,604 - DEBUG: Response: []
+2010-11-19 13:41:07,605 - DEBUG: Sending: genmove w
+2010-11-19 13:41:19,177 - DEBUG: Response: ['H4']
+2010-11-19 13:41:22,068 - DEBUG: Sending: play b h3
+2010-11-19 13:41:22,070 - DEBUG: Response: []
+2010-11-19 13:41:22,096 - DEBUG: Sending: time_left w 167 0
+2010-11-19 13:41:22,096 - DEBUG: Response: []
+2010-11-19 13:41:22,096 - DEBUG: Sending: genmove w
+2010-11-19 13:41:30,048 - DEBUG: Response: ['C3']
+2010-11-19 13:41:31,023 - DEBUG: Sending: play b c7
+2010-11-19 13:41:31,361 - DEBUG: Response: []
+2010-11-19 13:41:31,362 - DEBUG: Sending: time_left w 159 0
+2010-11-19 13:41:31,363 - DEBUG: Response: []
+2010-11-19 13:41:31,363 - DEBUG: Sending: genmove w
+2010-11-19 13:41:42,451 - DEBUG: Response: ['C2']
+2010-11-19 13:41:43,866 - DEBUG: Sending: play b b7
+2010-11-19 13:41:43,868 - DEBUG: Response: []
+2010-11-19 13:41:43,894 - DEBUG: Sending: time_left w 149 0
+2010-11-19 13:41:43,895 - DEBUG: Response: []
+2010-11-19 13:41:43,895 - DEBUG: Sending: genmove w
+2010-11-19 13:41:51,567 - DEBUG: Response: ['F1']
+2010-11-19 13:41:52,416 - DEBUG: Sending: play b a4
+2010-11-19 13:41:52,418 - DEBUG: Response: []
+2010-11-19 13:41:52,444 - DEBUG: Sending: time_left w 142 0
+2010-11-19 13:41:52,444 - DEBUG: Response: []
+2010-11-19 13:41:52,444 - DEBUG: Sending: genmove w
+2010-11-19 13:42:01,875 - DEBUG: Response: ['H5']
+2010-11-19 13:42:03,402 - DEBUG: Sending: play b h1
+2010-11-19 13:42:03,404 - DEBUG: Response: []
+2010-11-19 13:42:03,433 - DEBUG: Sending: time_left w 133 0
+2010-11-19 13:42:03,434 - DEBUG: Response: []
+2010-11-19 13:42:03,434 - DEBUG: Sending: genmove w
+2010-11-19 13:42:08,148 - DEBUG: Response: ['H7']
+2010-11-19 13:42:10,702 - DEBUG: Sending: play b g6
+2010-11-19 13:42:10,707 - DEBUG: Response: []
+2010-11-19 13:42:10,729 - DEBUG: Sending: time_left w 129 0
+2010-11-19 13:42:10,729 - DEBUG: Response: []
+2010-11-19 13:42:10,729 - DEBUG: Sending: genmove w
+2010-11-19 13:42:15,645 - DEBUG: Response: ['H6']
+2010-11-19 13:42:17,870 - DEBUG: Sending: play b g1
+2010-11-19 13:42:17,872 - DEBUG: Response: []
+2010-11-19 13:42:17,898 - DEBUG: Sending: time_left w 125 0
+2010-11-19 13:42:17,898 - DEBUG: Response: []
+2010-11-19 13:42:17,899 - DEBUG: Sending: genmove w
+2010-11-19 13:42:23,189 - DEBUG: Response: ['D8']
+2010-11-19 13:42:25,037 - DEBUG: Sending: play b g8
+2010-11-19 13:42:25,039 - DEBUG: Response: []
+2010-11-19 13:42:25,065 - DEBUG: Sending: time_left w 120 0
+2010-11-19 13:42:25,065 - DEBUG: Response: []
+2010-11-19 13:42:25,065 - DEBUG: Sending: genmove w
+2010-11-19 13:42:29,908 - DEBUG: Response: ['H8']
+2010-11-19 13:42:31,405 - DEBUG: Sending: play b h9
+2010-11-19 13:42:31,476 - DEBUG: Response: []
+2010-11-19 13:42:31,476 - DEBUG: Sending: time_left w 116 0
+2010-11-19 13:42:31,478 - DEBUG: Response: []
+2010-11-19 13:42:31,478 - DEBUG: Sending: genmove w
+2010-11-19 13:42:35,907 - DEBUG: Response: ['C8']
+2010-11-19 13:42:37,289 - DEBUG: Sending: play b b8
+2010-11-19 13:42:37,367 - DEBUG: Response: []
+2010-11-19 13:42:37,368 - DEBUG: Sending: time_left w 112 0
+2010-11-19 13:42:37,369 - DEBUG: Response: []
+2010-11-19 13:42:37,369 - DEBUG: Sending: genmove w
+2010-11-19 13:42:43,647 - DEBUG: Response: ['C1']
+2010-11-19 13:42:44,826 - DEBUG: Sending: play b e1
+2010-11-19 13:42:44,828 - DEBUG: Response: []
+2010-11-19 13:42:44,853 - DEBUG: Sending: time_left w 106 0
+2010-11-19 13:42:44,855 - DEBUG: Response: []
+2010-11-19 13:42:44,855 - DEBUG: Sending: genmove w
+2010-11-19 13:42:51,458 - DEBUG: Response: ['F2']
+2010-11-19 13:42:52,345 - DEBUG: Sending: play b b6
+2010-11-19 13:42:52,347 - DEBUG: Response: []
+2010-11-19 13:42:52,372 - DEBUG: Sending: time_left w 100 0
+2010-11-19 13:42:52,372 - DEBUG: Response: []
+2010-11-19 13:42:52,372 - DEBUG: Sending: genmove w
+2010-11-19 13:42:56,046 - DEBUG: Response: ['G9']
+2010-11-19 13:42:59,281 - DEBUG: Sending: play b f9
+2010-11-19 13:42:59,285 - DEBUG: Response: []
+2010-11-19 13:42:59,308 - DEBUG: Sending: time_left w 97 0
+2010-11-19 13:42:59,308 - DEBUG: Response: []
+2010-11-19 13:42:59,309 - DEBUG: Sending: genmove w
+2010-11-19 13:43:03,668 - DEBUG: Response: ['B9']
+2010-11-19 13:43:08,738 - DEBUG: Sending: play b b5
+2010-11-19 13:43:08,747 - DEBUG: Response: []
+2010-11-19 13:43:08,757 - DEBUG: Sending: time_left w 94 0
+2010-11-19 13:43:08,757 - DEBUG: Response: []
+2010-11-19 13:43:08,757 - DEBUG: Sending: genmove w
+2010-11-19 13:43:12,568 - DEBUG: Response: ['G7']
+2010-11-19 13:43:16,739 - DEBUG: Sending: play b c4
+2010-11-19 13:43:16,741 - DEBUG: Response: []
+2010-11-19 13:43:16,766 - DEBUG: Sending: time_left w 91 0
+2010-11-19 13:43:16,767 - DEBUG: Response: []
+2010-11-19 13:43:16,767 - DEBUG: Sending: genmove w
+2010-11-19 13:43:21,941 - DEBUG: Response: ['D4']
+2010-11-19 13:43:29,755 - DEBUG: Sending: play b e8
+2010-11-19 13:43:29,829 - DEBUG: Response: []
+2010-11-19 13:43:29,829 - DEBUG: Sending: time_left w 86 0
+2010-11-19 13:43:29,830 - DEBUG: Response: []
+2010-11-19 13:43:29,830 - DEBUG: Sending: genmove w
+2010-11-19 13:43:34,591 - DEBUG: Response: ['D9']
+2010-11-19 13:43:37,830 - DEBUG: Sending: play b j8
+2010-11-19 13:43:37,859 - DEBUG: Response: []
+2010-11-19 13:43:37,860 - DEBUG: Sending: time_left w 82 0
+2010-11-19 13:43:37,861 - DEBUG: Response: []
+2010-11-19 13:43:37,861 - DEBUG: Sending: genmove w
+2010-11-19 13:43:41,299 - DEBUG: Response: ['J7']
+2010-11-19 13:43:47,693 - DEBUG: Sending: play b b4
+2010-11-19 13:43:47,769 - DEBUG: Response: []
+2010-11-19 13:43:47,769 - DEBUG: Sending: time_left w 79 0
+2010-11-19 13:43:47,770 - DEBUG: Response: []
+2010-11-19 13:43:47,770 - DEBUG: Sending: genmove w
+2010-11-19 13:43:50,846 - DEBUG: Response: ['J9']
+2010-11-19 13:43:54,931 - DEBUG: Sending: play b a8
+2010-11-19 13:43:55,016 - DEBUG: Response: []
+2010-11-19 13:43:55,017 - DEBUG: Sending: time_left w 77 0
+2010-11-19 13:43:55,017 - DEBUG: Response: []
+2010-11-19 13:43:55,017 - DEBUG: Sending: genmove w
+2010-11-19 13:43:58,372 - DEBUG: Response: ['G9']
+2010-11-19 13:43:59,741 - DEBUG: Sending: play b b3
+2010-11-19 13:43:59,829 - DEBUG: Response: []
+2010-11-19 13:43:59,829 - DEBUG: Sending: time_left w 74 0
+2010-11-19 13:43:59,830 - DEBUG: Response: []
+2010-11-19 13:43:59,830 - DEBUG: Sending: genmove w
+2010-11-19 13:44:02,923 - DEBUG: Response: ['E9']
+2010-11-19 13:44:03,506 - DEBUG: Sending: play b j4
+2010-11-19 13:44:03,507 - DEBUG: Response: []
+2010-11-19 13:44:03,533 - DEBUG: Sending: time_left w 71 0
+2010-11-19 13:44:03,534 - DEBUG: Response: []
+2010-11-19 13:44:03,534 - DEBUG: Sending: genmove w
+2010-11-19 13:44:08,499 - DEBUG: Response: ['F6']
+2010-11-19 13:44:09,005 - DEBUG: Sending: play b j5
+2010-11-19 13:44:09,007 - DEBUG: Response: []
+2010-11-19 13:44:09,032 - DEBUG: Sending: time_left w 67 0
+2010-11-19 13:44:09,033 - DEBUG: Response: []
+2010-11-19 13:44:09,033 - DEBUG: Sending: genmove w
+2010-11-19 13:44:13,943 - DEBUG: Response: ['D6']
+2010-11-19 13:44:14,429 - DEBUG: Sending: play b f1
+2010-11-19 13:44:14,432 - DEBUG: Response: []
+2010-11-19 13:44:14,454 - DEBUG: Sending: time_left w 63 0
+2010-11-19 13:44:14,455 - DEBUG: Response: []
+2010-11-19 13:44:14,455 - DEBUG: Sending: genmove w
+2010-11-19 13:44:16,973 - DEBUG: Response: ['B2']
+2010-11-19 13:44:17,443 - DEBUG: Sending: play b a6
+2010-11-19 13:44:17,530 - DEBUG: Response: []
+2010-11-19 13:44:17,530 - DEBUG: Sending: time_left w 61 0
+2010-11-19 13:44:17,531 - DEBUG: Response: []
+2010-11-19 13:44:17,531 - DEBUG: Sending: genmove w
+2010-11-19 13:44:21,847 - DEBUG: Response: ['A2']
+2010-11-19 13:44:22,239 - DEBUG: Sending: play b j3
+2010-11-19 13:44:22,248 - DEBUG: Response: []
+2010-11-19 13:44:22,266 - DEBUG: Sending: time_left w 57 0
+2010-11-19 13:44:22,267 - DEBUG: Response: []
+2010-11-19 13:44:22,267 - DEBUG: Sending: genmove w
+2010-11-19 13:44:24,712 - DEBUG: Response: ['E5']
+2010-11-19 13:44:25,152 - DEBUG: Sending: play b a9
+2010-11-19 13:44:25,164 - DEBUG: Response: []
+2010-11-19 13:44:25,179 - DEBUG: Sending: time_left w 55 0
+2010-11-19 13:44:25,179 - DEBUG: Response: []
+2010-11-19 13:44:25,179 - DEBUG: Sending: genmove w
+2010-11-19 13:44:28,067 - DEBUG: Response: ['F9']
+2010-11-19 13:44:28,716 - DEBUG: Sending: play b c9
+2010-11-19 13:44:28,816 - DEBUG: Response: []
+2010-11-19 13:44:28,816 - DEBUG: Sending: time_left w 53 0
+2010-11-19 13:44:28,817 - DEBUG: Response: []
+2010-11-19 13:44:28,817 - DEBUG: Sending: genmove w
+2010-11-19 13:44:31,024 - DEBUG: Response: ['J6']
+2010-11-19 13:44:31,485 - DEBUG: Sending: play b b9
+2010-11-19 13:44:31,511 - DEBUG: Response: []
+2010-11-19 13:44:31,512 - DEBUG: Sending: time_left w 52 0
+2010-11-19 13:44:31,513 - DEBUG: Response: []
+2010-11-19 13:44:31,513 - DEBUG: Sending: genmove w
+2010-11-19 13:44:34,100 - DEBUG: Response: ['A1']
+2010-11-19 13:44:34,552 - DEBUG: Sending: play b a3
+2010-11-19 13:44:34,557 - DEBUG: Response: []
+2010-11-19 13:44:34,579 - DEBUG: Sending: time_left w 50 0
+2010-11-19 13:44:34,579 - DEBUG: Response: []
+2010-11-19 13:44:34,579 - DEBUG: Sending: genmove w
+2010-11-19 13:44:36,999 - DEBUG: Response: ['F8']
+2010-11-19 13:44:37,405 - DEBUG: Sending: play b d1
+2010-11-19 13:44:37,412 - DEBUG: Response: []
+2010-11-19 13:44:37,422 - DEBUG: Sending: time_left w 48 0
+2010-11-19 13:44:37,423 - DEBUG: Response: []
+2010-11-19 13:44:37,423 - DEBUG: Sending: genmove w
+2010-11-19 13:44:39,370 - DEBUG: Response: ['J1']
+2010-11-19 13:44:39,808 - DEBUG: Sending: play b g2
+2010-11-19 13:44:39,811 - DEBUG: Response: []
+2010-11-19 13:44:39,831 - DEBUG: Sending: time_left w 47 0
+2010-11-19 13:44:39,833 - DEBUG: Response: []
+2010-11-19 13:44:39,833 - DEBUG: Sending: genmove w
+2010-11-19 13:44:41,799 - DEBUG: Response: ['PASS']
+2010-11-19 13:44:42,207 - DEBUG: Sending: play b j2
+2010-11-19 13:44:42,208 - DEBUG: Response: []
+2010-11-19 13:44:42,234 - DEBUG: Sending: time_left w 45 0
+2010-11-19 13:44:42,235 - DEBUG: Response: []
+2010-11-19 13:44:42,235 - DEBUG: Sending: genmove w
+2010-11-19 13:44:43,763 - DEBUG: Response: ['PASS']
+2010-11-19 13:44:44,279 - DEBUG: Sending: play b pass
+2010-11-19 13:44:44,281 - DEBUG: Response: []
+2010-11-19 13:46:06,086 - DEBUG: Sending: boardsize 9
+2010-11-19 13:46:06,092 - DEBUG: Response: []
+2010-11-19 13:46:06,092 - DEBUG: Sending: komi 7.5
+2010-11-19 13:46:06,093 - DEBUG: Response: []
+2010-11-19 13:46:06,093 - DEBUG: Sending: clear_board
+2010-11-19 13:46:06,457 - DEBUG: Response: []
+2010-11-19 13:46:06,457 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:46:06,458 - DEBUG: Response: []
+2010-11-19 13:46:23,213 - DEBUG: Sending: time_left b 300 0
+2010-11-19 13:46:23,217 - DEBUG: Response: []
+2010-11-19 13:46:23,217 - DEBUG: Sending: genmove b
+2010-11-19 13:46:38,053 - DEBUG: Response: ['D5']
+2010-11-19 13:46:39,541 - DEBUG: Sending: play w g4
+2010-11-19 13:46:39,543 - DEBUG: Response: []
+2010-11-19 13:46:39,560 - DEBUG: Sending: time_left b 285 0
+2010-11-19 13:46:39,560 - DEBUG: Response: []
+2010-11-19 13:46:39,560 - DEBUG: Sending: genmove b
+2010-11-19 13:46:50,900 - DEBUG: Response: ['F5']
+2010-11-19 13:46:52,366 - DEBUG: Sending: play w g5
+2010-11-19 13:46:52,368 - DEBUG: Response: []
+2010-11-19 13:46:52,393 - DEBUG: Sending: time_left b 275 0
+2010-11-19 13:46:52,394 - DEBUG: Response: []
+2010-11-19 13:46:52,394 - DEBUG: Sending: genmove b
+2010-11-19 13:47:03,118 - DEBUG: Response: ['F6']
+2010-11-19 13:47:04,343 - DEBUG: Sending: play w d3
+2010-11-19 13:47:04,345 - DEBUG: Response: []
+2010-11-19 13:47:04,367 - DEBUG: Sending: time_left b 265 0
+2010-11-19 13:47:04,367 - DEBUG: Response: []
+2010-11-19 13:47:04,368 - DEBUG: Sending: genmove b
+2010-11-19 13:47:17,335 - DEBUG: Response: ['E3']
+2010-11-19 13:47:19,084 - DEBUG: Sending: play w g6
+2010-11-19 13:47:19,091 - DEBUG: Response: []
+2010-11-19 13:47:19,111 - DEBUG: Sending: time_left b 252 0
+2010-11-19 13:47:19,112 - DEBUG: Response: []
+2010-11-19 13:47:19,112 - DEBUG: Sending: genmove b
+2010-11-19 13:47:28,470 - DEBUG: Response: ['G7']
+2010-11-19 13:47:29,681 - DEBUG: Sending: play w h7
+2010-11-19 13:47:29,707 - DEBUG: Response: []
+2010-11-19 13:47:29,707 - DEBUG: Sending: time_left b 244 0
+2010-11-19 13:47:29,708 - DEBUG: Response: []
+2010-11-19 13:47:29,708 - DEBUG: Sending: genmove b
+2010-11-19 13:47:41,747 - DEBUG: Response: ['G3']
+2010-11-19 13:47:43,284 - DEBUG: Sending: play w f4
+2010-11-19 13:47:43,289 - DEBUG: Response: []
+2010-11-19 13:47:43,311 - DEBUG: Sending: time_left b 232 0
+2010-11-19 13:47:43,311 - DEBUG: Response: []
+2010-11-19 13:47:43,312 - DEBUG: Sending: genmove b
+2010-11-19 13:47:51,785 - DEBUG: Response: ['E4']
+2010-11-19 13:47:53,016 - DEBUG: Sending: play w f7
+2010-11-19 13:47:53,018 - DEBUG: Response: []
+2010-11-19 13:47:53,043 - DEBUG: Sending: time_left b 224 0
+2010-11-19 13:47:53,044 - DEBUG: Response: []
+2010-11-19 13:47:53,044 - DEBUG: Sending: genmove b
+2010-11-19 13:48:00,986 - DEBUG: Response: ['G8']
+2010-11-19 13:48:02,188 - DEBUG: Sending: play w f3
+2010-11-19 13:48:02,189 - DEBUG: Response: []
+2010-11-19 13:48:02,215 - DEBUG: Sending: time_left b 217 0
+2010-11-19 13:48:02,216 - DEBUG: Response: []
+2010-11-19 13:48:02,216 - DEBUG: Sending: genmove b
+2010-11-19 13:48:09,779 - DEBUG: Response: ['E2']
+2010-11-19 13:48:10,747 - DEBUG: Sending: play w e7
+2010-11-19 13:48:10,758 - DEBUG: Response: []
+2010-11-19 13:48:10,774 - DEBUG: Sending: time_left b 210 0
+2010-11-19 13:48:10,776 - DEBUG: Response: []
+2010-11-19 13:48:10,776 - DEBUG: Sending: genmove b
+2010-11-19 13:48:27,838 - DEBUG: Response: ['D7']
+2010-11-19 13:48:28,910 - DEBUG: Sending: play w d8
+2010-11-19 13:48:28,912 - DEBUG: Response: []
+2010-11-19 13:48:28,937 - DEBUG: Sending: time_left b 194 0
+2010-11-19 13:48:28,938 - DEBUG: Response: []
+2010-11-19 13:48:28,938 - DEBUG: Sending: genmove b
+2010-11-19 13:48:35,905 - DEBUG: Response: ['D6']
+2010-11-19 13:48:37,123 - DEBUG: Sending: play w c8
+2010-11-19 13:48:37,127 - DEBUG: Response: []
+2010-11-19 13:48:37,153 - DEBUG: Sending: time_left b 188 0
+2010-11-19 13:48:37,154 - DEBUG: Response: []
+2010-11-19 13:48:37,155 - DEBUG: Sending: genmove b
+2010-11-19 13:48:51,165 - DEBUG: Response: ['H8']
+2010-11-19 13:48:52,357 - DEBUG: Sending: play w h6
+2010-11-19 13:48:52,359 - DEBUG: Response: []
+2010-11-19 13:48:52,384 - DEBUG: Sending: time_left b 174 0
+2010-11-19 13:48:52,385 - DEBUG: Response: []
+2010-11-19 13:48:52,385 - DEBUG: Sending: genmove b
+2010-11-19 13:49:02,303 - DEBUG: Response: ['G2']
+2010-11-19 13:49:03,633 - DEBUG: Sending: play w f8
+2010-11-19 13:49:03,634 - DEBUG: Response: []
+2010-11-19 13:49:03,660 - DEBUG: Sending: time_left b 165 0
+2010-11-19 13:49:03,660 - DEBUG: Response: []
+2010-11-19 13:49:03,660 - DEBUG: Sending: genmove b
+2010-11-19 13:49:14,176 - DEBUG: Response: ['H4']
+2010-11-19 13:49:15,447 - DEBUG: Sending: play w h3
+2010-11-19 13:49:15,453 - DEBUG: Response: []
+2010-11-19 13:49:15,474 - DEBUG: Sending: time_left b 155 0
+2010-11-19 13:49:15,474 - DEBUG: Response: []
+2010-11-19 13:49:15,475 - DEBUG: Sending: genmove b
+2010-11-19 13:49:20,935 - DEBUG: Response: ['H2']
+2010-11-19 13:49:22,000 - DEBUG: Sending: play w b6
+2010-11-19 13:49:22,013 - DEBUG: Response: []
+2010-11-19 13:49:22,024 - DEBUG: Sending: time_left b 150 0
+2010-11-19 13:49:22,025 - DEBUG: Response: []
+2010-11-19 13:49:22,025 - DEBUG: Sending: genmove b
+2010-11-19 13:49:28,700 - DEBUG: Response: ['J8']
+2010-11-19 13:49:29,933 - DEBUG: Sending: play w h9
+2010-11-19 13:49:30,219 - DEBUG: Response: []
+2010-11-19 13:49:30,219 - DEBUG: Sending: time_left b 144 0
+2010-11-19 13:49:30,221 - DEBUG: Response: []
+2010-11-19 13:49:30,221 - DEBUG: Sending: genmove b
+2010-11-19 13:49:35,311 - DEBUG: Response: ['B5']
+2010-11-19 13:49:36,437 - DEBUG: Sending: play w e6
+2010-11-19 13:49:36,440 - DEBUG: Response: []
+2010-11-19 13:49:36,465 - DEBUG: Sending: time_left b 140 0
+2010-11-19 13:49:36,465 - DEBUG: Response: []
+2010-11-19 13:49:36,465 - DEBUG: Sending: genmove b
+2010-11-19 13:49:42,316 - DEBUG: Response: ['E5']
+2010-11-19 13:49:43,503 - DEBUG: Sending: play w j3
+2010-11-19 13:49:43,504 - DEBUG: Response: []
+2010-11-19 13:49:43,530 - DEBUG: Sending: time_left b 134 0
+2010-11-19 13:49:43,531 - DEBUG: Response: []
+2010-11-19 13:49:43,531 - DEBUG: Sending: genmove b
+2010-11-19 13:49:58,732 - DEBUG: Response: ['F9']
+2010-11-19 13:49:59,828 - DEBUG: Sending: play w e8
+2010-11-19 13:50:00,124 - DEBUG: Response: []
+2010-11-19 13:50:00,125 - DEBUG: Sending: time_left b 120 0
+2010-11-19 13:50:00,126 - DEBUG: Response: []
+2010-11-19 13:50:00,126 - DEBUG: Sending: genmove b
+2010-11-19 13:50:05,586 - DEBUG: Response: ['B7']
+2010-11-19 13:50:06,893 - DEBUG: Sending: play w c7
+2010-11-19 13:50:06,899 - DEBUG: Response: []
+2010-11-19 13:50:06,920 - DEBUG: Sending: time_left b 115 0
+2010-11-19 13:50:06,921 - DEBUG: Response: []
+2010-11-19 13:50:06,921 - DEBUG: Sending: genmove b
+2010-11-19 13:50:12,780 - DEBUG: Response: ['C6']
+2010-11-19 13:50:13,931 - DEBUG: Sending: play w b8
+2010-11-19 13:50:13,932 - DEBUG: Response: []
+2010-11-19 13:50:13,973 - DEBUG: Sending: time_left b 110 0
+2010-11-19 13:50:13,974 - DEBUG: Response: []
+2010-11-19 13:50:13,974 - DEBUG: Sending: genmove b
+2010-11-19 13:50:20,602 - DEBUG: Response: ['J2']
+2010-11-19 13:50:21,897 - DEBUG: Sending: play w a7
+2010-11-19 13:50:21,969 - DEBUG: Response: []
+2010-11-19 13:50:21,969 - DEBUG: Sending: time_left b 104 0
+2010-11-19 13:50:21,970 - DEBUG: Response: []
+2010-11-19 13:50:21,970 - DEBUG: Sending: genmove b
+2010-11-19 13:50:26,028 - DEBUG: Response: ['H5']
+2010-11-19 13:53:57,949 - DEBUG: Sending: boardsize 9
+2010-11-19 13:53:58,020 - DEBUG: Response: []
+2010-11-19 13:53:58,020 - DEBUG: Sending: komi 7.5
+2010-11-19 13:53:58,021 - DEBUG: Response: []
+2010-11-19 13:53:58,021 - DEBUG: Sending: clear_board
+2010-11-19 13:53:58,150 - DEBUG: Response: []
+2010-11-19 13:53:58,150 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 13:53:58,151 - DEBUG: Response: []
+2010-11-19 13:54:04,221 - DEBUG: Sending: time_left b 300 0
+2010-11-19 13:54:04,224 - DEBUG: Response: []
+2010-11-19 13:54:04,224 - DEBUG: Sending: genmove b
+2010-11-19 13:54:15,713 - DEBUG: Response: ['F7']
+2010-11-19 13:54:16,303 - DEBUG: Sending: play w f4
+2010-11-19 13:54:16,305 - DEBUG: Response: []
+2010-11-19 13:54:16,331 - DEBUG: Sending: time_left b 289 0
+2010-11-19 13:54:16,332 - DEBUG: Response: []
+2010-11-19 13:54:16,332 - DEBUG: Sending: genmove b
+2010-11-19 13:54:26,539 - DEBUG: Response: ['D6']
+2010-11-19 13:54:27,053 - DEBUG: Sending: play w c4
+2010-11-19 13:54:27,054 - DEBUG: Response: []
+2010-11-19 13:54:27,080 - DEBUG: Sending: time_left b 279 0
+2010-11-19 13:54:27,080 - DEBUG: Response: []
+2010-11-19 13:54:27,080 - DEBUG: Sending: genmove b
+2010-11-19 13:54:59,975 - DEBUG: Response: ['D4']
+2010-11-19 13:55:00,583 - DEBUG: Sending: play w d3
+2010-11-19 13:55:00,592 - DEBUG: Response: []
+2010-11-19 13:55:00,610 - DEBUG: Sending: time_left b 247 0
+2010-11-19 13:55:00,611 - DEBUG: Response: []
+2010-11-19 13:55:00,611 - DEBUG: Sending: genmove b
+2010-11-19 13:55:09,176 - DEBUG: Response: ['C5']
+2010-11-19 13:55:11,176 - DEBUG: Sending: play w b4
+2010-11-19 13:55:11,179 - DEBUG: Response: []
+2010-11-19 13:55:11,203 - DEBUG: Sending: time_left b 237 0
+2010-11-19 13:55:11,204 - DEBUG: Response: []
+2010-11-19 13:55:11,204 - DEBUG: Sending: genmove b
+2010-11-19 13:55:28,479 - DEBUG: Response: ['C3']
+2010-11-19 13:55:29,001 - DEBUG: Sending: play w c2
+2010-11-19 13:55:29,004 - DEBUG: Response: []
+2010-11-19 13:55:29,023 - DEBUG: Sending: time_left b 221 0
+2010-11-19 13:55:29,024 - DEBUG: Response: []
+2010-11-19 13:55:29,024 - DEBUG: Sending: genmove b
+2010-11-19 13:55:41,576 - DEBUG: Response: ['E3']
+2010-11-19 13:55:42,238 - DEBUG: Sending: play w d2
+2010-11-19 13:55:42,240 - DEBUG: Response: []
+2010-11-19 13:55:42,264 - DEBUG: Sending: time_left b 209 0
+2010-11-19 13:55:42,265 - DEBUG: Response: []
+2010-11-19 13:55:42,265 - DEBUG: Sending: genmove b
+2010-11-19 13:56:12,566 - DEBUG: Response: ['E4']
+2010-11-19 13:56:13,226 - DEBUG: Sending: play w f3
+2010-11-19 13:56:13,227 - DEBUG: Response: []
+2010-11-19 13:56:13,253 - DEBUG: Sending: time_left b 179 0
+2010-11-19 13:56:13,253 - DEBUG: Response: []
+2010-11-19 13:56:13,253 - DEBUG: Sending: genmove b
+2010-11-19 13:56:21,550 - DEBUG: Response: ['E2']
+2010-11-19 13:56:22,047 - DEBUG: Sending: play w g6
+2010-11-19 13:56:22,049 - DEBUG: Response: []
+2010-11-19 13:56:22,074 - DEBUG: Sending: time_left b 172 0
+2010-11-19 13:56:22,075 - DEBUG: Response: []
+2010-11-19 13:56:22,075 - DEBUG: Sending: genmove b
+2010-11-19 13:56:34,452 - DEBUG: Response: ['G7']
+2010-11-19 13:56:34,930 - DEBUG: Sending: play w c7
+2010-11-19 13:56:35,272 - DEBUG: Response: []
+2010-11-19 13:56:35,273 - DEBUG: Sending: time_left b 160 0
+2010-11-19 13:56:35,274 - DEBUG: Response: []
+2010-11-19 13:56:35,275 - DEBUG: Sending: genmove b
+2010-11-19 13:56:41,277 - DEBUG: Response: ['F1']
+2010-11-19 13:56:41,792 - DEBUG: Sending: play w b5
+2010-11-19 13:56:41,872 - DEBUG: Response: []
+2010-11-19 13:56:41,873 - DEBUG: Sending: time_left b 154 0
+2010-11-19 13:56:41,874 - DEBUG: Response: []
+2010-11-19 13:56:41,874 - DEBUG: Sending: genmove b
+2010-11-19 13:56:47,928 - DEBUG: Response: ['E5']
+2010-11-19 13:56:49,882 - DEBUG: Sending: play w d7
+2010-11-19 13:56:49,885 - DEBUG: Response: []
+2010-11-19 13:56:49,909 - DEBUG: Sending: time_left b 148 0
+2010-11-19 13:56:49,911 - DEBUG: Response: []
+2010-11-19 13:56:49,911 - DEBUG: Sending: genmove b
+2010-11-19 13:56:56,104 - DEBUG: Response: ['E7']
+2010-11-19 13:56:56,734 - DEBUG: Sending: play w h6
+2010-11-19 13:56:56,829 - DEBUG: Response: []
+2010-11-19 13:56:56,829 - DEBUG: Sending: time_left b 142 0
+2010-11-19 13:56:56,831 - DEBUG: Response: []
+2010-11-19 13:56:56,831 - DEBUG: Sending: genmove b
+2010-11-19 13:57:28,556 - DEBUG: Response: ['F5']
+2010-11-19 13:57:29,249 - DEBUG: Sending: play w g3
+2010-11-19 13:57:29,273 - DEBUG: Response: []
+2010-11-19 13:57:29,276 - DEBUG: Sending: time_left b 111 0
+2010-11-19 13:57:29,277 - DEBUG: Response: []
+2010-11-19 13:57:29,277 - DEBUG: Sending: genmove b
+2010-11-19 13:57:34,095 - DEBUG: Response: ['G5']
+2010-11-19 13:57:34,551 - DEBUG: Sending: play w h4
+2010-11-19 13:57:34,553 - DEBUG: Response: []
+2010-11-19 13:57:34,579 - DEBUG: Sending: time_left b 107 0
+2010-11-19 13:57:34,579 - DEBUG: Response: []
+2010-11-19 13:57:34,579 - DEBUG: Sending: genmove b
+2010-11-19 13:57:44,977 - DEBUG: Response: ['H5']
+2010-11-19 13:57:45,630 - DEBUG: Sending: play w j5
+2010-11-19 13:57:45,636 - DEBUG: Response: []
+2010-11-19 13:57:45,657 - DEBUG: Sending: time_left b 97 0
+2010-11-19 13:57:45,658 - DEBUG: Response: []
+2010-11-19 13:57:45,658 - DEBUG: Sending: genmove b
+2010-11-19 13:57:55,921 - DEBUG: Response: ['H2']
+2010-11-19 13:57:56,377 - DEBUG: Sending: play w h3
+2010-11-19 13:57:56,389 - DEBUG: Response: []
+2010-11-19 13:57:56,406 - DEBUG: Sending: time_left b 87 0
+2010-11-19 13:57:56,406 - DEBUG: Response: []
+2010-11-19 13:57:56,406 - DEBUG: Sending: genmove b
+2010-11-19 13:57:59,783 - DEBUG: Response: ['H7']
+2010-11-19 13:58:00,321 - DEBUG: Sending: play w j2
+2010-11-19 13:58:00,327 - DEBUG: Response: []
+2010-11-19 13:58:00,348 - DEBUG: Sending: time_left b 85 0
+2010-11-19 13:58:00,349 - DEBUG: Response: []
+2010-11-19 13:58:00,349 - DEBUG: Sending: genmove b
+2010-11-19 13:58:03,413 - DEBUG: Response: ['H1']
+2010-11-19 13:58:03,899 - DEBUG: Sending: play w e8
+2010-11-19 13:58:03,902 - DEBUG: Response: []
+2010-11-19 13:58:03,926 - DEBUG: Sending: time_left b 82 0
+2010-11-19 13:58:03,927 - DEBUG: Response: []
+2010-11-19 13:58:03,927 - DEBUG: Sending: genmove b
+2010-11-19 13:58:15,391 - DEBUG: Response: ['C6']
+2010-11-19 13:58:15,963 - DEBUG: Sending: play w b6
+2010-11-19 13:58:15,965 - DEBUG: Response: []
+2010-11-19 13:58:15,991 - DEBUG: Sending: time_left b 72 0
+2010-11-19 13:58:15,991 - DEBUG: Response: []
+2010-11-19 13:58:15,991 - DEBUG: Sending: genmove b
+2010-11-19 13:58:18,725 - DEBUG: Response: ['F8']
+2010-11-19 13:58:19,277 - DEBUG: Sending: play w e9
+2010-11-19 13:58:19,351 - DEBUG: Response: []
+2010-11-19 13:58:19,352 - DEBUG: Sending: time_left b 69 0
+2010-11-19 13:58:19,353 - DEBUG: Response: []
+2010-11-19 13:58:19,353 - DEBUG: Sending: genmove b
+2010-11-19 13:58:21,922 - DEBUG: Response: ['F9']
+2010-11-19 13:58:22,495 - DEBUG: Sending: play w c9
+2010-11-19 13:58:22,567 - DEBUG: Response: []
+2010-11-19 13:58:22,568 - DEBUG: Sending: time_left b 68 0
+2010-11-19 13:58:22,568 - DEBUG: Response: []
+2010-11-19 13:58:22,568 - DEBUG: Sending: genmove b
+2010-11-19 13:58:25,481 - DEBUG: Response: ['G1']
+2010-11-19 13:58:26,002 - DEBUG: Sending: play w d1
+2010-11-19 13:58:26,012 - DEBUG: Response: []
+2010-11-19 13:58:26,029 - DEBUG: Sending: time_left b 65 0
+2010-11-19 13:58:26,030 - DEBUG: Response: []
+2010-11-19 13:58:26,030 - DEBUG: Sending: genmove b
+2010-11-19 13:58:28,883 - DEBUG: Response: ['E1']
+2010-11-19 13:58:29,427 - DEBUG: Sending: play w h8
+2010-11-19 13:58:29,433 - DEBUG: Response: []
+2010-11-19 13:58:29,454 - DEBUG: Sending: time_left b 63 0
+2010-11-19 13:58:29,454 - DEBUG: Response: []
+2010-11-19 13:58:29,454 - DEBUG: Sending: genmove b
+2010-11-19 13:58:32,256 - DEBUG: Response: ['F6']
+2010-11-19 13:58:32,817 - DEBUG: Sending: play w b8
+2010-11-19 13:58:32,819 - DEBUG: Response: []
+2010-11-19 13:58:32,844 - DEBUG: Sending: time_left b 61 0
+2010-11-19 13:58:32,845 - DEBUG: Response: []
+2010-11-19 13:58:32,845 - DEBUG: Sending: genmove b
+2010-11-19 13:58:35,601 - DEBUG: Response: ['J4']
+2010-11-19 13:58:36,155 - DEBUG: Sending: play w pass
+2010-11-19 13:58:36,156 - DEBUG: Response: []
+2010-11-19 13:58:36,182 - DEBUG: Sending: time_left b 59 0
+2010-11-19 13:58:36,182 - DEBUG: Response: []
+2010-11-19 13:58:36,182 - DEBUG: Sending: genmove b
+2010-11-19 13:58:36,444 - DEBUG: Response: ['PASS']
+2010-11-19 14:01:15,569 - DEBUG: Sending: boardsize 9
+2010-11-19 14:01:15,574 - DEBUG: Response: []
+2010-11-19 14:01:15,574 - DEBUG: Sending: komi 7.5
+2010-11-19 14:01:15,575 - DEBUG: Response: []
+2010-11-19 14:01:15,575 - DEBUG: Sending: clear_board
+2010-11-19 14:01:15,657 - DEBUG: Response: []
+2010-11-19 14:01:15,657 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 14:01:15,658 - DEBUG: Response: []
+2010-11-19 14:01:30,925 - DEBUG: Sending: time_left b 300 0
+2010-11-19 14:01:30,925 - DEBUG: Response: []
+2010-11-19 14:01:30,925 - DEBUG: Sending: genmove b
+2010-11-19 14:01:51,722 - DEBUG: Response: ['F5']
+2010-11-19 14:02:04,411 - DEBUG: Sending: play w c5
+2010-11-19 14:02:04,416 - DEBUG: Response: []
+2010-11-19 14:02:04,433 - DEBUG: Sending: time_left b 279 0
+2010-11-19 14:02:04,433 - DEBUG: Response: []
+2010-11-19 14:02:04,433 - DEBUG: Sending: genmove b
+2010-11-19 14:02:16,986 - DEBUG: Response: ['E6']
+2010-11-19 14:02:29,591 - DEBUG: Sending: play w d7
+2010-11-19 14:02:29,592 - DEBUG: Response: []
+2010-11-19 14:02:29,620 - DEBUG: Sending: time_left b 267 0
+2010-11-19 14:02:29,620 - DEBUG: Response: []
+2010-11-19 14:02:29,620 - DEBUG: Sending: genmove b
+2010-11-19 14:02:39,915 - DEBUG: Response: ['D4']
+2010-11-19 14:02:52,628 - DEBUG: Sending: play w c4
+2010-11-19 14:02:52,736 - DEBUG: Response: []
+2010-11-19 14:02:52,736 - DEBUG: Sending: time_left b 258 0
+2010-11-19 14:02:52,737 - DEBUG: Response: []
+2010-11-19 14:02:52,737 - DEBUG: Sending: genmove b
+2010-11-19 14:03:08,062 - DEBUG: Response: ['C6']
+2010-11-19 14:03:20,686 - DEBUG: Sending: play w d6
+2010-11-19 14:03:20,688 - DEBUG: Response: []
+2010-11-19 14:03:20,713 - DEBUG: Sending: time_left b 243 0
+2010-11-19 14:03:20,714 - DEBUG: Response: []
+2010-11-19 14:03:20,714 - DEBUG: Sending: genmove b
+2010-11-19 14:03:30,738 - DEBUG: Response: ['D5']
+2010-11-19 14:03:43,244 - DEBUG: Sending: play w e7
+2010-11-19 14:03:43,245 - DEBUG: Response: []
+2010-11-19 14:03:43,271 - DEBUG: Sending: time_left b 233 0
+2010-11-19 14:03:43,271 - DEBUG: Response: []
+2010-11-19 14:03:43,271 - DEBUG: Sending: genmove b
+2010-11-19 14:03:52,576 - DEBUG: Response: ['F7']
+2010-11-19 14:04:05,117 - DEBUG: Sending: play w f8
+2010-11-19 14:04:05,191 - DEBUG: Response: []
+2010-11-19 14:04:05,192 - DEBUG: Sending: time_left b 225 0
+2010-11-19 14:04:05,192 - DEBUG: Response: []
+2010-11-19 14:04:05,192 - DEBUG: Sending: genmove b
+2010-11-19 14:04:19,180 - DEBUG: Response: ['G7']
+2010-11-19 14:04:31,634 - DEBUG: Sending: play w c3
+2010-11-19 14:04:31,636 - DEBUG: Response: []
+2010-11-19 14:04:31,661 - DEBUG: Sending: time_left b 211 0
+2010-11-19 14:04:31,662 - DEBUG: Response: []
+2010-11-19 14:04:31,662 - DEBUG: Sending: genmove b
+2010-11-19 14:04:39,515 - DEBUG: Response: ['D3']
+2010-11-19 14:04:51,912 - DEBUG: Sending: play w g8
+2010-11-19 14:04:52,207 - DEBUG: Response: []
+2010-11-19 14:04:52,208 - DEBUG: Sending: time_left b 204 0
+2010-11-19 14:04:52,208 - DEBUG: Response: []
+2010-11-19 14:04:52,208 - DEBUG: Sending: genmove b
+2010-11-19 14:04:59,432 - DEBUG: Response: ['C2']
+2010-11-19 14:05:11,769 - DEBUG: Sending: play w b2
+2010-11-19 14:05:11,787 - DEBUG: Response: []
+2010-11-19 14:05:11,798 - DEBUG: Sending: time_left b 197 0
+2010-11-19 14:05:11,799 - DEBUG: Response: []
+2010-11-19 14:05:11,800 - DEBUG: Sending: genmove b
+2010-11-19 14:05:22,032 - DEBUG: Response: ['C7']
+2010-11-19 14:05:34,294 - DEBUG: Sending: play w b6
+2010-11-19 14:05:34,296 - DEBUG: Response: []
+2010-11-19 14:05:34,321 - DEBUG: Sending: time_left b 188 0
+2010-11-19 14:05:34,322 - DEBUG: Response: []
+2010-11-19 14:05:34,322 - DEBUG: Sending: genmove b
+2010-11-19 14:05:43,404 - DEBUG: Response: ['C8']
+2010-11-19 14:05:55,497 - DEBUG: Sending: play w e8
+2010-11-19 14:05:55,796 - DEBUG: Response: []
+2010-11-19 14:05:55,797 - DEBUG: Sending: time_left b 179 0
+2010-11-19 14:05:55,798 - DEBUG: Response: []
+2010-11-19 14:05:55,798 - DEBUG: Sending: genmove b
+2010-11-19 14:06:03,351 - DEBUG: Response: ['B7']
+2010-11-19 14:06:15,351 - DEBUG: Sending: play w h7
+2010-11-19 14:06:15,653 - DEBUG: Response: []
+2010-11-19 14:06:15,653 - DEBUG: Sending: time_left b 172 0
+2010-11-19 14:06:15,654 - DEBUG: Response: []
+2010-11-19 14:06:15,654 - DEBUG: Sending: genmove b
+2010-11-19 14:06:21,503 - DEBUG: Response: ['E2']
+2010-11-19 14:06:33,268 - DEBUG: Sending: play w a6
+2010-11-19 14:06:33,271 - DEBUG: Response: []
+2010-11-19 14:06:33,295 - DEBUG: Sending: time_left b 167 0
+2010-11-19 14:06:33,296 - DEBUG: Response: []
+2010-11-19 14:06:33,296 - DEBUG: Sending: genmove b
+2010-11-19 14:06:41,962 - DEBUG: Response: ['B1']
+2010-11-19 14:06:53,452 - DEBUG: Sending: play w a4
+2010-11-19 14:06:53,454 - DEBUG: Response: []
+2010-11-19 14:06:53,480 - DEBUG: Sending: time_left b 159 0
+2010-11-19 14:06:53,481 - DEBUG: Response: []
+2010-11-19 14:06:53,481 - DEBUG: Sending: genmove b
+2010-11-19 14:06:59,638 - DEBUG: Response: ['A2']
+2010-11-19 14:07:10,981 - DEBUG: Sending: play w b3
+2010-11-19 14:07:10,982 - DEBUG: Response: []
+2010-11-19 14:07:11,008 - DEBUG: Sending: time_left b 153 0
+2010-11-19 14:07:11,008 - DEBUG: Response: []
+2010-11-19 14:07:11,008 - DEBUG: Sending: genmove b
+2010-11-19 14:07:17,447 - DEBUG: Response: ['B5']
+2010-11-19 14:07:28,504 - DEBUG: Sending: play w d8
+2010-11-19 14:07:28,785 - DEBUG: Response: []
+2010-11-19 14:07:28,786 - DEBUG: Sending: time_left b 147 0
+2010-11-19 14:07:28,787 - DEBUG: Response: []
+2010-11-19 14:07:28,787 - DEBUG: Sending: genmove b
+2010-11-19 14:07:37,070 - DEBUG: Response: ['H6']
+2010-11-19 14:07:48,022 - DEBUG: Sending: play w h8
+2010-11-19 14:07:48,180 - DEBUG: Response: []
+2010-11-19 14:07:48,180 - DEBUG: Sending: time_left b 140 0
+2010-11-19 14:07:48,181 - DEBUG: Response: []
+2010-11-19 14:07:48,181 - DEBUG: Sending: genmove b
+2010-11-19 14:08:08,197 - DEBUG: Response: ['A1']
+2010-11-19 14:08:18,827 - DEBUG: Sending: play w a8
+2010-11-19 14:08:18,832 - DEBUG: Response: []
+2010-11-19 14:08:18,854 - DEBUG: Sending: time_left b 120 0
+2010-11-19 14:08:18,855 - DEBUG: Response: []
+2010-11-19 14:08:18,855 - DEBUG: Sending: genmove b
+2010-11-19 14:08:24,163 - DEBUG: Response: ['C1']
+2010-11-19 14:08:34,389 - DEBUG: Sending: play w e5
+2010-11-19 14:08:34,391 - DEBUG: Response: []
+2010-11-19 14:08:34,417 - DEBUG: Sending: time_left b 115 0
+2010-11-19 14:08:34,418 - DEBUG: Response: []
+2010-11-19 14:08:34,418 - DEBUG: Sending: genmove b
+2010-11-19 14:08:38,467 - DEBUG: Response: ['E4']
+2010-11-19 14:08:48,088 - DEBUG: Sending: play w d2
+2010-11-19 14:08:48,094 - DEBUG: Response: []
+2010-11-19 14:08:48,115 - DEBUG: Sending: time_left b 112 0
+2010-11-19 14:08:48,116 - DEBUG: Response: []
+2010-11-19 14:08:48,116 - DEBUG: Sending: genmove b
+2010-11-19 14:08:55,866 - DEBUG: Response: ['D1']
+2010-11-19 14:09:04,783 - DEBUG: Sending: play w h5
+2010-11-19 14:09:04,784 - DEBUG: Response: []
+2010-11-19 14:09:04,810 - DEBUG: Sending: time_left b 105 0
+2010-11-19 14:09:04,811 - DEBUG: Response: []
+2010-11-19 14:09:04,811 - DEBUG: Sending: genmove b
+2010-11-19 14:09:09,557 - DEBUG: Response: ['A3']
+2010-11-19 14:11:14,519 - DEBUG: Sending: boardsize 9
+2010-11-19 14:11:14,522 - DEBUG: Response: []
+2010-11-19 14:11:14,522 - DEBUG: Sending: komi 7.5
+2010-11-19 14:11:14,523 - DEBUG: Response: []
+2010-11-19 14:11:14,523 - DEBUG: Sending: clear_board
+2010-11-19 14:11:14,890 - DEBUG: Response: []
+2010-11-19 14:11:14,890 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 14:11:14,890 - DEBUG: Response: []
+2010-11-19 14:11:40,629 - DEBUG: Sending: time_left b 300 0
+2010-11-19 14:11:40,632 - DEBUG: Response: []
+2010-11-19 14:11:40,632 - DEBUG: Sending: genmove b
+2010-11-19 14:11:53,959 - DEBUG: Response: ['E6']
+2010-11-19 14:11:54,447 - DEBUG: Sending: play w e4
+2010-11-19 14:11:54,458 - DEBUG: Response: []
+2010-11-19 14:11:54,475 - DEBUG: Sending: time_left b 287 0
+2010-11-19 14:11:54,475 - DEBUG: Response: []
+2010-11-19 14:11:54,475 - DEBUG: Sending: genmove b
+2010-11-19 14:12:06,666 - DEBUG: Response: ['E5']
+2010-11-19 14:12:21,887 - DEBUG: Sending: play w c3
+2010-11-19 14:12:21,891 - DEBUG: Response: []
+2010-11-19 14:12:21,914 - DEBUG: Sending: time_left b 275 0
+2010-11-19 14:12:21,915 - DEBUG: Response: []
+2010-11-19 14:12:21,915 - DEBUG: Sending: genmove b
+2010-11-19 14:12:33,579 - DEBUG: Response: ['D4']
+2010-11-19 14:12:51,612 - DEBUG: Sending: play w d3
+2010-11-19 14:12:51,616 - DEBUG: Response: []
+2010-11-19 14:12:51,639 - DEBUG: Sending: time_left b 264 0
+2010-11-19 14:12:51,640 - DEBUG: Response: []
+2010-11-19 14:12:51,640 - DEBUG: Sending: genmove b
+2010-11-19 14:13:07,224 - DEBUG: Response: ['F4']
+2010-11-19 14:13:17,344 - DEBUG: Sending: play w e3
+2010-11-19 14:13:17,345 - DEBUG: Response: []
+2010-11-19 14:13:17,371 - DEBUG: Sending: time_left b 249 0
+2010-11-19 14:13:17,371 - DEBUG: Response: []
+2010-11-19 14:13:17,371 - DEBUG: Sending: genmove b
+2010-11-19 14:13:28,746 - DEBUG: Response: ['F3']
+2010-11-19 14:13:36,288 - DEBUG: Sending: play w c7
+2010-11-19 14:13:36,359 - DEBUG: Response: []
+2010-11-19 14:13:36,359 - DEBUG: Sending: time_left b 239 0
+2010-11-19 14:13:36,360 - DEBUG: Response: []
+2010-11-19 14:13:36,360 - DEBUG: Sending: genmove b
+2010-11-19 14:13:45,832 - DEBUG: Response: ['F2']
+2010-11-19 14:13:57,855 - DEBUG: Sending: play w d5
+2010-11-19 14:13:57,860 - DEBUG: Response: []
+2010-11-19 14:13:57,882 - DEBUG: Sending: time_left b 230 0
+2010-11-19 14:13:57,883 - DEBUG: Response: []
+2010-11-19 14:13:57,883 - DEBUG: Sending: genmove b
+2010-11-19 14:14:07,356 - DEBUG: Response: ['D6']
+2010-11-19 14:14:13,518 - DEBUG: Sending: play w c5
+2010-11-19 14:14:13,523 - DEBUG: Response: []
+2010-11-19 14:14:13,545 - DEBUG: Sending: time_left b 221 0
+2010-11-19 14:14:13,546 - DEBUG: Response: []
+2010-11-19 14:14:13,547 - DEBUG: Sending: genmove b
+2010-11-19 14:14:22,365 - DEBUG: Response: ['C6']
+2010-11-19 14:14:29,594 - DEBUG: Sending: play w b6
+2010-11-19 14:14:29,598 - DEBUG: Response: []
+2010-11-19 14:14:29,621 - DEBUG: Sending: time_left b 213 0
+2010-11-19 14:14:29,621 - DEBUG: Response: []
+2010-11-19 14:14:29,621 - DEBUG: Sending: genmove b
+2010-11-19 14:14:43,702 - DEBUG: Response: ['B7']
+2010-11-19 14:14:52,527 - DEBUG: Sending: play w b8
+2010-11-19 14:14:52,532 - DEBUG: Response: []
+2010-11-19 14:14:52,554 - DEBUG: Sending: time_left b 199 0
+2010-11-19 14:14:52,555 - DEBUG: Response: []
+2010-11-19 14:14:52,555 - DEBUG: Sending: genmove b
+2010-11-19 14:15:11,396 - DEBUG: Response: ['B5']
+2010-11-19 14:15:21,205 - DEBUG: Sending: play w c4
+2010-11-19 14:15:21,207 - DEBUG: Response: []
+2010-11-19 14:15:21,223 - DEBUG: Sending: time_left b 181 0
+2010-11-19 14:15:21,223 - DEBUG: Response: []
+2010-11-19 14:15:21,224 - DEBUG: Sending: genmove b
+2010-11-19 14:15:27,230 - DEBUG: Response: ['A6']
+2010-11-19 14:15:37,064 - DEBUG: Sending: play w g7
+2010-11-19 14:15:37,065 - DEBUG: Response: []
+2010-11-19 14:15:37,091 - DEBUG: Sending: time_left b 176 0
+2010-11-19 14:15:37,092 - DEBUG: Response: []
+2010-11-19 14:15:37,092 - DEBUG: Sending: genmove b
+2010-11-19 14:16:02,574 - DEBUG: Response: ['G5']
+2010-11-19 14:16:11,568 - DEBUG: Sending: play w e8
+2010-11-19 14:16:11,572 - DEBUG: Response: []
+2010-11-19 14:16:11,595 - DEBUG: Sending: time_left b 151 0
+2010-11-19 14:16:11,596 - DEBUG: Response: []
+2010-11-19 14:16:11,596 - DEBUG: Sending: genmove b
+2010-11-19 14:16:18,504 - DEBUG: Response: ['D8']
+2010-11-19 14:16:30,201 - DEBUG: Sending: play w e7
+2010-11-19 14:16:30,489 - DEBUG: Response: []
+2010-11-19 14:16:30,489 - DEBUG: Sending: time_left b 145 0
+2010-11-19 14:16:30,489 - DEBUG: Response: []
+2010-11-19 14:16:30,489 - DEBUG: Sending: genmove b
+2010-11-19 14:16:38,207 - DEBUG: Response: ['D7']
+2010-11-19 14:16:46,916 - DEBUG: Sending: play w h5
+2010-11-19 14:16:46,918 - DEBUG: Response: []
+2010-11-19 14:16:46,943 - DEBUG: Sending: time_left b 137 0
+2010-11-19 14:16:46,943 - DEBUG: Response: []
+2010-11-19 14:16:46,943 - DEBUG: Sending: genmove b
+2010-11-19 14:16:53,947 - DEBUG: Response: ['H6']
+2010-11-19 14:17:02,864 - DEBUG: Sending: play w h7
+2010-11-19 14:17:02,935 - DEBUG: Response: []
+2010-11-19 14:17:02,935 - DEBUG: Sending: time_left b 131 0
+2010-11-19 14:17:02,936 - DEBUG: Response: []
+2010-11-19 14:17:02,936 - DEBUG: Sending: genmove b
+2010-11-19 14:17:09,466 - DEBUG: Response: ['G6']
+2010-11-19 14:17:19,450 - DEBUG: Sending: play w j6
+2010-11-19 14:17:19,786 - DEBUG: Response: []
+2010-11-19 14:17:19,786 - DEBUG: Sending: time_left b 125 0
+2010-11-19 14:17:19,787 - DEBUG: Response: []
+2010-11-19 14:17:19,787 - DEBUG: Sending: genmove b
+2010-11-19 14:17:25,949 - DEBUG: Response: ['H4']
+2010-11-19 14:17:34,909 - DEBUG: Sending: play w e2
+2010-11-19 14:17:34,911 - DEBUG: Response: []
+2010-11-19 14:17:34,937 - DEBUG: Sending: time_left b 119 0
+2010-11-19 14:17:34,938 - DEBUG: Response: []
+2010-11-19 14:17:34,938 - DEBUG: Sending: genmove b
+2010-11-19 14:17:41,380 - DEBUG: Response: ['E9']
+2010-11-19 14:17:50,983 - DEBUG: Sending: play w f8
+2010-11-19 14:17:50,987 - DEBUG: Response: []
+2010-11-19 14:17:51,010 - DEBUG: Sending: time_left b 113 0
+2010-11-19 14:17:51,011 - DEBUG: Response: []
+2010-11-19 14:17:51,012 - DEBUG: Sending: genmove b
+2010-11-19 14:17:55,520 - DEBUG: Response: ['J5']
+2010-11-19 14:18:04,708 - DEBUG: Sending: play w j8
+2010-11-19 14:18:04,996 - DEBUG: Response: []
+2010-11-19 14:18:04,997 - DEBUG: Sending: time_left b 109 0
+2010-11-19 14:18:04,998 - DEBUG: Response: []
+2010-11-19 14:18:04,998 - DEBUG: Sending: genmove b
+2010-11-19 14:18:09,042 - DEBUG: Response: ['E1']
+2010-11-19 14:18:18,336 - DEBUG: Sending: play w d1
+2010-11-19 14:18:18,339 - DEBUG: Response: []
+2010-11-19 14:18:18,354 - DEBUG: Sending: time_left b 106 0
+2010-11-19 14:18:18,355 - DEBUG: Response: []
+2010-11-19 14:18:18,355 - DEBUG: Sending: genmove b
+2010-11-19 14:18:22,260 - DEBUG: Response: ['F1']
+2010-11-19 14:18:30,812 - DEBUG: Sending: play w b4
+2010-11-19 14:18:30,814 - DEBUG: Response: []
+2010-11-19 14:18:30,840 - DEBUG: Sending: time_left b 102 0
+2010-11-19 14:18:30,840 - DEBUG: Response: []
+2010-11-19 14:18:30,840 - DEBUG: Sending: genmove b
+2010-11-19 14:18:34,629 - DEBUG: Response: ['A4']
+2010-11-19 14:18:43,236 - DEBUG: Sending: play w h9
+2010-11-19 14:18:43,319 - DEBUG: Response: []
+2010-11-19 14:18:43,319 - DEBUG: Sending: time_left b 99 0
+2010-11-19 14:18:43,320 - DEBUG: Response: []
+2010-11-19 14:18:43,320 - DEBUG: Sending: genmove b
+2010-11-19 14:18:49,981 - DEBUG: Response: ['A5']
+2010-11-19 14:18:57,492 - DEBUG: Sending: play w a3
+2010-11-19 14:18:57,494 - DEBUG: Response: []
+2010-11-19 14:18:57,523 - DEBUG: Sending: time_left b 93 0
+2010-11-19 14:18:57,524 - DEBUG: Response: []
+2010-11-19 14:18:57,524 - DEBUG: Sending: genmove b
+2010-11-19 14:19:00,992 - DEBUG: Response: ['B6']
+2010-11-19 14:19:08,079 - DEBUG: Sending: play w f9
+2010-11-19 14:19:08,081 - DEBUG: Response: []
+2010-11-19 14:19:08,106 - DEBUG: Sending: time_left b 91 0
+2010-11-19 14:19:08,107 - DEBUG: Response: []
+2010-11-19 14:19:08,107 - DEBUG: Sending: genmove b
+2010-11-19 14:19:15,951 - DEBUG: Response: ['D9']
+2010-11-19 14:19:23,119 - DEBUG: Sending: play w f6
+2010-11-19 14:19:23,122 - DEBUG: Response: []
+2010-11-19 14:19:23,146 - DEBUG: Sending: time_left b 83 0
+2010-11-19 14:19:23,147 - DEBUG: Response: []
+2010-11-19 14:19:23,147 - DEBUG: Sending: genmove b
+2010-11-19 14:19:27,844 - DEBUG: Response: ['F5']
+2010-11-19 14:19:31,117 - DEBUG: Sending: play w f7
+2010-11-19 14:19:31,119 - DEBUG: Response: []
+2010-11-19 14:19:31,144 - DEBUG: Sending: time_left b 79 0
+2010-11-19 14:19:31,145 - DEBUG: Response: []
+2010-11-19 14:19:31,145 - DEBUG: Sending: genmove b
+2010-11-19 14:19:35,577 - DEBUG: Response: ['J7']
+2010-11-19 14:19:36,049 - DEBUG: Sending: play w g8
+2010-11-19 14:19:36,147 - DEBUG: Response: []
+2010-11-19 14:19:36,148 - DEBUG: Sending: time_left b 75 0
+2010-11-19 14:19:36,148 - DEBUG: Response: []
+2010-11-19 14:19:36,148 - DEBUG: Sending: genmove b
+2010-11-19 14:19:39,216 - DEBUG: Response: ['J6']
+2010-11-19 14:19:39,670 - DEBUG: Sending: play w b3
+2010-11-19 14:19:39,694 - DEBUG: Response: []
+2010-11-19 14:19:39,697 - DEBUG: Sending: time_left b 73 0
+2010-11-19 14:19:39,697 - DEBUG: Response: []
+2010-11-19 14:19:39,697 - DEBUG: Sending: genmove b
+2010-11-19 14:19:43,620 - DEBUG: Response: ['J3']
+2010-11-19 14:19:44,083 - DEBUG: Sending: play w d2
+2010-11-19 14:19:44,087 - DEBUG: Response: []
+2010-11-19 14:19:44,102 - DEBUG: Sending: time_left b 70 0
+2010-11-19 14:19:44,103 - DEBUG: Response: []
+2010-11-19 14:19:44,103 - DEBUG: Sending: genmove b
+2010-11-19 14:19:47,345 - DEBUG: Response: ['G3']
+2010-11-19 14:19:47,784 - DEBUG: Sending: play w c1
+2010-11-19 14:19:47,799 - DEBUG: Response: []
+2010-11-19 14:19:47,811 - DEBUG: Sending: time_left b 67 0
+2010-11-19 14:19:47,812 - DEBUG: Response: []
+2010-11-19 14:19:47,813 - DEBUG: Sending: genmove b
+2010-11-19 14:19:51,012 - DEBUG: Response: ['H2']
+2010-11-19 14:19:51,448 - DEBUG: Sending: play w a2
+2010-11-19 14:19:51,469 - DEBUG: Response: []
+2010-11-19 14:19:51,476 - DEBUG: Sending: time_left b 65 0
+2010-11-19 14:19:51,476 - DEBUG: Response: []
+2010-11-19 14:19:51,476 - DEBUG: Sending: genmove b
+2010-11-19 14:19:54,471 - DEBUG: Response: ['G2']
+2010-11-19 14:19:54,937 - DEBUG: Sending: play w pass
+2010-11-19 14:19:54,938 - DEBUG: Response: []
+2010-11-19 14:19:54,964 - DEBUG: Sending: time_left b 62 0
+2010-11-19 14:19:54,964 - DEBUG: Response: []
+2010-11-19 14:19:54,965 - DEBUG: Sending: genmove b
+2010-11-19 14:19:55,214 - DEBUG: Response: ['J2']
+2010-11-19 14:19:55,649 - DEBUG: Sending: play w pass
+2010-11-19 14:19:55,663 - DEBUG: Response: []
+2010-11-19 14:19:55,677 - DEBUG: Sending: time_left b 62 0
+2010-11-19 14:19:55,678 - DEBUG: Response: []
+2010-11-19 14:19:55,678 - DEBUG: Sending: genmove b
+2010-11-19 14:19:55,961 - DEBUG: Response: ['H1']
+2010-11-19 14:19:56,417 - DEBUG: Sending: play w pass
+2010-11-19 14:19:56,419 - DEBUG: Response: []
+2010-11-19 14:19:56,444 - DEBUG: Sending: time_left b 62 0
+2010-11-19 14:19:56,444 - DEBUG: Response: []
+2010-11-19 14:19:56,444 - DEBUG: Sending: genmove b
+2010-11-19 14:19:56,723 - DEBUG: Response: ['B2']
+2010-11-19 14:19:57,171 - DEBUG: Sending: play w b1
+2010-11-19 14:19:57,193 - DEBUG: Response: []
+2010-11-19 14:19:57,198 - DEBUG: Sending: time_left b 62 0
+2010-11-19 14:19:57,198 - DEBUG: Response: []
+2010-11-19 14:19:57,198 - DEBUG: Sending: genmove b
+2010-11-19 14:20:00,411 - DEBUG: Response: ['B9']
+2010-11-19 14:20:00,898 - DEBUG: Sending: play w c2
+2010-11-19 14:20:00,929 - DEBUG: Response: []
+2010-11-19 14:20:00,929 - DEBUG: Sending: time_left b 60 0
+2010-11-19 14:20:00,929 - DEBUG: Response: []
+2010-11-19 14:20:00,929 - DEBUG: Sending: genmove b
+2010-11-19 14:20:03,789 - DEBUG: Response: ['A8']
+2010-11-19 14:20:04,236 - DEBUG: Sending: play w pass
+2010-11-19 14:20:04,240 - DEBUG: Response: []
+2010-11-19 14:20:04,263 - DEBUG: Sending: time_left b 58 0
+2010-11-19 14:20:04,264 - DEBUG: Response: []
+2010-11-19 14:20:04,264 - DEBUG: Sending: genmove b
+2010-11-19 14:20:04,643 - DEBUG: Response: ['C9']
+2010-11-19 14:20:05,108 - DEBUG: Sending: play w pass
+2010-11-19 14:20:05,183 - DEBUG: Response: []
+2010-11-19 14:20:05,184 - DEBUG: Sending: time_left b 58 0
+2010-11-19 14:20:05,184 - DEBUG: Response: []
+2010-11-19 14:20:05,184 - DEBUG: Sending: genmove b
+2010-11-19 14:20:05,456 - DEBUG: Response: ['PASS']
+2010-11-19 14:21:30,806 - DEBUG: Sending: boardsize 9
+2010-11-19 14:21:30,810 - DEBUG: Response: []
+2010-11-19 14:21:30,810 - DEBUG: Sending: komi 7.5
+2010-11-19 14:21:30,811 - DEBUG: Response: []
+2010-11-19 14:21:30,811 - DEBUG: Sending: clear_board
+2010-11-19 14:21:31,232 - DEBUG: Response: []
+2010-11-19 14:21:31,232 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 14:21:31,232 - DEBUG: Response: []
+2010-11-19 14:21:42,479 - DEBUG: Sending: time_left b 300 0
+2010-11-19 14:21:42,479 - DEBUG: Response: []
+2010-11-19 14:21:42,480 - DEBUG: Sending: genmove b
+2010-11-19 14:21:55,405 - DEBUG: Response: ['D5']
+2010-11-19 14:22:11,860 - DEBUG: Sending: play w e6
+2010-11-19 14:22:11,863 - DEBUG: Response: []
+2010-11-19 14:22:11,888 - DEBUG: Sending: time_left b 287 0
+2010-11-19 14:22:11,888 - DEBUG: Response: []
+2010-11-19 14:22:11,888 - DEBUG: Sending: genmove b
+2010-11-19 14:22:24,829 - DEBUG: Response: ['E5']
+2010-11-19 14:22:38,306 - DEBUG: Sending: play w f6
+2010-11-19 14:22:38,307 - DEBUG: Response: []
+2010-11-19 14:22:38,333 - DEBUG: Sending: time_left b 275 0
+2010-11-19 14:22:38,334 - DEBUG: Response: []
+2010-11-19 14:22:38,334 - DEBUG: Sending: genmove b
+2010-11-19 14:22:49,005 - DEBUG: Response: ['F5']
+2010-11-19 14:23:04,382 - DEBUG: Sending: play w g5
+2010-11-19 14:23:04,384 - DEBUG: Response: []
+2010-11-19 14:23:04,411 - DEBUG: Sending: time_left b 265 0
+2010-11-19 14:23:04,412 - DEBUG: Response: []
+2010-11-19 14:23:04,412 - DEBUG: Sending: genmove b
+2010-11-19 14:23:14,329 - DEBUG: Response: ['G4']
+2010-11-19 14:23:26,327 - DEBUG: Sending: play w g6
+2010-11-19 14:23:26,330 - DEBUG: Response: []
+2010-11-19 14:23:26,355 - DEBUG: Sending: time_left b 256 0
+2010-11-19 14:23:26,355 - DEBUG: Response: []
+2010-11-19 14:23:26,355 - DEBUG: Sending: genmove b
+2010-11-19 14:23:43,661 - DEBUG: Response: ['D6']
+2010-11-19 14:23:55,984 - DEBUG: Sending: play w h4
+2010-11-19 14:23:55,987 - DEBUG: Response: []
+2010-11-19 14:23:56,012 - DEBUG: Sending: time_left b 239 0
+2010-11-19 14:23:56,013 - DEBUG: Response: []
+2010-11-19 14:23:56,013 - DEBUG: Sending: genmove b
+2010-11-19 14:24:07,937 - DEBUG: Response: ['G3']
+2010-11-19 14:24:17,282 - DEBUG: Sending: play w d7
+2010-11-19 14:24:17,297 - DEBUG: Response: []
+2010-11-19 14:24:17,309 - DEBUG: Sending: time_left b 228 0
+2010-11-19 14:24:17,310 - DEBUG: Response: []
+2010-11-19 14:24:17,310 - DEBUG: Sending: genmove b
+2010-11-19 14:24:30,434 - DEBUG: Response: ['C7']
+2010-11-19 14:24:40,729 - DEBUG: Sending: play w h3
+2010-11-19 14:24:40,732 - DEBUG: Response: []
+2010-11-19 14:24:40,756 - DEBUG: Sending: time_left b 215 0
+2010-11-19 14:24:40,757 - DEBUG: Response: []
+2010-11-19 14:24:40,757 - DEBUG: Sending: genmove b
+2010-11-19 14:24:48,612 - DEBUG: Response: ['G2']
+2010-11-19 14:25:00,198 - DEBUG: Sending: play w c8
+2010-11-19 14:25:00,226 - DEBUG: Response: []
+2010-11-19 14:25:00,227 - DEBUG: Sending: time_left b 208 0
+2010-11-19 14:25:00,227 - DEBUG: Response: []
+2010-11-19 14:25:00,227 - DEBUG: Sending: genmove b
+2010-11-19 14:25:15,410 - DEBUG: Response: ['D8']
+2010-11-19 14:25:25,534 - DEBUG: Sending: play w e7
+2010-11-19 14:25:25,854 - DEBUG: Response: []
+2010-11-19 14:25:25,855 - DEBUG: Sending: time_left b 194 0
+2010-11-19 14:25:25,855 - DEBUG: Response: []
+2010-11-19 14:25:25,855 - DEBUG: Sending: genmove b
+2010-11-19 14:25:36,272 - DEBUG: Response: ['B8']
+2010-11-19 14:25:47,584 - DEBUG: Sending: play w c2
+2010-11-19 14:25:47,588 - DEBUG: Response: []
+2010-11-19 14:25:47,611 - DEBUG: Sending: time_left b 184 0
+2010-11-19 14:25:47,612 - DEBUG: Response: []
+2010-11-19 14:25:47,612 - DEBUG: Sending: genmove b
+2010-11-19 14:25:54,534 - DEBUG: Response: ['C9']
+2010-11-19 14:26:04,178 - DEBUG: Sending: play w b3
+2010-11-19 14:26:04,181 - DEBUG: Response: []
+2010-11-19 14:26:04,199 - DEBUG: Sending: time_left b 177 0
+2010-11-19 14:26:04,200 - DEBUG: Response: []
+2010-11-19 14:26:04,200 - DEBUG: Sending: genmove b
+2010-11-19 14:26:22,718 - DEBUG: Response: ['C3']
+2010-11-19 14:26:34,785 - DEBUG: Sending: play w c4
+2010-11-19 14:26:34,786 - DEBUG: Response: []
+2010-11-19 14:26:34,812 - DEBUG: Sending: time_left b 160 0
+2010-11-19 14:26:34,812 - DEBUG: Response: []
+2010-11-19 14:26:34,813 - DEBUG: Sending: genmove b
+2010-11-19 14:26:40,740 - DEBUG: Response: ['D3']
+2010-11-19 14:26:51,064 - DEBUG: Sending: play w b1
+2010-11-19 14:26:51,068 - DEBUG: Response: []
+2010-11-19 14:26:51,091 - DEBUG: Sending: time_left b 154 0
+2010-11-19 14:26:51,091 - DEBUG: Response: []
+2010-11-19 14:26:51,091 - DEBUG: Sending: genmove b
+2010-11-19 14:26:56,656 - DEBUG: Response: ['A2']
+2010-11-19 14:27:04,270 - DEBUG: Sending: play w d2
+2010-11-19 14:27:04,290 - DEBUG: Response: []
+2010-11-19 14:27:04,297 - DEBUG: Sending: time_left b 149 0
+2010-11-19 14:27:04,298 - DEBUG: Response: []
+2010-11-19 14:27:04,298 - DEBUG: Sending: genmove b
+2010-11-19 14:27:15,173 - DEBUG: Response: ['E3']
+2010-11-19 14:27:23,466 - DEBUG: Sending: play w a3
+2010-11-19 14:27:23,468 - DEBUG: Response: []
+2010-11-19 14:27:23,493 - DEBUG: Sending: time_left b 139 0
+2010-11-19 14:27:23,495 - DEBUG: Response: []
+2010-11-19 14:27:23,495 - DEBUG: Sending: genmove b
+2010-11-19 14:27:28,674 - DEBUG: Response: ['D1']
+2010-11-19 14:27:38,161 - DEBUG: Sending: play w e2
+2010-11-19 14:27:38,163 - DEBUG: Response: []
+2010-11-19 14:27:38,188 - DEBUG: Sending: time_left b 134 0
+2010-11-19 14:27:38,189 - DEBUG: Response: []
+2010-11-19 14:27:38,189 - DEBUG: Sending: genmove b
+2010-11-19 14:27:44,065 - DEBUG: Response: ['B5']
+2010-11-19 14:27:51,370 - DEBUG: Sending: play w f2
+2010-11-19 14:27:51,371 - DEBUG: Response: []
+2010-11-19 14:27:51,397 - DEBUG: Sending: time_left b 129 0
+2010-11-19 14:27:51,397 - DEBUG: Response: []
+2010-11-19 14:27:51,397 - DEBUG: Sending: genmove b
+2010-11-19 14:27:55,985 - DEBUG: Response: ['H2']
+2010-11-19 14:28:05,496 - DEBUG: Sending: play w f8
+2010-11-19 14:28:05,576 - DEBUG: Response: []
+2010-11-19 14:28:05,577 - DEBUG: Sending: time_left b 125 0
+2010-11-19 14:28:05,577 - DEBUG: Response: []
+2010-11-19 14:28:05,577 - DEBUG: Sending: genmove b
+2010-11-19 14:28:11,680 - DEBUG: Response: ['F4']
+2010-11-19 14:28:18,508 - DEBUG: Sending: play w h6
+2010-11-19 14:28:18,511 - DEBUG: Response: []
+2010-11-19 14:28:18,535 - DEBUG: Sending: time_left b 120 0
+2010-11-19 14:28:18,536 - DEBUG: Response: []
+2010-11-19 14:28:18,536 - DEBUG: Sending: genmove b
+2010-11-19 14:28:22,814 - DEBUG: Response: ['H8']
+2010-11-19 14:28:30,684 - DEBUG: Sending: play w g8
+2010-11-19 14:28:30,687 - DEBUG: Response: []
+2010-11-19 14:28:30,711 - DEBUG: Sending: time_left b 116 0
+2010-11-19 14:28:30,711 - DEBUG: Response: []
+2010-11-19 14:28:30,711 - DEBUG: Sending: genmove b
+2010-11-19 14:28:35,266 - DEBUG: Response: ['J5']
+2010-11-19 14:28:42,683 - DEBUG: Sending: play w j6
+2010-11-19 14:28:42,696 - DEBUG: Response: []
+2010-11-19 14:28:42,708 - DEBUG: Sending: time_left b 112 0
+2010-11-19 14:28:42,709 - DEBUG: Response: []
+2010-11-19 14:28:42,709 - DEBUG: Sending: genmove b
+2010-11-19 14:28:51,920 - DEBUG: Response: ['F1']
+2010-11-19 14:28:59,147 - DEBUG: Sending: play w e1
+2010-11-19 14:28:59,155 - DEBUG: Response: []
+2010-11-19 14:28:59,173 - DEBUG: Sending: time_left b 104 0
+2010-11-19 14:28:59,174 - DEBUG: Response: []
+2010-11-19 14:28:59,174 - DEBUG: Sending: genmove b
+2010-11-19 14:29:02,781 - DEBUG: Response: ['G7']
+2010-11-19 14:29:09,797 - DEBUG: Sending: play w h7
+2010-11-19 14:29:09,799 - DEBUG: Response: []
+2010-11-19 14:29:09,822 - DEBUG: Sending: time_left b 101 0
+2010-11-19 14:29:09,823 - DEBUG: Response: []
+2010-11-19 14:29:09,823 - DEBUG: Sending: genmove b
+2010-11-19 14:29:14,138 - DEBUG: Response: ['H9']
+2010-11-19 14:29:21,160 - DEBUG: Sending: play w b2
+2010-11-19 14:29:21,161 - DEBUG: Response: []
+2010-11-19 14:29:21,188 - DEBUG: Sending: time_left b 97 0
+2010-11-19 14:29:21,188 - DEBUG: Response: []
+2010-11-19 14:29:21,188 - DEBUG: Sending: genmove b
+2010-11-19 14:29:24,983 - DEBUG: Response: ['E8']
+2010-11-19 14:29:31,912 - DEBUG: Sending: play w f9
+2010-11-19 14:29:31,913 - DEBUG: Response: []
+2010-11-19 14:29:31,937 - DEBUG: Sending: time_left b 94 0
+2010-11-19 14:29:31,938 - DEBUG: Response: []
+2010-11-19 14:29:31,938 - DEBUG: Sending: genmove b
+2010-11-19 14:29:36,459 - DEBUG: Response: ['E9']
+2010-11-19 14:29:43,705 - DEBUG: Sending: play w h5
+2010-11-19 14:29:43,788 - DEBUG: Response: []
+2010-11-19 14:29:43,788 - DEBUG: Sending: time_left b 90 0
+2010-11-19 14:29:43,789 - DEBUG: Response: []
+2010-11-19 14:29:43,789 - DEBUG: Sending: genmove b
+2010-11-19 14:29:47,432 - DEBUG: Response: ['J8']
+2010-11-19 14:29:53,204 - DEBUG: Sending: play w f7
+2010-11-19 14:29:53,206 - DEBUG: Response: []
+2010-11-19 14:29:53,232 - DEBUG: Sending: time_left b 87 0
+2010-11-19 14:29:53,232 - DEBUG: Response: []
+2010-11-19 14:29:53,232 - DEBUG: Sending: genmove b
+2010-11-19 14:29:57,552 - DEBUG: Response: ['J2']
+2010-11-19 14:30:03,357 - DEBUG: Sending: play w b4
+2010-11-19 14:30:03,358 - DEBUG: Response: []
+2010-11-19 14:30:03,382 - DEBUG: Sending: time_left b 83 0
+2010-11-19 14:30:03,383 - DEBUG: Response: []
+2010-11-19 14:30:03,383 - DEBUG: Sending: genmove b
+2010-11-19 14:30:08,024 - DEBUG: Response: ['J3']
+2010-11-19 14:30:10,917 - DEBUG: Sending: play w j4
+2010-11-19 14:30:10,919 - DEBUG: Response: []
+2010-11-19 14:30:10,946 - DEBUG: Sending: time_left b 79 0
+2010-11-19 14:30:10,946 - DEBUG: Response: []
+2010-11-19 14:30:10,946 - DEBUG: Sending: genmove b
+2010-11-19 14:30:14,759 - DEBUG: Response: ['A5']
+2010-11-19 14:30:19,931 - DEBUG: Sending: play w c6
+2010-11-19 14:30:19,933 - DEBUG: Response: []
+2010-11-19 14:30:19,958 - DEBUG: Sending: time_left b 76 0
+2010-11-19 14:30:19,959 - DEBUG: Response: []
+2010-11-19 14:30:19,959 - DEBUG: Sending: genmove b
+2010-11-19 14:30:23,168 - DEBUG: Response: ['C5']
+2010-11-19 14:30:25,456 - DEBUG: Sending: play w b7
+2010-11-19 14:30:25,548 - DEBUG: Response: []
+2010-11-19 14:30:25,549 - DEBUG: Sending: time_left b 74 0
+2010-11-19 14:30:25,550 - DEBUG: Response: []
+2010-11-19 14:30:25,550 - DEBUG: Sending: genmove b
+2010-11-19 14:30:29,491 - DEBUG: Response: ['C8']
+2010-11-19 14:30:31,704 - DEBUG: Sending: play w d4
+2010-11-19 14:30:31,710 - DEBUG: Response: []
+2010-11-19 14:30:31,729 - DEBUG: Sending: time_left b 70 0
+2010-11-19 14:30:31,730 - DEBUG: Response: []
+2010-11-19 14:30:31,730 - DEBUG: Sending: genmove b
+2010-11-19 14:30:34,289 - DEBUG: Response: ['G1']
+2010-11-19 14:30:36,365 - DEBUG: Sending: play w a8
+2010-11-19 14:30:36,437 - DEBUG: Response: []
+2010-11-19 14:30:36,437 - DEBUG: Sending: time_left b 68 0
+2010-11-19 14:30:36,439 - DEBUG: Response: []
+2010-11-19 14:30:36,439 - DEBUG: Sending: genmove b
+2010-11-19 14:30:39,847 - DEBUG: Response: ['F3']
+2010-11-19 14:30:42,131 - DEBUG: Sending: play w b9
+2010-11-19 14:30:42,133 - DEBUG: Response: []
+2010-11-19 14:30:42,158 - DEBUG: Sending: time_left b 66 0
+2010-11-19 14:30:42,159 - DEBUG: Response: []
+2010-11-19 14:30:42,159 - DEBUG: Sending: genmove b
+2010-11-19 14:30:46,112 - DEBUG: Response: ['B6']
+2010-11-19 14:30:48,084 - DEBUG: Sending: play w e4
+2010-11-19 14:30:48,158 - DEBUG: Response: []
+2010-11-19 14:30:48,159 - DEBUG: Sending: time_left b 62 0
+2010-11-19 14:30:48,160 - DEBUG: Response: []
+2010-11-19 14:30:48,160 - DEBUG: Sending: genmove b
+2010-11-19 14:30:51,165 - DEBUG: Response: ['A4']
+2010-11-19 14:30:53,408 - DEBUG: Sending: play w a9
+2010-11-19 14:30:53,495 - DEBUG: Response: []
+2010-11-19 14:30:53,496 - DEBUG: Sending: time_left b 60 0
+2010-11-19 14:30:53,497 - DEBUG: Response: []
+2010-11-19 14:30:53,497 - DEBUG: Sending: genmove b
+2010-11-19 14:30:56,161 - DEBUG: Response: ['C6']
+2010-11-19 14:30:57,836 - DEBUG: Sending: play w a1
+2010-11-19 14:30:57,842 - DEBUG: Response: []
+2010-11-19 14:30:57,863 - DEBUG: Sending: time_left b 58 0
+2010-11-19 14:30:57,864 - DEBUG: Response: []
+2010-11-19 14:30:57,864 - DEBUG: Sending: genmove b
+2010-11-19 14:31:01,334 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:03,013 - DEBUG: Sending: play w h1
+2010-11-19 14:31:03,090 - DEBUG: Response: []
+2010-11-19 14:31:03,090 - DEBUG: Sending: time_left b 55 0
+2010-11-19 14:31:03,091 - DEBUG: Response: []
+2010-11-19 14:31:03,091 - DEBUG: Sending: genmove b
+2010-11-19 14:31:05,679 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:06,829 - DEBUG: Sending: play w g9
+2010-11-19 14:31:06,909 - DEBUG: Response: []
+2010-11-19 14:31:06,910 - DEBUG: Sending: time_left b 53 0
+2010-11-19 14:31:06,911 - DEBUG: Response: []
+2010-11-19 14:31:06,911 - DEBUG: Sending: genmove b
+2010-11-19 14:31:09,163 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:09,998 - DEBUG: Sending: play w j7
+2010-11-19 14:31:10,067 - DEBUG: Response: []
+2010-11-19 14:31:10,067 - DEBUG: Sending: time_left b 51 0
+2010-11-19 14:31:10,068 - DEBUG: Response: []
+2010-11-19 14:31:10,068 - DEBUG: Sending: genmove b
+2010-11-19 14:31:12,345 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:12,980 - DEBUG: Sending: play w j9
+2010-11-19 14:31:12,982 - DEBUG: Response: []
+2010-11-19 14:31:13,008 - DEBUG: Sending: time_left b 50 0
+2010-11-19 14:31:13,009 - DEBUG: Response: []
+2010-11-19 14:31:13,009 - DEBUG: Sending: genmove b
+2010-11-19 14:31:15,459 - DEBUG: Response: ['J8']
+2010-11-19 14:31:16,104 - DEBUG: Sending: play w h9
+2010-11-19 14:31:16,246 - DEBUG: Response: []
+2010-11-19 14:31:16,247 - DEBUG: Sending: time_left b 48 0
+2010-11-19 14:31:16,248 - DEBUG: Response: []
+2010-11-19 14:31:16,248 - DEBUG: Sending: genmove b
+2010-11-19 14:31:18,323 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:18,878 - DEBUG: Sending: play w c1
+2010-11-19 14:31:18,879 - DEBUG: Response: []
+2010-11-19 14:31:18,905 - DEBUG: Sending: time_left b 47 0
+2010-11-19 14:31:18,906 - DEBUG: Response: []
+2010-11-19 14:31:18,906 - DEBUG: Sending: genmove b
+2010-11-19 14:31:21,264 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:21,750 - DEBUG: Sending: play w a6
+2010-11-19 14:31:21,823 - DEBUG: Response: []
+2010-11-19 14:31:21,824 - DEBUG: Sending: time_left b 45 0
+2010-11-19 14:31:21,824 - DEBUG: Response: []
+2010-11-19 14:31:21,824 - DEBUG: Sending: genmove b
+2010-11-19 14:31:24,082 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:24,516 - DEBUG: Sending: play w h8
+2010-11-19 14:31:24,597 - DEBUG: Response: []
+2010-11-19 14:31:24,597 - DEBUG: Sending: time_left b 43 0
+2010-11-19 14:31:24,599 - DEBUG: Response: []
+2010-11-19 14:31:24,599 - DEBUG: Sending: genmove b
+2010-11-19 14:31:26,783 - DEBUG: Response: ['PASS']
+2010-11-19 14:31:27,261 - DEBUG: Sending: play w pass
+2010-11-19 14:31:27,265 - DEBUG: Response: []
+2010-11-19 14:31:55,149 - DEBUG: Sending: boardsize 9
+2010-11-19 14:31:55,152 - DEBUG: Response: []
+2010-11-19 14:31:55,153 - DEBUG: Sending: komi 7.5
+2010-11-19 14:31:55,154 - DEBUG: Response: []
+2010-11-19 14:31:55,154 - DEBUG: Sending: clear_board
+2010-11-19 14:31:55,304 - DEBUG: Response: []
+2010-11-19 14:31:55,304 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 14:31:55,304 - DEBUG: Response: []
+2010-11-19 14:32:04,876 - DEBUG: Sending: play b f3
+2010-11-19 14:32:04,880 - DEBUG: Response: []
+2010-11-19 14:32:04,899 - DEBUG: Sending: time_left w 300 0
+2010-11-19 14:32:04,899 - DEBUG: Response: []
+2010-11-19 14:32:04,900 - DEBUG: Sending: genmove w
+2010-11-19 14:32:17,411 - DEBUG: Response: ['D6']
+2010-11-19 14:32:18,699 - DEBUG: Sending: play b f6
+2010-11-19 14:32:18,704 - DEBUG: Response: []
+2010-11-19 14:32:18,717 - DEBUG: Sending: time_left w 288 0
+2010-11-19 14:32:18,717 - DEBUG: Response: []
+2010-11-19 14:32:18,717 - DEBUG: Sending: genmove w
+2010-11-19 14:32:28,852 - DEBUG: Response: ['D4']
+2010-11-19 14:32:30,405 - DEBUG: Sending: play b d3
+2010-11-19 14:32:30,407 - DEBUG: Response: []
+2010-11-19 14:32:30,432 - DEBUG: Sending: time_left w 278 0
+2010-11-19 14:32:30,433 - DEBUG: Response: []
+2010-11-19 14:32:30,433 - DEBUG: Sending: genmove w
+2010-11-19 14:32:40,907 - DEBUG: Response: ['E4']
+2010-11-19 14:32:42,151 - DEBUG: Sending: play b e3
+2010-11-19 14:32:42,153 - DEBUG: Response: []
+2010-11-19 14:32:42,178 - DEBUG: Sending: time_left w 268 0
+2010-11-19 14:32:42,179 - DEBUG: Response: []
+2010-11-19 14:32:42,179 - DEBUG: Sending: genmove w
+2010-11-19 14:32:51,078 - DEBUG: Response: ['F4']
+2010-11-19 14:32:52,182 - DEBUG: Sending: play b g4
+2010-11-19 14:32:52,196 - DEBUG: Response: []
+2010-11-19 14:32:52,201 - DEBUG: Sending: time_left w 260 0
+2010-11-19 14:32:52,203 - DEBUG: Response: []
+2010-11-19 14:32:52,203 - DEBUG: Sending: genmove w
+2010-11-19 14:33:01,925 - DEBUG: Response: ['G5']
+2010-11-19 14:33:03,383 - DEBUG: Sending: play b f5
+2010-11-19 14:33:03,388 - DEBUG: Response: []
+2010-11-19 14:33:03,410 - DEBUG: Sending: time_left w 251 0
+2010-11-19 14:33:03,411 - DEBUG: Response: []
+2010-11-19 14:33:03,411 - DEBUG: Sending: genmove w
+2010-11-19 14:33:15,222 - DEBUG: Response: ['G3']
+2010-11-19 14:33:16,235 - DEBUG: Sending: play b h4
+2010-11-19 14:33:16,236 - DEBUG: Response: []
+2010-11-19 14:33:16,262 - DEBUG: Sending: time_left w 240 0
+2010-11-19 14:33:16,263 - DEBUG: Response: []
+2010-11-19 14:33:16,263 - DEBUG: Sending: genmove w
+2010-11-19 14:33:24,314 - DEBUG: Response: ['C4']
+2010-11-19 14:33:25,816 - DEBUG: Sending: play b e7
+2010-11-19 14:33:25,818 - DEBUG: Response: []
+2010-11-19 14:33:25,843 - DEBUG: Sending: time_left w 232 0
+2010-11-19 14:33:25,844 - DEBUG: Response: []
+2010-11-19 14:33:25,844 - DEBUG: Sending: genmove w
+2010-11-19 14:33:36,075 - DEBUG: Response: ['H3']
+2010-11-19 14:33:37,162 - DEBUG: Sending: play b h5
+2010-11-19 14:33:37,184 - DEBUG: Response: []
+2010-11-19 14:33:37,190 - DEBUG: Sending: time_left w 223 0
+2010-11-19 14:33:37,190 - DEBUG: Response: []
+2010-11-19 14:33:37,190 - DEBUG: Sending: genmove w
+2010-11-19 14:33:45,274 - DEBUG: Response: ['C3']
+2010-11-19 14:33:46,849 - DEBUG: Sending: play b f2
+2010-11-19 14:33:46,851 - DEBUG: Response: []
+2010-11-19 14:33:46,877 - DEBUG: Sending: time_left w 216 0
+2010-11-19 14:33:46,877 - DEBUG: Response: []
+2010-11-19 14:33:46,877 - DEBUG: Sending: genmove w
+2010-11-19 14:33:59,897 - DEBUG: Response: ['D2']
+2010-11-19 14:34:01,200 - DEBUG: Sending: play b c2
+2010-11-19 14:34:01,202 - DEBUG: Response: []
+2010-11-19 14:34:01,227 - DEBUG: Sending: time_left w 203 0
+2010-11-19 14:34:01,228 - DEBUG: Response: []
+2010-11-19 14:34:01,228 - DEBUG: Sending: genmove w
+2010-11-19 14:34:13,220 - DEBUG: Response: ['B2']
+2010-11-19 14:34:14,594 - DEBUG: Sending: play b d7
+2010-11-19 14:34:14,596 - DEBUG: Response: []
+2010-11-19 14:34:14,622 - DEBUG: Sending: time_left w 192 0
+2010-11-19 14:34:14,623 - DEBUG: Response: []
+2010-11-19 14:34:14,623 - DEBUG: Sending: genmove w
+2010-11-19 14:34:26,426 - DEBUG: Response: ['G2']
+2010-11-19 14:34:27,866 - DEBUG: Sending: play b j3
+2010-11-19 14:34:27,867 - DEBUG: Response: []
+2010-11-19 14:34:27,894 - DEBUG: Sending: time_left w 181 0
+2010-11-19 14:34:27,894 - DEBUG: Response: []
+2010-11-19 14:34:27,895 - DEBUG: Sending: genmove w
+2010-11-19 14:34:35,430 - DEBUG: Response: ['E2']
+2010-11-19 14:34:36,622 - DEBUG: Sending: play b h2
+2010-11-19 14:34:36,630 - DEBUG: Response: []
+2010-11-19 14:34:36,649 - DEBUG: Sending: time_left w 174 0
+2010-11-19 14:34:36,649 - DEBUG: Response: []
+2010-11-19 14:34:36,650 - DEBUG: Sending: genmove w
+2010-11-19 14:34:43,238 - DEBUG: Response: ['F1']
+2010-11-19 14:34:44,428 - DEBUG: Sending: play b c6
+2010-11-19 14:34:44,430 - DEBUG: Response: []
+2010-11-19 14:34:44,455 - DEBUG: Sending: time_left w 168 0
+2010-11-19 14:34:44,456 - DEBUG: Response: []
+2010-11-19 14:34:44,456 - DEBUG: Sending: genmove w
+2010-11-19 14:34:53,292 - DEBUG: Response: ['B6']
+2010-11-19 14:34:54,319 - DEBUG: Sending: play b b7
+2010-11-19 14:34:54,321 - DEBUG: Response: []
+2010-11-19 14:34:54,346 - DEBUG: Sending: time_left w 160 0
+2010-11-19 14:34:54,347 - DEBUG: Response: []
+2010-11-19 14:34:54,347 - DEBUG: Sending: genmove w
+2010-11-19 14:35:02,380 - DEBUG: Response: ['B5']
+2010-11-19 14:35:03,797 - DEBUG: Sending: play b c5
+2010-11-19 14:35:03,800 - DEBUG: Response: []
+2010-11-19 14:35:03,825 - DEBUG: Sending: time_left w 152 0
+2010-11-19 14:35:03,825 - DEBUG: Response: []
+2010-11-19 14:35:03,825 - DEBUG: Sending: genmove w
+2010-11-19 14:35:16,164 - DEBUG: Response: ['J2']
+2010-11-19 14:35:17,555 - DEBUG: Sending: play b j1
+2010-11-19 14:35:17,557 - DEBUG: Response: []
+2010-11-19 14:35:17,583 - DEBUG: Sending: time_left w 141 0
+2010-11-19 14:35:17,583 - DEBUG: Response: []
+2010-11-19 14:35:17,583 - DEBUG: Sending: genmove w
+2010-11-19 14:35:38,257 - DEBUG: Response: ['H1']
+2010-11-19 14:35:39,370 - DEBUG: Sending: play b d5
+2010-11-19 14:35:39,371 - DEBUG: Response: []
+2010-11-19 14:35:39,395 - DEBUG: Sending: time_left w 121 0
+2010-11-19 14:35:39,396 - DEBUG: Response: []
+2010-11-19 14:35:39,396 - DEBUG: Sending: genmove w
+2010-11-19 14:35:43,692 - DEBUG: Response: ['A6']
+2010-11-19 14:35:45,002 - DEBUG: Sending: play b b4
+2010-11-19 14:35:45,003 - DEBUG: Response: []
+2010-11-19 14:35:45,029 - DEBUG: Sending: time_left w 117 0
+2010-11-19 14:35:45,029 - DEBUG: Response: []
+2010-11-19 14:35:45,030 - DEBUG: Sending: genmove w
+2010-11-19 14:35:50,118 - DEBUG: Response: ['G6']
+2010-11-19 14:35:51,268 - DEBUG: Sending: play b h6
+2010-11-19 14:35:51,272 - DEBUG: Response: []
+2010-11-19 14:35:51,273 - DEBUG: Sending: time_left w 113 0
+2010-11-19 14:35:51,273 - DEBUG: Response: []
+2010-11-19 14:35:51,317 - DEBUG: Sending: genmove w
+2010-11-19 14:35:57,086 - DEBUG: Response: ['E5']
+2010-11-19 14:35:58,129 - DEBUG: Sending: play b e6
+2010-11-19 14:35:58,137 - DEBUG: Response: []
+2010-11-19 14:35:58,156 - DEBUG: Sending: time_left w 107 0
+2010-11-19 14:35:58,157 - DEBUG: Response: []
+2010-11-19 14:35:58,157 - DEBUG: Sending: genmove w
+2010-11-19 14:36:01,832 - DEBUG: Response: ['A4']
+2010-11-19 14:36:03,325 - DEBUG: Sending: play b g1
+2010-11-19 14:36:03,329 - DEBUG: Response: []
+2010-11-19 14:36:03,352 - DEBUG: Sending: time_left w 104 0
+2010-11-19 14:36:03,353 - DEBUG: Response: []
+2010-11-19 14:36:03,353 - DEBUG: Sending: genmove w
+2010-11-19 14:36:07,565 - DEBUG: Response: ['J4']
+2010-11-19 14:36:08,573 - DEBUG: Sending: play b j5
+2010-11-19 14:36:08,579 - DEBUG: Response: []
+2010-11-19 14:36:08,600 - DEBUG: Sending: time_left w 101 0
+2010-11-19 14:36:08,601 - DEBUG: Response: []
+2010-11-19 14:36:08,601 - DEBUG: Sending: genmove w
+2010-11-19 14:36:12,699 - DEBUG: Response: ['H1']
+2010-11-19 14:36:13,747 - DEBUG: Sending: play b a7
+2010-11-19 14:36:13,749 - DEBUG: Response: []
+2010-11-19 14:36:13,774 - DEBUG: Sending: time_left w 97 0
+2010-11-19 14:36:13,774 - DEBUG: Response: []
+2010-11-19 14:36:13,774 - DEBUG: Sending: genmove w
+2010-11-19 14:36:18,852 - DEBUG: Response: ['B3']
+2010-11-19 14:36:19,819 - DEBUG: Sending: play b g1
+2010-11-19 14:36:19,821 - DEBUG: Response: []
+2010-11-19 14:36:19,847 - DEBUG: Sending: time_left w 93 0
+2010-11-19 14:36:19,847 - DEBUG: Response: []
+2010-11-19 14:36:19,847 - DEBUG: Sending: genmove w
+2010-11-19 14:36:23,439 - DEBUG: Response: ['C7']
+2010-11-19 14:40:51,655 - DEBUG: Sending: boardsize 9
+2010-11-19 14:40:51,658 - DEBUG: Response: []
+2010-11-19 14:40:51,659 - DEBUG: Sending: komi 7.5
+2010-11-19 14:40:51,659 - DEBUG: Response: []
+2010-11-19 14:40:51,660 - DEBUG: Sending: clear_board
+2010-11-19 14:40:51,778 - DEBUG: Response: []
+2010-11-19 14:40:51,778 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 14:40:51,778 - DEBUG: Response: []
+2010-11-19 14:41:09,657 - DEBUG: Sending: play b f6
+2010-11-19 14:41:09,736 - DEBUG: Response: []
+2010-11-19 14:41:09,737 - DEBUG: Sending: time_left w 300 0
+2010-11-19 14:41:09,737 - DEBUG: Response: []
+2010-11-19 14:41:09,737 - DEBUG: Sending: genmove w
+2010-11-19 14:41:22,381 - DEBUG: Response: ['E4']
+2010-11-19 14:41:22,837 - DEBUG: Sending: play b c6
+2010-11-19 14:41:22,839 - DEBUG: Response: []
+2010-11-19 14:41:22,864 - DEBUG: Sending: time_left w 287 0
+2010-11-19 14:41:22,865 - DEBUG: Response: []
+2010-11-19 14:41:22,865 - DEBUG: Sending: genmove w
+2010-11-19 14:41:32,421 - DEBUG: Response: ['G4']
+2010-11-19 14:41:32,862 - DEBUG: Sending: play b c3
+2010-11-19 14:41:32,864 - DEBUG: Response: []
+2010-11-19 14:41:32,889 - DEBUG: Sending: time_left w 279 0
+2010-11-19 14:41:32,890 - DEBUG: Response: []
+2010-11-19 14:41:32,890 - DEBUG: Sending: genmove w
+2010-11-19 14:41:43,278 - DEBUG: Response: ['C4']
+2010-11-19 14:41:43,913 - DEBUG: Sending: play b b4
+2010-11-19 14:41:43,994 - DEBUG: Response: []
+2010-11-19 14:41:43,995 - DEBUG: Sending: time_left w 269 0
+2010-11-19 14:41:43,996 - DEBUG: Response: []
+2010-11-19 14:41:43,996 - DEBUG: Sending: genmove w
+2010-11-19 14:41:58,075 - DEBUG: Response: ['C5']
+2010-11-19 14:41:58,763 - DEBUG: Sending: play b b5
+2010-11-19 14:41:58,764 - DEBUG: Response: []
+2010-11-19 14:41:58,790 - DEBUG: Sending: time_left w 255 0
+2010-11-19 14:41:58,790 - DEBUG: Response: []
+2010-11-19 14:41:58,790 - DEBUG: Sending: genmove w
+2010-11-19 14:42:20,275 - DEBUG: Response: ['D6']
+2010-11-19 14:42:21,830 - DEBUG: Sending: play b d7
+2010-11-19 14:42:22,122 - DEBUG: Response: []
+2010-11-19 14:42:22,123 - DEBUG: Sending: time_left w 235 0
+2010-11-19 14:42:22,123 - DEBUG: Response: []
+2010-11-19 14:42:22,124 - DEBUG: Sending: genmove w
+2010-11-19 14:42:31,243 - DEBUG: Response: ['D5']
+2010-11-19 14:42:32,280 - DEBUG: Sending: play b e6
+2010-11-19 14:42:32,321 - DEBUG: Response: []
+2010-11-19 14:42:32,321 - DEBUG: Sending: time_left w 226 0
+2010-11-19 14:42:32,322 - DEBUG: Response: []
+2010-11-19 14:42:32,334 - DEBUG: Sending: genmove w
+2010-11-19 14:42:45,167 - DEBUG: Response: ['C7']
+2010-11-19 14:42:47,200 - DEBUG: Sending: play b b6
+2010-11-19 14:42:47,229 - DEBUG: Response: []
+2010-11-19 14:42:47,229 - DEBUG: Sending: time_left w 214 0
+2010-11-19 14:42:47,229 - DEBUG: Response: []
+2010-11-19 14:42:47,229 - DEBUG: Sending: genmove w
+2010-11-19 14:42:56,764 - DEBUG: Response: ['E5']
+2010-11-19 14:42:57,767 - DEBUG: Sending: play b f8
+2010-11-19 14:42:57,943 - DEBUG: Response: []
+2010-11-19 14:42:57,943 - DEBUG: Sending: time_left w 205 0
+2010-11-19 14:42:57,944 - DEBUG: Response: []
+2010-11-19 14:42:57,944 - DEBUG: Sending: genmove w
+2010-11-19 14:43:05,684 - DEBUG: Response: ['D3']
+2010-11-19 14:43:06,711 - DEBUG: Sending: play b c2
+2010-11-19 14:43:06,714 - DEBUG: Response: []
+2010-11-19 14:43:06,739 - DEBUG: Sending: time_left w 198 0
+2010-11-19 14:43:06,740 - DEBUG: Response: []
+2010-11-19 14:43:06,740 - DEBUG: Sending: genmove w
+2010-11-19 14:43:16,391 - DEBUG: Response: ['E7']
+2010-11-19 14:43:17,295 - DEBUG: Sending: play b d8
+2010-11-19 14:43:17,593 - DEBUG: Response: []
+2010-11-19 14:43:17,594 - DEBUG: Sending: time_left w 189 0
+2010-11-19 14:43:17,595 - DEBUG: Response: []
+2010-11-19 14:43:17,595 - DEBUG: Sending: genmove w
+2010-11-19 14:43:24,482 - DEBUG: Response: ['D2']
+2010-11-19 14:43:25,680 - DEBUG: Sending: play b g5
+2010-11-19 14:43:25,756 - DEBUG: Response: []
+2010-11-19 14:43:25,756 - DEBUG: Sending: time_left w 182 0
+2010-11-19 14:43:25,757 - DEBUG: Response: []
+2010-11-19 14:43:25,757 - DEBUG: Sending: genmove w
+2010-11-19 14:43:59,118 - DEBUG: Response: ['G7']
+2010-11-19 14:44:00,827 - DEBUG: Sending: play b f7
+2010-11-19 14:44:00,829 - DEBUG: Response: []
+2010-11-19 14:44:00,854 - DEBUG: Sending: time_left w 149 0
+2010-11-19 14:44:00,855 - DEBUG: Response: []
+2010-11-19 14:44:00,855 - DEBUG: Sending: genmove w
+2010-11-19 14:44:08,643 - DEBUG: Response: ['H5']
+2010-11-19 14:44:09,396 - DEBUG: Sending: play b h6
+2010-11-19 14:44:09,398 - DEBUG: Response: []
+2010-11-19 14:44:09,424 - DEBUG: Sending: time_left w 142 0
+2010-11-19 14:44:09,425 - DEBUG: Response: []
+2010-11-19 14:44:09,425 - DEBUG: Sending: genmove w
+2010-11-19 14:44:15,143 - DEBUG: Response: ['B3']
+2010-11-19 14:44:15,948 - DEBUG: Sending: play b b2
+2010-11-19 14:44:15,949 - DEBUG: Response: []
+2010-11-19 14:44:15,975 - DEBUG: Sending: time_left w 137 0
+2010-11-19 14:44:15,975 - DEBUG: Response: []
+2010-11-19 14:44:15,975 - DEBUG: Sending: genmove w
+2010-11-19 14:44:24,177 - DEBUG: Response: ['G6']
+2010-11-19 14:44:25,031 - DEBUG: Sending: play b f5
+2010-11-19 14:44:25,322 - DEBUG: Response: []
+2010-11-19 14:44:25,323 - DEBUG: Sending: time_left w 130 0
+2010-11-19 14:44:25,324 - DEBUG: Response: []
+2010-11-19 14:44:25,324 - DEBUG: Sending: genmove w
+2010-11-19 14:44:31,869 - DEBUG: Response: ['F4']
+2010-11-19 14:44:32,656 - DEBUG: Sending: play b h4
+2010-11-19 14:44:32,658 - DEBUG: Response: []
+2010-11-19 14:44:32,684 - DEBUG: Sending: time_left w 124 0
+2010-11-19 14:44:32,685 - DEBUG: Response: []
+2010-11-19 14:44:32,685 - DEBUG: Sending: genmove w
+2010-11-19 14:44:38,012 - DEBUG: Response: ['H7']
+2010-11-19 14:44:38,920 - DEBUG: Sending: play b j5
+2010-11-19 14:44:38,926 - DEBUG: Response: []
+2010-11-19 14:44:38,947 - DEBUG: Sending: time_left w 119 0
+2010-11-19 14:44:38,948 - DEBUG: Response: []
+2010-11-19 14:44:38,948 - DEBUG: Sending: genmove w
+2010-11-19 14:44:46,829 - DEBUG: Response: ['H3']
+2010-11-19 14:44:47,388 - DEBUG: Sending: play b j3
+2010-11-19 14:44:47,390 - DEBUG: Response: []
+2010-11-19 14:44:47,410 - DEBUG: Sending: time_left w 112 0
+2010-11-19 14:44:47,411 - DEBUG: Response: []
+2010-11-19 14:44:47,411 - DEBUG: Sending: genmove w
+2010-11-19 14:44:53,280 - DEBUG: Response: ['B7']
+2010-11-19 14:44:55,775 - DEBUG: Sending: play b g3
+2010-11-19 14:44:55,776 - DEBUG: Response: []
+2010-11-19 14:44:55,802 - DEBUG: Sending: time_left w 105 0
+2010-11-19 14:44:55,803 - DEBUG: Response: []
+2010-11-19 14:44:55,803 - DEBUG: Sending: genmove w
+2010-11-19 14:45:00,533 - DEBUG: Response: ['A5']
+2010-11-19 14:45:02,215 - DEBUG: Sending: play b f3
+2010-11-19 14:45:02,216 - DEBUG: Response: []
+2010-11-19 14:45:02,242 - DEBUG: Sending: time_left w 101 0
+2010-11-19 14:45:02,242 - DEBUG: Response: []
+2010-11-19 14:45:02,243 - DEBUG: Sending: genmove w
+2010-11-19 14:45:07,997 - DEBUG: Response: ['E2']
+2010-11-19 14:45:08,982 - DEBUG: Sending: play b e3
+2010-11-19 14:45:08,984 - DEBUG: Response: []
+2010-11-19 14:45:09,009 - DEBUG: Sending: time_left w 96 0
+2010-11-19 14:45:09,011 - DEBUG: Response: []
+2010-11-19 14:45:09,011 - DEBUG: Sending: genmove w
+2010-11-19 14:45:12,825 - DEBUG: Response: ['D4']
+2010-11-19 14:45:14,131 - DEBUG: Sending: play b h2
+2010-11-19 14:45:14,144 - DEBUG: Response: []
+2010-11-19 14:45:14,152 - DEBUG: Sending: time_left w 93 0
+2010-11-19 14:45:14,152 - DEBUG: Response: []
+2010-11-19 14:45:14,152 - DEBUG: Sending: genmove w
+2010-11-19 14:45:20,913 - DEBUG: Response: ['J6']
+2010-11-19 14:45:22,606 - DEBUG: Sending: play b h5
+2010-11-19 14:45:22,692 - DEBUG: Response: []
+2010-11-19 14:45:22,693 - DEBUG: Sending: time_left w 86 0
+2010-11-19 14:45:22,694 - DEBUG: Response: []
+2010-11-19 14:45:22,695 - DEBUG: Sending: genmove w
+2010-11-19 14:45:25,674 - DEBUG: Response: ['A3']
+2010-11-19 14:45:26,626 - DEBUG: Sending: play b a2
+2010-11-19 14:45:26,632 - DEBUG: Response: []
+2010-11-19 14:45:26,654 - DEBUG: Sending: time_left w 84 0
+2010-11-19 14:45:26,655 - DEBUG: Response: []
+2010-11-19 14:45:26,655 - DEBUG: Sending: genmove w
+2010-11-19 14:45:29,994 - DEBUG: Response: ['A6']
+2010-11-19 14:45:30,507 - DEBUG: Sending: play b a4
+2010-11-19 14:45:30,519 - DEBUG: Response: []
+2010-11-19 14:45:30,534 - DEBUG: Sending: time_left w 81 0
+2010-11-19 14:45:30,535 - DEBUG: Response: []
+2010-11-19 14:45:30,535 - DEBUG: Sending: genmove w
+2010-11-19 14:45:33,701 - DEBUG: Response: ['A7']
+2010-11-19 14:45:34,179 - DEBUG: Sending: play b c8
+2010-11-19 14:45:34,181 - DEBUG: Response: []
+2010-11-19 14:45:34,203 - DEBUG: Sending: time_left w 79 0
+2010-11-19 14:45:34,204 - DEBUG: Response: []
+2010-11-19 14:45:34,204 - DEBUG: Sending: genmove w
+2010-11-19 14:45:37,333 - DEBUG: Response: ['A3']
+2010-11-19 14:45:37,787 - DEBUG: Sending: play b b3
+2010-11-19 14:45:37,791 - DEBUG: Response: []
+2010-11-19 14:45:37,812 - DEBUG: Sending: time_left w 76 0
+2010-11-19 14:45:37,813 - DEBUG: Response: []
+2010-11-19 14:45:37,813 - DEBUG: Sending: genmove w
+2010-11-19 14:45:41,187 - DEBUG: Response: ['F2']
+2010-11-19 14:45:41,597 - DEBUG: Sending: play b g2
+2010-11-19 14:45:41,599 - DEBUG: Response: []
+2010-11-19 14:45:41,625 - DEBUG: Sending: time_left w 74 0
+2010-11-19 14:45:41,625 - DEBUG: Response: []
+2010-11-19 14:45:41,625 - DEBUG: Sending: genmove w
+2010-11-19 14:45:44,900 - DEBUG: Response: ['G1']
+2010-11-19 14:45:45,294 - DEBUG: Sending: play b d1
+2010-11-19 14:45:45,306 - DEBUG: Response: []
+2010-11-19 14:45:45,322 - DEBUG: Sending: time_left w 71 0
+2010-11-19 14:45:45,323 - DEBUG: Response: []
+2010-11-19 14:45:45,323 - DEBUG: Sending: genmove w
+2010-11-19 14:45:49,474 - DEBUG: Response: ['C1']
+2010-11-19 14:45:49,917 - DEBUG: Sending: play b b1
+2010-11-19 14:45:49,928 - DEBUG: Response: []
+2010-11-19 14:45:49,937 - DEBUG: Sending: time_left w 68 0
+2010-11-19 14:45:49,938 - DEBUG: Response: []
+2010-11-19 14:45:49,939 - DEBUG: Sending: genmove w
+2010-11-19 14:45:52,751 - DEBUG: Response: ['G8']
+2010-11-19 14:45:53,155 - DEBUG: Sending: play b f9
+2010-11-19 14:45:53,178 - DEBUG: Response: []
+2010-11-19 14:45:53,178 - DEBUG: Sending: time_left w 66 0
+2010-11-19 14:45:53,179 - DEBUG: Response: []
+2010-11-19 14:45:53,179 - DEBUG: Sending: genmove w
+2010-11-19 14:45:56,449 - DEBUG: Response: ['B8']
+2010-11-19 14:45:56,991 - DEBUG: Sending: play b c9
+2010-11-19 14:45:57,093 - DEBUG: Response: []
+2010-11-19 14:45:57,093 - DEBUG: Sending: time_left w 63 0
+2010-11-19 14:45:57,094 - DEBUG: Response: []
+2010-11-19 14:45:57,094 - DEBUG: Sending: genmove w
+2010-11-19 14:46:04,968 - DEBUG: Response: ['J8']
+2010-11-19 14:46:05,408 - DEBUG: Sending: play b h9
+2010-11-19 14:46:05,494 - DEBUG: Response: []
+2010-11-19 14:46:05,495 - DEBUG: Sending: time_left w 56 0
+2010-11-19 14:46:05,496 - DEBUG: Response: []
+2010-11-19 14:46:05,497 - DEBUG: Sending: genmove w
+2010-11-19 14:46:07,715 - DEBUG: Response: ['B9']
+2010-11-19 14:46:08,279 - DEBUG: Sending: play b e9
+2010-11-19 14:46:08,359 - DEBUG: Response: []
+2010-11-19 14:46:08,359 - DEBUG: Sending: time_left w 54 0
+2010-11-19 14:46:08,360 - DEBUG: Response: []
+2010-11-19 14:46:08,360 - DEBUG: Sending: genmove w
+2010-11-19 14:46:11,034 - DEBUG: Response: ['J7']
+2010-11-19 14:46:11,422 - DEBUG: Sending: play b h3
+2010-11-19 14:46:11,428 - DEBUG: Response: []
+2010-11-19 14:46:11,449 - DEBUG: Sending: time_left w 52 0
+2010-11-19 14:46:11,450 - DEBUG: Response: []
+2010-11-19 14:46:11,450 - DEBUG: Sending: genmove w
+2010-11-19 14:46:14,124 - DEBUG: Response: ['H1']
+2010-11-19 14:46:14,579 - DEBUG: Sending: play b g9
+2010-11-19 14:46:14,696 - DEBUG: Response: []
+2010-11-19 14:46:14,697 - DEBUG: Sending: time_left w 50 0
+2010-11-19 14:46:14,697 - DEBUG: Response: []
+2010-11-19 14:46:14,698 - DEBUG: Sending: genmove w
+2010-11-19 14:46:16,604 - DEBUG: Response: ['F1']
+2010-11-19 14:46:17,180 - DEBUG: Sending: play b h8
+2010-11-19 14:46:17,182 - DEBUG: Response: []
+2010-11-19 14:46:17,208 - DEBUG: Sending: time_left w 49 0
+2010-11-19 14:46:17,210 - DEBUG: Response: []
+2010-11-19 14:46:17,210 - DEBUG: Sending: genmove w
+2010-11-19 14:46:19,878 - DEBUG: Response: ['PASS']
+2010-11-19 14:46:20,268 - DEBUG: Sending: play b j9
+2010-11-19 14:46:20,367 - DEBUG: Response: []
+2010-11-19 14:46:20,367 - DEBUG: Sending: time_left w 47 0
+2010-11-19 14:46:20,368 - DEBUG: Response: []
+2010-11-19 14:46:20,368 - DEBUG: Sending: genmove w
+2010-11-19 14:46:23,011 - DEBUG: Response: ['H7']
+2010-11-19 14:46:23,387 - DEBUG: Sending: play b g7
+2010-11-19 14:46:23,399 - DEBUG: Response: []
+2010-11-19 14:46:23,415 - DEBUG: Sending: time_left w 45 0
+2010-11-19 14:46:23,416 - DEBUG: Response: []
+2010-11-19 14:46:23,416 - DEBUG: Sending: genmove w
+2010-11-19 14:46:25,468 - DEBUG: Response: ['E1']
+2010-11-19 14:46:25,905 - DEBUG: Sending: play b j7
+2010-11-19 14:46:25,908 - DEBUG: Response: []
+2010-11-19 14:46:25,930 - DEBUG: Sending: time_left w 43 0
+2010-11-19 14:46:25,931 - DEBUG: Response: []
+2010-11-19 14:46:25,931 - DEBUG: Sending: genmove w
+2010-11-19 14:46:28,833 - DEBUG: Response: ['J1']
+2010-11-19 14:46:29,253 - DEBUG: Sending: play b e8
+2010-11-19 14:46:29,263 - DEBUG: Response: []
+2010-11-19 14:46:29,281 - DEBUG: Sending: time_left w 41 0
+2010-11-19 14:46:29,281 - DEBUG: Response: []
+2010-11-19 14:46:29,281 - DEBUG: Sending: genmove w
+2010-11-19 14:46:31,053 - DEBUG: Response: ['C1']
+2010-11-19 14:46:31,432 - DEBUG: Sending: play b j2
+2010-11-19 14:46:31,434 - DEBUG: Response: []
+2010-11-19 14:46:31,461 - DEBUG: Sending: time_left w 40 0
+2010-11-19 14:46:31,461 - DEBUG: Response: []
+2010-11-19 14:46:31,462 - DEBUG: Sending: genmove w
+2010-11-19 14:46:33,554 - DEBUG: Response: ['PASS']
+2010-11-19 14:46:33,947 - DEBUG: Sending: play b d1
+2010-11-19 14:46:34,031 - DEBUG: Response: []
+2010-11-19 14:46:34,031 - DEBUG: Sending: time_left w 39 0
+2010-11-19 14:46:34,033 - DEBUG: Response: []
+2010-11-19 14:46:34,033 - DEBUG: Sending: genmove w
+2010-11-19 14:46:35,854 - DEBUG: Response: ['F1']
+2010-11-19 14:46:36,322 - DEBUG: Sending: play b f2
+2010-11-19 14:46:36,328 - DEBUG: Response: []
+2010-11-19 14:46:36,349 - DEBUG: Sending: time_left w 37 0
+2010-11-19 14:46:36,350 - DEBUG: Response: []
+2010-11-19 14:46:36,350 - DEBUG: Sending: genmove w
+2010-11-19 14:46:38,796 - DEBUG: Response: ['H1']
+2010-11-19 14:46:39,178 - DEBUG: Sending: play b e1
+2010-11-19 14:46:39,192 - DEBUG: Response: []
+2010-11-19 14:46:39,206 - DEBUG: Sending: time_left w 36 0
+2010-11-19 14:46:39,206 - DEBUG: Response: []
+2010-11-19 14:46:39,206 - DEBUG: Sending: genmove w
+2010-11-19 14:46:40,714 - DEBUG: Response: ['G1']
+2010-11-19 14:46:41,087 - DEBUG: Sending: play b j1
+2010-11-19 14:46:41,093 - DEBUG: Response: []
+2010-11-19 14:46:41,114 - DEBUG: Sending: time_left w 35 0
+2010-11-19 14:46:41,115 - DEBUG: Response: []
+2010-11-19 14:46:41,115 - DEBUG: Sending: genmove w
+2010-11-19 14:46:42,645 - DEBUG: Response: ['D6']
+2010-11-19 14:46:43,102 - DEBUG: Sending: play b d5
+2010-11-19 14:46:43,103 - DEBUG: Response: []
+2010-11-19 14:46:43,129 - DEBUG: Sending: time_left w 34 0
+2010-11-19 14:46:43,130 - DEBUG: Response: []
+2010-11-19 14:46:43,130 - DEBUG: Sending: genmove w
+2010-11-19 14:46:44,816 - DEBUG: Response: ['F1']
+2010-11-19 14:46:45,210 - DEBUG: Sending: play b g1
+2010-11-19 14:46:45,211 - DEBUG: Response: []
+2010-11-19 14:46:45,237 - DEBUG: Sending: time_left w 33 0
+2010-11-19 14:46:45,237 - DEBUG: Response: []
+2010-11-19 14:46:45,238 - DEBUG: Sending: genmove w
+2010-11-19 14:46:46,728 - DEBUG: Response: ['PASS']
+2010-11-19 14:46:47,132 - DEBUG: Sending: play b c5
+2010-11-19 14:46:47,207 - DEBUG: Response: []
+2010-11-19 14:46:47,208 - DEBUG: Sending: time_left w 32 0
+2010-11-19 14:46:47,209 - DEBUG: Response: []
+2010-11-19 14:46:47,209 - DEBUG: Sending: genmove w
+2010-11-19 14:46:48,607 - DEBUG: Response: ['PASS']
+2010-11-19 14:46:49,047 - DEBUG: Sending: play b a9
+2010-11-19 14:46:49,048 - DEBUG: Response: []
+2010-11-19 14:46:49,067 - DEBUG: Sending: time_left w 31 0
+2010-11-19 14:46:49,067 - DEBUG: Response: []
+2010-11-19 14:46:49,068 - DEBUG: Sending: genmove w
+2010-11-19 14:46:50,502 - DEBUG: Response: ['A8']
+2010-11-19 14:46:50,944 - DEBUG: Sending: play b a9
+2010-11-19 14:46:51,019 - DEBUG: Response: []
+2010-11-19 14:46:51,019 - DEBUG: Sending: time_left w 31 0
+2010-11-19 14:46:51,021 - DEBUG: Response: []
+2010-11-19 14:46:51,021 - DEBUG: Sending: genmove w
+2010-11-19 14:46:52,594 - DEBUG: Response: ['A8']
+2010-11-19 14:46:52,957 - DEBUG: Sending: play b b8
+2010-11-19 14:46:52,964 - DEBUG: Response: []
+2010-11-19 14:46:52,984 - DEBUG: Sending: time_left w 30 0
+2010-11-19 14:46:52,984 - DEBUG: Response: []
+2010-11-19 14:46:52,984 - DEBUG: Sending: genmove w
+2010-11-19 14:46:54,203 - DEBUG: Response: ['A7']
+2010-11-19 14:46:54,596 - DEBUG: Sending: play b b7
+2010-11-19 14:46:54,678 - DEBUG: Response: []
+2010-11-19 14:46:54,678 - DEBUG: Sending: time_left w 29 0
+2010-11-19 14:46:54,679 - DEBUG: Response: []
+2010-11-19 14:46:54,679 - DEBUG: Sending: genmove w
+2010-11-19 14:46:56,099 - DEBUG: Response: ['A6']
+2010-11-19 14:46:56,629 - DEBUG: Sending: play b a5
+2010-11-19 14:46:56,630 - DEBUG: Response: []
+2010-11-19 14:46:56,656 - DEBUG: Sending: time_left w 28 0
+2010-11-19 14:46:56,656 - DEBUG: Response: []
+2010-11-19 14:46:56,656 - DEBUG: Sending: genmove w
+2010-11-19 14:46:58,335 - DEBUG: Response: ['A8']
+2010-11-19 14:46:58,842 - DEBUG: Sending: play b a7
+2010-11-19 14:46:58,843 - DEBUG: Response: []
+2010-11-19 14:46:58,869 - DEBUG: Sending: time_left w 27 0
+2010-11-19 14:46:58,870 - DEBUG: Response: []
+2010-11-19 14:46:58,870 - DEBUG: Sending: genmove w
+2010-11-19 14:47:00,127 - DEBUG: Response: ['PASS']
+2010-11-19 14:47:00,561 - DEBUG: Sending: play b pass
+2010-11-19 14:47:00,563 - DEBUG: Response: []
+2010-11-19 14:51:06,305 - DEBUG: Sending: boardsize 9
+2010-11-19 14:51:06,382 - DEBUG: Response: []
+2010-11-19 14:51:06,382 - DEBUG: Sending: komi 7.5
+2010-11-19 14:51:06,383 - DEBUG: Response: []
+2010-11-19 14:51:06,383 - DEBUG: Sending: clear_board
+2010-11-19 14:51:06,479 - DEBUG: Response: []
+2010-11-19 14:51:06,479 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 14:51:06,480 - DEBUG: Response: []
+2010-11-19 14:51:28,342 - DEBUG: Sending: play b e5
+2010-11-19 14:51:28,682 - DEBUG: Response: []
+2010-11-19 14:51:28,682 - DEBUG: Sending: time_left w 300 0
+2010-11-19 14:51:28,683 - DEBUG: Response: []
+2010-11-19 14:51:28,684 - DEBUG: Sending: genmove w
+2010-11-19 14:51:39,191 - DEBUG: Response: ['D4']
+2010-11-19 14:51:40,568 - DEBUG: Sending: play b e4
+2010-11-19 14:51:40,572 - DEBUG: Response: []
+2010-11-19 14:51:40,593 - DEBUG: Sending: time_left w 289 0
+2010-11-19 14:51:40,594 - DEBUG: Response: []
+2010-11-19 14:51:40,594 - DEBUG: Sending: genmove w
+2010-11-19 14:51:50,455 - DEBUG: Response: ['D5']
+2010-11-19 14:51:51,968 - DEBUG: Sending: play b e6
+2010-11-19 14:51:51,970 - DEBUG: Response: []
+2010-11-19 14:51:51,996 - DEBUG: Sending: time_left w 280 0
+2010-11-19 14:51:51,997 - DEBUG: Response: []
+2010-11-19 14:51:51,997 - DEBUG: Sending: genmove w
+2010-11-19 14:52:03,577 - DEBUG: Response: ['D6']
+2010-11-19 14:52:05,111 - DEBUG: Sending: play b d7
+2010-11-19 14:52:05,112 - DEBUG: Response: []
+2010-11-19 14:52:05,139 - DEBUG: Sending: time_left w 269 0
+2010-11-19 14:52:05,139 - DEBUG: Response: []
+2010-11-19 14:52:05,139 - DEBUG: Sending: genmove w
+2010-11-19 14:52:20,063 - DEBUG: Response: ['E3']
+2010-11-19 14:52:21,414 - DEBUG: Sending: play b f3
+2010-11-19 14:52:21,416 - DEBUG: Response: []
+2010-11-19 14:52:21,441 - DEBUG: Sending: time_left w 255 0
+2010-11-19 14:52:21,441 - DEBUG: Response: []
+2010-11-19 14:52:21,441 - DEBUG: Sending: genmove w
+2010-11-19 14:52:34,019 - DEBUG: Response: ['D3']
+2010-11-19 14:52:35,026 - DEBUG: Sending: play b c7
+2010-11-19 14:52:35,101 - DEBUG: Response: []
+2010-11-19 14:52:35,102 - DEBUG: Sending: time_left w 243 0
+2010-11-19 14:52:35,103 - DEBUG: Response: []
+2010-11-19 14:52:35,103 - DEBUG: Sending: genmove w
+2010-11-19 14:52:45,444 - DEBUG: Response: ['F2']
+2010-11-19 14:52:46,611 - DEBUG: Sending: play b g3
+2010-11-19 14:52:46,905 - DEBUG: Response: []
+2010-11-19 14:52:46,906 - DEBUG: Sending: time_left w 233 0
+2010-11-19 14:52:46,906 - DEBUG: Response: []
+2010-11-19 14:52:46,906 - DEBUG: Sending: genmove w
+2010-11-19 14:52:57,459 - DEBUG: Response: ['G2']
+2010-11-19 14:52:59,003 - DEBUG: Sending: play b h4
+2010-11-19 14:52:59,005 - DEBUG: Response: []
+2010-11-19 14:52:59,031 - DEBUG: Sending: time_left w 223 0
+2010-11-19 14:52:59,031 - DEBUG: Response: []
+2010-11-19 14:52:59,031 - DEBUG: Sending: genmove w
+2010-11-19 14:53:11,251 - DEBUG: Response: ['H3']
+2010-11-19 14:53:12,450 - DEBUG: Sending: play b h2
+2010-11-19 14:53:12,455 - DEBUG: Response: []
+2010-11-19 14:53:12,470 - DEBUG: Sending: time_left w 212 0
+2010-11-19 14:53:12,471 - DEBUG: Response: []
+2010-11-19 14:53:12,471 - DEBUG: Sending: genmove w
+2010-11-19 14:53:21,576 - DEBUG: Response: ['B6']
+2010-11-19 14:53:23,194 - DEBUG: Sending: play b c6
+2010-11-19 14:53:23,199 - DEBUG: Response: []
+2010-11-19 14:53:23,222 - DEBUG: Sending: time_left w 203 0
+2010-11-19 14:53:23,222 - DEBUG: Response: []
+2010-11-19 14:53:23,222 - DEBUG: Sending: genmove w
+2010-11-19 14:53:31,694 - DEBUG: Response: ['E7']
+2010-11-19 14:53:32,919 - DEBUG: Sending: play b f7
+2010-11-19 14:53:32,921 - DEBUG: Response: []
+2010-11-19 14:53:32,948 - DEBUG: Sending: time_left w 195 0
+2010-11-19 14:53:32,949 - DEBUG: Response: []
+2010-11-19 14:53:32,949 - DEBUG: Sending: genmove w
+2010-11-19 14:53:42,019 - DEBUG: Response: ['E8']
+2010-11-19 14:53:43,005 - DEBUG: Sending: play b f8
+2010-11-19 14:53:43,007 - DEBUG: Response: []
+2010-11-19 14:53:43,032 - DEBUG: Sending: time_left w 187 0
+2010-11-19 14:53:43,033 - DEBUG: Response: []
+2010-11-19 14:53:43,033 - DEBUG: Sending: genmove w
+2010-11-19 14:53:50,892 - DEBUG: Response: ['B7']
+2010-11-19 14:53:52,055 - DEBUG: Sending: play b b8
+2010-11-19 14:53:52,057 - DEBUG: Response: []
+2010-11-19 14:53:52,082 - DEBUG: Sending: time_left w 180 0
+2010-11-19 14:53:52,083 - DEBUG: Response: []
+2010-11-19 14:53:52,083 - DEBUG: Sending: genmove w
+2010-11-19 14:53:58,930 - DEBUG: Response: ['F6']
+2010-11-19 14:53:59,978 - DEBUG: Sending: play b f4
+2010-11-19 14:54:00,274 - DEBUG: Response: []
+2010-11-19 14:54:00,274 - DEBUG: Sending: time_left w 174 0
+2010-11-19 14:54:00,275 - DEBUG: Response: []
+2010-11-19 14:54:00,275 - DEBUG: Sending: genmove w
+2010-11-19 14:54:07,622 - DEBUG: Response: ['C5']
+2010-11-19 14:54:08,754 - DEBUG: Sending: play b e9
+2010-11-19 14:54:08,826 - DEBUG: Response: []
+2010-11-19 14:54:08,826 - DEBUG: Sending: time_left w 167 0
+2010-11-19 14:54:08,827 - DEBUG: Response: []
+2010-11-19 14:54:08,827 - DEBUG: Sending: genmove w
+2010-11-19 14:54:17,827 - DEBUG: Response: ['D8']
+2010-11-19 14:54:18,886 - DEBUG: Sending: play b c8
+2010-11-19 14:54:19,002 - DEBUG: Response: []
+2010-11-19 14:54:19,002 - DEBUG: Sending: time_left w 158 0
+2010-11-19 14:54:19,003 - DEBUG: Response: []
+2010-11-19 14:54:19,003 - DEBUG: Sending: genmove w
+2010-11-19 14:54:29,351 - DEBUG: Response: ['H1']
+2010-11-19 14:54:30,442 - DEBUG: Sending: play b j2
+2010-11-19 14:54:30,445 - DEBUG: Response: []
+2010-11-19 14:54:30,470 - DEBUG: Sending: time_left w 148 0
+2010-11-19 14:54:30,471 - DEBUG: Response: []
+2010-11-19 14:54:30,471 - DEBUG: Sending: genmove w
+2010-11-19 14:54:37,061 - DEBUG: Response: ['G7']
+2010-11-19 14:54:38,152 - DEBUG: Sending: play b g8
+2010-11-19 14:54:38,226 - DEBUG: Response: []
+2010-11-19 14:54:38,226 - DEBUG: Sending: time_left w 143 0
+2010-11-19 14:54:38,226 - DEBUG: Response: []
+2010-11-19 14:54:38,226 - DEBUG: Sending: genmove w
+2010-11-19 14:54:43,765 - DEBUG: Response: ['G5']
+2010-11-19 14:54:44,861 - DEBUG: Sending: play b h7
+2010-11-19 14:54:44,927 - DEBUG: Response: []
+2010-11-19 14:54:44,927 - DEBUG: Sending: time_left w 138 0
+2010-11-19 14:54:44,928 - DEBUG: Response: []
+2010-11-19 14:54:44,928 - DEBUG: Sending: genmove w
+2010-11-19 14:54:52,010 - DEBUG: Response: ['H6']
+2010-11-19 14:54:53,026 - DEBUG: Sending: play b h8
+2010-11-19 14:54:53,095 - DEBUG: Response: []
+2010-11-19 14:54:53,095 - DEBUG: Sending: time_left w 131 0
+2010-11-19 14:54:53,096 - DEBUG: Response: []
+2010-11-19 14:54:53,096 - DEBUG: Sending: genmove w
+2010-11-19 14:54:58,303 - DEBUG: Response: ['J5']
+2010-11-19 14:54:59,354 - DEBUG: Sending: play b j4
+2010-11-19 14:54:59,356 - DEBUG: Response: []
+2010-11-19 14:54:59,381 - DEBUG: Sending: time_left w 127 0
+2010-11-19 14:54:59,382 - DEBUG: Response: []
+2010-11-19 14:54:59,382 - DEBUG: Sending: genmove w
+2010-11-19 14:55:05,003 - DEBUG: Response: ['G4']
+2010-11-19 14:55:06,577 - DEBUG: Sending: play b j3
+2010-11-19 14:55:06,593 - DEBUG: Response: []
+2010-11-19 14:55:06,601 - DEBUG: Sending: time_left w 122 0
+2010-11-19 14:55:06,602 - DEBUG: Response: []
+2010-11-19 14:55:06,602 - DEBUG: Sending: genmove w
+2010-11-19 14:55:11,969 - DEBUG: Response: ['H5']
+2010-11-19 14:55:12,953 - DEBUG: Sending: play b g6
+2010-11-19 14:55:12,954 - DEBUG: Response: []
+2010-11-19 14:55:12,980 - DEBUG: Sending: time_left w 117 0
+2010-11-19 14:55:12,980 - DEBUG: Response: []
+2010-11-19 14:55:12,980 - DEBUG: Sending: genmove w
+2010-11-19 14:55:19,898 - DEBUG: Response: ['G1']
+2010-11-19 14:55:20,843 - DEBUG: Sending: play b f5
+2010-11-19 14:55:20,845 - DEBUG: Response: []
+2010-11-19 14:55:20,871 - DEBUG: Sending: time_left w 111 0
+2010-11-19 14:55:20,871 - DEBUG: Response: []
+2010-11-19 14:55:20,871 - DEBUG: Sending: genmove w
+2010-11-19 14:55:26,419 - DEBUG: Response: ['A8']
+2010-11-19 14:55:27,517 - DEBUG: Sending: play b b9
+2010-11-19 14:55:27,582 - DEBUG: Response: []
+2010-11-19 14:55:27,582 - DEBUG: Sending: time_left w 106 0
+2010-11-19 14:55:27,583 - DEBUG: Response: []
+2010-11-19 14:55:27,583 - DEBUG: Sending: genmove w
+2010-11-19 14:55:34,330 - DEBUG: Response: ['J6']
+2010-11-19 14:55:35,289 - DEBUG: Sending: play b d9
+2010-11-19 14:55:35,393 - DEBUG: Response: []
+2010-11-19 14:55:35,393 - DEBUG: Sending: time_left w 100 0
+2010-11-19 14:55:35,395 - DEBUG: Response: []
+2010-11-19 14:55:35,395 - DEBUG: Sending: genmove w
+2010-11-19 14:55:42,991 - DEBUG: Response: ['J1']
+2010-11-19 14:55:43,920 - DEBUG: Sending: play b h3
+2010-11-19 14:55:43,924 - DEBUG: Response: []
+2010-11-19 14:55:43,943 - DEBUG: Sending: time_left w 93 0
+2010-11-19 14:55:43,944 - DEBUG: Response: []
+2010-11-19 14:55:43,944 - DEBUG: Sending: genmove w
+2010-11-19 14:55:47,500 - DEBUG: Response: ['E2']
+2010-11-19 14:55:48,383 - DEBUG: Sending: play b j7
+2010-11-19 14:55:48,673 - DEBUG: Response: []
+2010-11-19 14:55:48,674 - DEBUG: Sending: time_left w 90 0
+2010-11-19 14:55:48,674 - DEBUG: Response: []
+2010-11-19 14:55:48,674 - DEBUG: Sending: genmove w
+2010-11-19 14:55:52,042 - DEBUG: Response: ['E8']
+2010-11-19 14:55:52,981 - DEBUG: Sending: play b e7
+2010-11-19 14:55:53,057 - DEBUG: Response: []
+2010-11-19 14:55:53,057 - DEBUG: Sending: time_left w 87 0
+2010-11-19 14:55:53,059 - DEBUG: Response: []
+2010-11-19 14:55:53,059 - DEBUG: Sending: genmove w
+2010-11-19 14:55:58,712 - DEBUG: Response: ['B5']
+2010-11-19 14:55:59,661 - DEBUG: Sending: play b d8
+2010-11-19 14:55:59,736 - DEBUG: Response: []
+2010-11-19 14:55:59,737 - DEBUG: Sending: time_left w 82 0
+2010-11-19 14:55:59,737 - DEBUG: Response: []
+2010-11-19 14:55:59,737 - DEBUG: Sending: genmove w
+2010-11-19 14:56:03,360 - DEBUG: Response: ['G5']
+2010-11-19 14:56:04,252 - DEBUG: Sending: play b h5
+2010-11-19 14:56:04,254 - DEBUG: Response: []
+2010-11-19 14:56:04,279 - DEBUG: Sending: time_left w 79 0
+2010-11-19 14:56:04,280 - DEBUG: Response: []
+2010-11-19 14:56:04,281 - DEBUG: Sending: genmove w
+2010-11-19 14:56:07,881 - DEBUG: Response: ['J6']
+2010-11-19 14:56:08,794 - DEBUG: Sending: play b h6
+2010-11-19 14:56:08,797 - DEBUG: Response: []
+2010-11-19 14:56:08,813 - DEBUG: Sending: time_left w 76 0
+2010-11-19 14:56:08,814 - DEBUG: Response: []
+2010-11-19 14:56:08,814 - DEBUG: Sending: genmove w
+2010-11-19 14:56:12,161 - DEBUG: Response: ['A7']
+2010-11-19 14:56:13,023 - DEBUG: Sending: play b j5
+2010-11-19 14:56:13,024 - DEBUG: Response: []
+2010-11-19 14:56:13,050 - DEBUG: Sending: time_left w 73 0
+2010-11-19 14:56:13,050 - DEBUG: Response: []
+2010-11-19 14:56:13,051 - DEBUG: Sending: genmove w
+2010-11-19 14:56:19,732 - DEBUG: Response: ['A9']
+2010-11-19 14:56:20,707 - DEBUG: Sending: play b g4
+2010-11-19 14:56:20,713 - DEBUG: Response: []
+2010-11-19 14:56:20,734 - DEBUG: Sending: time_left w 67 0
+2010-11-19 14:56:20,735 - DEBUG: Response: []
+2010-11-19 14:56:20,735 - DEBUG: Sending: genmove w
+2010-11-19 14:56:23,676 - DEBUG: Response: ['F9']
+2010-11-19 14:56:24,608 - DEBUG: Sending: play b g9
+2010-11-19 14:56:24,681 - DEBUG: Response: []
+2010-11-19 14:56:24,682 - DEBUG: Sending: time_left w 65 0
+2010-11-19 14:56:24,682 - DEBUG: Response: []
+2010-11-19 14:56:24,683 - DEBUG: Sending: genmove w
+2010-11-19 14:56:27,801 - DEBUG: Response: ['B2']
+2010-11-19 14:56:28,713 - DEBUG: Sending: play b e1
+2010-11-19 14:56:28,730 - DEBUG: Response: []
+2010-11-19 14:56:28,733 - DEBUG: Sending: time_left w 63 0
+2010-11-19 14:56:28,733 - DEBUG: Response: []
+2010-11-19 14:56:28,734 - DEBUG: Sending: genmove w
+2010-11-19 14:56:31,710 - DEBUG: Response: ['H9']
+2010-11-19 14:56:32,615 - DEBUG: Sending: play b j9
+2010-11-19 14:56:32,619 - DEBUG: Response: []
+2010-11-19 14:56:32,642 - DEBUG: Sending: time_left w 60 0
+2010-11-19 14:56:32,642 - DEBUG: Response: []
+2010-11-19 14:56:32,642 - DEBUG: Sending: genmove w
+2010-11-19 14:56:35,008 - DEBUG: Response: ['PASS']
+2010-11-19 14:56:35,857 - DEBUG: Sending: play b d1
+2010-11-19 14:56:35,862 - DEBUG: Response: []
+2010-11-19 14:56:35,884 - DEBUG: Sending: time_left w 59 0
+2010-11-19 14:56:35,884 - DEBUG: Response: []
+2010-11-19 14:56:35,884 - DEBUG: Sending: genmove w
+2010-11-19 14:56:38,298 - DEBUG: Response: ['C2']
+2010-11-19 14:56:39,235 - DEBUG: Sending: play b c1
+2010-11-19 14:56:39,237 - DEBUG: Response: []
+2010-11-19 14:56:39,262 - DEBUG: Sending: time_left w 57 0
+2010-11-19 14:56:39,262 - DEBUG: Response: []
+2010-11-19 14:56:39,262 - DEBUG: Sending: genmove w
+2010-11-19 14:56:41,565 - DEBUG: Response: ['B1']
+2010-11-19 14:56:42,418 - DEBUG: Sending: play b c3
+2010-11-19 14:56:42,423 - DEBUG: Response: []
+2010-11-19 14:56:42,446 - DEBUG: Sending: time_left w 55 0
+2010-11-19 14:56:42,447 - DEBUG: Response: []
+2010-11-19 14:56:42,447 - DEBUG: Sending: genmove w
+2010-11-19 14:56:45,173 - DEBUG: Response: ['B3']
+2010-11-19 14:56:46,362 - DEBUG: Sending: play b a2
+2010-11-19 14:56:46,371 - DEBUG: Response: []
+2010-11-19 14:56:46,389 - DEBUG: Sending: time_left w 53 0
+2010-11-19 14:56:46,390 - DEBUG: Response: []
+2010-11-19 14:56:46,390 - DEBUG: Sending: genmove w
+2010-11-19 14:56:48,754 - DEBUG: Response: ['PASS']
+2010-11-19 14:56:49,910 - DEBUG: Sending: play b a3
+2010-11-19 14:56:49,915 - DEBUG: Response: []
+2010-11-19 14:56:49,935 - DEBUG: Sending: time_left w 52 0
+2010-11-19 14:56:49,936 - DEBUG: Response: []
+2010-11-19 14:56:49,936 - DEBUG: Sending: genmove w
+2010-11-19 14:56:52,263 - DEBUG: Response: ['A4']
+2010-11-19 14:56:53,433 - DEBUG: Sending: play b f1
+2010-11-19 14:56:53,435 - DEBUG: Response: []
+2010-11-19 14:56:53,456 - DEBUG: Sending: time_left w 50 0
+2010-11-19 14:56:53,457 - DEBUG: Response: []
+2010-11-19 14:56:53,457 - DEBUG: Sending: genmove w
+2010-11-19 14:56:55,852 - DEBUG: Response: ['C4']
+2010-11-19 14:56:56,973 - DEBUG: Sending: play b g5
+2010-11-19 14:56:56,974 - DEBUG: Response: []
+2010-11-19 14:56:57,001 - DEBUG: Sending: time_left w 48 0
+2010-11-19 14:56:57,001 - DEBUG: Response: []
+2010-11-19 14:56:57,001 - DEBUG: Sending: genmove w
+2010-11-19 14:56:59,213 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:00,428 - DEBUG: Sending: play b e8
+2010-11-19 14:57:00,722 - DEBUG: Response: []
+2010-11-19 14:57:00,723 - DEBUG: Sending: time_left w 47 0
+2010-11-19 14:57:00,723 - DEBUG: Response: []
+2010-11-19 14:57:00,723 - DEBUG: Sending: genmove w
+2010-11-19 14:57:02,945 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:03,970 - DEBUG: Sending: play b a6
+2010-11-19 14:57:03,976 - DEBUG: Response: []
+2010-11-19 14:57:03,997 - DEBUG: Sending: time_left w 45 0
+2010-11-19 14:57:03,998 - DEBUG: Response: []
+2010-11-19 14:57:03,998 - DEBUG: Sending: genmove w
+2010-11-19 14:57:06,238 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:07,537 - DEBUG: Sending: play b f6
+2010-11-19 14:57:07,615 - DEBUG: Response: []
+2010-11-19 14:57:07,615 - DEBUG: Sending: time_left w 43 0
+2010-11-19 14:57:07,616 - DEBUG: Response: []
+2010-11-19 14:57:07,616 - DEBUG: Sending: genmove w
+2010-11-19 14:57:09,734 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:10,904 - DEBUG: Sending: play b h9
+2010-11-19 14:57:10,989 - DEBUG: Response: []
+2010-11-19 14:57:10,989 - DEBUG: Sending: time_left w 42 0
+2010-11-19 14:57:10,990 - DEBUG: Response: []
+2010-11-19 14:57:10,990 - DEBUG: Sending: genmove w
+2010-11-19 14:57:12,907 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:13,970 - DEBUG: Sending: play b g7
+2010-11-19 14:57:13,975 - DEBUG: Response: []
+2010-11-19 14:57:13,998 - DEBUG: Sending: time_left w 40 0
+2010-11-19 14:57:13,999 - DEBUG: Response: []
+2010-11-19 14:57:13,999 - DEBUG: Sending: genmove w
+2010-11-19 14:57:15,895 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:16,931 - DEBUG: Sending: play b c9
+2010-11-19 14:57:16,934 - DEBUG: Response: []
+2010-11-19 14:57:16,954 - DEBUG: Sending: time_left w 39 0
+2010-11-19 14:57:16,954 - DEBUG: Response: []
+2010-11-19 14:57:16,954 - DEBUG: Sending: genmove w
+2010-11-19 14:57:18,758 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:19,703 - DEBUG: Sending: play b j8
+2010-11-19 14:57:19,709 - DEBUG: Response: []
+2010-11-19 14:57:19,733 - DEBUG: Sending: time_left w 38 0
+2010-11-19 14:57:19,734 - DEBUG: Response: []
+2010-11-19 14:57:19,734 - DEBUG: Sending: genmove w
+2010-11-19 14:57:21,524 - DEBUG: Response: ['PASS']
+2010-11-19 14:57:22,561 - DEBUG: Sending: play b pass
+2010-11-19 14:57:22,566 - DEBUG: Response: []
+2010-11-19 15:01:26,629 - DEBUG: Sending: boardsize 9
+2010-11-19 15:01:26,634 - DEBUG: Response: []
+2010-11-19 15:01:26,634 - DEBUG: Sending: komi 7.5
+2010-11-19 15:01:26,635 - DEBUG: Response: []
+2010-11-19 15:01:26,635 - DEBUG: Sending: clear_board
+2010-11-19 15:01:26,787 - DEBUG: Response: []
+2010-11-19 15:01:26,787 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 15:01:26,788 - DEBUG: Response: []
+2010-11-19 15:01:34,581 - DEBUG: Sending: time_left b 300 0
+2010-11-19 15:01:34,582 - DEBUG: Response: []
+2010-11-19 15:01:34,582 - DEBUG: Sending: genmove b
+2010-11-19 15:02:00,283 - DEBUG: Response: ['E6']
+2010-11-19 15:02:04,177 - DEBUG: Sending: play w e4
+2010-11-19 15:02:04,184 - DEBUG: Response: []
+2010-11-19 15:02:04,194 - DEBUG: Sending: time_left b 274 0
+2010-11-19 15:02:04,195 - DEBUG: Response: []
+2010-11-19 15:02:04,195 - DEBUG: Sending: genmove b
+2010-11-19 15:02:15,027 - DEBUG: Response: ['F5']
+2010-11-19 15:02:19,074 - DEBUG: Sending: play w f4
+2010-11-19 15:02:19,075 - DEBUG: Response: []
+2010-11-19 15:02:19,101 - DEBUG: Sending: time_left b 264 0
+2010-11-19 15:02:19,102 - DEBUG: Response: []
+2010-11-19 15:02:19,102 - DEBUG: Sending: genmove b
+2010-11-19 15:02:29,681 - DEBUG: Response: ['D5']
+2010-11-19 15:02:33,976 - DEBUG: Sending: play w d4
+2010-11-19 15:02:33,977 - DEBUG: Response: []
+2010-11-19 15:02:34,003 - DEBUG: Sending: time_left b 254 0
+2010-11-19 15:02:34,004 - DEBUG: Response: []
+2010-11-19 15:02:34,004 - DEBUG: Sending: genmove b
+2010-11-19 15:02:42,478 - DEBUG: Response: ['C5']
+2010-11-19 15:02:46,244 - DEBUG: Sending: play w g5
+2010-11-19 15:02:46,246 - DEBUG: Response: []
+2010-11-19 15:02:46,271 - DEBUG: Sending: time_left b 247 0
+2010-11-19 15:02:46,272 - DEBUG: Response: []
+2010-11-19 15:02:46,272 - DEBUG: Sending: genmove b
+2010-11-19 15:02:55,525 - DEBUG: Response: ['G6']
+2010-11-19 15:02:59,430 - DEBUG: Sending: play w c4
+2010-11-19 15:02:59,436 - DEBUG: Response: []
+2010-11-19 15:02:59,457 - DEBUG: Sending: time_left b 238 0
+2010-11-19 15:02:59,458 - DEBUG: Response: []
+2010-11-19 15:02:59,458 - DEBUG: Sending: genmove b
+2010-11-19 15:03:09,312 - DEBUG: Response: ['G4']
+2010-11-19 15:03:21,324 - DEBUG: Sending: play w b5
+2010-11-19 15:03:21,370 - DEBUG: Response: []
+2010-11-19 15:03:21,371 - DEBUG: Sending: time_left b 221 0
+2010-11-19 15:03:21,373 - DEBUG: Response: []
+2010-11-19 15:03:21,373 - DEBUG: Sending: genmove b
+2010-11-19 15:03:33,914 - DEBUG: Response: ['B6']
+2010-11-19 15:03:45,071 - DEBUG: Sending: play w e5
+2010-11-19 15:03:45,073 - DEBUG: Response: []
+2010-11-19 15:03:45,098 - DEBUG: Sending: time_left b 209 0
+2010-11-19 15:03:45,099 - DEBUG: Response: []
+2010-11-19 15:03:45,100 - DEBUG: Sending: genmove b
+2010-11-19 15:03:53,619 - DEBUG: Response: ['H5']
+2010-11-19 15:03:57,570 - DEBUG: Sending: play w f7
+2010-11-19 15:03:57,585 - DEBUG: Response: []
+2010-11-19 15:03:57,597 - DEBUG: Sending: time_left b 201 0
+2010-11-19 15:03:57,599 - DEBUG: Response: []
+2010-11-19 15:03:57,599 - DEBUG: Sending: genmove b
+2010-11-19 15:04:19,578 - DEBUG: Response: ['F6']
+2010-11-19 15:04:23,559 - DEBUG: Sending: play w g7
+2010-11-19 15:04:23,560 - DEBUG: Response: []
+2010-11-19 15:04:23,586 - DEBUG: Sending: time_left b 180 0
+2010-11-19 15:04:23,587 - DEBUG: Response: []
+2010-11-19 15:04:23,587 - DEBUG: Sending: genmove b
+2010-11-19 15:04:31,200 - DEBUG: Response: ['G3']
+2010-11-19 15:04:34,631 - DEBUG: Sending: play w c6
+2010-11-19 15:04:34,633 - DEBUG: Response: []
+2010-11-19 15:04:34,658 - DEBUG: Sending: time_left b 173 0
+2010-11-19 15:04:34,659 - DEBUG: Response: []
+2010-11-19 15:04:34,659 - DEBUG: Sending: genmove b
+2010-11-19 15:04:50,982 - DEBUG: Response: ['D6']
+2010-11-19 15:04:54,999 - DEBUG: Sending: play w b4
+2010-11-19 15:04:55,002 - DEBUG: Response: []
+2010-11-19 15:04:55,026 - DEBUG: Sending: time_left b 157 0
+2010-11-19 15:04:55,027 - DEBUG: Response: []
+2010-11-19 15:04:55,027 - DEBUG: Sending: genmove b
+2010-11-19 15:05:02,605 - DEBUG: Response: ['C7']
+2010-11-19 15:05:06,092 - DEBUG: Sending: play w e8
+2010-11-19 15:05:06,193 - DEBUG: Response: []
+2010-11-19 15:05:06,194 - DEBUG: Sending: time_left b 150 0
+2010-11-19 15:05:06,194 - DEBUG: Response: []
+2010-11-19 15:05:06,195 - DEBUG: Sending: genmove b
+2010-11-19 15:05:12,484 - DEBUG: Response: ['H7']
+2010-11-19 15:05:15,739 - DEBUG: Sending: play w h8
+2010-11-19 15:05:15,773 - DEBUG: Response: []
+2010-11-19 15:05:15,773 - DEBUG: Sending: time_left b 144 0
+2010-11-19 15:05:15,778 - DEBUG: Response: []
+2010-11-19 15:05:15,778 - DEBUG: Sending: genmove b
+2010-11-19 15:05:22,263 - DEBUG: Response: ['J8']
+2010-11-19 15:05:25,827 - DEBUG: Sending: play w j7
+2010-11-19 15:05:25,879 - DEBUG: Response: []
+2010-11-19 15:05:25,879 - DEBUG: Sending: time_left b 138 0
+2010-11-19 15:05:25,881 - DEBUG: Response: []
+2010-11-19 15:05:25,881 - DEBUG: Sending: genmove b
+2010-11-19 15:05:33,812 - DEBUG: Response: ['J6']
+2010-11-19 15:05:37,390 - DEBUG: Sending: play w d8
+2010-11-19 15:05:37,396 - DEBUG: Response: []
+2010-11-19 15:05:37,417 - DEBUG: Sending: time_left b 131 0
+2010-11-19 15:05:37,417 - DEBUG: Response: []
+2010-11-19 15:05:37,417 - DEBUG: Sending: genmove b
+2010-11-19 15:05:45,964 - DEBUG: Response: ['G8']
+2010-11-19 15:05:49,054 - DEBUG: Sending: play w h9
+2010-11-19 15:05:49,071 - DEBUG: Response: []
+2010-11-19 15:05:49,082 - DEBUG: Sending: time_left b 123 0
+2010-11-19 15:05:49,082 - DEBUG: Response: []
+2010-11-19 15:05:49,082 - DEBUG: Sending: genmove b
+2010-11-19 15:05:58,968 - DEBUG: Response: ['G9']
+2010-11-19 15:06:01,935 - DEBUG: Sending: play w c8
+2010-11-19 15:06:01,965 - DEBUG: Response: []
+2010-11-19 15:06:01,974 - DEBUG: Sending: time_left b 114 0
+2010-11-19 15:06:01,975 - DEBUG: Response: []
+2010-11-19 15:06:01,975 - DEBUG: Sending: genmove b
+2010-11-19 15:06:06,015 - DEBUG: Response: ['B8']
+2010-11-19 15:06:09,343 - DEBUG: Sending: play w a7
+2010-11-19 15:06:09,412 - DEBUG: Response: []
+2010-11-19 15:06:09,413 - DEBUG: Sending: time_left b 111 0
+2010-11-19 15:06:09,413 - DEBUG: Response: []
+2010-11-19 15:06:09,414 - DEBUG: Sending: genmove b
+2010-11-19 15:06:14,911 - DEBUG: Response: ['A6']
+2010-11-19 15:06:19,757 - DEBUG: Sending: play w a8
+2010-11-19 15:06:19,839 - DEBUG: Response: []
+2010-11-19 15:06:19,840 - DEBUG: Sending: time_left b 104 0
+2010-11-19 15:06:19,840 - DEBUG: Response: []
+2010-11-19 15:06:19,841 - DEBUG: Sending: genmove b
+2010-11-19 15:06:23,696 - DEBUG: Response: ['J9']
+2010-11-19 15:06:26,641 - DEBUG: Sending: play w f2
+2010-11-19 15:06:26,642 - DEBUG: Response: []
+2010-11-19 15:06:26,668 - DEBUG: Sending: time_left b 101 0
+2010-11-19 15:06:26,669 - DEBUG: Response: []
+2010-11-19 15:06:26,669 - DEBUG: Sending: genmove b
+2010-11-19 15:06:30,410 - DEBUG: Response: ['B7']
+2010-11-19 15:06:33,253 - DEBUG: Sending: play w e2
+2010-11-19 15:06:33,255 - DEBUG: Response: []
+2010-11-19 15:06:33,273 - DEBUG: Sending: time_left b 98 0
+2010-11-19 15:06:33,274 - DEBUG: Response: []
+2010-11-19 15:06:33,274 - DEBUG: Sending: genmove b
+2010-11-19 15:06:37,250 - DEBUG: Response: ['A9']
+2010-11-19 15:06:38,920 - DEBUG: Sending: play w d7
+2010-11-19 15:06:39,019 - DEBUG: Response: []
+2010-11-19 15:06:39,019 - DEBUG: Sending: time_left b 95 0
+2010-11-19 15:06:39,020 - DEBUG: Response: []
+2010-11-19 15:06:39,020 - DEBUG: Sending: genmove b
+2010-11-19 15:06:46,513 - DEBUG: Response: ['H3']
+2010-11-19 15:06:48,216 - DEBUG: Sending: play w h2
+2010-11-19 15:06:48,218 - DEBUG: Response: []
+2010-11-19 15:06:48,245 - DEBUG: Sending: time_left b 88 0
+2010-11-19 15:06:48,245 - DEBUG: Response: []
+2010-11-19 15:06:48,246 - DEBUG: Sending: genmove b
+2010-11-19 15:06:55,977 - DEBUG: Response: ['J4']
+2010-11-19 15:06:57,684 - DEBUG: Sending: play w g2
+2010-11-19 15:06:57,687 - DEBUG: Response: []
+2010-11-19 15:06:57,712 - DEBUG: Sending: time_left b 81 0
+2010-11-19 15:06:57,712 - DEBUG: Response: []
+2010-11-19 15:06:57,712 - DEBUG: Sending: genmove b
+2010-11-19 15:07:01,028 - DEBUG: Response: ['F3']
+2010-11-19 15:07:02,528 - DEBUG: Sending: play w d2
+2010-11-19 15:07:02,530 - DEBUG: Response: []
+2010-11-19 15:07:02,555 - DEBUG: Sending: time_left b 78 0
+2010-11-19 15:07:02,556 - DEBUG: Response: []
+2010-11-19 15:07:02,556 - DEBUG: Sending: genmove b
+2010-11-19 15:07:07,721 - DEBUG: Response: ['A8']
+2010-11-19 15:07:09,028 - DEBUG: Sending: play w e3
+2010-11-19 15:07:09,106 - DEBUG: Response: []
+2010-11-19 15:07:09,107 - DEBUG: Sending: time_left b 74 0
+2010-11-19 15:07:09,108 - DEBUG: Response: []
+2010-11-19 15:07:09,108 - DEBUG: Sending: genmove b
+2010-11-19 15:07:12,220 - DEBUG: Response: ['H9']
+2010-11-19 15:07:13,546 - DEBUG: Sending: play w f9
+2010-11-19 15:07:13,559 - DEBUG: Response: []
+2010-11-19 15:07:13,570 - DEBUG: Sending: time_left b 71 0
+2010-11-19 15:07:13,571 - DEBUG: Response: []
+2010-11-19 15:07:13,571 - DEBUG: Sending: genmove b
+2010-11-19 15:07:16,181 - DEBUG: Response: ['F8']
+2010-11-19 15:07:17,398 - DEBUG: Sending: play w c3
+2010-11-19 15:07:17,400 - DEBUG: Response: []
+2010-11-19 15:07:17,425 - DEBUG: Sending: time_left b 69 0
+2010-11-19 15:07:17,426 - DEBUG: Response: []
+2010-11-19 15:07:17,426 - DEBUG: Sending: genmove b
+2010-11-19 15:07:20,033 - DEBUG: Response: ['C6']
+2010-11-19 15:07:21,272 - DEBUG: Sending: play w a5
+2010-11-19 15:07:21,273 - DEBUG: Response: []
+2010-11-19 15:07:21,299 - DEBUG: Sending: time_left b 67 0
+2010-11-19 15:07:21,300 - DEBUG: Response: []
+2010-11-19 15:07:21,300 - DEBUG: Sending: genmove b
+2010-11-19 15:07:24,192 - DEBUG: Response: ['C9']
+2010-11-19 15:07:25,378 - DEBUG: Sending: play w c1
+2010-11-19 15:07:25,379 - DEBUG: Response: []
+2010-11-19 15:07:25,405 - DEBUG: Sending: time_left b 65 0
+2010-11-19 15:07:25,405 - DEBUG: Response: []
+2010-11-19 15:07:25,405 - DEBUG: Sending: genmove b
+2010-11-19 15:07:29,682 - DEBUG: Response: ['J2']
+2010-11-19 15:07:30,918 - DEBUG: Sending: play w h1
+2010-11-19 15:07:30,919 - DEBUG: Response: []
+2010-11-19 15:07:30,947 - DEBUG: Sending: time_left b 61 0
+2010-11-19 15:07:30,948 - DEBUG: Response: []
+2010-11-19 15:07:30,948 - DEBUG: Sending: genmove b
+2010-11-19 15:07:33,629 - DEBUG: Response: ['E9']
+2010-11-19 15:07:34,741 - DEBUG: Sending: play w j1
+2010-11-19 15:07:34,742 - DEBUG: Response: []
+2010-11-19 15:07:34,768 - DEBUG: Sending: time_left b 59 0
+2010-11-19 15:07:34,769 - DEBUG: Response: []
+2010-11-19 15:07:34,769 - DEBUG: Sending: genmove b
+2010-11-19 15:07:37,091 - DEBUG: Response: ['D9']
+2010-11-19 15:07:38,035 - DEBUG: Sending: play w j3
+2010-11-19 15:07:38,047 - DEBUG: Response: []
+2010-11-19 15:07:38,063 - DEBUG: Sending: time_left b 58 0
+2010-11-19 15:07:38,063 - DEBUG: Response: []
+2010-11-19 15:07:38,063 - DEBUG: Sending: genmove b
+2010-11-19 15:07:40,965 - DEBUG: Response: ['B2']
+2010-11-19 15:07:42,046 - DEBUG: Sending: play w j2
+2010-11-19 15:07:42,048 - DEBUG: Response: []
+2010-11-19 15:07:42,073 - DEBUG: Sending: time_left b 56 0
+2010-11-19 15:07:42,074 - DEBUG: Response: []
+2010-11-19 15:07:42,074 - DEBUG: Sending: genmove b
+2010-11-19 15:07:44,662 - DEBUG: Response: ['A2']
+2010-11-19 15:07:45,690 - DEBUG: Sending: play w a1
+2010-11-19 15:07:45,692 - DEBUG: Response: []
+2010-11-19 15:07:45,717 - DEBUG: Sending: time_left b 54 0
+2010-11-19 15:07:45,718 - DEBUG: Response: []
+2010-11-19 15:07:45,718 - DEBUG: Sending: genmove b
+2010-11-19 15:07:48,641 - DEBUG: Response: ['A3']
+2010-11-19 15:07:49,572 - DEBUG: Sending: play w c2
+2010-11-19 15:07:49,573 - DEBUG: Response: []
+2010-11-19 15:07:49,598 - DEBUG: Sending: time_left b 51 0
+2010-11-19 15:07:49,600 - DEBUG: Response: []
+2010-11-19 15:07:49,600 - DEBUG: Sending: genmove b
+2010-11-19 15:07:51,903 - DEBUG: Response: ['B9']
+2010-11-19 15:07:52,816 - DEBUG: Sending: play w b3
+2010-11-19 15:07:52,870 - DEBUG: Response: []
+2010-11-19 15:07:52,870 - DEBUG: Sending: time_left b 50 0
+2010-11-19 15:07:52,871 - DEBUG: Response: []
+2010-11-19 15:07:52,871 - DEBUG: Sending: genmove b
+2010-11-19 15:07:55,060 - DEBUG: Response: ['B1']
+2010-11-19 15:07:55,860 - DEBUG: Sending: play w e1
+2010-11-19 15:07:55,862 - DEBUG: Response: []
+2010-11-19 15:07:55,887 - DEBUG: Sending: time_left b 48 0
+2010-11-19 15:07:55,887 - DEBUG: Response: []
+2010-11-19 15:07:55,887 - DEBUG: Sending: genmove b
+2010-11-19 15:07:58,049 - DEBUG: Response: ['F9']
+2010-11-19 15:07:58,967 - DEBUG: Sending: play w a4
+2010-11-19 15:07:58,984 - DEBUG: Response: []
+2010-11-19 15:07:58,995 - DEBUG: Sending: time_left b 47 0
+2010-11-19 15:07:58,995 - DEBUG: Response: []
+2010-11-19 15:07:58,996 - DEBUG: Sending: genmove b
+2010-11-19 15:08:00,982 - DEBUG: Response: ['PASS']
+2010-11-19 15:08:01,756 - DEBUG: Sending: play w a1
+2010-11-19 15:08:01,757 - DEBUG: Response: []
+2010-11-19 15:08:01,783 - DEBUG: Sending: time_left b 45 0
+2010-11-19 15:08:01,784 - DEBUG: Response: []
+2010-11-19 15:08:01,784 - DEBUG: Sending: genmove b
+2010-11-19 15:08:03,698 - DEBUG: Response: ['PASS']
+2010-11-19 15:08:04,407 - DEBUG: Sending: play w pass
+2010-11-19 15:08:04,409 - DEBUG: Response: []
+2010-11-19 15:11:18,114 - DEBUG: Sending: boardsize 9
+2010-11-19 15:11:18,200 - DEBUG: Response: []
+2010-11-19 15:11:18,200 - DEBUG: Sending: komi 7.5
+2010-11-19 15:11:18,200 - DEBUG: Response: []
+2010-11-19 15:11:18,200 - DEBUG: Sending: clear_board
+2010-11-19 15:11:18,800 - DEBUG: Response: []
+2010-11-19 15:11:18,800 - DEBUG: Sending: time_settings 300 0 0
+2010-11-19 15:11:18,801 - DEBUG: Response: []

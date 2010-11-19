@@ -1,0 +1,7 @@
+# Run CGOS using python CGOS client from http://sourceforge.net/projects/cgos/
+
+# To run on CGOS
+python bin/cgosclient.py rlgo.cfg
+
+# To stop running on CGOS
+mv nokill.txt kill.txt

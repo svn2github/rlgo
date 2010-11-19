@@ -120,12 +120,12 @@ for VALUE2 in $VALUES2
         echo $NAME
         echo $NAME >> $PATHSTEM/short-names.txt
         `$SCRIPTDIR/getprogram.sh fuego -config $NEWPATH/gtpconfig.cfg` >> $PATHSTEM/program-names.txt
-        cat $SCRIPTDIR/../settings/vanilla-uct.txt > $NEWPATH/gtpconfig.cfg
+        cat $SCRIPTDIR/../settings/vanilla-uct.cfg > $NEWPATH/gtpconfig.cfg
         echo "uct_param_player max_games $VALUE2" >> $NEWPATH/gtpconfig.cfg
     done
 fi
 
 # Run tournament and plot results
-$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM $SIZE 0 2 $MATCHES $SCRIPTDIR/submit-seq.sh 1
+$SCRIPTDIR/tournament.sh $PATHSTEM/short-names.txt $PATHSTEM/program-names.txt $PATHSTEM $SIZE 0 2 $MATCHES submit-seq.sh 1
 $SCRIPTDIR/analyze-tournament.sh $PATHSTEM/short-names.txt $PATHSTEM
 $SCRIPTDIR/plot-tournament.sh $PATHSTEM $SETTING1 "$VALUES1" "$TITLE"

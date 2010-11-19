@@ -106,6 +106,9 @@ void RlSimulator::Simulate(int controlmode)
         case ePonder:
             SimulatePonder();
             break;
+        case eNoSimulation:
+            // Do nothing
+            break;
     }
 
     if (m_record)
